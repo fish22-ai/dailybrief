@@ -1,0 +1,9 @@
+# 默认交给 Git 规范化换行
+* text=auto
+
+# 【必须】.bat 保持 CRLF。LF 换行的 .bat 在 cmd 下会被逐字符解析而报错（已踩过）
+*.bat text eol=crlf
+
+# 生成的 HTML 用 LF，避免每次渲染都产生纯换行差异
+*.html text eol=lf
+*.json text eol=lf

@@ -1,0 +1,9 @@
+{
+  "name": "每日金融 sense",
+  "short_name": "每日金融 sense",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "lang": "zh-CN"
+}
