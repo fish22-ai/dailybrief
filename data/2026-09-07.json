@@ -3,6 +3,14 @@
   "mode": "rules",
   "markets": [
     {
+      "title": "日本外汇储备连续第四个月下降",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3161015",
+      "published": "2026-09-07 08:32",
+      "raw_summary": "当地时间9月7日，日本财务省公布的数据显示，截至8月底，日本外汇储备约为12075亿美元，较上月底减少795.75亿美元，连续4个月下降。有分析称，这主要受到日本政府和央行于7月底实施的买入日元、卖出美元的外汇干预等因素影响。日本政府和央行7月底干预日元汇率，外汇储备变化受到市场关注。日本财务省公布8月数据时曾表示，从交易达成到结算需要数天时间，7月底干预汇率的影响未反映在8月统计数据中。（央视新",
+      "insight": {}
+    },
+    {
       "title": "Inflation is back around the world—as is the fight against it",
       "source": "The Economist",
       "url": "https://www.economist.com/finance-and-economics/2026/09/06/inflation-is-back-around-the-world-as-is-the-fight-against-it",
@@ -11,19 +19,11 @@
       "insight": {}
     },
     {
-      "title": "中信证券：市场目前还是以震荡为主 不用恐慌海外利率的问题",
+      "title": "内蒙古发行15年期普通专项地方债，规模6.4952亿元，发行利率2.0800%，边际倍数15.37倍，倍数预期2.07。",
       "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3160968",
-      "published": "2026-09-06 21:07",
-      "raw_summary": "中信证券研报指出，美联储9月是否加息，并不足以决定长端利率与权益市场方向。在AI技术快速发展的时代背景下，政府债券这种传统意义上的“安全资产”需求下滑应该是趋势性的，欧美国债被抛售的现象是经济和市场运行逻辑的结果，而不应该被当作预测短期股票走势的原因。",
-      "insight": {}
-    },
-    {
-      "title": "财政部将发行特别国债支持8家中央金融企业补充资本",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3160961",
-      "published": "2026-09-06 19:22",
-      "raw_summary": "财政部将于近期发行3000亿元特别国债，支持8家中央金融企业补充核心一级资本。 当日，工商银行、农业银行、进出口银行、中国信保、中国人保、中国人寿集团、中国太平、中国再保等8家中央金融企业分别发布了增资计划。 业内人士表示，此次财政部对8家中央金融企业增资，属于“未雨绸缪”的前瞻性安排，是支持中央金融企业高质量发展、助力宏观经济行稳致远的主动作为。（新华社）",
+      "url": "https://wallstreetcn.com/livenews/3161067",
+      "published": "2026-09-07 11:18",
+      "raw_summary": "",
       "insight": {}
     },
     {
@@ -45,6 +45,30 @@
   ],
   "policy": [
     {
+      "title": "Hong Kong’s yuan pool is growing. Can it turn liquidity into global demand?",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/business/banking-finance/article/3366493/hong-kongs-yuan-pool-growing-can-it-turn-liquidity-global-demand?utm_source=rss_feed",
+      "published": "2026-09-07 09:00",
+      "raw_summary": "Hong Kong’s top financial regulators have urged local banks to make greater use of the city’s growing pool of offshore yuan liquidity, while also flagging the need to prepare for a coming wave of auto",
+      "insight": {}
+    },
+    {
+      "title": "North Korea’s Kim launches second nuclear destroyer as US-South Korea-Japan drills start",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/asia/east-asia/article/3366573/north-koreas-kim-launches-second-nuclear-destroyer-us-south-korea-japan-drills-start?utm_source=rss_feed",
+      "published": "2026-09-07 10:03",
+      "raw_summary": "North Korean leader Kim Jong-un commissioned his second naval destroyer and called for building a more reliable nuclear deterrent, state media reported on Monday, as the US, South Korea and Japan bega",
+      "insight": {}
+    },
+    {
+      "title": "US envoys Witkoff and Kushner hold Ukraine talks after meeting Putin",
+      "source": "DW",
+      "url": "https://www.dw.com/en/us-envoys-witkoff-and-kushner-hold-ukraine-talks-after-meeting-putin/a-79054779?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-09-07 06:22",
+      "raw_summary": "US envoys Steve Witkoff and Jared Kushner held talks with Ukrainian President Volodymyr Zelenskyy in Kyiv, seeking to revive efforts to end the war. But the latest diplomatic push seems to have produc",
+      "insight": {}
+    },
+    {
       "title": "Iran warns of 'faster, heavier, more painful response' to US attacks",
       "source": "BBC",
       "url": "https://www.bbc.co.uk/news/articles/cp8d56w7d9po?at_medium=RSS&at_campaign=rss",
@@ -58,30 +82,6 @@
       "url": "https://www.npr.org/2026/09/06/nx-s1-5955677/german-afd-far-right-exit",
       "published": "2026-09-07 00:36",
       "raw_summary": "Exit polls show Germany's AfD taking a commanding lead in a regional election, but it remains unclear whether the far-right party can form the country's first state government since World War II.",
-      "insight": {}
-    },
-    {
-      "title": "Sierra Leone ex-president returns to country after treason case dropped",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/world/africa/article/3366564/sierra-leone-ex-president-returns-country-after-treason-case-dropped?utm_source=rss_feed",
-      "published": "2026-09-07 01:50",
-      "raw_summary": "Former Sierra Leone president Ernest Bai Koroma returned to his home country on Sunday, where authorities welcomed him after treason charges against him over an alleged coup attempt were dropped. Koro",
-      "insight": {}
-    },
-    {
-      "title": "Lebanon’s president appeals to US for help as Israeli strikes kill 7",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/world/middle-east/article/3366563/lebanons-president-appeals-us-help-israeli-strikes-kill-7?utm_source=rss_feed",
-      "published": "2026-09-07 01:11",
-      "raw_summary": "Lebanese President Joseph Aoun urged Washington and the international community to help stop Israeli attacks, which killed at least seven people on Sunday despite a truce and a framework deal aimed at",
-      "insight": {}
-    },
-    {
-      "title": "Continuation of the National Emergency With Respect to Foreign Interference in or Undermining Public Confidence in United States Elections",
-      "source": "Federal Register",
-      "url": "https://www.federalregister.gov/documents/2026/09/02/2026-18046/continuation-of-the-national-emergency-with-respect-to-foreign-interference-in-or-undermining-public",
-      "published": "2026-09-02 00:00",
-      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
       "insight": {}
     }
   ],
@@ -104,7 +104,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 15,
+      "count": 13,
       "tier": "stable"
     },
     "cnbc_fin": {
@@ -120,7 +120,7 @@
       "tier": "stable"
     },
     "eastmoney": {
-      "count": 15,
+      "count": 19,
       "tier": "optional"
     },
     "ft_markets": {
