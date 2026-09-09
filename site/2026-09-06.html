@@ -181,13 +181,8 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  h1{font-size:19px}
  nav a{font-size:13.5px;padding:6px 11px}
 }
-/* 窄屏（iPhone SE 一类）：传导链改成一环一行的竖排，横排挤成两三个字读不了 */
-@media(max-width:430px){
- .flow{flex-direction:column;align-items:stretch;gap:0}
- .hop{border-radius:5px}
- .arw{display:block;text-align:center;line-height:1.1;padding:1px 0;
-  transform:rotate(90deg)}     /* 竖排时箭头转成向下 */
-}
+/* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
+   放不下自动换行，箭头维持 "→"（不再转成上下竖排）。 */
 /* 悬停微抬只是锦上添花，晕动症用户把动效关掉后不该还在动 */
 @media(prefers-reduced-motion:reduce){
  article,.notes>summary,.notes>summary::after{transition:none}
