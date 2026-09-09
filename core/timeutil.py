@@ -33,9 +33,18 @@ def now_local() -> datetime:
     return datetime.now(TZ)
 
 
+# 补跑历史日期时由 run_daily.py --date 注入，让产物文件名 / seen / cache 都按这天走
+_TARGET_DATE: str | None = None
+
+
+def set_target_date(date: str) -> None:
+    global _TARGET_DATE
+    _TARGET_DATE = date
+
+
 def today_str() -> str:
-    """产物文件名用的上海时区日期。"""
-    return now_local().strftime("%Y-%m-%d")
+    """产物文件名用的上海时区日期；补跑时返回注入的目标日期。"""
+    return _TARGET_DATE or now_local().strftime("%Y-%m-%d")
 
 
 def window_start(hours: int = WINDOW_HOURS) -> datetime:

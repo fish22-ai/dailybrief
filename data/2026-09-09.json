@@ -1,91 +1,149 @@
 {
   "date": "2026-09-09",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
-    {
-      "title": "U.S. reveals import ban on slew of Canadian goods as trade war escalates",
-      "source": "CNBC Economy",
-      "url": "https://www.cnbc.com/2026/09/09/us-canada-trade-war-import-ban.html",
-      "published": "2026-09-09 17:21",
-      "raw_summary": "Import bans on motorbikes, alcohol and dairy products are due to come into effect on Sept. 29 as the rift between the countries deepens.",
-      "insight": {}
-    },
-    {
-      "title": "Iran turns to crypto to get around sanctions",
-      "source": "FT Markets",
-      "url": "https://www.ft.com/content/c1029e47-7487-4bd7-8ed4-7512b76f1834?syn-25a6b1a6=1",
-      "published": "2026-09-09 12:00",
-      "raw_summary": "Authorities have quietly relaxed controls on foreign currency to encourage traders to repatriate much-needed funds",
-      "insight": {}
-    },
-    {
-      "title": "Canada's retaliatory tariffs worth CA$27.6 billion take effect as trade rift with U.S. deepens",
-      "source": "CNBC Economy",
-      "url": "https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html",
-      "published": "2026-09-09 01:11",
-      "raw_summary": "Duties on Canadian imports of U.S. steel and aluminum products have doubled to 50% as a trade war between Washington and Ottawa intensifies.",
-      "insight": {}
-    },
     {
       "title": "Oil hits $100 for first time since July",
       "source": "FT Markets",
       "url": "https://www.ft.com/content/c8921e49-1d06-4d27-ab38-7a1d8e3d43fe?syn-25a6b1a6=1",
       "published": "2026-09-09 16:49",
       "raw_summary": "Brent crude advances as escalation in US-Iran war feeds fears of renewed global supply crunch",
-      "insight": {}
+      "insight": {
+        "what": "布伦特原油升至每桶100美元，为7月以来首次，因美伊冲突升级引发全球供应紧张担忧。",
+        "why": "市场原本预期全球原油供应充足、油价区间震荡，这次上涨打破了这一前提，能源板块、通胀预期和依赖原油进口的经济体都要重新定价。",
+        "chain": "美伊冲突升级 → 伊朗出口被军事打击 → 全球原油供给减少 → 原油价格跳涨至100美元 → 通胀预期上升 → 各国央行收紧货币的预期增强 → 无风险利率Rf上行 → 债券价格下跌，股票折现率上升估值受压；原油进口国贸易逆差扩大 → 本国货币贬值预期上升 → 资金外流压力加大",
+        "notes": [
+          "为什么油价上涨会推高通胀预期？因为原油是几乎所有商品的生产和运输成本，原油价格涨 → 生产成本涨 → 终端商品价格涨 → 整体物价水平上行。",
+          "为什么通胀预期上升会推高无风险利率Rf？央行为了控制通胀会加息，市场对未来政策利率的预期上升，短期和长期名义利率都会跟随上行。`P = C/(1+y)¹ + … + (C+Face)/(1+y)ⁿ`，利率y上升时债券价格P下降。",
+          "为什么股票估值会受压？股价等于未来现金流按折现率折现的加总，`PV = ∑ CFₜ/(1+r)ᵗ`，折现率r上升时，远期现金流现值下降更多，高估值股票首当其冲。",
+          "为什么原油进口国货币会贬值？进口原油需要用外汇买，油价涨 → 外汇支出增加 → 贸易逆差扩大 → 对外币需求增加 → 本币贬值。",
+          "为什么布伦特原油是全球基准？布伦特（Brent）是北海原油，由于其流动性强，全球约三分之二的原油交易以它为定价基准。"
+        ]
+      }
     },
     {
-      "title": "上交所发布关于常州星宇车灯股份有限公司相关事项的监管工作函。",
+      "title": "Oil nears $100 as US launches new strikes on Iranian tankers",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/b460b828-6183-4914-9140-5dfb6d61312c?syn-25a6b1a6=1",
+      "published": "2026-09-09 15:13",
+      "raw_summary": "American military hit ‘multiple’ ships linked to Revolutionary Guards following attempted missile attacks on US warship",
+      "insight": {
+        "what": "美军对伊朗油轮发动新打击，油价逼近100美元，美伊军事对抗持续升级。",
+        "why": "市场此前定价的是停火或谈判可能，现在的军事行动闭环把地缘风险从‘尾部风险’变成了‘基准情景’，能源供应风险溢价需要系统性重估。",
+        "chain": "美军打击伊朗油轮 → 伊朗原油出口能力受损 → 全球原油供给预期下调 → 原油价格逼近100美元 → 航运保险费率上升 → 运输成本增加 → 进口国终端物价上涨 → 央行紧缩预期升温 → 债券收益率上行；油轮被袭 → 霍尔木兹海峡通行风险溢价上升 → 亚洲原油进口国进口成本飙升",
+        "notes": [
+          "为什么油轮被打击会推高航运保险费？战争风险增加后，保险公司会提高航线的战争险保费，这部分成本最终体现在油价里，形成地缘风险溢价。",
+          "为什么霍尔木兹海峡重要？全球约1/5的原油贸易经过该海峡，若海峡通行受阻，即便有库存缓冲，运输的物理时间也会拉长，短期供需缺口放大。",
+          "为什么央行紧缩预期会传导到债券？`YTM = 票息/价格 + 资本利得率`，市场预期加息时，新发行债券的票息会更高，旧债券只有折价出售才能匹配新利率，所以债券价格下跌、收益率（YTM）上升。"
+        ]
+      }
+    },
+    {
+      "title": "美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。",
       "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3162533",
-      "published": "2026-09-09 18:12",
+      "url": "https://wallstreetcn.com/livenews/3162512",
+      "published": "2026-09-09 17:53",
       "raw_summary": "",
-      "insight": {}
+      "insight": {
+        "what": "美国2年期国债收益率上升2个基点至4.42%，创2025年1月以来新高。",
+        "why": "短端利率上行暗示市场在重新评估美联储的降息路径——原本计入的宽松力度被削减，甚至开始预期加息，这直接影响所有以美元定价的资产。",
+        "chain": "美联储官员偏鹰表态 → 市场降息预期下降 → 短端政策利率路径被上修 → 2年期美债收益率上升 → 美元资产吸引力增强 → 美元指数走强 → 新兴市场货币贬值压力加大；2Y收益率↑ → 利率互换市场的定价跟随调整 → 浮动利率贷款的基准利率预期上行 → 企业融资成本上升",
+        "notes": [
+          "为什么2年期国债收益率反映的不是2年后的利率，而是市场对‘未来两年平均政策利率’的预期？因为2年期国债的折现现金流主要受政策利率路径影响，`YTM ≈ 预期平均短期利率 + 期限溢价`。",
+          "什么是期限溢价（term premium）？持有长期债券需要额外补偿因利率波动带来的风险，这个补偿就是期限溢价。当市场波动大时，期限溢价上升，长端收益率会更快上涨。",
+          "为什么短端利率上行会推高美元？因为美元资产的收益率提高，外国投资者为了赚取更高利息，会买入美债，需要先换成美元，从而推高美元汇率。",
+          "为什么企业融资成本会上升？企业发债或借贷款通常以基准利率（如LIBOR或SOFR）加点定价，`贷款利率 = 基准利率 + 风险溢价`，基准利率预期上行，贷款的实际利率也随之上升。"
+        ]
+      }
+    },
+    {
+      "title": "What is causing the global bond sell-off?",
+      "source": "The Economist",
+      "url": "https://www.economist.com/finance-and-economics/2026/09/08/what-is-causing-the-global-bond-sell-off",
+      "published": "2026-09-09 02:15",
+      "raw_summary": "India hints at the answer",
+      "insight": {
+        "what": "《经济学人》报道，全球债券遭遇抛售潮，印度或许是关键解释，因其国债市场近期也出现剧烈波动。",
+        "why": "印度债市被视作新兴市场的‘锚’，其抛售暗示全球利率中枢在系统性抬升，而非单一国家的特殊现象，发达市场和新兴市场的债券需要同时重估。",
+        "chain": "全球央行收紧预期上升 → 债券持有人要求更高风险补偿 → 全球债券被抛售 → 债券价格下跌收益率上升 → 发展中国家债务成本上升 → 财政压力加大 → 主权信用利差走阔 → 资本外流压力增加",
+        "notes": [
+          "什么是主权信用利差？一国国债收益率与同期限无风险利率（如美国国债）的差值，`利差 = 本国国债YTM - 美国国债YTM`。利差走阔表示市场对该国违约风险的担忧增加。",
+          "为什么债券抛售会自我强化？债券价格下跌 → 投资者账面亏损 → 杠杆投资者被迫卖出更多债券来补充保证金 → 价格进一步下跌，这就是所谓的‘负反馈循环’。",
+          "为什么印度是重要观察对象？印度经济增速高、内需大，曾被投资者当作新兴市场的‘安全避风港’，如果它的债券也在被抛售，说明全球利率上行压力已经超出了基本面差异。"
+        ]
+      }
     }
   ],
   "policy": [
     {
-      "title": "US to ban imports of some Canadian alcohol, dairy goods and motorbikes",
+      "title": "Oil hits $100 a barrel for first time since July after US and Houthi strikes",
       "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss",
-      "published": "2026-09-09 18:20",
-      "raw_summary": "It is the latest strike in a long trade war, and comes after Canadian counter-tariffs on US goods come into force.",
-      "insight": {}
+      "url": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-09-09 17:47",
+      "raw_summary": "Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday",
+      "insight": {
+        "what": "布伦特原油升至每桶100美元，为7月以来首次，因美国和胡塞武装发动打击。",
+        "why": "市场原本预期中东冲突局限于局部，此次打击将红海和霍尔木兹海峡的运输中断风险直接推到台前，能源价格和全球供应链成本面临全面上调。",
+        "chain": "美国和胡塞武装冲突升级 → 红海航道安全恶化 → 船只绕行好望角 → 运输时间拉长＋运费上升 → 全球供应链中断成本增加 → 进口商品价格上升 → 核心通胀上行 → 央行维持紧缩货币政策的概率上升 → 全球债券收益率上升；绕行好望角 → 有效运力下降 → 集装箱和油轮运价上涨 → 贸易成本转嫁至消费品价格",
+        "notes": [
+          "为什么红海航道重要？它是连接亚洲与欧洲最短的海上航线，占全球集装箱运输量的约30%。绕行好望角会使航程增加约10天和30%左右的燃油成本。",
+          "为什么供应链成本会推高核心通胀？核心通胀虽然剔除食品和能源，但运输成本上升会体现在所有进口商品的零售价上，像家具、服装等非能源商品的到岸成本都会提高。",
+          "为什么绕行会导致有效运力下降？同样数量的船在更长的航线上跑同样的次数需要更多时间，单位时间内能运输的货物总量减少，供给收缩 → 运费上升。"
+        ]
+      }
     },
     {
-      "title": "Ambassador Greer Issues Statement on President Trump’s Response to Canada’s Continued Retaliation Against the United States",
-      "source": "USTR",
-      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/september/ambassador-greer-issues-statement-president-trumps-response-canadas-continued-retaliation-against",
-      "published": "2026-09-09 10:19",
-      "raw_summary": "Ambassador Greer Issues Statement on President Trump’s Response to Canada’s Continued Retaliation Against the United States myarbrough Tue, 09/08/2026 - 22:19 WASHINGTON – Today, Ambassador Jamieson G",
-      "insight": {}
+      "title": "Houthi offensive on Bab el-Mandeb Strait threatens new Red Sea shipping crisis",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed",
+      "published": "2026-09-09 18:00",
+      "raw_summary": "A battle for control of Yemen’s coastal plains overlooking the strategic Bab el-Mandeb Strait, launched on Friday by Iran-aligned Houthi rebels, is rapidly intensifying into an all-out war with Saudi-",
+      "insight": {
+        "what": "胡塞武装进攻曼德海峡，威胁引发新一轮红海航运危机，美伊支持力量对抗升级。",
+        "why": "曼德海峡比霍尔木兹更狭窄，任何军事冲突都可能导致全球最重要的东西贸易动脉被切断，市场在为更长周期的运输中断和地缘对抗定价。",
+        "chain": "胡塞武装进攻曼德海峡 → 曼德海峡通行受限 → 红海航线被切断 → 全球1/3集装箱贸易绕行 → 运输周期拉长 → 库存成本上升 → 零售端补货延迟 → 物价上行压力 → 央行通胀容忍度降低 → 利率维持高位",
+        "notes": [
+          "为什么曼德海峡如此关键？它连接红海和亚丁湾，是亚洲到欧洲的必经之路，宽度仅约20公里，极易被岸基导弹封锁，绕行好望角需多走约3000海里。",
+          "为什么运输中断会推高利率？运输中断 → 供应短缺 → 价格上涨 → 通胀上行 → 央行不加息就无法抑制物价，但加息又进一步压制需求，形成两难。",
+          "什么是库存成本？企业为了应对运输延误，需要提前囤积更多原材料和成品，仓储和资金占用的成本上升，这些最终会转嫁给消费者。"
+        ]
+      }
     },
     {
-      "title": "Adjusting Certain Delegations Under the Defense Production Act",
-      "source": "White House",
-      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/adjusting-certain-delegations-under-the-defense-production-act-e2de/",
-      "published": "2026-09-09 02:52",
-      "raw_summary": "By the authority vested in me as President by the Constitution and the laws of the United States of America, it is hereby ordered: Section 1. Purpose. This order amends Executive Order 13603 of March ",
-      "insight": {}
+      "title": "South Korea supercharges defense budget to record levels",
+      "source": "Defense News",
+      "url": "https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/",
+      "published": "2026-09-09 17:23",
+      "raw_summary": "South Korea's record defense budget comes amid disparaging comments about Seoul's alliance with the United States by its president, Donald Trump.",
+      "insight": {
+        "what": "韩国将国防预算提升至纪录高位，受美韩联盟关系紧张和朝鲜威胁影响。",
+        "why": "韩国是东北亚关键盟友和芯片、汽车供应链重镇，军费激增意味着财政支出结构转向，短期内财政赤字和债券供给可能增加，影响韩国国债收益率和韩元汇率。",
+        "chain": "地缘紧张加剧 → 韩国军费预算创纪录 → 政府支出增加 → 财政赤字扩大 → 国债发行量上升 → 债券供给增加 → 韩国国债收益率上行；军费增加 → 国内军工企业订单上升 → 军工股表现活跃 → 但民生支出被挤占 → 内需承压",
+        "notes": [
+          "为什么国债供给增加会推高收益率？`价格 = 供需平衡`，政府发行更多债券时，市场上供给多了，为了让投资者买，只能提高收益率（即压低债券价格），这是典型的‘供给效应’。",
+          "为什么军费增加会挤占民生支出？财政预算是总量固定的，多花一块钱在军费上，就少一块钱花在基础设施或福利上，这就是‘挤出效应’，会影响短期经济活动。",
+          "为什么军工企业会受益？订单增加 → 收入预期上升 → 盈利预期上调 → 股价上涨，因为股价反映的是未来现金流的折现，预期变好立即反映在估值上。"
+        ]
+      }
     },
     {
-      "title": "Chrystia Freeland negotiated with Trump. Now she's watching a trade war unfold",
-      "source": "NPR",
-      "url": "https://www.npr.org/2026/09/08/nx-s1-5955613/chrystia-freeland-canada-us-trade-war-tariffs",
-      "published": "2026-09-08 18:46",
-      "raw_summary": "Chrystia Freeland understands the U.S.-Canada relationship from her time at the negotiating table. Here's what she sees now.",
-      "insight": {}
-    },
-    {
-      "title": "US-Canada tariff dispute weighs on cross-border ties",
-      "source": "DW",
-      "url": "https://www.dw.com/en/us-canada-tariff-dispute-weighs-on-cross-border-ties/a-78815803?maca=en-rss-en-world-4025-rdf",
-      "published": "2026-09-08 18:09",
-      "raw_summary": "As Canada's retaliatory tariffs take effect, Canadian and US car industries fear the trade war will hit them hard, while Canadians are cutting back on travel.",
-      "insight": {}
+      "title": "Caught between US and Iran, South Korea weighs Hormuz role",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/politics/article/3366903/caught-between-us-and-iran-south-korea-weighs-hormuz-role?utm_source=rss_feed",
+      "published": "2026-09-09 17:00",
+      "raw_summary": "South Korea is inching closer to a potentially risky military role in the Strait of Hormuz after sending a fact-finding team to the Middle East, with Seoul weighing US pressure to contribute against t",
+      "insight": {
+        "what": "韩国在美伊之间权衡是否派兵霍尔木兹海峡，正派考察团赴中东评估风险。",
+        "why": "韩国高度依赖中东原油进口，其立场表明制裁和军事冲突对全球主要经济体而言不是边缘事件，而是直接影响能源安全的中心议题，进而影响全球利率和汇率。",
+        "chain": "韩国考虑派兵霍尔木兹 → 海峡局势升温 → 韩国原油进口渠道受威胁 → 能源安全溢价上升 → 韩国贸易条件恶化 → 韩元贬值预期上升 → 外国投资者撤离韩债 → 韩国长端国债收益率上升",
+        "notes": [
+          "什么是贸易条件？一国出口价格与进口价格的比值。油价上涨时，韩国进口账单增加，出口收入没变，贸易条件恶化，经常账户转差。",
+          "为什么贸易条件恶化会导致货币贬值？进口支出 > 出口收入 → 经常账户赤字 → 需要更多外汇来支付进口账单 → 对美元需求增加 → 韩元贬值。",
+          "为什么外国投资者会撤离韩债？债券以韩元计价，若预期韩元贬值，即使收益率高，换成美元后的实际回报也可能为负，`实际回报 = 名义收益率 - 汇率贬值幅度`。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "BadRequestError: Error code: 400 - {'error': {'message': 'Anthropic Claude bad request: InvokeModel: operation error Bedrock Runtime: InvokeModel, https response error StatusCode: 400, RequestID: 2fe23326-622c-4101-bc28-124739afdc56, ValidationException: The provided model identifier is invalid. (request id: dff22fb2e166e4da1832652dedf6404c) [trace_id=3836a43c61c932019c8543fe3fd2f72a] (request id: 20260909213902434762697zrdnpgaWSbpDT)', 'type': '<nil>'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -96,7 +154,7 @@
       "tier": "stable"
     },
     "treasury_fr": {
-      "count": 1,
+      "count": 0,
       "tier": "optional"
     },
     "wsj_markets": {
@@ -104,7 +162,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 14,
+      "count": 13,
       "tier": "stable"
     },
     "cnbc_fin": {
@@ -112,7 +170,7 @@
       "tier": "stable"
     },
     "economist_fin": {
-      "count": 18,
+      "count": 17,
       "tier": "stable"
     },
     "wallstreetcn": {
@@ -136,11 +194,11 @@
       "tier": "optional"
     },
     "federal_register": {
-      "count": 1,
+      "count": 0,
       "tier": "stable"
     },
     "whitehouse": {
-      "count": 15,
+      "count": 13,
       "tier": "stable"
     },
     "ustr": {

@@ -11,6 +11,7 @@ import argparse
 import json
 import logging
 import sys
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ from core.models import CATEGORIES, CATEGORY_LABELS, Item       # noqa: E402
 from core.scoring import score_all                              # noqa: E402
 from core.seen import SeenStore                                  # noqa: E402
 from core.select import build_prompt, select                     # noqa: E402
-from core.timeutil import today_str                              # noqa: E402
+from core.timeutil import set_target_date, today_str                  # noqa: E402
 from fetchers.registry import SOURCES, fetch_all                 # noqa: E402
 
 DATA_DIR = ROOT / "data"
@@ -109,8 +110,17 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="不调用 LLM，只验证抓取与打分")
     ap.add_argument("--only", help="只跑指定板块（finance/ai/gov_military）或源 key，逗号分隔")
     ap.add_argument("--no-cache", action="store_true", help="忽略当日缓存，强制重新抓取")
+    ap.add_argument("--date", help="目标日期 YYYY-MM-DD，用于补跑历史日（默认今天）")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args()
+
+    if args.date:
+        try:
+            datetime.strptime(args.date, "%Y-%m-%d")
+        except ValueError:
+            print(f"--date {args.date!r} 不是 YYYY-MM-DD", file=sys.stderr)
+            return 2
+        set_target_date(args.date)
 
     setup_logging(args.verbose)
 

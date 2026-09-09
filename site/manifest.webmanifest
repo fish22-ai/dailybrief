@@ -1,6 +1,6 @@
 {
-  "name": "每日金融 sense",
-  "short_name": "每日金融 sense",
+  "name": "DailyBrief",
+  "short_name": "DailyBrief",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f5f6f8",

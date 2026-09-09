@@ -89,6 +89,17 @@ Fed / ECB / 白宫 / USTR / Economist / CNBC Finance 常常几天才发一条，
 ### 12. Windows 必须装 tzdata
 系统自带 Python 没有 IANA 时区库，缺了 `ZoneInfo("Asia/Shanghai")` 直接报错。
 
+### 13. 中转站 key 绑定 deepseek-v4-flash，且默认输出思考块（2026-09-10 实锤）
+用户的 agentrouter key（sk-wIIz...AbjK）只对 `deepseek-v4-flash` 有通道/额度：
+claude-opus-5 走它报 402「Budget pool quota has been exhausted」（池无额度/无通道）。
+裸 requests 直连还被它 401「unauthorized client」拦（客户端指纹校验），必须走
+anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% 输出预算**，
+16000 max_tokens 正文还没写就被截断、白烧重试。处理（已落进 config.toml）：
+- `[llm] model = "deepseek-v4-flash"`（当前 key 只能用它）
+- `[llm] disable_thinking = true` → SDK 传 `thinking={"type":"disabled"}`，中转站认
+- `[output] per_category = 4`（thinking 关掉后 9 张仍贴 16000 上限）
+换回 claude key 时：模型改回 claude-opus-5、disable_thinking 可关、每板块可回 5。
+
 ## 验证到什么程度
 
 | 部分 | 状态 |

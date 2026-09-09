@@ -96,3 +96,12 @@ def get_float(section: str, key: str, default: float, cfg: dict | None = None,
                     section, key, val, hi, hi)
         return hi
     return val
+
+
+def get_bool(section: str, key: str, default: bool, cfg: dict | None = None) -> bool:
+    val = _section(section, cfg).get(key, default)
+    if not isinstance(val, bool):
+        log.warning("config [%s] %s 应为布尔值，收到 %r，改用默认值 %r",
+                    section, key, val, default)
+        return default
+    return val

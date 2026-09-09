@@ -88,6 +88,9 @@ _PF_PARAMS = _PF[1] if _PF else {}
 # 5 是配合"每环只写一个步骤"的写法 —— 步骤短了，需要的环数反而少了。
 MODEL = config.get_str("llm", "model", "claude-opus-5")
 MAX_TOKENS = config.get_int("llm", "max_tokens", 16000, lo=2000, hi=64000)
+# 中转站的模型（如 deepseek-v4-flash）默认输出思考块，思考 token 会吃掉大半
+# 输出预算，正文还没写就撞 max_tokens 截断。默认关掉，省下的全给 JSON 正文。
+DISABLE_THINKING = config.get_bool("llm", "disable_thinking", True)
 MAX_RETRIES = config.get_int("llm", "max_retries", 1, lo=0, hi=3)
 # 中转站是多通道轮询：同一个模型名，这次可能落到好通道、下次落到坏通道（500 /
 # 把请求转给 Bedrock 后报"模型标识无效"）。这类错误换次通道就好，所以单独给一份
@@ -440,9 +443,10 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
     # 两者共用计数上限，够用且不会把一天的调用次数放大到失控。
     for attempt in range(1, MAX_RETRIES + UPSTREAM_RETRIES + 2):
         try:
-            resp = client.messages.create(
-                model=MODEL, max_tokens=MAX_TOKENS, messages=messages,
-            )
+            create_kwargs = dict(model=MODEL, max_tokens=MAX_TOKENS, messages=messages)
+            if DISABLE_THINKING:
+                create_kwargs["thinking"] = {"type": "disabled"}
+            resp = client.messages.create(**create_kwargs)
             text = "".join(b.text for b in resp.content if b.type == "text")
         except Exception as exc:
             last_err = f"{type(exc).__name__}: {exc}"

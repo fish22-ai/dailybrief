@@ -632,7 +632,7 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <footer>{esc(FOOTER)}<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>
-<script>{DECK_JS}</script>
+{DECK_JS}
 </body></html>"""
 
 

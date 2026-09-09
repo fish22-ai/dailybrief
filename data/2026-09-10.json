@@ -1,0 +1,220 @@
+{
+  "date": "2026-09-10",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "‘I am the house now’: Bessent warns currency traders not to bet against yen",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/38d718f6-110b-4822-9403-f7d12a48cfa8?syn-25a6b1a6=1",
+      "published": "2026-09-09 16:26",
+      "raw_summary": "Comments follow July’s rare joint intervention with Tokyo to support Japanese currency",
+      "insight": {
+        "what": "美国财长贝森特警告交易员勿做空日元，称美国是日元的后盾，此前美日曾联合干预支撑日元。",
+        "why": "市场可能原本预期日本单独干预效果有限，贝森特表态暗示美国可能参与支持日元，改变了对日元汇率和干预风险的定价。",
+        "chain": "美国财长表态支持日元 → 干预可信度增加 → 做空日元风险上升 → 日元空头平仓 → 日元升值 → 日本出口企业盈利预期下降 → 日股承压；日元升值 → 套息交易逆转 → 新兴市场货币承压",
+        "notes": [
+          "做空日元：借入日元（低利率）换成高收益货币，若日元升值，还债成本增加，空头受损。",
+          "套息交易：借低利率货币（如日元）投高收益资产，赚利差；日元升值迫使交易平仓，卖出高收益资产，回流日元。",
+          "为什么美国表态重要？日本单独干预需要消耗美元储备，美国配合则干预能力更强，市场更信日元走强。",
+          "干预：央行直接买卖外汇影响汇率，如卖出美元买入日元。"
+        ]
+      }
+    },
+    {
+      "title": "Oil nears $100 as US launches new strikes on Iranian tankers",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/b460b828-6183-4914-9140-5dfb6d61312c?syn-25a6b1a6=1",
+      "published": "2026-09-09 15:13",
+      "raw_summary": "American military hit ‘multiple’ ships linked to Revolutionary Guards following attempted missile attacks on US warship",
+      "insight": {
+        "what": "美国对伊朗油轮发动新打击，油价逼近每桶100美元，创数月新高。",
+        "why": "市场原本预期美伊冲突可控，这次攻击提升供应中断风险，油价上涨，影响通胀和央行政策预期。",
+        "chain": "美国打击伊朗油轮 → 伊朗石油出口受阻 → 全球原油供应减少 → 油价上涨 → 通胀预期上升 → 央行更鹰派 → 降息预期下降 → 债券收益率上升 → 股市估值承压；油价上涨 → 石油出口国受益 → 相关股市和货币走强",
+        "notes": [
+          "为什么油价影响通胀？石油是工业血液，油价上涨直接推高运输和化工成本，传导至消费品价格。",
+          "债券收益率上升为什么压低股市？无风险利率 Rf 上升，折现率上升，股票现值下降。`P = D/(r-g)`，r 升则 P 降。",
+          "鹰派 = 倾向于加息或减少降息，以压制通胀；鸽派反之。",
+          "石油出口国如沙特、俄罗斯受益，进口国如日本、印度受损。"
+        ]
+      }
+    },
+    {
+      "title": "摩根大通、Jane Street被调查 凸显印度对华尔街机构的监管趋严",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3162523",
+      "published": "2026-09-09 18:03",
+      "raw_summary": "印度正在加强对华尔街交易机构的审查。在该国规模5万亿美元的股票市场中，证券监管机构越发积极作为，甚至把目标对准了摩根大通等知名国际机构。印度证券交易委员会(SEBI)近日指控摩根大通的毛里求斯子公司执行了操纵性股票交易。去年，SEBI还指控美国金融巨头Jane Street操纵市场，这是它对外资机构采取的最有力行动之一。Jane Street已否认该指控。知情人士称，SEBI已在内部释放信号，表明",
+      "insight": {
+        "what": "印度监管机构SEBI指控摩根大通毛里求斯子公司操纵交易，加强对外资机构审查。",
+        "why": "市场原本认为印度市场对外资友好，监管趋严增加合规成本，可能减缓外资流入，影响印度市场流动性和卢比汇率。",
+        "chain": "印度监管趋严 → 外资合规成本上升 → 部分外资撤离 → 印度股市资金流出 → 卢比贬值 → 进口成本上升 → 通胀压力增加；外资撤离 → 印度债券抛售 → 债券价格下跌 → 收益率上升",
+        "notes": [
+          "监管趋严：增加调查、处罚，提高外资交易成本，可能降低市场吸引力。",
+          "为什么资金流出压贬卢比？外资卖出印度资产换回美元，美元需求增加，卢比供应增加，卢比贬值。",
+          "债券价格与收益率反比：`P = C/(1+y) + (C+F)/(1+y)^2`，y 升则 P 降。",
+          "印度市场规模5万亿美元，外资对新兴市场配置变化影响显著。"
+        ]
+      }
+    },
+    {
+      "title": "美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3162512",
+      "published": "2026-09-09 17:53",
+      "raw_summary": "",
+      "insight": {
+        "what": "美国2年期国债收益率上行至4.42%，创2025年1月以来新高。",
+        "why": "收益率创新高意味着市场对降息预期大幅降温，甚至可能重新定价加息，影响全球资产估值。",
+        "chain": "经济数据强 → 通胀预期上升 → 降息预期下降 → 短端利率上行 → 2Y美债收益率↑ → 无风险利率Rf上升 → 成长股估值承压；同时美元走强 → 新兴市场资本外流 → 新兴市场货币贬值",
+        "notes": [
+          "为什么2年期国债？它对政策利率最敏感，反映市场对未来两年利率路径的预期。",
+          "收益率上升债券价格下跌：`P = C/(1+y) + (C+F)/(1+y)^2`，y↑则P↓。",
+          "为什么成长股更受伤？成长股现金流远，折现率上升现值下降更多。`PV = CF/(1+r)^t`，t大则影响大。",
+          "美元走强原因：高利率吸引资本流入美国，美元需求增加。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Oil hits $100 a barrel for first time since July after US and Houthi strikes",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-09-09 17:47",
+      "raw_summary": "Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday",
+      "insight": {
+        "what": "美国和中东冲突升级，油价突破每桶100美元，为去年7月以来首次。",
+        "why": "油价突破100美元改变市场对通胀的预期，可能迫使央行维持高利率，影响全球风险资产。",
+        "chain": "地缘冲突升级 → 供应中断风险增加 → 油价突破100 → 通胀预期上升 → 央行更鹰 → 降息预期下降 → 债券收益率上升 → 股市估值承压；同时油价高 → 航运成本升 → 全球贸易成本升 → 经济增长预期降",
+        "notes": [
+          "为什么100美元是心理关口？突破后可能引发投机性和恐慌性买入，加剧上涨。",
+          "央行更鹰 = 倾向于加息或减少降息，以抑制通胀。",
+          "利率高位更久：市场预期降息推迟，债券收益率维持高位，股票估值受压。",
+          "航运成本升：油价涨推高燃料费，商品运输成本上升，进一步推高通胀。"
+        ]
+      }
+    },
+    {
+      "title": "Houthi offensive on Bab el-Mandeb Strait threatens new Red Sea shipping crisis",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed",
+      "published": "2026-09-09 18:00",
+      "raw_summary": "A battle for control of Yemen’s coastal plains overlooking the strategic Bab el-Mandeb Strait, launched on Friday by Iran-aligned Houthi rebels, is rapidly intensifying into an all-out war with Saudi-",
+      "insight": {
+        "what": "胡塞武装进攻曼德海峡附近沿海地区，红海航运危机风险再现。",
+        "why": "红海是全球关键航运通道，胡塞武装行动威胁通行安全，可能推高运输成本和油价，影响全球供应。",
+        "chain": "胡塞进攻 → 红海安全恶化 → 油轮绕行 → 运输成本上升 → 油价上涨 → 通胀预期上升 → 央行更鹰 → 债券收益率上升；同时绕行 → 船期延误 → 供应链紧张 → 商品价格上升",
+        "notes": [
+          "红海通道：连接地中海和印度洋，全球约12%贸易经过，油轮重要通道。",
+          "绕行：避开红海走好望角，航程增加数千公里，时间和燃油成本大幅上升。",
+          "供应链紧张：货物延迟到达，导致部分商品短期供不应求，价格上涨。",
+          "通胀预期上升：成本推升型通胀，可能迫使央行更长时间维持高利率。"
+        ]
+      }
+    },
+    {
+      "title": "South Korea supercharges defense budget to record levels",
+      "source": "Defense News",
+      "url": "https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/",
+      "published": "2026-09-09 17:23",
+      "raw_summary": "South Korea's record defense budget comes amid disparaging comments about Seoul's alliance with the United States by its president, Donald Trump.",
+      "insight": {
+        "what": "韩国将国防预算提升至创纪录水平，应对朝鲜威胁及对美同盟不确定性。",
+        "why": "国防预算增加可能扩大财政赤字，影响韩国国债收益率，同时军工企业受益。",
+        "chain": "地缘紧张 → 国防预算增加 → 政府支出增加 → 财政赤字扩大 → 发债增加 → 国债收益率上升 → 韩元承压；同时军工企业订单增 → 相关股票上涨",
+        "notes": [
+          "财政赤字：政府支出超过收入，需要发债融资，增加债券供给，压低价格，抬高收益率。",
+          "国债收益率与价格反比：`P = C/(1+y) + (C+F)/(1+y)^2`，y升则P降。",
+          "为什么收益率上升压韩元？高利率可能吸引资本，但财政赤字恶化可能削弱信心，净效应取决于经济基本面。",
+          "军工股是直接受益者，订单增长确定性高。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 17,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 0,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    }
+  }
+}

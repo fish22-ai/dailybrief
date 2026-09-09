@@ -1,102 +1,167 @@
 {
   "date": "2026-09-07",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
-      "title": "日本外汇储备连续第四个月下降",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3161015",
-      "published": "2026-09-07 08:32",
-      "raw_summary": "当地时间9月7日，日本财务省公布的数据显示，截至8月底，日本外汇储备约为12075亿美元，较上月底减少795.75亿美元，连续4个月下降。有分析称，这主要受到日本政府和央行于7月底实施的买入日元、卖出美元的外汇干预等因素影响。日本政府和央行7月底干预日元汇率，外汇储备变化受到市场关注。日本财务省公布8月数据时曾表示，从交易达成到结算需要数天时间，7月底干预汇率的影响未反映在8月统计数据中。（央视新",
-      "insight": {}
-    },
-    {
-      "title": "Inflation is back around the world—as is the fight against it",
-      "source": "The Economist",
-      "url": "https://www.economist.com/finance-and-economics/2026/09/06/inflation-is-back-around-the-world-as-is-the-fight-against-it",
-      "published": "2026-09-06 23:39",
-      "raw_summary": "Central banks are raising interest rates again",
-      "insight": {}
-    },
-    {
-      "title": "内蒙古发行15年期普通专项地方债，规模6.4952亿元，发行利率2.0800%，边际倍数15.37倍，倍数预期2.07。",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3161067",
-      "published": "2026-09-07 11:18",
-      "raw_summary": "",
-      "insight": {}
-    },
-    {
-      "title": "Sugar is outperforming the stock market this year. Here's what's driving it, and where it can go from here",
+      "title": "September Fed decision is now a coin flip as rate hike odds increase post Warsh",
       "source": "CNBC Finance",
-      "url": "https://www.cnbc.com/2026/09/06/sugar-is-outperforming-the-stock-market-this-year-whats-driving-it.html",
-      "published": "2026-09-06 21:19",
-      "raw_summary": "The sweetener's prices surged last week, reflecting a sharp deterioration in the global supply outlook.",
-      "insight": {}
+      "url": "https://www.cnbc.com/2026/08/28/-september-fed-decision-now-a-coin-flip-as-rate-hike-odds-increase.html",
+      "published": "2026-08-28 23:22",
+      "raw_summary": "Odds rose after Warsh's speech in Jackson Hole, Wyo., where he discussed that he still is frustrated with the overall inflation trend.",
+      "insight": {
+        "what": "沃什在杰克逊霍尔讲话称对通胀趋势不满，市场认为美联储9月加息概率升至约50%。",
+        "why": "此前市场普遍押注9月不加息，这一表态打破了降息甚至不加息的共识，利率路径被重新定价，短端美债、美元和成长股首当其冲。",
+        "chain": "通胀顽固 → 沃什放鹰 → 9月加息概率升至50% → 短端利率预期上行 → 2Y美债收益率↑ → 高估值成长股承压；加息预期强化 → 美元走强 → 新兴市场资本外流压力",
+        "notes": [
+          "鹰派：优先打压通胀，倾向加息；鸽派：优先保就业促增长，倾向降息。",
+          "9月加息概率是联邦基金期货市场交易出来的，反映市场对美联储下次会议行动的押注。",
+          "短端国债（如2年期）受政策利率预期影响最大，长端（如10年期）更受经济增长和通胀长期预期影响。",
+          "债券价格和收益率反向：`P = C/(1+y)^1 + ... + (C+Face)/(1+y)^n`，收益率y上升，价格P下降。",
+          "成长股现金流多在远期，折现率上升时现值下降更明显：`PV = CF_1/(1+r)^1 + ... + CF_n/(1+r)^n`，r升，远期项缩水更大。",
+          "美元走强意味着其他货币资产相对贬值，新兴市场资金流向美元资产，带来资本外流和本币贬值压力。"
+        ]
+      }
     },
     {
-      "title": "US regulator sues ISS as it steps up scrutiny of proxy advisers",
+      "title": "中信证券：市场目前还是以震荡为主 不用恐慌海外利率的问题",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3160968",
+      "published": "2026-09-06 21:07",
+      "raw_summary": "中信证券研报指出，美联储9月是否加息，并不足以决定长端利率与权益市场方向。在AI技术快速发展的时代背景下，政府债券这种传统意义上的“安全资产”需求下滑应该是趋势性的，欧美国债被抛售的现象是经济和市场运行逻辑的结果，而不应该被当作预测短期股票走势的原因。",
+      "insight": {
+        "what": "中信证券称美联储9月加息不决定长端利率和股市方向，长期国债需求下滑是趋势性，不是短期股市原因。",
+        "why": "这条观点试图降低市场对美联储路径的过度敏感，把长端利率上行归因于结构性因素，若被认可，将削弱利率预期对股票的传导强度。",
+        "chain": "AI时代政府债券需求趋势下滑 → 长端国债被抛售 → 期限溢价上升 → 长端收益率高位 → 市场降低对加息的过度反应 → 股市更关注盈利而非利率短期变化",
+        "notes": [
+          "长端利率由预期通胀、实际利率和期限溢价组成；期限溢价是投资者持有长期债要求的额外补偿。",
+          "AI时代资金转向风险资产，政府债券需求下滑，导致其价格走低、收益率上行。",
+          "如果市场相信长端利率是结构性上行，那么对美联储短期行动的反应会钝化。",
+          "中信证券提醒勿把长债抛售当股市短期预测指标，源于利率和股市间传导链存在不确定性。"
+        ]
+      }
+    },
+    {
+      "title": "财政部将发行特别国债支持8家中央金融企业补充资本",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3160961",
+      "published": "2026-09-06 19:22",
+      "raw_summary": "财政部将于近期发行3000亿元特别国债，支持8家中央金融企业补充核心一级资本。 当日，工商银行、农业银行、进出口银行、中国信保、中国人保、中国人寿集团、中国太平、中国再保等8家中央金融企业分别发布了增资计划。 业内人士表示，此次财政部对8家中央金融企业增资，属于“未雨绸缪”的前瞻性安排，是支持中央金融企业高质量发展、助力宏观经济行稳致远的主动作为。（新华社）",
+      "insight": {
+        "what": "财政部将发行3000亿元特别国债，为8家中央金融企业补充核心一级资本。",
+        "why": "此非直接货币政策，但通过注资强化金融系统稳健，增加信贷供给能力，有利于稳定国内资产价格和信用环境。",
+        "chain": "发行特别国债 → 中央金融企业获注资 → 核心一级资本充足率提高 → 银行信贷扩张能力增强 → 实体经济融资改善 → 企业盈利预期上升 → 股市风险偏好改善",
+        "notes": [
+          "特别国债是政府为特定目的发行的债券，不纳入一般赤字。",
+          "核心一级资本是最能吸收损失的资本，充足率=核心一级资本/风险加权资产。",
+          "注资提高资本充足率，使银行可放贷上限提升，可能增加货币供给。",
+          "发行国债会吸收市场流动性，但央行可能配合操作平滑影响。"
+        ]
+      }
+    },
+    {
+      "title": "Trump’s Iran war sends US diesel prices to record high",
       "source": "FT Markets",
-      "url": "https://www.ft.com/content/ecab45a4-6786-4151-a998-f64279457435?syn-25a6b1a6=1",
-      "published": "2026-09-06 05:35",
-      "raw_summary": "The SEC accuses the firm of ignoring a subpoena as part of its ‘fact-finding investigation’",
-      "insight": {}
+      "url": "https://www.ft.com/content/aa71ca9a-b64f-41b6-8e6f-00ce03a47553?syn-25a6b1a6=1",
+      "published": "2026-09-04 19:08",
+      "raw_summary": "Cost of fuel crucial to American industry rises above 2022 peak, threatening new inflationary burst ahead of November elections",
+      "insight": {
+        "what": "特朗普对伊朗发动战争，美国柴油价格升至创纪录高位，超2022年峰值。",
+        "why": "柴油是工业关键燃料，价格创新高直接推升生产成本和运输费用，加剧通胀担忧，影响美联储政策路径和选举经济预期。",
+        "chain": "美伊冲突 → 伊朗石油供应中断 → 全球原油供给减少 → 柴油价格上涨 → 运输和工业成本上升 → 通胀预期升温 → 加息预期增强 → 油价上涨也拖累消费和股市",
+        "notes": [
+          "柴油是汽油和取暖油的中间品，生产依赖原油，其价格对工业成本敏感。",
+          "供应冲击推高油价，是成本推动型通胀，会压缩企业利润和消费者实际购买力。",
+          "地缘风险还会推高避险资产如黄金，股市则因不确定性而波动。",
+          "柴油上涨通过CPI中的交通分项直接传导到通胀数据。"
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Hong Kong’s yuan pool is growing. Can it turn liquidity into global demand?",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/business/banking-finance/article/3366493/hong-kongs-yuan-pool-growing-can-it-turn-liquidity-global-demand?utm_source=rss_feed",
-      "published": "2026-09-07 09:00",
-      "raw_summary": "Hong Kong’s top financial regulators have urged local banks to make greater use of the city’s growing pool of offshore yuan liquidity, while also flagging the need to prepare for a coming wave of auto",
-      "insight": {}
-    },
-    {
-      "title": "North Korea’s Kim launches second nuclear destroyer as US-South Korea-Japan drills start",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/asia/east-asia/article/3366573/north-koreas-kim-launches-second-nuclear-destroyer-us-south-korea-japan-drills-start?utm_source=rss_feed",
-      "published": "2026-09-07 10:03",
-      "raw_summary": "North Korean leader Kim Jong-un commissioned his second naval destroyer and called for building a more reliable nuclear deterrent, state media reported on Monday, as the US, South Korea and Japan bega",
-      "insight": {}
-    },
-    {
-      "title": "US envoys Witkoff and Kushner hold Ukraine talks after meeting Putin",
-      "source": "DW",
-      "url": "https://www.dw.com/en/us-envoys-witkoff-and-kushner-hold-ukraine-talks-after-meeting-putin/a-79054779?maca=en-rss-en-world-4025-rdf",
-      "published": "2026-09-07 06:22",
-      "raw_summary": "US envoys Steve Witkoff and Jared Kushner held talks with Ukrainian President Volodymyr Zelenskyy in Kyiv, seeking to revive efforts to end the war. But the latest diplomatic push seems to have produc",
-      "insight": {}
-    },
     {
       "title": "Iran warns of 'faster, heavier, more painful response' to US attacks",
       "source": "BBC",
       "url": "https://www.bbc.co.uk/news/articles/cp8d56w7d9po?at_medium=RSS&at_campaign=rss",
       "published": "2026-09-07 01:00",
       "raw_summary": "The comments came a day after Washington said it had struck Iranian oil tankers in response to Tehran's attacks on US warships in the region.",
-      "insight": {}
+      "insight": {
+        "what": "伊朗警告称，对美国的袭击将作出更快、更重、更痛苦的回应。此前美国击中海湾地区伊朗油轮。",
+        "why": "美伊冲突升级直接威胁霍尔木兹海峡石油运输，全球原油供应风险加大，市场重新定价地缘溢价。",
+        "chain": "美伊互袭 → 霍尔木兹海峡通行风险上升 → 原油供应中断担忧 → 布伦特油价上涨 → 能源股走强 → 通胀预期上升 → 美联储降息概率下降 → 全球风险资产承压",
+        "notes": [
+          "霍尔木兹海峡是全球约三分之一石油贸易的通道，封锁风险直接冲击油价。",
+          "地缘冲突会抬高避险资产（黄金、美元），压低风险资产（股市）。",
+          "油价通过通胀预期影响央行政策，若冲突推高通胀，央行可能保持紧缩。",
+          "能源价格上涨对新兴市场打压更甚，因为其进口依赖度高。"
+        ]
+      }
     },
     {
       "title": "German exit polls suggest far-right party has big lead in regional election",
       "source": "NPR",
-      "url": "https://www.npr.org/2026/09/06/nx-s1-5955677/german-afd-far-right-exit",
+      "url": "https://www.npr.org/2026/09/06/nx-s1-5955677/german-exit-polls-suggest-far-right-party-big-lead-in-regional-election",
       "published": "2026-09-07 00:36",
-      "raw_summary": "Exit polls show Germany's AfD taking a commanding lead in a regional election, but it remains unclear whether the far-right party can form the country's first state government since World War II.",
-      "insight": {}
+      "raw_summary": "The Alternative for Germany party has a strong lead in a regional election, but it is unclear if it will be able to form Germany's's first far-right state government since WWII, exit polls indicate.",
+      "insight": {
+        "what": "德国出口民调显示极右翼选择党在地区选举中大幅领先，但组阁不确定。",
+        "why": "极右翼崛起增加德国政治不稳定性，可能影响财政政策和欧盟关系，重估德国国债。",
+        "chain": "极右翼领先 → 政治不确定性上升 → 财政政策前景不定 → 德国国债风险溢价上升 → 收益率上升 → 欧元承压 → 欧洲股市波动",
+        "notes": [
+          "极右翼政党倾向反欧盟和限制移民，可能改变德国对欧盟财政一体化态度。",
+          "风险溢价是投资者要求的额外补偿，政治不稳导致投资者要求更高收益率。",
+          "德国国债收益率上升会传导至整个欧元区借贷成本。",
+          "政治不确定性通常导致资本外流，本币贬值。"
+        ]
+      }
+    },
+    {
+      "title": "U.S. strikes three Iranian oil tankers in renewal of hostilities",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/09/05/nx-s1-5959181/u-s-strikes-three-iranian-oil-tankers-in-renewal-of-hostilities",
+      "published": "2026-09-06 05:01",
+      "raw_summary": "The U.S. strikes three Iranian oil tankers after Iran targets two American warships, in the latest exchange over shipping and the Strait of Hormuz.",
+      "insight": {
+        "what": "美国袭击伊朗三艘油轮，以回应伊朗攻击美国军舰，双方在霍尔木兹海峡冲突加剧。",
+        "why": "直接军事冲突显著提升中东供应中断风险，强化油价上行预期，并可能拖累全球增长。",
+        "chain": "美国袭击伊朗油轮 → 伊朗誓言报复 → 中东紧张升级 → 原油供应中断风险增大 → 油价急涨 → 全球通胀预期上升 → 央行加息预期增强 → 股市和债市承压",
+        "notes": [
+          "油轮袭击直接影响海上石油运输，导致保险费用上升和运力下降。",
+          "油价上涨通过成本推动型通胀传导，削弱消费者购买力。",
+          "地缘风险急升时，资金转向避险资产，如美元、日元和黄金。",
+          "冲突可能引发制裁扩大，进一步限制伊朗石油出口。"
+        ]
+      }
+    },
+    {
+      "title": "US to seek back payment from Europe for Ukraine aid, Trump says",
+      "source": "Defense News",
+      "url": "https://www.defensenews.com/global/europe/2026/09/04/us-to-seek-back-payment-from-europe-for-ukraine-aid-trump-says/",
+      "published": "2026-09-04 18:42",
+      "raw_summary": "U.S. President Donald Trump said he would ask European nations to pay back the United States for military aid and munitions previously sent to Ukraine.",
+      "insight": {
+        "what": "特朗普称将要求欧洲国家偿还美国此前提供的乌克兰军事援助款项。",
+        "why": "此举可能影响美欧同盟关系，并引发美欧贸易投资不确定性，重估欧洲资产和欧元。",
+        "chain": "美国要求偿还援乌款项 → 美欧关系紧张 → 贸易政策不确定性 → 欧元区经济增长预期下行 → 欧洲股市承压 → 欧元贬值 → 避险资金流向美元",
+        "notes": [
+          "对外援助若要求偿还，相当于财政转移逆转为债务，影响受援国财政。",
+          "地缘同盟关系紧张可能阻碍贸易谈判，提高关税风险。",
+          "欧洲增长预期下调会拖累欧元汇率和欧洲资产价格。",
+          "美元作为避险货币在不确定时期往往升值。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'API key is invalid.'}, 'request_id': None}",
   "source_stats": {
     "fed": {
-      "count": 3,
+      "count": 2,
       "tier": "stable"
     },
     "ecb": {
-      "count": 6,
+      "count": 4,
       "tier": "stable"
     },
     "treasury_fr": {
-      "count": 3,
+      "count": 0,
       "tier": "optional"
     },
     "wsj_markets": {
@@ -104,7 +169,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 13,
+      "count": 9,
       "tier": "stable"
     },
     "cnbc_fin": {
@@ -112,7 +177,7 @@
       "tier": "stable"
     },
     "economist_fin": {
-      "count": 17,
+      "count": 15,
       "tier": "stable"
     },
     "wallstreetcn": {
@@ -120,7 +185,7 @@
       "tier": "stable"
     },
     "eastmoney": {
-      "count": 19,
+      "count": 15,
       "tier": "optional"
     },
     "ft_markets": {
@@ -136,11 +201,11 @@
       "tier": "optional"
     },
     "federal_register": {
-      "count": 3,
+      "count": 0,
       "tier": "stable"
     },
     "whitehouse": {
-      "count": 8,
+      "count": 5,
       "tier": "stable"
     },
     "ustr": {
@@ -156,11 +221,11 @@
       "tier": "stable"
     },
     "defensenews": {
-      "count": 20,
+      "count": 13,
       "tier": "stable"
     },
     "un_news": {
-      "count": 20,
+      "count": 14,
       "tier": "optional"
     },
     "npr_world": {
