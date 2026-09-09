@@ -2,13 +2,14 @@
 
 > 给下一个会话看的断点记录。设计原则与完整实测记录在 `../CLAUDE.md`，
 > 使用说明在 `README.md`，这里只记「做到哪了、为什么这么做、下一步做什么」。
-> 最后更新：2026-09-06（解读改版为四段结构）
+> 最后更新：2026-09-10（自动化切到本机任务计划程序 + 开机补跑）
 
 ## 一句话现状
 
 每日金融 sense 站已全链路跑通并通过 104 项单测，**规则模式**可用（能抓能筛能出页面），
-**真实 API key 调用在五字段时代验证过一次**，**解读已改版为四段结构（what/why/chain/notes）
-但改版后尚未用真实 key 跑过**，**尚未配置任何自动化调度**（退出终端后不会自己更新）。
+**真实 API key 调用在五字段时代验证过一次**，**解读已改版为四段结构（what/why/chain/notes）**。
+自动化已切到**本机 Windows 任务计划程序**（每周一 08:00 + 开机补跑），
+GitHub Actions 定时已停用（第三方 key 云端不可用）。
 
 ## 项目定位（这是最重要的一条）
 
@@ -141,13 +142,15 @@ Fed / ECB / 白宫 / USTR / Economist / CNBC Finance 常常几天才发一条，
 
 ## 待办（按优先级）
 
-1. **把 key 写进环境变量**（目前只在一次性命令里临时传入，没有持久化）：
-   `setx ANTHROPIC_API_KEY "<key>"`，然后新开终端。key 是第三方中转站的，
-   不要提交进版本库。
-2. **注册自动化**（脚本都已就绪，但**尚未注册**，所以现在退出终端不会再更新）：
-   - 方案 A 本机：`schtasks /create /tn "DailyBrief" /tr "D:\吃鱿鱼的鱿鱼\dailybrief\scripts\daily.bat" /sc daily /st 07:23`
-   - 方案 B 云端：`.github/workflows/daily.yml` 已写好，但项目还不是 git 仓库、无远端
-   - 注意 `scripts/daily.bat` **必须保持 CRLF 换行**，LF 在 cmd 下会逐字符报错（已踩）
+1. **把 key 写进用户环境变量**（仍未持久化，没做就会整天 rules 模式）：
+   cmd：`setx ANTHROPIC_API_KEY "<key>"`，然后重开终端。key 是第三方中转站的，
+   不要提交进版本库。BASE_URL 已是用户级 `https://agentrouter.org`。
+2. **本机自动化已完成并注册**：`scripts/install_task.ps1` 注册了「DailyBrief」任务，
+   每周一 08:00（本地时间）+ `StartWhenAvailable` 开机补跑 + 单实例
+   （`MultipleInstances=IgnoreNew`）；卸载用 `scripts/uninstall_task.ps1`。
+   `scripts/daily.bat` 已加固：干净工作区预检、失败即退出、只 add data/site、
+   push 失败保留本地提交下次续推。**首次真实运行前工作区仍是脏的，任务会拒绝执行**，
+   需先手动同步/清理（main 分叉 ahead 1 / behind 6）。
 3. 每天要不要省掉那次截断重试？把 `TOP_N` 从 5 调到 4 就不会撞 `max_tokens=16000`。
    代价是每板块少一条。目前维持 5 条 + 一次重试。
 4. ~~闸门阈值偏宽松~~ **已确认不用改**：实测 LLM 会二次过滤掉过闸的软新闻
@@ -158,12 +161,13 @@ Fed / ECB / 白宫 / USTR / Economist / CNBC Finance 常常几天才发一条，
 
 ## 环境事实
 
-- 代码：`D:\吃鱿鱼的鱿鱼\dailybrief\`，**不是 git 仓库**，无远端。
+- 代码：`D:\吃鱿鱼的鱿鱼\dailybrief\`，**已是 git 仓库**，远端
+  `https://github.com/fish22-ai/dailybrief.git`。**当前 main 与 origin/main 分叉
+  （ahead 1 / behind 6）且工作区有未提交修改** —— 自动任务会因此拒绝运行，需先人工处理。
 - Python 3.13.2 在 `C:\Users\吃鱿鱼的鱿鱼\AppData\Local\Programs\Python\Python313\python.exe`；
   依赖已 `--user` 装好（requests / feedparser / bs4 / lxml / anthropic / tzdata）。
-- `ANTHROPIC_API_KEY` **未持久化** → 直接跑 `run_daily.py` 会走规则模式，
-  key 每次都要在命令里临时传。
-- 环境里有 `ANTHROPIC_BASE_URL=https://agentrouter.org`（第三方中转站）和一个属于
-  Claude Code 会话本身的 `ANTHROPIC_AUTH_TOKEN`。**SDK 会优先用 AUTH_TOKEN**，
-  所以拿用户的 key 跑时要 `env -u ANTHROPIC_AUTH_TOKEN`，否则用的不是那把 key。
-- 中文输出需要 `PYTHONIOENCODING=utf-8`，否则 Windows 终端 gbk 报错。
+- `ANTHROPIC_API_KEY` **用户级未持久化** → 计划任务会走规则模式；`setx` 后重开终端。
+- 用户级 `ANTHROPIC_BASE_URL=https://agentrouter.org` 已设；Claude Code 会话自带
+  `ANTHROPIC_AUTH_TOKEN`，**SDK 会优先用 AUTH_TOKEN**，拿用户的 key 跑时要
+  `env -u ANTHROPIC_AUTH_TOKEN`，否则用的不是那把 key。
+- 中文输出需要 `PYTHONIOENCODING=utf-8`；`daily.bat` 必须 CRLF（`.gitattributes` 锁定）。

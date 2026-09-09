@@ -18,6 +18,16 @@ concurrency:
 
 jobs:
   build:
+    # 【云端定时已停用】key 是第三方中转站的，GitHub Actions 那边没有能用的端点，
+    # 定时跑只会产出 mode=rules（0 条解读）的数据并推回仓库，盖掉本机跑出来的好数据。
+    # 现在由本机的「任务计划程序」跑 scripts/daily.bat 生成并推送，
+    # 站点部署交给 pages.yml（收到 push 就部署）。
+    #
+    # 上面的 cron 行保留不删：apply_config.py 找不到它会直接报错。定时照常触发，
+    # 但下面这行 if 会让整个 job 立刻跳过，deploy 因为 needs: build 也跟着跳过。
+    # 想恢复云端跑：删掉这行 if，并把能在 api.anthropic.com 直连的官方 key
+    # 存进仓库 Secrets 的 ANTHROPIC_API_KEY。
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

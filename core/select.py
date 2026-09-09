@@ -33,6 +33,7 @@ import json
 import logging
 import os
 import re
+import time
 from pathlib import Path
 
 from . import config
@@ -88,6 +89,11 @@ _PF_PARAMS = _PF[1] if _PF else {}
 MODEL = config.get_str("llm", "model", "claude-opus-5")
 MAX_TOKENS = config.get_int("llm", "max_tokens", 16000, lo=2000, hi=64000)
 MAX_RETRIES = config.get_int("llm", "max_retries", 1, lo=0, hi=3)
+# 中转站是多通道轮询：同一个模型名，这次可能落到好通道、下次落到坏通道（500 /
+# 把请求转给 Bedrock 后报"模型标识无效"）。这类错误换次通道就好，所以单独给一份
+# 重试预算，不占用上面 max_retries 那份（那份是留给 JSON 格式不合规的修复重试的）。
+UPSTREAM_RETRIES = config.get_int("llm", "upstream_retries", 3, lo=0, hi=8)
+UPSTREAM_BACKOFF = 4.0        # 秒，按次数线性递增：4s、8s、12s
 # prompt.zh.md 的 front matter 一旦给出下限就优先于 config：校验层和 prompt 里的
 # 数字必须同源，否则"prompt 要 8 环、校验要 12 环"会让每天必然重试一次。
 MIN_CHAIN_HOPS = _PF_PARAMS.get("chain_hops_min",
@@ -404,6 +410,10 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
 
     try:
         import anthropic
+        try:
+            import httpx2 as httpx    # anthropic 1.x 的 HTTP 依赖叫 httpx2
+        except ImportError:
+            import httpx              # 0.x 老版本用的还是 httpx
     except ImportError:
         log.warning("anthropic SDK 未安装，降级为规则模式")
         return rules_fallback(pools), "rules", "anthropic SDK 未安装"
@@ -412,12 +422,23 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
     if not index:
         return rules_fallback(pools), "rules", "今日无任何候选"
 
-    client = anthropic.Anthropic(api_key=api_key)
+    # base_url 由 SDK 自己读 ANTHROPIC_BASE_URL 环境变量：走中转站时必须设置它，
+    # 否则请求会打到 api.anthropic.com，中转站的 key 在那边一律 401。
+    #
+    # 超时必须显式给：SDK 默认 connect 只有 5 秒，中转站握手偶尔慢一拍就是
+    # APITimeoutError，然后整天白白降级成规则模式。读取给足 600 秒 —— 四段解读
+    # 本来就慢，16000 tokens 跑几分钟很正常。
+    client = anthropic.Anthropic(
+        api_key=api_key,
+        timeout=httpx.Timeout(600.0, connect=20.0),
+    )
     messages = [{"role": "user", "content": prompt}]
     last_err = ""
 
-    # 首次 + 最多 MAX_RETRIES 次带错误信息的重试，合计 ≤ 1 + MAX_RETRIES 次调用
-    for attempt in range(1, MAX_RETRIES + 2):
+    # 循环同时承载两种重试：JSON 不合规的修复重试（≤ MAX_RETRIES 次，会把错误
+    # 回喂给模型）和上游通道异常的换通道重试（≤ UPSTREAM_RETRIES 次，原样重发）。
+    # 两者共用计数上限，够用且不会把一天的调用次数放大到失控。
+    for attempt in range(1, MAX_RETRIES + UPSTREAM_RETRIES + 2):
         try:
             resp = client.messages.create(
                 model=MODEL, max_tokens=MAX_TOKENS, messages=messages,
@@ -425,8 +446,21 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
             text = "".join(b.text for b in resp.content if b.type == "text")
         except Exception as exc:
             last_err = f"{type(exc).__name__}: {exc}"
+            # 401（key 错）这类错误重试也没用，直接降级。但走中转站时，5xx / 400
+            # 往往只是这次轮到的通道坏了或把模型转给了错误的后端（Bedrock 报
+            # "model identifier is invalid"）—— 换一次通道就好。所以对这类错误
+            # 多试几次再放弃，别一遇错就整天降级成规则模式。
+            status = getattr(exc, "status_code", None)
+            transient = status in (500, 502, 503, 504) or (
+                status == 400 and "invalid" in last_err.lower()
+                and "model" in last_err.lower())
+            if transient and attempt <= UPSTREAM_RETRIES:
+                log.warning("上游通道异常（第 %d 次），换通道重试：%s",
+                            attempt, last_err[:160])
+                time.sleep(UPSTREAM_BACKOFF * attempt)
+                continue
             log.warning("LLM 调用失败（第 %d 次）：%s", attempt, last_err)
-            break        # API 层面报错，重试大概率同样失败，直接降级
+            break        # 鉴权错 / 重试用尽，直接降级
 
         # 撞上 max_tokens 时 JSON 一定是半截的，后面报的会是"找不到 JSON 对象"
         # 这种误导性错误。这里先把真正的原因喊出来，省得下次对着 JSON 报错查半天。

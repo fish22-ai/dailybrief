@@ -30,17 +30,15 @@ cron = "0 8 * * 1"
 # 上面那个时间按哪个时区算。国内不用动。
 timezone = "Asia/Shanghai"
 
-# 【改完要做什么】必须跑这一句，再 push：
-#     python scripts/apply_config.py
-#     git add -A && git commit -m "改更新时间" && git push
+# 【改时间】本机自动化由 Windows 任务计划程序负责，它不读这个文件，只认系统
+# 本地时间。改时间重跑一次安装（默认就是周一 08:00）：
+#     powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -DayOfWeek Monday -At "09:00"
 #
-# 为什么要多跑一步：GitHub 的定时任务只认 UTC、不认时区。上面那句脚本负责
-# 把「周一 08:00 北京」换算成 UTC 写进 .github/workflows/daily.yml。
-# 光改这里不跑那句，GitHub 上的定时不会变。
+# 上面的 cron/timezone 现在只是「默认计划」的说明。scripts/apply_config.py
+# 只在将来重新启用 GitHub Actions 云端定时时才需要（把本地时间换算成 UTC
+# 写进 .github/workflows/daily.yml）。
 #
-# 【想立刻更新一次、不等定时】不用改这里，去 GitHub 仓库页面：
-#     Actions → 左边点 "Daily brief" → 右边 "Run workflow" → 绿色按钮
-# 手机浏览器也能点。
+# 【想立刻更新一次、不等定时】本机：schtasks /run /tn DailyBrief
 
 
 # ════════════════════════════════════════════════════════════════════════════

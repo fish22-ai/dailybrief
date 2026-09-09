@@ -1,4 +1,4 @@
-# 每日金融 sense（DailyBrief）
+# DailyBrief
 
 每天自动更新一次的静态站，帮你**建立金融 sense**，而不是记录新闻。
 
@@ -31,15 +31,14 @@ extra = ""                  # 想调解读口吻就写在这，例："解析多�
 
 | 改了哪一节 | 要跑什么 |
 | --- | --- |
-| `[schedule]` | `python scripts/apply_config.py` 然后 git push（**必须**，见下） |
+| `[schedule]` | 改本机定时：重跑 `scripts\install_task.ps1` 带新参数（见下「本机自动化」） |
 | `[site]` | `python scripts/build_site.py` |
 | 其他（`[output]` `[fetch]` `[llm]`） | 下次抓取自动生效 |
 
-`[schedule]` 之所以要多跑一步：GitHub Actions 的 cron **只认 UTC、不支持时区**。
-`apply_config.py` 负责把「周一 08:00 上海」换算成 UTC 写进
-`.github/workflows/daily.yml`（周一 08:00 上海 = UTC 周日 00:00，星期也得跟着挪）。
-光改 `config.toml` 不跑这句，GitHub 上的定时不会变。这个脚本还会打印一份
-当前生效配置，可以用来确认改动真的读到了。
+`[schedule]` 现在是**文档默认值**：本机任务计划程序只认 Windows 本地时间、不读
+`config.toml`，所以改时间要走 `install_task.ps1` 的参数（周一 08:00 是默认）。
+`scripts/apply_config.py`（把本地时间换算成 UTC 写进 GitHub 工作流）只在将来
+重新启用云端 Actions 时才需要。
 
 **配置写错不会让站点挂掉**：类型不对、超出范围、TOML 语法错误、时区名拼错，
 都会在日志里 WARNING 一句然后回落到内置默认值。站点每周只跑一次，
@@ -57,11 +56,22 @@ python scripts/run_daily.py --dry-run   # 零成本验证抓取质量，不调 L
 ```bash
 export ANTHROPIC_API_KEY=sk-...   # 不配也能跑，会降级为规则模式（无解读）
 python scripts/run_daily.py       # 生成 data/YYYY-MM-DD.json
-python scripts/build_site.py      # 渲染 site/，打开 site/index.html
+python scripts/build_site.py      # 渲染 site/，
+打开 site/index.html
 ```
 
 Windows 注意：`requirements.txt` 里的 `tzdata` 是必需的，系统自带 Python 没有 IANA
 时区库，缺了会在 `ZoneInfo("Asia/Shanghai")` 直接报错。
+
+**Windows 上设第三方 key（cmd 里跑一次，之后新进程都能读到）：**
+
+```cmd
+setx ANTHROPIC_API_KEY  "<你的 key>"
+setx ANTHROPIC_BASE_URL "https://agentrouter.org"
+```
+
+然后**重开终端**（`setx` 不影响已打开的进程）。`ANTHROPIC_BASE_URL` 不能漏：第三方
+key 漏了它会被 SDK 打到 api.anthropic.com，那边一律回 401，整天降级成规则模式。
 
 ## AI 解读的四段结构
 
@@ -184,34 +194,45 @@ GitHub Pro；免费账号想让手机能访问就把仓库改成 Public。
 仓库页 → Actions → 左边选 **Daily brief** → 右边 **Run workflow** → 绿色按钮。
 两三分钟后刷新 Pages 地址就能看到。
 
-**这个按钮就是"有需要时手动更新"**，手机浏览器也能点。每周一 08:00 的自动更新
-和它跑的是同一套流程。
+**这个按钮就是"有需要时手动更新"**。日常更新已切到**本机自动跑**（见下一节），
+用的是同一套流程；GitHub 云端定时已停用 —— 第三方中转 key 在 Actions 上不可用，
+跑了只会生成没有 AI 解读的规则数据。
 
 ### 定时是怎么定的
 
-`config.toml` 的 `[schedule]` 说了算，改完跑 `python scripts/apply_config.py`
-再 push。当前是每周一 08:00（Asia/Shanghai）。
+更新由**本机任务计划程序**负责，默认每周一 08:00（**Windows 本地时间**，任务计划
+程序不读 `config.toml` 的 timezone）。`config.toml` 里的 `[schedule]` cron 现在只是
+文档默认值，改时间用下面 `install_task.ps1` 的参数。
 
-GitHub 的定时在高峰期可能延迟几分钟到半小时，这是平台行为，不是配置问题。
-另外**仓库连续 60 天没有任何提交时 GitHub 会自动停掉定时任务** —— 我们每次
-运行都会提交当天产物，所以只要它在跑就不会被停。
-
-### 备选：Windows 任务计划程序（本机跑）
-
-不想用 GitHub 的话可以本机跑，但**电脑必须在那个时间点开着**（睡眠不算），
-错过的日子不补跑。
+### 本机自动化（默认方式）
 
 ```cmd
-setx ANTHROPIC_API_KEY "sk-ant-..."
-schtasks /create /tn "DailyBrief" /tr "D:\吃鱿鱼的鱿鱼\dailybrief\scripts\daily.bat" /sc weekly /d MON /st 08:00
-schtasks /run /tn "DailyBrief"          :: 立刻跑一次验证
-schtasks /query /tn "DailyBrief" /v     :: 看上次运行结果
-schtasks /delete /tn "DailyBrief" /f    :: 删除
+:: 1) 一次性：设置第三方 key（cmd 里跑，然后重开终端）
+setx ANTHROPIC_API_KEY  "<你的 key>"
+setx ANTHROPIC_BASE_URL "https://agentrouter.org"
+
+:: 2) 注册每周任务（默认周一 08:00；改时间加参数，如 -At "09:00"）
+powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1
+
+:: 3) 验证 / 手动跑一次 / 卸载
+schtasks /query /tn DailyBrief /v
+schtasks /run  /tn DailyBrief
+powershell -ExecutionPolicy Bypass -File scripts\uninstall_task.ps1
 ```
 
-`scripts\daily.bat` 依次跑 `run_daily.py` 和 `build_site.py`，结果追加到
-`logs\cron.log`。**这个 .bat 必须是 CRLF 换行**，LF 在 cmd 下会逐字符报错
-（`.gitattributes` 里已经用 `eol=crlf` 锁住了）。
+任务特性：
+
+- **到点电脑没开 → 开机登录后自动补跑一次**（`StartWhenAvailable`，系统级行为，
+  不用额外启动项）。补跑按实际运行那天生成 `data\当天.json`，抓最近 168 小时，
+  **不会**倒推补出错过那周的档案。
+- **单实例**（`MultipleInstances=IgnoreNew`）：同一时间只会跑一个，不会并发重复调 LLM。
+- **不替你收拾工作区**：运行前要求 git 工作区干净，检测到未提交/未跟踪改动就
+  拒绝执行并写进 `logs\cron.log`，绝不 stash、rebase 或覆盖你手头的东西；
+  push 失败返回失败状态、本地提交保留，下次运行自动续推。
+- 只 `git add data site`，其余文件一律不碰。日志追加在 `logs\cron.log`。
+
+Git push 需要凭据：先用 Git Credential Manager 在这个账号手动 push 过一次即可，
+计划任务会继承当前用户的凭据和环境变量。
 
 ## 手机上看
 

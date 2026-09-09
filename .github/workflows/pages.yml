@@ -1,0 +1,35 @@
+name: Deploy pages
+
+# 数据与静态站由本机的任务计划程序生成后推上来（scripts/daily.bat），
+# 这个工作流只负责把 site/ 发布到 GitHub Pages —— 不抓取、不调用 LLM、不需要任何 key。
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:        # 站点没更新但想重新部署一次时手动触发
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 连着推好几次时，让先后两次部署排队而不是互相取消
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

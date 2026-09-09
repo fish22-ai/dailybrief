@@ -1,0 +1,175 @@
+{
+  "date": "2026-09-09",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "U.S. reveals import ban on slew of Canadian goods as trade war escalates",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/09/09/us-canada-trade-war-import-ban.html",
+      "published": "2026-09-09 17:21",
+      "raw_summary": "Import bans on motorbikes, alcohol and dairy products are due to come into effect on Sept. 29 as the rift between the countries deepens.",
+      "insight": {}
+    },
+    {
+      "title": "Iran turns to crypto to get around sanctions",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/c1029e47-7487-4bd7-8ed4-7512b76f1834?syn-25a6b1a6=1",
+      "published": "2026-09-09 12:00",
+      "raw_summary": "Authorities have quietly relaxed controls on foreign currency to encourage traders to repatriate much-needed funds",
+      "insight": {}
+    },
+    {
+      "title": "Canada's retaliatory tariffs worth CA$27.6 billion take effect as trade rift with U.S. deepens",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html",
+      "published": "2026-09-09 01:11",
+      "raw_summary": "Duties on Canadian imports of U.S. steel and aluminum products have doubled to 50% as a trade war between Washington and Ottawa intensifies.",
+      "insight": {}
+    },
+    {
+      "title": "Oil hits $100 for first time since July",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/c8921e49-1d06-4d27-ab38-7a1d8e3d43fe?syn-25a6b1a6=1",
+      "published": "2026-09-09 16:49",
+      "raw_summary": "Brent crude advances as escalation in US-Iran war feeds fears of renewed global supply crunch",
+      "insight": {}
+    },
+    {
+      "title": "上交所发布关于常州星宇车灯股份有限公司相关事项的监管工作函。",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3162533",
+      "published": "2026-09-09 18:12",
+      "raw_summary": "",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "US to ban imports of some Canadian alcohol, dairy goods and motorbikes",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-09-09 18:20",
+      "raw_summary": "It is the latest strike in a long trade war, and comes after Canadian counter-tariffs on US goods come into force.",
+      "insight": {}
+    },
+    {
+      "title": "Ambassador Greer Issues Statement on President Trump’s Response to Canada’s Continued Retaliation Against the United States",
+      "source": "USTR",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/september/ambassador-greer-issues-statement-president-trumps-response-canadas-continued-retaliation-against",
+      "published": "2026-09-09 10:19",
+      "raw_summary": "Ambassador Greer Issues Statement on President Trump’s Response to Canada’s Continued Retaliation Against the United States myarbrough Tue, 09/08/2026 - 22:19 WASHINGTON – Today, Ambassador Jamieson G",
+      "insight": {}
+    },
+    {
+      "title": "Adjusting Certain Delegations Under the Defense Production Act",
+      "source": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/adjusting-certain-delegations-under-the-defense-production-act-e2de/",
+      "published": "2026-09-09 02:52",
+      "raw_summary": "By the authority vested in me as President by the Constitution and the laws of the United States of America, it is hereby ordered: Section 1. Purpose. This order amends Executive Order 13603 of March ",
+      "insight": {}
+    },
+    {
+      "title": "Chrystia Freeland negotiated with Trump. Now she's watching a trade war unfold",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/09/08/nx-s1-5955613/chrystia-freeland-canada-us-trade-war-tariffs",
+      "published": "2026-09-08 18:46",
+      "raw_summary": "Chrystia Freeland understands the U.S.-Canada relationship from her time at the negotiating table. Here's what she sees now.",
+      "insight": {}
+    },
+    {
+      "title": "US-Canada tariff dispute weighs on cross-border ties",
+      "source": "DW",
+      "url": "https://www.dw.com/en/us-canada-tariff-dispute-weighs-on-cross-border-ties/a-78815803?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-09-08 18:09",
+      "raw_summary": "As Canada's retaliatory tariffs take effect, Canadian and US car industries fear the trade war will hit them hard, while Canadians are cutting back on travel.",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "BadRequestError: Error code: 400 - {'error': {'message': 'Anthropic Claude bad request: InvokeModel: operation error Bedrock Runtime: InvokeModel, https response error StatusCode: 400, RequestID: 2fe23326-622c-4101-bc28-124739afdc56, ValidationException: The provided model identifier is invalid. (request id: dff22fb2e166e4da1832652dedf6404c) [trace_id=3836a43c61c932019c8543fe3fd2f72a] (request id: 20260909213902434762697zrdnpgaWSbpDT)', 'type': '<nil>'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 18,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 1,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    }
+  }
+}
