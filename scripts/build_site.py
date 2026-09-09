@@ -1,15 +1,24 @@
 """把 data/*.json 渲染成静态站点。纯标准库 + f-string 模板，不引前端框架。
 
-布局：左侧新闻本体（标题/来源/时间），右侧 AI 解读四段
-（发生了什么 / 市场为什么在意 / 金融传导 / 解析）。解读才是主体 ——
-左栏只占三分之一宽，右栏是阅读重心。
+布局：一条事件一张**独立抽卡卡片**（大圆角 + 阴影 + 悬停微抬）。所有卡片收进一个
+**横向滑卡卡组**（.deck）：一次只看一张，桌面用 ← → 键或按钮翻，手机左右滑动翻。
+卡内左侧是新闻本体（标题/来源/时间），右侧是 AI 解读四段（发生了什么 / 市场为什么在意 /
+金融传导 / 解析）。解读才是主体 —— 宽屏左栏只占三分之一，右栏是阅读重心；窄屏叠成单栏。
+
+**唯一的 JS 是滑卡导航**（约 40 行，放页面底部 <script>）：解析的展开/收起仍用原生
+<details>/<summary>，零脚本、键盘可达、禁用 JS 也能展开。滑卡本身靠原生横向滚动 +
+scroll-snap，仅按钮/方向键/计数器需要少量脚本；即便脚本没跑，页面仍能手动左右滑。
 
 传导链按 " → " 拆成一格一环渲染（用 "；" 分隔的支线另起一行），比一长串文本好读。
-解析里的公式是**反引号包住的纯文本**，长公式单独成等宽块 —— 页面刻意不引 KaTeX，
-零依赖、离线也读得出来。
+解析里的公式是**反引号包住的纯文本**，长公式单独成等宽块 —— 页面刻意不引
+KaTeX/MathJax，零依赖、离线也读得出来。形如 `资本充足率 = 合格资本 / RWA` 的
+简单两段分式会用 CSS 摞成上下分子分母（`_split_fraction()`），不靠任何公式库。
 
 2026-09-06 之前的归档是 what/why/chain/watch/term 五字段，没有 notes。
 render_card() 对这种旧数据回落到旧标签渲染，重跑不会让历史页面掉内容。
+
+三个后续扩展位已在代码里标注，搜 `[预留·` 可以直接找到：
+皮肤主题（CSS 变量层）、左右滑动抽卡（.deck 轨道）、行测解读模式（_collapsible()）。
 
 用法：
     python scripts/build_site.py            # 渲染全部日期
@@ -43,9 +52,19 @@ FOOTER = config.get_str("site", "footer", "每周更新 · 市场货币金融 / 
 ARCHIVE_DAYS = config.get_int("site", "archive_days", 60, lo=1, hi=3650)
 
 CSS = """*{box-sizing:border-box;margin:0;padding:0}
+/* ── 主题变量层 ──
+   [预留·皮肤主题] 颜色、圆角、阴影全部收在这一处，没有一个写死在下面的规则里。
+   将来加皮肤不用动 HTML、也不用动渲染代码，只追加一组覆盖即可：
+     html[data-skin="ink"]{--bg:#0f1115;--card:#171a20;--accent:#c9a227;--card-r:8px}
+     html[data-skin="paper"]{--bg:#f3efe6;--card:#fffdf7;--accent:#8a5a2b}
+   然后在 <html> 上加 data-skin="ink"。若要做切换器，也只需一个按钮写
+   localStorage + setAttribute，本文件的其余部分完全不受影响。 */
 :root{--bg:#f5f6f8;--card:#fff;--line:#e3e7ec;--ink:#12171f;--dim:#5b6472;
  --faint:#8b96a5;--accent:#0b5fbd;--chain:#0a7b57;--chainbg:#eef7f2;
- --chainline:#d3e7dd;--code:#f2f5f9;--warn:#8a6100}
+ --chainline:#d3e7dd;--code:#f2f5f9;--warn:#8a6100;
+ --pill:#eef4fb;--pillline:#cfe0f4;--card-r:16px;
+ --card-sd:0 1px 2px rgba(16,24,40,.05),0 8px 20px -8px rgba(16,24,40,.12);
+ --card-sd-hi:0 2px 4px rgba(16,24,40,.07),0 16px 34px -12px rgba(16,24,40,.20)}
 body{font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
  background:var(--bg);color:var(--ink);padding:26px 18px 56px}
 .wrap{max-width:1240px;margin:0 auto}
@@ -60,16 +79,66 @@ h1{font-size:21px;letter-spacing:.3px}
 h2{font-size:14px;margin:26px 0 12px;color:var(--dim);letter-spacing:1px;
  display:flex;align-items:center;gap:10px}
 h2::after{content:"";flex:1;height:1px;background:var(--line)}
-article{background:var(--card);border:1px solid var(--line);border-radius:10px;
- margin-bottom:12px;display:grid;grid-template-columns:minmax(240px,1fr) 2fr;overflow:hidden}
-.news{padding:15px 17px;border-right:1px solid var(--line);background:#fafbfc}
+/* ── 抽卡卡片 ──
+   一条事件 = 一张独立卡片：大圆角 + 双层阴影 + 悬停微抬，像一张能抽出来的卡。
+   宽屏保持"左新闻 1/3、右解读 2/3"，窄屏叠成单栏（见下面的媒体查询）。
+   [预留·左右滑动抽卡] .cards 容器内就是 .deck（横向滚动轨道），默认已经是
+   滑动卡组。若只想要原来的竖排平铺，改一行：.deck-track{display:block}
+   并把 .deck-slide{flex:0 0 100%} 删掉即可。两种形态共用同一份卡片样式。 */
+.cards{display:block}
+article{background:var(--card);border:1px solid var(--line);border-radius:var(--card-r);
+ margin-bottom:16px;display:grid;grid-template-columns:minmax(240px,1fr) 2fr;
+ overflow:hidden;box-shadow:var(--card-sd);
+ transition:transform .18s ease,box-shadow .18s ease}
+article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
+.news{padding:16px 18px;border-right:1px solid var(--line);background:#fafbfc}
 .news a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;
  display:block;margin-bottom:8px}
 .news a:hover{color:var(--accent);text-decoration:underline}
 .src{color:var(--faint);font-size:12px}
 .raw{color:var(--dim);font-size:12.5px;margin-top:9px;padding-top:9px;
  border-top:1px dashed var(--line)}
-.read{padding:15px 18px}
+/* 卡片顶端一条色带 + 板块标签。因为滑卡把所有板块并成一条，卡片本身要自报板块。 */
+article{position:relative}
+article[data-cat]{overflow:hidden}
+article[data-cat]::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+article[data-cat="markets"]::before{background:var(--accent)}
+article[data-cat="policy"]::before{background:#b8860b}
+.catpill{display:inline-block;font-size:11px;letter-spacing:.4px;
+ padding:2px 9px;border-radius:999px;margin-bottom:8px}
+.catpill[data-cat="markets"]{background:#e6f0fb;color:#0b5fbd}
+.catpill[data-cat="policy"]{background:#fbf0da;color:#8a6100}
+@media(prefers-color-scheme:dark){
+ .catpill[data-cat="markets"]{background:#1f2f42;color:#5c9ded}
+ .catpill[data-cat="policy"]{background:#3a2f14;color:#e0b872}
+}
+
+/* ── 滑卡卡组 ──
+   一次只显示一张卡片，桌面用 ←  → 方向键 / 按钮翻，手机左右滑动翻。
+   轨道本身可横向滚动（touch 天然支持），按钮和方向键也只是把 scrollLeft 挪一格；
+   滚动结束时按 scroll-snap 对齐，所以键盘和手指落到同一套位置逻辑上。 */
+.deck{position:relative}
+.deck-track{display:flex;overflow-x:auto;overscroll-behavior-x:contain;
+ scroll-snap-type:x mandatory;gap:14px;padding:2px 2px 12px;
+ scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck-track::-webkit-scrollbar{display:none}
+.deck-slide{flex:0 0 100%;scroll-snap-align:center}
+.deck-slide article{margin-bottom:0}
+.deck-ctl{display:flex;align-items:center;justify-content:center;gap:14px;
+ margin-bottom:4px;min-height:34px}
+.deck-btn{appearance:none;border:1px solid var(--line);background:var(--card);
+ color:var(--dim);border-radius:999px;width:34px;height:34px;cursor:pointer;
+ font:16px/1 monospace;display:inline-flex;align-items:center;justify-content:center;
+ box-shadow:var(--card-sd);transition:opacity .15s ease,color .15s ease,transform .15s ease}
+.deck-btn:hover:not([disabled]){color:var(--accent);transform:translateY(-1px)}
+.deck-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.deck-btn[disabled]{opacity:.35;cursor:default}
+.deck-pos{color:var(--faint);font-size:13px;letter-spacing:.5px;min-width:52px;
+ text-align:center}
+.deck-hint{color:var(--faint);font-size:12px;text-align:center;margin:2px 0 0}
+.deck-empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
+ border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
+.read{padding:16px 19px}
 .seg{margin-bottom:13px}
 .seg:last-child{margin-bottom:0}
 .lb{font-size:11.5px;color:var(--faint);letter-spacing:.8px;margin-bottom:5px}
@@ -80,8 +149,27 @@ article{background:var(--card);border:1px solid var(--line);border-radius:10px;
 .hop{background:var(--chainbg);border:1px solid var(--chainline);color:var(--chain);
  border-radius:6px;padding:3px 8px;font-size:12.5px;line-height:1.5}
 .arw{color:var(--chain);opacity:.55;font-size:12px}
+/* ── 解析折叠 ──
+   用原生 <details>/<summary>，**不写一行 JS**：零脚本、键盘可达、禁用 JS 也能展开。
+   按钮的两种文案都在 HTML 里，只用 CSS 切换显示 —— 不靠 content 伪元素塞文字，
+   这样读屏器和"页面内查找"都能拿到真实文字。 */
 .notes{border-top:1px dashed var(--line);padding-top:11px}
-.notes ul{list-style:none}
+.notes>summary{list-style:none;cursor:pointer;user-select:none;
+ display:inline-flex;align-items:center;gap:7px;font-size:12.5px;
+ color:var(--accent);background:var(--pill);border:1px solid var(--pillline);
+ border-radius:999px;padding:5px 13px;transition:background .15s ease}
+.notes>summary::-webkit-details-marker{display:none}
+.notes>summary::marker{content:""}
+.notes>summary:hover{background:var(--pillline)}
+.notes>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.notes>summary::after{content:"\\25be";font-size:10px;opacity:.75;
+ transition:transform .15s ease}
+.notes[open]>summary::after{transform:rotate(180deg)}
+.cnt{color:var(--faint);font-size:11.5px}
+.tg-close{display:none}
+.notes[open] .tg-open{display:none}
+.notes[open] .tg-close{display:inline}
+.notes>ul{list-style:none;margin-top:12px}
 .notes li{position:relative;padding-left:15px;margin-bottom:9px;font-size:13px;
  color:#26303c;line-height:1.72}
 .notes li:last-child{margin-bottom:0}
@@ -91,34 +179,47 @@ article{background:var(--card);border:1px solid var(--line);border-radius:10px;
  background:var(--code);border-left:2px solid var(--accent);border-radius:4px;
  padding:7px 10px;margin:6px 0;font-size:12.5px;line-height:1.6;
  white-space:pre-wrap;overflow-x:auto}
+/* 近似上下分式：不引 MathJax/KaTeX，纯 flex 把分子摞在分母上、中间一条横线。
+   分子分母各自 stretch 撑满列宽，所以横线自动等于较宽那行的宽度。 */
+.frac{display:flex;align-items:center;gap:.55em;flex-wrap:wrap;white-space:normal}
+.fh{white-space:pre-wrap}
+.fq{display:inline-flex;flex-direction:column;align-items:stretch;text-align:center}
+.fn{padding:0 .55em 3px}
+.fd{padding:3px .55em 0;border-top:1.5px solid currentColor}
 code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
  background:var(--code);border-radius:3px;padding:1px 4px;font-size:12.5px}
-.noread{padding:15px 18px;color:var(--faint);font-size:13px;display:flex;align-items:center}
+.noread{padding:16px 19px;color:var(--faint);font-size:13px;display:flex;align-items:center}
 .empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
- border-radius:10px;padding:14px 17px}
+ border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
 nav{margin-top:30px;background:var(--card);border:1px solid var(--line);
- border-radius:10px;padding:14px 18px}
+ border-radius:var(--card-r);padding:14px 18px;box-shadow:var(--card-sd)}
 nav h3{font-size:12px;color:var(--dim);margin-bottom:10px;letter-spacing:1px}
 nav a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#eef2f6;
  border-radius:6px;color:#3a4351;text-decoration:none;font-size:13px}
 nav a:hover{background:#e0e7ef}
 nav a.cur{background:var(--ink);color:#fff}
 footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
-/* 手机：单栏。这里不只是把两栏叠起来 —— 解读是阅读重心，字号要略微放大，
-   传导链的环格要能整行排下，公式块允许横向滚动而不是硬换行把公式劈开。 */
+/* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
+   只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
+   传导链的环格要能整行排下，公式块允许横向滚动而不是硬换行把公式劈开，
+   折叠按钮要有够大的触摸目标。 */
 @media(max-width:760px){
  body{padding:16px 12px 40px}
  .wrap{max-width:100%}
- article{grid-template-columns:1fr}
- .news{border-right:0;border-bottom:1px solid var(--line);padding:13px 14px}
- .read{padding:14px}
+ article{grid-template-columns:1fr;margin-bottom:0}
+ .deck-track{gap:12px;padding:2px 0 10px}
+ .news{border-right:0;border-bottom:1px solid var(--line);padding:14px 15px}
+ .read{padding:14px 15px}
  .tx,.notes li{font-size:14.5px;line-height:1.78}
  .seg.what .tx{font-size:15.5px}
  .hop{font-size:13px;padding:4px 9px}
- /* 公式不换行会被劈开读不懂，让它自己横滚，并给个可滚提示 */
- .fml{font-size:12px;white-space:pre;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ /* 公式不换行会被劈开读不懂，让它自己横滚。分式是 flex 布局，不能锁 pre。 */
+ .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
+  -webkit-overflow-scrolling:touch}
+ .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
+ .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
- nav a{font-size:13.5px;padding:6px 11px}   /* 触摸目标别太小 */
+ nav a{font-size:13.5px;padding:6px 11px}
 }
 /* 窄屏（iPhone SE 一类）：传导链改成一环一行的竖排，横排挤成两三个字读不了 */
 @media(max-width:430px){
@@ -127,10 +228,18 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .arw{display:block;text-align:center;line-height:1.1;padding:1px 0;
   transform:rotate(90deg)}     /* 竖排时箭头转成向下 */
 }
+/* 悬停微抬只是锦上添花，晕动症用户把动效关掉后不该还在动 */
+@media(prefers-reduced-motion:reduce){
+ article,.notes>summary,.notes>summary::after{transition:none}
+ article:hover{transform:none}
+}
 @media(prefers-color-scheme:dark){
  :root{--bg:#12151a;--card:#1b1f26;--line:#2a3038;--ink:#e6e9ee;--dim:#a3adba;
   --faint:#7c8794;--accent:#5c9ded;--chain:#4ec49a;--chainbg:#1a2620;
-  --chainline:#2c4239;--code:#232830;--warn:#e0b872}
+  --chainline:#2c4239;--code:#232830;--warn:#e0b872;
+  --pill:#22303f;--pillline:#33475d;
+  --card-sd:0 1px 2px rgba(0,0,0,.34),0 10px 24px -10px rgba(0,0,0,.55);
+  --card-sd-hi:0 2px 6px rgba(0,0,0,.4),0 18px 38px -12px rgba(0,0,0,.72)}
  .news{background:#181c22}
  nav a{background:#252b34;color:#c3ccd6}
  nav a.cur{background:#4a8fd8;color:#fff}
@@ -155,6 +264,104 @@ LEAD_MAX_CHARS = 26          # 概念名加粗只认开头这么长以内的 "�
 # 块本身已经把句子断开了，直接吃掉这个标点。
 ORPHAN_PUNCT = "。，、；：,.;: "
 
+# ── 近似上下分式 ──
+# 不引 MathJax/KaTeX（页面零依赖、离线可读），所以分式靠 CSS 把分子摞在分母上。
+# 识别刻意收紧 —— **摞错的分式比不摞更难懂**，宁可回落成一行等宽文本：
+#   · " / " 两侧必须带空格。`ΔP/P`、`C/(1+y)¹` 这种是整体符号，不该被劈成分式
+#   · 顶层（括号深度 0）只能有一个 " / "，多于一个就说明是嵌套式，放弃
+#   · 分子分母在深度 0 上不能出现加减号 —— `a = b / c + d` 切出来的分母是 `c + d`，
+#     摞成 b/(c+d) 是错的；而 `(1 − (1+r)⁻ⁿ)` 整体带括号、深度 0 干净，可以摞
+_OPEN, _CLOSE = "([{（【", ")]}）】"
+_ADD_CHARS = "+＋−-"                       # 深度 0 上出现就说明分式边界不明确
+EQ_SEPS = (" = ", " ≈ ", " ＝ ")           # 等号左边整段原样放在分式左侧
+
+
+def _top_level_split(text: str, sep: str) -> list[str]:
+    """只在括号深度 0 处按 sep 切分，括号里的同名符号不算分隔符。"""
+    parts: list[str] = []
+    buf: list[str] = []
+    depth = i = 0
+    while i < len(text):
+        ch = text[i]
+        if ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth = max(0, depth - 1)
+        elif depth == 0 and text.startswith(sep, i):
+            parts.append("".join(buf))
+            buf = []
+            i += len(sep)
+            continue
+        buf.append(ch)
+        i += 1
+    parts.append("".join(buf))
+    return parts
+
+
+def _has_top_level_add(text: str) -> bool:
+    depth = 0
+    for ch in text:
+        if ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth = max(0, depth - 1)
+        elif depth == 0 and ch in _ADD_CHARS:
+            return True
+    return False
+
+
+def _strip_wrap(text: str) -> str:
+    """整段被一对括号包住时去掉那对括号：`(r − g)` → `r − g`。
+
+    只在首括号的配对就是末字符时才去 —— `(a) + (b)` 首尾也是括号，但不是一对。
+    """
+    if len(text) < 2 or text[0] not in _OPEN or text[-1] not in _CLOSE:
+        return text
+    depth = 0
+    for i, ch in enumerate(text):
+        if ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth -= 1
+            if depth == 0:
+                return text[1:-1].strip() if i == len(text) - 1 else text
+    return text
+
+
+def _split_fraction(fml: str) -> tuple[str, str, str] | None:
+    """把 `资本充足率 = 合格资本 / 风险加权资产` 拆成 (左边, 分子, 分母)。
+
+    不是"简单两段分式"就返回 None，交回等宽块渲染。判定条件见上面注释。
+    """
+    head, body = "", fml
+    for eq in EQ_SEPS:
+        parts = _top_level_split(fml, eq)
+        if len(parts) == 2 and parts[0].strip() and parts[1].strip():
+            head, body = parts[0].strip() + eq.rstrip(), parts[1]
+            break
+
+    halves = _top_level_split(body, " / ")
+    if len(halves) != 2:
+        return None
+    num, den = halves[0].strip(), halves[1].strip()
+    if not num or not den:
+        return None
+    if _has_top_level_add(num) or _has_top_level_add(den):
+        return None
+    return head, _strip_wrap(num), _strip_wrap(den)
+
+
+def render_formula(fml: str) -> str:
+    """一条反引号公式 → HTML。能摞成分式就摞，否则一行等宽块。"""
+    frac = _split_fraction(fml)
+    if not frac:
+        return f'<div class="fml">{esc(fml)}</div>'
+    head, num, den = frac
+    lead = f'<span class="fh">{esc(head)}</span>' if head else ""
+    return (f'<div class="fml frac">{lead}<span class="fq">'
+            f'<span class="fn">{esc(num)}</span>'
+            f'<span class="fd">{esc(den)}</span></span></div>')
+
 
 def render_chain(chain: str) -> str:
     """把 "A → B → C；D → E" 渲染成一环一格；"；" 后的支线另起一行。"""
@@ -173,6 +380,7 @@ def render_note(text: str) -> str:
     """渲染一条解析：反引号里的公式转等宽，开头的设问或概念名加粗。
 
     公式统一是纯文本（`P = C/(1+y)¹ + …`），长的单独成块、短的行内。
+    块公式里形如 `A = B / C` 的简单分式会被摞成上下分子分母（render_formula）。
     加粗只是给眼睛一个抓手 —— 一条解析动辄两三行，没有抓手会糊成一片。
     """
     segs = text.split("`")
@@ -187,7 +395,7 @@ def render_note(text: str) -> str:
         if i % 2:               # 奇数段在反引号内 = 公式
             fml = seg.strip()
             block = len(fml) >= FORMULA_BLOCK_CHARS
-            out.append(f'<div class="fml">{esc(fml)}</div>' if block
+            out.append(render_formula(fml) if block
                        else f'<code>{esc(fml)}</code>')
             after_block = block
             continue
@@ -227,23 +435,50 @@ TEXT_SEGMENTS = (("what", "发生了什么"), ("why", "市场为什么在意"))
 LEGACY_SEGMENTS = (("watch", "盯什么"), ("term", "概念"))
 
 
-def render_card(card: dict) -> str:
+def _collapsible(open_label: str, close_label: str, body: str,
+                 tail: str = "", cls: str = "notes") -> str:
+    """默认收起的折叠块。原生 <details>/<summary>，**不需要一行 JS**。
+
+    两种按钮文案都写进 HTML、只靠 CSS 切换显示，所以禁用 CSS、用读屏器、
+    或者用浏览器的"页面内查找"时读到的都是真实文字，而不是空按钮。
+
+    [预留·行测解读模式] 将来想在同一张卡上再挂一个视角（例如把这条新闻改写成
+    一道因果推理题 + 答案），不用碰交互代码，直接复用这个函数：
+        if ins.get("quiz"):
+            segs.append(_collapsible(
+                "展开行测解读", "收起行测解读",
+                "".join(render_note(q) for q in ins["quiz"])))
+    同一张卡上挂几个折叠块互不影响（<details> 各自独立），样式沿用 .notes；
+    要让它们互斥展开（手风琴）就给每个 <details> 加同一个 name 属性。
+    """
+    return (f'<details class="seg {cls}"><summary>'
+            f'<span class="tg tg-open">{esc(open_label)}</span>'
+            f'<span class="tg tg-close">{esc(close_label)}</span>'
+            f'{tail}</summary>{body}</details>')
+
+
+def render_card(card: dict, cat: str) -> str:
     ins = card.get("insight") or {}
+    label = CATEGORY_LABELS.get(cat, "")
+    chip = (f'<div class="catpill" data-cat="{esc(cat)}">{esc(label)}</div>'
+            if cat else "")
 
     meta = " · ".join(x for x in (esc(card.get("source")),
                                   esc(card.get("published"))) if x)
     raw = card.get("raw_summary") or ""
     raw_html = f'<div class="raw">{esc(raw[:150])}</div>' if raw else ""
-    left = (f'<div class="news">'
+    left = (f'<div class="news">{chip}'
             f'<a href="{esc(card.get("url"))}" target="_blank" '
             f'rel="noopener noreferrer">{esc(card.get("title"))}</a>'
             f'<div class="src">{meta}</div>{raw_html}</div>')
 
     if not ins:
         # 规则模式：明确说没有解读，不拿新闻摘要冒充
-        return (f'<article>{left}'
+        return (f'<article data-cat="{esc(cat)}">{left}'
                 f'<div class="noread">今日无 AI 解读（规则模式）</div></article>')
 
+    # 发生了什么 / 市场为什么在意 / 金融传导 三段默认直接展示 —— 它们是"这条为什么
+    # 重要"的主线，收起来就等于没解读。只有解析（概念摊开讲）默认收起。
     segs = [
         f'<section class="seg {key}"><div class="lb">{label}</div>'
         f'<div class="tx">{esc(ins.get(key))}</div></section>'
@@ -257,10 +492,13 @@ def render_card(card: dict) -> str:
     notes = ins.get("notes") or []
     if isinstance(notes, str):
         notes = [ln for ln in notes.splitlines() if ln.strip()]
-    if notes:
-        lis = "".join(render_note(str(n)) for n in notes if str(n).strip())
-        segs.append(f'<section class="seg notes"><div class="lb">解析</div>'
-                    f'<ul>{lis}</ul></section>')
+    items = [str(n) for n in notes if str(n).strip()]
+    if items:
+        # 解析动辄六到八条、每条两三行，全铺开会把卡片撑得看不到下一条。
+        # 默认收起、给个"展开解析"按钮，卡片就回到一眼能扫完的高度。
+        lis = "".join(render_note(n) for n in items)
+        segs.append(_collapsible("展开解析", "收起解析", f"<ul>{lis}</ul>",
+                                 tail=f'<span class="cnt">{len(items)} 条</span>'))
     else:
         segs += [
             f'<section class="seg"><div class="lb">{label}</div>'
@@ -268,8 +506,60 @@ def render_card(card: dict) -> str:
             for key, label in LEGACY_SEGMENTS if ins.get(key)
         ]
 
-    return f'<article>{left}<div class="read">{"".join(segs)}</div></article>'
+    return f'<article data-cat="{esc(cat)}">{left}<div class="read">{"".join(segs)}</div></article>'
 
+
+
+# 滑卡导航用的内嵌 JS。**刻意只做四件事**：翻上一张/下一张、方向键响应、计数器、
+# 把当前卡的位置写进 hash（方便分享/刷新后停在同一张）。其余交互（解析折叠、外链、
+# 深色模式）全在原生 HTML/CSS 里，不在这份脚本中。
+# 脚本放在页面末尾 <script> 里；即便它没跑（比如被禁），用户仍能手动左右滑卡片。
+DECK_JS = r"""<script>
+(function () {
+  function init() {
+    var track = document.querySelector('.deck-track');
+    if (!track || track.children.length === 0) return;
+    var slides = track.children;
+    var prev = document.querySelector('.deck-prev');
+    var next = document.querySelector('.deck-next');
+    var pos = document.querySelector('.deck-pos');
+    var N = slides.length;
+    function update() {
+      var w = track.clientWidth;
+      var i = Math.round(track.scrollLeft / w);
+      if (i < 0) i = 0;
+      if (i > N - 1) i = N - 1;
+      if (pos) pos.textContent = (i + 1) + '/' + N;
+      if (prev) prev.disabled = (i <= 0);
+      if (next) next.disabled = (i >= N - 1);
+    }
+    function go(i) {
+      if (i < 0) i = 0;
+      if (i > N - 1) i = N - 1;
+      var w = track.clientWidth;
+      track.scrollTo({ left: i * w, behavior: 'smooth' });
+    }
+    if (prev) prev.addEventListener('click', function () {
+      go(Math.round(track.scrollLeft / track.clientWidth) - 1);
+    });
+    if (next) next.addEventListener('click', function () {
+      go(Math.round(track.scrollLeft / track.clientWidth) + 1);
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { go(Math.round(track.scrollLeft / track.clientWidth) + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft')  { go(Math.round(track.scrollLeft / track.clientWidth) - 1); e.preventDefault(); }
+    });
+    update();
+    window.addEventListener('resize', update, { passive: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>"""
 
 
 def render_page(payload: dict, dates: list[str], current: str) -> str:
@@ -282,12 +572,29 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
         note = (f'<div class="note">今日为规则模式：只按来源权重与时间筛出了条目，'
                 f'<b>没有 AI 解读</b>。原因：{esc(reason)}</div>')
 
-    blocks = []
+    # 滑卡卡组：两个板块的所有卡片按顺序收进同一条横向轨道，一次显示一张。
+    # 每张卡片自带"所属板块"标签（因为不再有板块标题当锚点），计数/筛选都靠卡片。
+    slides: list[str] = []
+    total = 0
     for cat in CATEGORIES:
-        cards = payload.get(cat) or []
-        body = ("".join(render_card(c) for c in cards) if cards
-                else '<div class="empty">今日该板块无入选条目</div>')
-        blocks.append(f'<h2>{CATEGORY_LABELS[cat]}</h2>{body}')
+        for card in payload.get(cat) or []:
+            total += 1
+            slides.append(f'<div class="deck-slide">{render_card(card, cat)}</div>')
+        if not (payload.get(cat) or []):
+            # 空板块不必再占一行卡片；但若全空，给一句提示。
+            if not slides:
+                slides.append(f'<div class="deck-slide"><div class="deck-empty">'
+                              f'今日该板块无入选条目</div></div>')
+
+    ctl = (f'<div class="deck-ctl" aria-label="卡片导航">'
+           f'<button class="deck-btn deck-prev" type="button" '
+           f'aria-label="上一张" disabled>‹</button>'
+           f'<span class="deck-pos">1/{total}</span>'
+           f'<button class="deck-btn deck-next" type="button" '
+           f'aria-label="下一张">›</button></div>')
+    body = (f'{ctl}<div class="deck-track" tabindex="0">'
+            f'{"".join(slides)}</div>'
+            f'<p class="deck-hint">← → 或按钮切换 · 手机左右滑动</p>')
 
     links = "".join(
         f'<a href="{d}.html"{" class=\"cur\"" if d == current else ""}>{d}</a>'
@@ -320,11 +627,13 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <span class="date">{esc(payload.get("date"))}</span>{badge}</header>
 {tagline}
 {note}
-{"".join(blocks)}
+{body}
 {nav}
 <footer>{esc(FOOTER)}<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
-</div></body></html>"""
+</div>
+<script>{DECK_JS}</script>
+</body></html>"""
 
 
 def manifest() -> str:

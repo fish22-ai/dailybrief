@@ -297,7 +297,9 @@ check("prompt 含两个板块标题",
 check("index 覆盖全部候选", len(idx) == 2)
 check("prompt 要求 chain 用箭头", " → " in prompt)
 check("prompt 明确禁止复述新闻", "不是新闻摘要" in prompt or "复述标题" in prompt)
-check("prompt 要求长传导链", "8~12 环" in prompt)
+# 长传导链是旧版对"看懂"的解法，现在改成"短环、一环一步、5~8 环"，见 prompt.zh.md。
+# 这里只验"prompt 里有环数区间、且下限不低于校验阈值"，具体数字由文件 front matter 决定。
+check("prompt 要求环数区间", "环" in prompt and "~" in prompt)
 check("prompt 要求公式用反引号纯文本", "`PV = ∑ CFₜ/(1+r)ᵗ`" in prompt)
 check("prompt 禁止 LaTeX", "禁止 LaTeX" in prompt and r"\frac" in prompt)
 check("prompt 里没有残留的 format 占位符", "{{CANDIDATES}}" not in prompt)
@@ -328,18 +330,19 @@ check("解析内容被转义",
       "&lt;script&gt;" in build_site.render_note("注意 <script> 标签"))
 
 new_card = build_site.render_card({"title": "t", "url": "https://a.com",
-                                   "insight": ok["markets"][0]["insight"]})
+                                   "insight": ok["markets"][0]["insight"]}, "markets")
 check("四段标签齐全",
       all(x in new_card for x in ("发生了什么", "市场为什么在意", "金融传导", "解析")))
 check("解析渲染成列表", new_card.count("<li>") == 3)
+check("卡片带板块标签", 'data-cat="markets"' in new_card)
 # 2026-09-06 之前的归档没有 notes，重跑不能让历史页面掉内容
 old_card = build_site.render_card({"title": "t", "url": "https://a.com", "insight": {
     "what": "旧五字段", "why": "回落渲染", "chain": "A → B",
-    "watch": "9 月 16 日 FOMC", "term": "点阵图：利率路径预测分布"}})
+    "watch": "9 月 16 日 FOMC", "term": "点阵图：利率路径预测分布"}}, "markets")
 check("旧归档回落渲染 盯什么/概念", ">盯什么<" in old_card and ">概念<" in old_card)
 check("规则模式仍显示无解读占位",
       "今日无 AI 解读" in build_site.render_card(
-          {"title": "t", "url": "https://a.com", "insight": {}}))
+          {"title": "t", "url": "https://a.com", "insight": {}}, "policy"))
 
 print("\nconfig：用户配置")
 # 核心要求是"配置写错也要能出页面" —— 站点每周只跑一次，一个拼写错误让整周空白
@@ -377,10 +380,11 @@ with tempfile.TemporaryDirectory() as tmp:
 check("文件不存在回落空配置", cfgmod.load(Path("绝对不存在的路径.toml")) == {})
 
 # prompt 里写给模型的数量要求必须与校验阈值一致，否则"prompt 要 8 环、校验要 12 环"
-# 会导致每天必然重试一次再降级
+# 会导致每天必然重试一次再降级。有 prompt.zh.md 时数字由它的 front matter 给出。
 tmpl = build_prompt({"markets": [mk("x", "https://a.com/1")], "policy": []})[0]
 check("prompt 的环数下限不低于校验阈值",
-      f"{MIN_CHAIN_HOPS + 1}~{MIN_CHAIN_HOPS + 5} 环" in tmpl)
+      f"{MIN_CHAIN_HOPS}~{MIN_CHAIN_HOPS + 3} 环" in tmpl
+      or f"{MIN_CHAIN_HOPS}~8 环" in tmpl)
 check("prompt 的条数与 TOP_N 一致", f"{TOP_N} 条" in tmpl)
 
 print("\nseen 归档")
