@@ -3,22 +3,20 @@
   "mode": "llm",
   "markets": [
     {
-      "title": "Fed Governor Barr says he'll support rate hike if inflation doesn't ease",
-      "source": "CNBC Finance",
-      "url": "https://www.cnbc.com/2026/09/01/fed-governor-barr-says-hell-support-rate-hike-if-inflation-doesnt-ease.html",
-      "published": "2026-09-01 22:01",
-      "raw_summary": "The policymaker said he's concerned about \"broader price pressures taking hold\" as inflation has prevailed above the Fed's 2% target.",
+      "title": "农业银行拟募资不超过1600亿元用于补充资本；工商银行拟募资不超过1000亿元用于补充资本",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3160928",
+      "published": "2026-09-06 15:33",
+      "raw_summary": "9月6日，中国农业银行在上海证券交易所发布向特定对象发行A股股票预案，拟向特定对象中华人民共和国财政部、中国烟草总公司及其有关子公司发行A股股票，募集资金总额不超过人民币1600亿元，扣除相关发行费用后将全部用于补充核心一级资本，最终募集资金规模以监管机构批复的发行方案为准。 9月6日，中国工商银行公告称，拟向特定对象发行A股股票，发行对象为中华人民共和国财政部、中国烟草总公司及相关子公司，计划募",
       "insight": {
-        "what": "美联储理事巴尔表示，若通胀未回落，他将支持加息。",
-        "why": "市场原本倾向降息，此番表态使加息可能重归视野，利率预期上移。",
-        "chain": "通胀高位 → 美联储偏鹰 → 加息预期上升 → 短端国债收益率上涨 → 债券价格下跌 → 高估值成长股估值压缩 → 美元指数走强",
+        "what": "中国农业银行拟向财政部等发行A股，募资不超过1600亿元补充核心一级资本。",
+        "why": "大型银行大规模再融资直接增加股票供给，摊薄现有股东权益；同时资本补充增强信贷投放能力，影响银行股估值与债券供给预期。",
+        "chain": "大行股权再融资 → 股市股票供给增加 → 银行股每股收益被摊薄 → 银行股估值承压 → 资本充足率上升 → 信贷投放能力增强 → 债券市场供给增加 → 国债收益率上行",
         "notes": [
-          "鹰派指倾向于加息以抑制通胀的立场；鸽派指倾向降息以刺激经济的立场。",
-          "通胀是物价持续上涨的现象，美联储以2%为舒适目标；高于此值时，加息以冷却需求。",
-          "短端国债（如2年期）对政策利率最敏感，因为其久期短，收益率直接反映未来几次会议的加息概率。",
-          "债券价格与收益率反向：`P = C/(1+y)¹ + … + (C+Face)/(1+y)ⁿ`，其中C是票息，Face是面值，y是市场要求的收益率；y上升时，分母变大，P下降。",
-          "高估值成长股（如科技股）大量利润在远期，折现率上升压缩其现值：`PV = ∑ CFₜ/(1+r)ᵗ`，r上行时远期现金流折减更多。",
-          "美元走强因加息预期提升美元资产吸引力，海外资金流入美国债市。"
+          "核心一级资本是银行最稳定的资本，主要用来吸收非预期损失，核心一级资本充足率越低，银行越需要补充资本金。",
+          "定向增发是指向特定对象（这里是财政部、烟草公司等）发行新股，会增加总股本，从而稀释每股收益和净资产收益率，对银行股短期股价偏负面。",
+          "补充核心一级资本后，银行满足监管要求，可以释放更多信贷空间，支持实体经济，中长期利好经济增长与银行盈利。",
+          "银行补充资本主要通过发行股票、可转债等方式，会增加市场上股票和债券的供给，对资产价格有压力。"
         ]
       }
     },
@@ -29,74 +27,71 @@
       "published": "2026-09-03 01:21",
       "raw_summary": "New York Fed President John Williams said higher Treasury yields reflect a strong economy as he weighs whether another interest rate hike is needed.",
       "insight": {
-        "what": "纽约联储主席威廉姆斯称美债收益率上升源于经济强劲，暗示可能加息。",
-        "why": "市场原先将此轮收益率上升视为通胀恐慌，他转述为基本面利好，重估加息路径。",
-        "chain": "经济强劲 → 需求旺盛 → 通胀黏性 → 美联储不急于降息 → 中长端收益率维持高位 → 全球资金流向美元资产 → 新兴市场资本外流压力",
+        "what": "纽约联储主席Williams称国债收益率上升反映经济前景强劲，并考虑是否再次加息。",
+        "why": "市场原本预期经济放缓会引导美联储转鸽，但官员表态显示仍可能加息，这改变了利率预期，影响美债、美元和全球风险资产。",
+        "chain": "官员释放鹰派信号 → 加息预期上升 → 无风险利率上行 → 全球资产折现率提高 → 高估值股票压力增大 → 美元走强 → 新兴市场资本外流",
         "notes": [
-          "中长端收益率（如10年期）反映经济增速和通胀预期，不只政策利率。",
-          "经济强劲时，美联储无需刺激，降息概率下降，支撑收益率。",
-          "美元资产吸引力上升，新兴市场货币贬值压力增加，可能导致资本外流。",
-          "收益率曲线：通常短端由政策预期决定，长端由增长预期决定；两者同时上行意味政策与基本面双紧。"
+          "鹰派是指倾向加息、紧缩货币政策以控制通胀，鸽派则倾向降息、宽松以支持就业和增长。",
+          "无风险利率通常用美国国债收益率来衡量，是金融资产定价的基准，利率上升，未来收益折现价值降低，股票估值承压。",
+          "美元走强是因为高利率吸引全球资本流入美国，增加对美元的需求。",
+          "新兴市场对美元利率更为敏感，因为其外债多以美元计价，美元升值加重偿债负担，资本外流压力增大。"
         ]
       }
     },
     {
-      "title": "Treasury sell-off piles pressure on weakest US borrowers",
-      "source": "FT Markets",
-      "url": "https://www.ft.com/content/6e096712-5abe-48c5-8e4d-c0042f947639?syn-25a6b1a6=1",
-      "published": "2026-09-05 19:00",
-      "raw_summary": "Spreads on riskiest junk debt have climbed to their highest level since the market meltdown that followed last year’s ‘liberation day’ tariff blitz",
+      "title": "Fed Governor Barr says he'll support rate hike if inflation doesn't ease",
+      "source": "CNBC Finance",
+      "url": "https://www.cnbc.com/2026/09/01/fed-governor-barr-says-hell-support-rate-hike-if-inflation-doesnt-ease.html",
+      "published": "2026-09-01 22:01",
+      "raw_summary": "The policymaker said he's concerned about \"broader price pressures taking hold\" as inflation has prevailed above the Fed's 2% target.",
       "insight": {
-        "what": "美国高收益债利差升至去年市场崩盘以来最高，反映借贷成本攀升。",
-        "why": "利差走阔说明市场对高风险企业违约担忧加剧，信用市场压力上升。",
-        "chain": "利率上升 → 企业借贷成本增 → 弱资质企业再融资困难 → 违约风险升 → 信用利差走阔 → 高风险债券价格下跌 → 银行收紧信贷 → 经济放缓预期增强",
+        "what": "美联储理事Barr表示，若通胀持续高于2%目标，他可能支持加息。",
+        "why": "市场原本押注降息，此表态提高了利率维持高位甚至再加息的预期，短端美债和美元因此更敏感。",
+        "chain": "通胀高位 → Fed更鹰 → 降息预期下降 → 2Y美债收益率↑ → 高估值成长股承压",
         "notes": [
-          "高收益债指信用评级较低（如BB以下）的企业债券，票息高以补偿风险。",
-          "利差是高收益债收益率与国债收益率之差，代表信用风险补偿；利差走阔即市场要求更多风险溢价。",
-          "信用利差公式：`Spread = YTM_high_yield - YTM_treasury`，利差越高，投资者越担心违约。",
-          "信贷紧缩链条：银行因企业风险高而减少放贷，企业投资收缩，压制经济。",
-          "对比：利差收窄通常在经济扩张期，走阔则是衰退前兆信号之一。"
+          "2年期国债对政策利率最敏感，反映市场对未来两年利率路径的预期。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动，收益率升高意味着债券价格下跌，持有老债的投资者资本利得受损。",
+          "成长股的盈利多在远期，利率上升时远期收益折现到现在的价值缩水更明显，所以成长股受冲击更大。",
+          "美元走强原因：高利率吸引资本流入美国，美元需求增加。",
+          "鹰派 vs 鸽派：鹰派优先压通胀，通胀高于目标就倾向加息；鸽派优先保增长、保就业，对通胀容忍度高，不喜欢加息。"
         ]
       }
     },
     {
-      "title": "农业银行拟募资不超过1600亿元用于补充资本；工商银行拟募资不超过1000亿元用于补充资本",
+      "title": "韩国出口额破纪录",
       "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3160928",
-      "published": "2026-09-06 15:33",
-      "raw_summary": "9月6日，中国农业银行在上海证券交易所发布向特定对象发行A股股票预案，拟向特定对象中华人民共和国财政部、中国烟草总公司及其有关子公司发行A股股票，募集资金总额不超过人民币1600亿元，扣除相关发行费用后将全部用于补充核心一级资本，最终募集资金规模以监管机构批复的发行方案为准。 9月6日，中国工商银行公告称，拟向特定对象发行A股股票，发行对象为中华人民共和国财政部、中国烟草总公司及相关子公司，计划募",
+      "url": "https://wallstreetcn.com/livenews/3160922",
+      "published": "2026-09-06 13:44",
+      "raw_summary": "韩国关税厅最新统计显示，截至9月5日下午1时，韩国今年累计出口额为7094亿美元，超过去年全年的7093亿美元历史最高纪录。 韩国总统李在明5日通过社交媒体转述关税厅负责人的报告称，“如果目前稳健的出口势头得以延续，预计将在12月初左右实现全年出口1万亿美元”。（央视新闻）",
       "insight": {
-        "what": "中国农业银行拟向财政部等增发股票募集不超过1600亿元，用于补充核心一级资本。",
-        "why": "这一规模巨大，旨在增强银行资本缓冲，但市场担忧稀释每股收益及政府主导的资本注入信号。",
-        "chain": "资本充足率不足 → 银行增发股票 → 每股盈利被摊薄 → 银行股价承压 → 银行再融资需求增加 → 债券供给上升 → 利率微升压力",
+        "what": "韩国今年累计出口额7094亿美元，超去年全年纪录，预计全年有望破1万亿美元。",
+        "why": "出口强劲反映全球需求与供应链韧性，影响韩国经济增速预期、韩元汇率及相关产业盈利预期。",
+        "chain": "韩国出口创新高 → 韩国经济增长预期上调 → 韩元需求增加 → 韩元升值 → 韩国出口竞争力受削弱 → 出口增速可能放缓 → 股价消化利好",
         "notes": [
-          "核心一级资本是银行最优质资本，主要覆盖不可预见的亏损，包含普通股和留存收益。",
-          "资本充足率要求：`资本充足率 = 核心一级资本 / 风险加权资产`，比率必须高于监管线（如8%），否则限制业务扩张。",
-          "增发股票即发行新股筹资，会稀释现有股东的每股收益，因利润分摊到更多股份上。",
-          "此举体现政府对银行体系的注资支持，被视为系统性利好，但短期对股价偏利空。",
-          "对利率影响：大规模增发抽走市场流动性，推高资金利率。"
+          "出口是韩国经济增长的重要引擎，出口数据好会带动机械、电子、造船等产业景气，从而提振股市相关板块。",
+          "本国货币升值会让出口商品变贵，因此强劲出口可能导致本币升值，转而削弱未来出口竞争力，形成自我修正。",
+          "出口超预期可能加重国内通胀压力，影响韩国央行货币政策取向，从而影响利率与韩元汇率。",
+          "该数据也反映全球贸易与科技周期，一定程度上影响全球风险偏好。"
         ]
       }
     }
   ],
   "policy": [
     {
-      "title": "Iran attacks naval drone near Hormuz after US strikes 3 oil tankers",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/world/middle-east/article/3366526/iran-attacks-naval-drone-near-hormuz-after-us-strikes-3-oil-tankers?utm_source=rss_feed",
-      "published": "2026-09-06 14:45",
-      "raw_summary": "Iran said on Sunday that its forces attacked a US naval drone trying to enter the Strait of Hormuz, hours after targeting ships in retaliation for American strikes on three oil tankers. The latest rou",
+      "title": "U.S. strikes three Iranian oil tankers in renewal of hostilities",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/09/05/nx-s1-5959181/u-s-strikes-three-iranian-oil-tankers-in-renewal-of-hostilities",
+      "published": "2026-09-06 05:01",
+      "raw_summary": "The U.S. strikes three Iranian oil tankers after Iran targets two American warships, in the latest exchange over shipping and the Strait of Hormuz.",
       "insight": {
-        "what": "伊朗袭击美军无人机后，美国打击伊朗油轮，双方在霍尔木兹海峡冲突升级。",
-        "why": "霍尔木兹海峡是全球石油运输要道，冲突升级威胁原油供应，油价波动加剧。",
-        "chain": "地缘冲突 → 霍尔木兹海峡通行风险 → 石油供应中断担忧 → 原油价格上升 → 输入性通胀 → 各国央行收紧货币 → 风险资产承压",
+        "what": "美军袭击三艘伊朗油轮，伊朗随后攻击美军驱逐舰群，双方在霍尔木兹海峡附近交火。",
+        "why": "霍尔木兹海峡是全球约20%石油运输要道，冲突升级直接影响石油供应中断风险，改变原油、航运及避险资产定价。",
+        "chain": "美伊冲突升级 → 霍尔木兹海峡通行风险上升 → 原油运输保险费上升 → 油价上涨 → 通胀预期上升 → 美联储更鹰派 → 全球风险资产承压 → 黄金等避险资产上涨",
         "notes": [
-          "霍尔木兹海峡：位于伊朗与阿曼之间的狭窄水道，每天约20%全球石油通过。",
-          "油轮运输中断时，市场担心供应短缺，原油期货价格上涨。",
-          "输入性通胀指原油等进口品涨价抬高国内物价，因为运输成本和生产成本上升。",
-          "央行面对通胀压力时可能加息，而非降息，冲击债券价格和股市。",
-          "避险资金流入黄金、美元和美债，推高这些资产价格。",
-          "地缘风险溢价通常短暂，但长期持续冲突可能改变能源贸易格局。"
+          "霍尔木兹海峡位于伊朗和阿曼之间，是中东石油外运的咽喉，每天有大量原油和液化天然气通过，一旦阻断，全球石油供应将受到巨大冲击。",
+          "油价上涨直接推升通胀，而通胀上升会使央行收紧货币政策，利率上升，对股市和债市不利。",
+          "避险资产如黄金、美元与日元通常在冲突升级时受益，因为资金寻求安全。",
+          "地缘政治冲突不确定性高，市场情绪波动大，交易成本增加，给投资带来额外风险。"
         ]
       }
     },
@@ -107,54 +102,32 @@
       "published": "2026-09-05 19:08",
       "raw_summary": "U.S. envoys Steve Witkoff and Jared Kushner have arrived in Moscow to revive efforts to end Russia's invasion of Ukraine. Ukrainian President Volodymyr Zelenskyy has called for a halt to air attacks d",
       "insight": {
-        "what": "美国特使威特科夫和库什纳赴莫斯科，寻求重启俄乌和平谈判。",
-        "why": "和平进展将缓解能源和粮食供给担忧，市场可能重新定价欧洲经济增长。",
-        "chain": "外交接触 → 停火预期 → 能源出口恢复 → 天然气价格回落 → 欧洲通胀缓解 → 欧洲央行降息空间打开 → 欧元区股市反弹 → 欧元汇率企稳",
+        "what": "美国特使Witkoff和Kushner抵达莫斯科，推动乌克兰停火谈判。",
+        "why": "市场关注俄乌冲突是否走向停火，若和谈取得进展，能源供应与地缘风险溢价将下降，影响油价、欧洲经济预期及避险资产。",
+        "chain": "美俄重启和谈 → 停火预期升温 → 地缘风险溢价下降 → 布伦特原油承压 → 全球通胀预期回落 → 央行收紧压力减轻 → 风险资产偏好回升",
         "notes": [
-          "俄乌冲突期间，俄罗斯天然气供应减少，推高欧洲能源价格。",
-          "停火或制裁缓和可能恢复俄罗斯能源出口，降低欧洲生产成本。",
-          "通胀缓解后，欧洲央行可降息，刺激借贷和投资。",
-          "欧元区股市由出口和制造业驱动，能源成本下降提升企业利润。",
-          "欧元汇率走强因经济预期改善和资金回流。",
-          "但谈判失败可能反转上述逻辑，增加波动性。"
+          "俄乌冲突对全球能源、粮食供应造成扰动，和谈进展会缓解这些供应担忧，压低大宗商品价格。",
+          "地缘风险溢价是指为应对潜在冲突或供应中断，投资者要求额外补偿而推高的资产价格部分。",
+          "如果通胀预期下降，央行可能更宽松，有利于股市和债市，但美元可能走弱。",
+          "乌克兰局势复杂，谈判进展不确定性高，市场反应往往先入为主。"
         ]
       }
     },
     {
-      "title": "Which overseas property markets will be the winners and losers if Fed raises US rates?",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/business/article/3366386/which-overseas-property-markets-will-be-winners-and-losers-if-fed-raises-us-rates?utm_source=rss_feed",
-      "published": "2026-09-06 16:00",
-      "raw_summary": "Comments by US Federal Reserve chairman Kevin Warsh at its annual economic policy symposium in Jackson Hole last month have reinforced expectations of an impending interest rate rise in the world’s la",
+      "title": "Trump's Iran strategy: Could this become a forever war?",
+      "source": "DW",
+      "url": "https://www.dw.com/en/trump-s-iran-strategy-could-this-become-a-forever-war/a-78875030?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-09-04 01:46",
+      "raw_summary": "The US has launched fresh attacks on military targets in Iran. It wants to prevent Tehran rebuilding its destroyed capabilities, but risks triggering a sustained downward spiral of reconstruction foll",
       "insight": {
-        "what": "美联储主席沃什在杰克逊霍尔讲话强化加息预期，海外房地产市场可能因高利率承压。",
-        "why": "美元利率上升影响全球融资成本，对债务敏感的海外地产估值构成压力。",
-        "chain": "美联储加息 → 美元利率上升 → 全球美元融资成本增 → 海外地产贷款利率上升 → 房价下行压力 → 地产投资及建筑活动萎缩",
+        "what": "美国对伊朗军事目标发动新攻击，担心陷入长期战争。",
+        "why": "美伊军事冲突若长期化，将维持甚至推高原油供应风险，同时可能引发美国财政压力与地缘格局重塑，影响全球资本流向。",
+        "chain": "美伊冲突长期化风险 → 军事行动持续 → 原油供应持续受威胁 → 油价高位 → 通胀顽固 → 美联储维持高利率 → 全球经济增长放缓 → 股市承压",
         "notes": [
-          "许多新兴市场地产以美元计价债务，美元利息上升增加偿还负担。",
-          "利率对房产估值：`P = NOI / (r - g)`，其中NOI是净运营收益，r是贴现率，g是增长率；r上升令价格P下降。",
-          "高利率减少购房需求，因贷款月供提高，可负担性下降。",
-          "国内利率与美元利率联动，美元升值可能迫使新兴市场央行也加息，以稳汇率。",
-          "但经济强劲地区可能通过增长抵消利率冲击，分化明显。"
-        ]
-      }
-    },
-    {
-      "title": "U.S. strikes Iranian oil tankers in retaliation for missile attacks on Navy ships",
-      "source": "NPR",
-      "url": "https://www.npr.org/2026/09/05/nx-s1-5959159/us-iran-warships-targeted",
-      "published": "2026-09-05 23:05",
-      "raw_summary": "One of the Iranian tankers struck was near a key area in Iran's oil-export system, according to U.S. Central Command.",
-      "insight": {
-        "what": "美国中央司令部确认对伊朗油轮发动还击，打击位于石油出口关键区域的目标。",
-        "why": "美国直接打击石油基础设施显著升级对抗，市场担忧全球石油供应。",
-        "chain": "美军打击 → 伊朗石油出口设施受损 → 全球原油日供应量减少 → 油价上涨 → 通胀预期上行 → 美债收益率上升 → 股市估价受压",
-        "notes": [
-          "伊朗是全球主要产油国，其石油出口受制裁和冲突双重影响。",
-          "供应减少时，需求不变则价格上涨，`油价 = 供需平衡点决定`。",
-          "通胀上升迫使美联储维持紧缩，但战争开支也可能支持经济。",
-          "美债收益率上升因通胀预期和风险溢价增加。",
-          "航空、运输业受损最大，因燃料成本高企；石油股相对受益。"
+          "长期战争需要大量军费，可能推高美国财政赤字，影响发债规模与国债收益率，进而传导至全球利率。",
+          "高油价会推高生产运输成本，侵蚀企业利润，并通过通胀影响央行政策。",
+          "长期冲突也增加企业投资与供应链不确定性，抑制经济增长。",
+          "避险情绪升温时，资金转向黄金、美元等防御资产。"
         ]
       }
     }
