@@ -3,10 +3,10 @@
    HTML 走 network-first：联网时永远拿当天最新，断网回落到缓存，
    连缓存都没有就退回首页。图标/manifest 走 cache-first，它们基本不变。
    缓存名带版本号（构建日期 + 图标指纹），页面一更新就整体换掉。 */
-const CACHE = 'dailybrief-2026-09-12-3429cf05a8';
+const CACHE = 'dailybrief-2026-09-12-3d954ee5c8';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
-               './icon-192.png?v=3429cf05a8', './icon-512.png?v=3429cf05a8',
-               './apple-touch-icon.png?v=3429cf05a8'];
+               './icon-192.png?v=3d954ee5c8', './icon-512.png?v=3d954ee5c8',
+               './apple-touch-icon.png?v=3d954ee5c8'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
