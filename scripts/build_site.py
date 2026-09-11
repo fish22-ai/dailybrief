@@ -232,13 +232,29 @@ code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
 .noread{padding:16px 19px;color:var(--faint);font-size:13px;display:flex;align-items:center}
 .empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
-nav{margin-top:30px;background:var(--card);border:1px solid var(--line);
+/* 归档与设置都用原生 <details>：一次点击展开，不上 9.11 那套「底栏 → 抽屉 → 遮罩」。 */
+.archive{margin-top:30px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 18px;box-shadow:var(--card-sd)}
-nav h3{font-size:12px;color:var(--dim);margin-bottom:10px;letter-spacing:1px}
-nav a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#efece4;
+.archive>summary{list-style:none;cursor:pointer;user-select:none;
+ display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dim);
+ letter-spacing:1px}
+.archive>summary::-webkit-details-marker{display:none}
+.archive>summary::after{content:"\\25be";font-size:10px;opacity:.7;margin-left:auto;
+ transition:transform .15s ease}
+.archive[open]>summary::after{transform:rotate(180deg)}
+.archive[open]>summary{margin-bottom:10px}
+.archive>summary:hover{color:var(--accent)}
+.archive>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.archive a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#efece4;
  border-radius:6px;color:#4a4740;text-decoration:none;font-size:13px}
-nav a:hover{background:#e6e2d6}
-nav a.cur{background:var(--ink);color:#fff}
+.archive a:hover{background:#e6e2d6}
+.archive a.cur{background:var(--ink);color:#fff}
+/* 设置项：样式照抄 9.11 复杂版 */
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer}
+.opt input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent)}
+.opt span{font-size:13.5px}
+.opt em{display:block;font-style:normal;color:var(--faint);font-size:12px;margin-top:3px;
+ line-height:1.6}
 footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
 /* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
    只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
@@ -260,7 +276,7 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
- nav a{font-size:13.5px;padding:6px 11px}
+ .archive a{font-size:13.5px;padding:6px 11px}
 }
 /* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
    放不下自动换行，箭头维持 "→"（不再转成上下竖排）。 */
@@ -277,8 +293,8 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
   --card-sd:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6);
   --card-sd-hi:0 2px 6px rgba(0,0,0,.5),0 20px 44px -14px rgba(0,0,0,.75)}
  .news{background:#211f1a}
- nav a{background:#2a2821;color:#c7c2b4}
- nav a.cur{background:var(--accent);color:#fff}
+ .archive a{background:#2a2821;color:#c7c2b4}
+ .archive a.cur{background:var(--accent);color:#fff}
  .badge{background:#2a2821}
  .note{background:#2a2418;border-color:#5c4a1e;color:#e0b872}
  .badge.rules{background:#3a2f14;color:#e0b872}
@@ -631,6 +647,37 @@ if ('serviceWorker' in navigator) {
 }
 </script>"""
 
+# 设置项的行为，照抄 9.11 复杂版（同一个 localStorage key：dailybrief.showOrig）。
+# 桌面端强制摊开英文原文 —— 不赌浏览器对未 open 的 details 用 display:none 还是
+# content-visibility 隐藏，后者光靠 CSS 覆盖压不住，英文原文会被吞成空白。
+SETTINGS_JS = """<script>
+(function () {
+  var OPT_KEY = 'dailybrief.showOrig';
+  function store(k, v) {
+    try {
+      if (v === undefined) return window.localStorage.getItem(k);
+      window.localStorage.setItem(k, v);
+    } catch (e) { /* 隐私模式或禁用存储：当作没设置过，别让页面挂掉 */ }
+    return null;
+  }
+  function applyOrig() {
+    var desktop = window.matchMedia('(min-width:761px)').matches;
+    var on = desktop || store(OPT_KEY) === '1';
+    var ds = document.querySelectorAll('.orig');
+    for (var i = 0; i < ds.length; i++) ds[i].open = on;
+    var cb = document.getElementById('opt-orig');
+    if (cb) cb.checked = store(OPT_KEY) === '1';
+  }
+  var box = document.getElementById('opt-orig');
+  if (box) box.addEventListener('change', function () {
+    store(OPT_KEY, box.checked ? '1' : '0');
+    applyOrig();
+  });
+  applyOrig();
+  window.addEventListener('resize', applyOrig);
+})();
+</script>"""
+
 # sw.js 本体，由 build_site.py 写进 site/。__VERSION__ 会换成构建日期。
 # 版本号一变，activate 里就把旧缓存整批删掉，不会出现「壳是新的、内容还是旧的」。
 SERVICE_WORKER = """/* 离线缓存。由 build_site.py 生成，别手改 —— 下次渲染会覆盖。
@@ -731,7 +778,16 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
         f'<a href="{d}.html"{" class=\"cur\"" if d == current else ""}>{d}</a>'
         for d in dates[:ARCHIVE_DAYS]
     )
-    nav = f'<nav><h3>历史归档</h3>{links}</nav>' if links else ""
+    # 归档：原生 <details>，一次点击展开 —— 9.11 那套要「底栏 → 抽屉」两步，太绕。
+    archive = (f'<details class="archive"><summary>历史归档</summary>{links}</details>'
+               if links else "")
+    # 设置：目前只有一项，内容与行为照抄 9.11（同样的 id / localStorage key）。
+    settings = (
+        '<details class="archive"><summary>设置</summary>'
+        '<label class="opt"><input type="checkbox" id="opt-orig">'
+        '<span>默认展开英文原文<em>关着的时候，英文源的卡片手机端只显示中文解读，'
+        '点「查看英文原文」才展开。桌面端一直显示原文。</em></span></label>'
+        '</details>')
 
     sub_html = f'<p class="sub">{esc(TAGLINE)}</p>' if TAGLINE else ""
 
@@ -761,11 +817,13 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <span class="date">{esc(payload.get("date"))}</span>{badge}</header>
 {note}
 {body}
-{nav}
+{archive}
+{settings}
 <footer>{esc(FOOTER)}<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>
 {DECK_JS}
+{SETTINGS_JS}
 {SW_REGISTER}
 </body></html>"""
 

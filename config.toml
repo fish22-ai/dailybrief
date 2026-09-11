@@ -75,7 +75,7 @@ max_per_source = 2
 name = "知势|Daily Brief"
 
 # 大标题下面那行小字。不想要就写 tagline = ""
-tagline = "全球政经大事 · 趋势与影响"
+tagline = "读懂全球前沿动态"
 
 # 页脚第一行。第二行的免责声明是写死的。
 footer = "每天更新 · 市场货币金融 / 政策地缘大事件"

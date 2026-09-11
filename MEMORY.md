@@ -339,3 +339,18 @@ anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% �
   重做方法：System.Drawing 画一遍，字形用 `[char]0x52E2` 传，避免中文编码坑。
 - 页面 `<head>` 加了 `<link rel="apple-touch-icon">`；iOS 另靠已有的
   `apple-mobile-web-app-*` 三个 meta。
+
+## 归档折叠 + 设置（2026-09-11 深夜）
+
+- 副标题改「读懂全球前沿动态」（`config.toml [site] tagline`，改文案只动这一处）。
+- 历史归档从常开的一整块 `<nav>` 改成原生 `<details class="archive">`：**一次点击**展开。
+  刻意不用 9.11 那套「底部固定 tabbar → 抽屉 sheet → 遮罩」，那要两步还挡内容。
+- 新增「设置」，目前只有一项：**默认展开英文原文**（`id="opt-orig"`，
+  localStorage key `dailybrief.showOrig`）。CSS `.opt` 与 JS `applyOrig()` 照抄 9.11，
+  同样的 id/key，所以以后两边存储互通。
+  - `applyOrig()` 桌面端（≥761px）强制 `details.open = true` —— 不赌浏览器对未 open
+    的 details 用 display:none 还是 content-visibility 隐藏（后者 CSS 覆盖压不住，
+    英文原文会被吞成空白）。
+- **收藏没做**：9.11 自己就写明收藏只存 localStorage、「换设备或清缓存就没了」，
+  静态站没有后端 → 云端同步做不了，按用户要求先跳过。
+- 也因此 `nav` 相关 CSS 全部改名 `.archive`（含手机端与暗色两处）。

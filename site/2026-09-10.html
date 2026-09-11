@@ -191,13 +191,29 @@ code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
 .noread{padding:16px 19px;color:var(--faint);font-size:13px;display:flex;align-items:center}
 .empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
-nav{margin-top:30px;background:var(--card);border:1px solid var(--line);
+/* 归档与设置都用原生 <details>：一次点击展开，不上 9.11 那套「底栏 → 抽屉 → 遮罩」。 */
+.archive{margin-top:30px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 18px;box-shadow:var(--card-sd)}
-nav h3{font-size:12px;color:var(--dim);margin-bottom:10px;letter-spacing:1px}
-nav a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#efece4;
+.archive>summary{list-style:none;cursor:pointer;user-select:none;
+ display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dim);
+ letter-spacing:1px}
+.archive>summary::-webkit-details-marker{display:none}
+.archive>summary::after{content:"\25be";font-size:10px;opacity:.7;margin-left:auto;
+ transition:transform .15s ease}
+.archive[open]>summary::after{transform:rotate(180deg)}
+.archive[open]>summary{margin-bottom:10px}
+.archive>summary:hover{color:var(--accent)}
+.archive>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.archive a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#efece4;
  border-radius:6px;color:#4a4740;text-decoration:none;font-size:13px}
-nav a:hover{background:#e6e2d6}
-nav a.cur{background:var(--ink);color:#fff}
+.archive a:hover{background:#e6e2d6}
+.archive a.cur{background:var(--ink);color:#fff}
+/* 设置项：样式照抄 9.11 复杂版 */
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer}
+.opt input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent)}
+.opt span{font-size:13.5px}
+.opt em{display:block;font-style:normal;color:var(--faint);font-size:12px;margin-top:3px;
+ line-height:1.6}
 footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
 /* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
    只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
@@ -219,7 +235,7 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
- nav a{font-size:13.5px;padding:6px 11px}
+ .archive a{font-size:13.5px;padding:6px 11px}
 }
 /* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
    放不下自动换行，箭头维持 "→"（不再转成上下竖排）。 */
@@ -236,8 +252,8 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
   --card-sd:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6);
   --card-sd-hi:0 2px 6px rgba(0,0,0,.5),0 20px 44px -14px rgba(0,0,0,.75)}
  .news{background:#211f1a}
- nav a{background:#2a2821;color:#c7c2b4}
- nav a.cur{background:var(--accent);color:#fff}
+ .archive a{background:#2a2821;color:#c7c2b4}
+ .archive a.cur{background:var(--accent);color:#fff}
  .badge{background:#2a2821}
  .note{background:#2a2418;border-color:#5c4a1e;color:#e0b872}
  .badge.rules{background:#3a2f14;color:#e0b872}
@@ -245,11 +261,12 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
 }</style></head><body><div class="wrap">
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>知势 <span class="en">DailyBrief</span></h1>
-<p class="sub">全球政经大事 · 趋势与影响</p></div>
+<p class="sub">读懂全球前沿动态</p></div>
 <span class="date">2026-09-10</span><span class="badge">AI 解读</span></header>
 
 <div class="deck-track" tabindex="0"><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><a href="https://wallstreetcn.com/livenews/3162512" target="_blank" rel="noopener noreferrer">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</a><div class="src">华尔街见闻 · 2026-09-09 17:53</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原本预计美联储将降息，但近期通胀回升和官员表态让利率预期上升，短端美债收益率走高，并传导至其他资产。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">通胀回升</span><span class="arw">→</span><span class="hop">美联储降息预期减弱</span><span class="arw">→</span><span class="hop">2年期美债收益率上升</span><span class="arw">→</span><span class="hop">债券价格下跌</span><span class="arw">→</span><span class="hop">国债吸引力下降</span><span class="arw">→</span><span class="hop">资金流向利息更高的短债</span><span class="arw">→</span><span class="hop">股市资金分流</span><span class="arw">→</span><span class="hop">高估值成长股承压</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>2年期国债收益率反映市场对未来两年利率的预期，对政策利率变化最敏感。</li><li><b class="nk">债券价格和收益率呈反向变动：</b>收益率上升，债券价格下跌。</li><li>收益率上升意味着新发债券利息更高，旧债券吸引力下降，价格下跌。</li><li>短债收益率上升会吸引资金从股市流入债市，导致股市，尤其是高估值股票，面临抛压。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.ft.com/content/fe0cbcfc-b351-4dac-889f-7b8f11f79102?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Norway’s oil fund says what everyone is thinking</a><div class="raw">Sovereign debt ain’t what it was</div></details><div class="src">FT Markets · 2026-09-09 13:30</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">挪威主权财富基金表示，主权债券不再像过去那样安全稳健。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场将主权债券视为无风险资产，其收益率是全球资产定价的基准，该言论冲击了市场对安全资产的信心，影响各类资产估值。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">主权债券被质疑安全性</span><span class="arw">→</span><span class="hop">无风险利率预期上升</span><span class="arw">→</span><span class="hop">全球资产重新定价</span><span class="arw">→</span><span class="hop">债券收益率上升</span><span class="arw">→</span><span class="hop">持有债券风险溢价提高</span><span class="arw">→</span><span class="hop">股票和房地产等风险资产估值下降</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>主权债券通常被认为几乎没有违约风险，因此收益率被用作无风险利率的基准。</li><li>无风险利率上升，意味着所有未来现金流折现到现在的价值下降，资产估值随之降低。</li><li>风险溢价是投资者因承担额外风险而要求的额外回报，主权债券风险上升，风险溢价增加，债券收益率进一步走高。</li><li>该言论可能只是观点，不一定导致实际价格变动，但反映了市场情绪的变化。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.ft.com/content/33d4674f-31db-4551-9ad3-c43d5c94c94c" target="_blank" rel="noopener noreferrer">The clock is ticking on Senegal’s ‘total return swaps’</a><div class="raw">Not such a FAB way to manage sovereign debt</div></details><div class="src">FT Markets · 2026-09-09 13:00</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">《经济学人》报道，塞内加尔的主权债务通过“总回报互换”进行管理，但风险攀升，市场担忧其可持续性。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">新兴市场债务问题会影响全球投资者对新兴市场资产的风险偏好，导致资本流出和货币贬值。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">塞内加尔债务风险上升</span><span class="arw">→</span><span class="hop">新兴市场债券遭抛售</span><span class="arw">→</span><span class="hop">新兴市场货币贬值</span><span class="arw">→</span><span class="hop">资本外流</span><span class="arw">→</span><span class="hop">全球投资者避险情绪升温</span><span class="arw">→</span><span class="hop">资金流入发达市场资产</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>总回报互换是一种金融衍生品，让投资者在不实际持有债券的情况下，获得债券的收益和风险。</li><li>新兴市场债务风险上升，投资者会要求更高的收益率，导致债券价格下跌。</li><li>资本外流会导致新兴市场货币贬值，因为投资者卖出当地货币以换成美元等硬通货。</li><li>避险情绪下，资金会流向美国国债、黄金等安全资产，推高它们的价格。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.economist.com/finance-and-economics/2026/09/06/inflation-is-back-around-the-world-as-is-the-fight-against-it" target="_blank" rel="noopener noreferrer">Inflation is back around the world—as is the fight against it</a><div class="raw">Central banks are raising interest rates again</div></details><div class="src">The Economist · 2026-09-06 23:39</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">《经济学人》报道，全球通胀再度抬头，各国央行纷纷重新开始加息。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原以为通胀已被控制，加息周期结束，但通胀回升迫使央行收紧政策，改变利率预期，影响所有资产。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">全球通胀反弹</span><span class="arw">→</span><span class="hop">央行被迫加息</span><span class="arw">→</span><span class="hop">利率上升</span><span class="arw">→</span><span class="hop">企业和个人贷款成本增加</span><span class="arw">→</span><span class="hop">消费和投资减少</span><span class="arw">→</span><span class="hop">经济增长放缓</span><span class="arw">→</span><span class="hop">股市下跌</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>通胀指物价普遍上涨，会侵蚀货币购买力。</li><li>央行加息是为了抑制通胀，通常通过提高基准利率来实现。</li><li>利率上升，贷款成本增加，企业利润和家庭可支配收入减少，进而影响消费和投资。</li><li>经济增长放缓会降低企业盈利预期，导致股市估值下降。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Oil hits $100 a barrel for first time since July after US and Houthi strikes</a><div class="raw">Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday</div></details><div class="src">BBC · 2026-09-09 17:47</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">美国打击五艘伊朗油轮后，布伦特原油价格升至每桶100美元，为7月以来首次。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">油价突破重要心理关口，市场对供应中断的担忧成为焦点，通胀预期随之变化，债券和股票市场将受冲击。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">美国打击伊朗油轮</span><span class="arw">→</span><span class="hop">原油供应中断风险</span><span class="arw">→</span><span class="hop">布伦特油价突破100美元</span><span class="arw">→</span><span class="hop">全球通胀预期上升</span><span class="arw">→</span><span class="hop">央行政策收紧预期增强</span><span class="arw">→</span><span class="hop">长期债券收益率上升</span><span class="arw">→</span><span class="hop">股票市场估值承压</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>布伦特原油是全球最常用的原油价格基准之一。</li><li>原油供应中断会直接导致油价上涨，因为供给减少。</li><li>油价上涨是通胀的重要因素，因为能源成本会传导至其他商品和服务。</li><li>央行面对通胀压力，可能收紧货币政策，如加息，这会提升长期债券收益率，进而压制股票估值。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">Houthi offensive on Bab el-Mandeb Strait threatens new Red Sea shipping crisis</a><div class="raw">A battle for control of Yemen’s coastal plains overlooking the strategic Bab el-Mandeb Strait, launched on Friday by Iran-aligned Houthi rebels, is ra</div></details><div class="src">SCMP · 2026-09-09 18:00</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">胡塞武装在曼德海峡发动攻势，威胁红海航运安全，可能引发新一轮全球航运危机。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">红海是全球重要贸易通道，供应链中断会推高运输成本，影响全球贸易和通胀，投资者风险偏好下降。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">红海航运受阻</span><span class="arw">→</span><span class="hop">运输成本上升</span><span class="arw">→</span><span class="hop">全球贸易成本增加</span><span class="arw">→</span><span class="hop">商品价格上涨</span><span class="arw">→</span><span class="hop">通胀压力增大</span><span class="arw">→</span><span class="hop">央行收紧货币政策预期上升</span><span class="arw">→</span><span class="hop">股票和债券市场波动</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>曼德海峡连接红海和亚丁湾，是全球石油和货物运输的关键通道。</li><li>航运成本上升会推高进口商品价格，加剧通胀。</li><li>供应链中断可能迫使央行加息以控制通胀，影响资本市场。</li><li>物流和零售等行业将受冲击，而航运公司可能因运价上涨而受益。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/" target="_blank" rel="noopener noreferrer">South Korea supercharges defense budget to record levels</a><div class="raw">South Korea&#x27;s record defense budget comes amid disparaging comments about Seoul&#x27;s alliance with the United States by its president, Donald Trump.</div></details><div class="src">Defense News · 2026-09-09 17:23</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">韩国公布创纪录的国防预算，以应对地缘风险。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">国防开支增加会扩大财政赤字，影响政府债券供给，韩国国债收益率可能上升，并影响区域资产。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">韩国国防预算增加</span><span class="arw">→</span><span class="hop">政府财政支出扩大</span><span class="arw">→</span><span class="hop">财政赤字扩大</span><span class="arw">→</span><span class="hop">政府债券供给增加</span><span class="arw">→</span><span class="hop">韩国国债收益率上升</span><span class="arw">→</span><span class="hop">韩元汇率波动</span><span class="arw">→</span><span class="hop">区域金融资产价格变动</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>国防预算增加需要政府通过发债筹资，债市供给增加会压低债券价格，推高收益率。</li><li>财政赤字扩大可能影响国家信用评级，增加借贷成本。</li><li>国债收益率上升会吸引外资流入，但也可能导致韩元升值，影响出口。</li><li>区域内的股票市场可能因预期利率上升而承压。</li></ul></details></div></article></div></div><div class="deck-ctl" aria-label="卡片导航"><button class="deck-btn deck-prev" type="button" aria-label="上一张" disabled>‹</button><span class="deck-pos">1/7</span><button class="deck-btn deck-next" type="button" aria-label="下一张">›</button></div><p class="deck-hint">← → 或按钮切换 · 手机左右滑动</p>
-<nav><h3>历史归档</h3><a href="2026-09-11.html">2026-09-11</a><a href="2026-09-10.html" class="cur">2026-09-10</a><a href="2026-09-09.html">2026-09-09</a><a href="2026-09-07.html">2026-09-07</a><a href="2026-09-06.html">2026-09-06</a></nav>
+<details class="archive"><summary>历史归档</summary><a href="2026-09-11.html">2026-09-11</a><a href="2026-09-10.html" class="cur">2026-09-10</a><a href="2026-09-09.html">2026-09-09</a><a href="2026-09-07.html">2026-09-07</a><a href="2026-09-06.html">2026-09-06</a></details>
+<details class="archive"><summary>设置</summary><label class="opt"><input type="checkbox" id="opt-orig"><span>默认展开英文原文<em>关着的时候，英文源的卡片手机端只显示中文解读，点「查看英文原文」才展开。桌面端一直显示原文。</em></span></label></details>
 <footer>每天更新 · 市场货币金融 / 政策地缘大事件<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>
@@ -297,6 +314,33 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
   } else {
     init();
   }
+})();
+</script>
+<script>
+(function () {
+  var OPT_KEY = 'dailybrief.showOrig';
+  function store(k, v) {
+    try {
+      if (v === undefined) return window.localStorage.getItem(k);
+      window.localStorage.setItem(k, v);
+    } catch (e) { /* 隐私模式或禁用存储：当作没设置过，别让页面挂掉 */ }
+    return null;
+  }
+  function applyOrig() {
+    var desktop = window.matchMedia('(min-width:761px)').matches;
+    var on = desktop || store(OPT_KEY) === '1';
+    var ds = document.querySelectorAll('.orig');
+    for (var i = 0; i < ds.length; i++) ds[i].open = on;
+    var cb = document.getElementById('opt-orig');
+    if (cb) cb.checked = store(OPT_KEY) === '1';
+  }
+  var box = document.getElementById('opt-orig');
+  if (box) box.addEventListener('change', function () {
+    store(OPT_KEY, box.checked ? '1' : '0');
+    applyOrig();
+  });
+  applyOrig();
+  window.addEventListener('resize', applyOrig);
 })();
 </script>
 <script>
