@@ -1,12 +1,15 @@
-# Installs a Windows Task Scheduler entry that runs scripts\daily.bat weekly.
-# Missed runs (PC off at trigger time) are launched once after the machine is
-# available again thanks to StartWhenAvailable. Runs as the current user,
-# interactive only, least privilege. No password/secret is stored anywhere.
+# Installs a Windows Task Scheduler entry that runs scripts\daily.bat daily
+# (or weekly, with -WeeklyDay). Missed runs (PC off at trigger time) are launched
+# once after the machine is available again thanks to StartWhenAvailable.
+# Runs as the current user, interactive only, least privilege.
+# No password/secret is stored anywhere.
 #
 # Usage:
 #   powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1
-#   powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -DayOfWeek Sunday -At "20:00"
+#   powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -At "09:30"
+#   powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -Weekly -DayOfWeek Sunday -At "20:00"
 #
+# Default is DAILY at 08:00 - the site updates every day, so the trigger matches.
 # The trigger uses WINDOWS LOCAL TIME. The machine should be on China Standard
 # Time (Asia/Shanghai) so 08:00 means the same wall clock the config.toml uses.
 #
@@ -14,6 +17,8 @@
 # into the task, the scripts, or the repo.
 param(
     [string]$TaskName  = 'DailyBrief',
+    # 默认每天跑。加 -Weekly 退回旧的"每周固定一天"模式（配合 -DayOfWeek）。
+    [switch]$Weekly,
     [ValidateSet('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')]
     [string]$DayOfWeek = 'Monday',
     [string]$At        = '08:00',
@@ -30,7 +35,8 @@ $BatchFile = Join-Path $PSScriptRoot 'daily.bat'
 
 Write-Host ('Repo     : ' + $RepoRoot)
 Write-Host ('Task     : ' + $TaskName)
-Write-Host ('Schedule : every ' + $DayOfWeek + ' at ' + $At + '  (Windows local time)')
+$cadence = if ($Weekly) { 'every ' + $DayOfWeek } else { 'every day' }
+Write-Host ('Schedule : ' + $cadence + ' at ' + $At + '  (Windows local time)')
 Write-Host ''
 
 # --- sanity checks ----------------------------------------------------------
@@ -63,7 +69,7 @@ if ([string]::IsNullOrWhiteSpace($base)) {
 $tz = (Get-TimeZone).Id
 if ($tz -notmatch 'China') {
     Write-Warning ('Machine timezone is ' + $tz + ' (not China Standard Time). The trigger uses Windows local time;')
-    Write-Warning '  adjust -DayOfWeek/-At if 08:00 Asia/Shanghai is not what you want on this machine.'
+    Write-Warning '  adjust -At if 08:00 Asia/Shanghai is not what you want on this machine.'
 }
 Write-Host ''
 
@@ -72,7 +78,13 @@ $action = New-ScheduledTaskAction -Execute 'cmd.exe' `
     -Argument ('/d /c "' + $BatchFile + '"') `
     -WorkingDirectory $RepoRoot
 
-$trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek $DayOfWeek -At $At
+if ($Weekly) {
+    $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek $DayOfWeek -At $At
+    $desc = 'DailyBrief: run scripts\daily.bat weekly; catch up after boot when the PC was off.'
+} else {
+    $trigger = New-ScheduledTaskTrigger -Daily -At $At
+    $desc = 'DailyBrief: run scripts\daily.bat daily; catch up after boot when the PC was off.'
+}
 
 $settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `
@@ -88,7 +100,7 @@ $principal = New-ScheduledTaskPrincipal `
 
 Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger `
     -Settings $settings -Principal $principal `
-    -Description 'DailyBrief: run scripts\daily.bat weekly; catch up after boot when the PC was off.' `
+    -Description $desc `
     -Force | Out-Null
 
 Write-Host 'Registered/updated task.'

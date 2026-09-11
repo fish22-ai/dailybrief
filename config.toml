@@ -18,21 +18,21 @@
 # 标准 5 段 cron 写法：分 时 日 月 星期
 # 星期：1=周一  2=周二  3=周三  4=周四  5=周五  6=周六  0=周日
 #
-#   "0 8 * * 1"      每周一 08:00        ← 当前设置
+#   "0 8 * * *"      每天 08:00         ← 当前设置
+#   "0 8 * * 1"      每周一 08:00
 #   "0 8 * * 1,4"    每周一和周四 08:00
-#   "0 8 * * *"      每天 08:00
 #   "30 7 * * 1"     每周一 07:30
 #   "0 20 * * 5"     每周五 20:00
 #
 # 按下面的 timezone 写本地时间就行，不用自己换算 UTC。
-cron = "0 8 * * 1"
+cron = "0 8 * * *"
 
 # 上面那个时间按哪个时区算。国内不用动。
 timezone = "Asia/Shanghai"
 
 # 【改时间】本机自动化由 Windows 任务计划程序负责，它不读这个文件，只认系统
-# 本地时间。改时间重跑一次安装（默认就是周一 08:00）：
-#     powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -DayOfWeek Monday -At "09:00"
+# 本地时间。改成每天跑（默认就是每天 08:00）：
+#     powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -Daily -At "08:00"
 #
 # 上面的 cron/timezone 现在只是「默认计划」的说明。scripts/apply_config.py
 # 只在将来重新启用 GitHub Actions 云端定时时才需要（把本地时间换算成 UTC
@@ -46,13 +46,21 @@ timezone = "Asia/Shanghai"
 # ════════════════════════════════════════════════════════════════════════════
 [output]
 
-# 两个板块（市场·货币·金融 / 政策·地缘大事件）各出几条。3~5 比较合适。
+# 两个板块（市场·货币·金融 / 政策·地缘大事件）各出几条。
 #
-# 【注意】thinking 已关（见 [llm]），但四段解读本身很费 token。实测 9 张就贴
-# max_tokens=16000 上限，填 5 有截断风险、白烧重试。当前稳定值 4。
-per_category = 4
+# 【注意】2026-09-11 起解读改成了**七段结构化**（30秒事实内核 / 4 段传导链 /
+# 历史参照 / 博弈各方 / 前瞻指标 / 三层行动启示 / 解析），每条输出量约为过去
+# 那根平文本传导链的 3~4 倍。per_category=1（两个板块共 2 条）是现在的稳定值，
+# 以后加上科技板块就是每天 3 条。要调大得同时盯 max_tokens 会不会截断。
+per_category = 1
 
-# 同一个来源在单个板块里最多占几条。防止华尔街见闻一家占满 4/5 个席位。
+# 每个板块送进模型的候选数。解读写长了，输入这一头也要收 —— 从 18 收到 6
+# 约等于砍掉一半，省下的预算全给输出。太小会错过重要新闻，6 是平衡点。
+pool_size = 6
+
+# 同一个来源在单个板块里最多占几条。防止华尔街见闻一家占满所有席位。
+# per_category=1 时这条天然不起作用（一个板块就出一条），保持 2 是为了哪天调大
+# per_category 时限额立刻生效，不用再回来改。
 max_per_source = 2
 
 # 【改完要做什么】不用做什么，下次更新自动生效。
@@ -63,13 +71,13 @@ max_per_source = 2
 # ════════════════════════════════════════════════════════════════════════════
 [site]
 
-name = "DailyBrief"
+name = "知势|Daily Brief"
 
 # 大标题下面那行小字。不想要就写 tagline = ""
-tagline = "左栏是发生了什么，右栏是市场为什么在意、钱怎么一环一环流动、背后是哪个公式在动"
+tagline = "全球政经大事 · 趋势与影响"
 
 # 页脚第一行。第二行的免责声明是写死的。
-footer = "每周更新 · 市场货币金融 / 政策地缘大事件"
+footer = "每天更新 · 市场货币金融 / 政策地缘大事件"
 
 # 页面底部「历史归档」最多列出多少天
 archive_days = 60
@@ -108,8 +116,10 @@ extra = ""
 # 三个硬性要求：
 #   · 必须包含 {{CANDIDATES}} 占位符 —— 候选新闻列表会替换到那个位置。
 #     少了它模型就会凭空编新闻，所以缺了会被忽略、自动回到内置 prompt。
-#   · 必须要求模型输出 JSON，且每条含 what / why / chain / notes 四个字段。
-#   · chain 必须用 " → " 连接、环数不少于下面 [llm] min_chain_hops 的值。
+#   · 必须要求模型输出 JSON，且每条含七段：summary30s / transmissionChain /
+#     historicalAnalogy / gameTheoryStakeholders / forwardIndicators /
+#     takeaways / notes。
+#   · transmissionChain 的段数不少于下面 [llm] min_chain_stages 的值。
 # 不满足后两条会被校验拦下，每次更新都变成「今日无 AI 解读」。
 #
 # 想看内置 prompt 长什么样：
@@ -140,9 +150,10 @@ disable_thinking = true
 # 填 0 就是不重试，一次不合格直接变成没有解读的规则模式。
 max_retries = 1
 
-# 传导链至少几环。这是质量下限，不是格式检查 —— 环数少就意味着中间机制
-# 被压缩成了结论，也就是当初「看不懂」的根因。不建议调到 7 以下。
-min_chain_hops = 7
+# 传导链至少几段。这是质量下限，不是格式检查 —— 段数少就意味着中间机制
+# 被压缩成了结论，也就是当初「看不懂」的根因。页面固定按 4 个 STEP 摆，
+# 不建议调到 4 以下。
+min_chain_stages = 4
 
 # 解析至少几条。低于 3 条等于退回改版前那种「只讲一个概念」。
 min_notes = 3
@@ -165,7 +176,7 @@ relevance_threshold = 0.30
 
 
 [output_advanced_notes]
-# 候选池相关的两项在上面 [output] 里没列出来，因为基本不用改：
-#   pool_size = 18              每板块送进 AI 的候选数，调大 = 输入 token 变多
-#   candidates_per_source = 4   候选池阶段同一来源最多进几条
+# 候选池相关的项在上面 [output] 里已经列出来了（pool_size / max_per_source）：
+#   pool_size = 6               每板块送进 AI 的候选数，调大 = 输入 token 变多
+#   candidates_per_source = 4   候选池阶段同一来源最多进几条（默认值，未改）
 # 真要改就把它们写进上面的 [output] 段里。

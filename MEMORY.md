@@ -151,6 +151,113 @@ anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% �
   看着像推演，中间机制其实被压缩成了结论。这是四段改版的直接起因，
   别再拿"环数看着够多"当质量标准。
 
+## 前端改版（2026-09-10 晚，只动 build_site.py + config.toml[site]）
+
+用户对手机端提的是一整套"抽卡 App"诉求，已全部落地：
+
+- **站点改名**：`知势|Daily Brief`；标题下的小字加回来了，改成
+  `全球政经大事 · 趋势与影响`（`config.toml [site]` 的 name / tagline）。
+  PWA `short_name` 取 `|` 前面那截（知势），别截成半个英文单词。
+- **卡组跨天连续**：轨道里依次是 `[前一天][当天][后一天]`，打开时停在当天的第一张
+  （`<html data-page>` + rect 差值定位，不依赖 offsetParent）。计数器是**当天**的
+  i/n，跨天的卡片带 `.daychip` 日期标签。滑过当天不再卡住。
+- **手机一屏一张卡，但页面照常整页纵向滚动**：卡片做得够短（标题/来源/发生了什么/
+  为什么在意/金融传导都塞进一屏），字多时由页尾脚本把卡内字号按 `--fit` 从 1 缩到
+  **0.65**（所有字号都写成 `calc(Xpx*var(--fit,1))`），不做文字截断。
+  **用户明确否掉了"卡内局部滚动"**（原话："做成内嵌的用起来感觉更憋屈"）——
+  卡内不设滚动容器，超了就让它超，页面整体滚，和普通网页一致。
+  同理**叠卡（stacked card）做过又删了**，不要再加回来。
+  实测：模拟 390×844 全部 fit=1；390×667 缩到 0.76~0.96，两者卡高都不超预算。
+- **历史归档** `render_archive()`：年 → 月 → 日期三级原生 `<details>`，**默认全收起**，
+  日期只写"几号"、当天仍高亮。**它现在不在页面流里**，而是底部功能栏「事件归档」
+  抽屉的内容。
+- **英文源原文折叠**（2026-09-10 二轮）：`_is_english()` 按"英文字母 ≥12 且多于汉字"
+  判断英文源（防「iPhone 17 发布会」这类误判），标题 + 摘要收进 `.orig` 这个
+  `<details>`，手机端默认收起、只显示中文解读。**桌面端不折** —— 靠 author CSS
+  `.orig>*:not(summary){display:block}` 覆盖浏览器给 `details` 的 UA `display:none`
+  （作者样式优先于 UA 样式），已实测桌面端 `summary` 为 none、正文为 block。
+- **底部固定功能栏** `.tabbar` + 三个抽屉 `.sheet`：事件归档 / 我的收藏 / 设置。
+  一次只开一个，遮罩、✕、Esc 都能关；`<noscript>` 里把抽屉摊平成普通区块，
+  没 JS 也能用归档。抽屉内部可以滚（max-height:78vh），**卡片里依旧没有内嵌滚动**。
+- **收藏**：卡片右上角 `.fav` 星标，存 `localStorage['dailybrief.favs']`；锚点是
+  `<article id="c-<day>-<i>">`，列表点进去是 `<day>.html#c-<day>-<i>`，滑卡脚本
+  读到 hash 就直接定位到那张卡。列表标题取中文 `what` 的前 44 字（英文源标题是英文，
+  列表里不好认）。设置项存 `dailybrief.showOrig`。
+
+踩坑与验证方式：headless Chrome 的 `--window-size` 在 Windows 上有最小宽度（390 会
+被撑到 490），测真机尺寸要注入 `.wrap{width:390px!important;height:844px!important}`
+再 `--dump-dom` 读布局数字；截图这条路走不通（Read 读不了 png）。
+`tests/test_core.py` 现有 **5 项失败**（每板块 5 条 ×3 + prompt 公式 ×2），是上一轮
+改 `per_category=4`/prompt 去公式化留下的，与前端无关；build_site 那一段全过。
+
+## 视觉改版（2026-09-10 深夜，参考 fish22-ai/dailybrief-ui）
+
+用户给了个 React 参考站（`dailybrief-ui`，Tailwind+React，功能很多但用户只要样式）。
+只借了**样式层**，信息架构不变（仍是 原文link + 经济传导 + 解析），纯 `build_site.py`
+改动，没有引任何依赖：
+
+- **换皮肤**：冷蓝 → 暖纸编辑部风。`:root` 全套变量重排：米白底 `#faf8f3`、墨字
+  `#191918`、砖红主强调 `--accent:#b44322`（市场/链接/收藏）、深青次强调
+  `--accent2:#1c4e4f` + `--chain:#1c4e4f`（传导），policy 用赭金 `#a8690f`。
+  加了 `--serif`（Georgia + 宋体），`h1` 和卡片标题改衬线。
+- **小节标题** `.lb`：从灰字改成「色点 + 加粗标签」，what=砖红、why=深青、chain=传导色。
+- **传导链升级** `render_chain()`：每环加编号圆点 `.hn`，读起来像一条编号传导管线
+  （`<span class="hop"><i class="hn">1</i>xxx</span>`）。零 JS。
+- **卡片元信息** `.card-meta`：卡片顶部一行「传导 N 环 · 解析 M 条」，展开前心里有数。
+- **footer 品牌行**：logo 方块 +「天下大势 · 明金融传导 · 深内化于心」。
+- **明确不做**（参考站有但砍了）：自选解析/搜索/分类筛选/Ask AI/分享卡片/传导自动播放/
+  focus mode —— 用户只要精简。
+
+**二轮（照 UI 头卡改 + 行动启示）**：
+- 删掉了「传导 N 环 · 解析 M 条」那个 `card-meta` 行（用户嫌丑）。
+- 每个小节改成**研读卡**：白卡 + 「深色图标块(chip) + 衬线标题(+副题)」头卡，参照
+  reference 的 TransmissionVisualizer/DeepAnalysis 头卡。`.lb` 色点样式删了；
+  `.notes` 折叠块改名为 `.fold`（`_collapsible` 的 details 不再自带 `seg` 卡样式，
+  由外层 `sec()` 包）。
+- 卡片：`article` 变透明，`.news` 和每个 `.seg` 各是独立白卡，`.card-body` 栅格加 gap。
+- **行动启示**：`core/models.py` 加 `INSIGHT_OPTIONAL_LIST_FIELDS=("actions",)`，
+  `select.validate()` 里 actions 可选（给了就校验、没有不重试），`prompt.zh.md` 加了
+  actions 说明和样例 —— **下一次跑 LLM 才会有这字段**，现有 4 天数据没有，页面不显示
+  该卡。用户还没决定要不要补跑旧四天。
+- 手机 667 高下收紧内边距后 14/15 张卡不超预算，最长 1 张超 17px 由整页滚动兜底。
+  深浅两套色板、theme-color、manifest 都随换肤同步过。
+
+**三轮（顶栏品牌 + 经济传导脉络 + 英文桌面修复 + 图标换点）**：
+- 顶部改品牌区：`header .logo`（知字块）+ `BRAND`（`SITE_NAME.split("|")[0]+" DailyBrief"`）
+  + 日期/徽章，副标题字号按 UI（h1 22px 衬线、tagline 13px）。
+- **金融传导 + 解析合并成「经济传导脉络」一张卡**：`render_stages()` 把主链均分成
+  4 段（`_chain_stages()`，纯启发式重组原文、**不烧 LLM**），每段一个 `<details class="step"
+  name="chain">` 步骤条，点开看 触发源/传导逻辑/资产影响/监测指标；解析 `.fold` 收在
+  卡底部。「；」支线不进步骤条、原样列在下面；环数<4 退回旧的横向流式。
+- **英文 source 桌面空白的根因**：JS `applyOrig()` 把 `.orig` 全设回 open=false，桌面全靠
+  那条 CSS 覆盖扛着，浏览器用 `content-visibility:hidden` 时覆盖失效就空白。
+  修法：桌面端（≥761px）JS **强制 `open=true`**，不赌覆盖；CSS 顺带加
+  `content-visibility:visible` 兜底 no-JS。
+- **"核/因"图标块删了**，`sec()` 头卡改回色点（8px 圆点，what=砖红/why=深青/chain=传导绿）。
+- 测试更新：四段标签改查「经济传导脉络」；新增 4 阶段/监测指标/步骤条三项断言。
+
+**四轮（顶栏照 UI + 传导步骤条重做 + 删两行）**：
+- 顶栏照 dailybrief-ui masthead：**势** logo（38px 深色圆角块）+「知势 DailyBrief」
+  （DailyBrief 缩小变灰）+ 副标题 `header .sub`（全球政经大事 · 趋势与影响），
+  底部一条分隔线。字体按 UI：h1 19px 衬线、sub 12px、logo 19px 勢。
+- **删了两行**：「左右滑动 · ‹ › 翻卡…」deck-hint 和 footer 品牌行
+  （天下大势 · 明金融传导 · 深内化于心）。fit 预算里对应的 sel 改成了
+  `['header', '.deck-ctl']`。
+- **传导步骤条重做**照 reference 的 TransmissionVisualizer：`.steps` 改 grid
+  （手机 2 列 / 桌面 4 列）；步骤卡 = mono「STEP 0n」徽章（选中时反色 ink 底）
+  + `stepl` 标题**完整换行、不省略**（没有 line-clamp）；选中态 ink 边框 + 底部
+  砖红细条。**详情面板在整个模块下方统一切换，不跟着某个 Step 列走**：选 Step
+  用原生 radio（`render_stages(chain, cid)` 每张卡独立 radio 组 `chain-<cid>`），
+  面板显隐靠 CSS `:has()`（`.steps:has(input[value="n"]:checked) ~ .step-panels
+  .panel-n{display:block}`）—— 零 JS、键盘方向键可切。面板 = `.step-hd`
+  （序号圆点 + 衬线阶段名）+ `.step-grid` 双栏 `.sf` 小卡（触发源/传导逻辑/
+  资产影响/监测指标）。
+- 手机 667 高下卡片都在预算内（顶栏变高后预算自动跟着缩，探针里写死的 536
+  只是硬编码参考值，别拿它当标准）。
+
+参考站里 `transmissionChain` 是「可点击分步 + 自动播放」的结构化数据；我们是平文本
+渲染，没接它的数据模型。README/MEMORY 都保持"一屏一张卡、整页滚动、无卡内滚动"基调。
+
 ## 待办（按优先级）
 
 1. **把 key 写进用户环境变量**（仍未持久化，没做就会整天 rules 模式）：

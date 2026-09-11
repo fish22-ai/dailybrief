@@ -3,24 +3,30 @@
 对应 CLAUDE.md 第七、八节。每日调用上限 2 次（首次 + JSON 非法时重试 1 次）。
 
 这里是整个项目的价值所在。**不要让模型复述新闻** —— 标题本身就是新闻，用户
-自己会读。模型要回答的是"这条为什么重要、钱怎么一环一环流动、背后是哪个公式在动"。
-所以每条卡片的解读是四段结构化内容，而不是一句摘要：
+自己会读。模型要回答的是"这条为什么重要、钱怎么一环一环流动、背后是哪个机制在动"。
+所以每条卡片的解读是结构化内容，而不是一句摘要：
 
-  what   发生了什么（大白话，不用行话缩写）
-  why    市场为什么在意（它改变了市场原本在定价的哪个预期）
-  chain  金融传导（每环只表达一个因果跳跃，通常 4~15 字；机制没法一句话说清就拆成两环）
-  notes  解析（字符串数组，把链条里每个专业概念摊开讲；涉及定价就给公式并讲公式怎么动）
+  summary30s            30秒事实内核，3 条客观事实
+  transmissionChain     金融传导全景脉络，固定 4 段（trigger/mechanism/assetImpacts/
+                        timeHorizon/keySensitivity），**页面直接照着渲染**
+  historicalAnalogy     历史参照系 {event, year, comparison}
+  gameTheoryStakeholders 博弈各方 [{party, stance, bottomLine}]
+  forwardIndicators     前瞻红线指标 [{indicator, threshold, significance}]
+  takeaways             行动启示 {investor, industry, personal}
+  notes                 解析（字符串数组，把链条里每个专业概念摊开讲）
 
-**prompt 是用户可手改的 `prompt.zh.md`**：文件存在时，正文与步数从它读取（优先于
+2026-09-11 改版原因：上一版 chain 是一根平文本（"A → B → C"），页面为了摆出参考站
+fish22-ai/dailybrief-ui 那种「4 个 STEP + 详情面板」的样子，只能用 _chain_stages()
+把字符串按位置硬切成 4 段。三个字段同源，渲染出来自然是同一句话。所以这次让模型
+**直接产出结构化字段**，页面不再猜。参考站的 surfaceVsCore / reflectionQuestion
+用户明确要求不要，这边既不产出也不校验。
+
+**prompt 是用户可手改的 `prompt.zh.md`**：文件存在时，正文与段数从它读取（优先于
 内置 DEFAULT_PROMPT 与 config 里的数字），没有文件时回落内置。文件开头的 YAML front matter
-给出环数/条数的上下限，**校验用的下限也跟着它走**，和正文里的 {{HOPS_LO}}~{{HOPS_HI}}
-保持一致 —— 这正是"看到几环、就要几环"的保证，否则每天必然重试一次。
-用户改这份文件即可微调解读，无需改代码。
+给出段数/条数的上下限，**校验用的下限也跟着它走**，和正文里的 {{STAGES}}、
+{{NOTES_LO}}~{{NOTES_HI}} 保持一致 —— 这正是"prompt 要几段、校验就要几段"的保证，
+否则每天必然重试一次。用户改这份文件即可微调解读，无需改代码。
 
-2026-09-06 改版原因：原先是 what/why/chain/watch/term 五个短字段，用户反馈"看不懂"。
-根因不是写得不对，而是**中间机制被压缩掉了** —— chain 只有 3~4 环，从"官员转鹰"
-一步跳到"成长股承压"，中间的 Rf、折现率、现值三步全省了；term 只讲一个概念，
-链条里其余专业词全靠猜。所以这次把链条拉长、把 term 扩成 notes 数组。
 公式一律写成**反引号包住的纯文本**（`P = C/(1+y)¹ + …`），不用 LaTeX ——
 页面是零依赖静态站，不引 KaTeX，纯文本公式在任何环境下都读得出来。
 
@@ -38,7 +44,8 @@ from pathlib import Path
 
 from . import config
 from .models import (
-    CATEGORIES, CATEGORY_LABELS, INSIGHT_LIST_FIELDS, INSIGHT_TEXT_FIELDS, Item,
+    CATEGORIES, CATEGORY_LABELS, CHAIN_STAGES, DIRECTION_VALUES,
+    INSIGHT_LIST_FIELDS, Item,
 )
 
 log = logging.getLogger(__name__)
@@ -57,7 +64,7 @@ def _load_prompt_file() -> tuple[str, dict] | None:
 
     YAML front matter 我们不用 yaml 库（避免新增依赖），这里只认简单格式：
        key: value
-    只关心四个整数参数 chain_hops_min / chain_hops_max / notes_min / notes_max。
+    只关心四个整数参数 chain_stages_min / chain_stages_max / notes_min / notes_max。
     正文 = 第二个 `---` 之后的全部内容，原样发给模型（含 {{...}} 占位符）。
     """
     try:
@@ -69,7 +76,7 @@ def _load_prompt_file() -> tuple[str, dict] | None:
         log.warning("prompt.zh.md 开头没有 --- front matter，改用内置 prompt")
         return None
     raw = m.group(1)
-    params = {"chain_hops_min": 5, "chain_hops_max": 8,
+    params = {"chain_stages_min": CHAIN_STAGES, "chain_stages_max": CHAIN_STAGES,
               "notes_min": 3, "notes_max": 8}
     for line in raw.splitlines():
         kv = re.match(r"\s*([A-Za-z_]+)\s*:\s*(\d+)\s*$", line)
@@ -83,9 +90,9 @@ _PF = _load_prompt_file()
 _PF_PARAMS = _PF[1] if _PF else {}
 
 # 以下均可在 config.toml 覆盖，改配置不用动代码。下限刻意设得保守：
-# max_tokens 太小会让每次输出都被截断、白烧重试；min_chain_hops 是质量下限，
-# 环数少就说明中间机制被压成结论了（2026-09-06 改版那次的教训）。这个下限压到
-# 5 是配合"每环只写一个步骤"的写法 —— 步骤短了，需要的环数反而少了。
+# max_tokens 太小会让每次输出都被截断、白烧重试。下面这几个"下限"是**质量下限、
+# 不是格式检查** —— 段数少于 4、博弈方只有 1 个、前瞻指标只有 1 个，都说明模型
+# 把推演压缩成了结论清单，宁肯带错误信息重试一次。
 MODEL = config.get_str("llm", "model", "claude-opus-5")
 MAX_TOKENS = config.get_int("llm", "max_tokens", 16000, lo=2000, hi=64000)
 # 中转站的模型（如 deepseek-v4-flash）默认输出思考块，思考 token 会吃掉大半
@@ -98,11 +105,16 @@ MAX_RETRIES = config.get_int("llm", "max_retries", 1, lo=0, hi=3)
 UPSTREAM_RETRIES = config.get_int("llm", "upstream_retries", 3, lo=0, hi=8)
 UPSTREAM_BACKOFF = 4.0        # 秒，按次数线性递增：4s、8s、12s
 # prompt.zh.md 的 front matter 一旦给出下限就优先于 config：校验层和 prompt 里的
-# 数字必须同源，否则"prompt 要 8 环、校验要 12 环"会让每天必然重试一次。
-MIN_CHAIN_HOPS = _PF_PARAMS.get("chain_hops_min",
-                                config.get_int("llm", "min_chain_hops", 5, lo=3, hi=30))
+# 数字必须同源，否则"prompt 要 8 段、校验要 12 段"会让每天必然重试一次。
+MIN_STAGES = _PF_PARAMS.get("chain_stages_min",
+                            config.get_int("llm", "min_chain_stages", CHAIN_STAGES,
+                                           lo=2, hi=8))
 MIN_NOTES = _PF_PARAMS.get("notes_min",
                            config.get_int("llm", "min_notes", 3, lo=1, hi=12))
+# 下面三条没有对应配置项：它们不是"用户会想调的旋钮"，而是结构完整性的底线。
+MIN_FACTS = 3            # 30秒事实内核至少几条
+MIN_STAKEHOLDERS = 2     # 博弈方至少几个（只有一个说明没在做博弈分析）
+MIN_INDICATORS = 2       # 前瞻红线指标至少几个
 
 TOP_N = config.get_int("output", "per_category", 5, lo=1, hi=10)
 MAX_CANDIDATES_PER_CAT = config.get_int("output", "pool_size", 18, lo=3, hi=60)
@@ -111,66 +123,120 @@ MAX_CANDIDATES_PER_CAT = config.get_int("output", "pool_size", 18, lo=3, hi=60)
 # 出现就是模型在写 LaTeX（\frac、\sum、\( \)），页面渲染不了，带错误信息重试。
 LATEX_PAT = re.compile(r"\\[A-Za-z(\[]")
 
-DEFAULT_PROMPT = """你是一位帮我建立金融 sense 的资深买方分析师。我在准备金融行业面试，\
+DEFAULT_PROMPT = """你是一位帮我建立金融 sense 的资深买方分析师。我在准备金融行业面试，
 需要的不是新闻摘要（标题我自己会读），而是**能让我把这件事的传导机制自己讲出来的解读**。
 
-读者有两类人，**必须同时照顾到**：正在备考金融面试的人（要能自己复述推演、能被追问）、
-以及基本没接触过金融的人（专业术语第一次出现就必须解释清楚）。所以宁可多写一句
-把机制说透，也不要写成结论清单，也不要卖弄术语。
+读者有两类人，**必须同时照顾到**：正在备考金融面试的人（要能自己复述推演、能被追问），
+以及基本没接触过金融的人（专业术语第一次出现就必须解释清楚）。宁可多写一句把机制说透，
+也不要写成结论清单，也不要卖弄术语。
 
 下面是今天抓取的候选新闻，分两个板块。请：
 
-1. 每个板块挑出最重要的 {{TOP_N}} 条以内。判断标准：**对利率、汇率、资产价格、\
-资本流动的实际影响力**。果断剔除：公司公关稿、个股炒作、无传导链的社会新闻、\
-纯人道议题。宁可少选几条真正重要的，也不要凑够 {{TOP_N}} 条。
+1. 每个板块挑出最重要的 {{TOP_N}} 条以内。判断标准：**对利率、汇率、资产价格、
+   资本流动的实际影响力**。果断剔除：公司公关稿、个股炒作、无传导链的社会新闻、
+   纯人道议题。宁可少选几条真正重要的，也不要凑够 {{TOP_N}} 条。
 
-2. 每条给出四段解读，全部用中文。
+2. 每条给出下面七段解读，全部用中文。**七段缺一不可**。
 
-   - what（发生了什么）：一句话，谁做了什么、说了什么、数字是多少。\
-不用行话缩写，不超过 60 字。
-   - why（市场为什么在意）：说清这条**改变了市场原本在定价的哪个预期**，\
-以及哪一类资产因此要重新估值。不超过 80 字。
-   - chain（金融传导）：用 " → " 连接 **{{HOPS_LO}}~{{HOPS_HI}} 环**，从事件一路推到具体资产价格。
-     · **每一环只写一个步骤，越短越好，4~12 个字**，用大白话，不要塞行话缩写。\
-反例（又长又挤）："市场修正降息预期、开始定价未来加息概率上行"；\
-正例："市场修正降息预期"。宁肯多拆一环，也不要一环塞两个动作。
-     · **每一环都要写出机制**，不能只写结果。反例："加息预期上升 → 成长股承压"\
-（跳掉了无风险利率、折现率、现值三步）；正例："短期无风险利率 Rf 上移 → \
-旧债性价比下降、投资者抛售 → 债券价格下跌、YTM 被动上行 → \
-全市场定价基准抬高 → 折现率 r 上行、远期现金流现值缩水 → 高估值成长股承压"。
-     · 专业概念**第一次出现就顺手点出符号或英文**，如"无风险利率 Rf"、\
-"到期收益率 YTM"、"期限溢价 term premium"。
-     · 只有**最后一环**可以用"如果 A 和 B 同时成立，C 才可能发生"这种带条件的说法，\
-前面每一环都必须是确定的因果。不要每一环都"可能""可能"，会显得没有传导。
-     · 若还有一条并行支线（汇率、跨境资金流等），用 "；" 隔开另起一条链，\
-不要硬塞进主链。
-   - notes（解析）：{{NOTES_LO}}~{{NOTES_HI}} 条字符串，把上面链条里\
-**每一个可能不懂的概念摊开讲**，一条一个知识点，写成下面几种之一：
-     · 定义式："信用利差：风险债券相对无风险美债多出来的利息溢价。走阔代表市场\
-担心违约，要求更高利息才肯借钱给企业。"
-     · 提问式（多用这种）："why 债券价格与收益率反向变动？……"
-     · 机制提醒式："加息存在时间滞后！今天宣布加息，不会明天物价就降下来。"
-     · **只要这条涉及定价、折现、利差、收益率，就必须给公式**：\
-先写公式，再用 1~2 句话说清"哪个变量动了、往哪个方向动、于是哪一项变大变小"。\
-公式写在反引号里并**附上中文解释**，不要只扔一个公式让读者自己猜：\
-`P = C/(1+y)¹ + … + (C+Face)/(1+y)ⁿ`（票息 C 固定，价格 P 下降时只能是分母 y 变大，所以 YTM 抬升）。\
-其余反引号纯文本公式：`PV = ∑ CFₜ/(1+r)ᵗ`、`Ri = Rf + β(Rm − Rf)`、`y_corporate = y_treasury + Spread`。
+   - summary30s（30秒事实内核）：**3 条**客观事实，每条一句话。只写"谁做了什么、
+     数字是多少"，客观可核查，不写观点、不写情绪、不写影响。
 
-只输出 JSON，不要任何解释或寒暄。notes 是字符串数组。格式：
-{"markets":[{"id":1,"what":"...","why":"...","chain":"...","notes":["...","..."]}],"policy":[...]}
+   - transmissionChain（金融传导全景脉络）：固定 **{{STAGES}} 段**，从事件一路推到具体资产。
+     每段一个对象，字段一个都不能少：
+       · step：序号，从 1 连续排到 {{STAGES}}。
+       · name：这一段在干什么，**6~14 个字**的短语，像小标题（正例："政策降息与财政赤字对冲"）。
+       · trigger（输入触发源）：推向下一段的那一下动作，一句话 25~45 字，不要复述标题。
+       · mechanism（底层传导机理）：**最关键**，60~120 字，必须回答"为什么 A 导致 B"，
+         把中间被压缩掉的机制摊开写。反例（跳步）："加息预期上升导致成长股承压"。
+         正例："降息只压低超短端利率；10 年期以上长债的价格取决于未来通胀均值与国债供给。
+         国债供给过剩 → 长端价格下跌 → 收益率被动飙升。"
+       · assetImpacts：1~2 个受影响的大类资产，每项 {asset, direction, note}。
+         asset 要具体（"10 年期美债收益率"，不要只写"债券"）；
+         direction **只能是** "up" / "down" / "volatile" / "neutral" 之一；
+         note 是 10~25 字的原因说明，不要重复 asset 的名字。
+       · timeHorizon（传导时滞）：形如 "T+0 至 1 周"、"1 - 3 周发酵"、"2 - 3 个季度显现"。
+       · keySensitivity（关键敏感监测变量）：一个具体的指标或关口，能拿去盯盘的。
+         正例："10 年期 TIPS 实际收益率是否站上 2.2%"；反例："关注市场情绪"。
 
-下面是一条完整示范，**照这个深度和口吻写，不要更浅**：
+   - historicalAnalogy（历史参照系与经验校准）：{event, year, comparison} 三个字段。
+     找**真实发生过**的同类事件，说清"当时怎么走的、和现在像在哪、又差在哪"，
+     comparison 60~120 字。不要编造年份。
+
+   - gameTheoryStakeholders（博弈各方的台前立场与真实底牌）：**2~4 个**利益方，
+     每项 {party, stance, bottomLine}。party 要是具体的"谁"；stance 是台面上的公开立场；
+     bottomLine 是它不妥协的真实底牌（这条最重要）。
+
+   - forwardIndicators（前瞻红线指标）：**2~3 个**，每项 {indicator, threshold, significance}。
+     threshold 要给出具体数字或状态，significance 说清触发后会引发什么，40~80 字。
+
+   - takeaways（行动启示与认知内化）：{investor, industry, personal} 三个字段，各 60~110 字，
+     分别对**投资者**（股债金汇）、**企业经营者/外贸供应链**、**普通人**（房贷/换汇/理财/消费）。
+     三条都要落到具体动作，不要空喊"注意风险"。
+
+   - notes（解析）：{{NOTES_LO}}~{{NOTES_HI}} 条字符串，把链条里每一个可能不懂的概念摊开讲，
+     一条一个知识点，可以用"为什么 2Y 先动？因为……"这种设问开头。
+     **不要写公式、不要用反引号、不要出现 `y↑则P↓` 这类符号简写**，用大白话讲透机制；
+     涉及定价/折现/利差/收益率的概念用自然语言解释彼此关系即可。不要 LaTeX 记法。
+
+只输出 JSON，不要任何解释或寒暄。summary30s 和 notes 是字符串数组。格式：
+{"markets":[{"id":1,"summary30s":["...","...","..."],
+"transmissionChain":[{"step":1,"name":"...","trigger":"...","mechanism":"...",
+"assetImpacts":[{"asset":"...","direction":"up","note":"..."}],"timeHorizon":"...","keySensitivity":"..."}],
+"historicalAnalogy":{"event":"...","year":"...","comparison":"..."},
+"gameTheoryStakeholders":[{"party":"...","stance":"...","bottomLine":"..."}],
+"forwardIndicators":[{"indicator":"...","threshold":"...","significance":"..."}],
+"takeaways":{"investor":"...","industry":"...","personal":"..."},
+"notes":["...","..."]}],"policy":[...]}
+
+下面是一条完整示范，照这个深度和口吻写，**不要更浅、不要少任何字段**：
 {"id":7,
- "what":"美联储理事巴尔释放偏鹰信号，表示如果通胀继续高于 2% 目标，他可能支持加息。",
- "why":"市场此前定价的是未来降息，这番表态意味着要重新评估降息预期、给加息风险加权重，短端利率与美元同步上行。",
- "chain":"通胀持续高位 → 美联储转向鹰派 → 市场修正降息预期 → 未来政策利率预期抬升 → 短期无风险利率 Rf 上移 → 旧债性价比重估、投资者抛售 → 债券价格下跌、YTM 被动上行 → 全市场定价基准抬高 → DCF 折现率 r 上行、远期现金流现值缩水 → 高估值成长股承压；美国利率预期抬升 → 美元资产吸引力上升 → 资金流入美元资产 → 美元走强",
+ "summary30s":["美联储理事巴尔表示，若通胀持续高于 2% 目标，他可能支持加息。",
+  "这是本月第三位释放偏鹰信号的美联储官员。",
+  "利率期货市场对年内降息的定价随即回落。"],
+ "transmissionChain":[
+  {"step":1,"name":"官员表态与市场预期重构",
+   "trigger":"美联储理事巴尔公开表示，如果通胀继续高于 2% 目标，他可能支持加息。",
+   "mechanism":"市场此前定价的是年内降息。官员表态是美联储与市场沟通的政策工具之一，鹰派表态会直接改变交易员对未来政策利率路径的预期 —— 不是等 FOMC 开会才动，而是听到话就重新下单。",
+   "assetImpacts":[{"asset":"2 年期美债收益率","direction":"up","note":"它对政策利率最敏感，降息预期回落直接推高其收益率"}],
+   "timeHorizon":"T+0 至 2 天",
+   "keySensitivity":"利率期货隐含的年内降息次数是否从 2 次降到 1 次"},
+  {"step":2,"name":"短端利率上行与债券重定价",
+   "trigger":"降息预期回落，短端无风险利率预期抬升，投资者开始抛售手里的旧债。",
+   "mechanism":"债券的票息发行后就固定不变。市场利率预期一升，旧债的相对吸引力下降，投资者卖出使价格下跌；价格跌了而票息不变，到期收益率就被动抬升。这就是债券价格与收益率永远反向变动的原因。",
+   "assetImpacts":[{"asset":"短久期国债基金","direction":"down","note":"净值随旧债价格下跌而回撤"},{"asset":"货币市场基金","direction":"up","note":"新发短债利息更高，资金流入"}],
+   "timeHorizon":"1 - 2 周发酵",
+   "keySensitivity":"2 年期与 10 年期美债的利差是否继续收窄"},
+  {"step":3,"name":"定价基准抬升与估值压缩",
+   "trigger":"短端美债收益率上行逐级传导到长端，全市场无风险利率基准被抬高。",
+   "mechanism":"无风险利率是所有风险资产定价的基准。它一上行，股票和风险债券要求的最低回报就跟着变高；而成长股的大量盈利发生在遥远未来，远期收益折算到现在的价值缩水远比价值股严重，所以估值承压更明显。",
+   "assetImpacts":[{"asset":"高估值成长股","direction":"down","note":"远期现金流折现后缩水更多，估值倍数被压缩"},{"asset":"美元指数","direction":"up","note":"高利率吸引资金流入美元资产"}],
+   "timeHorizon":"2 - 4 周",
+   "keySensitivity":"纳斯达克 100 指数相对道指的强弱"},
+  {"step":4,"name":"实体融资成本与终端需求",
+   "trigger":"长端利率上行传导到银行信贷定价，按揭与企业贷款利率同步抬升。",
+   "mechanism":"银行的资金成本锚定在长端国债与掉期曲线上，长端一涨，房贷固定利率与信用债利差很快跟上。借贷成本上升会压掉一部分购房与扩产需求；若房价与投资同步走弱，就形成「名义上没加息、实体却更紧」的效果。",
+   "assetImpacts":[{"asset":"美国 30 年期房贷利率","direction":"up","note":"月供变贵，购房者观望情绪加重"},{"asset":"高收益企业债信用利差","direction":"up","note":"再融资违约风险被重新定价"}],
+   "timeHorizon":"2 - 3 个季度显现",
+   "keySensitivity":"美国成屋签约销售指数是否连续两个月下滑"}],
+ "historicalAnalogy":{"event":"格林斯潘的「利率谜题」及其逆转版","year":"2005 年",
+  "comparison":"2005 年美联储连续加息，长端美债收益率却因海外央行狂买而不升反降；当前正相反：政策利率预期抬升，长端因国债供给过剩而更敏感。两次的共同点是短端政策利率管不住长端，区别在于当年是需求端的外储买盘，这次是供给端的发债压力。"},
+ "gameTheoryStakeholders":[
+  {"party":"美联储（货币当局）","stance":"维持双重使命平衡，警惕过早放松导致通胀二次反扑","bottomLine":"只要就业市场不断崖式失速，就绝不轻言兜底收益率曲线。"},
+  {"party":"美国财政部（发债方）","stance":"保证天量发债顺利完成，尽量多发短端国库券缓解长债压力","bottomLine":"付息成本占联邦收入的比例已破 18%，承受不了长端利息长期高位。"},
+  {"party":"全球对冲基金与基差套利者","stance":"利用美债现货与期货的基差做高杠杆套利","bottomLine":"对长债拍卖的需求缺口极度敏感，一有风吹草动就抛现货放大波动。"}],
+ "forwardIndicators":[
+  {"indicator":"10 年期美债收益率","threshold":"4.50% - 4.75%","significance":"一旦突破该区间，会触发美股风险平价策略的被动去杠杆抛售，跌幅往往被杠杆放大。"},
+  {"indicator":"美联储隔夜逆回购余额","threshold":"低于 500 亿美元","significance":"缓冲垫耗尽后，财政部发债会直接抽取银行准备金，引发短端货币市场的钱荒。"}],
+ "takeaways":{
+  "investor":"别再用「降息＝看多长债和高成长股」的简单公式。财政赤字主导期，应偏向高股息和抗通胀的现金流资产，缩短债券久期，并用实物黄金对冲纸币信用被稀释的风险。",
+  "industry":"有海外融资或大额美元贷款的企业，不要赌借贷利率会断崖式下行，应尽早用掉期把融资成本锁死；进出口企业要防强美元延续带来的结汇波动。",
+  "personal":"如果你在考虑海外置业或按揭，别以为降息就意味着房贷利率随时下跌。国内理财端，全球长端高息资产仍有吸引力，分散配置比单押利率下行更稳。"},
  "notes":[
-  "鹰派核心目标：把抑制通胀放在第一位，只要通胀高于目标就倾向加息、收紧货币政策。物价稳定最重要 —— 就算加息导致经济放缓、失业率小幅上升，也是打压通胀可以接受的代价。",
-  "加息存在时间滞后！今天宣布加息，不会明天物价就降下来，完整传导需要 6~12 个月。这就是通胀刚抬头时鹰派官员就呼吁赶紧加息的原因。",
-  "why 债券价格与收益率永远反向变动？债券定价公式 `P = C/(1+y)¹ + C/(1+y)² + … + (C+Face)/(1+y)ⁿ`，其中票息 C 和本金 Face 发行后固定不变。一旦市场利率预期上升，投资者卖出旧债，价格 P 下跌；分子不变而 P 变小，只能是分母里的 y 变大 —— 所以到期收益率 YTM 是被动抬升的。",
-  "why 折现率能压制成长股估值？DCF 折现公式 `PV = ∑ CFₜ/(1+r)ᵗ`。成长股的现金流大量发生在远期、t 很大，分母是 (1+r) 的 t 次方，r 上行时远期那几项被成倍缩小，因此估值受损远比现金流靠前的价值股严重。",
-  "CAPM 资本资产定价模型 `Ri = Rf + β(Rm − Rf)`。Rf 是美债代表的无风险利率，是所有风险资产的收益基准。Rf 上涨 → 市场对股票、风险债券要求的最低回报 Ri 变高 → 同样的盈利只值更低的价格。β 越大的股票对 Rf 变动越敏感。"
- ]}
+  "为什么 2 年期国债最敏感？它对政策利率最敏感，反映的是市场对未来两年利率路径的预期，所以官员一说话它先动。",
+  "收益率上升债券价格下跌：债券价格和收益率呈反向变动，这是同一件事的两种说法。",
+  "为什么成长股更受伤？成长股的盈利大多在遥远未来，利率上行时，远期收益折算到现在的价值缩水更明显。",
+  "美元走强的原因：高利率吸引资本流入美国，对美元的需求增加，汇率就走高。",
+  "鹰派 vs 鸽派：鹰派优先压通胀，只要通胀高于目标就倾向加息收紧，宁可牺牲一点增长；鸽派优先保增长保就业，对通胀容忍度高，不喜欢加息。"]}
 
 候选新闻：
 {{CANDIDATES}}"""
@@ -180,29 +246,29 @@ if _PF:
     DEFAULT_PROMPT = _PF[0]
 
 REPAIR_HINT = (
-    "上一条输出不合法：{err}。请只输出符合要求的 JSON，id 必须取自候选列表，"
-    "what/why/chain/notes 四个字段都不能省；chain 至少 " + str(MIN_CHAIN_HOPS)
-    + " 环、用 ' → ' 连接且每环写出机制；notes 至少 " + str(MIN_NOTES)
-    + " 条且是字符串数组；公式写成反引号包住的纯文本，不要 LaTeX。不要添加说明文字。"
+    "上一条输出不合法：{err}。请只输出符合要求的 JSON，id 必须取自候选列表。"
+    "每条必须七段齐全：summary30s（≥" + str(MIN_FACTS) + " 条字符串）、"
+    "transmissionChain（恰好 " + str(MIN_STAGES) + " 段，每段含 step/name/trigger/"
+    "mechanism/assetImpacts/timeHorizon/keySensitivity，assetImpacts 里 direction "
+    "只能取 up/down/volatile/neutral）、historicalAnalogy（event/year/comparison）、"
+    "gameTheoryStakeholders（≥" + str(MIN_STAKEHOLDERS) + " 个）、"
+    "forwardIndicators（≥" + str(MIN_INDICATORS) + " 个）、"
+    "takeaways（investor/industry/personal 三个都不能缺）、"
+    "notes（≥" + str(MIN_NOTES) + " 条字符串数组）。"
+    "不要 LaTeX 记法，不要添加任何说明文字。"
 )
 
 CANDIDATES_SLOT = "{{CANDIDATES}}"
 
 # prompt 里写给模型的数量要求必须跟校验层的阈值一致，否则会出现
-# "prompt 要 8 环、校验要 12 环"这种自相矛盾 —— 每天都重试一次然后降级。
-# 有 prompt.zh.md 时，上限直接取 front matter 里用户写的值（正文里的 {{HOPS_HI}}
-# 也要填成同一个数）；没写上限时用"下限 + 宽裕区间"兜底。
+# "prompt 要 8 段、校验要 12 段"这种自相矛盾 —— 每天都重试一次然后降级。
+# 有 prompt.zh.md 时，以它 front matter 里的值为准（正文里的占位符也要填成同一个数）。
 def _slots() -> dict[str, str]:
     return {
         "{{TOP_N}}": str(TOP_N),
-        "{{HOPS_LO}}": str(MIN_CHAIN_HOPS + 1 if not _PF_PARAMS
-                           else _PF_PARAMS.get("chain_hops_min", MIN_CHAIN_HOPS)),
-        "{{HOPS_HI}}": str(MIN_CHAIN_HOPS + 5 if not _PF_PARAMS
-                           else _PF_PARAMS.get("chain_hops_max", MIN_CHAIN_HOPS + 5)),
-        "{{NOTES_LO}}": str(MIN_NOTES + 1 if not _PF_PARAMS
-                            else _PF_PARAMS.get("notes_min", MIN_NOTES)),
-        "{{NOTES_HI}}": str(MIN_NOTES + 5 if not _PF_PARAMS
-                            else _PF_PARAMS.get("notes_max", MIN_NOTES + 5)),
+        "{{STAGES}}": str(_PF_PARAMS.get("chain_stages_min", MIN_STAGES)),
+        "{{NOTES_LO}}": str(MIN_NOTES),
+        "{{NOTES_HI}}": str(_PF_PARAMS.get("notes_max", MIN_NOTES + 5)),
     }
 
 
@@ -291,14 +357,157 @@ def _normalize_notes(val: object) -> list[str]:
     return out
 
 
+def _text(val: object, pid: int, field: str) -> str:
+    """取一个必填字符串字段，空字符串当作缺失。"""
+    s = str(val or "").strip()
+    if not s:
+        raise ValueError(f"id {pid} 缺少 {field} 字段")
+    return s
+
+
+def _obj_list(val: object, pid: int, field: str, lo: int,
+              fields: tuple[str, ...]) -> list[dict]:
+    """取一个「对象数组」字段，逐项校验必填字符串子字段 + 长度下限。"""
+    if not isinstance(val, list):
+        raise ValueError(f"id {pid} 的 {field} 不是数组")
+    if len(val) < lo:
+        raise ValueError(
+            f"id {pid} 的 {field} 只有 {len(val)} 个，至少要 {lo} 个"
+        )
+    out = []
+    for i, entry in enumerate(val, 1):
+        if not isinstance(entry, dict):
+            raise ValueError(f"id {pid} 的 {field} 第 {i} 项不是对象")
+        out.append({k: _text(entry.get(k), pid, f"{field} 第 {i} 项的 {k}")
+                    for k in fields})
+    return out
+
+
+def _walk_text(val: object):
+    """递归吐出结构里所有的字符串，供 LaTeX 扫描用。"""
+    if isinstance(val, str):
+        yield val
+    elif isinstance(val, dict):
+        for v in val.values():
+            yield from _walk_text(v)
+    elif isinstance(val, (list, tuple)):
+        for v in val:
+            yield from _walk_text(v)
+
+
+def _validate_insight(p: dict, pid: int) -> dict:
+    """校验并归一化一条卡片的七段解读。不合法就抛 ValueError 触发重试/降级。"""
+    ins: dict = {}
+
+    # 1. 30秒事实内核
+    ins["summary30s"] = _normalize_notes(p.get("summary30s") or [])
+    if len(ins["summary30s"]) < MIN_FACTS:
+        raise ValueError(
+            f"id {pid} 的 summary30s 只有 {len(ins['summary30s'])} 条，"
+            f"至少要 {MIN_FACTS} 条"
+        )
+
+    # 2. 金融传导全景脉络：恰好 MIN_STAGES 段，每段的七个字段一个都不能少。
+    # step 用**位置**重新编号，不采信模型给的数字 —— 它偶尔从 0 开始或重复编号，
+    # 而真正决定页面顺序的是数组位置，与其为这个重试一次不如直接归一化。
+    chain = p.get("transmissionChain")
+    if not isinstance(chain, list):
+        raise ValueError(f"id {pid} 的 transmissionChain 不是数组")
+    if len(chain) < MIN_STAGES:
+        raise ValueError(
+            f"id {pid} 的 transmissionChain 只有 {len(chain)} 段，至少 "
+            f"{MIN_STAGES} 段 —— 段数不足说明中间机制被跳过了"
+        )
+    nodes: list[dict] = []
+    for k, node in enumerate(chain, 1):
+        if not isinstance(node, dict):
+            raise ValueError(f"id {pid} 的 transmissionChain 第 {k} 段不是对象")
+        impacts = node.get("assetImpacts")
+        if not isinstance(impacts, list) or not impacts:
+            raise ValueError(
+                f"id {pid} 的 transmissionChain 第 {k} 段 assetImpacts 是空的"
+            )
+        clean: list[dict] = []
+        for im in impacts:
+            if not isinstance(im, dict):
+                raise ValueError(f"id {pid} 第 {k} 段的 assetImpacts 元素不是对象")
+            direction = str(im.get("direction") or "").strip().lower()
+            if direction not in DIRECTION_VALUES:
+                raise ValueError(
+                    f"id {pid} 第 {k} 段的 direction 是 {direction!r}，"
+                    f"只能是 {'/'.join(DIRECTION_VALUES)} 之一"
+                )
+            clean.append({
+                "asset": _text(im.get("asset"), pid, f"第 {k} 段 assetImpacts.asset"),
+                "direction": direction,
+                "note": _text(im.get("note"), pid, f"第 {k} 段 assetImpacts.note"),
+            })
+        nodes.append({
+            "step": k,
+            "name": _text(node.get("name"), pid, f"第 {k} 段 name"),
+            "trigger": _text(node.get("trigger"), pid, f"第 {k} 段 trigger"),
+            "mechanism": _text(node.get("mechanism"), pid, f"第 {k} 段 mechanism"),
+            "assetImpacts": clean,
+            "timeHorizon": _text(node.get("timeHorizon"), pid, f"第 {k} 段 timeHorizon"),
+            "keySensitivity": _text(node.get("keySensitivity"), pid,
+                                    f"第 {k} 段 keySensitivity"),
+        })
+    ins["transmissionChain"] = nodes
+
+    # 3. 历史参照系
+    hist = p.get("historicalAnalogy")
+    if not isinstance(hist, dict):
+        raise ValueError(f"id {pid} 的 historicalAnalogy 不是对象")
+    ins["historicalAnalogy"] = {
+        k: _text(hist.get(k), pid, f"historicalAnalogy.{k}")
+        for k in ("event", "year", "comparison")
+    }
+
+    # 4. 博弈各方 / 5. 前瞻指标
+    ins["gameTheoryStakeholders"] = _obj_list(
+        p.get("gameTheoryStakeholders"), pid, "gameTheoryStakeholders",
+        MIN_STAKEHOLDERS, ("party", "stance", "bottomLine"))
+    ins["forwardIndicators"] = _obj_list(
+        p.get("forwardIndicators"), pid, "forwardIndicators",
+        MIN_INDICATORS, ("indicator", "threshold", "significance"))
+
+    # 6. 行动启示：三个视角一个都不能缺
+    take = p.get("takeaways")
+    if not isinstance(take, dict):
+        raise ValueError(f"id {pid} 的 takeaways 不是对象")
+    ins["takeaways"] = {
+        k: _text(take.get(k), pid, f"takeaways.{k}")
+        for k in ("investor", "industry", "personal")
+    }
+
+    # 7. 解析
+    for field in INSIGHT_LIST_FIELDS:
+        if field not in p:
+            raise ValueError(f"id {pid} 缺少 {field} 字段")
+        ins[field] = _normalize_notes(p[field])
+        if len(ins[field]) < MIN_NOTES:
+            raise ValueError(
+                f"id {pid} 的 {field} 只有 {len(ins[field])} 条，"
+                f"至少要 {MIN_NOTES} 条"
+            )
+
+    # LaTeX 页面渲染不了（零依赖静态站，不引 KaTeX），出现就重试
+    for text in _walk_text(ins):
+        hit = LATEX_PAT.search(text)
+        if hit:
+            raise ValueError(
+                f"id {pid} 里出现 LaTeX 记法 {hit.group()!r}，"
+                f"公式必须写成反引号包住的纯文本"
+            )
+    return ins
+
+
 def validate(raw: dict, index: dict[int, Item]) -> dict[str, list[dict]]:
     """schema 校验。任一不合法就抛异常，触发重试或降级。
 
-    校验得比较严：四个字段缺一不可、id 必须真实存在、不能跨板块串台。
-    另外两条是 2026-09-06 改版新增的**质量下限**，不只是格式检查：
-      - chain 至少 MIN_CHAIN_HOPS 环 —— 环数少就意味着机制又被压缩成结论了，
-        而"看不懂"的根因正是这个，所以宁可重试。
-      - notes 至少 MIN_NOTES 条，且不许出现 LaTeX（页面不引 KaTeX，渲染不了）。
+    七段解读缺一不可、id 必须真实存在、不能跨板块串台。段数/博弈方/前瞻指标
+    的条数下限是**质量下限而非格式检查** —— 少了就意味着推演被压缩成了结论清单，
+    而"看不懂"的根因正是这个，所以宁可带错误信息重试一次。
     """
     if not isinstance(raw, dict):
         raise ValueError("顶层不是 JSON 对象")
@@ -324,40 +533,7 @@ def validate(raw: dict, index: dict[int, Item]) -> dict[str, list[dict]]:
             if item.category != cat:
                 raise ValueError(f"id {pid} 属于 {item.category}，却被放进 {cat}")
 
-            insight: dict = {}
-            for field in INSIGHT_TEXT_FIELDS:
-                val = str(p.get(field) or "").strip()
-                if not val:
-                    raise ValueError(f"id {pid} 缺少 {field} 字段")
-                insight[field] = val
-
-            for field in INSIGHT_LIST_FIELDS:
-                if field not in p:
-                    raise ValueError(f"id {pid} 缺少 {field} 字段")
-                items = _normalize_notes(p[field])
-                if len(items) < MIN_NOTES:
-                    raise ValueError(
-                        f"id {pid} 的 {field} 只有 {len(items)} 条，"
-                        f"至少要 {MIN_NOTES} 条"
-                    )
-                insight[field] = items
-
-            hops = [h for h in insight["chain"].split(" → ") if h.strip()]
-            if len(hops) < MIN_CHAIN_HOPS:
-                raise ValueError(
-                    f"id {pid} 的 chain 只有 {len(hops)} 环（要求 ≥{MIN_CHAIN_HOPS} 环，"
-                    f"用 ' → ' 连接），中间机制被跳过了"
-                )
-
-            for text in (insight["chain"], *insight["notes"]):
-                hit = LATEX_PAT.search(text)
-                if hit:
-                    raise ValueError(
-                        f"id {pid} 里出现 LaTeX 记法 {hit.group()!r}，"
-                        f"公式必须写成反引号包住的纯文本"
-                    )
-
-            cards.append(_card(item, insight))
+            cards.append(_card(item, _validate_insight(p, pid)))
 
         out[cat] = cards
     return out

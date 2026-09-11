@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN" data-page="2026-09-10"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>DailyBrief · 2026-09-10</title>
+<title>知势 DailyBrief · 2026-09-10</title>
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme:light)">
-<meta name="theme-color" content="#12151a" media="(prefers-color-scheme:dark)">
+<meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#171612" media="(prefers-color-scheme:dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="DailyBrief">
+<meta name="apple-mobile-web-app-title" content="知势 DailyBrief">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="manifest.webmanifest">
@@ -19,22 +19,31 @@
      html[data-skin="paper"]{--bg:#f3efe6;--card:#fffdf7;--accent:#8a5a2b}
    然后在 <html> 上加 data-skin="ink"。若要做切换器，也只需一个按钮写
    localStorage + setAttribute，本文件的其余部分完全不受影响。 */
-:root{--bg:#f5f6f8;--card:#fff;--line:#e3e7ec;--ink:#12171f;--dim:#5b6472;
- --faint:#8b96a5;--accent:#0b5fbd;--chain:#0a7b57;--chainbg:#eef7f2;
- --chainline:#d3e7dd;--code:#f2f5f9;--warn:#8a6100;
- --pill:#eef4fb;--pillline:#cfe0f4;--card-r:16px;
- --card-sd:0 1px 2px rgba(16,24,40,.05),0 8px 20px -8px rgba(16,24,40,.12);
- --card-sd-hi:0 2px 4px rgba(16,24,40,.07),0 16px 34px -12px rgba(16,24,40,.20)}
+:root{--bg:#faf8f3;--card:#fff;--line:#e8e5db;--ink:#191918;--dim:#6b6a62;
+ --faint:#9a988f;--accent:#b44322;--accent2:#1c4e4f;--chain:#1c4e4f;--chainbg:#eef4f1;
+ --chainline:#d6e3da;--code:#f2f1eb;--warn:#8a6100;
+ --pill:#f3f0e8;--pillline:#e2dcc9;--card-r:14px;
+ --serif:Georgia,"Songti SC","Noto Serif CJK SC","SimSun",serif;
+ --card-sd:0 1px 2px rgba(30,27,20,.06),0 10px 26px -12px rgba(30,27,20,.14);
+ --card-sd-hi:0 2px 6px rgba(30,27,20,.08),0 18px 38px -16px rgba(30,27,20,.22)}
 body{font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
- background:var(--bg);color:var(--ink);padding:26px 18px 56px}
+ background:var(--bg);color:var(--ink);padding:26px 18px 96px}
 .wrap{max-width:1240px;margin:0 auto}
-header{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px}
-h1{font-size:21px;letter-spacing:.3px}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+ padding-bottom:13px;border-bottom:1px solid var(--line)}
+header .logo{width:38px;height:38px;border-radius:9px;background:var(--ink);color:var(--bg);
+ display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);
+ font-size:19px;font-weight:700;flex:none}
+.hd{flex:1;min-width:0}
+h1{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.2px;
+ display:flex;align-items:baseline;gap:6px;line-height:1.2}
+h1 .en{font-size:12px;font-weight:500;color:var(--faint);letter-spacing:0}
+header .sub{font-size:12px;color:var(--faint);margin-top:2px}
+header .date{font-size:12px;color:var(--dim)}
 .date{color:var(--dim);font-size:14px}
-.badge{font-size:12px;padding:2px 9px;border-radius:10px;background:#e6ecf3;color:var(--dim)}
+.badge{font-size:12px;padding:2px 9px;border-radius:10px;background:#efece4;color:var(--dim)}
 .badge.rules{background:#fff3cd;color:var(--warn)}
-.tagline{color:var(--faint);font-size:13px;margin-top:6px}
-.note{font-size:13px;color:var(--warn);background:#fff8e1;border:1px solid #ffe08a;
+.note{font-size:13px;color:var(--warn);background:#fdf3df;border:1px solid #ecd9a8;
  border-radius:6px;padding:9px 13px;margin:14px 0}
 h2{font-size:14px;margin:26px 0 12px;color:var(--dim);letter-spacing:1px;
  display:flex;align-items:center;gap:10px}
@@ -42,41 +51,49 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 /* ── 抽卡卡片 ──
    一条事件 = 一张独立卡片：大圆角 + 双层阴影 + 悬停微抬，像一张能抽出来的卡。
    宽屏保持"左新闻 1/3、右解读 2/3"，窄屏叠成单栏（见下面的媒体查询）。
-   [预留·左右滑动抽卡] .cards 容器内就是 .deck（横向滚动轨道），默认已经是
-   滑动卡组。若只想要原来的竖排平铺，改一行：.deck-track{display:block}
-   并把 .deck-slide{flex:0 0 100%} 删掉即可。两种形态共用同一份卡片样式。 */
+   两栏的栅格挂在 .card-body 上而不是 article 上：手机要靠 .card-body 当纵向滚动
+   容器（卡片撑满一屏、放不下才内部滚），栅格留在 article 上就没法让它当一个盒子。
+   [预留·左右滑动抽卡] 轨道里的卡片就是 .deck-slide，默认已经是滑动卡组。
+   若只想要原来的竖排平铺，改一行：.deck-track{display:block} 并把
+   .deck-slide{flex:0 0 100%} 删掉即可。两种形态共用同一份卡片样式。 */
 .cards{display:block}
-article{background:var(--card);border:1px solid var(--line);border-radius:var(--card-r);
- margin-bottom:16px;display:grid;grid-template-columns:minmax(240px,1fr) 2fr;
- overflow:hidden;box-shadow:var(--card-sd);
- transition:transform .18s ease,box-shadow .18s ease}
-article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
-.news{padding:16px 18px;border-right:1px solid var(--line);background:#fafbfc}
-.news a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;
- display:block;margin-bottom:8px}
+article{background:transparent;border:0;border-radius:0;margin-bottom:16px;overflow:hidden}
+.card-body{display:grid;grid-template-columns:minmax(240px,1fr) 2fr;gap:14px}
+.news{padding:15px 17px;background:var(--card);border:1px solid var(--line);
+ border-radius:var(--card-r);box-shadow:var(--card-sd)}
+.news a{color:var(--ink);text-decoration:none;font-family:var(--serif);font-weight:600;
+ font-size:15px;display:block;margin-bottom:8px;line-height:1.45}
 .news a:hover{color:var(--accent);text-decoration:underline}
 .src{color:var(--faint);font-size:12px}
 .raw{color:var(--dim);font-size:12.5px;margin-top:9px;padding-top:9px;
  border-top:1px dashed var(--line)}
-/* 卡片顶端一条色带 + 板块标签。因为滑卡把所有板块并成一条，卡片本身要自报板块。 */
+/* 卡片顶端一条色带 + 板块标签。因为滑卡把所有板块、甚至前后几天的条目都并成一条，
+   卡片本身要自报板块；跨天滑过来的卡片还要自报"这是哪天"（.daychip）。 */
 article{position:relative}
 article[data-cat]{overflow:hidden}
 article[data-cat]::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
 article[data-cat="markets"]::before{background:var(--accent)}
-article[data-cat="policy"]::before{background:#b8860b}
+article[data-cat="policy"]::before{background:#a8690f}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px;
+ padding-right:30px}   /* 右上角留给收藏星标 */
 .catpill{display:inline-block;font-size:11px;letter-spacing:.4px;
- padding:2px 9px;border-radius:999px;margin-bottom:8px}
-.catpill[data-cat="markets"]{background:#e6f0fb;color:#0b5fbd}
-.catpill[data-cat="policy"]{background:#fbf0da;color:#8a6100}
+ padding:2px 9px;border-radius:999px}
+.catpill[data-cat="markets"]{background:#fbece7;color:#b44322}
+.catpill[data-cat="policy"]{background:#f3ead3;color:#8a620f}
+.daychip{font-size:11px;letter-spacing:.3px;color:var(--faint);
+ border:1px solid var(--line);border-radius:999px;padding:1px 8px}
 @media(prefers-color-scheme:dark){
- .catpill[data-cat="markets"]{background:#1f2f42;color:#5c9ded}
- .catpill[data-cat="policy"]{background:#3a2f14;color:#e0b872}
+ .catpill[data-cat="markets"]{background:#3a241c;color:#d98a63}
+ .catpill[data-cat="policy"]{background:#2f2a16;color:#e0b872}
 }
 
 /* ── 滑卡卡组 ──
    一次只显示一张卡片，桌面用 ←  → 方向键 / 按钮翻，手机左右滑动翻。
    轨道本身可横向滚动（touch 天然支持），按钮和方向键也只是把 scrollLeft 挪一格；
-   滚动结束时按 scroll-snap 对齐，所以键盘和手指落到同一套位置逻辑上。 */
+   滚动结束时按 scroll-snap 对齐，所以键盘和手指落到同一套位置逻辑上。
+   轨道里装的是**连续几天**的卡片，所以"上一张/下一张"跨过当天边界就自然接到
+   前一天 / 后一天，没有特判。计数器和按钮放在卡片下面（手机上一屏一张，
+   卡片占满剩下的高度，控件只能往下排）。 */
 .deck{position:relative}
 .deck-track{display:flex;overflow-x:auto;overscroll-behavior-x:contain;
  scroll-snap-type:x mandatory;gap:14px;padding:2px 2px 12px;
@@ -85,7 +102,7 @@ article[data-cat="policy"]::before{background:#b8860b}
 .deck-slide{flex:0 0 100%;scroll-snap-align:center}
 .deck-slide article{margin-bottom:0}
 .deck-ctl{display:flex;align-items:center;justify-content:center;gap:14px;
- margin-bottom:4px;min-height:34px}
+ margin-top:4px;min-height:34px}
 .deck-btn{appearance:none;border:1px solid var(--line);background:var(--card);
  color:var(--dim);border-radius:999px;width:34px;height:34px;cursor:pointer;
  font:16px/1 monospace;display:inline-flex;align-items:center;justify-content:center;
@@ -95,45 +112,200 @@ article[data-cat="policy"]::before{background:#b8860b}
 .deck-btn[disabled]{opacity:.35;cursor:default}
 .deck-pos{color:var(--faint);font-size:13px;letter-spacing:.5px;min-width:52px;
  text-align:center}
-.deck-hint{color:var(--faint);font-size:12px;text-align:center;margin:2px 0 0}
 .deck-empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
-.read{padding:16px 19px}
+.read{padding:0}
 .seg{margin-bottom:13px}
 .seg:last-child{margin-bottom:0}
-.lb{font-size:11.5px;color:var(--faint);letter-spacing:.8px;margin-bottom:5px}
-.tx{font-size:13.5px;color:#26303c;line-height:1.72}
+/* ── 研读卡：每一节是一张独立白卡，卡头是「深色图标块 + 衬线标题（+副题）」，
+   样式参照 fish22-ai/dailybrief-ui 的头卡：发生了什么=核、为什么在意=因、
+   金融传导=链、深入研读=研、行动启示=动。 */
+.seg{background:var(--card);border:1px solid var(--line);border-radius:var(--card-r);
+ padding:11px 13px;box-shadow:var(--card-sd);margin-bottom:10px}
+.seg:last-child{margin-bottom:0}
+.sec-hd{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.sec-hd .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.seg.why .sec-hd .dot{background:var(--accent2)}
+.seg.chain .sec-hd .dot{background:var(--chain)}
+/* 研读卡的小标题要**明显大于正文**（正文 13.5px）：早先它是 14px，跟正文几乎一样，
+   手机端正文还乘了 14.5px 的基准，结果标题反而是全卡最小的字，层级完全反了。 */
+.sec-hd h4{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.3px}
+.sec-hd .sub{color:var(--faint);font-size:11px;margin-top:1px;letter-spacing:.2px}
+.tx{font-size:13.5px;color:#33332f;line-height:1.72}
 .seg.what .tx{font-size:15px;font-weight:600;color:var(--ink);line-height:1.55}
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 6px;margin-bottom:5px}
+/* ── 30秒事实内核：三条客观事实，勾号 + 文本 ──
+   类名刻意用 .fact-list 而不是 .facts —— 外层的研读卡也带着 facts 这个 cls，
+   两者同名的话栅格/列表样式会互相串（行动启示那边就踩过一次，见 .take-list）。 */
+.fact-list{list-style:none}
+.fact-list li{position:relative;padding-left:19px;margin-bottom:7px;font-size:13.5px;
+ color:#33332f;line-height:1.7}
+.fact-list li:last-child{margin-bottom:0}
+.fact-list li::before{content:"\2713";position:absolute;left:1px;top:0;font-size:12px;
+ font-weight:700;color:var(--accent2)}
+/* ── 深入研读与博弈透视：历史参照 / 博弈各方 / 前瞻指标 三小块 ──
+   小节标题是「色点 + 小字标签」，比主卡头低一级，读起来不跟四张研读卡抢。 */
+.deep-sub{margin-bottom:12px}
+.deep-sub:last-child{margin-bottom:0}
+.deep-lb{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;
+ color:var(--faint);letter-spacing:.6px;margin-bottom:7px}
+.deep-lb::before{content:"";width:6px;height:6px;border-radius:50%;
+ background:var(--accent2);flex:none}
+.analogy{background:var(--bg);border:1px solid var(--line);border-radius:9px;
+ padding:10px 12px}
+.analogy .ay{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:5px}
+.analogy .ae{font-family:var(--serif);font-weight:700;font-size:13.5px;color:var(--ink)}
+.analogy .ayr{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
+ font-size:11px;color:var(--faint)}
+.analogy p{font-size:12.5px;color:#33332f;line-height:1.7}
+.parties{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.party{background:var(--card);border:1px solid var(--line);border-radius:9px;
+ padding:9px 11px}
+.party .pn{display:flex;justify-content:space-between;gap:6px;font-weight:700;
+ font-size:13px;color:var(--ink);padding-bottom:6px;margin-bottom:6px;
+ border-bottom:1px solid var(--line)}
+.party .pn i{font-style:normal;font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",
+ Consolas,monospace;font-size:10px;color:var(--faint)}
+.party .pl{display:block;font-size:10px;color:var(--faint);margin-bottom:2px}
+.party .pv{font-size:12px;color:#4f4f48;line-height:1.6}
+.party .pb{display:block;font-size:10px;font-weight:600;color:var(--accent);margin:7px 0 2px}
+.party .pvb{font-size:12px;font-weight:500;color:var(--ink);line-height:1.6}
+.inds{display:flex;flex-direction:column;gap:6px}
+.ind{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 11px}
+.ind .ih{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:4px}
+.ind .in{font-size:13px;font-weight:600;color:var(--ink)}
+.ind .it{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
+ font-size:11px;padding:1px 7px;border-radius:4px;background:#ede6dc;color:#705030}
+.ind .is{font-size:12px;color:var(--dim);line-height:1.65}
+/* ── 行动启示与认知内化：投资者 / 实体与从业者 / 个人与家庭 三栏 ──
+   栅格挂在 .take-list 这个**内层** div 上，绝不能挂在研读卡本身（它的 cls 也叫
+   takes）—— 同名时卡头和内容会一起被当成栅格子项：卡头挤进第一列、内容进第二列、
+   第三列空着，而且手机端因为栅格已叠成单栏反而看不出来。踩过一次，别再合并。 */
+.take-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.take{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.take .tl{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.take p{font-size:12.5px;color:#4f4f48;line-height:1.7}
+/* 窄屏：三栏并排会挤成豆腐块，直接叠成单栏 */
+@media(max-width:760px){
+ .parties,.take-list{grid-template-columns:1fr}
+}
+/* ── 经济传导脉络：4 阶段步骤条 + 统一详情面板（照 dailybrief-ui）──
+   链条的环被均分成 4 个阶段（不烧 LLM，只重组原文）。顶部 4 个 Step 标签横排
+   （mono「STEP 0n」徽章 + 标题，标题允许完整换行、不省略）；点击任意 Step，
+   详情都在整个模块**下方**的同一块面板里切换，不跟着某个 Step 列走。
+   选 Step 用原生 radio（每张卡独立 radio 组），面板显隐靠 CSS `:has()` 联动，
+   **零 JS**，键盘方向键也能切。 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.step{position:relative;cursor:pointer;user-select:none;border:1px solid var(--line);
+ border-radius:9px;background:var(--card);padding:7px 9px 8px;display:block;overflow:hidden}
+.step input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.step:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.stepn{display:inline-block;font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",
+ Consolas,monospace;font-size:9.5px;font-weight:700;letter-spacing:.6px;
+ padding:1px 6px;border-radius:4px;background:var(--code);color:var(--faint);
+ white-space:nowrap}   /* STEP 0n 徽章别在窄卡里折成两行 */
+.step:has(input:checked) .stepn{background:var(--ink);color:var(--bg)}
+.stepl{display:block;margin-top:6px;font-size:12px;line-height:1.45;font-weight:500;
+ color:var(--dim);white-space:normal}   /* 标题完整展开，不省略 */
+.step:hover .stepl{color:var(--ink)}
+.step:has(input:checked) .stepl{color:var(--ink);font-weight:700}
+.step:has(input:checked){border-color:var(--ink)}
+/* 选中态底部一根砖红细条，就是参考 UI 的 active 指示条 */
+.step:has(input:checked)::after{content:"";position:absolute;bottom:0;left:0;right:0;
+ height:2px;background:var(--accent)}
+/* 统一详情面板：只显示当前选中的那个（radio + :has，零 JS） */
+.step-panels{margin-top:8px}
+.step-panel{display:none;background:var(--bg);border:1px solid var(--line);
+ border-radius:10px;padding:9px 10px}
+.steps:has(input[value="1"]:checked) ~ .step-panels .panel-1,
+.steps:has(input[value="2"]:checked) ~ .step-panels .panel-2,
+.steps:has(input[value="3"]:checked) ~ .step-panels .panel-3,
+.steps:has(input[value="4"]:checked) ~ .step-panels .panel-4{display:block}
+.step-hd{display:flex;align-items:center;gap:6px;padding-bottom:6px;margin-bottom:7px;
+ border-bottom:1px dashed var(--line)}
+.step-hd b{width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--bg);
+ font-size:10.5px;font-weight:700;display:inline-flex;align-items:center;
+ justify-content:center;flex:none}
+.step-hd span{font-family:var(--serif);font-weight:700;font-size:13.5px;color:var(--ink)}
+.step-hd .step-t{margin-left:auto;font-style:normal;font-family:ui-monospace,
+ SFMono-Regular,"Cascadia Mono",Consolas,monospace;font-size:10.5px;color:var(--faint);
+ white-space:nowrap;flex:none}
+.step-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.sf{background:var(--card);border:1px solid var(--line);border-radius:8px;
+ padding:calc(9px*var(--fit,1)) calc(11px*var(--fit,1))}
+.sf-lb{display:flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;
+ color:var(--faint);letter-spacing:.8px;margin-bottom:5px}
+.sf-lb::before{content:"";width:6px;height:6px;border-radius:50%;
+ background:var(--accent);flex:none}
+.sf-logic .sf-lb::before{background:var(--accent2)}
+.sf-v{font-size:12px;line-height:1.6;color:#33332f}
+/* 资产影响：绿涨/红跌/琥珀震荡 的色块行，照 reference 的 Impacted Asset Classes */
+.impacts{margin-top:calc(8px*var(--fit,1));padding-top:calc(7px*var(--fit,1));border-top:1px dashed var(--line)}
+.imp-t{font-size:10.5px;font-weight:600;color:var(--dim);letter-spacing:.5px;
+ margin-bottom:7px}
+.imp-list{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.imp{display:flex;align-items:flex-start;gap:calc(8px*var(--fit,1));background:var(--card);
+ border:1px solid var(--line);border-radius:8px;
+ padding:calc(7px*var(--fit,1)) calc(9px*var(--fit,1))}
+.dir{width:calc(24px*var(--fit,1));height:calc(24px*var(--fit,1));border-radius:6px;
+ display:inline-flex;align-items:center;justify-content:center;
+ font-size:calc(12px*var(--fit,1));font-weight:700;flex:none}
+.dir.up{background:#eaf6ee;color:#1e7e34}
+.dir.down{background:#fdeee9;color:#c82333}
+.dir.vol{background:#fff6e3;color:#b78103}
+.dir.neu{background:var(--code);color:var(--dim)}
+.imp-txt{min-width:0}
+.imp-txt b{display:inline-block;font-size:12px;font-weight:600;color:var(--ink);
+ line-height:1.5}
+.imp-note{font-size:11px;color:var(--dim);line-height:1.55;margin-top:3px}
+.imp-tag{display:inline-block;margin-left:7px;font-family:ui-monospace,SFMono-Regular,
+ "Cascadia Mono",Consolas,monospace;font-size:10px;font-weight:600;padding:1px 6px;
+ border-radius:4px}
+.imp-tag.up{background:#eaf6ee;color:#1e7e34}
+.imp-tag.down{background:#fdeee9;color:#c82333}
+.imp-tag.vol{background:#fff6e3;color:#b78103}
+.imp-tag.neu{background:var(--code);color:var(--dim)}
+/* 监测指标：底部砖红警示行，照 reference 的 Key Sensitivity Indicator */
+.sens{display:flex;gap:7px;align-items:flex-start;margin-top:calc(8px*var(--fit,1));padding-top:calc(7px*var(--fit,1));
+ border-top:1px dashed var(--line);font-size:11.5px;color:var(--dim);line-height:1.6}
+.sens-ic{width:17px;height:17px;border-radius:50%;background:var(--accent);color:#fff;
+ font-size:10.5px;font-weight:700;display:inline-flex;align-items:center;
+ justify-content:center;flex:none;margin-top:1px}
+.sens b{color:var(--ink);font-weight:600}
+/* 传导链：一环一格，每格带编号圆点，读起来像一条编号的传导管线 */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px}
 .flow:last-child{margin-bottom:0}
-.hop{background:var(--chainbg);border:1px solid var(--chainline);color:var(--chain);
- border-radius:6px;padding:3px 8px;font-size:12.5px;line-height:1.5}
-.arw{color:var(--chain);opacity:.55;font-size:12px}
-/* ── 解析折叠 ──
+.hop{display:inline-flex;align-items:center;gap:6px;background:var(--chainbg);
+ border:1px solid var(--chainline);color:var(--chain);border-radius:8px;
+ padding:4px 10px 4px 5px;font-size:12.5px;line-height:1.45}
+.hn{width:17px;height:17px;border-radius:50%;background:var(--chain);color:#fff;
+ display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;
+ font-weight:700;flex:none}
+.arw{color:var(--chain);opacity:.5;font-size:11px}
+/* ── 深入研读的折叠 ──
    用原生 <details>/<summary>，**不写一行 JS**：零脚本、键盘可达、禁用 JS 也能展开。
    按钮的两种文案都在 HTML 里，只用 CSS 切换显示 —— 不靠 content 伪元素塞文字，
    这样读屏器和"页面内查找"都能拿到真实文字。 */
-.notes{border-top:1px dashed var(--line);padding-top:11px}
-.notes>summary{list-style:none;cursor:pointer;user-select:none;
+.fold{border-top:1px dashed var(--line);padding-top:11px}
+.fold>summary{list-style:none;cursor:pointer;user-select:none;
  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;
  color:var(--accent);background:var(--pill);border:1px solid var(--pillline);
  border-radius:999px;padding:5px 13px;transition:background .15s ease}
-.notes>summary::-webkit-details-marker{display:none}
-.notes>summary::marker{content:""}
-.notes>summary:hover{background:var(--pillline)}
-.notes>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.notes>summary::after{content:"\25be";font-size:10px;opacity:.75;
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::marker{content:""}
+.fold>summary:hover{background:var(--pillline)}
+.fold>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fold>summary::after{content:"\25be";font-size:10px;opacity:.75;
  transition:transform .15s ease}
-.notes[open]>summary::after{transform:rotate(180deg)}
+.fold[open]>summary::after{transform:rotate(180deg)}
 .cnt{color:var(--faint);font-size:11.5px}
 .tg-close{display:none}
-.notes[open] .tg-open{display:none}
-.notes[open] .tg-close{display:inline}
-.notes>ul{list-style:none;margin-top:12px}
-.notes li{position:relative;padding-left:15px;margin-bottom:9px;font-size:13px;
- color:#26303c;line-height:1.72}
-.notes li:last-child{margin-bottom:0}
-.notes li::before{content:"*";position:absolute;left:2px;top:1px;color:var(--faint)}
+.fold[open] .tg-open{display:none}
+.fold[open] .tg-close{display:inline}
+.fold>ul{list-style:none;margin-top:12px}
+.fold li{position:relative;padding-left:15px;margin-bottom:9px;font-size:13px;
+ color:#33332f;line-height:1.72}
+.fold li:last-child{margin-bottom:0}
+.fold li::before{content:"*";position:absolute;left:2px;top:1px;color:var(--faint)}
 .nk{color:var(--ink)}
 .fml{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
  background:var(--code);border-left:2px solid var(--accent);border-radius:4px;
@@ -148,114 +320,488 @@ article[data-cat="policy"]::before{background:#b8860b}
 .fd{padding:3px .55em 0;border-top:1.5px solid currentColor}
 code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
  background:var(--code);border-radius:3px;padding:1px 4px;font-size:12.5px}
-.noread{padding:16px 19px;color:var(--faint);font-size:13px;display:flex;align-items:center}
+.noread{padding:14px 16px;color:var(--faint);font-size:13px;display:flex;align-items:center;
+ background:var(--card);border:1px solid var(--line);border-radius:var(--card-r);
+ box-shadow:var(--card-sd)}
 .empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
-nav{margin-top:30px;background:var(--card);border:1px solid var(--line);
- border-radius:var(--card-r);padding:14px 18px;box-shadow:var(--card-sd)}
-nav h3{font-size:12px;color:var(--dim);margin-bottom:10px;letter-spacing:1px}
-nav a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#eef2f6;
- border-radius:6px;color:#3a4351;text-decoration:none;font-size:13px}
-nav a:hover{background:#e0e7ef}
-nav a.cur{background:var(--ink);color:#fff}
+/* ── 面板里的历史归档（事件归档）：年 → 月 → 日期，三级都是原生 <details> ──
+   日期平铺 60 天会很长，所以年和月都默认收起，只留几个标题行；展开某个月才列出
+   那几天。零 JS（原生 details/summary），键盘也走得通。 */
+.archive details{margin-bottom:4px}
+.archive details:last-child{margin-bottom:0}
+.archive summary{list-style:none;cursor:pointer;user-select:none;font-size:13.5px;
+ color:var(--dim);display:flex;align-items:baseline;gap:8px;padding:5px 0}
+.archive summary::-webkit-details-marker{display:none}
+.archive summary::before{content:"\25b8";font-size:10px;color:var(--faint);
+ display:inline-block;transition:transform .15s ease}
+.archive details[open]>summary::before{transform:rotate(90deg)}
+.archive summary:hover{color:var(--accent)}
+.archive summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.archive .arc-m summary{padding-left:16px;font-size:13px}
+.archive summary .cnt{color:var(--faint);font-size:11.5px}
+.archive .days{display:flex;flex-wrap:wrap;gap:6px;padding:6px 0 10px 26px}
+.archive a{display:inline-block;min-width:32px;text-align:center;padding:4px 8px;
+ background:#f1efe8;border-radius:6px;color:#4a4840;text-decoration:none;font-size:13px}
+.archive a:hover{background:#e3dfd2}
+.archive a.cur{background:var(--ink);color:#fff}
 footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
-/* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
-   只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
-   传导链的环格要能整行排下，公式块允许横向滚动而不是硬换行把公式劈开，
-   折叠按钮要有够大的触摸目标。 */
-@media(max-width:760px){
- body{padding:16px 12px 40px}
- .wrap{max-width:100%}
- article{grid-template-columns:1fr;margin-bottom:0}
- .deck-track{gap:12px;padding:2px 0 10px}
- .news{border-right:0;border-bottom:1px solid var(--line);padding:14px 15px}
- .read{padding:14px 15px}
- .tx,.notes li{font-size:14.5px;line-height:1.78}
- .seg.what .tx{font-size:15.5px}
- .hop{font-size:13px;padding:4px 9px}
- /* 公式不换行会被劈开读不懂，让它自己横滚。分式是 flex 布局，不能锁 pre。 */
- .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
-  -webkit-overflow-scrolling:touch}
- .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
- .deck-btn{width:38px;height:38px}
- h1{font-size:19px}
- nav a{font-size:13.5px;padding:6px 11px}
+
+/* ── 英文原文折叠（.orig）──
+   英文源的卡片手机端默认只显示中文解读：标题和原文摘要都收进这个 details，
+   点「查看英文原文」才展开。桌面端不折（屏幕够宽，英文直接摊开更好读），
+   靠 author CSS 覆盖浏览器给 details 的 display:none —— 作者样式优先于 UA 样式。 */
+.orig{margin-bottom:8px}
+.orig>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;
+ align-items:center;gap:6px;font-size:12.5px;color:var(--dim);background:var(--code);
+ border:1px solid var(--line);border-radius:999px;padding:5px 13px}
+.orig>summary::-webkit-details-marker{display:none}
+.orig>summary::after{content:"\25be";font-size:10px;opacity:.7;
+ transition:transform .15s ease}
+.orig[open]>summary::after{transform:rotate(180deg)}
+.orig>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.orig>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.orig[open]>summary{margin-bottom:9px}
+@media(min-width:761px){
+ .orig{margin-bottom:0}
+ .orig>summary{display:none}
+ .orig>*:not(summary){display:block;content-visibility:visible}
 }
-/* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
+
+/* ── 底部固定功能栏 + 三个面板 ──
+   三个入口：事件归档 / 我的收藏 / 设置。面板是固定在底部往上抽的抽屉，
+   同一时间只开一个；点遮罩、点 ✕、按 Esc 都关。没有 JS 时靠 <noscript>
+   里那段样式把三块直接摊在页面底部（归档照样能用）。
+   注意：这里滚动的是**抽屉自己**（max-height + overflow-y），卡片里依旧没有内嵌滚动。 */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;
+ background:var(--card);border-top:1px solid var(--line);
+ padding-bottom:env(safe-area-inset-bottom);
+ box-shadow:0 -4px 18px -10px rgba(16,24,40,.35)}
+.tabbar button{flex:1;appearance:none;background:none;border:0;cursor:pointer;
+ font:inherit;color:var(--dim);padding:8px 4px 7px;
+ display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px}
+.tabbar .ic{font-size:17px;line-height:1}
+.tabbar button:hover{color:var(--accent)}
+.tabbar button[aria-expanded="true"]{color:var(--accent)}
+.tabbar button:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(12,16,22,.45);
+ opacity:0;pointer-events:none;transition:opacity .2s ease}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--card);
+ border-radius:18px 18px 0 0;box-shadow:0 -12px 44px -14px rgba(16,24,40,.45);
+ max-height:78vh;overflow-y:auto;overscroll-behavior:contain;
+ padding:12px 16px calc(22px + env(safe-area-inset-bottom));
+ transform:translateY(103%);transition:transform .24s ease;visibility:hidden}
+.sheet.on{transform:none;visibility:visible}
+.sheet-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.sheet-hd h2{font-size:14px;letter-spacing:.5px;color:var(--dim);margin:0;flex:1}
+.sheet-hd h2::after{content:none}
+.sheet-x{appearance:none;background:none;border:0;cursor:pointer;color:var(--faint);
+ font-size:15px;line-height:1;padding:4px 2px}
+.sheet-x:hover{color:var(--accent)}
+.favs{list-style:none;margin:0}
+.favs li{display:flex;align-items:baseline;gap:8px;padding:9px 0;
+ border-bottom:1px dashed var(--line)}
+.favs li:last-child{border-bottom:0}
+.favs a{flex:1;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:600;
+ line-height:1.5}
+.favs a:hover{color:var(--accent);text-decoration:underline}
+.fav-meta{color:var(--faint);font-size:12px;white-space:nowrap}
+.fav-del{appearance:none;background:none;border:0;cursor:pointer;color:var(--faint);
+ font-size:13px;padding:2px 4px}
+.fav-del:hover{color:#c0392b}
+.favs-empty,.favs-note{color:var(--faint);font-size:12.5px;line-height:1.7}
+.favs-empty{padding:4px 0 2px}
+.favs-note{margin-top:10px;font-size:11.5px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer}
+.opt input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent)}
+.opt span{font-size:13.5px}
+.opt em{display:block;font-style:normal;color:var(--faint);font-size:12px;margin-top:3px;
+ line-height:1.6}
+/* 收藏星标：贴在卡片右上角，不参与正文流 */
+.fav{position:absolute;top:9px;right:11px;z-index:2;appearance:none;background:none;
+ border:0;cursor:pointer;font-size:17px;line-height:1;color:var(--faint);padding:3px 4px;
+ transition:color .15s ease,transform .15s ease}
+.fav:hover{color:#c9805d;transform:scale(1.12)}
+.fav.on{color:#b44322}
+.fav:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+/* 桌面端：功能栏和抽屉都居中收窄，别横跨整个 1240px */
+@media(min-width:761px){
+ .tabbar{left:50%;right:auto;width:520px;margin-left:-260px;
+  border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0}
+ .sheet{left:50%;right:auto;width:720px;margin-left:-360px;border-radius:18px}
+}
+/* ── 手机：一屏一张卡，但页面照常整页上下滚 ──
+   卡片本身做得够短（除"解析"外都在一屏里），所以横向翻卡时不用上下找内容；
+   但页面**不锁高、不做卡内局部滚动** —— 卡内滚动读起来憋屈，长一点就让它长，
+   整页顺滑上下滚，和普通网页一致。字数多的卡片靠页尾脚本把 --fit 从 1 往下调到
+   0.65（下面所有字号都乘它），目标是"整张卡不超过一屏"；缩到底还超，就让它超，
+   页面继续滚。 */
+@media(max-width:760px){
+ body{padding:12px 11px calc(74px + env(safe-area-inset-bottom))}
+ .wrap{max-width:none}
+ header{gap:8px}
+ h1{font-size:18px}
+ .date{font-size:12.5px}
+ .badge{font-size:11px;padding:1px 8px}
+ .note{font-size:12px;padding:7px 11px;margin:12px 0}
+ .deck-track{gap:10px;padding:2px 0 6px}
+ .card-body{grid-template-columns:1fr}          /* 单栏，自然高度，不截不滚 */
+ .news{padding:12px 14px}
+ .read{padding:0}
+ /* 除深入研读/解析之外的一切字号都乘 --fit：整张卡超过一屏就整体缩，不做截断 */
+ .seg{margin-bottom:calc(10px*var(--fit,1))}
+ .sec-hd h4{font-size:calc(16px*var(--fit,1))}
+ .sec-hd .sub{font-size:calc(11.5px*var(--fit,1))}
+ .step{padding:calc(7px*var(--fit,1)) calc(9px*var(--fit,1)) calc(8px*var(--fit,1))}
+ .stepn{font-size:calc(9.5px*var(--fit,1))}
+ .stepl{font-size:calc(12px*var(--fit,1))}
+  .step-panel{padding:calc(8px*var(--fit,1)) calc(9px*var(--fit,1))}
+ .sf-lb{font-size:calc(10.5px*var(--fit,1))}
+ .sf-v{font-size:calc(12px*var(--fit,1))}
+ .imp-txt b{font-size:calc(12px*var(--fit,1))}
+ .sens{font-size:calc(11.5px*var(--fit,1))}
+ .tx,.fold li,.fact-list li{font-size:calc(14.5px*var(--fit,1));line-height:1.75}
+ .seg.what .tx{font-size:calc(15.5px*var(--fit,1))}
+ /* 深入研读 / 行动启示里的正文也要乘 --fit，不然卡片缩字号时这几块不跟着缩，
+    fit 脚本就白跑了（手机一屏一张卡的预算会被这几张卡撑破）。 */
+ .analogy p,.party .pv,.party .pvb,.take p{font-size:calc(12px*var(--fit,1))}
+ .party .pn,.ind .in{font-size:calc(13px*var(--fit,1))}
+ .party .pl,.party .pb,.ind .it{font-size:calc(10.5px*var(--fit,1))}
+ .ind .is{font-size:calc(12px*var(--fit,1))}
+ .deep-lb{font-size:calc(12px*var(--fit,1))}
+ .take .tl{font-size:calc(13px*var(--fit,1))}
+ .analogy .ae{font-size:calc(13.5px*var(--fit,1))}
+ .step-hd span{font-size:calc(13.5px*var(--fit,1))}
+ .imp-note,.step-hd .step-t{font-size:calc(11px*var(--fit,1))}
+ .news a{font-size:calc(15px*var(--fit,1))}
+ .src{font-size:calc(12px*var(--fit,1))}
+ .raw{font-size:calc(12.5px*var(--fit,1));margin-top:calc(9px*var(--fit,1));
+  padding-top:calc(9px*var(--fit,1))}
+ .hop{font-size:calc(13px*var(--fit,1));gap:calc(6px*var(--fit,1));
+  padding:calc(4px*var(--fit,1)) calc(9px*var(--fit,1)) calc(4px*var(--fit,1)) calc(5px*var(--fit,1))}
+ .hn{width:calc(17px*var(--fit,1));height:calc(17px*var(--fit,1));
+  font-size:calc(10.5px*var(--fit,1))}
+ .fold>summary{font-size:calc(13.5px*var(--fit,1));
+  padding:calc(8px*var(--fit,1)) calc(15px*var(--fit,1))}   /* 触摸目标别太小 */
+ /* 公式不换行会被劈开读不懂，让它自己横滚。分式是 flex 布局，不能锁 pre。
+    行内 code 也必须乘 --fit —— 不然整卡缩字号时，公式块停在 12.5px 会显得特大。 */
+ .fml{font-size:calc(12.5px*var(--fit,1))}
+ code{font-size:calc(12.5px*var(--fit,1))}
+ .fml:not(.frac){white-space:pre;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .deck-ctl{margin-top:6px;min-height:32px;gap:12px}
+ .deck-btn{width:36px;height:36px}
+ /* 归档：抽屉里再压一档，手机上大多直接点日期，标题行不用太大 */
+ .archive summary{font-size:12.5px;padding:4px 0}
+ .archive .arc-m summary{font-size:12px}
+ .archive .days{padding:4px 0 6px 22px;gap:5px}
+ .archive a{font-size:12px;padding:3px 7px;min-width:28px}
+ .sheet{padding:10px 14px calc(20px + env(safe-area-inset-bottom))}
+ .tabbar button{font-size:11px;padding:7px 4px 6px}
+ footer{display:none}
+}
+/* 传导链在窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
    放不下自动换行，箭头维持 "→"（不再转成上下竖排）。 */
-/* 悬停微抬只是锦上添花，晕动症用户把动效关掉后不该还在动 */
+/* 晕动症用户把动效关掉后不该还在动 */
 @media(prefers-reduced-motion:reduce){
- article,.notes>summary,.notes>summary::after{transition:none}
- article:hover{transform:none}
+ .fold>summary,.fold>summary::after,.fav{transition:none}
 }
 @media(prefers-color-scheme:dark){
- :root{--bg:#12151a;--card:#1b1f26;--line:#2a3038;--ink:#e6e9ee;--dim:#a3adba;
-  --faint:#7c8794;--accent:#5c9ded;--chain:#4ec49a;--chainbg:#1a2620;
-  --chainline:#2c4239;--code:#232830;--warn:#e0b872;
-  --pill:#22303f;--pillline:#33475d;
-  --card-sd:0 1px 2px rgba(0,0,0,.34),0 10px 24px -10px rgba(0,0,0,.55);
-  --card-sd-hi:0 2px 6px rgba(0,0,0,.4),0 18px 38px -12px rgba(0,0,0,.72)}
- .news{background:#181c22}
- nav a{background:#252b34;color:#c3ccd6}
- nav a.cur{background:#4a8fd8;color:#fff}
- .badge{background:#252b34}
+ :root{--bg:#171612;--card:#1e1d18;--line:#322f28;--ink:#e9e6dc;--dim:#b1ab9c;
+  --faint:#8a857a;--accent:#d98a63;--accent2:#7fb8a4;--chain:#7fb8a4;--chainbg:#1b2620;
+  --chainline:#2e4238;--code:#292720;--warn:#e0b872;
+  --pill:#2b2820;--pillline:#3f3a2d;
+  --card-sd:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6);
+  --card-sd-hi:0 2px 6px rgba(0,0,0,.5),0 20px 44px -14px rgba(0,0,0,.75)}
+ .news{background:#211f1a}
+ .archive a{background:#2a2821;color:#c7c2b4}
+ .archive a:hover{background:#35322a}
+ .badge{background:#2a2821}
  .note{background:#2a2418;border-color:#5c4a1e;color:#e0b872}
  .badge.rules{background:#3a2f14;color:#e0b872}
- .tx,.notes li{color:#cfd6de}
+ .tx,.fold li,.fact-list li,.analogy p{color:#d8d4c9}
+ .party .pv,.take p{color:#c4bfb2}
+ .ind .it{background:#332c1e;color:#e0b872}
 }</style></head><body><div class="wrap">
-<header><h1>DailyBrief</h1>
-<span class="date">2026-09-10</span><span class="badge">AI 解读</span></header>
-<div class="tagline">左栏是发生了什么，右栏是市场为什么在意、钱怎么一环一环流动、背后是哪个公式在动</div>
+<header><span class="logo" aria-hidden="true">勢</span><div class="hd"><h1>知势 <span class="en">DailyBrief</span></h1><p class="sub">全球政经大事 · 趋势与影响</p></div><span class="date">2026-09-10</span><span class="badge">AI 解读</span></header>
 
-<div class="deck-ctl" aria-label="卡片导航"><button class="deck-btn deck-prev" type="button" aria-label="上一张" disabled>‹</button><span class="deck-pos">1/7</span><button class="deck-btn deck-next" type="button" aria-label="下一张">›</button></div><div class="deck-track" tabindex="0"><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><a href="https://wallstreetcn.com/livenews/3162512" target="_blank" rel="noopener noreferrer">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</a><div class="src">华尔街见闻 · 2026-09-09 17:53</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原本预计美联储将降息，但近期通胀回升和官员表态让利率预期上升，短端美债收益率走高，并传导至其他资产。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">通胀回升</span><span class="arw">→</span><span class="hop">美联储降息预期减弱</span><span class="arw">→</span><span class="hop">2年期美债收益率上升</span><span class="arw">→</span><span class="hop">债券价格下跌</span><span class="arw">→</span><span class="hop">国债吸引力下降</span><span class="arw">→</span><span class="hop">资金流向利息更高的短债</span><span class="arw">→</span><span class="hop">股市资金分流</span><span class="arw">→</span><span class="hop">高估值成长股承压</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>2年期国债收益率反映市场对未来两年利率的预期，对政策利率变化最敏感。</li><li><b class="nk">债券价格和收益率呈反向变动：</b>收益率上升，债券价格下跌。</li><li>收益率上升意味着新发债券利息更高，旧债券吸引力下降，价格下跌。</li><li>短债收益率上升会吸引资金从股市流入债市，导致股市，尤其是高估值股票，面临抛压。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><a href="https://www.ft.com/content/fe0cbcfc-b351-4dac-889f-7b8f11f79102?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Norway’s oil fund says what everyone is thinking</a><div class="src">FT Markets · 2026-09-09 13:30</div><div class="raw">Sovereign debt ain’t what it was</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">挪威主权财富基金表示，主权债券不再像过去那样安全稳健。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场将主权债券视为无风险资产，其收益率是全球资产定价的基准，该言论冲击了市场对安全资产的信心，影响各类资产估值。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">主权债券被质疑安全性</span><span class="arw">→</span><span class="hop">无风险利率预期上升</span><span class="arw">→</span><span class="hop">全球资产重新定价</span><span class="arw">→</span><span class="hop">债券收益率上升</span><span class="arw">→</span><span class="hop">持有债券风险溢价提高</span><span class="arw">→</span><span class="hop">股票和房地产等风险资产估值下降</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>主权债券通常被认为几乎没有违约风险，因此收益率被用作无风险利率的基准。</li><li>无风险利率上升，意味着所有未来现金流折现到现在的价值下降，资产估值随之降低。</li><li>风险溢价是投资者因承担额外风险而要求的额外回报，主权债券风险上升，风险溢价增加，债券收益率进一步走高。</li><li>该言论可能只是观点，不一定导致实际价格变动，但反映了市场情绪的变化。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><a href="https://www.ft.com/content/33d4674f-31db-4551-9ad3-c43d5c94c94c" target="_blank" rel="noopener noreferrer">The clock is ticking on Senegal’s ‘total return swaps’</a><div class="src">FT Markets · 2026-09-09 13:00</div><div class="raw">Not such a FAB way to manage sovereign debt</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">《经济学人》报道，塞内加尔的主权债务通过“总回报互换”进行管理，但风险攀升，市场担忧其可持续性。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">新兴市场债务问题会影响全球投资者对新兴市场资产的风险偏好，导致资本流出和货币贬值。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">塞内加尔债务风险上升</span><span class="arw">→</span><span class="hop">新兴市场债券遭抛售</span><span class="arw">→</span><span class="hop">新兴市场货币贬值</span><span class="arw">→</span><span class="hop">资本外流</span><span class="arw">→</span><span class="hop">全球投资者避险情绪升温</span><span class="arw">→</span><span class="hop">资金流入发达市场资产</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>总回报互换是一种金融衍生品，让投资者在不实际持有债券的情况下，获得债券的收益和风险。</li><li>新兴市场债务风险上升，投资者会要求更高的收益率，导致债券价格下跌。</li><li>资本外流会导致新兴市场货币贬值，因为投资者卖出当地货币以换成美元等硬通货。</li><li>避险情绪下，资金会流向美国国债、黄金等安全资产，推高它们的价格。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><a href="https://www.economist.com/finance-and-economics/2026/09/06/inflation-is-back-around-the-world-as-is-the-fight-against-it" target="_blank" rel="noopener noreferrer">Inflation is back around the world—as is the fight against it</a><div class="src">The Economist · 2026-09-06 23:39</div><div class="raw">Central banks are raising interest rates again</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">《经济学人》报道，全球通胀再度抬头，各国央行纷纷重新开始加息。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原以为通胀已被控制，加息周期结束，但通胀回升迫使央行收紧政策，改变利率预期，影响所有资产。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">全球通胀反弹</span><span class="arw">→</span><span class="hop">央行被迫加息</span><span class="arw">→</span><span class="hop">利率上升</span><span class="arw">→</span><span class="hop">企业和个人贷款成本增加</span><span class="arw">→</span><span class="hop">消费和投资减少</span><span class="arw">→</span><span class="hop">经济增长放缓</span><span class="arw">→</span><span class="hop">股市下跌</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>通胀指物价普遍上涨，会侵蚀货币购买力。</li><li>央行加息是为了抑制通胀，通常通过提高基准利率来实现。</li><li>利率上升，贷款成本增加，企业利润和家庭可支配收入减少，进而影响消费和投资。</li><li>经济增长放缓会降低企业盈利预期，导致股市估值下降。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><a href="https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Oil hits $100 a barrel for first time since July after US and Houthi strikes</a><div class="src">BBC · 2026-09-09 17:47</div><div class="raw">Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">美国打击五艘伊朗油轮后，布伦特原油价格升至每桶100美元，为7月以来首次。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">油价突破重要心理关口，市场对供应中断的担忧成为焦点，通胀预期随之变化，债券和股票市场将受冲击。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">美国打击伊朗油轮</span><span class="arw">→</span><span class="hop">原油供应中断风险</span><span class="arw">→</span><span class="hop">布伦特油价突破100美元</span><span class="arw">→</span><span class="hop">全球通胀预期上升</span><span class="arw">→</span><span class="hop">央行政策收紧预期增强</span><span class="arw">→</span><span class="hop">长期债券收益率上升</span><span class="arw">→</span><span class="hop">股票市场估值承压</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>布伦特原油是全球最常用的原油价格基准之一。</li><li>原油供应中断会直接导致油价上涨，因为供给减少。</li><li>油价上涨是通胀的重要因素，因为能源成本会传导至其他商品和服务。</li><li>央行面对通胀压力，可能收紧货币政策，如加息，这会提升长期债券收益率，进而压制股票估值。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><a href="https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">Houthi offensive on Bab el-Mandeb Strait threatens new Red Sea shipping crisis</a><div class="src">SCMP · 2026-09-09 18:00</div><div class="raw">A battle for control of Yemen’s coastal plains overlooking the strategic Bab el-Mandeb Strait, launched on Friday by Iran-aligned Houthi rebels, is ra</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">胡塞武装在曼德海峡发动攻势，威胁红海航运安全，可能引发新一轮全球航运危机。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">红海是全球重要贸易通道，供应链中断会推高运输成本，影响全球贸易和通胀，投资者风险偏好下降。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">红海航运受阻</span><span class="arw">→</span><span class="hop">运输成本上升</span><span class="arw">→</span><span class="hop">全球贸易成本增加</span><span class="arw">→</span><span class="hop">商品价格上涨</span><span class="arw">→</span><span class="hop">通胀压力增大</span><span class="arw">→</span><span class="hop">央行收紧货币政策预期上升</span><span class="arw">→</span><span class="hop">股票和债券市场波动</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>曼德海峡连接红海和亚丁湾，是全球石油和货物运输的关键通道。</li><li>航运成本上升会推高进口商品价格，加剧通胀。</li><li>供应链中断可能迫使央行加息以控制通胀，影响资本市场。</li><li>物流和零售等行业将受冲击，而航运公司可能因运价上涨而受益。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><a href="https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/" target="_blank" rel="noopener noreferrer">South Korea supercharges defense budget to record levels</a><div class="src">Defense News · 2026-09-09 17:23</div><div class="raw">South Korea&#x27;s record defense budget comes amid disparaging comments about Seoul&#x27;s alliance with the United States by its president, Donald Trump.</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">韩国公布创纪录的国防预算，以应对地缘风险。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">国防开支增加会扩大财政赤字，影响政府债券供给，韩国国债收益率可能上升，并影响区域资产。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">韩国国防预算增加</span><span class="arw">→</span><span class="hop">政府财政支出扩大</span><span class="arw">→</span><span class="hop">财政赤字扩大</span><span class="arw">→</span><span class="hop">政府债券供给增加</span><span class="arw">→</span><span class="hop">韩国国债收益率上升</span><span class="arw">→</span><span class="hop">韩元汇率波动</span><span class="arw">→</span><span class="hop">区域金融资产价格变动</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>国防预算增加需要政府通过发债筹资，债市供给增加会压低债券价格，推高收益率。</li><li>财政赤字扩大可能影响国家信用评级，增加借贷成本。</li><li>国债收益率上升会吸引外资流入，但也可能导致韩元升值，影响出口。</li><li>区域内的股票市场可能因预期利率上升而承压。</li></ul></details></div></article></div></div><p class="deck-hint">← → 或按钮切换 · 手机左右滑动</p>
-<nav><h3>历史归档</h3><a href="2026-09-10.html" class="cur">2026-09-10</a><a href="2026-09-09.html">2026-09-09</a><a href="2026-09-07.html">2026-09-07</a><a href="2026-09-06.html">2026-09-06</a></nav>
-<footer>每周更新 · 市场货币金融 / 政策地缘大事件<br>
+<div class="deck"><div class="deck-track" tabindex="0"><div class="deck-slide" data-day="2026-09-09" data-i="1" data-n="8"><article id="c-2026-09-09-1" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-1" data-id="https://www.ft.com/content/c8921e49-1d06-4d27-ab38-7a1d8e3d43fe?syn-25a6b1a6=1" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.ft.com/content/c8921e49-1d06-4d27-ab38-7a1d8e3d43fe?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Oil hits $100 for first time since July</a><div class="raw">Brent crude advances as escalation in US-Iran war feeds fears of renewed global supply crunch</div></details><div class="src">FT Markets · 2026-09-09 16:49</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">布伦特原油价格突破每桶100美元，为去年7月以来首次，因美伊冲突升级引发供应中断担忧。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">市场此前已计入部分地缘风险溢价，但100美元关口被突破意味着供给冲击预期从&#x27;尾部风险&#x27;变为&#x27;基准情景&#x27;，全球通胀预期和央行政策路径需重新定价。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-1" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">美伊军事冲突升级</span></label><label class="step"><input type="radio" name="chain-2026-09-09-1" value="2"><span class="stepn">STEP 02</span><span class="stepl">全球原油供给缺口预期扩大</span></label><label class="step"><input type="radio" name="chain-2026-09-09-1" value="3"><span class="stepn">STEP 03</span><span class="stepl">能源通胀预期上行</span></label><label class="step"><input type="radio" name="chain-2026-09-09-1" value="4"><span class="stepn">STEP 04</span><span class="stepl">债券收益率承压上行</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>美伊军事冲突升级</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美伊军事冲突升级</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">美伊军事冲突升级 → 伊朗原油出口受阻预期增强</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>美伊军事冲突升级</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美伊军事冲突升级</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>全球原油供给缺口预期扩大</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">全球原油供给缺口预期扩大</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">全球原油供给缺口预期扩大 → 布伦特油价突破100美元</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>布伦特油价突破100美元</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>布伦特油价突破100美元</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>能源通胀预期上行</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">能源通胀预期上行</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">能源通胀预期上行 → 各国央行降息空间收窄</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>能源通胀预期</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>各国央行降息空间收窄</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>各国央行降息空间收窄</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>债券收益率承压上行</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">债券收益率承压上行</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">债券收益率承压上行 → 股市估值压力增加</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>债券收益率</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>股市估值压力增加</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>股市估值压力增加</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">5 条</span></summary><ul><li>布伦特原油是全球约三分之二原油贸易的定价基准，其价格变动直接影响各国进口成本。</li><li>油价上涨会直接推高汽油、柴油等成品油价格，进而传导至运输、化工等各行各业的生产成本，最终体现为消费者物价上涨。</li><li>央行加息或维持高利率以对抗通胀，会使无风险利率（即国债收益率）保持在较高水平，进而提高企业和个人的融资成本，抑制经济活动。</li><li>对于股票等风险资产而言，利率上升意味着未来现金流折算到现在的价值下降，尤其是依赖远期增长的成长型公司受冲击更大。</li><li>美伊冲突若导致霍尔木兹海峡（全球约五分之一石油运输的必经之路）受阻，油价可能进一步跳升。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="2" data-n="8"><article id="c-2026-09-09-2" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-2" data-id="https://www.ft.com/content/38d718f6-110b-4822-9403-f7d12a48cfa8?syn-25a6b1a6=1" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.ft.com/content/38d718f6-110b-4822-9403-f7d12a48cfa8?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">‘I am the house now’: Bessent warns currency traders not to bet against yen</a><div class="raw">Comments follow July’s rare joint intervention with Tokyo to support Japanese currency</div></details><div class="src">FT Markets · 2026-09-09 16:26</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">美国财政部长贝森特警告投机者不要做空日元，称&#x27;我就是市场&#x27;，此前美日曾联合干预汇市支撑日元。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">这改变了市场对日元单边贬值路径的预期，暗示官方对当前汇率水平有明确底线，做空日元的交易面临政策性干预风险，日元及日本资产波动率将上升。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-2" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">美方警告做空日元</span></label><label class="step"><input type="radio" name="chain-2026-09-09-2" value="2"><span class="stepn">STEP 02</span><span class="stepl">日元需求增加</span></label><label class="step"><input type="radio" name="chain-2026-09-09-2" value="3"><span class="stepn">STEP 03</span><span class="stepl">日本出口企业盈利预期下调</span></label><label class="step"><input type="radio" name="chain-2026-09-09-2" value="4"><span class="stepn">STEP 04</span><span class="stepl">套息交易平仓加速</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>美方警告做空日元</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美方警告做空日元</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">美方警告做空日元 → 投机性空头回补</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>投机性空头回补</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>投机性空头回补</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>日元需求增加</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">日元需求增加</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">日元需求增加 → 日元汇率升值</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>日元汇率升值</b><span class="imp-tag up">看多 / 上行</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>日元汇率升值</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>日本出口企业盈利预期下调</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">日本出口企业盈利预期下调</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">日本出口企业盈利预期下调 → 日经指数承压</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>日经指数</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>日经指数</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>套息交易平仓加速</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">套息交易平仓加速</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">套息交易平仓加速 → 全球风险资产波动加剧</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>全球风险资产波动加剧</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>全球风险资产波动加剧</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">5 条</span></summary><ul><li>做空日元指投资者借入日元后卖出，预期未来能以更低价格买回获利，这押注的是日元贬值。</li><li>套息交易是指借入低利率货币（如日元）投资于高收益资产，赚取利差。当日元突然升值时，这类交易会亏损，平仓行为会进一步推升日元。</li><li>联合干预是指多国央行或财政部协同在外汇市场买卖货币，以影响汇率走势，这通常被视为强力信号。</li><li>日本出口企业盈利与日元汇率高度负相关，日元升值会降低其海外收入换算回日元的价值。</li><li>贝森特&#x27;我就是市场&#x27;的表态，意在强调官方拥有无限资源，足以对抗任何规模的投机力量。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="3" data-n="8"><article id="c-2026-09-09-3" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-3" data-id="https://wallstreetcn.com/livenews/3162512" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><a class="t" href="https://wallstreetcn.com/livenews/3162512" target="_blank" rel="noopener noreferrer">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</a><div class="src">华尔街见闻 · 2026-09-09 17:53</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">收益率创新高表明市场正在重新定价美联储的降息预期，很可能因为近期通胀数据反弹或官员鹰派言论，短端利率预期升温直接冲击所有依赖低利率的资产。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-3" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">通胀数据反弹</span></label><label class="step"><input type="radio" name="chain-2026-09-09-3" value="2"><span class="stepn">STEP 02</span><span class="stepl">2年期美债收益率上行</span></label><label class="step"><input type="radio" name="chain-2026-09-09-3" value="3"><span class="stepn">STEP 03</span><span class="stepl">高估值成长股承压</span></label><label class="step"><input type="radio" name="chain-2026-09-09-3" value="4"><span class="stepn">STEP 04</span><span class="stepl">美元指数走强</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>通胀数据反弹</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">通胀数据反弹</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">通胀数据反弹 → 市场下调降息预期</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>通胀数据</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>市场下调降息预期</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>市场下调降息预期</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>2年期美债收益率上行</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">2年期美债收益率上行</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">2年期美债收益率上行 → 无风险利率抬升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>2年期美债收益率</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>无风险利率抬</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>无风险利率抬</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>高估值成长股承压</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">高估值成长股承压</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">高估值成长股承压 → 科技板块回调</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>高估值成长股</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>高估值成长股</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>美元指数走强</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美元指数走强</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">美元指数走强 → 新兴市场资本外流压力增加</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>美元指数</b><span class="imp-tag up">看多 / 上行</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美元指数</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">5 条</span></summary><ul><li>2年期国债收益率对利率政策最敏感，它反映的是市场对未来两年内央行基准利率的平均预期。</li><li>收益率上行意味着债券价格下跌，二者呈反向变动关系。</li><li>无风险利率是全球资产定价的锚，它上升时，所有未来现金流的折现值都会下降，资产价格普遍承压。</li><li>美元走强会使得以美元计价的资产对海外投资者更贵，同时增加新兴市场国家的偿债成本，引发资本流出。</li><li>基点（bps）是利率变动的最小单位，1个基点等于0.01%。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="4" data-n="8"><article id="c-2026-09-09-4" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-4" data-id="https://www.cnbc.com/2026/09/04/bitcoin-heads-for-third-winning-week-in-a-row-as-macro-pressures-mount.html" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.cnbc.com/2026/09/04/bitcoin-heads-for-third-winning-week-in-a-row-as-macro-pressures-mount.html" target="_blank" rel="noopener noreferrer">Bitcoin heads for third winning week in a row as macro pressures mount</a><div class="raw">Bitcoin headed for its third straight winning week, as traders searched for refuge amid volatile moves in equities, currencies and bond markets.</div></details><div class="src">CNBC Finance · 2026-09-04 22:36</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">比特币连续第三周上涨，交易员在市场波动中寻求避险资产。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">比特币上涨与股市、债市、汇市剧烈波动形成对比，市场可能将其视为对冲地缘风险和货币政策不确定性的工具，这改变了部分资金的风险配置方向。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-4" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">地缘政治风险加剧</span></label><label class="step"><input type="radio" name="chain-2026-09-09-4" value="2"><span class="stepn">STEP 02</span><span class="stepl">部分资金寻求非主权资产</span></label><label class="step"><input type="radio" name="chain-2026-09-09-4" value="3"><span class="stepn">STEP 03</span><span class="stepl">比特币价格上涨</span></label><label class="step"><input type="radio" name="chain-2026-09-09-4" value="4"><span class="stepn">STEP 04</span><span class="stepl">与传统市场的相关性下降</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>地缘政治风险加剧</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">地缘政治风险加剧</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">地缘政治风险加剧 → 传统资产波动加剧</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>传统资产波动加剧</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>传统资产波动加剧</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>部分资金寻求非主权资产</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">部分资金寻求非主权资产</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">部分资金寻求非主权资产 → 比特币需求增加</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>部分资金寻求非主权资产</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>部分资金寻求非主权资产</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>比特币价格上涨</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">比特币价格上涨</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">比特币价格上涨 → 数字资产相关板块吸引资金流入</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>比特币价格</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>数字资产相关板块吸引资金流入</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>数字资产相关板块吸引资金流入</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>与传统市场的相关性下降</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">与传统市场的相关性下降</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">与传统市场的相关性下降</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>与传统市场的相关性下</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>与传统市场的相关性下</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>非主权资产是指不依托任何国家政府信用背书的资产，比特币是其中最典型的代表，被部分投资者视为规避单一国家风险的工具。</li><li>避险资产通常指在市场动荡时能保值或增值的资产，如黄金、美元等。比特币是否具备这一属性存在争议，但在特定环境下确实吸收了部分避险需求。</li><li>比特币总量上限为2100万个，其供应稀缺性被类比为&#x27;数字黄金&#x27;。</li><li>连续上涨可能吸引趋势跟踪型资金入场，进一步推高价格，形成正反馈循环。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="5" data-n="8"><article id="c-2026-09-09-5" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-5" data-id="https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&amp;at_campaign=rss" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Oil hits $100 a barrel for first time since July after US and Houthi strikes</a><div class="raw">Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday</div></details><div class="src">BBC · 2026-09-09 17:47</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">美英对也门胡塞武装及伊朗目标发动新一轮空袭后，布伦特原油价格升至每桶100美元上方。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">红海和霍尔木兹海峡是全球能源运输大动脉，军事行动升级直接威胁供给，市场对油价持续高企的预期强化，这会加大全球通胀压力并压缩央行政策空间。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-5" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">美英空袭胡塞武装与伊朗目标</span></label><label class="step"><input type="radio" name="chain-2026-09-09-5" value="2"><span class="stepn">STEP 02</span><span class="stepl">原油运输保险费跳涨</span></label><label class="step"><input type="radio" name="chain-2026-09-09-5" value="3"><span class="stepn">STEP 03</span><span class="stepl">有效原油供给减少</span></label><label class="step"><input type="radio" name="chain-2026-09-09-5" value="4"><span class="stepn">STEP 04</span><span class="stepl">全球能源成本上升</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>美英空袭胡塞武装与伊朗目标</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美英空袭胡塞武装与伊朗目标</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">美英空袭胡塞武装与伊朗目标 → 红海及霍尔木兹海峡航运风险上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>红海及霍尔木兹海峡航运风险</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>红海及霍尔木兹海峡航运风险</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>原油运输保险费跳涨</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">原油运输保险费跳涨</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">原油运输保险费跳涨 → 部分油轮绕道好望角</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>原油运输保险费跳</b><span class="imp-tag up">看多 / 上行</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>原油运输保险费跳</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>有效原油供给减少</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">有效原油供给减少</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">有效原油供给减少 → 油价突破100美元</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>油价突破100美元</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>油价突破100美元</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>全球能源成本上升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">全球能源成本上升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">全球能源成本上升 → 通胀预期抬升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>全球能源成本</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>通胀预期抬</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>通胀预期抬</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">5 条</span></summary><ul><li>胡塞武装控制也门部分沿海地区，其袭击商船的行为直接威胁红海航线。</li><li>红海是通过苏伊士运河连接地中海与印度洋的捷径，绕道好望角将增加约一周航程和大量燃油成本。</li><li>油轮运输保险费上涨会直接增加原油到岸成本，即使原油本身离岸价不变。</li><li>有效供给不只是产量，还包括能及时运达市场的量，绕行导致运输周转率下降。</li><li>市场对通胀预期的变化会传导至长期国债收益率，影响房贷利率、企业融资成本等实体经济变量。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="6" data-n="8"><article id="c-2026-09-09-6" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-6" data-id="https://www.npr.org/2026/09/09/nx-s1-5962641/us-destroy-iranian-oil-tankers" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.npr.org/2026/09/09/nx-s1-5962641/us-destroy-iranian-oil-tankers" target="_blank" rel="noopener noreferrer">U.S. military says it destroyed 5 Iranian oil tankers after attacks on Navy warship</a><div class="raw">The U.S. military said it destroyed five Iranian oil tankers on Tuesday in response to the latest attacks on its warships. Iran hit American targets i</div></details><div class="src">NPR · 2026-09-09 13:20</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">美国军方宣布在伊朗袭击美海军战舰后，摧毁了5艘伊朗油轮作为回应。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">直接摧毁油轮是对伊朗石油出口能力的实体打击，远超经济制裁的隔靴搔痒，市场定价的是伊朗原油断供的可能性及规模，这在边际上大幅推高油价。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-6" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">伊朗袭击美舰</span></label><label class="step"><input type="radio" name="chain-2026-09-09-6" value="2"><span class="stepn">STEP 02</span><span class="stepl">伊朗石油出口能力受损</span></label><label class="step"><input type="radio" name="chain-2026-09-09-6" value="3"><span class="stepn">STEP 03</span><span class="stepl">布伦特油价飙升</span></label><label class="step"><input type="radio" name="chain-2026-09-09-6" value="4"><span class="stepn">STEP 04</span><span class="stepl">通胀预期螺旋上升</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>伊朗袭击美舰</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">伊朗袭击美舰</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">伊朗袭击美舰 → 美国击毁伊朗油轮</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>美国击毁伊朗油轮</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美国击毁伊朗油轮</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>伊朗石油出口能力受损</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">伊朗石油出口能力受损</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">伊朗石油出口能力受损 → 全球重质原油供应缺口扩大</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>全球重质原油供应缺口扩大</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>全球重质原油供应缺口扩大</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>布伦特油价飙升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">布伦特油价飙升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">布伦特油价飙升 → 能源板块远期盈利能力大增</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>布伦特油价飙</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>布伦特油价飙</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>通胀预期螺旋上升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">通胀预期螺旋上升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">通胀预期螺旋上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>通胀预期螺旋</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>通胀预期螺旋</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">5 条</span></summary><ul><li>伊朗是石油输出国组织重要成员，其日均出口量约150万桶，摧毁油轮直接减少了可用的运力。</li><li>重质原油是伊朗主要出口油品，被用于生产柴油和燃料油，其供给短缺难以被轻质原油快速替代。</li><li>石油供应缺口的预期一旦形成，会吸引投机性买盘，进一步放大价格波动。</li><li>能源板块盈利预期上升会推动其股价上涨，但与整体股市形成跷跷板效应。</li><li>此事件与单纯的经济制裁不同，它表明冲突已从金融领域扩展到实体打击，风险溢价更高。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="7" data-n="8"><article id="c-2026-09-09-7" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-7" data-id="https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/" target="_blank" rel="noopener noreferrer">South Korea supercharges defense budget to record levels</a><div class="raw">South Korea&#x27;s record defense budget comes amid disparaging comments about Seoul&#x27;s alliance with the United States by its president, Donald Trump.</div></details><div class="src">Defense News · 2026-09-09 17:23</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">韩国将国防预算提升至创纪录水平，以应对朝鲜威胁及盟友关系的不确定性。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">东北亚地缘紧张局势加剧，国防开支增加意味着财政赤字可能扩大，这会影响韩国的国债发行规模和主权信用评估，同时军工产业链获得确定性订单。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-7" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">地缘局势紧张</span></label><label class="step"><input type="radio" name="chain-2026-09-09-7" value="2"><span class="stepn">STEP 02</span><span class="stepl">财政支出增加</span></label><label class="step"><input type="radio" name="chain-2026-09-09-7" value="3"><span class="stepn">STEP 03</span><span class="stepl">韩国国债收益率上行</span></label><label class="step"><input type="radio" name="chain-2026-09-09-7" value="4"><span class="stepn">STEP 04</span><span class="stepl">军工企业订单激增</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>地缘局势紧张</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">地缘局势紧张</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">地缘局势紧张 → 韩国提高国防预算</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>韩国提高国防预算</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>韩国提高国防预算</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>财政支出增加</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">财政支出增加</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">财政支出增加 → 国债发行量上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>国债发行量</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>国债发行量</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>韩国国债收益率上行</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">韩国国债收益率上行</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">韩国国债收益率上行 → 韩元汇率承压</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>韩国国债收益率</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>韩元汇率</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>韩元汇率</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>军工企业订单激增</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">军工企业订单激增</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">军工企业订单激增 → 相关股票及供应链受益</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>相关股票及供应链受益</b><span class="imp-tag up">看多 / 上行</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>相关股票及供应链受益</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>国防预算通常通过发行国债融资，供给增加会压低债券价格、抬高收益率。</li><li>韩元汇率与本国资产收益率和资本流动密切相关，收益率上升在短期内可能吸引外资流入，但长期若由财政恶化驱动，则会削弱币值信心。</li><li>军工产业具有长周期、高确定性的订单特点，预算增加直接改善其未来现金流预期。</li><li>韩国作为美国盟友，其防务自主意识的提升反映在全球供应链的&#x27;安全优先&#x27;趋势上，影响跨国企业的区域布局决策。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-09" data-i="8" data-n="8"><article id="c-2026-09-09-8" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><span class="daychip">9月9日</span></div><button class="fav" type="button" data-cid="2026-09-09-8" data-id="https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">Houthi offensive on Bab el-Mandeb Strait threatens new Red Sea shipping crisis</a><div class="raw">A battle for control of Yemen’s coastal plains overlooking the strategic Bab el-Mandeb Strait, launched on Friday by Iran-aligned Houthi rebels, is ra</div></details><div class="src">SCMP · 2026-09-09 18:00</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">伊朗支持的胡塞武装对曼德海峡发动进攻，威胁引发新一轮红海航运危机。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">曼德海峡是连接红海与亚丁湾的咽喉要道，全球约10%的贸易海运量从此经过，军事冲突升级将直接抬高亚洲至欧洲的货轮运输成本和安全风险溢价。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-09-8" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">胡塞武装进攻曼德海峡</span></label><label class="step"><input type="radio" name="chain-2026-09-09-8" value="2"><span class="stepn">STEP 02</span><span class="stepl">航运公司宣布停航或改道</span></label><label class="step"><input type="radio" name="chain-2026-09-09-8" value="3"><span class="stepn">STEP 03</span><span class="stepl">运费指数暴涨</span></label><label class="step"><input type="radio" name="chain-2026-09-09-8" value="4"><span class="stepn">STEP 04</span><span class="stepl">输入型通胀压力加大</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>胡塞武装进攻曼德海峡</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">胡塞武装进攻曼德海峡</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">胡塞武装进攻曼德海峡 → 商船通航风险骤增</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>商船通航风险骤增</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>商船通航风险骤增</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>航运公司宣布停航或改道</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">航运公司宣布停航或改道</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">航运公司宣布停航或改道 → 亚欧航线运力紧张</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>亚欧航线运力紧张</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>亚欧航线运力紧张</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>运费指数暴涨</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">运费指数暴涨</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">运费指数暴涨 → 进口商品成本上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>运费指数暴</b><span class="imp-tag up">看多 / 上行</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>进口商品成本</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>进口商品成本</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>输入型通胀压力加大</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">输入型通胀压力加大</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">输入型通胀压力加大 → 欧亚央行政策收紧预期升温</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>欧亚央行政策收紧预期升温</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>欧亚央行政策收紧预期升温</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">5 条</span></summary><ul><li>曼德海峡最窄处仅约26公里，是全球最繁忙的能源和货物运输通道之一。</li><li>部分保险公司已宣布对经过该区域的船只想提高战争险保费，这是运价攀升的直接催化。</li><li>航运成本上升会以滞后的方式传导至零售价格，推升消费者物价指数。</li><li>欧洲和亚洲的大型经济体高度依赖此航道，相关影响对它们的冲击远大于美国。</li><li>这一事件与第21条关于美加贸易战的内容共同构成了全球供应链摩擦的两大主线。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="1" data-n="7"><article id="c-2026-09-10-1" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div></div><button class="fav" type="button" data-cid="2026-09-10-1" data-id="https://wallstreetcn.com/livenews/3162512" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><a class="t" href="https://wallstreetcn.com/livenews/3162512" target="_blank" rel="noopener noreferrer">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</a><div class="src">华尔街见闻 · 2026-09-09 17:53</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">美国2年期国债收益率上行2个基点至4.42%，创2025年1月以来新高。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">市场原本预计美联储将降息，但近期通胀回升和官员表态让利率预期上升，短端美债收益率走高，并传导至其他资产。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-1" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">通胀回升</span></label><label class="step"><input type="radio" name="chain-2026-09-10-1" value="2"><span class="stepn">STEP 02</span><span class="stepl">2年期美债收益率上升</span></label><label class="step"><input type="radio" name="chain-2026-09-10-1" value="3"><span class="stepn">STEP 03</span><span class="stepl">国债吸引力下降</span></label><label class="step"><input type="radio" name="chain-2026-09-10-1" value="4"><span class="stepn">STEP 04</span><span class="stepl">股市资金分流</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>通胀回升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">通胀回升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">通胀回升 → 美联储降息预期减弱</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>通胀</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>美联储降息预期减</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美联储降息预期减</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>2年期美债收益率上升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">2年期美债收益率上升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">2年期美债收益率上升 → 债券价格下跌</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>2年期美债收益率</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>债券价格下</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>债券价格下</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>国债吸引力下降</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">国债吸引力下降</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">国债吸引力下降 → 资金流向利息更高的短债</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>国债吸引力下</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>资金流向利息更高的短债</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>资金流向利息更高的短债</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>股市资金分流</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">股市资金分流</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">股市资金分流 → 高估值成长股承压</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>股市资金分流</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>高估值成长股</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>高估值成长股</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>2年期国债收益率反映市场对未来两年利率的预期，对政策利率变化最敏感。</li><li><b class="nk">债券价格和收益率呈反向变动：</b>收益率上升，债券价格下跌。</li><li>收益率上升意味着新发债券利息更高，旧债券吸引力下降，价格下跌。</li><li>短债收益率上升会吸引资金从股市流入债市，导致股市，尤其是高估值股票，面临抛压。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="2" data-n="7"><article id="c-2026-09-10-2" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div></div><button class="fav" type="button" data-cid="2026-09-10-2" data-id="https://www.ft.com/content/fe0cbcfc-b351-4dac-889f-7b8f11f79102?syn-25a6b1a6=1" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.ft.com/content/fe0cbcfc-b351-4dac-889f-7b8f11f79102?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Norway’s oil fund says what everyone is thinking</a><div class="raw">Sovereign debt ain’t what it was</div></details><div class="src">FT Markets · 2026-09-09 13:30</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">挪威主权财富基金表示，主权债券不再像过去那样安全稳健。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">市场将主权债券视为无风险资产，其收益率是全球资产定价的基准，该言论冲击了市场对安全资产的信心，影响各类资产估值。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-2" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">主权债券被质疑安全性</span></label><label class="step"><input type="radio" name="chain-2026-09-10-2" value="2"><span class="stepn">STEP 02</span><span class="stepl">全球资产重新定价</span></label><label class="step"><input type="radio" name="chain-2026-09-10-2" value="3"><span class="stepn">STEP 03</span><span class="stepl">持有债券风险溢价提高</span></label><label class="step"><input type="radio" name="chain-2026-09-10-2" value="4"><span class="stepn">STEP 04</span><span class="stepl">股票和房地产等风险资产估值下降</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>主权债券被质疑安全性</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">主权债券被质疑安全性</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">主权债券被质疑安全性 → 无风险利率预期上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>主权债券被质疑安全性</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>无风险利率预期</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>无风险利率预期</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>全球资产重新定价</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">全球资产重新定价</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">全球资产重新定价 → 债券收益率上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>全球资产重新定价</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>债券收益率</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>债券收益率</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>持有债券风险溢价提高</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">持有债券风险溢价提高</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">持有债券风险溢价提高</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>持有债券风险溢价提</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>持有债券风险溢价提</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>股票和房地产等风险资产估值下降</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">股票和房地产等风险资产估值下降</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">股票和房地产等风险资产估值下降</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>股票和房地产等风险资产估值下</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>股票和房地产等风险资产估值下</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>主权债券通常被认为几乎没有违约风险，因此收益率被用作无风险利率的基准。</li><li>无风险利率上升，意味着所有未来现金流折现到现在的价值下降，资产估值随之降低。</li><li>风险溢价是投资者因承担额外风险而要求的额外回报，主权债券风险上升，风险溢价增加，债券收益率进一步走高。</li><li>该言论可能只是观点，不一定导致实际价格变动，但反映了市场情绪的变化。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="3" data-n="7"><article id="c-2026-09-10-3" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div></div><button class="fav" type="button" data-cid="2026-09-10-3" data-id="https://www.ft.com/content/33d4674f-31db-4551-9ad3-c43d5c94c94c" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.ft.com/content/33d4674f-31db-4551-9ad3-c43d5c94c94c" target="_blank" rel="noopener noreferrer">The clock is ticking on Senegal’s ‘total return swaps’</a><div class="raw">Not such a FAB way to manage sovereign debt</div></details><div class="src">FT Markets · 2026-09-09 13:00</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">《经济学人》报道，塞内加尔的主权债务通过“总回报互换”进行管理，但风险攀升，市场担忧其可持续性。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">新兴市场债务问题会影响全球投资者对新兴市场资产的风险偏好，导致资本流出和货币贬值。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-3" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">塞内加尔债务风险上升</span></label><label class="step"><input type="radio" name="chain-2026-09-10-3" value="2"><span class="stepn">STEP 02</span><span class="stepl">新兴市场货币贬值</span></label><label class="step"><input type="radio" name="chain-2026-09-10-3" value="3"><span class="stepn">STEP 03</span><span class="stepl">全球投资者避险情绪升温</span></label><label class="step"><input type="radio" name="chain-2026-09-10-3" value="4"><span class="stepn">STEP 04</span><span class="stepl">资金流入发达市场资产</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>塞内加尔债务风险上升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">塞内加尔债务风险上升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">塞内加尔债务风险上升 → 新兴市场债券遭抛售</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>塞内加尔债务风险</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>新兴市场债券遭抛售</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>新兴市场债券遭抛售</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>新兴市场货币贬值</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">新兴市场货币贬值</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">新兴市场货币贬值 → 资本外流</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>新兴市场货币贬值</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>新兴市场货币贬值</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>全球投资者避险情绪升温</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">全球投资者避险情绪升温</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">全球投资者避险情绪升温</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>全球投资者避险情绪升温</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>全球投资者避险情绪升温</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>资金流入发达市场资产</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">资金流入发达市场资产</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">资金流入发达市场资产</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>资金流入发达市场资产</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>资金流入发达市场资产</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>总回报互换是一种金融衍生品，让投资者在不实际持有债券的情况下，获得债券的收益和风险。</li><li>新兴市场债务风险上升，投资者会要求更高的收益率，导致债券价格下跌。</li><li>资本外流会导致新兴市场货币贬值，因为投资者卖出当地货币以换成美元等硬通货。</li><li>避险情绪下，资金会流向美国国债、黄金等安全资产，推高它们的价格。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="4" data-n="7"><article id="c-2026-09-10-4" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div></div><button class="fav" type="button" data-cid="2026-09-10-4" data-id="https://www.economist.com/finance-and-economics/2026/09/06/inflation-is-back-around-the-world-as-is-the-fight-against-it" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.economist.com/finance-and-economics/2026/09/06/inflation-is-back-around-the-world-as-is-the-fight-against-it" target="_blank" rel="noopener noreferrer">Inflation is back around the world—as is the fight against it</a><div class="raw">Central banks are raising interest rates again</div></details><div class="src">The Economist · 2026-09-06 23:39</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">《经济学人》报道，全球通胀再度抬头，各国央行纷纷重新开始加息。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">市场原以为通胀已被控制，加息周期结束，但通胀回升迫使央行收紧政策，改变利率预期，影响所有资产。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-4" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">全球通胀反弹</span></label><label class="step"><input type="radio" name="chain-2026-09-10-4" value="2"><span class="stepn">STEP 02</span><span class="stepl">利率上升</span></label><label class="step"><input type="radio" name="chain-2026-09-10-4" value="3"><span class="stepn">STEP 03</span><span class="stepl">消费和投资减少</span></label><label class="step"><input type="radio" name="chain-2026-09-10-4" value="4"><span class="stepn">STEP 04</span><span class="stepl">股市下跌</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>全球通胀反弹</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">全球通胀反弹</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">全球通胀反弹 → 央行被迫加息</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>全球通胀</b><span class="imp-tag up">看多 / 上行</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>全球通胀</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>利率上升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">利率上升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">利率上升 → 企业和个人贷款成本增加</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>利率</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>利率</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>消费和投资减少</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">消费和投资减少</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">消费和投资减少 → 经济增长放缓</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>经济增长放缓</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>经济增长放缓</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>股市下跌</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">股市下跌</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">股市下跌</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>股市下</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>股市下</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>通胀指物价普遍上涨，会侵蚀货币购买力。</li><li>央行加息是为了抑制通胀，通常通过提高基准利率来实现。</li><li>利率上升，贷款成本增加，企业利润和家庭可支配收入减少，进而影响消费和投资。</li><li>经济增长放缓会降低企业盈利预期，导致股市估值下降。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="5" data-n="7"><article id="c-2026-09-10-5" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div></div><button class="fav" type="button" data-cid="2026-09-10-5" data-id="https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&amp;at_campaign=rss" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Oil hits $100 a barrel for first time since July after US and Houthi strikes</a><div class="raw">Brent crude - the global benchmark for prices - rises after the US hit five Iranian tankers on Tuesday</div></details><div class="src">BBC · 2026-09-09 17:47</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">美国打击五艘伊朗油轮后，布伦特原油价格升至每桶100美元，为7月以来首次。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">油价突破重要心理关口，市场对供应中断的担忧成为焦点，通胀预期随之变化，债券和股票市场将受冲击。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-5" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">美国打击伊朗油轮</span></label><label class="step"><input type="radio" name="chain-2026-09-10-5" value="2"><span class="stepn">STEP 02</span><span class="stepl">布伦特油价突破100美元</span></label><label class="step"><input type="radio" name="chain-2026-09-10-5" value="3"><span class="stepn">STEP 03</span><span class="stepl">央行政策收紧预期增强</span></label><label class="step"><input type="radio" name="chain-2026-09-10-5" value="4"><span class="stepn">STEP 04</span><span class="stepl">股票市场估值承压</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>美国打击伊朗油轮</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美国打击伊朗油轮</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">美国打击伊朗油轮 → 原油供应中断风险</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>原油供应中断风险</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>原油供应中断风险</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>布伦特油价突破100美元</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">布伦特油价突破100美元</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">布伦特油价突破100美元 → 全球通胀预期上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>布伦特油价突破100美元</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>全球通胀预期</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>全球通胀预期</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>央行政策收紧预期增强</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">央行政策收紧预期增强</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">央行政策收紧预期增强 → 长期债券收益率上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>长期债券收益率</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>长期债券收益率</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>股票市场估值承压</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">股票市场估值承压</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">股票市场估值承压</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>股票市场估值</b><span class="imp-tag down">看空 / 承压</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>股票市场估值</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>布伦特原油是全球最常用的原油价格基准之一。</li><li>原油供应中断会直接导致油价上涨，因为供给减少。</li><li>油价上涨是通胀的重要因素，因为能源成本会传导至其他商品和服务。</li><li>央行面对通胀压力，可能收紧货币政策，如加息，这会提升长期债券收益率，进而压制股票估值。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="6" data-n="7"><article id="c-2026-09-10-6" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div></div><button class="fav" type="button" data-cid="2026-09-10-6" data-id="https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.scmp.com/week-asia/politics/article/3366909/houthi-offensive-bab-el-mandeb-strait-threatens-new-red-sea-shipping-crisis?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">Houthi offensive on Bab el-Mandeb Strait threatens new Red Sea shipping crisis</a><div class="raw">A battle for control of Yemen’s coastal plains overlooking the strategic Bab el-Mandeb Strait, launched on Friday by Iran-aligned Houthi rebels, is ra</div></details><div class="src">SCMP · 2026-09-09 18:00</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">胡塞武装在曼德海峡发动攻势，威胁红海航运安全，可能引发新一轮全球航运危机。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">红海是全球重要贸易通道，供应链中断会推高运输成本，影响全球贸易和通胀，投资者风险偏好下降。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-6" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">红海航运受阻</span></label><label class="step"><input type="radio" name="chain-2026-09-10-6" value="2"><span class="stepn">STEP 02</span><span class="stepl">全球贸易成本增加</span></label><label class="step"><input type="radio" name="chain-2026-09-10-6" value="3"><span class="stepn">STEP 03</span><span class="stepl">通胀压力增大</span></label><label class="step"><input type="radio" name="chain-2026-09-10-6" value="4"><span class="stepn">STEP 04</span><span class="stepl">股票和债券市场波动</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>红海航运受阻</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">红海航运受阻</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">红海航运受阻 → 运输成本上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>运输成本</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>运输成本</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>全球贸易成本增加</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">全球贸易成本增加</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">全球贸易成本增加 → 商品价格上涨</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>商品价格</b><span class="imp-tag up">看多 / 上行</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>商品价格</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>通胀压力增大</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">通胀压力增大</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">通胀压力增大 → 央行收紧货币政策预期上升</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>央行收紧货币政策预期</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>央行收紧货币政策预期</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>股票和债券市场波动</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">股票和债券市场波动</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">股票和债券市场波动</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>股票和债券市场波动</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>股票和债券市场波动</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>曼德海峡连接红海和亚丁湾，是全球石油和货物运输的关键通道。</li><li>航运成本上升会推高进口商品价格，加剧通胀。</li><li>供应链中断可能迫使央行加息以控制通胀，影响资本市场。</li><li>物流和零售等行业将受冲击，而航运公司可能因运价上涨而受益。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-10" data-i="7" data-n="7"><article id="c-2026-09-10-7" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div></div><button class="fav" type="button" data-cid="2026-09-10-7" data-id="https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.defensenews.com/global/asia-pacific/2026/09/09/south-korea-supercharges-defense-budget-to-record-levels/" target="_blank" rel="noopener noreferrer">South Korea supercharges defense budget to record levels</a><div class="raw">South Korea&#x27;s record defense budget comes amid disparaging comments about Seoul&#x27;s alliance with the United States by its president, Donald Trump.</div></details><div class="src">Defense News · 2026-09-09 17:23</div></div><div class="read"><section class="seg what"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>发生了什么</h4></div></div><div class="tx">韩国公布创纪录的国防预算，以应对地缘风险。</div></section><section class="seg why"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>市场为什么在意</h4></div></div><div class="tx">国防开支增加会扩大财政赤字，影响政府债券供给，韩国国债收益率可能上升，并影响区域资产。</div></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>经济传导脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-10-7" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">韩国国防预算增加</span></label><label class="step"><input type="radio" name="chain-2026-09-10-7" value="2"><span class="stepn">STEP 02</span><span class="stepl">财政赤字扩大</span></label><label class="step"><input type="radio" name="chain-2026-09-10-7" value="3"><span class="stepn">STEP 03</span><span class="stepl">韩国国债收益率上升</span></label><label class="step"><input type="radio" name="chain-2026-09-10-7" value="4"><span class="stepn">STEP 04</span><span class="stepl">区域金融资产价格变动</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>韩国国防预算增加</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">韩国国防预算增加</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">韩国国防预算增加 → 政府财政支出扩大</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>政府财政支出扩大</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>政府财政支出扩大</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>财政赤字扩大</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">财政赤字扩大</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">财政赤字扩大 → 政府债券供给增加</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>政府债券供给增加</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>政府债券供给增加</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>韩国国债收益率上升</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">韩国国债收益率上升</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">韩国国债收益率上升 → 韩元汇率波动</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>韩国国债收益率</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>韩元汇率波动</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>韩元汇率波动</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>区域金融资产价格变动</span></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">区域金融资产价格变动</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">区域金融资产价格变动</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir vol">~</span><div class="imp-txt"><b>区域金融资产价格变动</b><span class="imp-tag vol">剧烈博弈震荡</span></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>区域金融资产价格变动</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">4 条</span></summary><ul><li>国防预算增加需要政府通过发债筹资，债市供给增加会压低债券价格，推高收益率。</li><li>财政赤字扩大可能影响国家信用评级，增加借贷成本。</li><li>国债收益率上升会吸引外资流入，但也可能导致韩元升值，影响出口。</li><li>区域内的股票市场可能因预期利率上升而承压。</li></ul></details></section></div></div></article></div><div class="deck-slide" data-day="2026-09-11" data-i="1" data-n="2"><article id="c-2026-09-11-1" data-cat="markets"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><span class="daychip">9月11日</span></div><button class="fav" type="button" data-cid="2026-09-11-1" data-id="https://www.ft.com/content/49e8c693-0064-4ef9-917f-5f2be97458fc?syn-25a6b1a6=1" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.ft.com/content/49e8c693-0064-4ef9-917f-5f2be97458fc?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Global bond sell-off reignites as oil jumps to $108</a><div class="raw">US yields reach highs of the day after Scott Bessent’s Treasury buyback operation undershoots its target</div></details><div class="src">FT Markets · 2026-09-11 04:18</div></div><div class="read"><section class="seg facts"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>30秒事实内核</h4></div></div><ul class="fact-list"><li>国际油价跳升至每桶 108 美元。</li><li>美国 10 年期国债收益率上涨 11.58 个基点，报 4.9565%。</li><li>美国财政部贝森特推出的 60 亿美元国债回购计划未达目标规模。</li></ul></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>金融传导全景脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-11-1" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">油价冲高与通胀预期重估</span></label><label class="step"><input type="radio" name="chain-2026-09-11-1" value="2"><span class="stepn">STEP 02</span><span class="stepl">回购不足与国债供给冲击</span></label><label class="step"><input type="radio" name="chain-2026-09-11-1" value="3"><span class="stepn">STEP 03</span><span class="stepl">债券抛售与无风险利率抬升</span></label><label class="step"><input type="radio" name="chain-2026-09-11-1" value="4"><span class="stepn">STEP 04</span><span class="stepl">融资成本向实体与资产传导</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>油价冲高与通胀预期重估</span><i class="step-t">时滞 T+0 至 1 周</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">国际油价跳升至每桶108美元，市场重新评估能源成本对通胀的推升。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">能源是运输、制造和取暖的共同投入，油价上涨不会只停在加油站，它会先抬高企业投入成本，再通过运费和电价扩散到更广的商品与服务。交易员看到这种外生成本冲击，会立刻上修短期通胀预期，并要求债券提供更高收益率来补偿购买力损失。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>10 年期盈亏平衡通胀率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">市场要求更高通胀补偿，推升该指标</p></div></div><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>2 年期美债收益率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">通胀预期升温推高短端加息定价</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>国际油价是否站稳每桶 108 美元</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>回购不足与国债供给冲击</span><i class="step-t">时滞 T+0 至 1 周</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美国财政部60亿美元国债回购操作未达目标，交易商质疑其吸收长债的能力。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">国债回购是财政部用现金买回旧债，等于向市场提供流动性并支撑债券价格。若实际回购规模低于计划，市场会认为长端新债供给压力并未缓解；买家在财政赤字高企时要求更高的期限溢价，于是抛售旧债，长端收益率被动上行。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>30 年期美债收益率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">供给压力与期限溢价上升推动</p></div></div><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>30 年期市政债收益率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">长端基准上行同步挤压市政债</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>30 年期美债收益率是否上破 5.00%</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>债券抛售与无风险利率抬升</span><i class="step-t">时滞 1 - 2 周发酵</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">10年期美债收益率升至4.9565%，2年期升至4.5666%，短长端同步跳升。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">债券价格与收益率反向变动：投资者抛售使价格下跌，而票息固定不变，到期收益率就被动上升。短端反映市场对美联储加息的定价，长端反映通胀与供给。两者同时上行，意味着全市场无风险利率基准被抬高，风险资产的贴现率随之上升。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>美元指数</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">高利率吸引全球资金流入美元资产</p></div></div><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>现货黄金</b><span class="imp-tag down">看空 / 承压</span><p class="imp-note">实际利率上行削弱无息资产吸引力</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>联邦基金期货隐含的下周加息概率是否维持在 70%</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>融资成本向实体与资产传导</span><i class="step-t">时滞 2 - 3 个季度显现</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">长端国债收益率上行传导至按揭、信用债与市政债定价，融资条件全面收紧。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">银行和债券发行人的定价锚定在国债收益率与掉期曲线上，长端一涨，房贷固定利率、企业信用债票息和地方政府融资成本都会跟进。融资成本上升会压掉购房、扩产和财政支出需求；同时估值分母变大，高估值成长股最先承压。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>美国 30 年期房贷利率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">月供变贵，购房需求受抑制</p></div></div><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>高估值成长股</b><span class="imp-tag down">看空 / 承压</span><p class="imp-note">远期盈利折现后缩水更多</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美国 30 年期固定房贷利率是否升破 7.50%</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">7 条</span></summary><ul><li><b class="nk">收益率上升债券价格下跌：</b>债券价格和收益率呈反向变动。票息发行后固定，市场利率一升，旧债吸引力下降，价格下跌，收益率被动抬升。</li><li>为什么油价会推高债券收益率？能源是运输和生产的共同成本，油价上涨会先推高通胀预期，债券买家要求更高收益率补偿购买力损失。</li><li>国债回购是什么？财政部用现金从市场买回旧国债，相当于向债市提供流动性并支撑价格；回购规模不及预期，市场会担心长债供给无人承接。</li><li>期限溢价是什么？投资者持有长期债券而非短期债券，会要求额外补偿，因为未来通胀、财政和利率都不确定。供给压力越大，这部分补偿越高。</li><li>联邦基金期货隐含加息概率怎么理解？交易员用利率期货价格倒推市场对美联储会议决定的平均预期，概率到 70% 表示市场认为下周加息是大概率事件。</li><li>为什么黄金下跌？黄金不生息，当美债实际收益率上升、美元走强时，持有黄金的机会成本变高，资金转向生息资产。</li><li>市政债为什么也跌？市政债与国债同为长端固定收益资产，国债收益率飙升会抬高所有长债的定价基准，新债发行压力还会进一步压低旧债价格。</li></ul></details></section><section class="seg deep"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>深入研读与博弈透视</h4></div></div><div class="deep-sub"><div class="deep-lb">历史参照系与经验校准</div><div class="analogy"><div class="ay"><span class="ae">美债收益率破 5% 与全球债市抛售</span><span class="ayr">[2023 年]</span></div><p>2023 年 10 月，美国财政赤字与国债供给担忧叠加美联储higher for longer，10 年期美债收益率一度突破 5%，股市回调、黄金先跌后因避险反弹。当前同样有供给冲击和油价上行，但这次还叠加伊朗战争与财政部回购不及预期，地缘能源通胀更直接，美联储加息概率也重新升到 70%。</p></div></div><div class="deep-sub"><div class="deep-lb">博弈各方的台前立场与真实底牌</div><div class="parties"><div class="party"><div class="pn"><span>美联储（货币当局）</span><i>01</i></div><span class="pl">台前表态立场</span><p class="pv">坚称政策取决于数据，若通胀顽固不排除进一步收紧</p><span class="pb">不妥协的真实底牌</span><p class="pvb">必须先压住通胀预期，不会为财政部的低成本发债需求兜底</p></div><div class="party"><div class="pn"><span>美国财政部（贝森特）</span><i>02</i></div><span class="pl">台前表态立场</span><p class="pv">用 60 亿美元回购操作安抚债市，强调发债计划有序</p><span class="pb">不妥协的真实底牌</span><p class="pvb">真实底牌是避免长端利息失控，但回购规模受限时只能接受更高融资成本</p></div><div class="party"><div class="pn"><span>全球债券投资者与一级交易商</span><i>03</i></div><span class="pl">台前表态立场</span><p class="pv">要求更高期限溢价和通胀补偿才愿意承接长债</p><span class="pb">不妥协的真实底牌</span><p class="pvb">只要供给与通胀不确定，就用抛售逼财政部和美联储让步</p></div></div></div><div class="deep-sub"><div class="deep-lb">需持续追踪的前瞻红线指标</div><div class="inds"><div class="ind"><div class="ih"><span class="in">10 年期美债收益率</span><span class="it">红线 5.00%</span></div><div class="is">突破后风险平价与久期策略可能被动去杠杆，放大全球债券和成长股抛售。</div></div><div class="ind"><div class="ih"><span class="in">联邦基金期货隐含下周加息概率</span><span class="it">红线 70%</span></div><div class="is">若继续升破 70%，短端美债和美元将再获支撑，黄金与新兴市场承压。</div></div><div class="ind"><div class="ih"><span class="in">布伦特原油价格</span><span class="it">红线 每桶 108 美元</span></div><div class="is">若站稳该关口，能源通胀会强化美联储加息预期，进一步推高长端收益率。</div></div></div></div></section><section class="seg takes"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>行动启示与认知内化</h4></div></div><div class="take-list"><div class="take"><div class="tl">投资者视角</div><p>不要只因为债券收益率高就盲目拉长久期。当前是通胀与供给双冲击，长端波动会很大，应缩短债券久期，增配现金类和能源抗通胀资产，股票端偏向现金流稳定的价值股，黄金等避险资产等实际利率见顶信号再加仓。</p></div><div class="take"><div class="tl">实体与从业者</div><p>有美元贷款或发债计划的企业，尽快用利率掉期锁定融资成本，避免赌收益率回落；外贸企业要防美元走强和全球需求收缩，报价可加入汇率与运费调整条款。</p></div><div class="take"><div class="tl">个人与家庭生活</div><p>若你正在看海外房贷或美元理财，别按降息剧本做决定。美元存款和短债收益率短期仍有吸引力，但长债基金可能继续亏净值；换汇可分批，避免一次性押注美元单边走势。</p></div></div></section></div></div></article></div><div class="deck-slide" data-day="2026-09-11" data-i="2" data-n="2"><article id="c-2026-09-11-2" data-cat="policy"><div class="card-body"><div class="news"><div class="chips"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><span class="daychip">9月11日</span></div><button class="fav" type="button" data-cid="2026-09-11-2" data-id="https://www.scmp.com/news/world/united-states-canada/article/3367099/us-producer-inflation-tops-expectations-energy-costs-jump-amid-iran-war?utm_source=rss_feed" aria-pressed="false" aria-label="收藏这条" title="收藏这条">☆</button><details class="orig"><summary>查看英文原文</summary><a class="t" href="https://www.scmp.com/news/world/united-states-canada/article/3367099/us-producer-inflation-tops-expectations-energy-costs-jump-amid-iran-war?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">US producer inflation tops expectations as energy costs jump amid Iran war</a><div class="raw">US wholesale inflation picked up more than expected in August, government data showed Thursday, driven by higher energy costs in the month – particula</div></details><div class="src">SCMP · 2026-09-10 22:28</div></div><div class="read"><section class="seg facts"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>30秒事实内核</h4></div></div><ul class="fact-list"><li>美国 8 月生产者价格指数涨幅高于市场预期。</li><li>能源成本在 8 月跳升，是批发通胀上行的主要驱动。</li><li>数据发布之际，美国与伊朗的战争仍在持续。</li></ul></section><section class="seg chain"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>金融传导全景脉络</h4></div></div><div class="steps"><label class="step"><input type="radio" name="chain-2026-09-11-2" value="1" checked><span class="stepn">STEP 01</span><span class="stepl">能源冲击推高批发通胀</span></label><label class="step"><input type="radio" name="chain-2026-09-11-2" value="2"><span class="stepn">STEP 02</span><span class="stepl">通胀预期与加息概率抬升</span></label><label class="step"><input type="radio" name="chain-2026-09-11-2" value="3"><span class="stepn">STEP 03</span><span class="stepl">贴现率上行与跨资产重定价</span></label><label class="step"><input type="radio" name="chain-2026-09-11-2" value="4"><span class="stepn">STEP 04</span><span class="stepl">成本转嫁与终端需求收缩</span></label></div><div class="step-panels"><section class="step-panel panel-1"><div class="step-hd"><b>1</b><span>能源冲击推高批发通胀</span><i class="step-t">时滞 T+0 至 1 周</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">美国8月生产者价格指数涨幅超预期，能源成本因伊朗战争相关因素跳升。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">生产者价格指数衡量企业出售商品和服务的价格变化，能源是运输、制造、供暖的共同投入。油价和天然气上涨会先抬高企业成本；企业要么压缩利润，要么把成本转嫁给下游。若转嫁顺利，批发通胀就向消费者价格扩散，形成更持久的通胀压力。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>2 年期美债收益率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">通胀超预期推高短端加息定价</p></div></div><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>10 年期盈亏平衡通胀率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">市场要求更高通胀补偿</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美国 9 月生产者价格指数能源分项环比是否继续为正</span></div></div></section><section class="step-panel panel-2"><div class="step-hd"><b>2</b><span>通胀预期与加息概率抬升</span><i class="step-t">时滞 T+0 至 1 周</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">批发通胀超预期叠加伊朗战争，利率期货隐含美联储下周加息概率升至70%。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">美联储的利率决策看的是未来通胀路径，而不是已经发生的油价。生产者价格超预期会让市场担心能源成本向核心通胀扩散，从而上修政策利率路径。短端国债收益率对政策利率最敏感，所以加息概率一升，2 年期美债先被抛售。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>2 年期美债收益率</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">政策利率路径上修，短端最敏感</p></div></div><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>美元指数</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">利差优势吸引资金流入美元</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>联邦基金期货隐含下周加息概率是否超过 70%</span></div></div></section><section class="step-panel panel-3"><div class="step-hd"><b>3</b><span>贴现率上行与跨资产重定价</span><i class="step-t">时滞 1 - 2 周发酵</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">短端美债收益率跳升并带动长端，10年期升至4.9565%，无风险利率全面抬高。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">无风险利率是所有资产定价的贴现基准。它一上行，股票和风险债券要求的最低回报上升；成长股盈利在远期，折现后缩水更严重。同时能源通胀利好能源股和大宗商品，但黄金因实际利率上升而承压，形成股债商分化。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>高估值成长股</b><span class="imp-tag down">看空 / 承压</span><p class="imp-note">远期现金流折现后缩水更多</p></div></div><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>能源板块股票</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">油价上涨直接改善上游盈利</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>10 年期美债收益率是否上破 5.00%</span></div></div></section><section class="step-panel panel-4"><div class="step-hd"><b>4</b><span>成本转嫁与终端需求收缩</span><i class="step-t">时滞 2 - 3 个季度显现</i></div><div class="step-grid"><div class="sf sf-trigger"><div class="sf-lb">输入触发源</div><div class="sf-v">批发通胀向消费者价格传导，企业把能源和运输成本转嫁给最终买家。</div></div><div class="sf sf-logic"><div class="sf-lb">底层传导机理</div><div class="sf-v">生产者价格是消费者价格的上游。若企业能转嫁成本，商品和服务涨价，居民实际购买力下降；若不能转嫁，利润率被压缩，企业会减少招聘和投资。两条路径都指向需求降温，但第二路径对就业冲击更快。</div></div></div><div class="impacts"><div class="imp-t">关键受波及大类资产定价</div><div class="imp-list"><div class="imp"><span class="dir up">↗</span><div class="imp-txt"><b>美国核心个人消费支出物价指数</b><span class="imp-tag up">看多 / 上行</span><p class="imp-note">成本扩散后核心通胀粘性增强</p></div></div><div class="imp"><span class="dir down">↘</span><div class="imp-txt"><b>零售销售</b><span class="imp-tag down">看空 / 承压</span><p class="imp-note">实际购买力下降压制消费</p></div></div></div></div><div class="sens"><span class="sens-ic">!</span><div><b>关键敏感监测变量：</b><span>美国核心个人消费支出物价指数同比是否连续三个月高于 3.0%</span></div></div></section></div><details class="fold"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">6 条</span></summary><ul><li>生产者价格指数是什么？它衡量企业出售商品和服务的价格变化，是消费者价格的上游通胀指标，能源和运费先反映在这里。</li><li>为什么能源涨价会传导到核心通胀？运输、制造和供暖成本上升后，企业会把部分成本加进商品售价，服务价格也可能因工资补偿而上行。</li><li>美联储为什么看核心通胀？核心通胀剔除波动大的能源和食品，更能反映工资和服务等粘性价格压力，能源冲击是否演变成长期通胀要看它。</li><li>加息概率为什么影响短端美债？2 年期国债收益率反映未来两年政策利率路径，市场一旦认为下周加息概率上升，短端债券价格先跌、收益率先升。</li><li>黄金为什么怕实际利率上升？黄金不生息，实际利率上升意味着持有生息资产更划算，持有黄金的机会成本变高，价格容易承压。</li><li>滞胀是什么？经济增长放缓与通胀高企同时出现。央行陷入两难：加息压通胀会伤增长，不加息又怕通胀失控，资产价格通常波动加大。</li></ul></details></section><section class="seg deep"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>深入研读与博弈透视</h4></div></div><div class="deep-sub"><div class="deep-lb">历史参照系与经验校准</div><div class="analogy"><div class="ay"><span class="ae">第二次石油危机与沃尔克紧缩</span><span class="ayr">[1979 年]</span></div><p>1979 年伊朗革命使全球油价翻倍，美国生产者价格和消费者价格同步飙升，美联储随后把政策利率推至两位数，债券收益率和黄金剧烈波动。当前同样有伊朗地缘能源冲击和通胀超预期，但美国已是能源净出口国，页岩油缓冲更强，通胀预期也更锚定，所以更像一轮滞胀压力测试而非 1979 年重演。</p></div></div><div class="deep-sub"><div class="deep-lb">博弈各方的台前立场与真实底牌</div><div class="parties"><div class="party"><div class="pn"><span>美联储（货币当局）</span><i>01</i></div><span class="pl">台前表态立场</span><p class="pv">公开强调依赖数据，称若通胀顽固将维持甚至提高限制性利率</p><span class="pb">不妥协的真实底牌</span><p class="pvb">宁可让增长放缓，也不能让能源冲击演变成工资和核心通胀螺旋</p></div><div class="party"><div class="pn"><span>美国能源生产商与产油国</span><i>02</i></div><span class="pl">台前表态立场</span><p class="pv">声称按市场纪律安排产量，兼顾能源安全</p><span class="pb">不妥协的真实底牌</span><p class="pvb">高油价是利润来源，不会主动大幅增产把价格打下来</p></div><div class="party"><div class="pn"><span>美国进口商与制造企业</span><i>03</i></div><span class="pl">台前表态立场</span><p class="pv">呼吁稳定供应链和延长关税豁免</p><span class="pb">不妥协的真实底牌</span><p class="pvb">无法长期吸收能源和运输成本，只能提价或削减订单</p></div></div></div><div class="deep-sub"><div class="deep-lb">需持续追踪的前瞻红线指标</div><div class="inds"><div class="ind"><div class="ih"><span class="in">美国 8 月消费者价格指数能源分项</span><span class="it">红线 环比上升超过 1.0%</span></div><div class="is">若能源涨价向核心扩散，美联储加息压力会从短端传导至长端，全球风险资产承压。</div></div><div class="ind"><div class="ih"><span class="in">联邦基金期货隐含下周加息概率</span><span class="it">红线 高于 70%</span></div><div class="is">概率继续上升会强化美元和美债短端收益率上行，黄金与新兴市场流动性受挤压。</div></div><div class="ind"><div class="ih"><span class="in">布伦特原油价格</span><span class="it">红线 站稳每桶 108 美元</span></div><div class="is">油价持续高企会推高生产者价格和通胀预期，迫使央行在增长放缓时仍保持紧缩。</div></div></div></div></section><section class="seg takes"><div class="sec-hd"><span class="dot" aria-hidden="true"></span><div><h4>行动启示与认知内化</h4></div></div><div class="take-list"><div class="take"><div class="tl">投资者视角</div><p>别把能源通胀当成一次性噪音。组合里要留足现金和短久期债券，股票配置偏向能源、必要消费等能转嫁成本的行业，成长股降低杠杆。黄金等实际利率见顶再加大配置，避免与加息预期正面冲撞。</p></div><div class="take"><div class="tl">实体与从业者</div><p>制造、运输和进口企业应重新测算能源成本对毛利的影响，能用远期或期货锁定油价就锁定；外贸报价加入燃油附加费和汇率条款，并准备需求走弱时的减产预案。</p></div><div class="take"><div class="tl">个人与家庭生活</div><p>汽油、电费和机票价格可能继续传导到生活成本。理财上少碰长久期债券基金，房贷若为浮动利率可考虑转固定；换汇和海外消费分批操作，避免在加息预期最热时追高美元。</p></div></div></section></div></div></article></div></div><div class="deck-ctl" aria-label="卡片导航"><button class="deck-btn deck-prev" type="button" aria-label="上一张">‹</button><span class="deck-pos">1/7</span><button class="deck-btn deck-next" type="button" aria-label="下一张">›</button></div></div>
+<footer>每天更新 · 市场货币金融 / 政策地缘大事件<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>
+<div class="scrim"></div>
+<section class="sheet" id="sheet-archive" aria-label="事件归档">
+<div class="sheet-hd"><h2>事件归档</h2><button class="sheet-x" type="button" aria-label="关闭">✕</button></div>
+<div class="archive"><details class="arc-y"><summary>2026 年</summary><details class="arc-m"><summary>9 月<span class="cnt">5 天</span></summary><div class="days"><a href="2026-09-11.html" title="2026-09-11">11</a><a href="2026-09-10.html" title="2026-09-10" class="cur">10</a><a href="2026-09-09.html" title="2026-09-09">09</a><a href="2026-09-07.html" title="2026-09-07">07</a><a href="2026-09-06.html" title="2026-09-06">06</a></div></details></details></div></section>
+<section class="sheet" id="sheet-favs" aria-label="我的收藏">
+<div class="sheet-hd"><h2>我的收藏</h2><button class="sheet-x" type="button" aria-label="关闭">✕</button></div>
+<ul class="favs" id="favs"></ul>
+<p class="favs-empty" id="favs-empty">还没有收藏。卡片右上角的 ☆ 点一下，这条就存在这里。</p>
+<p class="favs-note">收藏只存在这台设备的浏览器里，换设备或清缓存就没了；以后接上账号会跟着账号走，段落划线收藏也一起做。</p>
+</section>
+<section class="sheet" id="sheet-set" aria-label="设置">
+<div class="sheet-hd"><h2>设置</h2><button class="sheet-x" type="button" aria-label="关闭">✕</button></div>
+<label class="opt"><input type="checkbox" id="opt-orig">
+<span>默认展开英文原文<em>关着的时候，英文源的卡片手机端只显示中文解读，点「查看英文原文」才展开。桌面端一直显示原文。</em></span></label>
+</section>
+<nav class="tabbar" aria-label="功能栏">
+<button type="button" data-sheet="archive" aria-expanded="false"><span class="ic">▤</span>事件归档</button>
+<button type="button" data-sheet="favs" aria-expanded="false"><span class="ic">★</span>我的收藏</button>
+<button type="button" data-sheet="set" aria-expanded="false"><span class="ic">⚙</span>设置</button>
+</nav>
+<noscript><style>.scrim,.tabbar{display:none}
+.sheet{position:static;transform:none;visibility:visible;max-height:none;margin-top:14px;
+border:1px solid var(--line);border-radius:var(--card-r)}</style></noscript>
 <script>
 (function () {
+  var PAGE = document.documentElement.getAttribute('data-page') || '';
+  var PHONE = window.matchMedia('(max-width:760px)');
+
+  // 手机端：卡片内容长度是模型写的、长短不可控 —— 与其截断文字，不如把卡内字号
+  // 缩一点，让整张卡不超过一屏（除"解析"外都塞进一屏，横向翻卡时不用上下找）。
+  // 页面本身照常整页纵向滚动，**不做卡内局部滚动**；缩到下限 0.60 还超就让它超，
+  // 页面继续滚就是了。
+  function budget() {
+    var used = 0, sel = ['header', '.deck-ctl'];
+    for (var q = 0; q < sel.length; q++) {
+      var e = document.querySelector(sel[q]);
+      if (e) used += e.offsetHeight;
+    }
+    return Math.max(320, window.innerHeight - used - 26);
+  }
+  function fit(article, force) {
+    if (article.dataset.fitDone && !force) return;
+    if (article.querySelector('.fold[open]')) return;   // 展开态量不准，保持原样
+    var s = 1, limit = budget();
+    article.style.setProperty('--fit', '1');
+    while (s > 0.60 && article.offsetHeight > limit) {
+      s -= 0.04;
+      article.style.setProperty('--fit', s.toFixed(2));
+    }
+    article.dataset.fitDone = '1';
+  }
+
   function init() {
     var track = document.querySelector('.deck-track');
     if (!track || track.children.length === 0) return;
-    var slides = track.children;
+    var slides = Array.prototype.slice.call(track.children);
     var prev = document.querySelector('.deck-prev');
     var next = document.querySelector('.deck-next');
     var pos = document.querySelector('.deck-pos');
     var N = slides.length;
+
+    // 轨道里是[前一天][当天][后一天]的卡片，打开时先停在"当天"的第一张，
+    // 而不是轨道最左边那张（那可能是前一天）。用 rect 差值定位，不依赖 offsetParent。
+    var start = 0;
+    for (var k = 0; k < N; k++) {
+      if (slides[k].getAttribute('data-day') === PAGE) { start = k; break; }
+    }
+    // 从收藏列表点进来时带着 #c-<day>-<i>，直接落到那一张
+    var want = (location.hash || '').indexOf('#c-') === 0 ? location.hash.slice(3) : '';
+    if (want) {
+      for (var h = 0; h < N; h++) {
+        var art = slides[h].querySelector('article');
+        if (art && art.id === 'c-' + want) { start = h; break; }
+      }
+    }
+    if (start > 0) {
+      track.scrollLeft += slides[start].getBoundingClientRect().left -
+                          track.getBoundingClientRect().left;
+    }
+
+    function index() {
+      var i = Math.round(track.scrollLeft / (track.clientWidth || 1));
+      return Math.max(0, Math.min(N - 1, i));
+    }
     function update() {
-      var w = track.clientWidth;
-      var i = Math.round(track.scrollLeft / w);
-      if (i < 0) i = 0;
-      if (i > N - 1) i = N - 1;
-      if (pos) pos.textContent = (i + 1) + '/' + N;
+      var i = index(), s = slides[i];
+      var n = parseInt(s.getAttribute('data-n'), 10) || N;
+      var j = parseInt(s.getAttribute('data-i'), 10) || (i + 1);
+      if (pos) pos.textContent = j + '/' + n;          // 当天内部的第几张
       if (prev) prev.disabled = (i <= 0);
       if (next) next.disabled = (i >= N - 1);
+      if (PHONE.matches) {
+        var a = s.querySelector('article');
+        if (a) fit(a);
+      }
     }
     function go(i) {
-      if (i < 0) i = 0;
-      if (i > N - 1) i = N - 1;
-      var w = track.clientWidth;
-      track.scrollTo({ left: i * w, behavior: 'smooth' });
+      i = Math.max(0, Math.min(N - 1, i));
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
     }
-    if (prev) prev.addEventListener('click', function () {
-      go(Math.round(track.scrollLeft / track.clientWidth) - 1);
-    });
-    if (next) next.addEventListener('click', function () {
-      go(Math.round(track.scrollLeft / track.clientWidth) + 1);
-    });
+    if (prev) prev.addEventListener('click', function () { go(index() - 1); });
+    if (next) next.addEventListener('click', function () { go(index() + 1); });
     track.addEventListener('scroll', update, { passive: true });
     track.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { go(Math.round(track.scrollLeft / track.clientWidth) + 1); e.preventDefault(); }
-      if (e.key === 'ArrowLeft')  { go(Math.round(track.scrollLeft / track.clientWidth) - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { go(index() + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft')  { go(index() - 1); e.preventDefault(); }
     });
+
+    var timer;
+    window.addEventListener('resize', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        // 屏高变了，之前缩好的 --fit 全部作废，重新量一遍
+        slides.forEach(function (s) {
+          var a = s.querySelector('article');
+          if (a) fit(a, true);
+        });
+        update();
+      }, 150);
+    }, { passive: true });
+
     update();
-    window.addEventListener('resize', update, { passive: true });
+    // 当前这张必须在第一次绘制前就量好；其余几张趁空闲量，滑过去时字不会跳一下
+    if (PHONE.matches) {
+      var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 120); };
+      idle(function () {
+        slides.forEach(function (s) {
+          var a = s.querySelector('article');
+          if (a) fit(a);
+        });
+      });
+    }
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
+})();
+
+// ── 底部功能栏：事件归档 / 我的收藏 / 设置 ──
+// 收藏和设置都存 localStorage。收藏目前只在这台设备上，锚点是卡片的 id
+// （`<day>.html#c-<day>-<i>`），点收藏列表里的一条会跳回那一天那张卡。
+// 以后接小程序和账号时，把这层存储换成远端接口即可，界面不用动。
+(function () {
+  var FAV_KEY = 'dailybrief.favs', OPT_KEY = 'dailybrief.showOrig';
+  function store(k, v) {
+    try {
+      if (v === undefined) return window.localStorage.getItem(k);
+      window.localStorage.setItem(k, v);
+    } catch (e) { /* 隐私模式或禁用存储：当作没收藏过，别让页面挂掉 */ }
+    return null;
+  }
+  function favs() {
+    try { return JSON.parse(store(FAV_KEY) || '[]') || []; } catch (e) { return []; }
+  }
+
+  var list = document.getElementById('favs'), empty = document.getElementById('favs-empty');
+
+  function paint() {
+    if (!list) return;
+    var items = favs(), on = {};
+    items.forEach(function (f) { on[f.id] = 1; });
+    list.innerHTML = '';
+    items.slice().reverse().forEach(function (f) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.href = f.day + '.html#c-' + f.cid;            // 直接跳回那张卡
+      a.textContent = f.label || f.title || f.day;
+      var meta = document.createElement('span');
+      meta.className = 'fav-meta';
+      meta.textContent = f.day + (f.src ? ' · ' + f.src : '');
+      var del = document.createElement('button');
+      del.type = 'button';
+      del.className = 'fav-del';
+      del.textContent = '✕';
+      del.setAttribute('aria-label', '取消收藏');
+      del.addEventListener('click', function () {
+        save(items.filter(function (x) { return x.id !== f.id; }));
+      });
+      li.appendChild(a); li.appendChild(meta); li.appendChild(del);
+      list.appendChild(li);
+    });
+    if (empty) empty.style.display = items.length ? 'none' : '';
+    var btns = document.querySelectorAll('.fav');   // 卡片右上角的星标跟着状态走
+    for (var i = 0; i < btns.length; i++) {
+      var fav = !!on[btns[i].getAttribute('data-id')];
+      btns[i].textContent = fav ? '★' : '☆';
+      btns[i].setAttribute('aria-pressed', fav ? 'true' : 'false');
+      btns[i].className = fav ? 'fav on' : 'fav';
+    }
+  }
+  function save(items) { store(FAV_KEY, JSON.stringify(items)); paint(); }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.fav') : null;
+    if (!b) return;
+    var items = favs(), id = b.getAttribute('data-id');
+    var kept = items.filter(function (x) { return x.id !== id; });
+    if (kept.length === items.length) {
+      var art = b.closest('article'), slide = b.closest('.deck-slide');
+      var link = art && art.querySelector('.news a.t');
+      var what = art && art.querySelector('.seg.what .tx');
+      var src = art && art.querySelector('.src');
+      kept.push({
+        id: id,
+        cid: b.getAttribute('data-cid'),
+        day: slide ? slide.getAttribute('data-day') : '',
+        // 中文解读的头一句当列表标题：英文源卡片标题是英文，列表里不好认
+        label: what ? what.textContent.replace(/\s+/g, ' ').slice(0, 44) : '',
+        title: link ? link.textContent : '',
+        src: src ? src.textContent.split(' · ')[0] : '',
+        url: link ? link.href : id
+      });
+    }
+    save(kept);
+  });
+
+  // 设置：默认展开英文原文。手机端才有折叠；桌面端永远摊开 —— 由 JS 强制
+  // `open`，不赌浏览器对未 open 的 details 用 display:none 还是 content-visibility
+  // 隐藏（后者光靠 CSS 覆盖压不住，英文原文会被吞成空白）。
+  function applyOrig() {
+    var desktop = window.matchMedia('(min-width:761px)').matches;
+    var on = desktop || store(OPT_KEY) === '1';
+    var ds = document.querySelectorAll('.orig');
+    for (var i = 0; i < ds.length; i++) ds[i].open = on;
+    var cb = document.getElementById('opt-orig');
+    if (cb) cb.checked = store(OPT_KEY) === '1';
+  }
+  var box = document.getElementById('opt-orig');
+  if (box) box.addEventListener('change', function () {
+    store(OPT_KEY, box.checked ? '1' : '0');
+    applyOrig();
+  });
+
+  // 抽屉：一次只开一个，点遮罩 / ✕ / Esc 关掉
+  var scrim = document.querySelector('.scrim');
+  var tabs = document.querySelectorAll('.tabbar button');
+  function mark(name) {
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].setAttribute('aria-expanded',
+        tabs[i].getAttribute('data-sheet') === name ? 'true' : 'false');
+    }
+  }
+  function close() {
+    var open = document.querySelectorAll('.sheet.on');
+    for (var i = 0; i < open.length; i++) open[i].className = 'sheet';
+    if (scrim) scrim.className = 'scrim';
+    mark('');
+  }
+  function open(name) {
+    close();
+    var s = document.getElementById('sheet-' + name);
+    if (!s) return;
+    s.className = 'sheet on';
+    if (scrim) scrim.className = 'scrim on';
+    mark(name);
+  }
+  for (var t = 0; t < tabs.length; t++) {
+    tabs[t].addEventListener('click', function () {
+      var name = this.getAttribute('data-sheet');
+      var s = document.getElementById('sheet-' + name);
+      if (s && s.className.indexOf('on') >= 0) close(); else open(name);
+    });
+  }
+  var xs = document.querySelectorAll('.sheet-x');
+  for (var x = 0; x < xs.length; x++) xs[x].addEventListener('click', close);
+  if (scrim) scrim.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+
+  paint();
+  applyOrig();
 })();
 </script>
 </body></html>
