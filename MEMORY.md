@@ -318,3 +318,24 @@ anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% �
 - **`apply_config.py --check` 仍报不同步**：`config.toml` 的 `cron = "0 8 * * *"` 与
   `daily.yml` 的 `0 0 * * 1` 对不上。这是改版前就有的，没动 —— 本机日更由 Windows
   任务计划程序负责，云端那个 workflow 的 schedule 本来也被 `workflow_dispatch` 门住。
+
+## PWA（2026-09-11 晚，装到手机当 App 用）
+
+- 微信小程序 / App Store 都上不了：小程序要求域名 ICP 备案（github.io 备不了）+
+  新闻类目资质（个人主体拿不到）；App Store 有 4.2 最低功能、5.2.1 内容版权、
+  且没有「只给自己装」的通道（TestFlight 90 天要审、Ad Hoc 要 $99/年）。
+  → 自用走 PWA。
+- `build_site.py` 新增两块，都写在 site/ 下：
+  - `sw.js`：service worker。HTML 走 network-first（联网永远拿最新，断网回落缓存），
+    图标/manifest 走 cache-first。缓存名带构建日期，页面一更新旧缓存整批清掉。
+    **和 manifest 一样，`--date` 单渲一天时也会重写** —— 否则装到手机上的壳会停旧版。
+  - 页面末尾注册 service worker（`SW_REGISTER`），失败静默吞掉。
+- `manifest()` 加了 `icons`（192/512，purpose `any maskable`）和 `scope: "./"`。
+  Chrome 必须同时看到 icons **和** service worker 才给真正的「安装应用」
+  （独立窗口）；缺一样就只能加到主屏幕当书签。
+- 三张图标是**现成的二进制文件**，不由 build_site.py 生成（纯 Python 没法光栅化汉字）：
+  `site/icon-192.png`、`site/icon-512.png`、`site/apple-touch-icon.png`，
+  暗底 `#191918` + 白色「勢」（SimSun Bold，字号 0.6×边长，留够 maskable 安全边距）。
+  重做方法：System.Drawing 画一遍，字形用 `[char]0x52E2` 传，避免中文编码坑。
+- 页面 `<head>` 加了 `<link rel="apple-touch-icon">`；iOS 另靠已有的
+  `apple-mobile-web-app-*` 三个 meta。

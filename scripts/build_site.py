@@ -620,6 +620,75 @@ DECK_JS = r"""<script>
 </script>"""
 
 
+# 注册 service worker。写在页面里而不是 sw.js 里 —— 注册动作必须在页面上下文执行。
+# 失败就静默吞掉：没有 SW 只是不能离线，页面本身照常能看。
+SW_REGISTER = """<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function () {});
+  });
+}
+</script>"""
+
+# sw.js 本体，由 build_site.py 写进 site/。__VERSION__ 会换成构建日期。
+# 版本号一变，activate 里就把旧缓存整批删掉，不会出现「壳是新的、内容还是旧的」。
+SERVICE_WORKER = """/* 离线缓存。由 build_site.py 生成，别手改 —— 下次渲染会覆盖。
+
+   HTML 走 network-first：联网时永远拿当天最新，断网回落到缓存，
+   连缓存都没有就退回首页。图标/manifest 走 cache-first，它们基本不变。
+   缓存名带版本号，页面一更新就整体换掉。 */
+const CACHE = 'dailybrief-__VERSION__';
+const SHELL = ['./', './index.html', './manifest.webmanifest',
+               './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(
+        keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  const req = e.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;
+
+  const isHTML = req.mode === 'navigate'
+    || (req.headers.get('accept') || '').indexOf('text/html') !== -1;
+
+  if (isHTML) {
+    e.respondWith(
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req).then((hit) => hit || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  e.respondWith(
+    caches.match(req).then((hit) => hit || fetch(req).then((res) => {
+      const copy = res.clone();
+      caches.open(CACHE).then((c) => c.put(req, copy));
+      return res;
+    }))
+  );
+});
+"""
+
+
 def render_page(payload: dict, dates: list[str], current: str) -> str:
     mode = payload.get("mode", "llm")
     badge = ('<span class="badge rules">规则模式</span>' if mode == "rules"
@@ -683,6 +752,7 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>{CSS}</style></head><body><div class="wrap">
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1></div>
@@ -695,23 +765,33 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>
 {DECK_JS}
+{SW_REGISTER}
 </body></html>"""
 
 
 def manifest() -> str:
-    """PWA manifest：iOS/Android「添加到主屏幕」后有名字和图标底色。
+    """PWA manifest：iOS/Android「添加到主屏幕」后有名字、图标和独立窗口。
 
-    刻意不引图标文件 —— 没有 icons 字段时两家系统都会自动截图当图标，
-    省掉维护一堆尺寸 png。
+    2026-09-11 起带 icons + service worker —— Chrome 必须同时看到这两样才给
+    真正的「安装应用」（独立窗口），否则只能加到主屏幕当书签。
+    purpose 用 "any maskable"：图标本身留了足够边距，切圆形/方形都不会切到字。
+    三张 PNG 是 site/ 下的现成文件，这里只引用，不生成图片。
     """
     return json.dumps({
         "name": SITE_NAME,
         "short_name": SITE_NAME.split("|")[0].strip() or BRAND,
         "start_url": "./index.html",
+        "scope": "./",
         "display": "standalone",
         "background_color": "#faf8f3",
         "theme_color": "#faf8f3",
         "lang": "zh-CN",
+        "icons": [
+            {"src": "./icon-192.png", "sizes": "192x192",
+             "type": "image/png", "purpose": "any maskable"},
+            {"src": "./icon-512.png", "sizes": "512x512",
+             "type": "image/png", "purpose": "any maskable"},
+        ],
     }, ensure_ascii=False, indent=2)
 
 
@@ -746,11 +826,20 @@ def main() -> int:
         out.write_text(render_page(payload, dates, path.stem), encoding="utf-8")
         print(f"渲染 {out.relative_to(ROOT)}")
 
+    # service worker 跟着一起写。版本号取本次渲染的日期，页面一更新，
+    # 浏览器发现 sw.js 变了就重装，旧缓存整批清掉。
+    # manifest 与 sw.js 跟日期无关，--date 单渲一天时也要写，否则装到手机上的
+    # 图标/离线壳会停在旧版本。
+    sw_path = SITE_DIR / "sw.js"
+    sw_path.write_text(SERVICE_WORKER.replace("__VERSION__", todo[0].stem),
+                       encoding="utf-8")
+    print(f"渲染 {sw_path.relative_to(ROOT)}")
+    (SITE_DIR / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
+
     if args.date:
         return 0
 
     shutil.copyfile(SITE_DIR / f"{dates[0]}.html", SITE_DIR / "index.html")
-    (SITE_DIR / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
     # GitHub Pages 默认走 Jekyll，会忽略下划线开头的文件并偶尔改写内容。
     # 我们只发静态 HTML，直接关掉。
     (SITE_DIR / ".nojekyll").write_text("", encoding="utf-8")

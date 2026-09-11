@@ -2,8 +2,23 @@
   "name": "知势|Daily Brief",
   "short_name": "知势",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#faf8f3",
   "theme_color": "#faf8f3",
-  "lang": "zh-CN"
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
