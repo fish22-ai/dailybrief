@@ -30,15 +30,16 @@ cron = "0 8 * * *"
 # 上面那个时间按哪个时区算。国内不用动。
 timezone = "Asia/Shanghai"
 
-# 【改时间】本机自动化由 Windows 任务计划程序负责，它不读这个文件，只认系统
-# 本地时间。改成每天跑（默认就是每天 08:00）：
-#     powershell -ExecutionPolicy Bypass -File scripts\install_task.ps1 -Daily -At "08:00"
-#
-# 上面的 cron/timezone 现在只是「默认计划」的说明。scripts/apply_config.py
-# 只在将来重新启用 GitHub Actions 云端定时时才需要（把本地时间换算成 UTC
-# 写进 .github/workflows/daily.yml）。
+# 【改时间】改上面这一行 cron 就够了 —— 它是唯一来源，本机和云端都跟它走：
+#     python scripts/apply_config.py
+# 这一句同时做两件事：
+#   · 把本地时间换算成 UTC 写进 .github/workflows/daily.yml（云端定时）
+#   · 重注册本机 Windows 定时任务，让它按同一个 cron 跑
+# 所以改完 cron 跑一次，两边就都对齐了，不用再去 install_task.ps1 里改一遍。
 #
 # 【想立刻更新一次、不等定时】本机：schtasks /run /tn DailyBrief
+#
+# 【只想同步云端、不动本机任务】python scripts/apply_config.py --no-task
 
 
 # ════════════════════════════════════════════════════════════════════════════

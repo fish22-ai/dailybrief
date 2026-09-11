@@ -165,7 +165,7 @@ article[data-cat="tech"]::before{background:#42557d}
 .deck-slide{flex:0 0 100%;scroll-snap-align:center}
 .deck-slide article{margin-bottom:0}
 .deck-ctl{display:flex;align-items:center;justify-content:center;gap:14px;
- margin-bottom:4px;min-height:34px}
+ margin-top:4px;min-height:34px}
 .deck-btn{appearance:none;border:1px solid var(--line);background:var(--card);
  color:var(--dim);border-radius:999px;width:34px;height:34px;cursor:pointer;
  font:16px/1 monospace;display:inline-flex;align-items:center;justify-content:center;
@@ -652,8 +652,9 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
            f'<span class="deck-pos">1/{total}</span>'
            f'<button class="deck-btn deck-next" type="button" '
            f'aria-label="下一张">›</button></div>')
-    body = (f'{ctl}<div class="deck-track" tabindex="0">'
+    body = (f'<div class="deck-track" tabindex="0">'
             f'{"".join(slides)}</div>'
+            f'{ctl}'
             f'<p class="deck-hint">← → 或按钮切换 · 手机左右滑动</p>')
 
     links = "".join(

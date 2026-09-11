@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import subprocess
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -23,6 +24,7 @@ sys.path.insert(0, str(ROOT))
 from core import config                                    # noqa: E402
 
 WORKFLOW = ROOT / ".github" / "workflows" / "daily.yml"
+INSTALL_TASK = ROOT / "scripts" / "install_task.ps1"
 
 # 只支持定点 cron（分和时都是具体数字），因为要做时区换算。
 # "*/5 * * * *" 这种间隔式在换算上没有意义，也不该用在每周一次的任务上。
@@ -176,12 +178,46 @@ def report_settings() -> None:
               "想省就调小 per_category 或候选池 pool_size。")
 
 
+def sync_windows_task(dry: bool) -> None:
+    """把本机定时任务也拉到 config.toml 这条线上，让"改时间"只剩一处。
+
+    真正读 config.toml 的是 install_task.ps1 自己，这里只负责把它跑起来。
+    任务计划程序只存在于 Windows，其他平台静默跳过。
+    """
+    if sys.platform != "win32":
+        return
+    if dry:
+        print("\n本机定时任务本次未改动（--check）——"
+              "跑 python scripts/apply_config.py 会一并同步它")
+        return
+    if not INSTALL_TASK.exists():
+        return
+    try:
+        proc = subprocess.run(
+            ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
+             "-File", str(INSTALL_TASK)],
+            capture_output=True, text=True, encoding="utf-8",
+            errors="replace", timeout=180,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        print(f"\n本机定时任务没同步成功（不影响上面几步）：{exc}", file=sys.stderr)
+        return
+    print("\n本机定时任务：")
+    for line in (proc.stdout or "").strip().splitlines():
+        print("  " + line)
+    if proc.returncode != 0:
+        print(f"  install_task.ps1 退出码 {proc.returncode}，请手动跑一次确认",
+              file=sys.stderr)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="把 config.toml 应用到工作流")
     ap.add_argument("--check", action="store_true",
                     help="只检查配置与工作流是否同步，不改文件")
     ap.add_argument("--show-prompt", action="store_true",
                     help="打印当前生效的完整 prompt（含 config.toml 里的追加要求）")
+    ap.add_argument("--no-task", action="store_true",
+                    help="只同步云端工作流，不动本机 Windows 定时任务")
     args = ap.parse_args()
 
     if args.show_prompt:
@@ -222,6 +258,9 @@ def main() -> int:
     if "America" in tz_name or "Europe" in tz_name:
         print(f"\n注意：{tz_name} 有夏令时，UTC 偏移一年会变两次。"
               f"换季后重跑一次这个脚本即可对齐。")
+
+    if not args.no_task:
+        sync_windows_task(dry=args.check)
 
     report_settings()
     return 0
