@@ -27,6 +27,7 @@ render_card() 对这种旧数据回落到旧标签渲染，重跑不会让历史
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -42,6 +43,24 @@ from core.models import CATEGORIES, CATEGORY_LABELS   # noqa: E402
 
 DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
+
+# 图标/清单这几个文件跟日期无关，改一次就得让**已经装在桌面上的旧副本**失效：
+# 缓存名只按构建日期走的话，重画图标而当天日期没变（很常见）就永远换不掉。
+# 这里按文件内容算一枚指纹，挂到 manifest 的图标 URL 上（?v=…）—— Chrome 看到
+# 图标 URL 变了才会重新下载并更新已安装 App 的图标；service worker 的缓存名
+# 也带上它，否则离线壳还是从旧缓存里拿图标。
+ICON_FILES = ("icon-192.png", "icon-512.png", "apple-touch-icon.png")
+_rev_cache: dict[str, str] = {}
+
+
+def asset_rev() -> str:
+    if "v" not in _rev_cache:
+        h = hashlib.sha1()
+        for name in ICON_FILES:
+            path = SITE_DIR / name
+            h.update(path.read_bytes() if path.exists() else b"")
+        _rev_cache["v"] = h.hexdigest()[:10]
+    return _rev_cache["v"]
 
 # 全部可在 config.toml 的 [site] 改
 SITE_NAME = config.get_str("site", "name", "每日金融 sense")
@@ -764,10 +783,11 @@ SERVICE_WORKER = """/* 离线缓存。由 build_site.py 生成，别手改 —�
 
    HTML 走 network-first：联网时永远拿当天最新，断网回落到缓存，
    连缓存都没有就退回首页。图标/manifest 走 cache-first，它们基本不变。
-   缓存名带版本号，页面一更新就整体换掉。 */
+   缓存名带版本号（构建日期 + 图标指纹），页面一更新就整体换掉。 */
 const CACHE = 'dailybrief-__VERSION__';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
-               './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
+               './icon-192.png?v=__REV__', './icon-512.png?v=__REV__',
+               './apple-touch-icon.png?v=__REV__'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
@@ -894,7 +914,7 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v={asset_rev()}">
 <style>{CSS}</style></head><body><div class="wrap">
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1>
@@ -919,7 +939,9 @@ def manifest() -> str:
     真正的「安装应用」（独立窗口），否则只能加到主屏幕当书签。
     purpose 用 "any maskable"：图标本身留了足够边距，切圆形/方形都不会切到字。
     三张 PNG 是 site/ 下的现成文件，这里只引用，不生成图片。
+    图标 src 挂 ?v=<指纹>：URL 不变的话，装在桌面上的 App 会一直用安装时那份图标。
     """
+    rev = asset_rev()
     return json.dumps({
         "name": SITE_NAME,
         "short_name": SITE_NAME.split("|")[0].strip() or BRAND,
@@ -930,9 +952,9 @@ def manifest() -> str:
         "theme_color": "#faf8f3",
         "lang": "zh-CN",
         "icons": [
-            {"src": "./icon-192.png", "sizes": "192x192",
+            {"src": f"./icon-192.png?v={rev}", "sizes": "192x192",
              "type": "image/png", "purpose": "any maskable"},
-            {"src": "./icon-512.png", "sizes": "512x512",
+            {"src": f"./icon-512.png?v={rev}", "sizes": "512x512",
              "type": "image/png", "purpose": "any maskable"},
         ],
     }, ensure_ascii=False, indent=2)
@@ -974,8 +996,10 @@ def main() -> int:
     # manifest 与 sw.js 跟日期无关，--date 单渲一天时也要写，否则装到手机上的
     # 图标/离线壳会停在旧版本。
     sw_path = SITE_DIR / "sw.js"
-    sw_path.write_text(SERVICE_WORKER.replace("__VERSION__", todo[0].stem),
-                       encoding="utf-8")
+    sw_path.write_text(
+        SERVICE_WORKER.replace("__VERSION__", f"{todo[0].stem}-{asset_rev()}")
+                      .replace("__REV__", asset_rev()),
+        encoding="utf-8")
     print(f"渲染 {sw_path.relative_to(ROOT)}")
     (SITE_DIR / "manifest.webmanifest").write_text(manifest(), encoding="utf-8")
 
