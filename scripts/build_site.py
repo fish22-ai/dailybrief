@@ -739,6 +739,7 @@ DECK_JS = r"""<script>
     var older = track.getAttribute('data-older') || '';
     var newer = track.getAttribute('data-newer') || '';
     var maxH = 0;
+    var lastI = -1;
     // 卡片高低不齐，轨道却按最高的那张留白 —— 量出差额，把翻页键上提到当前卡
     // 正下方（负 margin 吃掉差额）。**不改轨道高度**：改了会把相邻卡裁掉或抖一下。
     function measure() {
@@ -779,6 +780,14 @@ DECK_JS = r"""<script>
         var narrow = window.matchMedia('(max-width:760px)').matches;
         ctl.style.marginTop = narrow
           ? (4 - (maxH - slides[i].offsetHeight)) + 'px' : '';
+      }
+      // 换卡了：当前卡的顶边不在视口里就把它拉回来（**只往上拉，不往下推**）。
+      // 不做这一步的话，从长卡滑到短卡（比如刚展开过解析的那张），文档一下子矮一截，
+      // 浏览器会把滚动位置夹到页面最底 —— 新卡就变成"从下半截开始显示、下面一片空"。
+      if (i !== lastI) {
+        lastI = i;
+        var top = slides[i].getBoundingClientRect().top + window.scrollY - 8;
+        if (top > 0 && window.scrollY > top) window.scrollTo(0, top);
       }
     }
     function go(i) {
