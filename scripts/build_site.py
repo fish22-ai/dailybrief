@@ -159,7 +159,10 @@ article[data-cat="tech"]::before{background:#42557d}
    轨道本身可横向滚动（touch 天然支持），按钮和方向键也只是把 scrollLeft 挪一格；
    滚动结束时按 scroll-snap 对齐，所以键盘和手指落到同一套位置逻辑上。 */
 .deck{position:relative}
-.deck-track{display:flex;overflow-x:auto;overscroll-behavior-x:contain;
+/* align-items:flex-start 让每张 slide 保持自身高度 —— 卡片高低不齐时，
+   脚本才能量出"当前这张"和"最高那张"的差，把翻页键上提到当前卡正下方。 */
+.deck-track{display:flex;align-items:flex-start;overflow-x:auto;
+ overscroll-behavior-x:contain;
  scroll-snap-type:x mandatory;gap:14px;padding:2px 2px 12px;
  scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .deck-track::-webkit-scrollbar{display:none}
@@ -255,6 +258,22 @@ code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
 .opt span{font-size:13.5px}
 .opt em{display:block;font-style:normal;color:var(--faint);font-size:12px;margin-top:3px;
  line-height:1.6}
+/* 设置齿轮：顶栏最右，点开是一个右下角弹出的面板。
+   原来是页脚上方一整块 <details>「设置」，占一行还容易看不见；改成图标后
+   设置和归档不再混在一起，顶栏右上也终于有个正经用途。 */
+.gear{position:relative;flex:none}
+.gear>summary{list-style:none;cursor:pointer;user-select:none;
+ width:32px;height:32px;border-radius:999px;border:1px solid var(--line);
+ background:var(--card);color:var(--dim);font-size:15px;line-height:1;
+ display:inline-flex;align-items:center;justify-content:center}
+.gear>summary::-webkit-details-marker{display:none}
+.gear>summary::marker{content:""}
+.gear>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.gear>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gear[open]>summary{color:var(--accent);border-color:var(--pillline)}
+.gear-panel{position:absolute;right:0;top:calc(100% + 8px);z-index:20;
+ width:min(330px,84vw);background:var(--card);border:1px solid var(--line);
+ border-radius:12px;padding:4px 14px;box-shadow:var(--card-sd-hi);text-align:left}
 footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
 /* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
    只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
@@ -274,6 +293,16 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
   -webkit-overflow-scrolling:touch}
  .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
+ /* 手机端新闻栏的顶行：板块标签靠左浮、英文原文按钮靠右浮，并排放同一行。
+    两者都按 .catpill 的尺寸做（11px 字 + 2px/9px 内边距）才一样高。
+    （标签一浮起来就不占流，.orig 才会顶到内容区顶部，否则按钮要低一行。）
+    代价是**浮动的标签会一直影响后面每一个行盒**：中文源的卡没有 .orig，
+    标题就会挤在标签右边那条窄缝里（看着像从右上角起头）。所以标题/摘要/来源
+    一律 clear 到标签这一行下面 —— 中文源的版式和改之前完全一致。 */
+ .catpill{float:left;margin:0 9px 6px 0}
+ .orig>summary{float:right;margin:0 0 6px 9px;padding:2px 9px;font-size:11px;gap:4px}
+ .orig[open]>summary{margin-bottom:6px}
+ .news a,.news .raw,.news .src{clear:both}
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
  .archive a{font-size:13.5px;padding:6px 11px}
@@ -486,6 +515,23 @@ TEXT_SEGMENTS = (("what", "发生了什么"), ("why", "市场为什么在意"))
 # 旧归档（五字段时代）没有 notes，回落渲染这两行，免得重跑丢内容
 LEGACY_SEGMENTS = (("watch", "盯什么"), ("term", "概念"))
 
+# 快讯类条目（华尔街见闻那种，标题即全部信息）的 what 常和标题逐字相同。
+# 左栏已经原样展示了标题，右栏再抄一遍纯属重复 —— 命中就整段不渲染。
+# 只在"几乎逐字重合"时命中：英文源的标题是英文、what 是中文，天然不会误伤；
+# 中文标题被改写过（重合度低）也照常保留。
+_TITLE_NOISE = re.compile(r"[\s，。、；：,.;:！？!?「」『』“”‘’\"'（）()]")
+
+
+def _restates_title(card: dict, what: str) -> bool:
+    title = _TITLE_NOISE.sub("", str(card.get("title") or ""))
+    text = _TITLE_NOISE.sub("", str(what or ""))
+    if not title or not text:
+        return False
+    if title == text:
+        return True
+    short, long = sorted((title, text), key=len)
+    return len(short) >= 10 and short in long and len(short) / len(long) > 0.7
+
 
 def _collapsible(open_label: str, close_label: str, body: str,
                  tail: str = "", cls: str = "notes") -> str:
@@ -554,11 +600,14 @@ def render_card(card: dict, cat: str) -> str:
 
     # 发生了什么 / 市场为什么在意 / 金融传导 三段默认直接展示 —— 它们是"这条为什么
     # 重要"的主线，收起来就等于没解读。只有解析（概念摊开讲）默认收起。
-    segs = [
-        f'<section class="seg {key}"><div class="lb">{label}</div>'
-        f'<div class="tx">{esc(ins.get(key))}</div></section>'
-        for key, label in TEXT_SEGMENTS if ins.get(key)
-    ]
+    segs = []
+    for key, label in TEXT_SEGMENTS:
+        if not ins.get(key):
+            continue
+        if key == "what" and _restates_title(card, ins[key]):
+            continue                      # 快讯：标题已经说了，别再抄一遍
+        segs.append(f'<section class="seg {key}"><div class="lb">{label}</div>'
+                    f'<div class="tx">{esc(ins.get(key))}</div></section>')
 
     if ins.get("chain"):
         segs.append(f'<section class="seg chain"><div class="lb">金融传导</div>'
@@ -598,7 +647,18 @@ DECK_JS = r"""<script>
     var prev = document.querySelector('.deck-prev');
     var next = document.querySelector('.deck-next');
     var pos = document.querySelector('.deck-pos');
+    var ctl = document.querySelector('.deck-ctl');
     var N = slides.length;
+    var maxH = 0;
+    // 卡片高低不齐，轨道却按最高的那张留白 —— 量出差额，把翻页键上提到当前卡
+    // 正下方（负 margin 吃掉差额）。**不改轨道高度**：改了会把相邻卡裁掉或抖一下。
+    function measure() {
+      maxH = 0;
+      for (var k = 0; k < N; k++) {
+        var h = slides[k].offsetHeight;
+        if (h > maxH) maxH = h;
+      }
+    }
     function update() {
       var w = track.clientWidth;
       var i = Math.round(track.scrollLeft / w);
@@ -607,6 +667,12 @@ DECK_JS = r"""<script>
       if (pos) pos.textContent = (i + 1) + '/' + N;
       if (prev) prev.disabled = (i <= 0);
       if (next) next.disabled = (i >= N - 1);
+      // 只在手机端收：桌面屏幕高，翻页时下方归档卡片跟着上下跳反而碍眼。
+      if (ctl && slides[i]) {
+        var narrow = window.matchMedia('(max-width:760px)').matches;
+        ctl.style.marginTop = narrow
+          ? (4 - (maxH - slides[i].offsetHeight)) + 'px' : '';
+      }
     }
     function go(i) {
       if (i < 0) i = 0;
@@ -621,12 +687,15 @@ DECK_JS = r"""<script>
       go(Math.round(track.scrollLeft / track.clientWidth) + 1);
     });
     track.addEventListener('scroll', update, { passive: true });
+    // 展开/收起解析会改变卡片高度（toggle 不冒泡，靠捕获阶段收到）
+    track.addEventListener('toggle', function () { measure(); update(); }, true);
     track.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight') { go(Math.round(track.scrollLeft / track.clientWidth) + 1); e.preventDefault(); }
       if (e.key === 'ArrowLeft')  { go(Math.round(track.scrollLeft / track.clientWidth) - 1); e.preventDefault(); }
     });
+    measure();
     update();
-    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('resize', function () { measure(); update(); }, { passive: true });
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -673,6 +742,17 @@ SETTINGS_JS = """<script>
     store(OPT_KEY, box.checked ? '1' : '0');
     applyOrig();
   });
+  // 齿轮面板：原生 <details> 不会自己收，补上「点外面」和 Esc。
+  // 点齿轮本身不用管 —— 那一下在 .gear 里，contains 命中就放过，交给 details 自己翻。
+  var gear = document.querySelector('.gear');
+  if (gear) {
+    document.addEventListener('click', function (e) {
+      if (gear.open && !gear.contains(e.target)) gear.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') gear.open = false;
+    });
+  }
   applyOrig();
   window.addEventListener('resize', applyOrig);
 })();
@@ -739,8 +819,10 @@ self.addEventListener('fetch', (e) => {
 
 def render_page(payload: dict, dates: list[str], current: str) -> str:
     mode = payload.get("mode", "llm")
-    badge = ('<span class="badge rules">规则模式</span>' if mode == "rules"
-             else '<span class="badge">AI 解读</span>')
+    # 「AI 解读」这枚徽章撤了：每张卡本来就只有 AI 解读，页脚也写了「解读由 Claude
+    # 生成」，挂在顶栏只是占地方 —— 位置让给设置齿轮。规则模式是例外：那天整页没有
+    # 解读，这枚橙章是警示，留在原处和下面的黄色说明框互相呼应。
+    badge = ('<span class="badge rules">规则模式</span>' if mode == "rules" else "")
     # 顶部品牌区：logo（勢字）+ 知势 DailyBrief，照 dailybrief-ui 的 masthead。
     cn, _, en = BRAND.partition(" ")
     note = ""
@@ -781,13 +863,16 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
     # 归档：原生 <details>，一次点击展开 —— 9.11 那套要「底栏 → 抽屉」两步，太绕。
     archive = (f'<details class="archive"><summary>历史归档</summary>{links}</details>'
                if links else "")
-    # 设置：目前只有一项，内容与行为照抄 9.11（同样的 id / localStorage key）。
+    # 设置：顶栏右边的齿轮（原来在页脚前单独占一行）。行为照抄 9.11
+    # （同样的 id / localStorage key）。︎ 是文本变体选择符 —— 不加的话
+    # iOS/安卓会把 ⚙ 渲染成彩色 emoji，跟顶栏的素色图标格格不入。
     settings = (
-        '<details class="archive"><summary>设置</summary>'
+        '<details class="gear"><summary aria-label="设置" title="设置">⚙︎</summary>'
+        '<div class="gear-panel">'
         '<label class="opt"><input type="checkbox" id="opt-orig">'
-        '<span>默认展开英文原文<em>关着的时候，英文源的卡片手机端只显示中文解读，'
-        '点「查看英文原文」才展开。桌面端一直显示原文。</em></span></label>'
-        '</details>')
+        '<span>默认展开英文原文<em>关闭时，英文源的卡片在手机端仅显示中文解读，'
+        '需点击「查看英文原文」展开；桌面端始终显示英文原文。</em></span></label>'
+        '</div></details>')
 
     sub_html = f'<p class="sub">{esc(TAGLINE)}</p>' if TAGLINE else ""
 
@@ -814,11 +899,10 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1>
 {sub_html}</div>
-<span class="date">{esc(payload.get("date"))}</span>{badge}</header>
+<span class="date">{esc(payload.get("date"))}</span>{badge}{settings}</header>
 {note}
 {body}
 {archive}
-{settings}
 <footer>{esc(FOOTER)}<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>

@@ -118,7 +118,10 @@ article[data-cat="tech"]::before{background:#42557d}
    轨道本身可横向滚动（touch 天然支持），按钮和方向键也只是把 scrollLeft 挪一格；
    滚动结束时按 scroll-snap 对齐，所以键盘和手指落到同一套位置逻辑上。 */
 .deck{position:relative}
-.deck-track{display:flex;overflow-x:auto;overscroll-behavior-x:contain;
+/* align-items:flex-start 让每张 slide 保持自身高度 —— 卡片高低不齐时，
+   脚本才能量出"当前这张"和"最高那张"的差，把翻页键上提到当前卡正下方。 */
+.deck-track{display:flex;align-items:flex-start;overflow-x:auto;
+ overscroll-behavior-x:contain;
  scroll-snap-type:x mandatory;gap:14px;padding:2px 2px 12px;
  scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .deck-track::-webkit-scrollbar{display:none}
@@ -214,6 +217,22 @@ code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
 .opt span{font-size:13.5px}
 .opt em{display:block;font-style:normal;color:var(--faint);font-size:12px;margin-top:3px;
  line-height:1.6}
+/* 设置齿轮：顶栏最右，点开是一个右下角弹出的面板。
+   原来是页脚上方一整块 <details>「设置」，占一行还容易看不见；改成图标后
+   设置和归档不再混在一起，顶栏右上也终于有个正经用途。 */
+.gear{position:relative;flex:none}
+.gear>summary{list-style:none;cursor:pointer;user-select:none;
+ width:32px;height:32px;border-radius:999px;border:1px solid var(--line);
+ background:var(--card);color:var(--dim);font-size:15px;line-height:1;
+ display:inline-flex;align-items:center;justify-content:center}
+.gear>summary::-webkit-details-marker{display:none}
+.gear>summary::marker{content:""}
+.gear>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.gear>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gear[open]>summary{color:var(--accent);border-color:var(--pillline)}
+.gear-panel{position:absolute;right:0;top:calc(100% + 8px);z-index:20;
+ width:min(330px,84vw);background:var(--card);border:1px solid var(--line);
+ border-radius:12px;padding:4px 14px;box-shadow:var(--card-sd-hi);text-align:left}
 footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
 /* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
    只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
@@ -233,6 +252,16 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
   -webkit-overflow-scrolling:touch}
  .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
+ /* 手机端新闻栏的顶行：板块标签靠左浮、英文原文按钮靠右浮，并排放同一行。
+    两者都按 .catpill 的尺寸做（11px 字 + 2px/9px 内边距）才一样高。
+    （标签一浮起来就不占流，.orig 才会顶到内容区顶部，否则按钮要低一行。）
+    代价是**浮动的标签会一直影响后面每一个行盒**：中文源的卡没有 .orig，
+    标题就会挤在标签右边那条窄缝里（看着像从右上角起头）。所以标题/摘要/来源
+    一律 clear 到标签这一行下面 —— 中文源的版式和改之前完全一致。 */
+ .catpill{float:left;margin:0 9px 6px 0}
+ .orig>summary{float:right;margin:0 0 6px 9px;padding:2px 9px;font-size:11px;gap:4px}
+ .orig[open]>summary{margin-bottom:6px}
+ .news a,.news .raw,.news .src{clear:both}
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
  .archive a{font-size:13.5px;padding:6px 11px}
@@ -262,11 +291,10 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>知势 <span class="en">DailyBrief</span></h1>
 <p class="sub">读懂全球前沿动态</p></div>
-<span class="date">2026-09-12</span><span class="badge">AI 解读</span></header>
+<span class="date">2026-09-12</span><details class="gear"><summary aria-label="设置" title="设置">⚙︎</summary><div class="gear-panel"><label class="opt"><input type="checkbox" id="opt-orig"><span>默认展开英文原文<em>关闭时，英文源的卡片在手机端仅显示中文解读，需点击「查看英文原文」展开；桌面端始终显示英文原文。</em></span></label></div></details></header>
 
 <div class="deck-track" tabindex="0"><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets">市场 · 货币 · 金融</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html" target="_blank" rel="noopener noreferrer">Inflation persisted in August, potentially locking in a Fed interest rate hike</a><div class="raw">The all-items consumer price index was expected to rise 0.4% in August, with core, excluding food and energy, showing a 0.2% gain, according to the Do</div></details><div class="src">CNBC Economy · 2026-09-11 21:46</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">美国8月CPI环比涨0.4%、核心CPI涨0.2%，通胀未见降温，市场担心美联储可能被迫加息。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原本定价美联储会继续降息，这份数据把预期推向不降息甚至加息，短端美债和美元要重新定价，全球债券收益率同步上移。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">CPI高于预期</span><span class="arw">→</span><span class="hop">通胀黏性未消</span><span class="arw">→</span><span class="hop">降息预期转为加息预期</span><span class="arw">→</span><span class="hop">2年期美债收益率上升</span><span class="arw">→</span><span class="hop">短端美债价格下跌</span><span class="arw">→</span><span class="hop">全球债券收益率跟涨</span><span class="arw">→</span><span class="hop">高估值成长股折现率上升</span><span class="arw">→</span><span class="hop">股价承压</span></div><div class="flow"><span class="hop">美元因利差走强</span><span class="arw">→</span><span class="hop">新兴市场货币与外资流入承压</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">8 条</span></summary><ul><li>CPI是消费者价格指数，衡量一篮子商品和服务的价格变化，是市场判断通胀最常用的指标。剔除食品和能源后的核心CPI更能反映通胀黏性，因为食品和能源价格波动大、容易被短期因素扰动。</li><li>为什么2年期美债反应最大？债券期限越短，价格越贴近市场对未来几年政策利率的预期路径，2年期大致对应急于定价的两年利率路径，所以加息预期一变，它先动。</li><li><b class="nk">收益率和债券价格反向变动：</b>债券票息是固定的，当市场要求更高收益率才肯接盘时，只能把价格压低，让买家以更低价格买入，未来那笔固定票息才能对应更高的到期收益率（YTM，即持有到期的年化回报）。</li><li>为什么全球债券一起上移收益率？德债、美债之间可以互相替代，投资者比较的是扣除汇率对冲成本后的相对回报。美债收益率抬升会吸引资金离开德债，德债价格下跌、收益率上行，德国十年期国债收益率因此逼近2009年以来的高位。</li><li><b class="nk">折现率是什么：</b>把未来才赚到的钱换算成今天的价值，要按一个利率打折，这个利率就是折现率，通常以无风险利率（Rf，一般用国债收益率代表）为基准。折现率上升，未来现金流的现值下降。</li><li>为什么成长股更受伤？成长股的利润大头在很远的未来，时间越远，被折现率打折打得越狠，所以利率上行时，它们的估值缩水比现金流稳定的价值股更明显。</li><li>为什么美元会走强？美国利率相对其他经济体上升，持有美元资产的利息回报更有吸引力，跨境资金买入美元，美元需求增加、汇率上行；反过来，新兴市场本币资产吸引力下降，资金有外流压力。</li><li><b class="nk">鹰派与鸽派：</b>鹰派更怕通胀失控，倾向加息、收紧货币；鸽派更怕失业和经济下行，倾向降息、放松货币。市场对这两派权重的判断，直接决定短端利率怎么走。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy">政策 · 地缘大事件</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.npr.org/2026/09/11/nx-s1-5961530/canada-trade-war-auto-parts-supply-chain" target="_blank" rel="noopener noreferrer">The U.S.-Canada trade war is creating a headache for auto-parts makers</a><div class="raw">For decades, the U.S. and Canadian auto supply chains have been tightly woven together. The trade war is threatening to unravel a complex system.</div></details><div class="src">NPR · 2026-09-11 17:00</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">美加贸易战持续，原本高度一体化的汽车零部件跨境供应链被迫重组，零部件厂商利润受挤压。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原本假设北美汽车供应链成本稳定，关税抬高了跨境零部件成本，既推高美国汽车相关通胀，也下修了加元与相关制造企业的盈利预期。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">美加互加关税</span><span class="arw">→</span><span class="hop">跨境零部件成本上升</span><span class="arw">→</span><span class="hop">汽车厂商利润被压缩</span><span class="arw">→</span><span class="hop">产能回迁或转向第三国</span><span class="arw">→</span><span class="hop">美国汽车价格上升</span><span class="arw">→</span><span class="hop">整体通胀压力加大</span><span class="arw">→</span><span class="hop">美联储降息空间受限</span><span class="arw">→</span><span class="hop">长端美债收益率难降</span></div><div class="flow"><span class="hop">加拿大出口走弱</span><span class="arw">→</span><span class="hop">加元承压</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">7 条</span></summary><ul><li><b class="nk">汽车供应链为什么跨境：</b>一个零件可能在一国生产、另一国组装，整车多次过境，关税按每次过境征收，等于对同一链条重复收费，一体化程度越高，伤害越大。</li><li><b class="nk">关税由谁承担：</b>名义上由进口商缴纳，但进口商可以通过涨价转嫁给消费者、或压低供应商采购价，最终成本在消费者、整车厂、零部件商之间分摊，谁的议价能力弱谁承担得多。</li><li><b class="nk">关税为什么推高通胀：</b>进口成本上升传导到零售价格，属于成本推动型通胀。货币政策难以直接解决，因为加息压的是需求，压不掉成本本身。</li><li><b class="nk">为什么央行会因此更难降息：</b>通胀上行会削弱降息的理由，即使经济在放缓，央行也要权衡通胀预期失控的风险，所以降息时点可能被推迟、幅度可能被压缩。</li><li><b class="nk">为什么看长端美债：</b>长端收益率大致等于未来短端利率预期加上期限溢价（term premium，即投资者持有长期债券所要求的额外补偿）。通胀不确定性和财政风险上升，期限溢价会扩大。</li><li><b class="nk">加元为什么承压：</b>加拿大对美出口占其经济比重很高，出口下滑意味着外汇收入减少、经济走弱预期上升，市场预期加拿大央行更可能降息，利差变得不利于加元。</li><li><b class="nk">产能迁移是慢变量：</b>建厂、认证、供应链重组往往需要数年，短期企业只能自己吸收成本或涨价，所以冲击先体现在利润率和价格上，而不是立刻看到产能转移。</li></ul></details></div></article></div><div class="deck-slide"><article data-cat="tech"><div class="news"><div class="catpill" data-cat="tech">科技 · AI 与产业</div><details class="orig"><summary>查看英文原文</summary><a href="https://www.bloomberg.com/news/videos/2026-09-11/microsoft-plans-data-center-push-video" target="_blank" rel="noopener noreferrer">Microsoft Plans Data Center Push to Triple Its Computing Power</a><div class="raw">Microsoft Corp. plans to more than triple its data center capacity to help overcome a computing shortage that has forced it to turn away some AI and c</div></details><div class="src">Bloomberg Technology · 2026-09-12 00:44</div></div><div class="read"><section class="seg what"><div class="lb">发生了什么</div><div class="tx">微软计划到2032年把数据中心规模扩大到目前的三倍以上，以缓解算力短缺导致的客户流失。</div></section><section class="seg why"><div class="lb">市场为什么在意</div><div class="tx">市场原本担心AI资本开支见顶，这条确认巨头继续加码，算力供给、电力需求和芯片订单的预期都要上修，云厂商的成本与回报节奏也要重估。</div></section><section class="seg chain"><div class="lb">金融传导</div><div class="flow"><span class="hop">算力供不应求</span><span class="arw">→</span><span class="hop">微软三倍扩产</span><span class="arw">→</span><span class="hop">资本开支大幅上升</span><span class="arw">→</span><span class="hop">芯片与服务器订单增加</span><span class="arw">→</span><span class="hop">代工和HBM产能吃紧</span><span class="arw">→</span><span class="hop">先进封装与存储涨价</span><span class="arw">→</span><span class="hop">上游供应商盈利上修</span><span class="arw">→</span><span class="hop">股价获得盈利支撑</span></div><div class="flow"><span class="hop">数据中心耗电激增</span><span class="arw">→</span><span class="hop">电网与电力设备投资上升</span><span class="arw">→</span><span class="hop">电力设备企业订单上修</span></div></section><details class="seg notes"><summary><span class="tg tg-open">展开解析</span><span class="tg tg-close">收起解析</span><span class="cnt">8 条</span></summary><ul><li><b class="nk">数据中心是什么、为什么是算力瓶颈：</b>训练和推理大模型需要海量并行计算，这些计算必须发生在把成千上万块芯片连在一起的数据中心里。芯片不够、机房不够、电力不够，任何一环都会形成算力短缺。</li><li><b class="nk">资本开支的含义：</b>企业为长期资产（厂房、设备、服务器）花的钱，不一次性计入当期费用，而是分年折旧。所以扩产当期会压低会计利润和自由现金流，回报要在几年后才体现。</li><li><b class="nk">为什么芯片供应链受益：</b>数据中心扩张直接对应加速卡、服务器、光模块、交换机的订单；这些又需要先进制程代工、HBM和先进封装，环节产能有限就容易涨价，价格弹性先落在上游。</li><li><b class="nk">HBM是什么：</b>把多层内存芯片堆叠起来，直接与计算芯片封装在一起的内存，带宽远高于普通内存，是AI训练的关键部件，全球供给集中在少数厂商手里，因此是典型的紧俏环节。</li><li><b class="nk">为什么电力成了新瓶颈：</b>单个AI机架的功率远高于传统服务器，数据中心选址越来越看电网容量和电价。发电、变压器、输电线路的建设周期比买服务器长得多，电力供给跟不上就会卡住扩张节奏。</li><li><b class="nk">折旧与利润率的关系：</b>服务器按若干年折旧摊销进成本，如果芯片迭代快、实际寿命短，会计上缩短折旧年限会直接抬高云业务的单位成本，压低利润率，这是资本开支能否转化为利润的关键变量。</li><li><b class="nk">对竞争格局的含义：</b>谁能拿到电力和芯片，谁就能接住AI需求，资本开支能力本身变成护城河，中小玩家更难追赶，行业集中度可能进一步上升。</li><li><b class="nk">三倍这个数字要看基数和时间：</b>到2032年是多年计划，市场会按年度投入节奏、融资方式和最终回报率分段定价，而不是一次性把三倍产能算进利润。</li></ul></details></div></article></div></div><div class="deck-ctl" aria-label="卡片导航"><button class="deck-btn deck-prev" type="button" aria-label="上一张" disabled>‹</button><span class="deck-pos">1/3</span><button class="deck-btn deck-next" type="button" aria-label="下一张">›</button></div><p class="deck-hint">← → 或按钮切换 · 手机左右滑动</p>
 <details class="archive"><summary>历史归档</summary><a href="2026-09-12.html" class="cur">2026-09-12</a><a href="2026-09-11.html">2026-09-11</a><a href="2026-09-10.html">2026-09-10</a><a href="2026-09-09.html">2026-09-09</a><a href="2026-09-07.html">2026-09-07</a><a href="2026-09-06.html">2026-09-06</a></details>
-<details class="archive"><summary>设置</summary><label class="opt"><input type="checkbox" id="opt-orig"><span>默认展开英文原文<em>关着的时候，英文源的卡片手机端只显示中文解读，点「查看英文原文」才展开。桌面端一直显示原文。</em></span></label></details>
 <footer>每天更新 · 市场货币金融 / 政策地缘大事件<br>
 条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
 </div>
@@ -279,7 +307,18 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
     var prev = document.querySelector('.deck-prev');
     var next = document.querySelector('.deck-next');
     var pos = document.querySelector('.deck-pos');
+    var ctl = document.querySelector('.deck-ctl');
     var N = slides.length;
+    var maxH = 0;
+    // 卡片高低不齐，轨道却按最高的那张留白 —— 量出差额，把翻页键上提到当前卡
+    // 正下方（负 margin 吃掉差额）。**不改轨道高度**：改了会把相邻卡裁掉或抖一下。
+    function measure() {
+      maxH = 0;
+      for (var k = 0; k < N; k++) {
+        var h = slides[k].offsetHeight;
+        if (h > maxH) maxH = h;
+      }
+    }
     function update() {
       var w = track.clientWidth;
       var i = Math.round(track.scrollLeft / w);
@@ -288,6 +327,12 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
       if (pos) pos.textContent = (i + 1) + '/' + N;
       if (prev) prev.disabled = (i <= 0);
       if (next) next.disabled = (i >= N - 1);
+      // 只在手机端收：桌面屏幕高，翻页时下方归档卡片跟着上下跳反而碍眼。
+      if (ctl && slides[i]) {
+        var narrow = window.matchMedia('(max-width:760px)').matches;
+        ctl.style.marginTop = narrow
+          ? (4 - (maxH - slides[i].offsetHeight)) + 'px' : '';
+      }
     }
     function go(i) {
       if (i < 0) i = 0;
@@ -302,12 +347,15 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
       go(Math.round(track.scrollLeft / track.clientWidth) + 1);
     });
     track.addEventListener('scroll', update, { passive: true });
+    // 展开/收起解析会改变卡片高度（toggle 不冒泡，靠捕获阶段收到）
+    track.addEventListener('toggle', function () { measure(); update(); }, true);
     track.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight') { go(Math.round(track.scrollLeft / track.clientWidth) + 1); e.preventDefault(); }
       if (e.key === 'ArrowLeft')  { go(Math.round(track.scrollLeft / track.clientWidth) - 1); e.preventDefault(); }
     });
+    measure();
     update();
-    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('resize', function () { measure(); update(); }, { passive: true });
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -339,6 +387,17 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
     store(OPT_KEY, box.checked ? '1' : '0');
     applyOrig();
   });
+  // 齿轮面板：原生 <details> 不会自己收，补上「点外面」和 Esc。
+  // 点齿轮本身不用管 —— 那一下在 .gear 里，contains 命中就放过，交给 details 自己翻。
+  var gear = document.querySelector('.gear');
+  if (gear) {
+    document.addEventListener('click', function (e) {
+      if (gear.open && !gear.contains(e.target)) gear.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') gear.open = false;
+    });
+  }
   applyOrig();
   window.addEventListener('resize', applyOrig);
 })();
