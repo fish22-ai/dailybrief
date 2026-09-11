@@ -201,6 +201,8 @@ article[data-cat="tech"]::before{background:#42557d}
 .deck-hint{color:var(--faint);font-size:12px;text-align:center;margin:2px 0 0}
 .deck-empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
  border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
+/* 跨天是整页跳转，压暗一下表示"正在换下一期"，免得手指一松像没反应 */
+html.nav-away body{opacity:.4;transition:opacity .12s ease}
 .read{padding:16px 19px}
 .seg{margin-bottom:13px}
 .seg:last-child{margin-bottom:0}
@@ -209,6 +211,18 @@ article[data-cat="tech"]::before{background:#42557d}
 .seg.what .tx{font-size:15px;font-weight:600;color:var(--ink);line-height:1.55}
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 6px;margin-bottom:5px}
 .flow:last-child{margin-bottom:0}
+/* 多条传导链（prompt 里要求用「；」隔开的并行路径，如汇率/跨境资金流那条）。
+   一条 8 环的链自己就会折成好几行，后面再接一条，光看药丸根本分不出是两条 ——
+   所以每条挂个序号、左侧压一条竖线，两条之间再补一条虚线。
+   序号用 ①②③ 这种中性编号，**不写「主线/支线」**：那是替模型认它没说的层级 ——
+   实际输出里常是并列的（美国侧/加拿大侧、芯片/电力），贴主次标签是错的。
+   只有一条链时这些 class 压根不出现，版式和以前一模一样。 */
+.flow.multi{padding-left:10px;border-left:2px solid var(--chainline)}
+.flow.multi+.flow.multi{margin-top:8px;padding-top:9px;
+ border-top:1px dashed var(--chainline)}
+.flb{flex:none;align-self:stretch;display:inline-flex;align-items:center;
+ font-size:12px;color:var(--chain);opacity:.68;
+ padding-right:8px;margin-right:2px;border-right:1px solid var(--chainline)}
 .hop{background:var(--chainbg);border:1px solid var(--chainline);color:var(--chain);
  border-radius:6px;padding:3px 8px;font-size:12.5px;line-height:1.5}
 .arw{color:var(--chain);opacity:.55;font-size:12px}
@@ -331,6 +345,7 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
 /* 悬停微抬只是锦上添花，晕动症用户把动效关掉后不该还在动 */
 @media(prefers-reduced-motion:reduce){
  article,.notes>summary,.notes>summary::after{transition:none}
+ html.nav-away body{transition:none}
  article:hover{transform:none}
 }
 @media(prefers-color-scheme:dark){
@@ -464,16 +479,32 @@ def render_formula(fml: str) -> str:
 
 
 def render_chain(chain: str) -> str:
-    """把 "A → B → C；D → E" 渲染成一环一格；"；" 后的支线另起一行。"""
-    rows = []
+    """把 "A → B → C；D → E" 渲染成一环一格；"；" 后的第二条另起一行。
+
+    多条链时每条前面挂个序号（①②③…），样式见 .flow.multi。
+    **刻意不写「主线/支线」**：模型没说过哪条是主线，实际输出里两条经常是并列的
+    两条路径（美国侧/加拿大侧、芯片/电力），替它分主次是编出来的信息。
+    只有一条链时一个装饰都不加，版式照旧。
+    """
+    branches: list[list[str]] = []
     for branch in BRANCH_SEP.split(chain):
         hops = [h for h in (x.strip() for x in HOP_SEP.split(branch)) if h]
-        if not hops:
-            continue
+        if hops:
+            branches.append(hops)
+    if not branches:
+        return f'<div class="tx">{esc(chain)}</div>'
+
+    multi = len(branches) > 1
+    cols = "flow multi" if multi else "flow"
+    rows = []
+    for n, hops in enumerate(branches):
         cells = f'<span class="arw">→</span>'.join(
             f'<span class="hop">{esc(h)}</span>' for h in hops)
-        rows.append(f'<div class="flow">{cells}</div>')
-    return "".join(rows) or f'<div class="tx">{esc(chain)}</div>'
+        if multi:
+            mark = "①②③④⑤⑥⑦⑧⑨⑩"[n] if n < 10 else str(n + 1)
+            cells = f'<span class="flb" aria-hidden="true">{mark}</span>{cells}'
+        rows.append(f'<div class="{cols}">{cells}</div>')
+    return "".join(rows)
 
 
 def render_note(text: str) -> str:
@@ -653,8 +684,8 @@ def render_card(card: dict, cat: str) -> str:
 
 
 
-# 滑卡导航用的内嵌 JS。**刻意只做四件事**：翻上一张/下一张、方向键响应、计数器、
-# 把当前卡的位置写进 hash（方便分享/刷新后停在同一张）。其余交互（解析折叠、外链、
+# 滑卡导航用的内嵌 JS。**刻意只做这几件事**：翻上一张/下一张、滑到头跨到相邻一期、
+# 方向键响应、计数器、手机端把翻页键上提到当前卡下方。其余交互（解析折叠、外链、
 # 深色模式）全在原生 HTML/CSS 里，不在这份脚本中。
 # 脚本放在页面末尾 <script> 里；即便它没跑（比如被禁），用户仍能手动左右滑卡片。
 DECK_JS = r"""<script>
@@ -668,6 +699,9 @@ DECK_JS = r"""<script>
     var pos = document.querySelector('.deck-pos');
     var ctl = document.querySelector('.deck-ctl');
     var N = slides.length;
+    // 相邻一期的 URL（更旧 / 更新），由 build_site 写在轨道上；没有就是没有。
+    var older = track.getAttribute('data-older') || '';
+    var newer = track.getAttribute('data-newer') || '';
     var maxH = 0;
     // 卡片高低不齐，轨道却按最高的那张留白 —— 量出差额，把翻页键上提到当前卡
     // 正下方（负 margin 吃掉差额）。**不改轨道高度**：改了会把相邻卡裁掉或抖一下。
@@ -678,14 +712,32 @@ DECK_JS = r"""<script>
         if (h > maxH) maxH = h;
       }
     }
+    // 跨天是**换页**（每天一个 HTML），所以只能整页跳转。跳之前把整页压暗一点，
+    // 免得手指一松没反应、过几百毫秒才突然换页，像卡住了。
+    function jump(href) {
+      document.documentElement.classList.add('nav-away');
+      location.href = href;
+    }
+    function dayLabel(href) {
+      var m = /(\d{4})-(\d{2})-(\d{2})\.html$/.exec(href);
+      return m ? (+m[2]) + '月' + (+m[3]) + '日' : '相邻一期';
+    }
     function update() {
       var w = track.clientWidth;
       var i = Math.round(track.scrollLeft / w);
       if (i < 0) i = 0;
       if (i > N - 1) i = N - 1;
       if (pos) pos.textContent = (i + 1) + '/' + N;
-      if (prev) prev.disabled = (i <= 0);
-      if (next) next.disabled = (i >= N - 1);
+      // 到头了但还连着别的一期，按钮就不该灰 —— 它这一下是"翻天"而不是"翻卡"。
+      var head = (i <= 0), tail = (i >= N - 1);
+      if (prev) {
+        prev.disabled = head && !newer;
+        prev.title = head && newer ? '上一天：' + dayLabel(newer) : '上一张';
+      }
+      if (next) {
+        next.disabled = tail && !older;
+        next.title = tail && older ? '下一天：' + dayLabel(older) : '下一张';
+      }
       // 只在手机端收：桌面屏幕高，翻页时下方归档卡片跟着上下跳反而碍眼。
       if (ctl && slides[i]) {
         var narrow = window.matchMedia('(max-width:760px)').matches;
@@ -694,8 +746,15 @@ DECK_JS = r"""<script>
       }
     }
     function go(i) {
-      if (i < 0) i = 0;
-      if (i > N - 1) i = N - 1;
+      // 越过两端就是跨天：往后翻接更旧的一期，往回翻接更新那期的**最后一张**
+      // （带 #last，落地后直接定位过去，接着往回滑的手感不会断）。
+      if (i > N - 1) {
+        if (older) return jump(older);
+        i = N - 1;
+      } else if (i < 0) {
+        if (newer) return jump(newer + '#last');
+        i = 0;
+      }
       var w = track.clientWidth;
       track.scrollTo({ left: i * w, behavior: 'smooth' });
     }
@@ -712,7 +771,33 @@ DECK_JS = r"""<script>
       if (e.key === 'ArrowRight') { go(Math.round(track.scrollLeft / track.clientWidth) + 1); e.preventDefault(); }
       if (e.key === 'ArrowLeft')  { go(Math.round(track.scrollLeft / track.clientWidth) - 1); e.preventDefault(); }
     });
+    // 手机上"滑到头再滑"就跨天。轨道本身 overflow:auto + 两端 contain，到边就拖不动了，
+    // 所以这里自己认手势：已经贴边、又朝外拖过 70px（且横向明显大于纵向）才认，
+    // 免得把正常翻卡或竖向滚动误判成跨天。认出来就交给 go()，方向逻辑只有一份。
+    var sx = 0, sy = 0, dragging = false;
+    track.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) return;
+      dragging = true;
+      sx = e.touches[0].clientX;
+      sy = e.touches[0].clientY;
+    }, { passive: true });
+    track.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      var dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+      if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      dragging = false;
+      var edge = track.scrollWidth - track.clientWidth - 2;
+      if (dx < 0 && track.scrollLeft >= edge) go(N);       // 拖到最末还往左拽 → 更旧的一期
+      else if (dx > 0 && track.scrollLeft <= 2) go(-1);    // 拖回最前还往右拽 → 更新的一期
+    }, { passive: true });
+    track.addEventListener('touchend', function () { dragging = false; }, { passive: true });
     measure();
+    // 从更新的一期往回翻过来的（URL 带 #last）：直接落到最后一张，接手的位置才连得上。
+    // 定位完就把 hash 抹掉，否则刷新又会跳一次。
+    if (location.hash === '#last' && N > 1) {
+      track.scrollLeft = (N - 1) * track.clientWidth;
+      history.replaceState(null, '', location.pathname + location.search);
+    }
     update();
     window.addEventListener('resize', function () { measure(); update(); }, { passive: true });
   }
@@ -851,6 +936,19 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
         note = (f'<div class="note">今日为规则模式：只按来源权重与时间筛出了条目，'
                 f'<b>没有 AI 解读</b>。原因：{esc(reason)}</div>')
 
+    # 跨天滑动：卡组两头各挂一个相邻期的 URL，脚本在滑到头时跳过去。
+    # 顺序和底部归档一致（新 → 旧），所以「下一张」到头的下一站是**更旧**的一期；
+    # 往回翻则落到更新那期的**最后一张**（URL 带 #last，脚本负责定位过去）。
+    win = dates[:ARCHIVE_DAYS]
+    idx = win.index(current) if current in win else -1
+    older = win[idx + 1] if 0 <= idx < len(win) - 1 else ""
+    newer = win[idx - 1] if idx >= 1 else ""
+    day_attrs = ""
+    if older:
+        day_attrs += f' data-older="{esc(older)}.html"'
+    if newer:
+        day_attrs += f' data-newer="{esc(newer)}.html"'
+
     # 滑卡卡组：两个板块的所有卡片按顺序收进同一条横向轨道，一次显示一张。
     # 每张卡片自带"所属板块"标签（因为不再有板块标题当锚点），计数/筛选都靠卡片。
     slides: list[str] = []
@@ -871,10 +969,13 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
            f'<span class="deck-pos">1/{total}</span>'
            f'<button class="deck-btn deck-next" type="button" '
            f'aria-label="下一张">›</button></div>')
-    body = (f'<div class="deck-track" tabindex="0">'
+    hint = "← → 或按钮切换 · 手机左右滑动"
+    if older or newer:
+        hint += " · 滑到头翻到相邻一期"
+    body = (f'<div class="deck-track" tabindex="0"{day_attrs}>'
             f'{"".join(slides)}</div>'
             f'{ctl}'
-            f'<p class="deck-hint">← → 或按钮切换 · 手机左右滑动</p>')
+            f'<p class="deck-hint">{hint}</p>')
 
     links = "".join(
         f'<a href="{d}.html"{" class=\"cur\"" if d == current else ""}>{d}</a>'
@@ -991,13 +1092,13 @@ def main() -> int:
         out.write_text(render_page(payload, dates, path.stem), encoding="utf-8")
         print(f"渲染 {out.relative_to(ROOT)}")
 
-    # service worker 跟着一起写。版本号取本次渲染的日期，页面一更新，
-    # 浏览器发现 sw.js 变了就重装，旧缓存整批清掉。
+    # service worker 跟着一起写。版本号取**最新一天**（dates[0]）而不是本次渲的第一天 ——
+    # 否则跑一次 --date 2026-09-06 就把版本号往回写，缓存名来回跳。
     # manifest 与 sw.js 跟日期无关，--date 单渲一天时也要写，否则装到手机上的
     # 图标/离线壳会停在旧版本。
     sw_path = SITE_DIR / "sw.js"
     sw_path.write_text(
-        SERVICE_WORKER.replace("__VERSION__", f"{todo[0].stem}-{asset_rev()}")
+        SERVICE_WORKER.replace("__VERSION__", f"{dates[0]}-{asset_rev()}")
                       .replace("__REV__", asset_rev()),
         encoding="utf-8")
     print(f"渲染 {sw_path.relative_to(ROOT)}")
