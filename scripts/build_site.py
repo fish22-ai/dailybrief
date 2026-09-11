@@ -87,7 +87,8 @@ h1 .en{font-size:12px;font-weight:500;color:var(--faint);letter-spacing:0}
 .date{color:var(--dim);font-size:14px}
 .badge{font-size:12px;padding:2px 9px;border-radius:10px;background:#efece4;color:var(--dim)}
 .badge.rules{background:#fff3cd;color:var(--warn)}
-.tagline{color:var(--faint);font-size:13px;margin-top:6px}
+/* 副标题跟在 logo 那块品牌区里（h1 下面一行），跟 9.11 复杂版一致 */
+header .sub{font-size:12px;color:var(--faint);margin-top:2px}
 .note{font-size:13px;color:var(--warn);background:#fdf3df;border:1px solid #ecd9a8;
  border-radius:6px;padding:9px 13px;margin:14px 0}
 h2{font-size:14px;margin:26px 0 12px;color:var(--dim);letter-spacing:1px;
@@ -732,7 +733,7 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
     )
     nav = f'<nav><h3>历史归档</h3>{links}</nav>' if links else ""
 
-    tagline = f'<div class="tagline">{esc(TAGLINE)}</div>' if TAGLINE else ""
+    sub_html = f'<p class="sub">{esc(TAGLINE)}</p>' if TAGLINE else ""
 
     # 手机上的注意点，都踩过：
     # - charset 必须在 <head> 最前面（早于 title），否则中文有几率乱码
@@ -755,9 +756,9 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>{CSS}</style></head><body><div class="wrap">
 <header><span class="logo" aria-hidden="true">勢</span>
-<div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1></div>
+<div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1>
+{sub_html}</div>
 <span class="date">{esc(payload.get("date"))}</span>{badge}</header>
-{tagline}
 {note}
 {body}
 {nav}
