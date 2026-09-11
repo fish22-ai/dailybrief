@@ -319,8 +319,16 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .deck-track{gap:12px;padding:2px 0 10px}
  .news{border-right:0;border-bottom:1px solid var(--line);padding:14px 15px}
  .read{padding:14px 15px}
- .tx,.notes li{font-size:14.5px;line-height:1.78}
+ .tx{font-size:14.5px;line-height:1.78}
  .seg.what .tx{font-size:15.5px}
+ /* 手机端的解析列表：解析每条都是 2~3 行的长句，6~8 条跟正文一个字号铺下来
+    就是"一大坨"。所以给它一套比正文矮一档的排法 —— 字号小半档、行高收一点，
+    每条做成一块淡底小卡片，条目之间自然断开；卡片里反过来把公式块抠成白底
+    （+ 原本就有的左侧朱线），公式照样跳得出来。星号不要了，卡片本身就是边界。 */
+ .notes li{font-size:13.5px;line-height:1.7;margin-bottom:6px;
+  padding:8px 11px;background:var(--code);border-radius:8px}
+ .notes li::before{display:none}
+ .notes .fml{background:var(--card)}
  .hop{font-size:13px;padding:4px 9px}
  /* 公式不换行会被劈开读不懂，让它自己横滚。分式是 flex 布局，不能锁 pre。 */
  .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
