@@ -383,6 +383,13 @@ HOP_SEP = re.compile(r"\s*→\s*")
 BRANCH_SEP = re.compile(r"[；;]\s*")
 FORMULA_BLOCK_CHARS = 14     # 反引号里超过这么长就单独成等宽块，短的走行内 code
 LEAD_MAX_CHARS = 26          # 概念名加粗只认开头这么长以内的 "："
+LEAD_Q_CHARS = 40            # 设问句加粗最长认到这儿
+LEAD_CLAUSE_CHARS = 40       # 第一个分句加粗最长认到这儿（实测 160 条，40 就够了；
+                             # 收紧到 34 会有 1 条落到硬截，粗出「…贸易战的内」这种断词）
+LEAD_CUT_CHARS = 18          # 连标点都找不到时的硬截断长度
+# 分句边界。**刻意不含 "、"** ——「美联储、欧央行、英央行是主要关注对象，」里
+# 该加粗的是整句，切在顿号上只会粗出「美联储、」这种没意义的碎片。
+CLAUSE_PUNCT = "，。；：！？,;:!?"
 # 公式独立成块后，原句的收尾标点会孤零零掉到下一行（"…公式 `P = …`。债券发行后…"），
 # 块本身已经把句子断开了，直接吃掉这个标点。
 ORPHAN_PUNCT = "。，、；：,.;: "
@@ -551,21 +558,42 @@ def render_note(text: str) -> str:
 
 
 def _bold_lead(text: str) -> str:
-    """给一条解析的开头加粗：优先整句设问，其次 "概念名：" 前缀。"""
+    """给一条解析的开头加粗，让每条都有"粗 / 细"的对比当抓手。
+
+    一条解析动辄两三行，全篇一个粗细就会糊成一片；所以**每条都尽量粗出一点**，
+    宁可短也不要没有。优先级：
+      1. 设问句（"为什么 2Y 先动？…"）—— 整句问到问号为止，最贴这条在解释什么
+      2. "概念名：" 前缀
+      3. 第一个分句（到第一个分句标点为止）
+      4. 真的一个标点都没有（比如括号里塞了一长串），硬截一段
+    """
     stripped = text.lstrip()
     pad = esc(text[:len(text) - len(stripped)])
 
-    if stripped[:3].lower() == "why":
-        end = max(stripped.find("？"), stripped.find("?"))
-        if 0 < end < 80:
-            return (f'{pad}<b class="nk">{esc(stripped[:end + 1])}</b>'
-                    f'{esc(stripped[end + 1:])}')
+    def bold(n: int) -> str:
+        return (f'{pad}<b class="nk">{esc(stripped[:n])}</b>'
+                f'{esc(stripped[n:])}')
 
-    colon = stripped.find("：")
-    if 0 < colon <= LEAD_MAX_CHARS:
-        return (f'{pad}<b class="nk">{esc(stripped[:colon + 1])}</b>'
-                f'{esc(stripped[colon + 1:])}')
-    return esc(text)
+    # 1. 设问句。中英文问号都认（老数据里有 why…? 的写法）
+    marks = [stripped.find(m) for m in "？?"]
+    marks = [p for p in marks if p != -1]
+    if marks and min(marks) < LEAD_Q_CHARS:
+        return bold(min(marks) + 1)
+
+    # 2. "概念名："
+    colons = [stripped.find(m) for m in ("：", ":")]
+    colons = [p for p in colons if 0 < p <= LEAD_MAX_CHARS]
+    if colons:
+        return bold(min(colons) + 1)
+
+    # 3. 第一个分句
+    cuts = [stripped.find(p) for p in CLAUSE_PUNCT]
+    cuts = [p for p in cuts if p != -1]
+    if cuts and min(cuts) <= LEAD_CLAUSE_CHARS:
+        return bold(min(cuts) + 1)
+
+    # 4. 硬截（短句本身就没加粗的必要，直接原样返回）
+    return bold(LEAD_CUT_CHARS) if len(stripped) > LEAD_CUT_CHARS else esc(text)
 
 
 # 2026-09-06 起的字段。what 单独排在最上面（当小标题用），notes 单独排在最下面。
