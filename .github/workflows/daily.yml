@@ -52,7 +52,7 @@ jobs:
         run: python scripts/run_daily.py
 
       - name: 渲染静态站
-        run: python scripts/build_site.py
+        run: python scripts/build_site.py --latest
 
       - name: 提交产物
         run: |

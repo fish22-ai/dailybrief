@@ -162,7 +162,7 @@ def report_settings() -> None:
     print(f"  max_tokens      {select.MAX_TOKENS}")
     print(f"  重试上限        {select.MAX_RETRIES}"
           f"（每次运行最多 {1 + select.MAX_RETRIES} 次 API 调用）")
-    print(f"  传导链段数下限  {select.MIN_STAGES}")
+    print(f"  传导链环数下限  {select.MIN_CHAIN_HOPS}")
     print(f"  解析最少条数    {select.MIN_NOTES}")
 
     extra = config.get_str("llm.prompt", "extra", "").strip()
@@ -171,9 +171,9 @@ def report_settings() -> None:
     print(f"  prompt 整段替换 {'已启用（' + str(len(tmpl)) + ' 字）' if tmpl else '（未启用，用内置）'}")
 
     if select.TOP_N >= 3 and select.MAX_TOKENS <= 16000:
-        print("\n  提示：结构化解读（七段）比过去的一根传导链费 token 得多。"
-              "per_category≥3 时满载输出可能被截断、白烧一次重试。"
-              "想省掉就调小 per_category 或候选池 pool_size。")
+        print("\n  提示：四段解读每条约 1KB，per_category≥3 时输出量已经不小。"
+              "撞上 max_tokens 会被截断、白烧一次重试。"
+              "想省就调小 per_category 或候选池 pool_size。")
 
 
 def main() -> int:

@@ -1,8 +1,9 @@
 """数据源注册表 —— 每个源一个条目，单独可失败。对应 CLAUDE.md 第四节。
 
-只做两个板块：
+只做三个板块：
   markets  市场 / 货币 / 金融
   policy   政策 / 地缘大事件（能搬动市场的那类）
+  tech     科技 / AI 与产业（2026-09-11 新增）
 
 tier 语义：
   stable   主力源，失效要 WARNING 告警
@@ -131,6 +132,25 @@ SOURCES: list[Source] = [
            _rss("https://www.scmp.com/rss/91/feed", "SCMP", "policy",
                 tier="optional"),
            "实测 50 条，含中国议题但混杂香港本地新闻"),
+
+    # ---------------- 科技 / AI 与产业 ----------------
+    # 2026-09-11 新增板块。尺子跟另外两个板块不同：看的是算力/芯片供应链格局、
+    # 巨头资本开支与竞争位势、产业成本曲线，而不是"发了什么新产品"。所以源挑的是
+    # 芯片与产业深度（Ars / Bloomberg），不是消费电子导购。消费品发布靠相关性闸门滤。
+    Source("ars_technica", "tech", "stable",
+           _rss("https://feeds.arstechnica.com/arstechnica/index",
+                "Ars Technica", "tech"),
+           "2026-09-11 实测 20 条。芯片、AI 基建、技术机制类偏多，最贴产业尺子"),
+    Source("the_verge", "tech", "stable",
+           _rss("https://www.theverge.com/rss/index.xml", "The Verge", "tech"),
+           "2026-09-11 实测 10 条。产业动态为主，消费数码含量偏高，靠闸门筛"),
+    Source("bloomberg_tech", "tech", "stable",
+           _rss("https://feeds.bloomberg.com/technology/news.rss",
+                "Bloomberg Technology", "tech"),
+           "2026-09-11 实测 20 条。资本/产业视角，和 markets 板块的传导链最搭"),
+    Source("qbitai", "tech", "optional",
+           _rss("https://www.qbitai.com/feed", "量子位", "tech", tier="optional"),
+           "2026-09-11 实测 10 条。中文 AI 源，补国内视角"),
 ]
 
 

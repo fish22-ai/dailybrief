@@ -289,3 +289,32 @@ anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% �
   `ANTHROPIC_AUTH_TOKEN`，**SDK 会优先用 AUTH_TOKEN**，拿用户的 key 跑时要
   `env -u ANTHROPIC_AUTH_TOKEN`，否则用的不是那把 key。
 - 中文输出需要 `PYTHONIOENCODING=utf-8`；`daily.bat` 必须 CRLF（`.gitattributes` 锁定）。
+
+## 改版（2026-09-11 下午，七段 → 四段 + 简单版式 + 科技板块）
+
+- **背景**：凌晨那版（七段结构化解读 + 复杂版式，存档在 commit `75e0a6c`）用户觉得
+  「内容过于复杂」，要退回 **9.10 那一版**的样子。
+- **内容回四段**：`prompt.zh.md` / `core/select.py` / `core/models.py` /
+  `scripts/build_site.py` / `tests/test_core.py` 退到 `7f20cd9`；其余（抓取、打分、
+  `run_daily.py`、config 大部分）保持凌晨状态。四段的字段常量、校验、测试是一套，
+  必须成套退 —— 只改一两处会每次更新自相矛盾 → 重试 → 降级成规则模式。
+- **版式**：简单四段版式 + 暖色调（`#faf8f3/#b44322/#1c4e4f`）+「勢」logo 头图，
+  另加 `.orig` 英文原文折叠（手机 ≤760px 默认收起、点「查看英文原文」才展开；
+  桌面 ≥761px 用 author CSS 覆盖 details 的 display 摊平）。
+- **科技板块**：`CATEGORIES` 加 `"tech"`（标签「科技 · AI 与产业」）；registry 加
+  Ars Technica / The Verge / Bloomberg Technology / 量子位 四个源（实测 20/10/20/10 条）；
+  `scoring.py` 单开 `_CORE_TECH` 等三张词表 —— 金融词表会把「英伟达发布新架构」
+  判成无关而拦在候选池外。`per_category=1` × 3 板块 = 每天 3 条。
+- **省 token**：四段每条约 1KB，七段约 6.5KB（实测 9.11 数据）。3 条四段 ≈ 3KB/天，
+  约为原「2 条七段」的 1/4；prompt 也从 14.8KB 瘦回 6.9KB。`max_tokens` 16000 → 8000。
+- **日更入口加 `--latest`**：`scripts/daily.bat` 与 `.github/workflows/daily.yml` 都改成
+  只渲最新一天。不加会把 `data/` 下所有日期重渲 —— 9.11 是七段数据，渲出来是空卡，
+  9.6/9.7/9.9 的复杂版也会被覆盖。
+- **站点现状**：`site/2026-09-06,07,09,11.html` 仍是复杂版；`2026-09-10.html` 和
+  9.12 起是简单新版式。
+- **测试**：`tests/test_core.py` 有 5 条在本次改版前就已经是红的（硬编码期望
+  `per_category=5`、断言旧 prompt 的公式要求）。已修：限额相关几条临时把 `TOP_N`
+  抬到 5 测完还原，prompt 断言改成验「不要写公式 / 禁用 LaTeX 记法」。现在全绿。
+- **`apply_config.py --check` 仍报不同步**：`config.toml` 的 `cron = "0 8 * * *"` 与
+  `daily.yml` 的 `0 0 * * 1` 对不上。这是改版前就有的，没动 —— 本机日更由 Windows
+  任务计划程序负责，云端那个 workflow 的 schedule 本来也被 `workflow_dispatch` 门住。

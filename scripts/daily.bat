@@ -65,7 +65,9 @@ if errorlevel 1 (
     echo [%date% %time%] run_daily 失败，已保留本地已有产物，终止 >> "%LOG%"
     exit /b 1
 )
-python scripts\build_site.py
+REM --latest 只渲染最新一天。不加这个参数会把 data\ 下所有日期重渲一遍，
+REM 而 9.11 及更早存的是七段数据 + 复杂版式，重渲会被覆盖掉。
+python scripts\build_site.py --latest
 if errorlevel 1 (
     echo [%date% %time%] build_site 失败，终止 >> "%LOG%"
     exit /b 1

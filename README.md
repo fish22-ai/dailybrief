@@ -76,39 +76,34 @@ setx ANTHROPIC_BASE_URL "https://agentrouter.org"
 然后**重开终端**（`setx` 不影响已打开的进程）。`ANTHROPIC_BASE_URL` 不能漏：第三方
 key 漏了它会被 SDK 打到 api.anthropic.com，那边一律回 401，整天降级成规则模式。
 
-## AI 解读的七段结构
+## AI 解读的四段结构
 
-这是项目的核心产出。每条卡片的解读是结构化七段，不是一句摘要：
+这是项目的核心产出。每条卡片的解读是四段，不是一句摘要：
 
 | 字段 | 内容 |
 | --- | --- |
-| `summary30s` | 30秒事实内核，3 条客观事实，只写"谁做了什么、数字是多少" |
-| `transmissionChain` | 金融传递全景脉络，固定 **4 段**，每段含 触发源 / 传导机理 / 资产影响 / 时滞 / 监测指标 |
-| `historicalAnalogy` | 历史参照系 —— 真实发生过的同类事件，当时怎么走、和现在像在哪差在哪 |
-| `gameTheoryStakeholders` | 博弈各方的台前立场与真实底牌，2~4 个利益方 |
-| `forwardIndicators` | 前瞻红线指标，2~3 个，每个给具体阈值和触发后果 |
-| `takeaways` | 行动启示，投资者 / 企业经营者 / 普通人 三个视角 |
+| `what` | 发生了什么，一句话，谁做了什么、数字是多少，不超过 60 字 |
+| `why` | 市场为什么在意，说清这条改变了市场原本在定价的哪个预期，不超过 80 字 |
+| `chain` | 金融传导，用 ` → ` 连接 5~8 环，从事件一路推到具体资产价格 |
 | `notes` | 解析，字符串数组 3~8 条，把链条里每个专业概念摊开讲 |
-
-`transmissionChain` 每段的 `assetImpacts` 里有一项 `direction`，取值只能是
-`up` / `down` / `volatile` / `neutral` —— 页面靠它决定绿涨 / 红跌 / 琥珀震荡的配色。
 
 `notes` 用**大白话**讲机制，不写公式：哪个变量动、往哪动、结果是什么、为什么。
 页面刻意不引 KaTeX，也不要求模型输出 LaTeX —— 零依赖、离线也读得出来。
 
-schema 校验很严：七段缺一不可，传导链少于 4 段、博弈方少于 2 个、前瞻指标少于 2 个、
-`notes` 少于 3 条、任何字段出现 LaTeX 记法，都会整体重试。**段数是质量下限而不是
-格式检查** —— 早期版本把传导链写成一根平文本，页面为了摆出分步的样子只能按位置硬切，
-结果「触发源 / 传导机理 / 资产影响」三个字段渲染出同一句话。规则模式下 `insight` 留空，
-页面显式标注「今日无 AI 解读」，不拿 RSS 摘要冒充解读。
+schema 校验很严：四段缺一不可，`chain` 少于 `min_chain_hops` 环、`notes` 少于 3 条、
+任何字段出现 LaTeX 记法，都会整体重试。**环数是质量下限而不是格式检查** —— 早期版本
+把传导链写成一根平文本，页面为了摆出分步的样子只能按位置硬切，结果渲染出重复的话。
+规则模式下 `insight` 留空，页面显式标注「今日无 AI 解读」，不拿 RSS 摘要冒充解读。
 
 参考站 `fish22-ai/dailybrief-ui` 还有「表面直觉 vs 机构内核」「内化自测思考题」和
 AI 追问框，**用户明确要求不要**，所以既不产出也不渲染；小节标题也一律只用中文，
 不挂 "(Fact Nucleus)" 这类英文括注。
 
-归档兼容：2026-09-11 之前的 `what/why/chain/notes` 四段格式、以及更早的
-`what/why/chain/watch/term` 五字段，渲染器都会回落到旧标签，
-重跑 `build_site.py` 不会让历史页面掉内容。
+归档兼容：**2026-09-11 当天**的数据是七段结构化版本（`summary30s` /
+`transmissionChain` / `historicalAnalogy` / `gameTheoryStakeholders` /
+`forwardIndicators` / `takeaways` / `notes`），渲染器保留了回退分支，那一页不会被重渲。
+更早的 `what/why/chain/watch/term` 五字段也仍会回落到旧标签，
+重跑 `build_site.py --date <日期>` 不会让历史页面掉内容。
 
 ## 目录结构
 

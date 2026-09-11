@@ -144,6 +144,34 @@ _EXCLUDE = (
     "网红", "粉丝", "楼市新政",
 )
 
+# ── 科技板块的尺子 ──
+# 科技条目的"重要性"跟金融/政策不是一回事：看的是算力/芯片供应链格局、
+# 巨头资本开支与竞争位势、产业成本曲线。所以单开一套词表 —— 否则
+# "英伟达发布新架构"这类会被金融词表判成无关，直接拦在候选池外。
+_CORE_TECH = (
+    "芯片", "半导体", "算力", "晶圆", "光刻", "制程", "先进封装", "存储芯片",
+    "人工智能", "大模型", "数据中心", "云计算", "英伟达", "台积电", "阿斯麦",
+    "中芯国际", "华为", "阿里云", "腾讯云",
+    "chip", "semiconductor", "foundry", "wafer", "lithography", "gpu",
+    "accelerator", "data center", "datacenter", "hyperscaler",
+    "artificial intelligence", "language model", "inference", "nvidia",
+    "tsmc", "asml", "quantum comput", "export control", "capital expenditure",
+    "capex", "compute",
+)
+_SECONDARY_TECH = (
+    "科技", "互联网", "软件", "开源", "机器人", "自动驾驶", "算法",
+    "研发", "专利", "服务器", "云服务",
+    "technology", "software", "cloud", "open source", "robot", "autonomous",
+    "startup", "silicon", "server", "platform", "algorithm", "model",
+)
+# 消费电子导购 / 评测 / 游戏娱乐是科技板块的主要噪音来源
+_EXCLUDE_TECH = (
+    "deal", "discount", "gift guide", "black friday", "hands-on",
+    "best laptop", "buying guide", "unboxing", "streaming", "game pass",
+    "video game", "console",
+    "导购", "评测", "开箱", "游戏", "影视", "综艺",
+)
+
 # 低于此值不进候选池。0.30 是实测甜点值（拦下率约七成且不漏硬新闻），
 # 可在 config.toml 的 [fetch] relevance_threshold 覆盖。
 RELEVANCE_THRESHOLD = config.get_float("fetch", "relevance_threshold", 0.30,
@@ -171,6 +199,33 @@ def _hits(text: str, words: tuple[str, ...]) -> int:
     return sum(1 for w in words if _matches(text, w))
 
 
+def _relevance_tech(text: str) -> float:
+    """科技板块专用的相关性。形状和 relevance() 一样，换的是三张词表。
+
+    核心词命中一个就够（芯片/算力/大模型这类词本身已经足够具体），
+    次级词要两个以上才算数，导购/评测类命中后腰斩。
+    """
+    core = _hits(text, _CORE_TECH)
+    secondary = _hits(text, _SECONDARY_TECH)
+    excluded = _hits(text, _EXCLUDE_TECH)
+
+    if core >= 1:
+        score = 1.0
+    elif secondary >= 3:
+        score = 0.55
+    elif secondary == 2:
+        score = 0.40
+    elif secondary == 1:
+        score = 0.22
+    else:
+        score = 0.05
+
+    if excluded:
+        score = min(score, 0.10) if core == 0 else score * 0.5
+
+    return round(score, 3)
+
+
 def relevance(item: Item) -> float:
     """0~1 的金融/政策相关性。0.05 表示明确无关。
 
@@ -182,6 +237,10 @@ def relevance(item: Item) -> float:
     金融或地缘语境词时才计入核心分。否则"蟑螂数量激增"会被当成市场异动。
     """
     text = f"{item.title} {item.summary}".lower()
+
+    # 科技板块走自己的尺子（见上面 _CORE_TECH 那段说明）
+    if item.category == "tech":
+        return _relevance_tech(text)
 
     core = _hits(text, _CORE)
     secondary = _hits(text, _SECONDARY)

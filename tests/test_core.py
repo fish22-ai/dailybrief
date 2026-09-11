@@ -12,14 +12,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from core.dedup import dedup, jaccard, normalize_url          # noqa: E402
-from core.models import CATEGORIES, DIRECTION_VALUES, INSIGHT_FIELDS, Item  # noqa: E402
+from core.models import CATEGORIES, INSIGHT_FIELDS, Item      # noqa: E402
 from core.scoring import (                                     # noqa: E402
     RELEVANCE_THRESHOLD, SOURCE_WEIGHTS, relevance, score_all, score_item,
 )
 from core.seen import SeenStore                                # noqa: E402
 from core.select import (                                      # noqa: E402
-    MAX_RETRIES, MIN_FACTS, MIN_INDICATORS, MIN_NOTES, MIN_STAGES,
-    MIN_STAKEHOLDERS, OUTPUT_SOURCE_CAP, TOP_N, _extract_json, build_prompt,
+    MIN_CHAIN_HOPS, MIN_NOTES, MAX_RETRIES, TOP_N, _extract_json, build_prompt,
     prompt_template, rules_fallback, validate,
 )
 from core.timeutil import in_window, now_local, parse_any, today_str   # noqa: E402
@@ -161,46 +160,27 @@ check("解析 RFC822", parse_any("Fri, 04 Sep 2026 23:00:00 GMT") is not None)
 check("解析 ISO 日期", parse_any("2026-09-03").strftime("%Y-%m-%d") == "2026-09-03")
 check("解析垃圾串返回 None", parse_any("不是日期") is None)
 
-print("\nselect：解读 schema 校验（2026-09-11 起是七段结构化）")
+print("\nselect：解读 schema 校验")
 i1 = mk("Fed 加息预期升温", "https://a.com/m1", cat="markets")
 i2 = mk("新行政令签署", "https://a.com/p1", cat="policy")
 index = {1: i1, 2: i2}
-
-
-def node(step: int, direction: str = "up") -> dict:
-    """一段金融传导。字段与 core.select._validate_insight 要求的一一对应。"""
-    return {
-        "step": step,
-        "name": f"第{step}段名称",
-        "trigger": f"第{step}段的触发动作与数字。",
-        "mechanism": "为什么 A 导致 B：把中间被压缩掉的那几步摊开写清楚。",
-        "assetImpacts": [{"asset": f"资产{step}", "direction": direction,
-                          "note": "为什么这样影响"}],
-        "timeHorizon": "1 - 2 周发酵",
-        "keySensitivity": f"第{step}段要盯的具体指标",
-    }
-
-
+long_chain = ("通胀持续高位 → 美联储官员释放鹰派表态 → 市场修正降息预期 → "
+              "未来政策基准利率预期抬升 → 短期无风险利率 Rf 上移 → "
+              "旧美债固定票息性价比下降、投资者抛售 → 2 年期美债价格下跌、YTM 被动上行 → "
+              "全市场资产定价基准抬高 → DCF 折现率 r 上行、远期现金流现值缩水 → "
+              "高估值成长股承压")
 good = {
     "id": 1,
-    "summary30s": ["事实一，含具体数字。", "事实二。", "事实三。"],
-    "transmissionChain": [node(1), node(2), node(3), node(4, "neutral")],
-    "historicalAnalogy": {"event": "历史上的同类事件", "year": "2005 年",
-                          "comparison": "当时怎么走的，和现在像在哪、又差在哪。"},
-    "gameTheoryStakeholders": [
-        {"party": "美联储", "stance": "台面上的公开立场", "bottomLine": "不妥协的真实底牌"},
-        {"party": "美国财政部", "stance": "台面上的公开立场", "bottomLine": "不妥协的真实底牌"},
+    "what": "美联储理事巴尔称若通胀继续高于 2% 目标，他可能支持加息。",
+    "why": "市场原本定价的是降息，现在要给加息风险加权重，短端利率与美元同步上行。",
+    "chain": long_chain,
+    "notes": [
+        "鹰派核心目标：把抑制通胀放在第一位，只要通胀高于目标就倾向加息、收紧货币政策。",
+        "加息存在时间滞后！完整传导要 6~12 个月，所以通胀刚抬头鹰派就呼吁动手。",
+        "why 债券价格与收益率反向变动？债券定价公式 "
+        "`P = C/(1+y)¹ + C/(1+y)² + … + (C+Face)/(1+y)ⁿ`。票息 C 固定不变，"
+        "投资者抛售使价格 P 下跌，分子不变则只能是分母的 y 变大，YTM 被动抬升。",
     ],
-    "forwardIndicators": [
-        {"indicator": "10 年期美债收益率", "threshold": "4.50% - 4.75%",
-         "significance": "触发风险平价策略被动去杠杆。"},
-        {"indicator": "隔夜逆回购余额", "threshold": "低于 500 亿美元",
-         "significance": "缓冲垫耗尽后会引发短端钱荒。"},
-    ],
-    "takeaways": {"investor": "缩短债券久期。", "industry": "用掉期锁死融资成本。",
-                  "personal": "不要赌房贷利率会随时下跌。"},
-    "notes": ["概念一：把链条里第一个专业词摊开讲。", "概念二：解释反向变动关系。",
-              "概念三：解释远期现金流为什么更受伤。"],
 }
 ok = validate({"markets": [good], "policy": []}, index)
 check("合法输出通过", len(ok["markets"]) == 1 and ok["policy"] == [])
@@ -210,11 +190,6 @@ check("卡片带 url 与 insight",
 check("notes 保持为数组",
       isinstance(ok["markets"][0]["insight"]["notes"], list)
       and len(ok["markets"][0]["insight"]["notes"]) == 3)
-check("传导链 step 按位置重新编号",
-      [n["step"] for n in ok["markets"][0]["insight"]["transmissionChain"]] == [1, 2, 3, 4])
-check("资产方向原样保留",
-      ok["markets"][0]["insight"]["transmissionChain"][3]["assetImpacts"][0]["direction"]
-      == "neutral")
 
 
 def raises(payload) -> bool:
@@ -225,63 +200,34 @@ def raises(payload) -> bool:
     return False
 
 
-def without(field: str) -> dict:
-    return {"markets": [{k: v for k, v in good.items() if k != field}]}
-
-
 check("编造 id 被拒", raises({"markets": [{**good, "id": 99}]}))
 check("板块串台被拒", raises({"markets": [{**good, "id": 2}]}))
+check("缺 chain 被拒",
+      raises({"markets": [{k: v for k, v in good.items() if k != "chain"}]}))
+check("缺 notes 被拒",
+      raises({"markets": [{k: v for k, v in good.items() if k != "notes"}]}))
+check("空 why 被拒", raises({"markets": [{**good, "why": "   "}]}))
+check("chain 没有箭头被拒",
+      raises({"markets": [{**good, "chain": "加息导致股票下跌"}]}))
 check("板块非数组被拒", raises({"markets": "not a list"}))
-check("id 缺失被拒", raises(without("id")))
-check("缺 summary30s 被拒", raises(without("summary30s")))
-check("缺 transmissionChain 被拒", raises(without("transmissionChain")))
-check("缺 historicalAnalogy 被拒", raises(without("historicalAnalogy")))
-check("缺 gameTheoryStakeholders 被拒", raises(without("gameTheoryStakeholders")))
-check("缺 forwardIndicators 被拒", raises(without("forwardIndicators")))
-check("缺 takeaways 被拒", raises(without("takeaways")))
-check("缺 notes 被拒", raises(without("notes")))
+check("id 缺失被拒",
+      raises({"markets": [{k: v for k, v in good.items() if k != "id"}]}))
 
-# 以下几条是**质量下限**，不是格式检查：段数少、博弈方只有一个、前瞻指标只有一个，
-# 都说明推演被压缩成了结论清单，而"看不懂"的根因正是这个 —— 宁可重试一次。
-check(f"事实内核少于 {MIN_FACTS} 条被拒",
-      raises({"markets": [{**good, "summary30s": ["只有一条"]}]}))
-check(f"传导链少于 {MIN_STAGES} 段被拒",
-      raises({"markets": [{**good, "transmissionChain": [node(1), node(2), node(3)]}]}))
-check(f"博弈方少于 {MIN_STAKEHOLDERS} 个被拒",
+# 以下三条是"看不懂"那次改版加的质量下限：链条不许压缩成结论、解析不许只给一条、
+# 公式不许写 LaTeX（页面零依赖，不引 KaTeX，渲染不出来）。
+check(f"chain 少于 {MIN_CHAIN_HOPS} 环被拒",
       raises({"markets": [{**good,
-                           "gameTheoryStakeholders": good["gameTheoryStakeholders"][:1]}]}))
-check(f"前瞻指标少于 {MIN_INDICATORS} 个被拒",
-      raises({"markets": [{**good, "forwardIndicators": good["forwardIndicators"][:1]}]}))
+                           "chain": "加息预期上升 → 美债收益率上行 → 成长股承压"}]}))
+check("chain 刚好够环数通过",
+      len(validate({"markets": [{**good, "chain": " → ".join(
+          f"第{n}环机制" for n in range(MIN_CHAIN_HOPS))}]}, index)["markets"]) == 1)
 check(f"notes 少于 {MIN_NOTES} 条被拒",
       raises({"markets": [{**good, "notes": ["只给一条"]}]}))
-
-# 资产方向是页面选绿涨/红跌/琥珀震荡的依据，写别的值会让配色无处可落
-check("非法 direction 被拒",
-      raises({"markets": [{**good, "transmissionChain": [
-          node(1), node(2), node(3),
-          {**node(4), "assetImpacts": [{"asset": "某资产", "direction": "看多",
-                                        "note": "中文方向"}]}]}]}))
-check("direction 合法值就是这四个",
-      DIRECTION_VALUES == ("up", "down", "volatile", "neutral"))
-check("空 assetImpacts 被拒",
-      raises({"markets": [{**good, "transmissionChain": [
-          node(1), node(2), node(3), {**node(4), "assetImpacts": []}]}]}))
-check("takeaways 缺一个视角被拒",
-      raises({"markets": [{**good, "takeaways": {"investor": "x", "industry": "y"}}]}))
-check("传导链段里空 mechanism 被拒",
-      raises({"markets": [{**good, "transmissionChain": [
-          node(1), node(2), node(3), {**node(4), "mechanism": "   "}]}]}))
-
-# LaTeX 页面渲染不了（零依赖静态站，不引 KaTeX），出现就重试
 check("notes 里的 LaTeX 被拒",
       raises({"markets": [{**good, "notes": [
           r"折现公式 $PV=\sum \frac{CF_t}{(1+r)^t}$", "第二条", "第三条"]}]}))
-check("传导链机制里的 LaTeX 被拒",
-      raises({"markets": [{**good, "transmissionChain": [
-          node(1), node(2), node(3), {**node(4), "mechanism": r"折现率 \beta 上行"}]}]}))
-check("行动启示里的 LaTeX 被拒",
-      raises({"markets": [{**good, "takeaways": {
-          **good["takeaways"], "investor": r"用 \frac{1}{2} 仓位"}}]}))
+check("chain 里的 LaTeX 被拒",
+      raises({"markets": [{**good, "chain": long_chain + r" → \beta 上行"}]}))
 # 成本护栏：每天的 API 调用数 = 1 + MAX_RETRIES，别让它悄悄变成循环重试
 check("每日调用上限 2 次", MAX_RETRIES == 1)
 
@@ -294,15 +240,8 @@ loose = validate({"markets": [{**good, "notes": (
 check("notes 是整段文本时按行拆开", loose == [
     "第一条：概念解释", "第二条：另一个概念", "第三条：机制提醒"], str(loose))
 check("notes 数组元素里的多行也拆开",
-      len(validate({"markets": [{**good, "notes": ["a：一\nb：二", "c：三", "d：四"]}]},
-                   index)["markets"][0]["insight"]["notes"]) == 4)
-
-# 旧归档（2026-09-11 之前）是 what/why/chain 一根平文本。新校验**不再接受**它 ——
-# 历史数据不用改（渲染层会回落），但模型若退回旧格式必须被拦下重试，
-# 否则页面会渲染出一张空卡。
-check("旧的 what/why/chain 格式被拒",
-      raises({"markets": [{"id": 1, "what": "x", "why": "y",
-                           "chain": "A → B → C", "notes": ["一", "二", "三"]}]}))
+      len(validate({"markets": [{**good, "notes": ["a：一\nb：二", "c：三"]}]},
+                   index)["markets"][0]["insight"]["notes"]) == 3)
 
 print("\nselect：JSON 提取")
 check("剥 ```json 围栏",
@@ -316,20 +255,23 @@ except ValueError:
     check("无 JSON 抛异常", True)
 
 print("\nselect：规则降级")
-# 条数由 config.toml 的 [output] per_category 决定，断言一律用 TOP_N，不写死数字 ——
-# 用户调条数不该让测试变红。
+# 下面几条验的是"产出层单源限额"，得一次取多条才验得出来。日常 per_category=1
+# （每板块只出一条），限额根本触发不了，所以这里临时把上限抬到 5，测完还原。
+import core.select as _sel                                      # noqa: E402
+_prev_top_n = _sel.TOP_N
+_sel.TOP_N = 5
+
 pool = {"markets": [mk(f"降息消息{i}", f"https://a.com/n{i}",
                        summary="源自带摘要") for i in range(8)],
         "policy": []}
 cards = rules_fallback(pool)
-check(f"每板块最多 {TOP_N} 条", len(cards["markets"]) == TOP_N)
+check("每板块最多 5 条", len(cards["markets"]) == 5)
 check("空板块产出空列表", cards["policy"] == [])
 check("规则模式 insight 为空", cards["markets"][0]["insight"] == {})
 check("规则模式保留源摘要", cards["markets"][0]["raw_summary"] == "源自带摘要")
 
-# 产出层单源限额：候选池阶段的限额在只取几条时形同虚设，实测华尔街见闻能占满
-# 多数席位。TOP_N ≤ 上限时这条限额天然不起作用，所以只断言它**没被突破**，
-# 不断言"一定生效"—— 生效与否取决于用户把 per_category 调到了几。
+# 产出层单源限额：候选池的 4 条限额在只取 5 条时形同虚设，实测华尔街见闻
+# 能占满 4/5 个席位。这里验证收紧后的 2 条上限确实生效。
 skewed = {
     "markets": ([mk(f"降息{i}", f"https://a.com/w{i}", source="华尔街见闻")
                  for i in range(6)]
@@ -342,50 +284,41 @@ sk = rules_fallback(skewed)
 counts: dict[str, int] = {}
 for c in sk["markets"]:
     counts[c["source"]] = counts.get(c["source"], 0) + 1
-check(f"产出层单源不超 {OUTPUT_SOURCE_CAP} 条",
-      max(counts.values()) <= OUTPUT_SOURCE_CAP, str(counts))
-check(f"产出层仍凑满 {TOP_N} 条", len(sk["markets"]) == TOP_N)
-check("产出层不都来自同一个源", len(counts) >= min(TOP_N, 2), str(counts))
+check("产出层单源不超 2 条", max(counts.values()) <= 2, str(counts))
+check("产出层仍凑满 5 条", len(sk["markets"]) == 5)
+check("产出层覆盖多个来源", len(counts) >= 3, str(counts))
 
 # 只有一个来源时不能因为限额就少给条目
 mono = {"markets": [mk(f"降息{i}", f"https://a.com/m{i}", source="华尔街见闻")
                     for i in range(6)], "policy": []}
-check("单一来源时用溢出补齐", len(rules_fallback(mono)["markets"]) == TOP_N)
+check("单一来源时用溢出补齐", len(rules_fallback(mono)["markets"]) == 5)
+
+_sel.TOP_N = _prev_top_n        # 还原日常上限，后面的测试按真实配置跑
 
 print("\nselect：prompt 组装")
 prompt, idx = build_prompt({
     "markets": [mk("降息", "https://a.com/x1", summary="摘要一")],
     "policy": [mk("行政令", "https://a.com/x2", cat="policy")],
 })
-check("prompt 含两个板块标题",
+check("prompt 含各板块标题",
       all(c in prompt for c in CATEGORIES), "板块名缺失")
 check("index 覆盖全部候选", len(idx) == 2)
+check("prompt 要求 chain 用箭头", " → " in prompt)
 check("prompt 明确禁止复述新闻", "不是新闻摘要" in prompt or "复述标题" in prompt)
-# 2026-09-11 起要求模型直出结构化字段，页面照着渲染、不再从平文本里猜。
-check("prompt 要求结构化传导链", "transmissionChain" in prompt)
-check("prompt 要求七段齐全",
-      all(k in prompt for k in ("summary30s", "transmissionChain", "historicalAnalogy",
-                                "gameTheoryStakeholders", "forwardIndicators",
-                                "takeaways", "notes")))
-check("prompt 要求资产方向取值", "direction" in prompt and "volatile" in prompt)
-check("prompt 不要求用户点名删掉的字段",
-      "surfaceVsCore" not in prompt and "reflectionQuestion" not in prompt)
-# 解析已去公式化（用大白话讲机制），所以这里验的是"明确禁止写公式"而不是"公式怎么写"。
-check("prompt 禁止写公式", "不要写公式" in prompt)
-check("prompt 禁止 LaTeX", "LaTeX" in prompt and r"\frac" in prompt)
+# 长传导链是旧版对"看懂"的解法，现在改成"短环、一环一步、5~8 环"，见 prompt.zh.md。
+# 这里只验"prompt 里有环数区间、且下限不低于校验阈值"，具体数字由文件 front matter 决定。
+check("prompt 要求环数区间", "环" in prompt and "~" in prompt)
+# 2026-09-11 起 notes 去公式化：不再要求"必须给公式"，而是明令不写公式、不用
+# 反引号，改用大白话把机制讲透。下面两条验这条约束还在。
+check("prompt 要求不写公式（去公式化）",
+      "不要写公式" in prompt and "不要用反引号" in prompt)
+check("prompt 禁用 LaTeX 记法", "LaTeX" in prompt and r"\frac" in prompt)
 check("prompt 里没有残留的 format 占位符", "{{CANDIDATES}}" not in prompt)
 
 print("\nbuild_site：解读渲染")
 # 传导链拆环、公式成块这些不再是 f-string 排版，是真逻辑，值得单测。纯函数、不发请求。
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import build_site  # noqa: E402
-
-# 旧归档那根平文本，用来验回退路径（render_chain / _chain_stages / 旧卡片）
-long_chain = ("通胀持续高位 → 美联储官员释放鹰派表态 → 市场修正降息预期 → "
-              "未来政策基准利率预期抬升 → 短期无风险利率 Rf 上移 → "
-              "旧美债固定票息性价比下降、投资者抛售 → 2 年期美债价格下跌、YTM 被动上行 → "
-              "全市场资产定价基准抬高 → DCF 折现率 r 上行、远期现金流现值缩水 → "
-              "高估值成长股承压")
 
 flow = build_site.render_chain(long_chain)
 check("传导链一环一格", flow.count('class="hop"') == 10, str(flow.count('class="hop"')))
@@ -407,67 +340,17 @@ check("反引号没配对也不崩",
 check("解析内容被转义",
       "&lt;script&gt;" in build_site.render_note("注意 <script> 标签"))
 
-# 新路径：结构化字段直接渲染，不再走 _chain_stages 的启发式切分
-insight = ok["markets"][0]["insight"]
-new_card = build_site.render_card(
-    {"title": "t", "url": "https://a.com", "insight": insight}, "markets")
-check("四张研读卡齐全",
-      all(x in new_card for x in ("30秒事实内核", "金融传导全景脉络",
-                                  "深入研读与博弈透视", "行动启示与认知内化")))
-check("30秒事实内核渲染成 3 条",
-      new_card.split('<ul class="fact-list">')[1].split("</ul>")[0].count("<li>") == 3)
-# 研读卡只留标题，不挂"3 条客观事实 / 4 段传导 · 点击 Step 展开"这类副题
-check("研读卡不渲染副题", '<p class="sub">' not in new_card)
-# 栅格必须挂在内层 .take-list 上。挂到研读卡本身（cls 也叫 takes）会把卡头也当成
-# 栅格子项 —— 卡头挤进第一列、内容进第二列、第三列空着，且只在桌面端看得出来。
-check("行动启示的栅格没有套在研读卡上",
-      '<section class="seg takes"><div class="sec-hd">' in new_card
-      and '<div class="take-list">' in new_card)
-check("传导链渲染成 4 个 STEP", new_card.count('<label class="step">') == 4)
-check("步骤面板零 JS（radio + :has 面板）",
-      'type="radio"' in new_card and 'class="step-panel ' in new_card)
-# 本次改版的核心：面板三个字段来自三个不同的数据源，所以内容互不相同。
-# 旧路径把一根平文本按位置切成三段，这三处会渲染出同一句话 —— 这条断言就是防它回来。
-check("面板的触发源/机理/资产影响互不相同",
-      "第1段的触发动作与数字。" in new_card
-      and "为什么 A 导致 B" in new_card
-      and "<b>资产1</b>" in new_card)
-check("资产方向映射成配色类",
-      'class="dir up"' in new_card and 'class="dir neu"' in new_card)
-check("时滞渲染在面板头卡",
-      "时滞 1 - 2 周发酵" in new_card)
-check("博弈方 / 前瞻指标 / 行动启示三块都在",
-      "博弈各方的台前立场与真实底牌" in new_card
-      and "需持续追踪的前瞻红线指标" in new_card
-      and "投资者视角" in new_card and "个人与家庭生活" in new_card)
-check("用户点名不要的三块不出现",
-      not any(x in new_card for x in ("表面直觉", "内化自测", "向知势AI追问")))
-check("小节标题不带英文括注",
-      not any(x in new_card for x in ("Fact Nucleus", "Direct Trigger",
-                                      "Surface vs", "Self-Test")))
+new_card = build_site.render_card({"title": "t", "url": "https://a.com",
+                                   "insight": ok["markets"][0]["insight"]}, "markets")
+check("四段标签齐全",
+      all(x in new_card for x in ("发生了什么", "市场为什么在意", "金融传导", "解析")))
+check("解析渲染成列表", new_card.count("<li>") == 3)
 check("卡片带板块标签", 'data-cat="markets"' in new_card)
-
-# 旧归档回落：data/ 里 2026-09-11 之前的数据没有结构化字段，重跑不能让页面掉内容
+# 2026-09-06 之前的归档没有 notes，重跑不能让历史页面掉内容
 old_card = build_site.render_card({"title": "t", "url": "https://a.com", "insight": {
-    "what": "旧四段", "why": "回落渲染", "chain": long_chain,
-    "notes": ["概念一", "概念二", "概念三"]}}, "markets")
-check("旧归档回落渲染 发生了什么/市场为什么在意",
-      ">发生了什么<" in old_card and ">市场为什么在意<" in old_card)
-check("旧归档仍渲染经济传导脉络与解析",
-      "经济传导脉络" in old_card and "展开解析" in old_card)
-check("旧归档不会误渲染新卡", "30秒事实内核" not in old_card)
-st = build_site._chain_stages(long_chain)
-check("旧归档的启发式仍能拆 4 个阶段", len(st) == 4)
-check("每阶段都有监测指标", all(s["monitor"] for s in st))
-check("旧路径的步骤条也是零 JS",
-      '<label class="step">' in build_site.render_stages(long_chain)
-      and 'type="radio"' in build_site.render_stages(long_chain))
-
-# 更早的五字段时代（what/why/chain/watch/term）没有 notes
-old5 = build_site.render_card({"title": "t", "url": "https://a.com", "insight": {
     "what": "旧五字段", "why": "回落渲染", "chain": "A → B",
     "watch": "9 月 16 日 FOMC", "term": "点阵图：利率路径预测分布"}}, "markets")
-check("更早的五字段回落渲染 盯什么/概念", ">盯什么<" in old5 and ">概念<" in old5)
+check("旧归档回落渲染 盯什么/概念", ">盯什么<" in old_card and ">概念<" in old_card)
 check("规则模式仍显示无解读占位",
       "今日无 AI 解读" in build_site.render_card(
           {"title": "t", "url": "https://a.com", "insight": {}}, "policy"))
@@ -507,11 +390,12 @@ with tempfile.TemporaryDirectory() as tmp:
 
 check("文件不存在回落空配置", cfgmod.load(Path("绝对不存在的路径.toml")) == {})
 
-# prompt 里写给模型的数量要求必须与校验阈值一致，否则"prompt 要 8 段、校验要 4 段"
+# prompt 里写给模型的数量要求必须与校验阈值一致，否则"prompt 要 8 环、校验要 12 环"
 # 会导致每天必然重试一次再降级。有 prompt.zh.md 时数字由它的 front matter 给出。
 tmpl = build_prompt({"markets": [mk("x", "https://a.com/1")], "policy": []})[0]
-check("prompt 的段数与校验阈值一致", f"{MIN_STAGES} 段" in tmpl)
-check("prompt 的解析条数区间与校验阈值一致", f"{MIN_NOTES}~" in tmpl)
+check("prompt 的环数下限不低于校验阈值",
+      f"{MIN_CHAIN_HOPS}~{MIN_CHAIN_HOPS + 3} 环" in tmpl
+      or f"{MIN_CHAIN_HOPS}~8 环" in tmpl)
 check("prompt 的条数与 TOP_N 一致", f"{TOP_N} 条" in tmpl)
 
 print("\nseen 归档")
