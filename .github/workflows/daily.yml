@@ -2,9 +2,9 @@ name: Daily brief
 
 on:
   schedule:
-    # 每天 08:00（Asia/Shanghai） = UTC 00:00
+    # 每天 15:00（Asia/Shanghai） = UTC 07:00
     # 这三行由 scripts/apply_config.py 依据 config.toml 生成，不要手改
-    - cron: "0 0 * * *"
+    - cron: "0 7 * * *"
   workflow_dispatch:        # 支持手动触发，便于验证
 
 permissions:
