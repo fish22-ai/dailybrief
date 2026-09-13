@@ -1,0 +1,174 @@
+{
+  "date": "2026-09-13",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "High oil prices could force ECB to raise rates further, warns top policymaker",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/a83e620a-bb72-478a-ac77-10635ec653bd?syn-25a6b1a6=1",
+      "published": "2026-09-12 12:00",
+      "raw_summary": "Austrian central bank governor Martin Kocher says risk of elevated inflation is higher than it was a few months ago",
+      "insight": {
+        "what": "欧洲央行（ECB）官员科赫警告，高油价可能迫使ECB进一步加息，因通胀风险高于几个月前。",
+        "why": "市场原本定价欧洲央行加息周期接近结束，这番表态提高利率维持高位甚至再加息的可能，欧元、短端欧债和欧洲利率敏感资产要重估。",
+        "chain": "油价上涨 → 欧元区通胀压力上升 → ECB官员转鹰 → 加息预期升温 → 2年德债收益率上升 → 欧元兑美元走强；能源进口成本上升 → 欧元区增长承压 → 长端德债收益率下行压力",
+        "notes": [
+          "ECB 是欧洲央行，负责欧元区货币政策；它加息会提高欧元区借贷成本，也会影响欧元汇率。",
+          "油价上涨如何推高通胀：能源是生产和运输成本，油价高会先推升燃料和电价，再传导到食品、服务等价格。",
+          "为什么 2 年期德债最敏感：它期限短，价格主要反映市场对未来两年欧洲央行政策利率的预期。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动，因为新债票息更高时旧债必须折价才有人买。",
+          "欧元走强机制：加息预期提高欧元区资产回报，吸引跨境资金买入欧元资产，推升欧元需求。",
+          "为什么长端可能反而承压：油价高会拖累经济增长，市场担心未来衰退，长端国债因避险和降息预期获得买盘。",
+          "鹰派和鸽派：鹰派优先压通胀，倾向加息；鸽派优先保增长和就业，对通胀容忍度更高。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Excluding Certain Canadian Products From Importation Into the United States in Response to Continued Discrimination Against the Commerce of the United States With Respect to Motor Vehicles",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/09/14/2026-18837/excluding-certain-canadian-products-from-importation-into-the-united-states-in-response-to-continued",
+      "published": "2026-09-14 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {
+        "what": "美国发布公告，将部分加拿大产品排除出对美进口范围，以回应加拿大在汽车贸易上对美国采取歧视性措施。",
+        "why": "市场原本定价北美汽车供应链稳定、关税风险有限，现在进口限制升级，加拿大出口、加元和汽车产业链利润预期都要重估。",
+        "chain": "美国限制部分加拿大产品进口 → 加拿大出口商失去美国市场 → 加拿大汽车出口收入下降 → 加元资产承压；美国进口替代成本上升 → 美国汽车价格上升 → 通胀预期升温 → 美债收益率上行",
+        "notes": [
+          "附加关税或进口限制：指在正常关税之外，额外加征或直接禁止部分产品进入美国，用来施压贸易伙伴。",
+          "为什么加元承压：加拿大出口高度依赖美国，出口收入下降会减少美元换加元的需求，也会压低加拿大增长预期。",
+          "北美汽车供应链：整车和零部件常在美加墨之间多次跨境，任一环节被限制，都会抬高整个链条成本。",
+          "美国汽车价格上升如何影响通胀：汽车是耐用品，价格上升会直接进入消费者物价指数，并可能让工资和服务价格跟涨。",
+          "为什么美债收益率上行：通胀预期上升会要求更高利率补偿，投资者要求更高到期收益率，债券价格下跌。",
+          "美元走强机制：美国利率上升和避险需求增加，吸引资金买入美元资产，推升美元。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "Trump is giving data centers a pass to pollute",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+      "published": "2026-09-12 22:41",
+      "raw_summary": "President Donald Trump is weakening environmental regulations in the name of speeding up the construction of AI data centers, raising health risks for Americans, a cadre of former EPA officials said t",
+      "insight": {
+        "what": "特朗普政府弱化环境监管，以便加快 AI 数据中心建设，减少污染治理要求，可能带来健康和环保成本。",
+        "why": "市场原本定价数据中心受环保、电力和审批约束，现在建设加速，算力供给扩张预期上升，芯片、电力、电网和数据中心资产要重新估值。",
+        "chain": "环保监管放松 → 数据中心建设加速 → 数据中心设备采购增加 → AI芯片需求上升 → 电力需求上升 → 电价上涨 → 电网资本开支增加 → 电网设备股受益",
+        "notes": [
+          "AI 数据中心是训练和运行大模型的算力工厂，耗电量和散热需求远高于普通办公楼。",
+          "为什么环保监管影响算力供给：数据中心需要空气、水和噪声许可，审批慢会直接推迟建成时间。",
+          "算力供给增加为什么推升芯片需求：更多数据中心需要更多 GPU 等加速芯片，芯片订单和资本开支随之上升。",
+          "电力需求上升如何影响电价：数据中心集中地区用电激增，若电网和发电跟不上，局部电价会被推高。",
+          "电价上涨如何影响电网投资：电力紧张和电价上涨会促使电网公司扩建线路、变压器和储能，设备订单增加。",
+          "为什么关注巨头资本开支：AI 竞争取决于谁能更快建成算力，监管放松降低建设成本，会强化巨头的扩张优势。",
+          "外部性问题：污染和健康成本不由数据中心承担，社会承担，政策若反复会带来额外风险。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 11,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 17,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
