@@ -94,11 +94,32 @@ Fed / ECB / 白宫 / USTR / Economist / CNBC Finance 常常几天才发一条，
 claude-opus-5 走它报 402「Budget pool quota has been exhausted」（池无额度/无通道）。
 裸 requests 直连还被它 401「unauthorized client」拦（客户端指纹校验），必须走
 anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% 输出预算**，
-16000 max_tokens 正文还没写就被截断、白烧重试。处理（已落进 config.toml）：
+16000 max_tokens 正文还没写就被截断、白烧重试。处理：
 - `[llm] model = "deepseek-v4-flash"`（当前 key 只能用它）
-- `[llm] disable_thinking = true` → SDK 传 `thinking={"type":"disabled"}`，中转站认
-- `[output] per_category = 4`（thinking 关掉后 9 张仍贴 16000 上限）
-换回 claude key 时：模型改回 claude-opus-5、disable_thinking 可关、每板块可回 5。
+
+**⚠️ 2026-09-13 更正：`disable_thinking` 在这个中转站上完全无效，上面第 99 行
+原来的「中转站认」是错的。** 实测三种写法结果一致，都照样返回 thinking 块：
+
+| 调用参数 | stop | 输出 token | 内容块 |
+| --- | --- | --- | --- |
+| 不传 thinking | end_turn | 191 | `thinking`(322 字符) + `text`(41) |
+| `{"type":"disabled"}` | end_turn | 197 | `thinking`(292) + `text`(40) |
+| `{"type":"enabled","budget_tokens":500}` | end_turn | 171 | `thinking`(250) + `text`(40) |
+
+所以 `config.toml` 里 `disable_thinking = true` 目前**不产生任何效果**，留着只是
+为了换回官方 key 后能立刻生效。真正的省 token 办法只有换一个不吐思考的模型。
+估算：正文 token ≈ 输出总 token × 0.15，要留 6 倍余量。
+
+### 14. per_category 与 max_tokens 必须联动（2026-09-13）
+输出 token 与卡片数近似线性 —— 一次调用产出全部卡片（`select.py` 顶部注释），
+所以加条数**不增加调用次数**，只增加输出量：
+- 3 条 ≈ 8000（09-13 10:16 那次贴满 8000 撞顶截断，重试一次才成功）
+- 6 条 ≈ 16000（09-13 10:34 实测，第 1 次调用即成功，无截断）
+
+**调大 `per_category` 必须同步调大 `[llm] max_tokens`**，没有代码兜底。只条数
+不加会导致两次调用都截断 → 整天降级成规则模式（页面「今日无 AI 解读」）。
+`max_tokens` 是天花板、按实际生成量计费，调高本身不多花钱；「截断 + 白烧重试」
+才是真亏。
 
 ## 验证到什么程度
 
