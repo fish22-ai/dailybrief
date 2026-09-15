@@ -1,6 +1,6 @@
 @echo off
 REM 每日任务入口，供 Windows 任务计划程序调用（scripts\install_task.ps1 注册）。
-REM 顺序：预检(命令/已跟踪文件干净) → fast-forward 同步 → 抓取 → 渲染 → 提交 → 推送。
+REM 顺序：当日去重 → 预检(命令/已跟踪文件干净) → fast-forward 同步 → 抓取 → 渲染 → 提交 → 推送。
 REM 任一步失败立即以非零退出并写 logs\cron.log；绝不自动 stash/rebase/覆盖用户改动。
 REM
 REM key 与端点从用户环境变量读取，不写在这个文件里（会进版本库）。设置一次：
@@ -17,6 +17,32 @@ set "LOG=%ROOT%\logs\cron.log"
 if not exist "%ROOT%\logs" mkdir "%ROOT%\logs"
 
 echo [%date% %time%] ===== 开始 ===== >> "%LOG%"
+
+REM ---------- 当日去重：今天已经成功产出过就跳过 ----------
+REM 背景：任务计划开了 StartWhenAvailable，开机后会把「错过的那次」补跑一遍。但补跑只是
+REM 把任务挪到现在执行，不是回头生成错过那天的那一期 —— run_daily.py 不带 --date 时
+REM 取的是**当天**日期（core/timeutil.py 的 today_str）。所以同一天会出现两次运行：
+REM 开机补偿跑一次 + 15:00 定时再跑一次，产出的却是同一个日期。当日简报只该有一份，
+REM 这里把第二次挡掉。
+REM
+REM 判定依据是 logs\.last_success（整条流水线跑完、push 成功之后才写），而不是 data\ 下
+REM 有没有当天的产物文件：产物写出来但 build_site/push 失败时，还需要 15:00 那次来续推，
+REM 用「文件存在」判断会把那次重试也一起挡掉。logs\ 是 gitignore 的，哨兵是本机状态，
+REM 不进版本库。
+REM
+REM 手动强制重跑（想让当天再更新一次）：scripts\daily.bat force
+set "TODAY="
+for /f "usebackq delims=" %%d in (`python -c "from core.timeutil import today_str; print(today_str())"`) do set "TODAY=%%d"
+REM python 拿不到日期时不在这里报错 —— 下面「预检 1」会给出更准确的提示。
+if not defined TODAY goto :guard_done
+if /i "%~1"=="force" goto :guard_done
+set "LAST_SUCCESS="
+if exist "%ROOT%\logs\.last_success" set /p LAST_SUCCESS=<"%ROOT%\logs\.last_success"
+if /i "%LAST_SUCCESS%"=="%TODAY%" (
+    echo [%date% %time%] 今日（%TODAY%）已成功产出，跳过本次（强制重跑：daily.bat force） >> "%LOG%"
+    exit /b 0
+)
+:guard_done
 
 REM ---------- 预检 1：命令可用 ----------
 where python >nul 2>&1
@@ -102,5 +128,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM 走到这里说明整条流水线都成功了（含 push）。记下今天的日期，供下次运行的当日去重判断。
+> "%ROOT%\logs\.last_success" echo %TODAY%
 echo [%date% %time%] ===== 完成 ===== >> "%LOG%"
 exit /b 0
