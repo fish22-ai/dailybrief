@@ -116,9 +116,11 @@ if errorlevel 1 (
     echo [%date% %time%] run_daily 失败，已保留本地已有产物，终止 >> "%LOG%"
     exit /b 1
 )
-REM --latest 只渲染最新一天。不加这个参数会把 data\ 下所有日期重渲一遍，
-REM 而 9.11 及更早存的是七段数据 + 复杂版式，重渲会被覆盖掉。
-python scripts\build_site.py --latest
+REM 必须渲**全部**日期，不能只渲最新一天：归档列表与跨天导航是渲染时烤进每一页的，
+REM 只渲最新一天会让老页面的归档永远停在它自己那天（2026-09-15 发现 9.12 看不到
+REM 9.13/9.15 就是这么来的）。数据比渲染器新的页面（9.11 那版七段存档）由
+REM build_site.py 自己按 unrenderable_keys() 跳过，不会掉内容。
+python scripts\build_site.py
 if errorlevel 1 (
     echo [%date% %time%] build_site 失败，终止 >> "%LOG%"
     exit /b 1

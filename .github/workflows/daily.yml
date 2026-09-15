@@ -52,7 +52,10 @@ jobs:
         run: python scripts/run_daily.py
 
       - name: 渲染静态站
-        run: python scripts/build_site.py --latest
+        # 必须渲全部日期：归档列表与跨天导航是渲染时烤进每一页的，只渲最新一天会让
+        # 老页面的归档停在旧日期。渲不了的页面（9.11 那版七段存档）由 build_site.py
+        # 自己跳过，不会掉内容。
+        run: python scripts/build_site.py
 
       - name: 提交产物
         run: |

@@ -101,9 +101,12 @@ AI 追问框，**用户明确要求不要**，所以既不产出也不渲染；�
 
 归档兼容：**2026-09-11 当天**的数据是七段结构化版本（`summary30s` /
 `transmissionChain` / `historicalAnalogy` / `gameTheoryStakeholders` /
-`forwardIndicators` / `takeaways` / `notes`），渲染器保留了回退分支，那一页不会被重渲。
-更早的 `what/why/chain/watch/term` 五字段也仍会回落到旧标签，
-重跑 `build_site.py --date <日期>` 不会让历史页面掉内容。
+`forwardIndicators` / `takeaways` / `notes`）。当前渲染器显示不出这七段，所以
+`build_site.py` 会**自动跳过**这类「数据比渲染器新」的页面（判据见
+`unrenderable_keys()`），不会重渲覆盖掉 —— 真要覆盖用 `--force`。
+更早的 `what/why/chain/watch/term` 五字段仍会回落到旧标签渲染。
+注意跳过的只是那一页的**正文**：归档列表和跨天导航取自 `data/` 下的文件清单，
+所以 09-11 照样出现在别的页面里、照样能点到。
 
 ## 目录结构
 

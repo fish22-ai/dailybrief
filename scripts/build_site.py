@@ -16,13 +16,22 @@ KaTeX/MathJax，零依赖、离线也读得出来。形如 `资本充足率 = �
 
 2026-09-06 之前的归档是 what/why/chain/watch/term 五字段，没有 notes。
 render_card() 对这种旧数据回落到旧标签渲染，重跑不会让历史页面掉内容。
+但 2026-09-11 那版七段结构（summary30s / transmissionChain / …）它表示不了，
+所以 main() 默认跳过"数据比渲染器新"的页面，不然重渲会把内容删掉。
+见 unrenderable_keys()。
+
+**归档列表和跨天导航是渲染时烤进每一页的**（render_page 的 dates 参数），不是运行时
+拉的。所以每天只渲最新一天的话，老页面里的归档会永远停在它自己被渲染的那天 ——
+2026-09-15 就是这么发现 9.12 看不到 9.13/9.15 的。自动任务因此渲染**全部**日期。
 
 三个后续扩展位已在代码里标注，搜 `[预留·` 可以直接找到：
 皮肤主题（CSS 变量层）、左右滑动抽卡（.deck 轨道）、行测解读模式（_collapsible()）。
 
 用法：
-    python scripts/build_site.py            # 渲染全部日期
+    python scripts/build_site.py            # 渲染全部日期（跳过渲不了的）
     python scripts/build_site.py --latest   # 只渲染最新一天 + 首页
+    python scripts/build_site.py --date X   # 只渲染 X 这一天
+    python scripts/build_site.py --force    # 连渲不了的也照渲（会丢内容，慎用）
 """
 from __future__ import annotations
 
@@ -601,6 +610,34 @@ TEXT_SEGMENTS = (("what", "发生了什么"), ("why", "市场为什么在意"))
 # 旧归档（五字段时代）没有 notes，回落渲染这两行，免得重跑丢内容
 LEGACY_SEGMENTS = (("watch", "盯什么"), ("term", "概念"))
 
+# render_card() 能表示的 insight 字段全集 = 上面两组 + 它单独渲染的 chain / notes。
+# 数据里出现这个集合之外的键，说明当前渲染器显示不出来那一块 —— 这种页面重渲一次
+# 就少一块内容，所以 main() 默认跳过。仓库里现成的例子是 2026-09-11：它是「回退前
+# 存档」（commit 75e0a6c），insight 是七段结构 summary30s / transmissionChain /
+# historicalAnalogy / gameTheoryStakeholders / forwardIndicators / takeaways / notes，
+# 而现在这套只认四段。重渲会让那一页从 120KB / 36 个 step 掉到 34KB / 2 张卡。
+KNOWN_INSIGHT_KEYS = frozenset(
+    [k for k, _ in TEXT_SEGMENTS] + [k for k, _ in LEGACY_SEGMENTS]
+    + ["chain", "notes"]
+)
+
+
+def unrenderable_keys(payload: dict) -> set[str]:
+    """这天的数据里，当前渲染器表示不了的 insight 字段。
+
+    空集合 = 可以安全重渲。只统计**有值**的未知键：空值本来就不会渲染出东西，
+    把它算进来会让页面被无谓地冻结。
+    """
+    unknown: set[str] = set()
+    for cat in CATEGORIES:
+        for card in payload.get(cat) or []:
+            ins = card.get("insight") or {}
+            if isinstance(ins, dict):
+                unknown |= {k for k, v in ins.items()
+                            if k not in KNOWN_INSIGHT_KEYS and v}
+    return unknown
+
+
 # 快讯类条目（华尔街见闻那种，标题即全部信息）的 what 常和标题逐字相同。
 # 左栏已经原样展示了标题，右栏再抄一遍纯属重复 —— 命中就整段不渲染。
 # 只在"几乎逐字重合"时命中：英文源的标题是英文、what 是中文，天然不会误伤；
@@ -1111,6 +1148,8 @@ def main() -> int:
     ap.add_argument("--latest", action="store_true", help="只渲染最新一天")
     ap.add_argument("--date", default="",
                     help="只渲染指定日期（如 2026-09-10），不动 index/manifest")
+    ap.add_argument("--force", action="store_true",
+                    help="数据含当前渲染器表示不了的字段时照渲（默认跳过，免得丢内容）")
     args = ap.parse_args()
 
     files = sorted(
@@ -1134,6 +1173,19 @@ def main() -> int:
     for path in todo:
         payload = json.loads(path.read_text(encoding="utf-8"))
         out = SITE_DIR / f"{path.stem}.html"
+        # 数据比渲染器新的页面不重渲：重渲会把它显示不出来的那块内容删掉。
+        # 归档链接不受影响 —— links / data-older / data-newer 都从 dates 来，
+        # 而 dates 取自 data\ 下的文件，跳过的日期照样在列表里、照样能点到。
+        missing = unrenderable_keys(payload)
+        if missing and not args.force:
+            if path.stem == dates[0]:
+                print(f"最新一天 {path.stem} 的数据含当前渲染器表示不了的字段"
+                      f"（{', '.join(sorted(missing))}），该更新渲染器了",
+                      file=sys.stderr)
+                return 1
+            print(f"跳过 {path.stem}：数据含当前渲染器表示不了的字段"
+                  f"（{', '.join(sorted(missing))}），重渲会掉内容")
+            continue
         out.write_text(render_page(payload, dates, path.stem), encoding="utf-8")
         print(f"渲染 {out.relative_to(ROOT)}")
 
