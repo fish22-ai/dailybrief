@@ -1,4 +1,23 @@
 @echo off
+REM Re-exec self under a 65001 console. Keep every line above ":utf8" ASCII-only.
+REM cmd parses this file as it reads it, and decodes with the console code page
+REM captured at process start (936 on zh-CN). This file is UTF-8, so Chinese text
+REM gets decoded as 936, split mid-character, and the fragments of REM lines are
+REM executed as commands -- that is where the "'xxx' is not recognized" noise in
+REM the task log comes from (diagnosed 2026-09-15). A UTF-8 BOM does not help:
+REM this cmd ignores it and then fails on "@echo off" itself. The child cmd starts
+REM with the console already at 65001, reads this file consistently, and is clean.
+chcp 65001 >nul
+if "%~1"=="_utf8" goto :utf8
+cmd /d /c ""%~f0" _utf8 %*"
+exit /b %errorlevel%
+:utf8
+
+REM 这里不能用 shift 把 _utf8 标记去掉 —— shift 会连带改掉 %0，而下面的
+REM cd /d "%~dp0.." 正是靠 %0 定位仓库根的（实测 shift 后 %~dp0 变成错的目录，
+REM 整个脚本就跑到别处去了）。所以子进程里 %1 固定是 _utf8 标记，真正的参数在 %2，
+REM 用到参数的地方两个都看。见下面守卫里的 force 判断。
+
 REM 每日任务入口，供 Windows 任务计划程序调用（scripts\install_task.ps1 注册）。
 REM 顺序：当日去重 → 预检(命令/已跟踪文件干净) → fast-forward 同步 → 抓取 → 渲染 → 提交 → 推送。
 REM 任一步失败立即以非零退出并写 logs\cron.log；绝不自动 stash/rebase/覆盖用户改动。
@@ -35,7 +54,9 @@ set "TODAY="
 for /f "usebackq delims=" %%d in (`python -c "from core.timeutil import today_str; print(today_str())"`) do set "TODAY=%%d"
 REM python 拿不到日期时不在这里报错 —— 下面「预检 1」会给出更准确的提示。
 if not defined TODAY goto :guard_done
+REM %1 是 _utf8 标记（见文件开头），真正的参数在 %2，所以两个都看。
 if /i "%~1"=="force" goto :guard_done
+if /i "%~2"=="force" goto :guard_done
 set "LAST_SUCCESS="
 if exist "%ROOT%\logs\.last_success" set /p LAST_SUCCESS=<"%ROOT%\logs\.last_success"
 if /i "%LAST_SUCCESS%"=="%TODAY%" (
