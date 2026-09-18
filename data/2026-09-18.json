@@ -1,0 +1,207 @@
+{
+  "date": "2026-09-18",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "Bank of Japan raises rates to 31-year high after Fed move",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/97a0bed5-0580-4ccc-bd3c-fe9a714259e2?syn-25a6b1a6=1",
+      "published": "2026-09-18 11:26",
+      "raw_summary": "Central bank cites inflation risks as it lifts interest rates by 0.25 percentage points to 1.25%",
+      "insight": {
+        "what": "日本央行加息25个基点至1.25%，为31年来最高，理由是通胀风险持续。",
+        "why": "市场原本预期日本维持超低利率，加息打破了日元作为全球廉价融资货币的预期，日元套息交易和日债需要重新定价。",
+        "chain": "日本通胀顽固 → 日央行加息 → 日元融资成本上升 → 套息交易平仓 → 日元升值 → 日债收益率曲线重定价 → 全球风险资产承压",
+        "notes": [
+          "什么是套息交易？借入低利率货币（如日元），换成高利率货币投资，赚取利差。日元加息后借日元变贵，这套交易就不再划算。",
+          "为什么31年最高值得关注？日本长期维持零利率甚至负利率，是全球资金的最后一块便宜资金来源，利率转正意味着全球资金成本上升。",
+          "加息后短端日债收益率反而下行，是因为市场早已提前定价了加息，靴子落地后出现买预期卖事实的反向波动。",
+          "日元升值对日本出口企业不利，因为海外利润换回日元后缩水，日经指数因此承压。",
+          "全球传导：日元套息平仓意味着卖出海外资产换回日元还债，美国国债、新兴市场股票都可能被抛售。"
+        ]
+      }
+    },
+    {
+      "title": "早间要闻汇总",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3167152",
+      "published": "2026-09-18 12:30",
+      "raw_summary": "创业板指半日涨超2%，全市场上涨个股超4600只。 恒指半日涨0.7%，恒生科技指数涨1.7%，天数智芯、MINIMAX涨超13%。 离岸人民币兑美元创2022年7月来新高；人民币兑美元中间价连续八个交易日调强，为2023年以来最长连涨。 投票结果7-2！日本央行加息25个基点，加息节奏创1990年以来最快，利率决议后日元兑美元跌破157。 日本8月CPI、核心CPI均低于预期。 澳洲联储主席：通",
+      "insight": {
+        "what": "离岸人民币兑美元创2022年7月以来新高，中间价连续八个交易日调强，为2023年以来最长连涨。",
+        "why": "市场原本担心人民币贬值压力，连续调强中间价释放了明确的稳汇率信号，人民币资产和外资流入预期因此改变。",
+        "chain": "央行连续调强中间价 → 释放稳汇率信号 → 贬值预期降温 → 外资持有人民币资产意愿上升 → 北向资金流入 → A股和人民币债券受益；同时美元走弱预期也助推人民币升值",
+        "notes": [
+          "什么是中间价？中国央行每天早上公布的人民币兑美元参考汇率，允许市场在上下2%区间内波动。中间价连续调强，等于官方在引导人民币升值方向。",
+          "离岸人民币和在岸人民币有什么区别？离岸（CNH）在境外自由交易，更能反映国际投资者情绪；在岸（CNY）受央行中间价约束更强。",
+          "人民币升值对A股是利好，因为外资换汇后能买到更多人民币资产，同时升值预期会吸引更多热钱流入。",
+          "为什么这跟日本央行加息有关？日元加息导致美元走弱，非美货币集体升值，人民币也顺势走强。",
+          "中间价连续调强是2023年以来最长，说明这不是单日波动，而是持续的政策意图。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Restoring Reciprocity in Government Procurement",
+      "source": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/09/restoring-reciprocity-in-government-procurement/",
+      "published": "2026-09-17 04:27",
+      "raw_summary": "MEMORANDUM FOR THE SECRETARY OF WAR THE UNITED STATES TRADE REPRESENTATIVE THE DIRECTOR OF THE OFFICE OF MANAGEMENT AND BUDGET THE ADMINISTRATOR FOR FEDERAL PROCUREMENT POLICY THE ADMINISTRATOR OF GEN",
+      "insight": {
+        "what": "白宫发布备忘录，要求恢复政府采购中的对等原则，涉及国防部和贸易代表办公室。",
+        "why": "市场原本预期美国政府采购相对开放，对等原则意味着外国企业进入美国政府采购的门槛提高，贸易摩擦升级预期上升。",
+        "chain": "白宫推政府采购对等 → 外国供应商受限 → 贸易伙伴可能反制 → 全球贸易壁垒上升 → 跨国企业利润预期下调 → 相关国家汇率和股市承压",
+        "notes": [
+          "什么是政府采购对等？简单说就是你不让我进你的政府采购市场，我也不让你进我的。这是贸易保护主义的一种形式。",
+          "政府采购规模有多大？美国联邦政府采购每年超过6000亿美元，涉及国防、基建、IT等多个领域，对相关企业收入影响显著。",
+          "为什么市场在意？贸易壁垒上升会推高企业成本、压缩利润，同时引发贸易伙伴报复，形成螺旋升级。",
+          "对哪些资产影响最大？依赖美国政府采购的欧洲和亚洲企业，以及相关国家的货币。",
+          "这类政策通常有滞后效应，从备忘录到具体执行需要时间，但市场会提前定价预期。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "Huawei Speeds Up Launch of New AI Chip",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-09-18/huawei-speeds-up-launch-of-new-ai-chip-video",
+      "published": "2026-09-18 13:35",
+      "raw_summary": "Huawei is accelerating the debut of its next-generation AI chip by several months, aiming to replace Nvidia in China and compete on the global stage. The Ascend 960DT chip will now be launched in the ",
+      "insight": {
+        "what": "华为加速发布新一代AI芯片，提前数月推出，目标是在中国替代英伟达并参与全球竞争。",
+        "why": "市场原本预期英伟达在中国AI芯片市场占主导，华为加速推出意味着国产替代进程加快，英伟达中国收入预期需要下调。",
+        "chain": "华为AI芯片提前发布 → 国产替代加速 → 英伟达中国市场份额下降 → 英伟达收入预期下调 → 相关供应链和AI算力成本曲线重塑",
+        "notes": [
+          "为什么华为能替代英伟达？美国出口管制限制了英伟达向中国出售高端芯片，华为作为国产替代方案获得政策支持和客户需求。",
+          "AI芯片的竞争格局：英伟达全球市占率超过80%，但在中国市场因管制而份额下降，华为昇腾系列是主要替代品。",
+          "华为提前发布意味着什么？说明国产芯片研发进度超预期，也说明中国AI算力需求旺盛，供不应求。",
+          "对全球AI算力成本的影响：如果华为能提供有竞争力的替代品，全球AI芯片价格可能下降，算力成本曲线下移。",
+          "英伟达中国收入占比约20%，失去这部分市场会显著影响其增长预期。"
+        ]
+      }
+    },
+    {
+      "title": "SoftBank Raises Arm Margin Loan to $25 Billion as AI Bets Grow",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-18/softbank-raises-arm-margin-loan-to-25-billion-as-ai-bets-grow",
+      "published": "2026-09-18 13:45",
+      "raw_summary": "SoftBank Group Corp. has increased its margin loan backed by shares of its chip unit Arm Holdings Plc by $5 billion to $25 billion, according to people familiar with the matter, as the conglomerate fi",
+      "insight": {
+        "what": "软银将以Arm股份为抵押的保证金贷款增加50亿美元至250亿美元，用于扩大AI投资。",
+        "why": "市场原本担心软银AI投资资金来源有限，贷款扩容意味着软银有更多弹药押注AI，AI资本开支预期上升。",
+        "chain": "软银扩大Arm抵押贷款 → 融资能力增强 → AI投资规模扩大 → AI算力需求上升 → 芯片和算力供应链受益 → 但高杠杆也增加软银自身风险",
+        "notes": [
+          "什么是保证金贷款？用持有的股票作为抵押向银行借钱，如果股价下跌，银行会要求追加抵押品或强制平仓。",
+          "为什么用Arm股票抵押？Arm是软银旗下最值钱的资产之一，股价上涨后抵押价值提升，能借到更多钱。",
+          "软银的AI投资逻辑：孙正义认为AI是未来最大的投资机会，通过借款加杠杆来放大收益。",
+          "风险在哪里？如果Arm股价大幅下跌，软银可能被要求追加保证金，被迫抛售资产，形成负反馈。",
+          "对AI产业链的影响：软银是AI领域最大的投资者之一，其投资规模直接影响AI芯片和算力基础设施的需求。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 7,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 19,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
