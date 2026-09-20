@@ -1,6 +1,9 @@
 # 默认交给 Git 规范化换行
 * text=auto
 
+# .vbs 保持 CRLF（WSH 对 LF-only 的 .vbs 解析不稳定）
+*.vbs text eol=crlf
+
 # 【必须】.bat 保持 CRLF。LF 换行的 .bat 在 cmd 下会被逐字符解析而报错（已踩过）
 *.bat text eol=crlf
 

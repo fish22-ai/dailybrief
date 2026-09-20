@@ -66,6 +66,7 @@ if /i "%LAST_SUCCESS%"=="%TODAY%" (
 :guard_done
 
 REM ---------- 预检 1：命令可用 ----------
+set "GIT_TERMINAL_PROMPT=0"
 where python >nul 2>&1
 if errorlevel 1 (
     echo [%date% %time%] 找不到 python，终止 >> "%LOG%"

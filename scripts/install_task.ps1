@@ -39,6 +39,7 @@ if (-not $RepoRoot) {
 }
 $RepoRoot = (Resolve-Path $RepoRoot).Path
 $BatchFile = Join-Path $PSScriptRoot 'daily.bat'
+$VbsLauncher = Join-Path $PSScriptRoot 'run_hidden.vbs'
 
 # --- WHEN to run: config.toml [schedule] 是唯一来源 --------------------------
 # 以前 -At 默认写死 '08:00'，和 config.toml 里的 cron 各说各话 —— 改时间要改两处，
@@ -154,8 +155,8 @@ if ($tz -notmatch 'China') {
 Write-Host ''
 
 # --- build the task ----------------------------------------------------------
-$action = New-ScheduledTaskAction -Execute 'cmd.exe' `
-    -Argument ('/d /c "' + $BatchFile + '"') `
+$action = New-ScheduledTaskAction -Execute 'wscript.exe' `
+    -Argument ('//B "' + $VbsLauncher + '" "' + $BatchFile + '"') `
     -WorkingDirectory $RepoRoot
 
 if ($days.Count) {
