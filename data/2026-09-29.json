@@ -1,0 +1,161 @@
+{
+  "date": "2026-09-29",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "China has three new criteria for humanoid robot IPOs. Few, if any, meet them",
+      "source": "CNBC Finance",
+      "url": "https://www.cnbc.com/2026/09/29/china-criteria-humanoid-robot-ipos.html",
+      "published": "2026-09-29 13:13",
+      "raw_summary": "China's securities regulator is raising the bar for public listings of humanoid robot startups with three specific criteria, according to three sources.",
+      "insight": {}
+    },
+    {
+      "title": "澳洲联储主席Bullock：债券市场反应有序，但我们正密切关注。 考虑过维持利率和加息25个基点。 AI热潮带来的通胀风险正在积累。 一个上行通胀风险已显现，两个正在积累。 加息通过澳元渠道影响通胀。 可在不造成失业的情况下逐步提高失业率。 多重通胀压力使当前形势非常困难。",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3171937",
+      "published": "2026-09-29 13:55",
+      "raw_summary": "",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "US ban on Canadian alcohol and dairy comes into effect as trade war drags on",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cm1j43y146d2o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-09-29 12:10",
+      "raw_summary": "It is the latest escalation in the Canada-US trade war after negotiations collapsed in late August, with no word on when talks may resume.",
+      "insight": {}
+    },
+    {
+      "title": "‘Ballot must replace the bullets’, South Sudan tells General Assembly ahead of elections",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/09/1168475",
+      "published": "2026-09-28 20:00",
+      "raw_summary": "South Sudan remains committed to holding general elections in December to conclude its transition period, the country’s Permanent Representative to the United Nations Cecilia Adout Majok Adeng, told t",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "AI, Data Centers Face Scrutiny in Australia",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-09-29/ai-data-centers-face-scrutiny-in-australia-video",
+      "published": "2026-09-29 13:20",
+      "raw_summary": "Australia's data centre boom is facing headwinds, with local opposition to new developments adding to concerns about the costs and benefits of rapid AI expansion. The debate is being amplified by Prim",
+      "insight": {}
+    },
+    {
+      "title": "US-China AI Race: Five Key Flashpoints Explained",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-29/us-china-ai-race-five-key-flashpoints-explained",
+      "published": "2026-09-29 11:32",
+      "raw_summary": "Both the US and China see artificial intelligence as the new focal point of their economic rivalry. US President Donald Trump declared on Sept. 13 that “whoever wins AI, wins.” The question is whether",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "id 11 属于 policy，却被放进 tech",
+  "source_stats": {
+    "fed": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 0,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 0,
+      "tier": "optional"
+    }
+  }
+}
