@@ -180,7 +180,9 @@ if _PF:
     DEFAULT_PROMPT = _PF[0]
 
 REPAIR_HINT = (
-    "上一条输出不合法：{err}。请只输出符合要求的 JSON，id 必须取自候选列表，"
+    "上一条输出不合法：{err}。请只输出符合要求的 JSON，id 必须取自候选列表、"
+    "且放进它所属板块的数组（候选列表是按板块分组的，policy 的 id 不能出现在"
+    " tech 数组里），"
     "what/why/chain/notes 四个字段都不能省；chain 至少 " + str(MIN_CHAIN_HOPS)
     + " 环、用 ' → ' 连接且每环写出机制；notes 至少 " + str(MIN_NOTES)
     + " 条且是字符串数组；公式写成反引号包住的纯文本，不要 LaTeX。不要添加说明文字。"
@@ -292,9 +294,14 @@ def _normalize_notes(val: object) -> list[str]:
 
 
 def validate(raw: dict, index: dict[int, Item]) -> dict[str, list[dict]]:
-    """schema 校验。任一不合法就抛异常，触发重试或降级。
+    """schema 校验。结构性错误（编造 id、缺字段）抛异常，触发重试或降级。
 
-    校验得比较严：四个字段缺一不可、id 必须真实存在、不能跨板块串台。
+    2026-09-29 起**跨板块串台不再抛异常，改为自动归位**：那天 id 11（policy）
+    被模型放进 tech，两次重试原样复发，整天降级成规则模式 —— 而串台只是分类
+    标签放错了，条目本身和四段解读都没错，丢掉重试是把一次小口误放大成整天
+    「无 AI 解读」。所以照 id 真实所属的板块收下，日志里留痕即可。顺带把模型
+    重复挑选的 id 去重。
+
     另外两条是 2026-09-06 改版新增的**质量下限**，不只是格式检查：
       - chain 至少 MIN_CHAIN_HOPS 环 —— 环数少就意味着机制又被压缩成结论了，
         而"看不懂"的根因正是这个，所以宁可重试。
@@ -303,14 +310,14 @@ def validate(raw: dict, index: dict[int, Item]) -> dict[str, list[dict]]:
     if not isinstance(raw, dict):
         raise ValueError("顶层不是 JSON 对象")
 
-    out: dict[str, list[dict]] = {}
+    # 第一遍：按 id 的真实板块归位 + 去重。字段校验放到归位之后统一做。
+    buckets: dict[str, list[dict]] = {cat: [] for cat in CATEGORIES}
+    seen: set[int] = set()
     for cat in CATEGORIES:
         picks = raw.get(cat, [])
         if not isinstance(picks, list):
             raise ValueError(f"{cat} 不是数组")
-
-        cards: list[dict] = []
-        for p in picks[:TOP_N]:
+        for p in picks:
             if not isinstance(p, dict):
                 raise ValueError(f"{cat} 内元素不是对象")
             try:
@@ -321,8 +328,20 @@ def validate(raw: dict, index: dict[int, Item]) -> dict[str, list[dict]]:
             item = index.get(pid)
             if item is None:
                 raise ValueError(f"id {pid} 不在候选池中（模型编造）")
+            if pid in seen:
+                log.warning("id %d 被模型重复挑选，已去重", pid)
+                continue
+            seen.add(pid)
             if item.category != cat:
-                raise ValueError(f"id {pid} 属于 {item.category}，却被放进 {cat}")
+                log.warning("id %d 属于 %s，模型放进 %s —— 已自动归位",
+                            pid, item.category, cat)
+            buckets[item.category].append(p)
+
+    out: dict[str, list[dict]] = {}
+    for cat in CATEGORIES:
+        cards: list[dict] = []
+        for p in buckets[cat][:TOP_N]:
+            pid = int(p["id"])
 
             insight: dict = {}
             for field in INSIGHT_TEXT_FIELDS:

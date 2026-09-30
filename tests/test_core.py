@@ -201,7 +201,15 @@ def raises(payload) -> bool:
 
 
 check("编造 id 被拒", raises({"markets": [{**good, "id": 99}]}))
-check("板块串台被拒", raises({"markets": [{**good, "id": 2}]}))
+# 2026-09-29 那次降级的教训：串台只是分类标签放错，条目和解读都没错，
+# 抛异常重试两次原样复发就把整天降级成规则模式了 —— 改为自动归位。
+relocated = validate({"markets": [{**good, "id": 2}], "policy": []}, index)
+check("板块串台自动归位",
+      len(relocated["policy"]) == 1 and relocated["markets"] == []
+      and relocated["policy"][0]["url"] == "https://a.com/p1",
+      str(relocated))
+check("重复 id 去重",
+      len(validate({"markets": [good, dict(good)]}, index)["markets"]) == 1)
 check("缺 chain 被拒",
       raises({"markets": [{k: v for k, v in good.items() if k != "chain"}]}))
 check("缺 notes 被拒",
