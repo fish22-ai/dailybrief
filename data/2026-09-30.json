@@ -3,104 +3,106 @@
   "mode": "llm",
   "markets": [
     {
-      "title": "OpenAI Targets $30 Billion Funding at $1.4 Trillion Value",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-09-30/openai-targets-30b-funding-at-1-4t-value-video",
-      "published": "2026-09-30 13:55",
-      "raw_summary": "OpenAI aims to raise at least $30 billion from investors in a new round of funding, according to people familiar with the matter. The company is seeking a valuation of around $1.4 trillion, not includ",
+      "title": "US 30-year Treasury yield hits highest since 2002",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/c8693313-7750-40c7-892a-101ab16dec70?syn-25a6b1a6=1",
+      "published": "2026-09-30 04:13",
+      "raw_summary": "Government debt extends decline as inflation and surging oil prices weigh on market",
       "insight": {
-        "what": "美国30年期国债收益率升至2002年以来最高，通胀顽固与油价飙升令国债继续被抛售。",
-        "why": "市场原本预期长端利率已接近顶部，这一突破意味着期限溢价重新扩张，全球长久期资产的估值锚被上移。",
-        "chain": "油价上涨 → 通胀预期升温 → 长端国债被抛售 → 30年美债收益率↑ → 期限溢价 term premium 走阔 → 房贷与企业债融资成本↑ → 长久期成长股与房地产承压；美债收益率高企 → 美元资产吸引力上升 → 新兴市场资本外流压力",
+        "what": "美国30年期国债收益率升至2002年以来最高，政府债务继续下跌，通胀和油价飙升压制债市。",
+        "why": "市场原本预期长端利率已接近顶部，这一突破改变了投资者对长期通胀和财政风险的定价，长久期债券和利率敏感型资产需重新估值。",
+        "chain": "通胀高企且油价飙升 → 市场担忧长期通胀失控 → 要求更高期限溢价补偿 → 30年期美债收益率↑ → 长端债券价格↓ → 全球长久期资产估值承压 → 房贷和企业长期融资成本↑",
         "notes": [
-          "30年期国债收益率为什么重要？它是全球最长久期的无风险利率 Rf，几乎所有长期资产的估值都要用它做折现基准。",
-          "为什么油价会影响国债？油价上升会推高整体通胀，投资者要求更高的收益率来补偿购买力损失，于是抛售债券、收益率上行。",
-          "期限溢价 term premium 是什么？投资者持有长期债券比滚动持有短期债券多承担的不确定性补偿，它走高说明市场对长期通胀和财政可持续性更担忧。",
-          "收益率上升债券价格下跌：债券价格和收益率呈反向变动，久期越长，价格对收益率的敏感度越高。",
-          "为什么长久期成长股最受伤？成长股盈利大多在遥远未来，折现率上升时，远期现金流折算到现在的价值缩水更明显。",
-          "美元与美债收益率的联动：美国利率相对其他经济体走高，资金流入美元资产，推升美元，同时压低新兴市场货币和资产价格。"
+          "什么是30年期国债收益率？它是投资者持有美国国债到30年到期所获得的年化回报率，代表市场对长期利率和通胀的预期。",
+          "为什么长端收益率比短端更重要？短端由美联储政策利率主导，长端由市场对未来的通胀、财政赤字和期限溢价共同决定，更能反映结构性风险。",
+          "期限溢价是什么？投资者持有长期债券而非短期债券所要求的额外补偿，因为长期锁定的不确定性更大。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动。",
+          "为什么油价影响债市？油价上涨推高通胀预期，投资者要求更高收益率来抵消购买力损失，长端债券首当其冲。",
+          "2002年以来最高意味着什么？过去二十多年全球长期利率趋势性下行，这个突破可能标志低利率时代终结，对股票估值、房地产和养老金配置都有深远影响。"
         ]
       }
     },
     {
-      "title": "OpenAI Targets $30 Billion Funding at $1.4 Trillion Value",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-09-30/openai-targets-30b-funding-at-1-4t-value-video",
-      "published": "2026-09-30 13:55",
-      "raw_summary": "OpenAI aims to raise at least $30 billion from investors in a new round of funding, according to people familiar with the matter. The company is seeking a valuation of around $1.4 trillion, not includ",
+      "title": "瑞典央行会议纪要：行长特登称通胀将高于2%目标的风险已然升高。 行长特登称有强烈理由在短期内将政策利率提高到 2%，并上调政策利率的预估。 官员HJELM称支持维持政策利率于1.75%不变，并在很大程度上赞同货币政策报告草案中提出的评估。 行长特登称最早在11月提高政策利率是合理的。 行长特登称目前而言我们仍能够全速前进，但11月我们可能需要放慢脚步。",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3172742",
+      "published": "2026-09-30 15:33",
+      "raw_summary": "",
       "insight": {
-        "what": "全球债券市场在经历一轮抛售后企稳，此前美国长期借贷成本触及近25年最高。",
-        "why": "市场原本担心抛售演变为无序去杠杆，企稳信号缓解了流动性冲击担忧，但长端利率中枢已上移，股债估值需重新校准。",
-        "chain": "长端收益率飙升 → 债券价格大跌 → 部分机构被迫止损 → 抛压加剧 → 市场担忧流动性冲击 → 央行或口头安抚 → 收益率暂稳 → 风险资产短暂反弹；但利率中枢上移 → 股票风险溢价 ERP 被压缩 → 估值中枢下移",
+        "what": "瑞典央行行长特登称通胀高于2%目标的风险升高，有强烈理由短期内将政策利率提高到2%，最早11月加息合理。",
+        "why": "市场原本预期瑞典央行将维持或放松政策，这番表态将加息重新摆上台面，瑞典克朗和短端利率因此需要重新定价。",
+        "chain": "通胀高于目标风险升高 → 瑞典央行释放加息信号 → 市场重新定价11月加息概率 → 瑞典2年期国债收益率↑ → 瑞典克朗走强 → 瑞典出口企业盈利预期承压；同时全球央行偏鹰预期升温 → 风险资产承压",
         "notes": [
-          "债券抛售为什么会引发流动性担忧？当价格快速下跌，杠杆持有的机构可能被追缴保证金，被迫卖出更多债券，形成负反馈。",
-          "企稳不等于反转：收益率暂停上行只是抛压暂缓，利率中枢若已上移，资产估值仍需向下调整。",
-          "股票风险溢价 ERP 是什么？投资者持有股票相对于无风险国债所要求的额外回报，无风险利率上升时，这个差额被压缩，股票吸引力下降。",
-          "为什么长端比短端更受关注？长端利率是房贷、企业长期融资和股权估值的定价锚，短端更多反映央行政策路径。",
-          "全球债市联动：美债是全球定价基准，美债收益率上行会带动其他经济体国债收益率同步走高。"
+          "瑞典央行为什么重要？它是全球最早一批从负利率转向正常化的央行，其政策路径常被视为小型开放经济体的风向标。",
+          "政策利率是什么？央行设定的基准利率，商业银行以此为基础进行借贷，直接影响整个经济的融资成本。",
+          "为什么汇率先反应？加息预期提高该国资产回报率，吸引资本流入，推高本币汇率。",
+          "克朗走强对出口企业意味着什么？出口收入以外币计价，换算回本币缩水，同时产品在国际市场变贵，竞争力下降。",
+          "鹰派 vs 鸽派：鹰派优先压通胀，倾向加息收紧货币；鸽派优先保增长和就业，对通胀容忍度高。特登的表态属于鹰派。",
+          "为什么11月加息是'合理'而非'确定'？因为行长同时说'可能需要放慢脚步'，暗示经济数据若走弱，加息可能推迟。"
         ]
       }
     }
   ],
   "policy": [
     {
-      "title": "OpenAI Targets $30 Billion Funding at $1.4 Trillion Value",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-09-30/openai-targets-30b-funding-at-1-4t-value-video",
-      "published": "2026-09-30 13:55",
-      "raw_summary": "OpenAI aims to raise at least $30 billion from investors in a new round of funding, according to people familiar with the matter. The company is seeking a valuation of around $1.4 trillion, not includ",
+      "title": "Ukraine's prized steel industry left in ruins by Russian missile campaign",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cjkg7k6z9296o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-09-30 07:33",
+      "raw_summary": "Ukraine's remaining steelworks, a vital part of its economy, have all but ground to a halt because of relentless attacks.",
       "insight": {
-        "what": "俄罗斯导弹持续打击，乌克兰仅存的钢铁厂几乎全部停产，这一支柱产业陷于瘫痪。",
-        "why": "市场原本预期乌克兰出口能逐步恢复，钢铁停产意味着其外汇收入和财政能力进一步削弱，主权信用和重建成本预期恶化。",
-        "chain": "钢铁厂被毁 → 乌克兰出口收入下降 → 外汇储备减少 → 本币贬值压力↑ → 通胀上升 → 央行被迫加息 → 财政赤字货币化风险↑ → 主权债利差走阔 → 国际援助需求上升；钢铁供应减少 → 全球钢材边际供给收紧 → 欧洲钢价获支撑",
+        "what": "俄罗斯导弹持续打击乌克兰钢铁工业，乌剩余钢厂几乎全部停产，该行业是乌克兰经济的重要支柱。",
+        "why": "市场原本预期乌克兰出口能力逐步恢复，钢铁停产改变了全球钢铁供给预期和乌克兰外汇收入前景，相关大宗商品和乌克兰主权债需重新定价。",
+        "chain": "俄军持续打击钢厂 → 乌克兰钢铁产量骤降 → 全球钢铁供给收紧 → 国际钢价获得支撑 → 乌克兰出口收入减少 → 乌克兰外汇储备和财政承压 → 乌克兰主权债违约风险上升 → 投资者要求更高收益率",
         "notes": [
-          "钢铁为什么是乌克兰的经济支柱？钢铁是乌克兰最大的出口品类之一，贡献大量外汇收入，用于进口能源和偿还外债。",
-          "外汇收入下降为什么会压汇率？出口创汇减少，市场上外币供给变少，本币需求相对下降，汇率承压。",
-          "本币贬值为什么推高通胀？进口商品以美元计价，本币贬值后进口成本上升，传导到国内物价。",
-          "央行加息如何应对？提高利率吸引资本流入、抑制需求，但会牺牲经济增长，属于被迫紧缩。",
-          "主权债利差是什么？一国国债收益率与无风险美债收益率的差额，反映市场对该国违约风险的定价，利差走阔意味着融资成本上升。",
-          "对全球钢材市场的影响：乌克兰是重要钢材出口国，供给中断会收紧欧洲边际供给，对钢价形成支撑。"
+          "为什么钢铁对乌克兰重要？钢铁是乌克兰第二大出口收入来源，占出口总额约十分之一，是外汇和就业的关键支柱。",
+          "全球钢铁供给收紧为什么影响价格？供给减少而需求不变时，买家竞争推高价格，其他产钢国如中国、印度的出口份额和定价权上升。",
+          "乌克兰主权债是什么？乌克兰政府向国际投资者发行的债券，用于筹集资金。战争导致收入下降时，市场担忧政府还不起债，债券价格下跌、收益率上升。",
+          "外汇储备为什么关键？乌克兰需要外汇来进口能源、武器和偿还外债，出口收入减少直接削弱这一能力。",
+          "这条新闻的传导为什么偏慢？因为钢铁贸易有长协合同和库存缓冲，供给冲击需要数月才能完全体现在价格上。",
+          "对欧洲的影响：乌克兰是欧洲钢铁重要供应方，停产可能推高欧洲基建和制造业成本。"
         ]
       }
     },
     {
-      "title": "OpenAI Targets $30 Billion Funding at $1.4 Trillion Value",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-09-30/openai-targets-30b-funding-at-1-4t-value-video",
-      "published": "2026-09-30 13:55",
-      "raw_summary": "OpenAI aims to raise at least $30 billion from investors in a new round of funding, according to people familiar with the matter. The company is seeking a valuation of around $1.4 trillion, not includ",
+      "title": "Estonia blames Russia for arson at defence company supplying Ukraine",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c6m27l4er4jxo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-09-30 03:36",
+      "raw_summary": "Russia has been accused of launching sabotage attacks across a number of European Nato countries which have been helping Ukraine.",
       "insight": {
-        "what": "爱沙尼亚指责俄罗斯策划纵火袭击一家为乌克兰供货的国防企业，此前多国已遭类似破坏。",
-        "why": "市场原本认为俄乌冲突外溢风险可控，北约成员国本土遭破坏意味着地缘风险溢价需要重新计入欧洲资产。",
-        "chain": "北约成员国遭破坏 → 地缘风险升级 → 欧洲安全溢价↑ → 国防开支预期增加 → 欧洲财政压力上升 → 国防股获买盘 → 欧洲国债供给预期增加 → 长端欧债收益率↑ → 欧元资产波动率上升",
+        "what": "爱沙尼亚指责俄罗斯对一家向乌克兰供货的国防公司实施纵火袭击，此前多个北约国家已指控俄在欧洲发动破坏活动。",
+        "why": "市场原本认为俄乌冲突的溢出效应局限于战场，这类破坏活动扩大了欧洲安全风险溢价，欧洲国防股和能源基础设施相关资产需重新定价。",
+        "chain": "俄罗斯被指在欧洲发动破坏 → 北约国家安全焦虑上升 → 欧洲国防开支预期增加 → 国防股订单和盈利预期上升 → 欧洲政府债券发行增加为军费融资 → 长端欧债收益率面临上行压力；同时能源基础设施风险溢价上升 → 欧洲天然气价格波动加大",
         "notes": [
-          "地缘风险溢价是什么？投资者因政治不确定性要求更高的回报补偿，通常表现为相关资产价格下跌、收益率上升。",
-          "为什么国防开支增加会推升国债收益率？政府增加军费需要发债融资，债券供给增加，价格下跌、收益率上升。",
-          "国防股为什么受益？军费增加意味着订单增长，国防企业盈利预期改善，股价获得支撑。",
-          "北约第五条款意味着什么？对一成员国的武装攻击视为对全体的攻击，破坏行动若被认定为武装攻击，可能触发集体防御。",
-          "欧洲资产波动率上升的含义：不确定性增加，期权隐含波动率上升，投资者要求更高风险补偿。"
+          "什么是安全风险溢价？投资者因担心地缘冲突影响资产安全而要求的额外回报，通常表现为相关资产价格下跌或收益率上升。",
+          "为什么国防股受益？政府增加军费意味着更多武器和装备订单，国防企业的收入和利润预期改善。",
+          "军费融资为什么影响债券？政府增加支出需要发债筹钱，债券供给增加会压低价格、推高收益率，尤其在财政本就紧张的国家。",
+          "欧洲天然气价格为什么敏感？欧洲在俄乌冲突后大幅依赖进口液化天然气，任何基础设施安全威胁都会引发供应中断担忧。",
+          "北约第五条是什么？对任一成员国的武装攻击视为对所有成员国的攻击，但破坏活动是否触发第五条存在法律争议，市场更关注实际安全成本上升。",
+          "这类事件的历史先例：冷战期间双方互相进行破坏和间谍活动，市场通常短期避险情绪上升，但若未升级为直接军事冲突，影响会逐步消退。"
         ]
       }
     }
   ],
   "tech": [
     {
-      "title": "OpenAI Targets $30 Billion Funding at $1.4 Trillion Value",
+      "title": "DeepSeek Unveils Huawei AI Chip Tools That May Replace Nvidia’s",
       "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-09-30/openai-targets-30b-funding-at-1-4t-value-video",
-      "published": "2026-09-30 13:55",
-      "raw_summary": "OpenAI aims to raise at least $30 billion from investors in a new round of funding, according to people familiar with the matter. The company is seeking a valuation of around $1.4 trillion, not includ",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-30/deepseek-unveils-huawei-ai-chip-tools-that-may-replace-nvidia-s",
+      "published": "2026-09-30 13:07",
+      "raw_summary": "DeepSeek has publicly released software it created with Huawei Technologies Co. to program AI chips, showcasing its close partnership with the Chinese company working to develop technologies to replac",
       "insight": {
-        "what": "DeepSeek公开与华为合作开发的AI芯片编程软件，展示双方紧密合作，可能替代英伟达的同类工具。",
-        "why": "市场原本认为中国AI训练高度依赖英伟达CUDA生态，这一工具意味着国产芯片软件栈开始补齐，英伟达在华垄断地位面临实质挑战。",
-        "chain": "DeepSeek公开华为芯片软件工具 → 国产AI芯片软件生态补齐 → 开发者迁移成本下降 → 华为昇腾芯片需求↑ → 英伟达在华份额承压 → 国产算力供应链自主性↑ → 全球AI芯片竞争格局重塑；英伟达中国收入预期下调 → 其估值溢价被压缩",
+        "what": "DeepSeek公开了与华为合作开发的AI芯片编程软件，展示与华为的紧密合作，可能替代英伟达的芯片工具。",
+        "why": "市场原本假设中国AI训练高度依赖英伟达生态，这一软件发布改变了国产芯片可用性的预期，英伟达在中国市场的份额和华为昇腾芯片的竞争位势需重新评估。",
+        "chain": "DeepSeek公开华为芯片编程工具 → 开发者更容易在昇腾芯片上运行AI模型 → 国产芯片生态可用性提升 → 中国企业减少对英伟达依赖 → 英伟达中国收入预期下降 → 英伟达股价承压；同时华为昇腾芯片需求上升 → 华为AI芯片供应链受益",
         "notes": [
-          "CUDA是什么？英伟达的并行计算平台和编程模型，开发者用它在英伟达GPU上训练AI，生态锁定是其核心护城河。",
-          "为什么软件工具比芯片本身更重要？芯片性能再强，如果没有好用的编程工具，开发者迁移成本极高，生态难以建立。",
-          "昇腾是什么？华为的AI芯片系列，是中国替代英伟达GPU的主要方案，但此前软件生态不完善。",
-          "国产替代对英伟达的影响：中国是其重要市场，若国产芯片软件可用，英伟达在华收入增长将放缓，估值溢价收窄。",
-          "算力供应链自主性意味着什么？从芯片到软件工具都不依赖美国技术，降低被制裁断供的风险。",
-          "为什么市场关注DeepSeek？它是中国领先的AI大模型公司，其技术选择具有行业示范效应，会带动其他开发者跟进。"
+          "为什么软件工具比芯片本身更关键？英伟达的核心护城河不仅是硬件性能，更是CUDA软件生态，全球开发者习惯用它编程。如果华为昇腾有了好用的替代工具，迁移成本大幅下降。",
+          "昇腾是什么？华为开发的AI芯片系列，对标英伟达的GPU，用于训练和运行人工智能模型。",
+          "CUDA是什么？英伟达的并行计算平台和编程接口，开发者用它与英伟达芯片交互，生态黏性极强。",
+          "DeepSeek为什么重要？它是中国领先的AI大模型公司，其公开支持华为芯片意味着国产替代从政策驱动转向实际可用。",
+          "对英伟达的影响有多大？中国曾占英伟达数据中心收入的约五分之一，出口管制已压缩这部分，若国产工具成熟，剩余份额也可能流失。",
+          "这条新闻改变了什么预期？市场原本认为国产芯片'能用但不好用'，DeepSeek的背书可能标志从'可用'到'好用'的拐点。"
         ]
       }
     },
@@ -111,16 +113,16 @@
       "published": "2026-09-30 13:55",
       "raw_summary": "OpenAI aims to raise at least $30 billion from investors in a new round of funding, according to people familiar with the matter. The company is seeking a valuation of around $1.4 trillion, not includ",
       "insight": {
-        "what": "OpenAI计划以1.4万亿美元估值融资至少300亿美元，用于支持其AI基础设施和模型研发。",
-        "why": "市场原本担心AI资本开支过热后会出现收缩，这笔巨额融资意味着头部玩家仍在加码，算力供应链和AI相关资产估值获支撑。",
-        "chain": "OpenAI巨额融资 → 资本开支预期↑ → 英伟达GPU订单↑ → 数据中心建设加速 → 电力需求↑ → 公用事业与电网投资↑ → AI算力供应链景气延续；一级市场估值高企 → 二级市场AI股估值锚被拉高 → 若融资失败则反向冲击",
+        "what": "OpenAI计划以1.4万亿美元估值融资至少300亿美元，知情人士透露。",
+        "why": "市场原本对AI泡沫化存疑，这一巨额融资若完成将强化AI军备竞赛持续的预期，算力供应链和科技巨头的资本开支预期需上修。",
+        "chain": "OpenAI寻求300亿美元新融资 → 估值达1.4万亿美元 → 资金用于购买算力和招募人才 → 英伟达等芯片供应商订单预期增加 → 数据中心和电力需求上升 → 相关基础设施投资加速 → 科技巨头被迫跟进加大AI投入",
         "notes": [
-          "1.4万亿美元估值是什么概念？超过绝大多数上市公司市值，反映市场对AI头部公司未来盈利的极度乐观预期。",
-          "为什么融资规模重要？300亿美元用于购买算力、建设数据中心，直接转化为英伟达等供应商的订单。",
-          "AI资本开支如何传导到电力？数据中心耗电巨大，算力扩张意味着电力需求和电网投资增加，公用事业板块受益。",
-          "一级市场估值如何影响二级市场？私募市场的高估值会给公开市场同类公司提供估值参照，拉高整体板块估值。",
-          "风险在哪？如果AI商业化不及预期，巨额资本开支无法回收，估值可能大幅回调，并拖累供应链。",
-          "为什么OpenAI需要持续融资？训练前沿模型成本极高，且尚未实现稳定盈利，依赖外部资金维持运营和扩张。"
+          "1.4万亿美元估值是什么概念？接近全球市值前五的公司水平，而OpenAI目前收入远低于这个估值隐含的预期，说明投资者押注其未来增长极快。",
+          "为什么融资额这么大？训练和运行大模型需要海量GPU、数据中心和电力，资本开支极高，OpenAI需要持续输血。",
+          "这笔钱花到哪里？主要购买英伟达GPU、租用云算力、支付人才薪酬和建设数据中心。",
+          "对芯片供应链的影响：OpenAI的订单直接转化为英伟达、台积电等公司的收入，融资规模越大，上游订单越确定。",
+          "为什么科技巨头要跟进？如果OpenAI用巨额资金拉开差距，谷歌、Meta、微软等必须加大投入才能保持竞争力，形成军备竞赛。",
+          "风险是什么？如果AI收入增长不及预期，这些资本开支可能变成沉没成本，引发估值回调。"
         ]
       }
     }
