@@ -376,3 +376,54 @@ anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% �
 - **收藏没做**：9.11 自己就写明收藏只存 localStorage、「换设备或清缓存就没了」，
   静态站没有后端 → 云端同步做不了，按用户要求先跳过。
 - 也因此 `nav` 相关 CSS 全部改名 `.archive`（含手机端与暗色两处）。
+
+## 规则模式降级的根因与修复（2026-09-30）
+
+- **现象**：09-29 那期页面是规则模式（「今日无 AI 解读」），日志里的降级原因写着
+  `id 11 属于 policy，却被放进 tech`。
+- **根因**：`core/select.py` 的 `validate()` 原来对「跨板块串台」直接抛异常 →
+  修复重试一次，模型**原样复发同一个错**（deepseek-v4-flash 对这类分类口误很固执）
+  → 两次都失败 → 整天降级。串台本身只是分类标签放错，条目和四段解读都没问题，
+  为一次小口误赔掉一整天，代价和收益完全不成比例。
+- **改法**：`validate()` 拆成两遍 —— 第一遍按 `index[pid].category` 把条目归位
+  （日志留警告，不再抛异常），顺带对重复 id 去重；第二遍在归位结果上做字段/质量
+  校验。`prompt.zh.md` 与 `REPAIR_HINT` 各补一句「id 只能放进它所属板块的数组」。
+  编造 id、缺字段、环数/条数不足、LaTeX 这些**真错误仍然抛异常重试**，没放水。
+- **回归测试**：`tests/test_core.py` 加了「板块串台自动归位」「重复 id 去重」。
+
+### 我在这轮自己造的 bug（教训）
+
+- 归位重构时，第二遍循环漏了 `item = index[pid]`，`_card(item, ...)` 沿用了第一遍
+  循环的**残留变量** → 六个卡片全被套上第一遍最后一条新闻的标题/来源/URL。
+- 更糟的是**原测试没抓住**：原来只有单板块单条目，残留变量恰好正确。补了两条
+  多板块多条目的用例（逐条核对 url/source/title），去掉那行就失败。
+- 教训：在循环里重构「取条目 → 组装卡片」时，卡片用的 item 必须是**当轮**取的；
+  单元测试的输入要能暴露状态泄漏（多条目、跨板块），单条样本测不出来。
+
+### 别在这个仓库里手动 git stash（血的教训）
+
+- 从 bash 里跑 `git stash` 时命令被打断，`.git/refs` 与对象库一同丢失，
+  git 直接报 `not a git repository`。`logs/HEAD` 还在，才知道原本停在 `31dc047`。
+- 恢复步骤（有效）：把远端 clone 到临时目录 → 用新 `.git` 换掉坏的（坏的先改名留证）
+  → **用备份 `.git/config` 覆盖回来**（`user.name/email`=dailybrief、origin、
+  branch tracking 都在里面，clone 的默认 config 没有）→ 临时 clone 目录删掉。
+- 换完 .git 后会有几十个文件显示 `M`，那是**纯换行符/EOL 的 stat 缓存假改动**
+  （`git hash-object` 与索引 blob 相同，`git diff` 内容为空）。用
+  `git add --renormalize .` 一次清掉，别去逐个改文件。
+- 更重要的原因：`scripts/daily.bat` 的预检就是**不允许存在未提交改动**
+  （它不替你 stash/覆盖）。工作手头有改动时，当天简报会被直接拒跑 ——
+  2026-09-30 15:39 那次就是这么被拦下的，改完记得提交再等定时任务。
+
+### 跑这个项目的环境限制（沙箱）
+
+- `schtasks.exe` 与 `cmd.exe` 都被安全策略禁用（bash / PowerShell 两条路都不通），
+  所以 **`daily.bat` 没法直接调用**。手动补跑要照它的步骤自己走：
+  `git fetch origin main` + `git merge --ff-only origin/main` →
+  `python scripts/run_daily.py` → `python scripts/build_site.py` →
+  `git add data site` → `git commit` → `git push origin main` →
+  最后写 `logs\.last_success`（当天日期）。
+- python 用系统那个 `C:\Users\吃鱿鱼的鱿鱼\AppData\Local\Programs\Python\Python313\python.exe`
+  （anthropic / feedparser 都装在这儿）；跑之前设 `PYTHONIOENCODING=utf-8`。
+- 同日重跑是安全的：`core/seen.py` 的 `filter_new` 只排除**早于今天**的记录，
+  所以重跑得到同一批候选，不会把当天已上站的条目当成"往日"剔掉。
+
