@@ -342,6 +342,10 @@ def validate(raw: dict, index: dict[int, Item]) -> dict[str, list[dict]]:
         cards: list[dict] = []
         for p in buckets[cat][:TOP_N]:
             pid = int(p["id"])
+            # 【必须重新取】item 不能沿用第一遍循环的残留变量 —— 归位后这里要按
+            # pid 拿回自己的条目，否则所有卡片都会套用第一遍最后处理的那条新闻
+            # （2026-09-30 实测：六个卡片全变成同一个 Bloomberg 标题）。
+            item = index[pid]
 
             insight: dict = {}
             for field in INSIGHT_TEXT_FIELDS:

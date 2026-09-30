@@ -191,6 +191,22 @@ check("notes 保持为数组",
       isinstance(ok["markets"][0]["insight"]["notes"], list)
       and len(ok["markets"][0]["insight"]["notes"]) == 3)
 
+# 回归：2026-09-30 那次归位重构漏了「第二遍按 pid 重新取 item」，六个卡片全被
+# 套上第一遍最后一条新闻的标题/来源/URL。多板块、多条目才能验出来（单板块单条
+# 时残留变量恰好正确），所以这里两条 markets + 一条 policy 逐条核对归属。
+i3 = mk("降准落地", "https://a.com/m2", source="东方财富", cat="markets")
+index3 = {1: i1, 2: i2, 3: i3}
+multi = validate({"markets": [good, {**good, "id": 3}], "policy": [{**good, "id": 2}]},
+                 index3)
+check("每条卡片带回自己的条目（不串条目）",
+      [c["url"] for c in multi["markets"]] == ["https://a.com/m1", "https://a.com/m2"]
+      and multi["policy"][0]["url"] == "https://a.com/p1",
+      str([c["url"] for c in multi["markets"]]) + " / " + multi["policy"][0]["url"])
+check("每条卡片的来源与标题同步正确",
+      [c["source"] for c in multi["markets"]] == ["BBC", "东方财富"]
+      and multi["markets"][1]["title"] == "降准落地",
+      str([c["source"] for c in multi["markets"]]))
+
 
 def raises(payload) -> bool:
     try:
