@@ -294,6 +294,25 @@ code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
  border-radius:6px;color:#4a4740;text-decoration:none;font-size:13px}
 .archive a:hover{background:#e6e2d6}
 .archive a.cur{background:var(--ink);color:#fff}
+/* 年 / 月 两层分组（2026-10-04）：三角标 + 逐层缩进，天链接在月里只写"日"。
+   颜色一律用主题变量，暗色与 ink/paper 皮肤自动跟着走。 */
+.archive .ay:first-child{margin-top:0}
+.archive .ay>summary,.archive .am>summary{list-style:none;cursor:pointer;user-select:none;
+ display:flex;align-items:center;gap:7px;color:var(--dim)}
+.archive .ay>summary::-webkit-details-marker,
+.archive .am>summary::-webkit-details-marker{display:none}
+.archive .ay>summary::before,.archive .am>summary::before{content:"\\25b8";font-size:9px;
+ opacity:.7;transition:transform .15s ease}
+.archive .ay[open]>summary::before,
+.archive .am[open]>summary::before{transform:rotate(90deg)}
+.archive .ay>summary{font-size:12.5px;font-weight:600;padding:4px 0}
+.archive .ay>summary:hover,.archive .am>summary:hover{color:var(--accent)}
+.archive .ay>summary:focus-visible,.archive .am>summary:focus-visible{
+ outline:2px solid var(--accent);outline-offset:2px}
+.archive .am{margin:0 0 2px 15px}
+.archive .am>summary{font-size:12.5px;padding:3px 0}
+.archive .am-days{padding:3px 0 5px 15px}
+.archive .am-days a{margin:0 6px 6px 0;padding:3px 9px;font-size:12.5px;text-align:center}
 /* 设置项：样式照抄 9.11 复杂版 */
 .opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer}
 .opt input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent)}
@@ -356,6 +375,9 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
  .archive a{font-size:13.5px;padding:6px 11px}
+ .archive .am-days a{font-size:13px;padding:5px 10px}
+ .archive .am-days{padding-left:12px}
+ .archive .am{margin-left:12px}
 }
 /* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
    放不下自动换行，箭头维持 "→"（不再转成上下竖排）。 */
@@ -1004,6 +1026,56 @@ self.addEventListener('fetch', (e) => {
 """
 
 
+def render_archive(dates: list[str], current: str) -> str:
+    """历史归档：年 → 月 → 日 三层折叠，只展开「当前这期」所在的年月。
+
+    2026-10-04 改：原来是一整片平铺的日期链接（归档天数上限 60，就是 60 个按钮
+    铺满一屏），定位某一天全靠肉眼扫。现在按年分组、年下按月分组，每层都是原生
+    <details>；默认只展开当前正在看的这期所在的**年**和**月**，其余收起，一层
+    点击就能展开。
+
+    「当月」取的是**当前这页的日期**（current）所属的月，而不是系统当前月：
+    归档是渲染时烤进每一页的（见文件头说明），落地页即最新一期，所以打开站点看到
+    的就是当月展开；翻到 9 月那一期时展开的也是 9 月，和你正在看的内容对得上。
+    日期在月分组里只显示「日」，完整日期留在 title 里。
+    """
+    win = dates[:ARCHIVE_DAYS]
+    if not win:
+        return ""
+
+    anchor = current if current in win else win[0]
+    a_year, a_month = anchor[:4], anchor[5:7]
+
+    # dates 是新 → 旧排的，所以 dict 的插入顺序天然就是"最新的年/月在前"。
+    years: dict[str, dict[str, list[str]]] = {}
+    for d in win:
+        years.setdefault(d[:4], {}).setdefault(d[5:7], []).append(d)
+
+    blocks: list[str] = []
+    for year, months in years.items():
+        month_blocks: list[str] = []
+        for month, days in months.items():
+            open_attr = " open" if (year == a_year and month == a_month) else ""
+            links = "".join(
+                f'<a href="{d}.html" title="{d}"'
+                + (' class="cur"' if d == current else "")
+                + f'>{int(d[8:10])}</a>'
+                for d in days
+            )
+            month_blocks.append(
+                f'<details class="am"{open_attr}><summary>{int(month)} 月</summary>'
+                f'<div class="am-days">{links}</div></details>'
+            )
+        year_open = " open" if year == a_year else ""
+        blocks.append(
+            f'<details class="ay"{year_open}><summary>{year} 年</summary>'
+            f'{"".join(month_blocks)}</details>'
+        )
+
+    return (f'<details class="archive"><summary>历史归档</summary>'
+            f'{"".join(blocks)}</details>')
+
+
 def render_page(payload: dict, dates: list[str], current: str) -> str:
     mode = payload.get("mode", "llm")
     # 「AI 解读」这枚徽章撤了：每张卡本来就只有 AI 解读，页脚也写了「解读由 Claude
@@ -1059,13 +1131,7 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
             f'{ctl}'
             f'<p class="deck-hint">{hint}</p>')
 
-    links = "".join(
-        f'<a href="{d}.html"{" class=\"cur\"" if d == current else ""}>{d}</a>'
-        for d in dates[:ARCHIVE_DAYS]
-    )
-    # 归档：原生 <details>，一次点击展开 —— 9.11 那套要「底栏 → 抽屉」两步，太绕。
-    archive = (f'<details class="archive"><summary>历史归档</summary>{links}</details>'
-               if links else "")
+    archive = render_archive(dates, current)
     # 设置：顶栏右边的齿轮（原来在页脚前单独占一行）。行为照抄 9.11
     # （同样的 id / localStorage key）。︎ 是文本变体选择符 —— 不加的话
     # iOS/安卓会把 ⚙ 渲染成彩色 emoji，跟顶栏的素色图标格格不入。

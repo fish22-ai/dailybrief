@@ -348,7 +348,10 @@ flow = build_site.render_chain(long_chain)
 check("传导链一环一格", flow.count('class="hop"') == 10, str(flow.count('class="hop"')))
 check("环之间有箭头", flow.count('class="arw"') == 9)
 two = build_site.render_chain("A → B → C；D → E → F")
-check("支线另起一行", two.count('class="flow"') == 2)
+# 多链的 class 是 "flow multi"（.flow.multi 有独立样式、每条挂 ① ② 序号），
+# 这条断言原来写的是 class="flow"（单链那版），早就和实现脱节了 —— 2026-10-04 修正。
+check("支线另起一行", two.count('class="flow multi"') == 2, str(two[:120]))
+check("多链带序号", "①" in two and "②" in two)
 check("没有箭头时不吞掉内容", "整条都没有箭头" in build_site.render_chain("整条都没有箭头"))
 
 long_fml = build_site.render_note("why 价格反向？公式 `P = C/(1+y)¹ + (C+Face)/(1+y)ⁿ`。票息固定。")
@@ -378,6 +381,26 @@ check("旧归档回落渲染 盯什么/概念", ">盯什么<" in old_card and ">
 check("规则模式仍显示无解读占位",
       "今日无 AI 解读" in build_site.render_card(
           {"title": "t", "url": "https://a.com", "insight": {}}, "policy"))
+
+# 归档改成 年 → 月 → 日 三层折叠（2026-10-04）：原来 60 天平铺一屏全是日期按钮，
+# 太占地方。现在默认只展开「当前这页所在的年月」，其余收起，点一层展开一层。
+arch_dates = ["2026-10-04", "2026-10-01", "2026-09-29", "2025-12-31"]
+arch = build_site.render_archive(arch_dates, "2026-09-29")
+check("归档按年分组", arch.count('class="ay"') == 2)
+check("归档按月分组", arch.count('class="am"') == 3)
+check("当前这期的年月默认展开",
+      '<details class="ay" open><summary>2026 年</summary>' in arch
+      and '<details class="am" open><summary>9 月</summary>' in arch)
+check("只有当前年月是展开的", arch.count(" open") == 2, str(arch.count(" open")))
+check("月分组里只显示日（完整日期进 title）",
+      'title="2026-09-29" class="cur">29</a>' in arch)
+check("年、月都按新 → 旧排",
+      arch.index("2026 年") < arch.index("2025 年")
+      and arch.index(">10 月<") < arch.index(">9 月<"))
+arch_old = build_site.render_archive(arch_dates, "2020-01-01")
+check("当前页不在归档里时展开最新一期所在的月",
+      '<details class="am" open><summary>10 月</summary>' in arch_old)
+check("没有归档时不渲染这块", build_site.render_archive([], "2026-10-04") == "")
 
 print("\nconfig：用户配置")
 # 核心要求是"配置写错也要能出页面" —— 站点每周只跑一次，一个拼写错误让整周空白
