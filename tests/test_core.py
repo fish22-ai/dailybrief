@@ -382,24 +382,37 @@ check("规则模式仍显示无解读占位",
       "今日无 AI 解读" in build_site.render_card(
           {"title": "t", "url": "https://a.com", "insight": {}}, "policy"))
 
-# 归档改成 年 → 月 → 日 三层折叠（2026-10-04）：原来 60 天平铺一屏全是日期按钮，
-# 太占地方。现在默认只展开「当前这页所在的年月」，其余收起，点一层展开一层。
+# 归档：年 → 月 两层折叠 + 月历格子（2026-10-04 第二轮）。原来 60 天平铺一屏
+# 全是日期按钮，定位某天全靠肉眼扫；现在月里按真实日历铺 7 列，有简报的日子是
+# 可点的实心块、没有的只留一枚小点 —— 「哪几天有」看形状就知道。
+# 默认只展开当前这期所在的年月（不是系统当月）。
 arch_dates = ["2026-10-04", "2026-10-01", "2026-09-29", "2025-12-31"]
 arch = build_site.render_archive(arch_dates, "2026-09-29")
 check("归档按年分组", arch.count('class="ay"') == 2)
 check("归档按月分组", arch.count('class="am"') == 3)
+check("每月一张月历", arch.count('class="bcal"') == 3)
+check("月历表头周一到周日、每月各一份",
+      arch.count('<span class="bd-h">') == 21
+      and arch.count('<span class="bd-h">日</span>') == 3)
 check("当前这期的年月默认展开",
-      '<details class="ay" open><summary>2026 年</summary>' in arch
-      and '<details class="am" open><summary>9 月</summary>' in arch)
+      '<details class="ay" open>' in arch and '<details class="am" open>' in arch)
 check("只有当前年月是展开的", arch.count(" open") == 2, str(arch.count(" open")))
-check("月分组里只显示日（完整日期进 title）",
-      'title="2026-09-29" class="cur">29</a>' in arch)
+check("有简报的日子是可点的实心块",
+      '<a class="bd" href="2026-10-04.html" title="2026-10-04">4</a>' in arch)
+check("当前这期高亮", '<a class="bd cur" href="2026-09-29.html"' in arch)
+check("没有简报的日子只是一枚小点、不给链接",
+      '<span class="bd"></span>' in arch and 'href="2026-09-01.html"' not in arch)
+dots = arch.count('<span class="bd"></span>')
+pads = arch.count('<span class="bd-pad"></span>')
+check("整月都铺满：点数 = 31+30+31 天 - 4 期，空位数按各月 1 号是周几算",
+      dots == 88 and pads == 4, f"点 {dots} 空位 {pads}")
+check("月标题带期数", '9 月<span class="am-n">1 期</span>' in arch)
 check("年、月都按新 → 旧排",
       arch.index("2026 年") < arch.index("2025 年")
       and arch.index(">10 月<") < arch.index(">9 月<"))
 arch_old = build_site.render_archive(arch_dates, "2020-01-01")
 check("当前页不在归档里时展开最新一期所在的月",
-      '<details class="am" open><summary>10 月</summary>' in arch_old)
+      '<details class="am" open><summary>10 月' in arch_old)
 check("没有归档时不渲染这块", build_site.render_archive([], "2026-10-04") == "")
 
 print("\nconfig：用户配置")

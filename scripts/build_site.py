@@ -42,6 +42,7 @@ import json
 import re
 import shutil
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -311,8 +312,22 @@ code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
  outline:2px solid var(--accent);outline-offset:2px}
 .archive .am{margin:0 0 2px 15px}
 .archive .am>summary{font-size:12.5px;padding:3px 0}
-.archive .am-days{padding:3px 0 5px 15px}
-.archive .am-days a{margin:0 6px 6px 0;padding:3px 9px;font-size:12.5px;text-align:center}
+.archive .am-n{font-size:11px;color:var(--faint);margin-left:6px}
+/* 月历（2026-10-04 第二轮）：月里不再是平铺的一排「日」按钮，而是按真实日历铺
+   7 列。有简报的日子是可点的实心块，没有的日子只留一枚小点 —— 格子在位，所以
+   「这个月哪几天有」看一眼形状就知道，点阵又比满格数字轻，不至于喧哗。
+   实心块的底色/字色沿用上面的 .archive a / a.cur，暗色皮肤因此自动跟着走。 */
+.archive .bcal{display:grid;grid-template-columns:repeat(7,32px);gap:4px;
+ padding:4px 0 10px 15px}
+.archive .bcal .bd-h{font-size:11px;color:var(--faint);text-align:center;
+ padding-bottom:2px}
+.archive .bcal .bd-pad{visibility:hidden}
+.archive .bcal .bd,.archive .bcal a{height:32px;display:flex;align-items:center;
+ justify-content:center;border-radius:8px}
+.archive .bcal .bd::after{content:"";width:3px;height:3px;border-radius:50%;
+ background:var(--line)}
+.archive .bcal a{margin:0;padding:0;font-size:12.5px}
+.archive .bcal a::after{display:none}
 /* 设置项：样式照抄 9.11 复杂版 */
 .opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer}
 .opt input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent)}
@@ -374,9 +389,8 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .news a,.news .raw,.news .src{clear:both}
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
- .archive a{font-size:13.5px;padding:6px 11px}
- .archive .am-days a{font-size:13px;padding:5px 10px}
- .archive .am-days{padding-left:12px}
+ .archive .bcal{grid-template-columns:repeat(7,28px);padding-left:12px}
+ .archive .bcal .bd,.archive .bcal a{height:28px}
  .archive .am{margin-left:12px}
 }
 /* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
@@ -1026,18 +1040,40 @@ self.addEventListener('fetch', (e) => {
 """
 
 
-def render_archive(dates: list[str], current: str) -> str:
-    """历史归档：年 → 月 → 日 三层折叠，只展开「当前这期」所在的年月。
+def _calendar(year: str, month: str, days: list[str], current: str) -> str:
+    """一个月的月历：按真实日历铺 7 列，周一起。
 
-    2026-10-04 改：原来是一整片平铺的日期链接（归档天数上限 60，就是 60 个按钮
-    铺满一屏），定位某一天全靠肉眼扫。现在按年分组、年下按月分组，每层都是原生
-    <details>；默认只展开当前正在看的这期所在的**年**和**月**，其余收起，一层
-    点击就能展开。
+    2026-10-04 第二轮：月里原来是一排平铺的「日」按钮，改成月历格子 —— 有简报的
+    日子是可点的实心块，没有的日子只留一枚小点。格子在位，所以「这个月哪几天有」
+    看一眼形状就知道；点阵比满格数字轻，不至于喧哗。当前这期用 .cur（实心底）标出。
+    """
+    y, m = int(year), int(month)
+    nxt = date(y + 1, 1, 1) if m == 12 else date(y, m + 1, 1)
+    ndays = (nxt - timedelta(days=1)).day
+    have = set(days)
+
+    cells = "".join(f'<span class="bd-h">{w}</span>' for w in "一二三四五六日")
+    cells += '<span class="bd-pad"></span>' * date(y, m, 1).weekday()
+    for day in range(1, ndays + 1):
+        ds = f"{year}-{month}-{day:02d}"
+        if ds in have:
+            cells += (f'<a class="bd{" cur" if ds == current else ""}"'
+                      f' href="{ds}.html" title="{ds}">{day}</a>')
+        else:
+            cells += '<span class="bd"></span>'
+    return f'<div class="bcal">{cells}</div>'
+
+
+def render_archive(dates: list[str], current: str) -> str:
+    """历史归档：年 → 月 两层折叠，月里是一张**月历**；只展开当前这期所在的年月。
+
+    2026-10-04 改：原来是一整片平铺的日期链接（归档窗口最多 60 天 = 60 个按钮铺
+    满一屏），定位某一天全靠肉眼扫。改成月历格子后，「哪几天有简报」是看形状就
+    知道的 —— 实心块是有，小点是没有。
 
     「当月」取的是**当前这页的日期**（current）所属的月，而不是系统当前月：
     归档是渲染时烤进每一页的（见文件头说明），落地页即最新一期，所以打开站点看到
     的就是当月展开；翻到 9 月那一期时展开的也是 9 月，和你正在看的内容对得上。
-    日期在月分组里只显示「日」，完整日期留在 title 里。
     """
     win = dates[:ARCHIVE_DAYS]
     if not win:
@@ -1056,15 +1092,10 @@ def render_archive(dates: list[str], current: str) -> str:
         month_blocks: list[str] = []
         for month, days in months.items():
             open_attr = " open" if (year == a_year and month == a_month) else ""
-            links = "".join(
-                f'<a href="{d}.html" title="{d}"'
-                + (' class="cur"' if d == current else "")
-                + f'>{int(d[8:10])}</a>'
-                for d in days
-            )
             month_blocks.append(
-                f'<details class="am"{open_attr}><summary>{int(month)} 月</summary>'
-                f'<div class="am-days">{links}</div></details>'
+                f'<details class="am"{open_attr}><summary>{int(month)} 月'
+                f'<span class="am-n">{len(days)} 期</span></summary>'
+                f'{_calendar(year, month, days, current)}</details>'
             )
         year_open = " open" if year == a_year else ""
         blocks.append(
