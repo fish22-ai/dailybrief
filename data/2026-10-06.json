@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-06",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "Surge in borrowing costs hits corporate America",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/7c7ccb82-2973-47af-ad9b-b469c6ea0048?syn-25a6b1a6=1",
+      "published": "2026-10-06 12:00",
+      "raw_summary": "Sharp sell-off in US Treasury market starts to feed through to junk-rated companies",
+      "insight": {
+        "what": "美国国债剧烈抛售推高借贷成本，开始传导至垃圾级公司债，低评级企业发债更贵。",
+        "why": "市场原本预期利率下行、信用利差收窄，如今国债收益率上行，风险资产定价的锚被抬高，高收益债与高杠杆企业须重新估值。",
+        "chain": "国债被抛售 → 国债价格下跌 → 国债收益率上升 → 基准无风险利率抬高 → 垃圾债须提供更高利息 → 信用利差扩大 → 高杠杆企业融资成本上升 → 其股价与债券价格承压",
+        "notes": [
+          "国债收益率是整条利率曲线的起点：所有其他债券的定价都以国债收益率为基准，再加一层反映借款人风险的额外收益，也就是信用利差。",
+          "国债价格和国债收益率反向变动，因为票息固定，价格跌了，买入者用更少的钱拿到同样的票息，实际回报率就上升。",
+          "垃圾债又叫高收益债，是信用评级较低的公司发的债，违约风险高，所以必须付比国债更高的利息才能吸引投资者。",
+          "为什么先冲击垃圾债：评级越低的企业越依赖再融资，一旦基准利率抬高，它们多付的利息占利润比例更大，市场先怀疑它们能否还上。",
+          "信用利差扩大意味着市场对企业的违约担忧加重，这会同时压低企业债券价格和股票估值。"
+        ]
+      }
+    },
+    {
+      "title": "The bond market turns on France",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/9b252b46-a87c-45e7-a09a-45a39ce077b8?syn-25a6b1a6=1",
+      "published": "2026-10-06 12:00",
+      "raw_summary": "The country is being hit by a pre-election debt sell-off. Many fear it could shake the Eurozone",
+      "insight": {
+        "what": "法国大选前债市抛售加剧，投资者担心法国财政前景，欧元区稳定性受质疑。",
+        "why": "市场原本把法国国债视为欧元区核心安全资产，如今要求更高期限溢价，法国与德国国债利差走阔，欧元资产面临重估。",
+        "chain": "大选前财政承诺增加 → 市场担忧赤字扩大 → 法国国债被抛售 → 法德国债利差走阔 → 欧元区风险溢价上升 → 欧元承压 → 持有法国国债的银行与基金估值受损；若利差持续扩大，欧元区外围国家融资成本也会被带动上升",
+        "notes": [
+          "期限溢价是投资者持有长期债券时，为承担未来利率不确定和通胀风险而要求的额外补偿，财政前景越不确定，这部分补偿越高。",
+          "法德国债利差是法国国债收益率减德国国债收益率的差额，德国国债被视为欧元区最安全的资产，所以利差走阔等于市场对法国的信任下降。",
+          "为什么大选前会抛售：竞选承诺往往意味着更多财政支出或减税，市场担心赤字扩大、发债增加，债券供给多了价格就下跌。",
+          "欧元区银行大量持有本国国债，国债价格下跌会直接侵蚀银行资本，这就是所谓主权风险与银行风险相互传导。",
+          "欧元走弱的原因：一国资产风险上升时，国际资金会撤出该国资产，换成其他货币，欧元需求下降。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Ukraine attacks Moscow region with 650 drones as both sides step up strikes",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/world/russia-central-asia/article/3369888/ukraine-attacks-moscow-region-650-drones-both-sides-step-strikes?utm_source=rss_feed",
+      "published": "2026-10-06 14:44",
+      "raw_summary": "A massive attack involving 650 drones targeted Moscow overnight, leaving at least two dead, Russian authorities said on Tuesday. Most of the drones were destroyed by air defences at long range, includ",
+      "insight": {
+        "what": "乌克兰以650架无人机大规模袭击莫斯科地区，俄方称至少两人死亡，双方都在加大打击力度。",
+        "why": "市场原本在定价冲突逐步降温的可能，这次袭击说明战事升级、短期停火无望，能源与欧洲安全风险溢价重新上升。",
+        "chain": "无人机大规模袭击 → 冲突升级预期增强 → 停火希望下降 → 能源供应风险溢价上升 → 原油与欧洲天然气价格获支撑 → 欧洲通胀压力增加 → 欧央行降息空间受限 → 欧元区债券收益率与欧元同时受扰动",
+        "notes": [
+          "风险溢价指投资者因为担心某类事件发生，而要求比无风险资产更高的回报，冲突升级时这种溢价会上升。",
+          "为什么冲突影响能源价格：俄罗斯是全球重要油气出口国，乌克兰是过境通道，战事升级会让市场担心供应中断，油价气价就易涨难跌。",
+          "欧洲天然气价格对欧洲通胀影响很大，因为欧洲很多国家用天然气发电和取暖，气价涨会直接推高消费者物价指数。",
+          "通胀压力增加会限制央行降息：如果央行降息刺激经济，可能让通胀更难回落，所以它宁愿维持高利率更久。",
+          "债券收益率上升对欧元的影响是双向的：收益率高吸引资金流入买欧元资产，但增长受损又可能拖累欧元，最终取决于哪股力量更强。"
+        ]
+      }
+    },
+    {
+      "title": "India sizes up US F-35 stealth jets in landmark first on home turf",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/politics/article/3369870/india-sizes-us-f-35-stealth-jets-landmark-first-home-turf?utm_source=rss_feed",
+      "published": "2026-10-06 12:47",
+      "raw_summary": "US F-35 stealth fighters have joined Indian warplanes for military exercises near the Pakistan border in recent days, marking the first time America’s most advanced multirole combat aircraft has taken",
+      "insight": {
+        "what": "美国F-35隐形战机首次在印度本土与印军联合演习，地点靠近巴基斯坦边境。",
+        "why": "市场原本认为南亚地缘格局稳定，这次演习显示美印军事合作深化，可能改变区域军备采购与安全风险定价。",
+        "chain": "美印联合军演 → 军事合作深化 → 印度更倾向采购美制装备 → 区域军备竞赛预期上升 → 南亚地缘风险溢价上升 → 印度卢比与印度国债面临阶段性压力；同时美国军工企业订单预期改善，其股价获支撑",
+        "notes": [
+          "F-35是美国最先进的隐形战斗机，出口对象通常是核心盟友，能拿到F-35意味着两国军事互信达到很高水平。",
+          "地缘风险溢价上升意味着外资在投资该区域资产时会要求更高回报，或者干脆减少配置，这会让当地货币和债券承压。",
+          "为什么军工股会受益：军演和军购预期增加，意味着未来订单可能增加，军工企业的收入预期改善。",
+          "印度卢比承压的原因：如果区域局势紧张，外资可能撤出印度资产，换成美元等避险货币，卢比需求下降。",
+          "这类事件对市场的传导通常是短期的，除非演变成实际冲突，否则风险溢价会随时间回落。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "Banks Chase Risky Chip Loans in Asia’s $8.2 Trillion AI Buildout",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-06/banks-chase-risky-chip-loans-in-asia-s-8-2-trillion-ai-buildout",
+      "published": "2026-10-06 08:00",
+      "raw_summary": "The next wave of artificial intelligence debt financing is taking off in Asia.",
+      "insight": {
+        "what": "亚洲银行争相向芯片与数据中心项目放贷，参与亚洲8.2万亿美元AI基建浪潮，风险贷款增加。",
+        "why": "市场原本认为AI投资主要靠股权融资，如今债务融资大规模介入，意味着AI资本开支的杠杆上升，银行体系与AI周期绑定更深。",
+        "chain": "AI基建需求爆发 → 数据中心与芯片项目需要巨额资金 → 银行争相放贷 → 亚洲AI相关债务规模上升 → 银行对AI周期敞口加大 → 若AI投资回报不及预期，相关贷款违约风险上升 → 银行股与AI相关债券估值承压；若AI需求持续，则芯片与数据中心企业扩张加快",
+        "notes": [
+          "债务融资和股权融资的区别：债务融资是借钱，要还本付息，不稀释股权；股权融资是出让股份换钱，不用还但分享未来利润。",
+          "为什么银行愿意放贷：AI基建项目通常有数据中心或芯片设备作为抵押，且有长期合同支撑现金流，银行认为风险可控。",
+          "AI周期敞口指银行有多少贷款和AI产业相关，如果AI投资放缓，这些贷款可能收不回来，银行就会亏损。",
+          "8.2万亿美元是亚洲AI基建的总投资规模估计，这个数字越大，说明债务融资的潜在规模也越大。",
+          "如果AI投资回报不及预期，传导路径是：企业收入下降 → 还贷困难 → 银行不良贷款上升 → 银行收紧信贷 → AI企业融资更难，形成负反馈。"
+        ]
+      }
+    },
+    {
+      "title": "Nvidia enfrenta preguntas sobre contrabando de chips de IA en China",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/features/2026-10-05/nvidia-enfrenta-preguntas-sobre-contrabando-de-chips-de-ia-en-china",
+      "published": "2026-10-06 04:10",
+      "raw_summary": "Los chips de IA de la empresa siguen llegando a China a pesar de las restricciones estadounidenses. Las autoridades se preguntan por qué la empresa no detectó las señales de alerta.",
+      "insight": {
+        "what": "英伟达AI芯片仍持续流入中国，尽管美国有出口限制，当局质疑为何禁令未能阻止。",
+        "why": "市场原本认为出口管制会压缩英伟达中国收入，如今芯片仍流入，说明管制效果有限，英伟达收入预期与地缘政策风险需重新评估。",
+        "chain": "美国限制AI芯片对华出口 → 英伟达合规芯片仍流入中国 → 管制效果受质疑 → 美国可能收紧限制 → 英伟达中国收入不确定性上升 → 其股价对政策消息更敏感；同时中国获取算力渠道受限，国产替代预期升温",
+        "notes": [
+          "出口管制指一国政府限制某些产品卖给特定国家，美国限制英伟达高端AI芯片卖给中国，目的是延缓中国AI发展。",
+          "为什么芯片还能流入：可能通过第三方转口、灰色渠道，或者英伟达推出符合管制标准的降规版芯片，这些都在合规边缘。",
+          "英伟达中国收入不确定性上升，意味着分析师很难预测它未来能卖多少到中国，估值时会给更低确定性溢价。",
+          "国产替代预期升温：如果中国买不到美国芯片，就会加速扶持本国芯片企业，相关公司股价可能受益。",
+          "政策消息对英伟达股价影响大，因为任何管制收紧都可能直接削减它的收入，市场会迅速重新定价。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 7,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 18,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
