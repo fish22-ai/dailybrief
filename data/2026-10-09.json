@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-09",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "US 10-year Treasury yields risk hitting 6% for first time since 2000, Pimco says",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/a752a86c-cf05-4152-b842-2ae6b6bf3fe0?syn-25a6b1a6=1",
+      "published": "2026-10-09 12:00",
+      "raw_summary": "Bond giant’s investment chief warns that further sharp rise in borrowing costs is ‘feasible’ as market participants are forced to unwind losing bets",
+      "insight": {
+        "what": "品浩首席投资官警告，10年期美国国债收益率可能升破6%，为2000年以来首次，因杠杆投资者被迫抛售亏损债券。",
+        "why": "市场原本以为10年期美债收益率已在4%附近见顶，这一警告把长端利率的定价中枢上移，全球风险资产的估值分母都被重估。",
+        "chain": "对冲基金债券持仓亏损 → 被迫平仓卖出 → 长端美债卖压加大 → 10年期收益率上行 → 全球资产折现率抬升 → 高估值与长久期资产承压；同时美债收益率抬升 → 美元资产吸引力上升 → 新兴市场资本外流压力加大",
+        "notes": [
+          "为什么10年期美债收益率重要？它是全球资产定价的基准无风险利率 Rf，其他资产（股票、公司债、海外债）都在它之上加一层风险溢价来定价。",
+          "债券价格和收益率呈反向变动：收益率上升，存量债券价格下跌，谁手里拿着债谁就账面亏损。",
+          "什么是杠杆投资者被迫平仓？对冲基金常用借来的钱买债，债券价格一跌，抵押品价值缩水，券商要求追加保证金，基金只能被迫卖出，进一步压低价格，形成负反馈。",
+          "收益率破6%意味着什么？意味着美国政府的长期借贷成本回到2000年水平，房贷、企业贷、股票折现率都会同步往上抬。",
+          "折现率抬升为什么伤害成长股？成长股的大部分利润在未来，未来利润折回今天要除以一个利率因子，利率越高，折回后的现值越小。",
+          "为什么美元会走强？美债收益率高，全球资金愿意换美元买美债，美元需求上升，汇率走强，反过来压制新兴市场货币和资产。"
+        ]
+      }
+    },
+    {
+      "title": "Inflation on many everyday items was entirely due to tariffs, NY Fed says",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/10/08/inflation-tariffs-trump-fed-consumer-goods.html",
+      "published": "2026-10-09 01:31",
+      "raw_summary": "Tariffs added 2.9 percentage points to inflation in 67 categories of goods by February 2026, researchers at the New York Federal Reserve found.",
+      "insight": {
+        "what": "纽约联储研究显示，截至2026年2月，关税已推动67类商品价格上涨，累计贡献2.9个百分点的通胀。",
+        "why": "市场此前认为关税主要是一次性价格冲击、不影响长期通胀预期，这份研究把它坐实为持续通胀来源，压缩了美联储降息空间。",
+        "chain": "关税落地 → 进口商成本上升 → 转嫁给消费者 → 核心商品通胀黏性上升 → 美联储降息推迟 → 短端美债收益率维持高位 → 美元偏强、成长股承压",
+        "notes": [
+          "什么是核心通胀？剔除食品和能源后的通胀，美联储更看重它，因为它反映的是趋势性价格压力。",
+          "为什么关税会推高通胀？进口商品被加税，进口商要么自己承担利润缩水，要么把成本加到售价上，后者就推高物价。",
+          "为什么这份研究关键？它用数据把关税和2.9个百分点的涨价直接挂钩，打破了'关税只是短暂冲击'的假设。",
+          "降息推迟意味着什么？市场原本押注美联储很快降息，现在预期落空，短端国债收益率下不去，美元保持强势。",
+          "传导到股票：无风险利率不降，股票折现率就降不下来，高估值的科技成长股对利率最敏感，承压最大。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Can China use its widening US yield gap to boost the yuan’s global role?",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/business/banking-finance/article/3370252/can-china-use-widening-yield-gap-between-us-dollar-and-yuan-boost-global-role?utm_source=rss_feed",
+      "published": "2026-10-09 11:00",
+      "raw_summary": "China should seize a window opened by the widening US-China yield gap to strengthen the financing, hedging and asset-absorption systems behind the yuan, turning its cyclical low-interest-rate advantag",
+      "insight": {
+        "what": "南华早报提出，中国应抓住中美利差扩大的窗口，完善人民币融资、对冲和资产吸纳体系，推动人民币国际化。",
+        "why": "市场原本认为中美利差倒挂只会加剧人民币贬值压力，这篇观点把它重新解读为低成本融资窗口，改变了跨境资金流的叙事。",
+        "chain": "中美利差扩大 → 离岸人民币融资成本低于美元 → 境外主体借人民币意愿上升 → 人民币跨境使用增加 → 人民币国际需求上升 → 对汇率形成一定支撑；但若利差持续倒挂 → 套利资金反向流动 → 短期贬值压力仍在",
+        "notes": [
+          "什么是中美利差？中国国债收益率和美国国债收益率的差，利差倒挂指中国收益率低于美国，历史上会吸引资金流向美元资产。",
+          "为什么利差扩大还能利好人民币？因为融资成本低的人民币可以成为套利货币，境外机构借人民币换成美元投资，这个过程本身需要先买入人民币。",
+          "什么是资产吸纳体系？指让境外持有的人民币有地方投资，比如人民币债券、股票、理财产品，否则别人拿了人民币也只能换回美元。",
+          "为什么对冲体系重要？境外机构持有人民币资产怕汇率波动，需要外汇衍生品来对冲，市场深度不够他们就不敢长期持有。",
+          "这条逻辑成立的条件：资本账户开放程度、人民币资产回报率、汇率预期稳定性，三者缺一不可。"
+        ]
+      }
+    },
+    {
+      "title": "Turkey’s foreign minister says Ankara weighing Saudi defense support, rules out offensive role",
+      "source": "Defense News",
+      "url": "https://www.defensenews.com/global/mideast-africa/2026/10/08/turkeys-foreign-minister-says-ankara-weighing-saudi-defense-support-rules-out-offensive-role/",
+      "published": "2026-10-08 21:07",
+      "raw_summary": "Turkey, Pakistan and Saudi Arabia signed the Mecca Joint Defence Agreement, under which an armed attack on one member is considered an attack on all.",
+      "insight": {
+        "what": "土耳其外长表示，安卡拉正评估沙特防务支持，同时排除进攻性角色，此前土耳其、巴基斯坦、沙特签署麦加联合防务协议。",
+        "why": "市场原本认为中东防务格局由美国主导，这一协议意味着区域安全架构重组，可能影响中东资本流向和能源定价的风险溢价。",
+        "chain": "三方防务协议签署 → 区域安全联盟重组 → 中东地缘风险溢价重新定价 → 原油供给预期波动 → 油价风险溢价上升 → 能源进口国通胀预期抬头 → 相关货币和债券承压",
+        "notes": [
+          "什么是地缘风险溢价？市场为'可能发生冲突'这件事额外要求的补偿，通常体现在油价、黄金、国防股上。",
+          "为什么防务协议影响油价？中东是全球原油主产区，联盟变化会改变市场对供应中断概率的判断。",
+          "为什么土耳其排除进攻性角色重要？这说明协议偏防御，降低了短期军事冲突概率，油价的风险溢价不会立刻飙升。",
+          "传导到资产：油价上行会推高全球通胀，进而影响各国央行的利率路径，最终反映在债券收益率和汇率上。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "Nvidia-Backed Lumentum Sold Out of AI Server Parts Till 2029",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-09/nvidia-backed-lumentum-sees-opto-parts-capacity-sold-out-to-2029",
+      "published": "2026-10-09 08:24",
+      "raw_summary": "Lumentum Holdings Inc.’s optical components are “completely sold out” through early 2029 on demand from tech companies clamoring for faster AI data centers, according to its chief executive officer.",
+      "insight": {
+        "what": "英伟达投资的Lumentum表示，其AI服务器用光组件已售罄至2029年初，因科技公司抢购更快的互联部件。",
+        "why": "市场原本以为AI算力瓶颈在GPU，这条消息说明光互联已成为新的瓶颈，AI资本开支的受益环节从芯片扩展到光模块。",
+        "chain": "AI集群规模扩大 → GPU之间需要更快互联 → 光模块需求爆发 → Lumentum产能售罄至2029 → 光组件供不应求 → 价格与订单能见度上升 → 光模块与光通信板块盈利预期上修；同时供给瓶颈 → 云厂商资本开支被迫向光互联倾斜 → 算力部署节奏可能放缓",
+        "notes": [
+          "什么是光模块？AI服务器之间用光信号传输数据，光模块负责把电信号转成光信号，集群越大、互联越多，光模块需求越大。",
+          "为什么售罄至2029重要？这说明AI基础设施的投资不是短期脉冲，而是有长期订单支撑，改变了市场对AI资本开支可持续性的怀疑。",
+          "什么是资本开支？云厂商和科技公司花钱买服务器、建数据中心，这是AI产业链最上游的需求来源。",
+          "为什么光互联会成为瓶颈？GPU算力增长快，但把成千上万块GPU连起来需要极高带宽，光模块扩产周期长，跟不上GPU部署速度。",
+          "供给瓶颈的双面性：对光模块厂商是利好（订单饱满、议价力强），对云厂商是利空（部署变慢、成本上升）。"
+        ]
+      }
+    },
+    {
+      "title": "Franklin Templeton Sees Short-Term Debt as Sweet Spot for AI",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-09/franklin-templeton-sees-short-term-debt-as-sweet-spot-for-ai",
+      "published": "2026-10-09 14:48",
+      "raw_summary": "Franklin Templeton Chief Executive Officer Jenny Johnson said short-term debt issued by major technology companies offers investment opportunities in artificial intelligence, citing strong cash flows ",
+      "insight": {
+        "what": "富兰克林邓普顿CEO表示，大型科技公司发行的短期债券是AI投资的甜蜜点，兼具安全性和收益。",
+        "why": "市场原本把AI投资等同于买科技股，这条观点把AI敞口扩展到短期信用债，改变了机构资金在AI主题上的配置结构。",
+        "chain": "AI资本开支扩大 → 科技巨头增加发债融资 → 短期公司债供给上升 → 机构资金从股票转向短债 → 科技股资金面承压 → 但短债收益率提供稳定回报 → AI融资成本被压低 → 资本开支可持续性增强",
+        "notes": [
+          "什么是短期债券？到期时间一年以内的债券，价格对利率变动不敏感，风险低，收益比货币基金高。",
+          "为什么叫甜蜜点？在利率高位时，短债既能锁定较高收益率，又不用担心长债那种价格大幅波动。",
+          "为什么科技巨头发短债？它们现金流强、信用评级高，发短债成本低，用来支持AI数据中心等资本开支。",
+          "传导到股票：如果机构资金转去买短债，科技股的边际买盘减少，估值扩张动力减弱。",
+          "这条逻辑的另一面：短债融资成本低，反而让科技巨头更容易维持高额资本开支，对AI产业链上游是利好。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
