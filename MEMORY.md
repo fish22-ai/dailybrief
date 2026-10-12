@@ -447,3 +447,26 @@ anthropic SDK。**deepseek 默认输出 thinking 块，实测思考占掉 ~85% �
   早就改成带序号的多链版式了），旧断言还在检查 `class="flow"`，一直红着。改完
   测试套件**首次全绿**。
 
+
+## 中/英双语（2026-10-12）
+
+顶栏加了「中 | EN」分段开关。站点主体是「英文新闻原文 + 中文解读」，所以**英文版的
+内容 = 把中文解读译成英文**，中文原文折叠保留（用户原话：「英文版本的中文原文默认折叠」）。
+
+- **译文放数据不放渲染**：`core/translate.py` 在 run_daily 里紧跟精选之后**单独一次**
+  调用（精选输出已贴 max_tokens 上限，塞翻译必截断），写进卡片的 `insight_en`；
+  build_site 零模型调用，重渲历史页不烧 token。prompt 要求 chain 的 " → " 和 "；"
+  分隔符原样保留、反引号公式照抄 —— 渲染层（render_chain/render_note）因此中英通用。
+- **两半都进 HTML**：`L(中文, 英文)` 产出 `.lz`/`.le` 双 span，CSS 按
+  `<html data-lang>` 切显示；`<head>` 里一段小脚本先读 localStorage 定语言防闪。
+  只有 `<details>` 的 open（`.zhsrc` 在英文版默认收起）和 aria-label/title 归
+  SETTINGS_JS 的 `applyLang()` 管；`[data-aria-zh]` 是通用的属性换语言机制。
+- **中文原文块里标签永远中文**（`html[data-lang="en"] .zhsrc .lz` 压回来）——
+  那一块本来就是原文，跟着页面语言切会精神分裂。
+- **没有英文的期次**（历史数据/翻译失败）：卡片标 `data-forceopen`，英文版回落显示
+  中文并说明一句，绝不把唯一的内容折起来。
+- 历史补翻：`scripts/translate_data.py --date X / --recent N / --all`（一期一次调用）；
+  2026-10-11 已补翻 6 条，环数/条数/分支与原文 1:1。
+- 坑：WebFetch 验证不了 HTML 结构（会转 Markdown）；要看线上标记用 curl 原始 HTML。
+  无头截"英文版"得先把 `<head>` 里那段定语言脚本删掉再钉 `data-lang="en"`，否则它会把
+  语言改回 zh。
