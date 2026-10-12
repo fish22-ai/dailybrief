@@ -80,6 +80,11 @@ TAGLINE = config.get_str(
     "site", "tagline",
     "左栏是发生了什么，右栏是市场为什么在意、钱怎么一环一环流动、背后是哪个公式在动")
 FOOTER = config.get_str("site", "footer", "每周更新 · 市场货币金融 / 政策地缘大事件")
+# 英文版副标题（2026-10-12）。中文那行是 config 的 [site] tagline，英文版另给一句；
+# 想改就写进 config.toml 的 tagline_en，留空则回落这里的默认值。
+TAGLINE_EN = config.get_str(
+    "site", "tagline_en",
+    "English news, with the mechanism spelled out")
 ARCHIVE_DAYS = config.get_int("site", "archive_days", 60, lo=1, hi=3650)
 
 CSS = """*{box-sizing:border-box;margin:0;padding:0}
@@ -164,6 +169,53 @@ article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
  .orig>summary{display:none}
  .orig>*:not(summary){display:block;content-visibility:visible}
 }
+/* ── 中/英语言切换（html[data-lang]）──
+   两种语言的文字**都在 HTML 里**，这里只决定显示哪一种。页面首选是中文：index.html
+   上写死 data-lang="zh"，<head> 里那段小脚本再按 localStorage 覆盖 —— 禁用 JS 时
+   就是中文版，不闪、也不会两种语言一起露出来。 */
+html[data-lang="zh"] .le{display:none}
+html[data-lang="en"] .lz{display:none}
+.langbtn{flex:none;display:inline-flex;align-items:stretch;height:32px;
+ border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.langbtn button{appearance:none;border:0;background:transparent;color:var(--faint);
+ cursor:pointer;padding:0 11px;font:600 11px/1 -apple-system,BlinkMacSystemFont,
+ "Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:.6px}
+.langbtn button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.langbtn button[aria-pressed="false"]:hover{color:var(--accent)}
+.langbtn button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+/* ── 英文版里的中文原文（.zhsrc / .enread）──
+   中文版：中文解读就是正文 —— .zhsrc 连 summary 一起藏掉、内容强制摊开。
+   英文版：换成上面的 .enread，.zhsrc 退回成一枚「中文原文」折叠按钮、默认收起。
+   和 .orig 那套一样是**双保险**：CSS 压一层，open 属性由 LANG_JS 再显式设一遍。 */
+.enread{display:none}
+html[data-lang="en"] .enread{display:block}
+html[data-lang="en"] .orig>summary{display:none}
+html[data-lang="en"] .orig>*:not(summary){display:block;content-visibility:visible}
+.zhsrc>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;
+ align-items:center;gap:7px;font-size:12.5px;color:var(--dim);background:var(--code);
+ border:1px solid var(--line);border-radius:999px;padding:5px 13px;margin-top:2px}
+.zhsrc>summary::-webkit-details-marker{display:none}
+.zhsrc>summary::marker{content:""}
+.zhsrc>summary::after{content:"\\25be";font-size:10px;opacity:.7;
+ transition:transform .15s ease}
+.zhsrc[open]>summary::after{transform:rotate(180deg)}
+.zhsrc>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.zhsrc>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.zhsrc[open]>summary{margin-bottom:11px}
+/* 中文原文块里的段落标签**永远保持中文** —— 这一块本来就是"原文"，
+   标签跟着页面语言切反而精神分裂（英文页面里摊开一段中文，标签却写着 Show analysis）。
+   选择器比上面的 html[data-lang] 规则多一层，能压得住。 */
+html[data-lang="en"] .zhsrc .le{display:none}
+html[data-lang="en"] .zhsrc .lz{display:inline}
+html[data-lang="zh"] .zhsrc>summary{display:none}
+html[data-lang="zh"] .zhsrc>*:not(summary){display:block;content-visibility:visible}
+/* 没有英文的期次（历史数据 / 翻译失败）：英文版也当中文版读，别把唯一的内容折起来 */
+html[data-lang="en"] .zhsrc[data-forceopen]>summary{display:none}
+html[data-lang="en"] .zhsrc[data-forceopen]>*:not(summary){display:block;
+ content-visibility:visible}
+.noen{display:none}
+html[data-lang="en"] .noen{display:block;font-size:12px;color:var(--faint);
+ margin-bottom:10px;line-height:1.6}
 /* 卡片顶端一条色带 + 板块标签。因为滑卡把所有板块并成一条，卡片本身要自报板块。 */
 article{position:relative}
 article[data-cat]{overflow:hidden}
@@ -420,6 +472,38 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
 
 def esc(s: object) -> str:
     return html.escape(str(s or ""), quote=True)
+
+
+# ── 中英双语（2026-10-12）──
+# 站点的主体是「英文新闻原文 + 中文 AI 解读」。顶栏的中/EN 按钮切整页语言：
+# 中文版照旧；英文版把解读换成英文（数据里的 insight_en，见 core/translate.py），
+# 中文原文折叠在「中文原文 / Chinese original」里 —— 翻译稿有问题时能一眼对回原文。
+#
+# 两种语言的文字**都写进 HTML**，靠 CSS 按 <html data-lang> 切显示 —— 和解析折叠
+# 同一套思路：切语言是纯 CSS 的事，读屏器、「页面内查找」拿到的也是真实文字。
+# 只有 <details> 的展开状态（中文原文块在英文版里默认收起）必须用 JS，见 LANG_JS。
+def L(zh: str, en: str) -> str:
+    """一段双语标签：两半都进 HTML，CSS 按 html[data-lang] 决定显示哪半。"""
+    return f'<span class="lz">{esc(zh)}</span><span class="le">{esc(en)}</span>'
+
+
+# 段落标签（键 = insight 字段名）。'chain' 不在这两个元组里，它单独渲染。
+SEG_LABELS = {
+    "what": ("发生了什么", "What happened"),
+    "why": ("市场为什么在意", "Why it matters"),
+    "chain": ("金融传导", "Transmission"),
+    "watch": ("盯什么", "What to watch"),
+    "term": ("概念", "Concept"),
+}
+CATEGORY_LABELS_EN = {
+    "markets": "Markets · FX · Finance",
+    "policy": "Policy · Geopolitics",
+    "tech": "Tech · AI & Industry",
+}
+# 月历表头与月份名（英文版用）。
+WD_EN = ("Mo", "Tu", "We", "Th", "Fr", "Sa", "Su")
+MONTH_EN = ("", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 
 # 传导链的环分隔符。校验层要求模型用 " → "，这里放宽到裸箭头，
@@ -693,11 +777,14 @@ def _restates_title(card: dict, what: str) -> bool:
 
 
 def _collapsible(open_label: str, close_label: str, body: str,
-                 tail: str = "", cls: str = "notes") -> str:
+                 tail: str = "", cls: str = "notes", html_labels: bool = False) -> str:
     """默认收起的折叠块。原生 <details>/<summary>，**不需要一行 JS**。
 
     两种按钮文案都写进 HTML、只靠 CSS 切换显示，所以禁用 CSS、用读屏器、
     或者用浏览器的"页面内查找"时读到的都是真实文字，而不是空按钮。
+
+    html_labels=True 时按钮文案已经是 HTML（双语用的 `L()` 产物），不再转义 ——
+    默认仍是转义，免得调用方不小心把用户内容当标签插进来。
 
     [预留·行测解读模式] 将来想在同一张卡上再挂一个视角（例如把这条新闻改写成
     一道因果推理题 + 答案），不用碰交互代码，直接复用这个函数：
@@ -708,9 +795,10 @@ def _collapsible(open_label: str, close_label: str, body: str,
     同一张卡上挂几个折叠块互不影响（<details> 各自独立），样式沿用 .notes；
     要让它们互斥展开（手风琴）就给每个 <details> 加同一个 name 属性。
     """
+    enc = (lambda s: s) if html_labels else esc
     return (f'<details class="seg {cls}"><summary>'
-            f'<span class="tg tg-open">{esc(open_label)}</span>'
-            f'<span class="tg tg-close">{esc(close_label)}</span>'
+            f'<span class="tg tg-open">{enc(open_label)}</span>'
+            f'<span class="tg tg-close">{enc(close_label)}</span>'
             f'{tail}</summary>{body}</details>')
 
 
@@ -731,11 +819,57 @@ def _is_english(*texts: str) -> bool:
     return latin >= 12 and latin > cjk
 
 
+def render_segments(card: dict, src: dict) -> list[str]:
+    """把一份解读（中文或英文，字段结构相同）渲染成右栏的段落列表。
+
+    「发生了什么 / 市场为什么在意 / 金融传导」三段默认直接展示 —— 它们是"这条为什么
+    重要"的主线，收起来就等于没解读。只有解析（概念摊开讲）默认收起。
+    段落标签走 L() 双语，所以同一份代码同时服务中文版和英文版。
+    """
+    segs: list[str] = []
+    for key, _ in TEXT_SEGMENTS:
+        if not src.get(key):
+            continue
+        if key == "what" and _restates_title(card, src[key]):
+            continue                      # 快讯：标题已经说了，别再抄一遍
+        segs.append(f'<section class="seg {key}">'
+                    f'<div class="lb">{L(*SEG_LABELS[key])}</div>'
+                    f'<div class="tx">{esc(src.get(key))}</div></section>')
+
+    if src.get("chain"):
+        segs.append(f'<section class="seg chain">'
+                    f'<div class="lb">{L(*SEG_LABELS["chain"])}</div>'
+                    f'{render_chain(str(src["chain"]))}</section>')
+
+    notes = src.get("notes") or []
+    if isinstance(notes, str):
+        notes = [ln for ln in notes.splitlines() if ln.strip()]
+    items = [str(n) for n in notes if str(n).strip()]
+    if items:
+        # 解析动辄六到八条、每条两三行，全铺开会把卡片撑得看不到下一条。
+        # 默认收起、给个"展开解析"按钮，卡片就回到一眼能扫完的高度。
+        lis = "".join(render_note(n) for n in items)
+        cnt = L(f"{len(items)} 条", f"{len(items)} notes")
+        segs.append(_collapsible(
+            L("展开解析", "Show analysis"), L("收起解析", "Hide analysis"),
+            f"<ul>{lis}</ul>", tail=f'<span class="cnt">{cnt}</span>',
+            html_labels=True))
+    else:
+        segs += [
+            f'<section class="seg"><div class="lb">{L(*SEG_LABELS[key])}</div>'
+            f'<div class="tx">{esc(src.get(key))}</div></section>'
+            for key, _ in LEGACY_SEGMENTS if src.get(key)
+        ]
+    return segs
+
+
 def render_card(card: dict, cat: str) -> str:
     ins = card.get("insight") or {}
-    label = CATEGORY_LABELS.get(cat, "")
-    chip = (f'<div class="catpill" data-cat="{esc(cat)}">{esc(label)}</div>'
-            if cat else "")
+    ins_en = card.get("insight_en") or {}
+    chip = ""
+    if cat:
+        label = L(CATEGORY_LABELS.get(cat, ""), CATEGORY_LABELS_EN.get(cat, ""))
+        chip = f'<div class="catpill" data-cat="{esc(cat)}">{label}</div>'
 
     meta = " · ".join(x for x in (esc(card.get("source")),
                                   esc(card.get("published"))) if x)
@@ -744,9 +878,10 @@ def render_card(card: dict, cat: str) -> str:
     link = (f'<a href="{esc(card.get("url"))}" target="_blank" '
             f'rel="noopener noreferrer">{esc(card.get("title"))}</a>')
     if _is_english(card.get("title"), raw):
-        # 英文源：标题和摘要都收进这个 details，手机端默认只显示中文解读，
-        # 点「查看英文原文」才展开；桌面端由 CSS 直接摊开（见 .orig 那段）。
-        news_body = (f'<details class="orig"><summary>查看英文原文</summary>'
+        # 英文源：标题和摘要都收进这个 details，中文版手机端只显示中文解读，
+        # 点「查看英文原文」才展开；桌面端和英文版由 CSS/JS 直接摊开（见 .orig 那段）。
+        news_body = (f'<details class="orig">'
+                     f'<summary>{L("查看英文原文", "Show English original")}</summary>'
                      f'{link}{raw_html}</details><div class="src">{meta}</div>')
     else:
         news_body = f'{link}<div class="src">{meta}</div>{raw_html}'
@@ -755,41 +890,27 @@ def render_card(card: dict, cat: str) -> str:
     if not ins:
         # 规则模式：明确说没有解读，不拿新闻摘要冒充
         return (f'<article data-cat="{esc(cat)}">{left}'
-                f'<div class="noread">今日无 AI 解读（规则模式）</div></article>')
+                f'<div class="noread">'
+                f'{L("今日无 AI 解读（规则模式）", "No AI brief today (rules mode)")}'
+                f'</div></article>')
 
-    # 发生了什么 / 市场为什么在意 / 金融传导 三段默认直接展示 —— 它们是"这条为什么
-    # 重要"的主线，收起来就等于没解读。只有解析（概念摊开讲）默认收起。
-    segs = []
-    for key, label in TEXT_SEGMENTS:
-        if not ins.get(key):
-            continue
-        if key == "what" and _restates_title(card, ins[key]):
-            continue                      # 快讯：标题已经说了，别再抄一遍
-        segs.append(f'<section class="seg {key}"><div class="lb">{label}</div>'
-                    f'<div class="tx">{esc(ins.get(key))}</div></section>')
-
-    if ins.get("chain"):
-        segs.append(f'<section class="seg chain"><div class="lb">金融传导</div>'
-                    f'{render_chain(str(ins["chain"]))}</section>')
-
-    notes = ins.get("notes") or []
-    if isinstance(notes, str):
-        notes = [ln for ln in notes.splitlines() if ln.strip()]
-    items = [str(n) for n in notes if str(n).strip()]
-    if items:
-        # 解析动辄六到八条、每条两三行，全铺开会把卡片撑得看不到下一条。
-        # 默认收起、给个"展开解析"按钮，卡片就回到一眼能扫完的高度。
-        lis = "".join(render_note(n) for n in items)
-        segs.append(_collapsible("展开解析", "收起解析", f"<ul>{lis}</ul>",
-                                 tail=f'<span class="cnt">{len(items)} 条</span>'))
+    zh_body = "".join(render_segments(card, ins))
+    if ins_en:
+        # 英文版：先给英文解读，中文原文折叠在下面（默认收起，展开状态由 LANG_JS 管）
+        en_body = "".join(render_segments(card, ins_en))
+        read = (f'<div class="enread">{en_body}</div>'
+                f'<details class="zhsrc">'
+                f'<summary>{L("中文原文", "Chinese original")}</summary>'
+                f'{zh_body}</details>')
     else:
-        segs += [
-            f'<section class="seg"><div class="lb">{label}</div>'
-            f'<div class="tx">{esc(ins.get(key))}</div></section>'
-            for key, label in LEGACY_SEGMENTS if ins.get(key)
-        ]
+        # 没译文的期次（历史数据 / 翻译失败）：英文版回落显示中文，
+        # 别把整张卡唯一的内容折起来 —— 中文原样摊开，上面提一句为什么。
+        read = ('<p class="noen">No English for this archived issue — '
+                'showing the Chinese original.</p>'
+                f'<details class="zhsrc" data-forceopen>{zh_body}</details>')
 
-    return f'<article data-cat="{esc(cat)}">{left}<div class="read">{"".join(segs)}</div></article>'
+    return (f'<article data-cat="{esc(cat)}">{left}'
+            f'<div class="read">{read}</div></article>')
 
 
 
@@ -828,9 +949,15 @@ DECK_JS = r"""<script>
       document.documentElement.classList.add('nav-away');
       location.href = href;
     }
+    // 文案跟语言走：DECK_JS 是一份静态字符串，中英两句都写在这里，按
+    // <html data-lang> 挑一句（和页面上 .lz/.le 那套同一个开关）。
+    function T(zh, en) {
+      return document.documentElement.getAttribute('data-lang') === 'en' ? en : zh;
+    }
     function dayLabel(href) {
       var m = /(\d{4})-(\d{2})-(\d{2})\.html$/.exec(href);
-      return m ? (+m[2]) + '月' + (+m[3]) + '日' : '相邻一期';
+      if (!m) return T('相邻一期', 'adjacent issue');
+      return T((+m[2]) + '月' + (+m[3]) + '日', (+m[2]) + '/' + (+m[3]));
     }
     function update() {
       var w = track.clientWidth;
@@ -842,11 +969,15 @@ DECK_JS = r"""<script>
       var head = (i <= 0), tail = (i >= N - 1);
       if (prev) {
         prev.disabled = head && !newer;
-        prev.title = head && newer ? '上一天：' + dayLabel(newer) : '上一张';
+        prev.title = head && newer
+          ? T('上一天：', 'Previous day: ') + dayLabel(newer)
+          : T('上一张', 'Previous card');
       }
       if (next) {
         next.disabled = tail && !older;
-        next.title = tail && older ? '下一天：' + dayLabel(older) : '下一张';
+        next.title = tail && older
+          ? T('下一天：', 'Next day: ') + dayLabel(older)
+          : T('下一张', 'Next card');
       }
       // 只在手机端收：桌面屏幕高，翻页时下方归档卡片跟着上下跳反而碍眼。
       if (ctl && slides[i]) {
@@ -863,6 +994,9 @@ DECK_JS = r"""<script>
         if (top > 0 && window.scrollY > top) window.scrollTo(0, top);
       }
     }
+    // 语言一换，翻页键的 tooltip（「上一天：10月12日」）也得跟着换 ——
+    // 它是在 update() 里拼的，所以留个口子给 LANG_JS 重跑一次。
+    window.__deckUpdate = update;
     function go(i) {
       // 越过两端就是跨天：往后翻接更旧的一期，往回翻接更新那期的**最后一张**
       // （带 #last，落地后直接定位过去，接着往回滑的手感不会断）。
@@ -938,12 +1072,16 @@ if ('serviceWorker' in navigator) {
 }
 </script>"""
 
-# 设置项的行为，照抄 9.11 复杂版（同一个 localStorage key：dailybrief.showOrig）。
+# 设置项的行为，照抄 9.11 复杂版（同一个 localStorage key：dailybrief.showOrig），
+# 外加 2026-10-12 的中/英语言开关（dailybrief.lang）。
+# 语言那一半只负责三件事：记住选择、把当前语言那半压成实心、把 <details> 的 open
+# 和 aria-label/title 摆对 —— 文字本身的显示/隐藏全在 CSS 里（html[data-lang]）。
 # 桌面端强制摊开英文原文 —— 不赌浏览器对未 open 的 details 用 display:none 还是
 # content-visibility 隐藏，后者光靠 CSS 覆盖压不住，英文原文会被吞成空白。
 SETTINGS_JS = """<script>
 (function () {
   var OPT_KEY = 'dailybrief.showOrig';
+  var LANG_KEY = 'dailybrief.lang';
   function store(k, v) {
     try {
       if (v === undefined) return window.localStorage.getItem(k);
@@ -951,13 +1089,53 @@ SETTINGS_JS = """<script>
     } catch (e) { /* 隐私模式或禁用存储：当作没设置过，别让页面挂掉 */ }
     return null;
   }
+  function lang() {
+    return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh';
+  }
   function applyOrig() {
     var desktop = window.matchMedia('(min-width:761px)').matches;
-    var on = desktop || store(OPT_KEY) === '1';
+    // 英文版里左栏本来就是英文原文，没必要再折一次 —— 直接摊开。
+    var on = (lang() === 'en') || desktop || store(OPT_KEY) === '1';
     var ds = document.querySelectorAll('.orig');
     for (var i = 0; i < ds.length; i++) ds[i].open = on;
     var cb = document.getElementById('opt-orig');
     if (cb) cb.checked = store(OPT_KEY) === '1';
+  }
+  function applyLang() {
+    var l = lang();
+    // 1. 语言按钮：当前那一半压成实心
+    var btns = document.querySelectorAll('.langbtn button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-pressed',
+        btns[i].getAttribute('data-lang-set') === l ? 'true' : 'false');
+    }
+    // 2. 中文原文块：中文版强制摊开；英文版默认收起 —— 除非这一期没有英文
+    //    （历史数据 / 翻译失败），那时摊着才有内容可读。
+    var zs = document.querySelectorAll('.zhsrc');
+    for (var j = 0; j < zs.length; j++) {
+      zs[j].open = (l === 'zh') || zs[j].hasAttribute('data-forceopen');
+    }
+    // 3. aria-label / title 是属性，CSS 切不了，得逐个换。
+    //    （title 只覆盖原本就有 title 的元素，免得凭空长出 tooltip。）
+    var marks = document.querySelectorAll('[data-aria-zh]');
+    for (var k = 0; k < marks.length; k++) {
+      var txt = marks[k].getAttribute('data-aria-' + l);
+      if (!txt) continue;
+      marks[k].setAttribute('aria-label', txt);
+      if (marks[k].hasAttribute('title')) marks[k].setAttribute('title', txt);
+    }
+    applyOrig();
+    // 翻页键的 tooltip（「上一天：10月12日」）由 DECK_JS 拼，喊它重拼一次
+    if (window.__deckUpdate) window.__deckUpdate();
+  }
+  var lbtns = document.querySelectorAll('.langbtn button');
+  for (var n = 0; n < lbtns.length; n++) {
+    lbtns[n].addEventListener('click', function () {
+      var v = this.getAttribute('data-lang-set');
+      document.documentElement.setAttribute('data-lang', v);
+      store(LANG_KEY, v);
+      applyLang();
+    });
   }
   var box = document.getElementById('opt-orig');
   if (box) box.addEventListener('change', function () {
@@ -975,8 +1153,20 @@ SETTINGS_JS = """<script>
       if (e.key === 'Escape') gear.open = false;
     });
   }
-  applyOrig();
+  applyLang();
+  // 窗口尺寸只影响 .orig 的桌面/手机判断，不必重跑整套语言逻辑
   window.addEventListener('resize', applyOrig);
+})();
+</script>"""
+
+# 语言：进页面第一件事就把 <html data-lang> 定下来。放在 <head> 里、样式表之前，
+# 免得"先画出中文再跳到英文"闪一下。读不到（首次访问 / 禁用存储）就是中文版。
+LANG_HEAD = """<script>
+(function () {
+  var l = 'zh';
+  try { if (window.localStorage.getItem('dailybrief.lang') === 'en') l = 'en'; }
+  catch (e) { /* 禁用存储：保持中文 */ }
+  document.documentElement.setAttribute('data-lang', l);
 })();
 </script>"""
 
@@ -1052,7 +1242,8 @@ def _calendar(year: str, month: str, days: list[str], current: str) -> str:
     ndays = (nxt - timedelta(days=1)).day
     have = set(days)
 
-    cells = "".join(f'<span class="bd-h">{w}</span>' for w in "一二三四五六日")
+    cells = "".join(f'<span class="bd-h">{L(zh, en)}</span>'
+                    for zh, en in zip("一二三四五六日", WD_EN))
     cells += '<span class="bd-pad"></span>' * date(y, m, 1).weekday()
     for day in range(1, ndays + 1):
         ds = f"{year}-{month}-{day:02d}"
@@ -1092,18 +1283,23 @@ def render_archive(dates: list[str], current: str) -> str:
         month_blocks: list[str] = []
         for month, days in months.items():
             open_attr = " open" if (year == a_year and month == a_month) else ""
+            mname = MONTH_EN[int(month)]
             month_blocks.append(
-                f'<details class="am"{open_attr}><summary>{int(month)} 月'
-                f'<span class="am-n">{len(days)} 期</span></summary>'
+                f'<details class="am"{open_attr}><summary>'
+                f'{L(f"{int(month)} 月", mname)}'
+                f'<span class="am-n">'
+                f'{L(f"{len(days)} 期", f"{len(days)} issues")}</span></summary>'
                 f'{_calendar(year, month, days, current)}</details>'
             )
         year_open = " open" if year == a_year else ""
         blocks.append(
-            f'<details class="ay"{year_open}><summary>{year} 年</summary>'
+            f'<details class="ay"{year_open}><summary>'
+            f'{L(f"{year} 年", year)}</summary>'
             f'{"".join(month_blocks)}</details>'
         )
 
-    return (f'<details class="archive"><summary>历史归档</summary>'
+    return (f'<details class="archive">'
+            f'<summary>{L("历史归档", "Archive")}</summary>'
             f'{"".join(blocks)}</details>')
 
 
@@ -1112,14 +1308,20 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
     # 「AI 解读」这枚徽章撤了：每张卡本来就只有 AI 解读，页脚也写了「解读由 Claude
     # 生成」，挂在顶栏只是占地方 —— 位置让给设置齿轮。规则模式是例外：那天整页没有
     # 解读，这枚橙章是警示，留在原处和下面的黄色说明框互相呼应。
-    badge = ('<span class="badge rules">规则模式</span>' if mode == "rules" else "")
+    badge = (f'<span class="badge rules">{L("规则模式", "Rules mode")}</span>'
+             if mode == "rules" else "")
     # 顶部品牌区：logo（勢字）+ 知势 DailyBrief，照 dailybrief-ui 的 masthead。
     cn, _, en = BRAND.partition(" ")
     note = ""
     if mode == "rules":
         reason = payload.get("fallback_reason") or "LLM 不可用"
-        note = (f'<div class="note">今日为规则模式：只按来源权重与时间筛出了条目，'
-                f'<b>没有 AI 解读</b>。原因：{esc(reason)}</div>')
+        # 这里手写 .lz/.le 而不是用 L()：中间那段 <b> 是真标签，L() 会把它转义掉。
+        note = (f'<div class="note">'
+                f'<span class="lz">今日为规则模式：只按来源权重与时间筛出了条目，'
+                f'<b>没有 AI 解读</b>。原因：{esc(reason)}</span>'
+                f'<span class="le">Rules mode today: items were picked by source '
+                f'weight and recency only, so <b>there is no AI brief</b>. '
+                f'Reason: {esc(reason)}</span></div>')
 
     # 跨天滑动：卡组两头各挂一个相邻期的 URL，脚本在滑到头时跳过去。
     # 顺序和底部归档一致（新 → 旧），所以「下一张」到头的下一站是**更旧**的一期；
@@ -1146,35 +1348,56 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
             # 空板块不必再占一行卡片；但若全空，给一句提示。
             if not slides:
                 slides.append(f'<div class="deck-slide"><div class="deck-empty">'
-                              f'今日该板块无入选条目</div></div>')
+                              f'{L("今日该板块无入选条目", "No item picked for this section today")}'
+                              f'</div></div>')
 
-    ctl = (f'<div class="deck-ctl" aria-label="卡片导航">'
+    ctl = (f'<div class="deck-ctl" role="group" aria-label="卡片导航" '
+           f'data-aria-zh="卡片导航" data-aria-en="Card navigation">'
            f'<button class="deck-btn deck-prev" type="button" '
-           f'aria-label="上一张" disabled>‹</button>'
+           f'aria-label="上一张" data-aria-zh="上一张" data-aria-en="Previous card" '
+           f'disabled>‹</button>'
            f'<span class="deck-pos">1/{total}</span>'
            f'<button class="deck-btn deck-next" type="button" '
-           f'aria-label="下一张">›</button></div>')
-    hint = "← → 或按钮切换 · 手机左右滑动"
+           f'aria-label="下一张" data-aria-zh="下一张" data-aria-en="Next card">'
+           f'›</button></div>')
+    hint_zh = "← → 或按钮切换 · 手机左右滑动"
+    hint_en = "← → or the buttons · swipe on mobile"
     if older or newer:
-        hint += " · 滑到头翻到相邻一期"
+        hint_zh += " · 滑到头翻到相邻一期"
+        hint_en += " · keep going to jump to the adjacent issue"
     body = (f'<div class="deck-track" tabindex="0"{day_attrs}>'
             f'{"".join(slides)}</div>'
             f'{ctl}'
-            f'<p class="deck-hint">{hint}</p>')
+            f'<p class="deck-hint">{L(hint_zh, hint_en)}</p>')
 
     archive = render_archive(dates, current)
+
+    # 语言开关：顶栏的中/EN 分段控件（2026-10-12）。两种语言的正文都在页面里，
+    # 这个按钮只改 <html data-lang>（外加存进 localStorage），不重新请求页面。
+    langbtn = (
+        '<div class="langbtn" role="group" aria-label="Language">'
+        '<button type="button" data-lang-set="zh" aria-pressed="true">中</button>'
+        '<button type="button" data-lang-set="en" aria-pressed="false">EN</button>'
+        '</div>')
+
     # 设置：顶栏右边的齿轮（原来在页脚前单独占一行）。行为照抄 9.11
     # （同样的 id / localStorage key）。︎ 是文本变体选择符 —— 不加的话
     # iOS/安卓会把 ⚙ 渲染成彩色 emoji，跟顶栏的素色图标格格不入。
+    # 面板里的中英文案手写 .lz/.le（不是 L()），因为中间嵌着 <em> 标签。
     settings = (
-        '<details class="gear"><summary aria-label="设置" title="设置">⚙︎</summary>'
+        '<details class="gear"><summary aria-label="设置" title="设置" '
+        'data-aria-zh="设置" data-aria-en="Settings">⚙︎</summary>'
         '<div class="gear-panel">'
         '<label class="opt"><input type="checkbox" id="opt-orig">'
-        '<span>默认展开英文原文<em>关闭时，英文源的卡片在手机端仅显示中文解读，'
-        '需点击「查看英文原文」展开；桌面端始终显示英文原文。</em></span></label>'
+        '<span><span class="lz">默认展开英文原文<em>关闭时，英文源的卡片在手机端'
+        '仅显示中文解读，需点「查看英文原文」展开；桌面端始终显示英文原文。</em></span>'
+        '<span class="le">Always show the English original<em>When off, cards from '
+        'English sources show only the brief on mobile — tap 「Show English original」 '
+        'to expand. Always expanded on desktop.</em></span></span></label>'
         '</div></details>')
 
-    sub_html = f'<p class="sub">{esc(TAGLINE)}</p>' if TAGLINE else ""
+    sub_html = (f'<p class="sub">{L(TAGLINE, TAGLINE_EN)}</p>'
+                if TAGLINE else "")
 
     # 手机上的注意点，都踩过：
     # - charset 必须在 <head> 最前面（早于 title），否则中文有几率乱码
@@ -1182,9 +1405,10 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
     # - theme-color 让 Safari/Chrome 的地址栏跟着页面配色，加到主屏后不突兀
     # - apple-mobile-web-app-* 让 iOS「添加到主屏幕」后像个独立 App
     return f"""<!DOCTYPE html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN" data-lang="zh"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+{LANG_HEAD}
 <title>{esc(BRAND)} · {esc(payload.get("date"))}</title>
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme:light)">
@@ -1199,12 +1423,12 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1>
 {sub_html}</div>
-<span class="date">{esc(payload.get("date"))}</span>{badge}{settings}</header>
+<span class="date">{esc(payload.get("date"))}</span>{badge}{langbtn}{settings}</header>
 {note}
 {body}
 {archive}
 <footer>{esc(FOOTER)}<br>
-条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</footer>
+{L("条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议", "Items come from public RSS feeds and APIs; the brief is written by Claude. For study and reference only — not investment advice.")}</footer>
 </div>
 {DECK_JS}
 {SETTINGS_JS}

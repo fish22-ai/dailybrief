@@ -427,12 +427,23 @@ def rules_fallback(pools: dict[str, list[Item]]) -> dict[str, list[dict]]:
     return out
 
 
-def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, str]:
-    """返回 (板块卡片, mode, note)。mode 为 llm 或 rules。"""
+def make_client():
+    """建 anthropic 客户端。没 key / 没装 SDK 时返回 (None, 原因)。
+
+    base_url 由 SDK 自己读 ANTHROPIC_BASE_URL 环境变量：走中转站时必须设置它，
+    否则请求会打到 api.anthropic.com，中转站的 key 在那边一律 401。
+
+    超时必须显式给：SDK 默认 connect 只有 5 秒，中转站握手偶尔慢一拍就是
+    APITimeoutError，然后整天白白降级成规则模式。读取给足 600 秒 —— 四段解读
+    本来就慢，16000 tokens 跑几分钟很正常。
+
+    2026-10-12 从 select() 里抽出来，解读精选和英文翻译（core/translate.py）
+    共用这一份，两处别再各写一遍。
+    """
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         log.warning("ANTHROPIC_API_KEY 未设置，降级为规则模式")
-        return rules_fallback(pools), "rules", "未配置 API key"
+        return None, "未配置 API key"
 
     try:
         import anthropic
@@ -442,22 +453,23 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
             import httpx              # 0.x 老版本用的还是 httpx
     except ImportError:
         log.warning("anthropic SDK 未安装，降级为规则模式")
-        return rules_fallback(pools), "rules", "anthropic SDK 未安装"
+        return None, "anthropic SDK 未安装"
+
+    return anthropic.Anthropic(
+        api_key=api_key,
+        timeout=httpx.Timeout(600.0, connect=20.0),
+    ), ""
+
+
+def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, str]:
+    """返回 (板块卡片, mode, note)。mode 为 llm 或 rules。"""
+    client, why = make_client()
+    if client is None:
+        return rules_fallback(pools), "rules", why
 
     prompt, index = build_prompt(pools)
     if not index:
         return rules_fallback(pools), "rules", "今日无任何候选"
-
-    # base_url 由 SDK 自己读 ANTHROPIC_BASE_URL 环境变量：走中转站时必须设置它，
-    # 否则请求会打到 api.anthropic.com，中转站的 key 在那边一律 401。
-    #
-    # 超时必须显式给：SDK 默认 connect 只有 5 秒，中转站握手偶尔慢一拍就是
-    # APITimeoutError，然后整天白白降级成规则模式。读取给足 600 秒 —— 四段解读
-    # 本来就慢，16000 tokens 跑几分钟很正常。
-    client = anthropic.Anthropic(
-        api_key=api_key,
-        timeout=httpx.Timeout(600.0, connect=20.0),
-    )
     messages = [{"role": "user", "content": prompt}]
     last_err = ""
 

@@ -19,6 +19,18 @@
           "为什么干预不一定有效？如果市场贬值压力持续大于央行抛售能力，储备会被快速消耗，投资者预期央行撑不住反而加速外逃。",
           "汇率贬值对资产价格的影响：外资持有印度股票和债券的实际回报下降，可能引发资本外流，进一步打压股债价格。"
         ]
+      },
+      "insight_en": {
+        "what": "The Reserve Bank of India intervened in the FX market to support the rupee, as the US-Israel war with Iran pushed up energy costs and the rupee approached a record low.",
+        "why": "The market had expected the rupee to remain stable alongside India's high economic growth, but soaring energy import costs changed expectations for the trade deficit and capital outflows, forcing a repricing of rupee assets.",
+        "chain": "Middle East war pushes up oil prices → India's energy import costs rise → trade deficit widens → selling pressure on the rupee in the FX market increases → rupee approaches a record low → RBI sells dollars to intervene → FX reserves are depleted → if this continues, the rupee remains under pressure",
+        "notes": [
+          "Why do energy costs affect the exchange rate? India is a net oil importer, so higher oil prices mean it must spend more dollars to buy oil, increasing demand to buy dollars and sell rupees in the market, which depreciates the rupee.",
+          "What is a trade deficit? The gap when a country's imports exceed its exports. A widening deficit means the country is a net exporter of dollars in the international market, and its currency tends to depreciate.",
+          "How does central bank FX intervention work? The central bank uses its FX reserves (mainly dollars) to sell dollars and buy its own currency in the market, increasing demand for the local currency to support the exchange rate.",
+          "Why is intervention not always effective? If market depreciation pressure persistently exceeds the central bank's selling capacity, reserves will be depleted quickly, and investors expecting the central bank cannot hold the line may accelerate capital flight.",
+          "How does currency depreciation affect asset prices? The real returns for foreign investors holding Indian stocks and bonds decline, which may trigger capital outflows and further weigh on stock and bond prices."
+        ]
       }
     },
     {
@@ -36,6 +48,17 @@
           "航运保险费怎么影响油价？船东通过保险覆盖战争风险，保险费飙升意味着每桶油的运输成本增加，最终转嫁给买方。",
           "为什么通胀预期升温会影响央行？如果市场认为油价上涨会推高整体物价，央行就更难降息，甚至可能维持高利率。",
           "地缘冲突对资产价格的一般规律：避险资产（美元、黄金、美债）走强，风险资产（股票、新兴市场货币）承压。"
+        ]
+      },
+      "insight_en": {
+        "what": "The US military attacked a commercial oil tanker in the Gulf of Oman that was trying to break the US maritime blockade of Iranian ports, the first such attack in a month.",
+        "why": "The market had expected the Middle East conflict to remain contained, but a direct US military attack on a commercial vessel means the risk of escalation is rising, and oil prices and shipping insurance costs face repricing.",
+        "chain": "US military attacks oil tanker → transit risk in the Strait of Hormuz rises → tanker insurance rates soar → shipping costs increase → landed crude oil prices rise → global inflation expectations heat up → room for central bank rate cuts narrows",
+        "notes": [
+          "Why are the Gulf of Oman and the Strait of Hormuz important? About one-fifth of global oil shipments pass through the Strait of Hormuz, and any military conflict could disrupt supply.",
+          "How does shipping insurance affect oil prices? Shipowners cover war risk through insurance, and soaring premiums mean higher transportation costs per barrel of oil, which are ultimately passed on to buyers.",
+          "Why do rising inflation expectations affect central banks? If the market believes higher oil prices will push up overall prices, it becomes harder for central banks to cut rates and they may even keep rates high.",
+          "The general pattern of geopolitical conflict for asset prices: safe-haven assets (the dollar, gold, US Treasuries) strengthen, while risk assets (stocks, emerging market currencies) come under pressure."
         ]
       }
     }
@@ -58,6 +81,18 @@
           "滞胀是什么意思？经济增长放缓但通胀居高不下，央行陷入两难：降息怕通胀更高，加息怕经济更差。",
           "美元为什么在关税环境下反而可能走强？高利率预期吸引全球资本流入美国，推高美元需求。"
         ]
+      },
+      "insight_en": {
+        "what": "Trump's tariff policy and the Iran war have sharply raised US corporate costs, with an Ohio aluminum manufacturer saying tariffs have cost it millions of dollars more.",
+        "why": "The market had expected tariffs to be a bargaining chip that would eventually be rolled back, but actual corporate cost data show tariffs are turning into a persistent cost shock, requiring a reassessment of US corporate profit margins and inflation expectations.",
+        "chain": "Tariffs take effect → imported raw material costs rise → US manufacturers' profits are squeezed → companies either raise prices or cut jobs → core goods inflation stickiness strengthens → Fed rate cuts are delayed → the dollar remains strong → capital outflow pressure on emerging markets intensifies",
+        "notes": [
+          "Who actually pays tariffs? Tariffs are paid by importers at customs, and importers then pass them downstream to businesses or consumers through higher prices, so the ultimate bearers may be US companies and consumers.",
+          "Why do tariffs push up inflation? Imported goods become more expensive, and similar domestic goods also rise in price, lifting the overall price level, which is the core inflation issue the Fed watches.",
+          "Why is the aluminum products industry hit hard? Aluminum is a basic industrial raw material, and the US relies heavily on imports, so tariffs directly raise production costs and alternative sources are hard to find in the short term.",
+          "What does stagflation mean? Economic growth slows while inflation stays high, leaving central banks in a dilemma: cutting rates risks even higher inflation, while raising rates risks a worse economy.",
+          "Why might the dollar actually strengthen in a tariff environment? Expectations of higher rates attract global capital into the US, boosting demand for the dollar."
+        ]
       }
     },
     {
@@ -76,6 +111,18 @@
           "数字基础设施包括什么？跨境支付系统、数据中心、5G网络、数字身份认证等，是数字经济的基础支撑。",
           "香港为什么主办这个会议？香港是国际金融中心，主办APEC财长会议有助于强化其连接中国内地与亚太经济的桥梁角色。",
           "这类会议对市场的实际影响：通常不产生即时价格冲击，但会释放中长期政策方向信号，影响投资者对区域配置的判断。"
+        ]
+      },
+      "insight_en": {
+        "what": "Hong Kong Financial Secretary Paul Chan proposed four major priorities before the APEC finance ministers' meeting, which will focus on fiscal policies that support livelihoods, digital infrastructure, and other topics.",
+        "why": "The market had focused on whether APEC could achieve a breakthrough in trade and fiscal coordination, but the setting of the four priorities suggests the meeting leans more toward long-term structural issues rather than short-term stimulus, so policy expectations for Asia-Pacific assets need adjustment.",
+        "chain": "APEC finance ministers' meeting sets the agenda → digital infrastructure becomes a focus → expectations for cross-border data flows and payment system cooperation rise → related technology and financial infrastructure companies draw attention → if a framework agreement is reached, regional trade costs fall → Asia-Pacific supply chain efficiency improves → medium- to long-term positive for regional asset valuations",
+        "notes": [
+          "What is APEC? The Asia-Pacific Economic Cooperation, with 21 member economies, mainly promotes trade and investment liberalization and economic cooperation, and the finance ministers' meeting is one of its important mechanisms.",
+          "Why is the finance ministers' meeting worth watching? It discusses fiscal policy and macroeconomic coordination, directly affecting countries' tax, spending, and debt directions.",
+          "What does digital infrastructure include? Cross-border payment systems, data centers, 5G networks, digital identity authentication, and others, which are the foundational support for the digital economy.",
+          "Why is Hong Kong hosting this meeting? Hong Kong is an international financial center, and hosting the APEC finance ministers' meeting helps strengthen its role as a bridge connecting mainland China with the Asia-Pacific economy.",
+          "The actual market impact of such meetings: they usually do not produce immediate price shocks, but they release medium- to long-term policy direction signals that affect investors' judgments on regional allocation."
         ]
       }
     }
@@ -98,6 +145,18 @@
           "算力采购和模型发布的关系：每次发布更大更强的模型都需要大量GPU训练，如果发布节奏放缓，算力需求增速也会下降。",
           "为什么头部公司反而受益？更严的监管门槛会淘汰不合规的小玩家，微软、谷歌等有资源做合规的公司市场份额反而集中。"
         ]
+      },
+      "insight_en": {
+        "what": "Microsoft CEO Nadella called for an 'emergency brake' on advanced AI models, saying companies should treat powerful AI models as a potential insider threat.",
+        "why": "The market had expected AI regulation to rely mainly on voluntary frameworks, but a top CEO publicly calling for a mandatory brake means compliance costs may rise, and AI companies' valuation models need to incorporate a regulatory risk premium.",
+        "chain": "Nadella calls for an AI brake → the market expects stricter regulation → AI companies' compliance costs rise → the pace of model releases slows → growth in computing power procurement may decline → chip stocks such as Nvidia come under pressure → but leading companies actually gain market share due to compliance advantages",
+        "notes": [
+          "What is an 'emergency brake' for AI models? It refers to the ability to pause or restrict an AI system's operation when it may cause harm, similar to an emergency shutdown mechanism at a nuclear power plant.",
+          "Why would a CEO voluntarily call for regulation? On one hand, it responds to public concerns about AI safety; on the other hand, setting industry standards benefits leading companies because smaller companies find it harder to bear compliance costs.",
+          "What is a regulatory risk premium? It is the higher return investors demand because of policy uncertainty, reflected in a higher risk discount embedded in AI companies' stock prices.",
+          "The relationship between computing power procurement and model releases: each release of a larger and stronger model requires massive GPU training, so if the release pace slows, the growth rate of computing power demand also declines.",
+          "Why do leading companies benefit instead? Stricter regulatory thresholds eliminate non-compliant smaller players, so companies with the resources to handle compliance, such as Microsoft and Google, actually concentrate market share."
+        ]
       }
     },
     {
@@ -116,6 +175,18 @@
           "生态锁定是什么意思？当开发者的代码、工具链都基于英伟达的CUDA平台构建时，迁移到其他芯片的成本极高，形成护城河。",
           "为什么这对AMD是坏消息？如果英伟达通过投资提前锁定客户，AMD即使芯片性能接近，也很难拿到订单。",
           "定价权为什么重要？有定价权意味着英伟达可以在成本不增加的情况下提价，直接提升毛利率和利润。"
+        ]
+      },
+      "insight_en": {
+        "what": "Nvidia is reportedly in talks with Reflection AI to expand investment or provide computing power, in order to strengthen its relationship with this AI startup.",
+        "why": "The market had viewed Nvidia as a pure chip supplier, but this move shows it is locking in downstream customers through investment and computing power ties, and the AI chip competitive landscape may shift from selling hardware to ecosystem lock-in.",
+        "chain": "Nvidia invests in Reflection AI → locks in the startup's computing power procurement → competitors such as AMD find it harder to break in → Nvidia's ecosystem moat deepens → AI startups become more dependent on Nvidia → Nvidia's pricing power strengthens → gross margins stay high → chip stock valuations gain support",
+        "notes": [
+          "Why does Nvidia invest in AI startups? It binds customers through investment, ensuring they use Nvidia's GPUs rather than competitors' products, similar to 'investment for orders.'",
+          "The strategic significance of computing power supply: the scarcest resource for AI companies is GPU computing power, and Nvidia's promise to provide computing power is like giving a startup a lifeline in exchange for long-term lock-in.",
+          "What does ecosystem lock-in mean? When developers' code and toolchains are all built on Nvidia's CUDA platform, the cost of migrating to other chips is extremely high, forming a moat.",
+          "Why is this bad news for AMD? If Nvidia locks in customers in advance through investment, AMD will find it hard to win orders even if its chip performance is close.",
+          "Why does pricing power matter? Pricing power means Nvidia can raise prices without increasing costs, directly boosting gross margins and profits."
         ]
       }
     }

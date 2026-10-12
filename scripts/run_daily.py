@@ -25,6 +25,7 @@ from core.scoring import score_all                              # noqa: E402
 from core.seen import SeenStore                                  # noqa: E402
 from core.select import build_prompt, select                     # noqa: E402
 from core.timeutil import set_target_date, today_str                  # noqa: E402
+from core.translate import translate_insights                     # noqa: E402
 from fetchers.registry import SOURCES, fetch_all                 # noqa: E402
 
 DATA_DIR = ROOT / "data"
@@ -182,6 +183,14 @@ def main() -> int:
         return 0
 
     cards, mode, note = select(pools)
+
+    # 英文版内容：把中文解读译一遍，存进每张卡片的 insight_en（见 core/translate.py）。
+    # 译失败只记 warning，不拦当天产出 —— 英文版回落显示中文，中文版完全不受影响。
+    if mode == "llm":
+        total_cards = sum(len(cards[c]) for c in CATEGORIES)
+        log.info("英文解读 %d/%d 条就绪",
+                 translate_insights(cards), total_cards)
+
     out = write_outputs(cards, mode, note, stats)
 
     # 只把真正上站的条目记进 seen 档案，落选的候选明天还有机会

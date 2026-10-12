@@ -382,6 +382,51 @@ check("规则模式仍显示无解读占位",
       "今日无 AI 解读" in build_site.render_card(
           {"title": "t", "url": "https://a.com", "insight": {}}, "policy"))
 
+# ── 中/英双语（2026-10-12）──
+# 语言切换是纯 CSS + 一点 JS：两种语言的文字**都进 HTML**，靠 html[data-lang] 决定
+# 显示哪半。这里只验证"两半都写进去了、结构摆对了"；CSS 的显示切换靠截图另验。
+card_en = dict(ok["markets"][0],
+               insight_en={"what": "What happened", "why": "Why it matters",
+                           "chain": "A → B → C", "notes": ["n1", "n2", "n3"]})
+both = build_site.render_card(card_en, "markets")
+check("双语标签两半都在 HTML 里",
+      '<span class="lz">发生了什么</span><span class="le">What happened</span>' in both)
+check("英文解读单独成块（.enread）",
+      '<div class="enread">' in both and ">What happened<" in both)
+check("中文原文是折叠块、且默认不展开（open 由 JS 按语言设）",
+      '<details class="zhsrc">' in both and '<details class="zhsrc" open' not in both)
+check("中英各一份解析折叠块", both.count('class="seg notes"') == 2,
+      str(both.count('class="seg notes"')))
+noen = build_site.render_card({"title": "t", "url": "https://a.com",
+                               "insight": ok["markets"][0]["insight"]}, "markets")
+check("没有英文的期次：中文强制摊开，并说明为什么",
+      '<details class="zhsrc" data-forceopen>' in noen
+      and '<p class="noen">' in noen and '<div class="enread">' not in noen)
+page = build_site.render_page(
+    {"date": "2026-10-12", "mode": "llm", "markets": [card_en],
+     "policy": [], "tech": []}, ["2026-10-12"], "2026-10-12")
+check("页面默认中文（被禁用 JS 时也还是中文）",
+      '<html lang="zh-CN" data-lang="zh">' in page)
+check("顶栏带中/EN 按钮",
+      'class="langbtn"' in page and 'data-lang-set="zh"' in page
+      and 'data-lang-set="en"' in page)
+check("语言选择在首屏之前生效（<head> 里读 localStorage）",
+      "localStorage.getItem('dailybrief.lang')" in page)
+check("切语言后重设 aria/title 与中文原文展开态",
+      "applyLang" in page and "data-aria-zh" in page)
+
+print("\ntranslate：英文解读")
+from core.translate import _extract_json, _flat  # noqa: E402
+check("从 ``` 围栏里取 JSON", _extract_json('```json\n{"a": 1}\n```') == {"a": 1})
+check("前后有废话也能取", _extract_json('好的：{"a": {"b": "c"}} 以上。') == {"a": {"b": "c"}})
+_flat_cards = {"markets": [{"insight": {"what": "w", "why": "y",
+                                        "chain": "a → b", "notes": ["n1"]}}],
+               "policy": [], "tech": [{"insight": {}}]}
+_flat_out, _flat_where = _flat(_flat_cards)
+check("摊平时只收有解读的卡片（规则模式的空解读不入列）",
+      list(_flat_out) == ["markets-1"]
+      and _flat_where["markets-1"] == ("markets", 0))
+
 # 归档：年 → 月 两层折叠 + 月历格子（2026-10-04 第二轮）。原来 60 天平铺一屏
 # 全是日期按钮，定位某天全靠肉眼扫；现在月里按真实日历铺 7 列，有简报的日子是
 # 可点的实心块、没有的只留一枚小点 —— 「哪几天有」看形状就知道。
@@ -393,7 +438,7 @@ check("归档按月分组", arch.count('class="am"') == 3)
 check("每月一张月历", arch.count('class="bcal"') == 3)
 check("月历表头周一到周日、每月各一份",
       arch.count('<span class="bd-h">') == 21
-      and arch.count('<span class="bd-h">日</span>') == 3)
+      and arch.count(f'<span class="bd-h">{build_site.L("日", "Su")}</span>') == 3)
 check("当前这期的年月默认展开",
       '<details class="ay" open>' in arch and '<details class="am" open>' in arch)
 check("只有当前年月是展开的", arch.count(" open") == 2, str(arch.count(" open")))
@@ -406,13 +451,15 @@ dots = arch.count('<span class="bd"></span>')
 pads = arch.count('<span class="bd-pad"></span>')
 check("整月都铺满：点数 = 31+30+31 天 - 4 期，空位数按各月 1 号是周几算",
       dots == 88 and pads == 4, f"点 {dots} 空位 {pads}")
-check("月标题带期数", '9 月<span class="am-n">1 期</span>' in arch)
+check("月标题带期数",
+      f'<span class="am-n">{build_site.L("1 期", "1 issues")}</span>' in arch)
 check("年、月都按新 → 旧排",
       arch.index("2026 年") < arch.index("2025 年")
-      and arch.index(">10 月<") < arch.index(">9 月<"))
+      and arch.index('<span class="lz">10 月</span>')
+      < arch.index('<span class="lz">9 月</span>'))
 arch_old = build_site.render_archive(arch_dates, "2020-01-01")
 check("当前页不在归档里时展开最新一期所在的月",
-      '<details class="am" open><summary>10 月' in arch_old)
+      '<details class="am" open><summary><span class="lz">10 月</span>' in arch_old)
 check("没有归档时不渲染这块", build_site.render_archive([], "2026-10-04") == "")
 
 print("\nconfig：用户配置")
