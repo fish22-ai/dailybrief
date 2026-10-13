@@ -147,10 +147,11 @@ article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
 .src{color:var(--faint);font-size:12px}
 .raw{color:var(--dim);font-size:12.5px;margin-top:9px;padding-top:9px;
  border-top:1px dashed var(--line)}
-/* ── 英文原文折叠（.orig）──
-   英文源的卡片手机端默认只显示中文解读：标题和原文摘要都收进这个 details，
-   点「查看英文原文」才展开。桌面端不折（屏幕够宽，英文直接摊开更好读），
-   靠 author CSS 覆盖浏览器给 details 的 display:none —— 作者样式优先于 UA 样式。 */
+/* ── 英文摘要折叠（.orig）──
+   英文源的卡片：标题永远直接显示（那是这条新闻本身），只把英文摘要收进这个
+   details，中文版手机端点「查看英文摘要」才展开。桌面端不折（屏幕够宽，英文
+   直接摊开更好读），靠 author CSS 覆盖浏览器给 details 的 display:none ——
+   作者样式优先于 UA 样式。 */
 .orig{margin-bottom:8px}
 .orig>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;
  align-items:center;gap:6px;font-size:12.5px;color:var(--dim);background:var(--code);
@@ -162,7 +163,6 @@ article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
 .orig>summary:hover{color:var(--accent);border-color:var(--pillline)}
 .orig>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .orig[open]>summary{margin-bottom:9px}
-.orig>a{margin-bottom:8px}
 .orig>.raw{margin-top:0;padding-top:0;border-top:0}
 @media(min-width:761px){
  .orig{margin-bottom:0}
@@ -429,16 +429,12 @@ footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-
  .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
   -webkit-overflow-scrolling:touch}
  .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
- /* 手机端新闻栏的顶行：板块标签靠左浮、英文原文按钮靠右浮，并排放同一行。
-    两者都按 .catpill 的尺寸做（11px 字 + 2px/9px 内边距）才一样高。
-    （标签一浮起来就不占流，.orig 才会顶到内容区顶部，否则按钮要低一行。）
-    代价是**浮动的标签会一直影响后面每一个行盒**：中文源的卡没有 .orig，
-    标题就会挤在标签右边那条窄缝里（看着像从右上角起头）。所以标题/摘要/来源
-    一律 clear 到标签这一行下面 —— 中文源的版式和改之前完全一致。 */
- .catpill{float:left;margin:0 9px 6px 0}
- .orig>summary{float:right;margin:0 0 6px 9px;padding:2px 9px;font-size:11px;gap:4px}
- .orig[open]>summary{margin-bottom:6px}
- .news a,.news .raw,.news .src{clear:both}
+ /* 手机端新闻栏：标签、标题、来源、摘要按钮各占一行顺排（2026-10-13 起标题
+    不再折进按钮里，标题就是这条新闻本身，折起来等于把它藏了）。不再用浮动拼
+    「标签 + 按钮」同一行 —— 标题回到两者之间后那行拼法就散了，而且浮动会让
+    后续行盒挤进标签旁边的窄缝（中文源的卡看着像从右上角起头）。 */
+ .orig>summary{margin:9px 0 0;padding:3px 10px;font-size:11px;gap:4px}
+ .orig[open]>summary{margin-bottom:7px}
  .deck-btn{width:38px;height:38px}
  h1{font-size:19px}
  .archive .bcal{grid-template-columns:repeat(7,28px);padding-left:12px}
@@ -878,11 +874,14 @@ def render_card(card: dict, cat: str) -> str:
     link = (f'<a href="{esc(card.get("url"))}" target="_blank" '
             f'rel="noopener noreferrer">{esc(card.get("title"))}</a>')
     if _is_english(card.get("title"), raw):
-        # 英文源：标题和摘要都收进这个 details，中文版手机端只显示中文解读，
-        # 点「查看英文原文」才展开；桌面端和英文版由 CSS/JS 直接摊开（见 .orig 那段）。
-        news_body = (f'<details class="orig">'
-                     f'<summary>{L("查看英文原文", "Show English original")}</summary>'
-                     f'{link}{raw_html}</details><div class="src">{meta}</div>')
+        # 英文源：**标题永远直接亮出来**（2026-10-13 反馈：标题折进按钮里，
+        # 手机端满屏只剩一枚「查看英文原文」，连这条新闻是什么都看不到）。
+        # 收进折叠块的只剩英文摘要 —— 中文读者不需要一上来读 150 字英文，
+        # 想看再点开，卡片也不会被撑成一堵墙。桌面端与英文版由 CSS/JS 摊开。
+        orig = (f'<details class="orig">'
+                f'<summary>{L("查看英文摘要", "Show English excerpt")}</summary>'
+                f'{raw_html}</details>') if raw else ""
+        news_body = f'{link}<div class="src">{meta}</div>{orig}'
     else:
         news_body = f'{link}<div class="src">{meta}</div>{raw_html}'
     left = f'<div class="news">{chip}{news_body}</div>'
@@ -1389,11 +1388,11 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
         'data-aria-zh="设置" data-aria-en="Settings">⚙︎</summary>'
         '<div class="gear-panel">'
         '<label class="opt"><input type="checkbox" id="opt-orig">'
-        '<span><span class="lz">默认展开英文原文<em>关闭时，英文源的卡片在手机端'
-        '仅显示中文解读，需点「查看英文原文」展开；桌面端始终显示英文原文。</em></span>'
-        '<span class="le">Always show the English original<em>When off, cards from '
-        'English sources show only the brief on mobile — tap 「Show English original」 '
-        'to expand. Always expanded on desktop.</em></span></span></label>'
+        '<span><span class="lz">默认展开英文摘要<em>关闭时，英文源的卡片在手机端'
+        '只显示标题与中文解读，英文摘要需点「查看英文摘要」展开；桌面端始终显示。</em></span>'
+        '<span class="le">Always show the English excerpt<em>When off, cards from '
+        'English sources show only the headline and the brief on mobile — tap '
+        '「Show English excerpt」 to expand. Always expanded on desktop.</em></span></span></label>'
         '</div></details>')
 
     sub_html = (f'<p class="sub">{L(TAGLINE, TAGLINE_EN)}</p>'

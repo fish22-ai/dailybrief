@@ -402,6 +402,23 @@ noen = build_site.render_card({"title": "t", "url": "https://a.com",
 check("没有英文的期次：中文强制摊开，并说明为什么",
       '<details class="zhsrc" data-forceopen>' in noen
       and '<p class="noen">' in noen and '<div class="enread">' not in noen)
+
+# ── 英文源卡片：标题永远可见（2026-10-13 反馈）──
+# 标题曾和摘要一起折进「查看英文原文」按钮里，手机端满屏只剩一枚按钮，
+# 连这条新闻是什么都看不到。回归锁定：标题/来源在折叠块外，折叠块里只剩摘要。
+en_news = build_site.render_card(
+    {"title": "RBI intervenes as rupee slides toward record low",
+     "url": "https://ft.com/x", "raw_summary": "The Reserve Bank of India stepped in.",
+     "insight": ok["markets"][0]["insight"]}, "markets")
+o0 = en_news.index('<details class="orig">')
+o1 = en_news.index("</details>", o0)
+check("英文源：标题在折叠块外、始终可见",
+      en_news.index('<a href="https://ft.com/x"') < o0)
+check("英文源：来源行也在折叠块外",
+      en_news.index('<div class="src">') < o0)
+check("英文摘要收进折叠块、按钮文案改成「查看英文摘要」",
+      '<div class="raw">' in en_news[o0:o1]
+      and "查看英文摘要" in en_news and "查看英文原文" not in en_news)
 page = build_site.render_page(
     {"date": "2026-10-12", "mode": "llm", "markets": [card_en],
      "policy": [], "tech": []}, ["2026-10-12"], "2026-10-12")
