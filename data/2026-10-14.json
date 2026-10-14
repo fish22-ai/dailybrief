@@ -1,0 +1,267 @@
+{
+  "date": "2026-10-14",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "Japanese banks and insurers return to domestic bonds as yields surge",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/8c7ded63-6232-44df-98ba-25a46422e56f?syn-25a6b1a6=1",
+      "published": "2026-10-14 12:00",
+      "raw_summary": "Investors are closely watching for signs that the country’s institutions may be starting to repatriate capital after decades hunting for returns overseas",
+      "insight": {
+        "what": "日本银行和保险公司因本国收益率飙升而回流国内债券，结束数十年海外逐利。",
+        "why": "市场原本假设日本资金持续外流压低全球收益率，现在这个假设被打破，美债和海外资产面临抛压。",
+        "chain": "日本国债收益率↑ → 海外资产相对吸引力↓ → 日机构回流本国 → 美债需求↓ → 美债收益率↑ → 全球高估值资产承压；日元套利交易平仓 → 日元升值",
+        "notes": [
+          "为什么日本机构回流？日本长期实行超低利率，机构被迫出海买美债、澳债等追求收益。现在本国国债收益率升到有吸引力水平，回流是理性选择。",
+          "套利交易是什么？借低息日元，换成美元买高息资产，赚利差。一旦日元升值或日本利率上升，这个交易就亏钱，引发平仓。",
+          "为什么美债收益率上升？日本是美债最大海外持有者之一，需求减少意味着价格下跌、收益率上升。",
+          "全球资产承压逻辑：美债收益率是全球无风险利率的锚，它上升意味着所有风险资产的折现率上升，估值缩水。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动。"
+        ]
+      },
+      "insight_en": {
+        "what": "Japanese banks and insurers are repatriating funds into domestic bonds as local yields surge, ending decades of overseas yield-seeking.",
+        "why": "The market had assumed that Japanese capital outflows would continue to suppress global yields; now that assumption is broken, and U.S. Treasuries and overseas assets face selling pressure.",
+        "chain": "JGB yields ↑ → relative appeal of overseas assets ↓ → Japanese institutions repatriate to domestic bonds → U.S. Treasury demand ↓ → U.S. Treasury yields ↑ → globally high-valued assets under pressure；yen carry trade unwind → yen appreciation",
+        "notes": [
+          "Why are Japanese institutions repatriating? Japan has long maintained ultra-low interest rates, forcing institutions to go overseas to buy U.S. Treasuries, Australian bonds, and other assets in pursuit of yield. Now that domestic JGB yields have risen to attractive levels, repatriation is a rational choice.",
+          "What is a carry trade? Borrowing low-yielding yen, converting it into dollars to buy higher-yielding assets, and earning the interest rate spread. Once the yen appreciates or Japanese rates rise, the trade loses money and triggers an unwind.",
+          "Why are U.S. Treasury yields rising? Japan is one of the largest overseas holders of U.S. Treasuries; reduced demand means lower prices and higher yields.",
+          "The logic behind global asset pressure: U.S. Treasury yields are the anchor for the global risk-free rate. When they rise, the discount rate for all risk assets rises, and valuations shrink.",
+          "Rising yields, falling bond prices: bond prices and yields move inversely."
+        ]
+      }
+    },
+    {
+      "title": "Williams says Fed may not have to hike rates in 2027, at odds with traders",
+      "source": "CNBC Finance",
+      "url": "https://www.cnbc.com/2026/10/13/john-williams-fed-rate-hikes-2027.html",
+      "published": "2026-10-14 03:46",
+      "raw_summary": "New York Fed President John Williams sees one more rate hike in 2026 but no additional increase in 2027 as inflation pressures ease.",
+      "insight": {
+        "what": "纽约联储主席威廉姆斯表示美联储可能不必在2027年加息，与市场交易员预期相左。",
+        "why": "市场原本定价2027年还有加息，这番表态降低了长期利率路径预期，短端美债和利率敏感资产重新定价。",
+        "chain": "Williams放鸽 → 2027加息预期↓ → 长期利率路径下移 → 10Y美债收益率↓ → 成长股折现率↓ → 估值修复；美元走弱 → 新兴市场资本流入",
+        "notes": [
+          "为什么10年期国债？它反映市场对长期利率路径的预期，包括未来经济增长和通胀。",
+          "折现率是什么？把未来现金流折算成今天价值的利率。折现率下降，未来盈利的现值上升，成长股受益。",
+          "为什么与交易员预期相左很重要？联储官员表态是政策信号，市场会据此调整定价。分歧意味着未来波动可能加大。",
+          "美元走弱逻辑：利率预期下降，美元资产吸引力下降，资本流出美国。",
+          "鹰派 vs 鸽派：鹰派优先压通胀，倾向加息；鸽派优先保增长，对通胀容忍度高。Williams偏鸽。"
+        ]
+      },
+      "insight_en": {
+        "what": "New York Fed President Williams said the Fed may not need to raise rates in 2027, contrary to market traders' expectations.",
+        "why": "The market had originally priced in further rate hikes in 2027; these remarks lowered expectations for the long-term rate path, repricing short-end U.S. Treasuries and rate-sensitive assets.",
+        "chain": "Williams dovish → 2027 rate hike expectations ↓ → long-term rate path shifts down → 10Y U.S. Treasury yields ↓ → growth stock discount rate ↓ → valuation recovery；dollar weakens → emerging market capital inflows",
+        "notes": [
+          "Why the 10-year Treasury? It reflects the market's expectations for the long-term rate path, including future economic growth and inflation.",
+          "What is the discount rate? The interest rate used to convert future cash flows into today's value. When the discount rate falls, the present value of future earnings rises, benefiting growth stocks.",
+          "Why does disagreement with traders' expectations matter? Fed officials' remarks are policy signals, and the market adjusts pricing accordingly. Divergence means future volatility may increase.",
+          "The logic behind dollar weakness: lower rate expectations reduce the appeal of dollar assets, and capital flows out of the United States.",
+          "Hawkish vs. dovish: hawks prioritize fighting inflation and favor rate hikes; doves prioritize supporting growth and have a higher tolerance for inflation. Williams leans dovish."
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Iran: Political infighting deepens as economic woes mount during war",
+      "source": "DW",
+      "url": "https://www.dw.com/en/iran-political-infighting-deepens-as-economic-woes-mount-during-war/a-79654461?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-10-14 13:30",
+      "raw_summary": "Hardliners are stepping up pressure on Iran's government and calling for Foreign Minister Abbas Araghchi's removal. The oil minister resigned, but that's doing little to ease the pressure on President",
+      "insight": {
+        "what": "伊朗经济困境加剧，强硬派施压政府，石油部长辞职，政治内斗加深。",
+        "why": "市场原本定价伊朗石油出口稳定，内斗加剧可能影响出口政策，油价和地缘风险溢价面临重估。",
+        "chain": "伊朗内斗加剧 → 石油政策不确定性↑ → 出口中断风险↑ → 原油供给预期↓ → 油价↑ → 全球通胀预期↑ → 央行加息压力↑",
+        "notes": [
+          "为什么伊朗重要？它是OPEC成员国，石油出口对全球供给有影响。政治不稳定可能导致出口中断。",
+          "地缘风险溢价是什么？市场为应对可能的供给中断而在油价中加入的额外溢价。",
+          "油价上涨如何影响通胀？能源是生产成本，油价上升推高整体物价，央行可能被迫加息。",
+          "为什么石油部长辞职重要？他负责出口政策，辞职意味着政策可能变化。",
+          "传导到资产：油价上升利好能源股，利空航空、运输等用油行业。"
+        ]
+      },
+      "insight_en": {
+        "what": "Iran's economic difficulties are intensifying, hardliners are pressuring the government, the oil minister has resigned, and political infighting is deepening.",
+        "why": "The market had priced in stable Iranian oil exports; intensifying infighting could affect export policy, and oil prices and geopolitical risk premiums face repricing.",
+        "chain": "Iranian infighting intensifies → oil policy uncertainty ↑ → export disruption risk ↑ → crude oil supply expectations ↓ → oil prices ↑ → global inflation expectations ↑ → central bank rate hike pressure ↑",
+        "notes": [
+          "Why does Iran matter? It is an OPEC member, and its oil exports affect global supply. Political instability could lead to export disruptions.",
+          "What is a geopolitical risk premium? The extra premium added to oil prices by the market to account for possible supply disruptions.",
+          "How do rising oil prices affect inflation? Energy is a production cost. Rising oil prices push up overall prices, and central banks may be forced to raise rates.",
+          "Why does the oil minister's resignation matter? He is responsible for export policy, and his resignation means policy could change.",
+          "Transmission to assets: rising oil prices benefit energy stocks and hurt oil-consuming sectors such as airlines and transportation."
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "ASML Raises Full-Year Sales Outlook",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-14/asml-raises-full-year-sales-outlook-video",
+      "published": "2026-10-14 14:07",
+      "raw_summary": "ASML upgraded the low end of its 2026 sales forecast as increasing artificial intelligence spending boosts demand for the Dutch company’s chip-making machines. The firm projected annual sales of betwe",
+      "insight": {
+        "what": "ASML上调全年销售预期，因AI支出增加提升对其芯片制造设备的需求。",
+        "why": "市场原本担心芯片周期下行，ASML上调预期表明AI需求强劲，半导体设备板块和AI算力链重新定价。",
+        "chain": "AI支出↑ → 芯片需求↑ → 晶圆厂扩产 → ASML设备订单↑ → 营收预期↑ → 半导体设备股↑ → AI算力链估值↑",
+        "notes": [
+          "ASML是什么？荷兰公司，生产光刻机，是芯片制造最核心设备，全球垄断。",
+          "为什么ASML重要？它是芯片供应链的上游，它的订单反映晶圆厂对未来芯片需求的预期。",
+          "AI支出如何传导？AI需要大量算力芯片，芯片需要晶圆厂制造，晶圆厂需要ASML设备。",
+          "半导体周期是什么？芯片行业有繁荣和萧条周期，ASML上调预期表明周期可能向上。",
+          "为什么股价上涨？营收预期上调意味着未来盈利增加，估值提升。"
+        ]
+      },
+      "insight_en": {
+        "what": "ASML raised its full-year sales forecast as increased AI spending boosted demand for its chipmaking equipment.",
+        "why": "The market had been worried about a downturn in the chip cycle; ASML's raised guidance indicates strong AI demand, and the semiconductor equipment sector and AI compute chain are being repriced.",
+        "chain": "AI spending ↑ → chip demand ↑ → fab expansion → ASML equipment orders ↑ → revenue expectations ↑ → semiconductor equipment stocks ↑ → AI compute chain valuation ↑",
+        "notes": [
+          "What is ASML? A Dutch company that produces lithography machines, the most core equipment in chip manufacturing, with a global monopoly.",
+          "Why is ASML important? It is upstream in the chip supply chain, and its orders reflect fabs' expectations for future chip demand.",
+          "How does AI spending transmit? AI requires large amounts of computing chips, chips require fabs to manufacture, and fabs require ASML equipment.",
+          "What is the semiconductor cycle? The chip industry has boom and bust cycles, and ASML's raised guidance indicates the cycle may be turning upward.",
+          "Why do stock prices rise? Raised revenue expectations mean future earnings increase, and valuations improve."
+        ]
+      }
+    },
+    {
+      "title": "ASML Says It Can’t Keep Up With AI Demand for Chip Tools",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-14/asml-raises-full-year-sales-outlook-as-ai-boom-drives-demand",
+      "published": "2026-10-14 13:12",
+      "raw_summary": "ASML Holding NV warned that soaring artificial intelligence spending meant that it faces a potential supply shortfall with its chip-making machines in the next two years, even as it boosted its own 20",
+      "insight": {
+        "what": "ASML警告AI支出飙升导致芯片制造设备供应短缺，无法满足需求。",
+        "why": "市场原本假设供应链能跟上AI需求，供应短缺意味着芯片产能扩张受限，算力供给瓶颈可能推高芯片价格。",
+        "chain": "AI需求↑ → ASML设备供应短缺 → 晶圆厂扩产受限 → 芯片供给↓ → 芯片价格↑ → 算力成本↑ → AI应用成本↑",
+        "notes": [
+          "为什么供应短缺重要？如果设备不够，晶圆厂无法扩产，芯片供给受限。",
+          "芯片价格如何影响？供不应求推高价格，下游AI公司成本上升。",
+          "算力成本是什么？AI训练和推理需要大量芯片，芯片贵了算力就贵。",
+          "为什么ASML无法扩产？光刻机生产复杂，扩产需要时间和投资。",
+          "传导到资产：芯片股受益于价格上涨，AI应用公司承压于成本上升。"
+        ]
+      },
+      "insight_en": {
+        "what": "ASML warned that surging AI spending is causing a shortage of chipmaking equipment supply, making it unable to meet demand.",
+        "why": "The market had assumed supply chains could keep up with AI demand; a supply shortage means chip capacity expansion is constrained, and compute supply bottlenecks could push chip prices higher.",
+        "chain": "AI demand ↑ → ASML equipment supply shortage → fab expansion constrained → chip supply ↓ → chip prices ↑ → compute costs ↑ → AI application costs ↑",
+        "notes": [
+          "Why does the supply shortage matter? If there is not enough equipment, fabs cannot expand capacity, and chip supply is constrained.",
+          "How do chip prices affect things? Demand exceeding supply pushes prices higher, raising costs for downstream AI companies.",
+          "What is compute cost? AI training and inference require large amounts of chips; when chips become more expensive, compute becomes more expensive.",
+          "Why can't ASML expand production? Lithography machine production is complex, and expanding capacity requires time and investment.",
+          "Transmission to assets: chip stocks benefit from rising prices, while AI application companies come under pressure from rising costs."
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 0,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 19,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
