@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-19",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "India’s finance minister says market liquidity makes it easier for investors to exit",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html",
+      "published": "2026-10-19 16:23",
+      "raw_summary": "Sitharaman identified fuel, fertilizer and access to capital as risks for India’s economy in 2027.",
+      "insight": {}
+    },
+    {
+      "title": "US stocks set for rebound after AI sell-off",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/915ea7ca-1f35-4847-810a-fb29e8344496?syn-25a6b1a6=1",
+      "published": "2026-10-19 15:05",
+      "raw_summary": "Nasdaq 100 futures rise 1.3% following biggest weekly drop since Trump’s ‘liberation day’ in April last year",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Continuation of the National Emergency With Respect to the Democratic Republic of the Congo",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21432/continuation-of-the-national-emergency-with-respect-to-the-democratic-republic-of-the-congo",
+      "published": "2026-10-19 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {}
+    },
+    {
+      "title": "Continuation of the National Emergency With Respect to Sudan",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21431/continuation-of-the-national-emergency-with-respect-to-sudan",
+      "published": "2026-10-19 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Don Wilson on the GPU Market's Trillion Dollar Question",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-19/don-wilson-on-the-gpu-market-s-trillion-dollar-question-video",
+      "published": "2026-10-19 16:07",
+      "raw_summary": "When we spoke to Don Wilson, founder and CEO of DRW, in Chicago last year, he told us he wanted to build a market for GPUs that would eventually be bigger than oil. A year's time in the age of AI is a",
+      "insight": {}
+    },
+    {
+      "title": "Korea Data Center IPO to Test AI Investor Resolve After Tumult",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-19/korea-data-center-ipo-to-test-ai-investor-resolve-after-tumult",
+      "published": "2026-10-19 15:11",
+      "raw_summary": "Data-center infrastructure company Elice Inc. is poised to debut on South Korea’s tech-heavy Kosdaq market Tuesday, testing AI investors’ nerves after peer Firmus canceled its high-profile listing thi",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "APIConnectionError: Connection error.",
+  "source_stats": {
+    "fed": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 19,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
