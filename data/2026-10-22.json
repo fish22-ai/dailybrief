@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-22",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "上海金融监管局出台17项措施推动数字金融发展，探索建立数字金融评价体系",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3183697",
+      "published": "2026-10-22 19:09",
+      "raw_summary": "上海金融监管局网站发布《推动上海银行业保险业数字金融高质量发展的若干措施》，《若干措施》提出，上海金融监管局将探索建立数字金融评价体系，对数字金融发展水平和成效进行监测分析。加强督促指导，对政策落实不到位、执行走偏等问题予以纠正。强化监督管理，对相关风险及违规经营行为采取风险提示、监管约谈、监管通报、行政处罚等措施。",
+      "insight": {}
+    },
+    {
+      "title": "India mounts costly defence of rupee",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/4577cc43-d98b-43fc-8183-72777286ab80?syn-25a6b1a6=1",
+      "published": "2026-10-22 12:00",
+      "raw_summary": "Central bank has spent about $90bn of money raised from diaspora to shore up currency",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Who blinked first? Fragile EU-China trade peace sparks new war of words",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3371807/who-blinked-first-fragile-eu-china-trade-peace-sparks-new-war-words",
+      "published": "2026-10-22 20:00",
+      "raw_summary": "Less than two weeks after Brussels and Beijing struck a surprise deal to avert an escalating trade dispute, their fragile rapprochement has descended into a battle over who blinked first. In Brussels ",
+      "insight": {}
+    },
+    {
+      "title": "US-China ties need more working-level dialogues, not just summits: business chamber",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/economy/article/3371746/us-china-ties-need-more-working-level-dialogues-not-just-summits-business-chamber",
+      "published": "2026-10-22 20:00",
+      "raw_summary": "The president of the American Chamber of Commerce in China (AmCham China) has urged Beijing and Washington to push more negotiations down to working-level officials, saying businesses need greater lon",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "AI Buildout Becoming an Economic Predictor, Says Economist Slok",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-22/ai-buildout-becoming-economic-predictor-economist-slok-video",
+      "published": "2026-10-22 20:32",
+      "raw_summary": "Torsten Slok, chief economist at Apollo, discusses risks related to delays in data center construction, calling the AI buildout “a very, very critical driver of growth at the moment” for the US econom",
+      "insight": {}
+    },
+    {
+      "title": "Meta Reports $825 Billion in Future Spending Commitments",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-22/meta-reports-825-billion-in-future-spending-commitments",
+      "published": "2026-10-22 19:35",
+      "raw_summary": "Meta Platforms Inc. said it has agreed to spend about $825 billion in the future on various leases and contracts, many of them related to computing power and infrastructure for artificial intelligence",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261022210515913625321wbs2kfuf9Gwwm)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 0,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
