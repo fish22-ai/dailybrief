@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-23",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Risks to peso as Argentine elections loom",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/c97986bf-6d3a-47a9-834c-173228454c3d?syn-25a6b1a6=1",
+      "published": "2026-10-23 12:00",
+      "raw_summary": "With polls suggesting a close race, some analysts expect the currency to come under pressure",
+      "insight": {}
+    },
+    {
+      "title": "国际原子能机构：扎波罗热核电站关键外部供电设施完成修复",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3184890",
+      "published": "2026-10-23 22:17",
+      "raw_summary": "国际原子能机构当地时间10月23日表示，在该机构协调的俄乌局部停火保障下，乌克兰扎波罗热核电站附近受损的关键供电设施已完成修复，降低了核电站再次发生外部供电中断的风险。",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logistics Capacity",
+      "source": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-domestic-petroleum-production-refining-and-logistics-capacity-c139/",
+      "published": "2026-10-23 04:41",
+      "raw_summary": "MEMORANDUM FOR THE SECRETARY OF WAR SUBJECT: Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logis",
+      "insight": {}
+    },
+    {
+      "title": "Deadly shooting near Paris investigated as 'crime of terrorism', minister says",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c6ev38dj1g8zo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-23 22:15",
+      "raw_summary": "One person is killed and five wounded in a series of attacks and the suspected gunman has been apprehended.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Nscale Sued in Norway for Labor Violations at Data Center Site",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-23/nscale-sued-in-norway-for-labor-violations-at-data-center-site",
+      "published": "2026-10-23 22:13",
+      "raw_summary": "An engineer working at an Nscale data center in Norway has sued the British artificial intelligence infrastructure firm, alleging wrongful dismissal and an illegal subcontracting arrangement.",
+      "insight": {}
+    },
+    {
+      "title": "BlackRock’s Boivin Sees Rates Getting More in Line With the Environment",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-23/rates-getting-more-in-line-with-environment-boivin-video",
+      "published": "2026-10-23 20:16",
+      "raw_summary": "Jean Boivin, head of BlackRock Investment Institute, discusses the firm turning positive on US Treasuries, how the artificial intelligence buildout is influencing rates, and why long-term US Treasurie",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 202610232232223956578685rwknIXkEpgb8)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
