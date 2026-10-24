@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-24",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "France avoids downgrade from Moody’s in boost for Macron’s government",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/840f9c94-cb41-4340-9fc4-41e76d908831?syn-25a6b1a6=1",
+      "published": "2026-10-24 06:28",
+      "raw_summary": "Rating agency retains Aa3 score as it assumes ‘deficit-reducing budget for 2027 will be adopted’",
+      "insight": {}
+    },
+    {
+      "title": "下周44股面临解禁！合计解禁市值超1060亿元",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3185152",
+      "published": "2026-10-24 21:30",
+      "raw_summary": "据统计，下周将有44股解禁，按照最新收盘价计算，合计解禁市值1060.1亿元。 西安奕材-U下周将有28.37亿股上市流通，主要为首发原股东限售股份，解禁市值达602.83亿元。索辰科技的解禁规模次之，下周将有近0.4亿股上市流通，解禁股主要为首发原股东限售股份，解禁市值达73亿元。禾元生物-U、美利信、迈威生物-U、科大讯飞等股的解禁市值规模居前。",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "White House lifts tariffs on some Canadian goods as midterm elections loom",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c60qk573yzz8o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-24 08:36",
+      "raw_summary": "From 30 October, tariffs will be eased on some products, including certain machinery, and placed on others, such as carpets.",
+      "insight": {}
+    },
+    {
+      "title": "European student protests take aim at Serbia's elections",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/10/24/nx-s1-6012799/european-student-protests-take-aim-at-serbias-elections",
+      "published": "2026-10-24 19:42",
+      "raw_summary": "Students have been protesting across Europe. In Serbia, they've selected candidates to run for parliament in Sunday's elections. And they're aiming to end 14 years of government by the populist leader",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Making Advanced MicroChips Takes a Global Ecosystem",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-24/making-advanced-microchips-takes-a-global-ecosystem-video",
+      "published": "2026-10-24 20:00",
+      "raw_summary": "On Bloomberg This Weekend, Gideon Lewis-Kraus explains how advanced chipmaking depends on a deeply interconnected global network of specialized companies, including ASML and TSMC, making semiconductor",
+      "insight": {}
+    },
+    {
+      "title": "OpenAI Resumes Training AI, But Without Internet Access",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-23/openai-to-train-ai-models-without-internet-after-cyber-incidents",
+      "published": "2026-10-24 03:39",
+      "raw_summary": "OpenAI has begun cutting off internet access for its most capable artificial intelligence models during the training process in response to prior incidents in which its systems breached other companie",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261024213619632199444vmc2zQjRIUix1)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 16,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
