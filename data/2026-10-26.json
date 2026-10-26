@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-26",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "‘Do no harm’ — what gilt investors want from Healey in the Budget",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/244ae9ad-0778-4afe-8b6a-c2b1b9f81771?syn-25a6b1a6=1",
+      "published": "2026-10-26 13:00",
+      "raw_summary": "Big bond investors hope for ‘reassurance’ from new chancellor and warn against tweaking key fiscal rules",
+      "insight": {}
+    },
+    {
+      "title": "Singapore to store Saudi oil in underground caverns",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/1baa5eb0-d6e3-4989-beb0-1b29879ff606?syn-25a6b1a6=1",
+      "published": "2026-10-26 14:57",
+      "raw_summary": "Agreement with Saudi Aramco aims to secure energy supplies for south-east Asia amid Middle East war disruption",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Saudi-led coalition hits Houthi missile sites after Riyadh targeted again",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/world/middle-east/article/3372131/saudi-coalition-intercepts-missile-houthis-claim-new-attack-riyadh-airport",
+      "published": "2026-10-26 13:49",
+      "raw_summary": "The Saudi-led military coalition fighting Yemen’s Houthis struck several of the group’s missile launchers and storage facilities, a spokesman said on Monday, while the Iran-backed group claimed a new ",
+      "insight": {}
+    },
+    {
+      "title": "U.S. influence in Latin America at stake in runoff election in Brazil",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/10/25/nx-s1-6011223/u-s-influence-in-latin-america-at-stake-in-runoff-election-in-brazil",
+      "published": "2026-10-26 05:22",
+      "raw_summary": "A polarizing presidential election runoff in Latin America's largest economy and biggest democracy pits leftist Lula da Silva's legacy against Trump ally Flavio Bolsonaro, son of the former Brazilian ",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Can the AI Boom Survive a Margin Squeeze?",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-26/can-the-ai-boom-survive-a-margin-squeeze-video",
+      "published": "2026-10-26 15:07",
+      "raw_summary": "In this episode of Merryn Talks Money, Merryn Somerset Webb and Steve Hou, head of research at Silicon Data, delve into an emerging issue in the economics of artificial intelligence: token prices are ",
+      "insight": {}
+    },
+    {
+      "title": "SK Hynix Leveraged Funds to Be Delisted in US as AI Rally Cools",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-26/sk-hynix-leveraged-funds-to-be-delisted-in-us-as-ai-rally-cools",
+      "published": "2026-10-26 12:33",
+      "raw_summary": "Two leveraged exchange-traded funds tied to SK Hynix Inc. will be liquidated just months after their debut in the US, as investor appetite for the artificial intelligence trade moderates.",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 202610261607196799934099hl6zEg8Qo4oa)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
