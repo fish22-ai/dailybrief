@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-27",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Lula faces a fiscal reckoning after Brazil’s market rout",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/0231b234-14dc-4ff0-8263-e1063b0a25d5?syn-25a6b1a6=1",
+      "published": "2026-10-27 21:15",
+      "raw_summary": "Concerns about management of economy trigger worst day for currency in more than 25 years",
+      "insight": {}
+    },
+    {
+      "title": "Brazil’s currency plunges most since 1999 after Lula’s election victory",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/bffe028e-838d-4e74-b05e-62f6db4978db?syn-25a6b1a6=1",
+      "published": "2026-10-27 05:08",
+      "raw_summary": "São Paulo stocks tumble after leftwing politician’s win against Flávio Bolsonaro",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "With diesel deal, Trump is teaching Reagan’s lesson to a larger class",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/opinion/world-opinion/article/3372171/diesel-deal-trump-teaching-reagans-lesson-larger-class",
+      "published": "2026-10-27 20:30",
+      "raw_summary": "In June 1982, Ronald Reagan imposed sanctions to prevent European firms from using American technology to help build a pipeline that would carry Soviet gas to western Europe. He warned that Europe was",
+      "insight": {}
+    },
+    {
+      "title": "Truce begins in Ukraine city where residents ate weeds to survive",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/ck20wjnv3w0jo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-27 19:53",
+      "raw_summary": "The Oleshky ceasefire, which the White House said was secured by US First Lady Melania Trump, is meant to allow aid to get in and civilians to get out.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Apple refreshes the iMac with M6 chips",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1018467/apple-imac-m6-chip-announced-price-release",
+      "published": "2026-10-27 21:05",
+      "raw_summary": "Apple is updating the iMac with M6 chips. The new iMac generation was introduced today, ahead of Apple's \"Pro and Tell\" event that's scheduled to take place on Wednesday, giving Apple's all-in-one des",
+      "insight": {}
+    },
+    {
+      "title": "Apple updates the MacBook Pro with M6 chips",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1017664/apple-macbook-pro-m6-processor-upgrade",
+      "published": "2026-10-27 21:04",
+      "raw_summary": "Apple is giving its entry-level MacBook Pro a spec bump. After upgrading the entry-level MacBook Pro with its M5 chip a year ago, Apple is refreshing the laptop today with the M6 chip, which the compa",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 202610272131462289486857v67MaCQsNlW)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 18,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 18,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 19,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
