@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-28",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Shares of Ambani’s Jio rise 21% in India’s biggest IPO",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/32f2864d-c122-4d83-b0c5-8d2f1fcc63bd?syn-25a6b1a6=1",
+      "published": "2026-10-28 12:42",
+      "raw_summary": "Telecoms business raises $3.2bn at $108bn valuation in relief to stock market hit by war in Iran",
+      "insight": {}
+    },
+    {
+      "title": "What a local ceasefire means for the Russia-Ukraine war",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/77d0bba5-264d-4c2e-bdbc-d8493b1b4a25?syn-25a6b1a6=1",
+      "published": "2026-10-28 13:00",
+      "raw_summary": "Washington and Moscow are discussing a potential return by American companies to the…",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Hongkong Post reports record HK$905 million deficit in ninth year of losses",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/hong-kong/society/article/3372405/hongkong-post-reports-record-hk905-million-deficit-ninth-year-losses",
+      "published": "2026-10-28 14:39",
+      "raw_summary": "Hong Kong’s government-owned postal service reported a record operating deficit of HK$905 million (US$115 million) in 2025-26, its ninth straight annual loss. In its annual report published on Wednesd",
+      "insight": {}
+    },
+    {
+      "title": "Ceasefire extended across Ukraine's Kherson region, officials say",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c6lye1w9p2l8o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-28 06:11",
+      "raw_summary": "The truce was originally planned for the stranded residents of Oleshky, and Russia and Ukraine say no breaches have been reported.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Gen Z Is Still Skeptical of AI-Infused Dating Apps, New Survey Finds",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-28/gen-z-is-still-skeptical-of-ai-infused-dating-apps-new-survey-finds",
+      "published": "2026-10-28 13:04",
+      "raw_summary": "Gen Z is dating more, according to a new survey, but the under-30s are still wary of artificial intelligence-infused apps — which may not bode well for companies that have been adapting their products",
+      "insight": {}
+    },
+    {
+      "title": "Personal Agent走向真实任务，蚂蚁百灵开源 Ling-3.1-flash-1019",
+      "source": "量子位",
+      "url": "https://www.qbitai.com/2026/10/505928.html",
+      "published": "2026-10-28 12:04",
+      "raw_summary": "10月28 日，蚂蚁集团旗下百灵大模型正式开源 Ling-3.1-flash-1019。",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261028150200942144272q8wwsQD0KG9Xe)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 1,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 1,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
