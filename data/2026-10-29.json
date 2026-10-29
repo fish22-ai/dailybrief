@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-29",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Healey avoids bond market wobble with ‘uneventful’ first Budget",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/d7788234-ffaf-49a5-9528-cff0a1685fe9?syn-25a6b1a6=1",
+      "published": "2026-10-29 01:16",
+      "raw_summary": "Gilts hold on to pre-Budget gains following modest package of tax and spending changes",
+      "insight": {}
+    },
+    {
+      "title": "Bank of England able to take UK Budget in its stride despite slippage in deficit reduction",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/4fe7b495-a682-4f69-a385-a02c892db0d7",
+      "published": "2026-10-29 00:39",
+      "raw_summary": "Higher energy prices and interest costs take their toll on borrowing outlook",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Google supplier Biwin, GPU leader Moore Threads see stocks plunge despite revenue surge",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3372535/google-supplier-biwin-gpu-leader-moore-threads-see-stocks-plunge-despite-revenue-surge",
+      "published": "2026-10-29 13:35",
+      "raw_summary": "Shares of Chinese semiconductor suppliers Biwin Storage Technology and Moore Threads tumbled on Thursday alongside a broader rout in mainland technology stocks, despite blockbuster third-quarter reven",
+      "insight": {}
+    },
+    {
+      "title": "Flávio Bolsonaro denies fleeing Brazil after landing in Miami",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-29 09:14",
+      "raw_summary": "The defeated Brazilian candidate claims to be the victim of a coup d’état and political persecution, recycling unsubstantiated allegations of “electoral fraud”.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Air Liquide’s Sales Grow on Sustained AI-Related Demand",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-29/air-liquide-sales-grow-sustained-ai-related-demand-semiconductor-chip-making",
+      "published": "2026-10-29 14:43",
+      "raw_summary": "Air Liquide SA revenue grew to its highest in nearly four years, propelled by increased demand in its artificial intelligence-exposed unit.",
+      "insight": {}
+    },
+    {
+      "title": "STMicro Forecasts Growth As Recovery in Chip Demand Continues",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-29/stmicro-forecasts-growth-as-recovery-in-chip-demand-continues",
+      "published": "2026-10-29 14:08",
+      "raw_summary": "STMicroelectronics NV forecast fourth-quarter revenue growth as a recovery in chip demand continues after a prolonged slump.",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261029150211186418909wbs2ka1KoTvJZ)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
