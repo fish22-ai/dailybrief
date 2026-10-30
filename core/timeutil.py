@@ -30,6 +30,16 @@ SLOW_WINDOW_HOURS = config.get_int("fetch", "slow_window_hours", 24 * 7,
 
 
 def now_local() -> datetime:
+    """当前时间；补跑历史日期（--date）时返回**目标日的 23:59:59**。
+
+    抓取窗口（in_window）、时间衰减打分（scoring）、中文源的相对时间解析
+    （html_cn 的「N 小时前」）全都锚在这个「现在」上。补跑时若仍用真实现在，
+    老缓存的条目会被 36 小时窗口整个砍掉，补天就成了空池子 —— 2026-10-30
+    补 09-24 / 10-19 / 10-22~10-29 时踩的坑。
+    """
+    if _TARGET_DATE:
+        return (datetime.strptime(_TARGET_DATE, "%Y-%m-%d")
+                .replace(hour=23, minute=59, second=59, tzinfo=TZ))
     return datetime.now(TZ)
 
 

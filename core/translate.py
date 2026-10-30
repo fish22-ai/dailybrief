@@ -19,8 +19,8 @@ import logging
 import re
 
 from . import config
+from .llm import call as llm_call, make_client
 from .models import CATEGORIES, INSIGHT_TEXT_FIELDS
-from .select import DISABLE_THINKING, MODEL, make_client
 
 log = logging.getLogger(__name__)
 
@@ -98,12 +98,10 @@ def translate_insights(cards: dict[str, list[dict]]) -> int:
 
     prompt = PROMPT.format(payload=json.dumps(flat, ensure_ascii=False, indent=1))
     try:
-        create_kwargs = dict(model=MODEL, max_tokens=MAX_TOKENS,
-                             messages=[{"role": "user", "content": prompt}])
-        if DISABLE_THINKING:
-            create_kwargs["thinking"] = {"type": "disabled"}
-        resp = client.messages.create(**create_kwargs)
-        text = "".join(b.text for b in resp.content if b.type == "text")
+        # 模型回退链在 core/llm.call 里：主模型没渠道就换下一个，翻译不掉链子。
+        text, _model, resp = llm_call(
+            client, max_tokens=MAX_TOKENS,
+            messages=[{"role": "user", "content": prompt}])
         data = _extract_json(text)
     except Exception as exc:                  # noqa: BLE001 —— 翻译失败不能拖垮主流程
         log.warning("英文翻译失败（本期英文版回落显示中文）：%s: %s",

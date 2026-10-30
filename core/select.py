@@ -31,12 +31,14 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 import re
-import time
 from pathlib import Path
 
 from . import config
+from .llm import (                                              # noqa: F401
+    # 再导出：translate.py 与旧引用方仍从 select 拿这几个名字
+    DISABLE_THINKING, LLMUnavailable, MODEL, call as llm_call, make_client,
+)
 from .models import (
     CATEGORIES, CATEGORY_LABELS, INSIGHT_LIST_FIELDS, INSIGHT_TEXT_FIELDS, Item,
 )
@@ -86,17 +88,10 @@ _PF_PARAMS = _PF[1] if _PF else {}
 # max_tokens 太小会让每次输出都被截断、白烧重试；min_chain_hops 是质量下限，
 # 环数少就说明中间机制被压成结论了（2026-09-06 改版那次的教训）。这个下限压到
 # 5 是配合"每环只写一个步骤"的写法 —— 步骤短了，需要的环数反而少了。
-MODEL = config.get_str("llm", "model", "claude-opus-5")
 MAX_TOKENS = config.get_int("llm", "max_tokens", 16000, lo=2000, hi=64000)
-# 中转站的模型（如 deepseek-v4-flash）默认输出思考块，思考 token 会吃掉大半
-# 输出预算，正文还没写就撞 max_tokens 截断。默认关掉，省下的全给 JSON 正文。
-DISABLE_THINKING = config.get_bool("llm", "disable_thinking", True)
+# 模型名 / disable_thinking / 上游重试预算挪到了 core/llm.py（模型回退链），
+# 这里保留从 llm 再导出的引用，老引用方不用改。
 MAX_RETRIES = config.get_int("llm", "max_retries", 1, lo=0, hi=3)
-# 中转站是多通道轮询：同一个模型名，这次可能落到好通道、下次落到坏通道（500 /
-# 把请求转给 Bedrock 后报"模型标识无效"）。这类错误换次通道就好，所以单独给一份
-# 重试预算，不占用上面 max_retries 那份（那份是留给 JSON 格式不合规的修复重试的）。
-UPSTREAM_RETRIES = config.get_int("llm", "upstream_retries", 3, lo=0, hi=8)
-UPSTREAM_BACKOFF = 4.0        # 秒，按次数线性递增：4s、8s、12s
 # prompt.zh.md 的 front matter 一旦给出下限就优先于 config：校验层和 prompt 里的
 # 数字必须同源，否则"prompt 要 8 环、校验要 12 环"会让每天必然重试一次。
 MIN_CHAIN_HOPS = _PF_PARAMS.get("chain_hops_min",
@@ -427,40 +422,6 @@ def rules_fallback(pools: dict[str, list[Item]]) -> dict[str, list[dict]]:
     return out
 
 
-def make_client():
-    """建 anthropic 客户端。没 key / 没装 SDK 时返回 (None, 原因)。
-
-    base_url 由 SDK 自己读 ANTHROPIC_BASE_URL 环境变量：走中转站时必须设置它，
-    否则请求会打到 api.anthropic.com，中转站的 key 在那边一律 401。
-
-    超时必须显式给：SDK 默认 connect 只有 5 秒，中转站握手偶尔慢一拍就是
-    APITimeoutError，然后整天白白降级成规则模式。读取给足 600 秒 —— 四段解读
-    本来就慢，16000 tokens 跑几分钟很正常。
-
-    2026-10-12 从 select() 里抽出来，解读精选和英文翻译（core/translate.py）
-    共用这一份，两处别再各写一遍。
-    """
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        log.warning("ANTHROPIC_API_KEY 未设置，降级为规则模式")
-        return None, "未配置 API key"
-
-    try:
-        import anthropic
-        try:
-            import httpx2 as httpx    # anthropic 1.x 的 HTTP 依赖叫 httpx2
-        except ImportError:
-            import httpx              # 0.x 老版本用的还是 httpx
-    except ImportError:
-        log.warning("anthropic SDK 未安装，降级为规则模式")
-        return None, "anthropic SDK 未安装"
-
-    return anthropic.Anthropic(
-        api_key=api_key,
-        timeout=httpx.Timeout(600.0, connect=20.0),
-    ), ""
-
-
 def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, str]:
     """返回 (板块卡片, mode, note)。mode 为 llm 或 rules。"""
     client, why = make_client()
@@ -473,39 +434,25 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
     messages = [{"role": "user", "content": prompt}]
     last_err = ""
 
-    # 循环同时承载两种重试：JSON 不合规的修复重试（≤ MAX_RETRIES 次，会把错误
-    # 回喂给模型）和上游通道异常的换通道重试（≤ UPSTREAM_RETRIES 次，原样重发）。
-    # 两者共用计数上限，够用且不会把一天的调用次数放大到失控。
-    for attempt in range(1, MAX_RETRIES + UPSTREAM_RETRIES + 2):
+    # 这层循环只管 JSON 不合规的修复重试（≤ MAX_RETRIES 次，把错误回喂给模型）。
+    # 上游通道抖动 / 模型没渠道的换模型重试在 core/llm.call 里，两层不混 ——
+    # 2026-10-30 起模型名本身也可能整个挂掉（「无可用渠道」连挂 8 天），那类
+    # 故障靠换模型解决，跟「输出格式不对重发一遍」是两码事。
+    for attempt in range(1, MAX_RETRIES + 2):
         try:
-            create_kwargs = dict(model=MODEL, max_tokens=MAX_TOKENS, messages=messages)
-            if DISABLE_THINKING:
-                create_kwargs["thinking"] = {"type": "disabled"}
-            resp = client.messages.create(**create_kwargs)
-            text = "".join(b.text for b in resp.content if b.type == "text")
-        except Exception as exc:
-            last_err = f"{type(exc).__name__}: {exc}"
-            # 401（key 错）这类错误重试也没用，直接降级。但走中转站时，5xx / 400
-            # 往往只是这次轮到的通道坏了或把模型转给了错误的后端（Bedrock 报
-            # "model identifier is invalid"）—— 换一次通道就好。所以对这类错误
-            # 多试几次再放弃，别一遇错就整天降级成规则模式。
-            status = getattr(exc, "status_code", None)
-            transient = status in (500, 502, 503, 504) or (
-                status == 400 and "invalid" in last_err.lower()
-                and "model" in last_err.lower())
-            if transient and attempt <= UPSTREAM_RETRIES:
-                log.warning("上游通道异常（第 %d 次），换通道重试：%s",
-                            attempt, last_err[:160])
-                time.sleep(UPSTREAM_BACKOFF * attempt)
-                continue
-            log.warning("LLM 调用失败（第 %d 次）：%s", attempt, last_err)
-            break        # 鉴权错 / 重试用尽，直接降级
+            text, model_used, resp = llm_call(
+                client, max_tokens=MAX_TOKENS, messages=messages)
+        except LLMUnavailable as exc:
+            last_err = str(exc)
+            log.warning("LLM 不可用，降级为规则模式：%s", last_err)
+            break
 
         # 撞上 max_tokens 时 JSON 一定是半截的，后面报的会是"找不到 JSON 对象"
         # 这种误导性错误。这里先把真正的原因喊出来，省得下次对着 JSON 报错查半天。
         if getattr(resp, "stop_reason", None) == "max_tokens":
-            log.warning("输出被 max_tokens=%d 截断（第 %d 次），JSON 必然不完整；"
-                        "若反复出现就调小 TOP_N 或加大 MAX_TOKENS", MAX_TOKENS, attempt)
+            log.warning("输出被 max_tokens=%d 截断（model=%s），JSON 必然不完整；"
+                        "若反复出现就调小 TOP_N 或加大 MAX_TOKENS",
+                        MAX_TOKENS, model_used)
 
         try:
             cards = validate(_extract_json(text), index)
@@ -521,8 +468,8 @@ def select(pools: dict[str, list[Item]]) -> tuple[dict[str, list[dict]], str, st
             break
 
         total = sum(len(v) for v in cards.values())
-        log.info("LLM 精选成功（第 %d 次调用），产出 %d 条解读", attempt, total)
+        log.info("LLM 精选成功（model=%s，第 %d 次调用），产出 %d 条解读",
+                 model_used, attempt, total)
         return cards, "llm", ""
 
-    log.warning("LLM 不可用，降级为规则模式：%s", last_err)
     return rules_fallback(pools), "rules", last_err

@@ -557,6 +557,90 @@ check("所有源的 tier 合法",
 check("权重表键均为字符串且值在 0~1",
       all(isinstance(k, str) and 0 < v <= 1.0 for k, v in SOURCE_WEIGHTS.items()))
 
+print("\nllm：模型回退链（2026-10-30，中转站按模型供给渠道后新增）")
+import core.llm as llm_mod                                          # noqa: E402
+
+llm_mod.UPSTREAM_BACKOFF = 0        # 测试里别真睡 4 秒
+
+
+class _FakeErr(Exception):
+    def __init__(self, msg, status=None):
+        super().__init__(msg)
+        self.status_code = status
+
+
+class _FakeResp:
+    def __init__(self, text="{}"):
+        self.content = [type("B", (), {"type": "text", "text": text})()]
+        self.stop_reason = "end_turn"
+
+
+class _FakeClient:
+    """按脚本逐次应答：脚本是异常就抛，是 _FakeResp 就返回。记录每次用的模型名。"""
+
+    def __init__(self, *script):
+        self.script, self.used = list(script), []
+
+    class messages:                                                  # noqa: N801
+        def __init__(self, owner):
+            self._owner = owner
+
+        def create(self, **kw):
+            o = self._owner
+            o.used.append(kw.get("model"))
+            step = o.script.pop(0)
+            if isinstance(step, Exception):
+                raise step
+            return step
+
+    def __init__(self, *script):
+        self.script, self.used = list(script), []
+        self.messages = _FakeClient.messages(self)
+
+
+try:
+    got = llm_mod.call(_FakeClient(_FakeErr("无可用渠道", 503), _FakeResp('{"a":1}')),
+                       max_tokens=10, messages=[], models=["m1", "m2"])
+    check("主模型没渠道 → 自动换备选",
+          got[0] == '{"a":1}' and got[1] == "m2", str(got[:2]))
+except Exception as exc:                                        # noqa: BLE001
+    check("主模型没渠道 → 自动换备选", False, repr(exc))
+
+try:
+    llm_mod.call(_FakeClient(_FakeErr("无可用渠道", 503), _FakeErr("无可用渠道", 503)),
+                 max_tokens=10, messages=[], models=["m1", "m2"])
+    check("全部模型都没渠道 → 抛 LLMUnavailable", False)
+except llm_mod.LLMUnavailable:
+    check("全部模型都没渠道 → 抛 LLMUnavailable", True)
+
+got = llm_mod.call(_FakeClient(_FakeErr("boom", 500), _FakeResp("ok")),
+                   max_tokens=10, messages=[], models=["m1"])
+check("瞬时 5xx → 同模型重试后成功", got[1] == "m1")
+
+try:
+    llm_mod.call(_FakeClient(_FakeErr("bad key", 401)),
+                 max_tokens=10, messages=[], models=["m1", "m2"])
+    check("鉴权错 → 立刻失败不换模型", False)
+except llm_mod.LLMUnavailable:
+    check("鉴权错 → 立刻失败不换模型", True)
+
+print("\ntimeutil：补跑锚点（--date 时 now_local 锚到目标日 23:59:59）")
+from core.timeutil import set_target_date as _set_target_date, TZ   # noqa: E402
+
+try:
+    _set_target_date("2026-10-22")
+    anchor = now_local()
+    check("锚点日期正确",
+          anchor.strftime("%Y-%m-%d %H:%M:%S") == "2026-10-22 23:59:59",
+          anchor.isoformat())
+    from datetime import datetime as _dt, timezone as _tz
+    item = _dt(2026, 10, 21, 12, 0, tzinfo=TZ)
+    check("目标日前 36h 内的条目不被窗口砍掉", in_window(item))
+    _set_target_date(None)
+    check("还原后锚回真实现在", now_local().year >= 2026)
+finally:
+    _set_target_date(None)
+
 print()
 if failures:
     print(f"{len(failures)} 项失败：{', '.join(failures)}")

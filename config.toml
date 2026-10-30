@@ -144,10 +144,16 @@ template = ""
 
 [llm]
 
-# 用哪个模型。你的 key 是第三方中转站，当前这把 key 绑定 deepseek-v4-flash：
-# claude-opus-5 在它上面报 402「budget pool quota exhausted」（该池无额度/无通道）。
-# 换 key 后可改回 claude-opus-5。
-model = "deepseek-v4-flash"
+# 用哪个模型。中转站 2026-10-24 起按模型名供给渠道，渠道说下架就下架
+# （deepseek-v4-flash 从 10-22 挂到 10-29，八天全降级规则模式）。所以：
+#   1. 主模型选站方公告里「不限量供应」的；
+#   2. 配 fallback_models，主模型「无可用渠道」时自动换下一个（core/llm.py）。
+# 当前主模型 gpt-6-astra：2026-10-30 实测可用，公告称已取消限量。
+model = "gpt-6-astra"
+
+# 主模型挂掉时按序尝试的备选（逗号分隔）。渠道情况常变，换 key / 换站后
+# 记得同步改这里；「无可用渠道」的模型留在链里没坏处 —— 它会被跳过。
+fallback_models = "deepseek-v4-flash, gpt-6.1sol"
 
 # 单次输出上限。输出量随 per_category 近似线性，必须配套调：
 #   3 条 ≈ 8000   （09-13 实测贴满，撞顶截断）
