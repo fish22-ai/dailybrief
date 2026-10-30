@@ -904,9 +904,11 @@ def render_card(card: dict, cat: str) -> str:
     else:
         # 没译文的期次（历史数据 / 翻译失败）：英文版回落显示中文，
         # 别把整张卡唯一的内容折起来 —— 中文原样摊开，上面提一句为什么。
+        # 用 div 不用 <details>：这里永远摊开、也没有 summary 可写，
+        # 裸 details 会被浏览器渲染出默认的「详情 ▼」折叠头（2026-10-31 反馈）。
         read = ('<p class="noen">No English for this archived issue — '
                 'showing the Chinese original.</p>'
-                f'<details class="zhsrc" data-forceopen>{zh_body}</details>')
+                f'<div class="zhsrc" data-forceopen>{zh_body}</div>')
 
     return (f'<article data-cat="{esc(cat)}">{left}'
             f'<div class="read">{read}</div></article>')

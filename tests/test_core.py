@@ -400,8 +400,10 @@ check("中英各一份解析折叠块", both.count('class="seg notes"') == 2,
 noen = build_site.render_card({"title": "t", "url": "https://a.com",
                                "insight": ok["markets"][0]["insight"]}, "markets")
 check("没有英文的期次：中文强制摊开，并说明为什么",
-      '<details class="zhsrc" data-forceopen>' in noen
+      '<div class="zhsrc" data-forceopen>' in noen
       and '<p class="noen">' in noen and '<div class="enread">' not in noen)
+check("没有英文的期次不用裸 <details>（浏览器会渲染出默认「详情」折叠头）",
+      'details class="zhsrc" data-forceopen' not in noen)
 
 # ── 英文源卡片：标题永远可见（2026-10-13 反馈）──
 # 标题曾和摘要一起折进「查看英文原文」按钮里，手机端满屏只剩一枚按钮，
