@@ -21,6 +21,20 @@
           "风险平价基金是什么：一种按波动率分配股债权重的策略，当债券波动率急升时会被迫减仓债券，甚至减仓股票来降整体风险，造成股债联动下跌。",
           "为什么这件事重要：它说明宏观环境从“通胀回落、央行降息”切换到了“通胀顽固、利率更高更久”，这个转变会重定价几乎所有资产。"
         ]
+      },
+      "insight_en": {
+        "what": "Quantitative trend-following hedge funds have made large profits from this year's global bond sell-off, as the war in Iran and strong US economic data have heightened inflation concerns and driven yields sharply higher.",
+        "why": "Markets had initially priced in falling inflation, a shift by central banks toward rate cuts, and bonds' role as safe-haven assets; now rising yields are pushing bond prices down, with longer-duration bonds falling more, while also reinforcing inflation expectations and expectations that interest rates will remain high.",
+        "chain": "War in Iran pushes up oil prices → Inflation concerns intensify → Rate-cut expectations decline → Global bond yields rise → Bond prices fall → Trend-following funds profit from shorting bonds → Volatility ETFs and risk parity funds are forced to reduce positions → Stocks and bonds fall together",
+        "notes": [
+          "What trend-following funds (CTAs) are: They do not assess whether valuations are high or low, but simply bet in the direction of prices, going short when prices fall below a certain threshold and going long when prices rise, so they can continue to benefit from a one-way market decline.",
+          "Why bond prices and yields move inversely: A bond's coupon is fixed; when the market demands a higher yield, new buyers can earn that higher yield only if the bond's price falls, reducing the purchase cost.",
+          "What duration is: A measure of how sensitive a bond's price is to changes in interest rates; the longer the duration (for example, a 30-year government bond), the greater the price movement for each incremental change in yield.",
+          "Why the long end falls more than the short end: Long-dated bonds have longer durations, and the market also demands an additional term premium (term premium, meaning the extra compensation investors demand for holding long-term bonds); this compensation also rises when inflation concerns increase.",
+          "Why the war in Iran affects the bond market: The war pushes up oil prices, which are an important component of inflation, and higher inflation expectations lead investors to demand higher bond yields to compensate for the loss of purchasing power.",
+          "What risk parity funds are: They use a strategy that allocates equity and bond weights based on volatility; when bond volatility surges, they are forced to reduce bond positions, or even equity positions, to lower overall risk, causing stocks and bonds to fall in tandem.",
+          "Why this matters: It shows that the macroeconomic environment has shifted from “falling inflation and central-bank rate cuts” to “sticky inflation and higher-for-longer interest rates,” a shift that will reprice almost all assets."
+        ]
       }
     },
     {
@@ -40,6 +54,19 @@
           "为什么承销收入重要：投行帮公司上市收取承销费，是投行收入的重要来源；IPO 减少会直接压低投行的盈利预期，进而影响金融股股价。",
           "一级市场 vs 二级市场：一级市场是公司首次发行股票融资的市场，二级市场是投资者之间买卖已上市股票的市场，两者情绪会互相传导。",
           "为什么估值锚重要：投资者给一家公司定价时，会参考同类已上市公司的市盈率或市销率，如果参照物缺失，定价就变得困难，发行方和买方很难谈拢价格。"
+        ]
+      },
+      "insight_en": {
+        "what": "Wall Street's IPO boom is cooling, with several listings postponed because of weak demand and valuation concerns, while Anthropic's delayed listing has further dampened market sentiment.",
+        "why": "Markets had initially expected a full recovery in the IPO market in 2026, with technology unicorns lining up to go public; now insufficient demand and valuation concerns are narrowing the issuance window, constraining the primary market's capital-raising function and putting downward pressure on the valuations of unlisted technology companies.",
+        "chain": "Anthropic delays its listing → Valuation anchor for tech IPOs is missing → Investors' willingness to subscribe declines → Several IPOs are postponed → Expectations for investment banks' underwriting revenue fall → Raising capital in private markets becomes harder → Tech startup valuations face markdowns",
+        "notes": [
+          "What an IPO is: An initial public offering, in which an unlisted company sells shares to public investors for the first time, allowing its shares to be listed and traded on an exchange.",
+          "Why Anthropic's delayed listing affects the entire market: It is a leading company in AI, and the market had intended to use it as an anchor for AI company valuations; if even it does not dare to go public, investors will question whether other companies' valuations can hold up either.",
+          "What an issuance window is: The period when market sentiment is positive and investors are willing to subscribe to new shares; once the window closes, companies can only postpone or cancel their listing plans.",
+          "Why underwriting revenue matters: Investment banks charge underwriting fees for helping companies go public, an important source of their revenue; fewer IPOs directly lower earnings expectations for investment banks, in turn affecting financial stock prices.",
+          "Primary market vs. secondary market: The primary market is where companies raise capital by issuing shares for the first time, while the secondary market is where investors buy and sell already-listed shares among themselves; sentiment can be transmitted from either market to the other.",
+          "Why a valuation anchor matters: When pricing a company, investors refer to the price-to-earnings or price-to-sales ratios of comparable listed companies; without a reference point, pricing becomes difficult, and it is hard for issuers and buyers to agree on a price."
         ]
       }
     }
@@ -64,6 +91,20 @@
           "南向资金是什么：通过沪港通、深港通从中国内地流入香港股市的资金，是港股重要的增量资金来源之一。",
           "为什么这件事对面试重要：它涉及资本流动、汇率制度和交易所商业模式三个层面的传导，是典型的“一个数据串起多条逻辑”的案例。"
         ]
+      },
+      "insight_en": {
+        "what": "Hong Kong Financial Secretary Paul Chan said that Hong Kong's IPO proceeds in the first nine months more than doubled year on year, exceeding HK$388 billion (about US$49.4 billion).",
+        "why": "Markets had initially worried that Hong Kong was losing capital-raising business as an international financial center to Singapore and New York; these figures show that capital is being reallocated to Hong Kong, prompting upward revisions to expectations for HKEX's revenue and demand for Hong Kong dollar-denominated assets.",
+        "chain": "Hong Kong IPO proceeds double → International capital flows into Hong Kong → Demand for Hong Kong dollars increases → Hong Kong equity market liquidity improves → Expectations for HKEX's revenue rise → Hong Kong equity valuations gain support；At the same time, southbound flows are active → Demand for cross-border renminbi settlement rises",
+        "notes": [
+          "What IPO proceeds are: The total amount a company receives from investors through an initial public offering of shares, a key measure of a market's capital-raising function.",
+          "Why a doubling of IPO proceeds matters: It means international investors are willing to put substantial amounts of real money into the Hong Kong market, directly improving liquidity in Hong Kong equities and indicating that Hong Kong's standing as a capital-raising center is recovering.",
+          "Why HKEX's revenue is linked to IPOs: Companies pay listing fees to go public, and stock trades incur trading fees; the more IPOs and the more active the trading, the more HKEX earns, so IPO figures directly affect earnings expectations for HKEX.",
+          "Why demand for Hong Kong dollars increases: International investors need to exchange US dollars or other currencies for Hong Kong dollars before buying Hong Kong stocks; rising demand for Hong Kong dollars pushes up the currency's exchange rate, and the Hong Kong Monetary Authority may need to intervene to maintain the currency peg.",
+          "What the Linked Exchange Rate System is: The Hong Kong dollar is pegged to the US dollar, with the exchange rate maintained between 7.75 and 7.85; when demand for Hong Kong dollars is too strong, the Hong Kong Monetary Authority sells Hong Kong dollars and buys US dollars, and vice versa.",
+          "What southbound flows are: Capital flowing from mainland China into the Hong Kong stock market through Shanghai-Hong Kong Stock Connect and Shenzhen-Hong Kong Stock Connect, one of the key sources of incremental capital for Hong Kong equities.",
+          "Why this matters for interviews: It involves transmission across three dimensions—capital flows, exchange rate regimes, and exchanges' business models—and is a typical example of “one data point linking several lines of reasoning.”"
+        ]
       }
     }
   ],
@@ -86,6 +127,19 @@
           "这件事的传导时间：监管从工作组成立到规则落地通常需要数月甚至数年，所以影响的是中长期预期，不是明天的股价。",
           "超级智能工作组是什么：根据行政令设立的专门小组，要求在 120 天内提交 AI 风险和机遇报告，为后续政策提供依据。"
         ]
+      },
+      "insight_en": {
+        "what": "The White House has established a new AI working group that will submit a report assessing the risks posed by AI and the responsibilities the US federal government should assume.",
+        "why": "Markets had initially assumed AI regulation would be relatively light-touch and focused on encouraging innovation; this working group signals that the regulatory framework could tighten and compliance costs rise, potentially affecting major AI companies' capital expenditure and product launch timelines.",
+        "chain": "White House establishes AI working group → Regulatory framework is expected to tighten → AI companies' compliance costs rise → Training and deployment of large models slow → Expectations for compute procurement growth decline → Chip stock valuations come under pressure → Capital shifts toward the AI application layer, which is less affected by regulation",
+        "notes": [
+          "Why regulatory expectations affect chip stocks: If AI companies slow model training and deployment because of compliance reviews, they will purchase GPUs at a slower pace, prompting downward revisions to expected revenue growth for chipmakers such as Nvidia.",
+          "What compliance costs are: The costs of legal work, audits, and technical modifications a company must incur to meet regulatory requirements; the stricter the regulation, the higher these costs.",
+          "Why compute procurement is linked to regulation: Training large models requires extensive GPU clusters; if regulation requires risk assessments before deployment, procurement decisions will be postponed, reducing near-term compute orders.",
+          "Why the AI application layer is less affected: Application-layer companies mainly develop software and provide services and are not directly subject to regulatory constraints on compute procurement and model training, so capital may shift from hardware to applications when regulation tightens.",
+          "The transmission timeline for this development: The regulatory process from establishing a working group to implementing rules typically takes months or even years, so the impact is on medium- to long-term expectations, not tomorrow's stock prices.",
+          "What the superintelligence working group is: A dedicated group established under an executive order and required to submit a report on AI risks and opportunities within 120 days to inform subsequent policy."
+        ]
       }
     },
     {
@@ -105,6 +159,19 @@
           "这件事的信号意义：它说明 AI 对供应链的挤压已经从数据中心蔓延到了消费端，是一个成本曲线整体上移的信号。",
           "对其他厂商的影响：如果英伟达涨价被市场接受，其他消费电子厂商也可能跟随涨价，形成板块性的价格上移。",
           "为什么面试会问这个：它考的是你能不能从一条小新闻里看出 AI 对实体经济的成本传导，而不只是盯着大模型发布。"
+        ]
+      },
+      "insight_en": {
+        "what": "Due to AI-driven cost increases, the price of Nvidia's Shield TV Pro has risen from US$199.99 to US$299.99, an increase of US$100.",
+        "why": "Markets had initially assumed that consumer electronics prices would fall as technology advanced; AI has taken up chip production capacity and memory supplies, raising component costs for consumer products and changing market expectations for consumer electronics profit margins and inflation.",
+        "chain": "AI data centers purchase large volumes of chips and memory → Upstream production capacity is taken up → Supply of consumer-grade chips and memory declines → Component costs rise → Nvidia raises prices for consumer products → Consumer electronics inflation expectations rise → Other manufacturers follow suit with price increases",
+        "notes": [
+          "Why AI causes consumer electronics prices to rise: AI data centers need large quantities of high-end chips and memory, and chipmakers prioritize allocating capacity to more profitable data center products, reducing the supply of consumer-grade products and raising costs.",
+          "What this has to do with inflation: Consumer electronics have traditionally been one of the factors keeping inflation down (because their prices have kept falling); if their prices start rising, the downward pressure on overall inflation weakens.",
+          "Why Nvidia is raising prices: Shield TV uses Nvidia's own chips and memory; when AI data centers crowd out production capacity for these components, costs rise, and Nvidia must either absorb the costs itself or pass them on to consumers.",
+          "What this development signals: It shows that AI's squeeze on supply chains has spread from data centers to the consumer end, signaling an upward shift in the entire cost curve.",
+          "The impact on other manufacturers: If the market accepts Nvidia's price increase, other consumer electronics manufacturers may follow suit, leading to a sector-wide upward shift in prices.",
+          "Why interviewers would ask about this: It tests whether you can identify the transmission of AI-related costs to the real economy from a small news item, rather than just focusing on large model releases."
         ]
       }
     }

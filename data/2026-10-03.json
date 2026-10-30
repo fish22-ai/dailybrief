@@ -20,6 +20,19 @@
           "美元为什么会走强？美国利率维持高位，全球资金为了追逐更高回报会买入美元资产，美元需求上升，汇率走强。",
           "黄金为什么承压？黄金不支付利息，当美债能提供更高且相对安全的收益时，持有黄金的机会成本上升，资金会从黄金流向生息资产。"
         ]
+      },
+      "insight_en": {
+        "what": "Cleveland Fed President Hammack said there was ample time to assess the data before the October rate-setting meeting and stressed that inflation had been off the 2% target for more than five and a half years, making it crucial to bring inflation back to target.",
+        "why": "Markets had been pricing in further rate cuts this year, but these remarks brought the focus back to inflation, strengthening expectations that interest rates would stay higher for longer and thereby supporting short-dated U.S. Treasury yields and the U.S. dollar.",
+        "chain": "Hammack stresses that inflation is above target → Markets expect the Fed to be in no hurry to cut rates → Rate-cut expectations cool → 2-year U.S. Treasury yield rises → U.S. dollar strengthens → Growth stocks with high valuations come under pressure；At the same time, expectations for short-term interest rates rise → Gold becomes less attractive as a non-interest-bearing asset",
+        "notes": [
+          "Why is the 2-year U.S. Treasury yield the most sensitive? Because two-year bonds have a short time to maturity, their prices are almost entirely determined by market expectations for the policy rate path over the next two years, so they react first after Fed officials speak.",
+          "Bond prices and yields move in opposite directions: When the market demands higher yields to hold bonds, the fixed coupon payments on existing bonds appear insufficiently attractive, so prices must fall until new buyers find them worthwhile.",
+          "The difference between hawks and doves: Hawks prioritize lowering inflation and favor monetary tightening, keeping interest rates high, or even raising rates; doves are more concerned about growth and employment and favor rate cuts or maintaining accommodative policy. Hammack's wording is classically hawkish.",
+          "Why are growth stocks hit harder? Most of the profits of growth stocks are realized many years in the future. The higher interest rates are, the lower the present value of those future profits, so their valuations are particularly sensitive to interest rates.",
+          "Why does the U.S. dollar strengthen? When U.S. interest rates remain high, global capital buys dollar-denominated assets in pursuit of higher returns, increasing demand for the dollar and strengthening its exchange rate.",
+          "Why does gold come under pressure? Gold pays no interest. When U.S. Treasuries offer higher and relatively safe returns, the opportunity cost of holding gold rises, and capital flows from gold into interest-bearing assets."
+        ]
       }
     },
     {
@@ -38,6 +51,18 @@
           "利差是什么？两个国家同类债券收益率的差额，反映市场对两国风险、通胀和货币政策差异的定价。美德利差扩大，通常意味着资金更愿意持有美元资产。",
           "为什么欧元会承压？如果美国利率更高、德国利率更低，资金会倾向从欧元流向美元以获取更高收益，欧元需求下降。",
           "这次分化的触发点：市场担心伊朗战争推高能源价格，加上美国经济数据强劲，两者都指向通胀压力，而德国受能源冲击的直接程度不同，避险属性被放大。"
+        ]
+      },
+      "insight_en": {
+        "what": "Amid a global bond selloff, German government bonds have become a safe haven, with their yields falling this week while government bond yields in countries including the U.S. and France have risen sharply on inflation concerns.",
+        "why": "Markets had been pricing global bond markets as a single whole, but capital flows are now diverging markedly across national bond markets, the safe-haven premium on German government bonds is rising, and euro-denominated assets and global interest rate differentials face repricing.",
+        "chain": "Global inflation concerns intensify → U.S. and French government bonds are sold off → Capital seeks a safe haven → German government bonds are bought → German government bond prices rise → German government bond yields fall → U.S.-German yield spread widens → Euro faces downward pressure",
+        "notes": [
+          "Falling yields mean rising bond prices: When large amounts of capital flow into purchases of German government bonds, demand for the bonds increases and their prices are pushed higher, causing the corresponding yields to fall.",
+          "Why are German government bonds considered safe-haven assets? Germany has sound public finances, a history of low inflation, and a strong position at the core of the euro area, so markets tend to park money there during panics.",
+          "What is a yield spread? It is the difference between the yields on comparable bonds from two countries, reflecting market pricing of differences in their risks, inflation, and monetary policies. A widening U.S.-German yield spread usually means that capital is more inclined to hold dollar-denominated assets.",
+          "Why does the euro come under pressure? If U.S. interest rates are higher and German interest rates are lower, capital tends to flow from the euro into the dollar to obtain higher returns, reducing demand for the euro.",
+          "The trigger for this divergence: Markets worry that the war in Iran will push up energy prices, while U.S. economic data are strong. Both point to inflationary pressures, whereas Germany has a different degree of direct exposure to the energy shock, amplifying its safe-haven characteristics."
         ]
       }
     }
@@ -61,6 +86,19 @@
           "欧央行降息预期为什么下降？如果通胀因为运费上涨而回升，欧央行就更难降息，因为降息会进一步刺激物价。",
           "这条链和利率、汇率的关系：欧洲通胀预期上升会推高欧元区债券收益率，同时如果欧央行比美联储更鹰，欧元可能获得支撑。"
         ]
+      },
+      "insight_en": {
+        "what": "Saudi Arabia plans to launch an offensive against Houthi forces in Yemen, potentially mobilizing more than 100,000 Yemeni soldiers, with the aim of breaking the Houthis' blockade of Red Sea shipping lanes.",
+        "why": "Markets had been pricing in a gradual resumption of Red Sea transit, but this offensive means shipping disruptions could last longer, requiring a reassessment of energy transportation costs and global inflation expectations, with oil prices and shipping insurance costs the most sensitive.",
+        "chain": "Saudi Arabia plans to attack the Houthis → Red Sea conflict escalates → Merchant ships reroute around the Cape of Good Hope → Shipping distances lengthen → Freight rates and insurance costs rise → Europe's energy import costs rise → European inflation expectations increase → Expectations for ECB rate cuts decline",
+        "notes": [
+          "Why is the Red Sea important? It is the shortest sea route connecting Europe and Asia, with about 12% of global trade volume passing through it, and the Suez Canal is at its northern end.",
+          "What does rerouting around the Cape of Good Hope mean? Ships avoid the Red Sea and instead sail around the southern tip of Africa, adding roughly one to two weeks to the voyage and increasing fuel, labor, and insurance costs.",
+          "How do shipping insurance premiums affect prices? Insurers charge higher premiums for ships passing through conflict zones. These costs are passed on through freight rates and ultimately reflected in the prices of imported goods.",
+          "Why is European inflation the most sensitive? Europe imports large quantities of manufactured goods and energy from Asia, and Red Sea disruptions directly lengthen its supply chains, while the U.S. is relatively less affected.",
+          "Why do expectations for ECB rate cuts decline? If inflation rebounds because of rising freight rates, it becomes harder for the ECB to cut rates, because rate cuts would further stimulate prices.",
+          "How this transmission relates to interest rates and exchange rates: Rising European inflation expectations push up euro area bond yields, while the euro could receive support if the ECB is more hawkish than the Fed."
+        ]
       }
     },
     {
@@ -80,6 +118,19 @@
           "油价下降为什么利好能源进口国？日本、欧洲、印度等大量进口能源的经济体，油价下降会降低输入型通胀，让央行更有空间降息。",
           "这条链的汇率含义：如果美国制裁受阻、油价下跌，美元作为石油计价货币的需求可能下降，而能源进口国货币可能获得支撑。",
           "为什么这条比黎巴嫩、叙利亚行政令更重要？因为伊朗制裁直接牵动全球原油供应和通胀路径，而后两者目前没有可预见的市场传导链。"
+        ]
+      },
+      "insight_en": {
+        "what": "The UN General Assembly is reviewing the latest exercise of the Security Council veto, in which China and Russia vetoed a U.S.-backed resolution on sanctions against Iran.",
+        "why": "Markets had been pricing in a possible escalation of sanctions against Iran and further restrictions on crude oil supply. The veto means the path to sanctions is blocked, requiring a readjustment of the geopolitical risk premium in oil prices.",
+        "chain": "China and Russia veto sanctions against Iran → U.S. sanctions efforts are blocked → Restrictions on Iranian crude oil exports ease → Expectations for global crude oil supply increase → Geopolitical premium in oil prices falls → Inflationary pressures ease in energy-importing countries → Central banks in those countries gain room to cut rates",
+        "notes": [
+          "What is the Security Council veto? If any one of the five permanent members of the UN Security Council—the U.S., the UK, France, China, and Russia—votes against a resolution, it cannot pass.",
+          "Why do markets care about sanctions against Iran? Iran is a major global oil producer. Tighter sanctions reduce global crude oil supply and push up oil prices; blocked sanctions have the opposite effect.",
+          "What is a geopolitical risk premium? A portion of the oil price is not attributable to supply and demand but is an additional amount driven by market fears that conflict could disrupt supply. This portion fades as conflict eases.",
+          "Why do lower oil prices benefit energy-importing countries? For economies that import large quantities of energy, such as Japan, Europe, and India, lower oil prices reduce imported inflation and give central banks more room to cut rates.",
+          "The exchange-rate implications of this transmission: If U.S. sanctions efforts are blocked and oil prices fall, demand for the dollar as the currency in which oil is priced could decline, while the currencies of energy-importing countries could receive support.",
+          "Why is this more important than the executive orders on Lebanon and Syria? Because sanctions against Iran directly affect global crude oil supply and the inflation path, while the latter two currently have no foreseeable market transmission mechanism."
         ]
       }
     }
@@ -103,6 +154,19 @@
           "供应链分化是什么意思？全球AI芯片供应链正在分成以美国为中心和以中国为中心的两套体系，各自发展不同的技术路线和供应商。",
           "这条为什么重要？它直接改变算力芯片的供给格局，牵动英伟达的收入预期和中国AI产业的成本曲线，比一般公司新闻更有传导力。"
         ]
+      },
+      "insight_en": {
+        "what": "U.S. authorities have arrested the CEO of a technology company on charges of smuggling $300 million worth of Nvidia chips into China.",
+        "why": "Markets had been pricing in effective enforcement of U.S. chip export controls. This case shows that the controls have loopholes but that enforcement is tightening, prompting a reassessment of compliance risks in Nvidia's sales to China and the supply-chain structure.",
+        "chain": "Chip smuggling case is exposed → U.S. steps up export enforcement → Compliance costs for Nvidia's sales to China rise → China faces greater difficulty obtaining high-end chips → Expansion of China's AI computing capacity slows → Domestic substitution accelerates → Global AI chip supply chain becomes further fragmented",
+        "notes": [
+          "Why are Nvidia chips subject to controls? The U.S. believes high-end AI chips can be used for military purposes and therefore restricts exports to China. Nvidia needs to apply for licenses to sell some of its products to China.",
+          "What does the smuggling case show? It shows that despite the controls, channels still exist for bringing chips into China, but tighter enforcement means that both the risks and costs of these channels are rising.",
+          "The impact on Nvidia: If smuggling is blocked, Nvidia could lose some of its Chinese revenue, but this would also reduce its compliance-related risk of penalties from the U.S. government.",
+          "The impact on China's AI industry: Greater difficulty obtaining high-end chips will slow the training of large models and the expansion of computing capacity, but it will also stimulate demand for domestic substitutes such as Huawei's Ascend chips.",
+          "What does supply-chain fragmentation mean? The global AI chip supply chain is splitting into two systems, one centered on the U.S. and the other on China, each developing different technological approaches and suppliers.",
+          "Why is this important? It directly changes the supply landscape for computing chips, affecting Nvidia's revenue expectations and the cost curve of China's AI industry, and has stronger transmission effects than ordinary company news."
+        ]
       }
     },
     {
@@ -122,6 +186,19 @@
           "对芯片供应链的影响：国防AI需求增加会进一步收紧高端芯片供应，因为数据中心和国防项目都在抢同一批GPU。",
           "电力需求为什么被牵动？大语言模型训练和推理耗电巨大，数据中心扩张会推高电力需求，进而影响能源基础设施投资。",
           "这条和英伟达的关系：虽然洛克希德用的是多种模型，但底层算力仍然依赖GPU，所以英伟达和数据中心运营商是间接受益者。"
+        ]
+      },
+      "insight_en": {
+        "what": "Lockheed Martin is partnering with OpenAI and adopting a model-agnostic strategy, using 55 different large language models across its operations to address challenges in the F-35 fighter jet program.",
+        "why": "Markets had previously viewed AI adoption as concentrated in technology companies. This signals that a defense giant is beginning large-scale procurement of AI computing capacity, with capital expenditure and demand for computing capacity in defense AI facing repricing.",
+        "chain": "Lockheed adopts multiple large language models → Defense AI applications expand → Demand for computing capacity and chips increases → Orders for chip suppliers such as Nvidia rise → Data center capital expenditure increases → Electricity demand rises → Investment in energy infrastructure increases",
+        "notes": [
+          "What is the F-35? It is America's most advanced stealth fighter jet. The program involves extensive software, sensors, and data analysis and is one of the most complex engineering projects in the defense sector.",
+          "What does a model-agnostic strategy mean? It means not being tied to the models of any one AI company, but using multiple models simultaneously and choosing the most suitable one for each task to avoid single-vendor lock-in.",
+          "Why is defense AI important? Defense projects have enormous demand for computing capacity and stable budgets. Once they adopt AI on a large scale, they will generate sustained procurement of chips and cloud services over many years.",
+          "The impact on the chip supply chain: Increased demand for defense AI will further tighten high-end chip supply, because data centers and defense projects are competing for the same pool of GPUs.",
+          "Why is electricity demand affected? Training and inference for large language models consume enormous amounts of electricity. Data center expansion pushes up electricity demand, which in turn affects investment in energy infrastructure.",
+          "The connection to Nvidia: Although Lockheed uses multiple models, the underlying computing capacity still depends on GPUs, so Nvidia and data center operators are indirect beneficiaries."
         ]
       }
     }

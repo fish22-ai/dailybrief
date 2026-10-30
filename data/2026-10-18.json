@@ -22,16 +22,16 @@
         ]
       },
       "insight_en": {
-        "what": "Analysis points out that the US deficit has reached $2 trillion and the 10-year Treasury yield has broken above 5%, pushing up borrowing costs for households and the federal government.",
-        "why": "The market had originally priced in that interest rates would decline with the rate-cutting cycle. A 5% long-end yield means the term premium is resurging, and long-end US Treasuries, mortgage rates, and high-valuation assets all need to be revalued at a higher risk-free rate.",
-        "chain": "Deficit widens → Treasury supply increases → buyers demand a higher term premium → 10Y US Treasury yield breaks above 5% → 30-year mortgage rates follow higher → household monthly payments rise, consumption comes under pressure → high-valuation assets come under pressure as the discount rate rises",
+        "what": "Analysis notes that the U.S. deficit has reached $2 trillion and the 10-year Treasury yield has broken above 5%, driving up borrowing costs for households and the federal government.",
+        "why": "Markets had priced in a decline in interest rates as the rate-cutting cycle progressed; a 5% long-end yield signals a renewed rise in the term premium, requiring long-dated U.S. Treasuries, mortgage rates, and highly valued assets to be repriced using a higher risk-free rate.",
+        "chain": "Deficit widens → Treasury supply increases → Buyers demand a higher term premium term premium → 10Y U.S. Treasury yield breaks above 5% → 30-year mortgage rates rise in tandem → Household monthly mortgage payments rise, consumption comes under pressure → Highly valued assets face higher discount rates and come under pressure",
         "notes": [
-          "What the term premium is: the extra compensation investors demand for holding long-term bonds rather than rolling over short-term bonds, because the longer the duration, the greater the price risk from interest rate fluctuations. The larger the deficit and the greater the supply, the higher this compensation.",
-          "Why the long-end yield matters: the 10-year US Treasury yield is the common pricing benchmark for US mortgages, corporate bonds, and equity valuations; when it moves, the discount rate for almost all assets moves with it.",
-          "When yields rise, bond prices fall: bond prices and yields move inversely, and institutions already holding long bonds see their paper losses expand.",
-          "Why deficits push up yields: the government must finance itself by issuing debt; when bond supply increases and demand does not increase in tandem, prices fall and yields rise; this is the so-called supply shock.",
-          "How mortgage rates transmit: the 30-year fixed mortgage rate is typically anchored to the 10-year Treasury yield plus a spread; when the long-end yield rises, monthly payments rise, and housing demand and consumption are suppressed.",
-          "Relationship with rate-cut expectations: even if the Fed cuts short-end rates, if the long-end term premium rises more, long-end yields may still rise rather than fall; this is called a bear steepener, and it is the market casting a vote of no confidence in US fiscal sustainability."
+          "What the term premium is: The additional compensation investors demand for holding long-term bonds rather than rolling over short-term bond investments, because the longer the duration, the greater the price risk from interest rate fluctuations. The larger the deficit and the greater the supply, the higher this compensation.",
+          "Why long-end yields matter: The 10-year U.S. Treasury yield is a common pricing benchmark for U.S. mortgages, corporate bonds, and equity valuations. When it moves, the discount rates for almost all assets move with it.",
+          "Bond prices fall when yields rise: Bond prices and yields move inversely, widening unrealized losses on the books of institutions already holding long-term bonds.",
+          "Why deficits push up yields: The government needs to finance itself by issuing bonds. When bond supply increases without a corresponding increase in demand, prices fall and yields rise; this is known as a supply shock.",
+          "How mortgage rate transmission works: 30-year fixed-rate mortgage rates are usually anchored to the 10-year Treasury yield plus a spread. Higher long-end yields increase monthly mortgage payments, dampening housing demand and consumption.",
+          "The relationship with rate-cut expectations: Even if the Fed cuts short-term rates, long-end yields may rise rather than fall if the term premium at the long end increases by more. This is called bear steepening and represents a market vote of no confidence in U.S. fiscal sustainability."
         ]
       }
     },
@@ -54,15 +54,15 @@
         ]
       },
       "insight_en": {
-        "what": "The market widely expects the Fed to hold steady in October, but analysis warns that Warsh's unconventional communication style and persistent criticism could bring surprises.",
-        "why": "The market had originally priced in zero change at the October meeting; if Warsh's remarks alter the market's expectations for the policy path, short-end US Treasury yields and the dollar will be the first to reprice, and volatility assets will come under pressure.",
-        "chain": "Market expects no change in October → Warsh's remarks are hawkish or create uncertainty → expectations for the short-end rate path shift higher → 2Y US Treasury yield rises → dollar strengthens → capital outflow pressure on emerging markets rises",
+        "what": "Markets widely expect the Fed to hold rates steady in October, but analysis warns that Warsh's unconventional communication style and persistent criticism could bring surprises.",
+        "why": "Markets had priced in no change at the October meeting; if Warsh's remarks alter expectations for the policy path, short-dated U.S. Treasury yields and the dollar will be the first to reprice, putting volatility-linked assets under pressure.",
+        "chain": "Markets expect no change in October → Warsh's remarks lean hawkish or create uncertainty → Expectations for the path of short-term interest rates shift upward → 2Y U.S. Treasury yield rises → U.S. dollar strengthens → Capital outflow pressure on emerging markets increases",
         "notes": [
-          "Why the 2-year Treasury moves first: it is most sensitive to the policy rate path over the next two years, and any reinterpretation of the Fed's stance is first reflected in the 2-year yield.",
-          "Who Warsh is: Kevin Warsh is a former Fed governor who has long criticized the Fed's communication and balance sheet policy; the market sees him as a potential hawkish voice, so his statements attract more attention than those of ordinary officials.",
-          "Uncertainty itself is also a pricing factor: even if the direction is unclear, rising uncertainty about the policy path pushes up volatility, and the risk premium on options and risk assets rises accordingly.",
-          "How the dollar strengthens: when US short-end rates rise relative to other economies, capital flows to dollar assets, dollar demand increases, and the exchange rate strengthens.",
-          "Why emerging markets are sensitive: a stronger dollar and higher dollar interest rates raise the debt-service cost of emerging markets' dollar-denominated debt and induce capital to flow back to the United States."
+          "Why the 2-year Treasury moves first: It is most sensitive to the policy rate path over the next two years, so any market reinterpretation of the Fed's stance is reflected first in the 2-year yield.",
+          "Who Warsh is: Kevin Warsh is a former Federal Reserve governor who has long criticized the Fed's communication and balance sheet policies. Markets view him as a potential hawkish voice, so his statements attract more attention than those of typical officials.",
+          "Uncertainty itself is also a pricing factor: Even when the direction is unclear, increased uncertainty over the policy path pushes up volatility, causing risk premiums on options and risk assets to rise.",
+          "The mechanism behind a stronger dollar: When U.S. short-term interest rates rise relative to those in other economies, capital flows into dollar-denominated assets, increasing demand for dollars and strengthening the exchange rate.",
+          "Why emerging markets are sensitive: A stronger dollar and higher U.S. dollar interest rates increase the cost of servicing emerging markets' dollar-denominated debt and trigger capital flows back to the United States."
         ]
       }
     }
@@ -87,15 +87,15 @@
         ]
       },
       "insight_en": {
-        "what": "Trump is expected to return to the ASEAN summit and will take a tough bargaining stance on tariffs and critical minerals with Southeast Asian countries.",
-        "why": "The market had originally expected Southeast Asia to continue benefiting from supply chain shifts; if tariff and mineral negotiations tighten, the regional export chain and critical mineral pricing face revaluation, and related currencies and stock markets come under pressure.",
-        "chain": "US pressures on tariffs and mineral agreements → Southeast Asian export costs rise → regional current account deteriorates → local currency depreciation pressure rises → foreign investors reduce holdings of regional stocks and bonds → regional financial conditions tighten",
+        "what": "Trump is expected to return to the ASEAN summit and make tough demands on Southeast Asian countries over tariffs and critical minerals.",
+        "why": "Markets had expected Southeast Asia to continue benefiting from supply chain relocation; if tariff and mineral negotiations become tougher, the region's export supply chains and critical mineral pricing will need to be reassessed, putting the relevant currencies and equity markets under pressure.",
+        "chain": "The U.S. exerts pressure over tariffs and mineral agreements → Export costs in Southeast Asia rise → Regional current accounts deteriorate → Depreciation pressure on local currencies increases → Foreign investors reduce holdings of regional equities and bonds → Regional financial conditions tighten",
         "notes": [
-          "Why critical minerals matter: rare earths, nickel, lithium, and others are upstream raw materials for electric vehicles, batteries, and semiconductors; whoever controls supply controls the cost and security of downstream manufacturing.",
-          "How tariffs affect the current account: export costs rise and export volumes fall, the trade surplus narrows or even turns into a deficit, the current account deteriorates, and the local currency faces depreciation pressure.",
-          "Local currency depreciation and capital flows: once depreciation expectations form, foreign investors tend to exit stocks and bonds first, and capital outflows in turn increase depreciation pressure, creating a self-reinforcing loop.",
-          "Why ASEAN is targeted: it is the most important manufacturing relocation destination outside China, and the United States wants to prevent tariffs from being circumvented, so it is pressuring regional transshipment and mineral supply.",
-          "Implications for asset prices: the risk premium on regional stock markets rises, earnings expectations for export-oriented companies are revised down, and currency hedging costs rise."
+          "Why critical minerals matter: Rare earths, nickel, lithium, and other minerals are upstream raw materials for electric vehicles, batteries, and semiconductors. Whoever controls supply controls the costs and security of downstream manufacturing.",
+          "How tariffs affect the current account: Export costs rise and export volumes fall, narrowing the trade surplus or even turning it into a trade deficit. The current account deteriorates, putting depreciation pressure on the local currency.",
+          "Local currency depreciation and capital flows: Once depreciation expectations take hold, foreign investors tend to pull out of equities and bonds first. Capital outflows in turn intensify depreciation pressure, creating a self-reinforcing cycle.",
+          "Why ASEAN is being targeted: It is the most important destination outside China for manufacturing relocation. The U.S. wants to prevent tariffs from being circumvented through rerouting, so it is applying pressure on regional re-exports and mineral supplies.",
+          "Implications for asset prices: Risk premiums in regional equity markets rise, earnings expectations for export-oriented companies are revised downward, and currency hedging costs increase."
         ]
       }
     },
@@ -118,15 +118,15 @@
         ]
       },
       "insight_en": {
-        "what": "Japan requires all homebuyers to declare their nationality, raising concerns that foreign investment will be suppressed.",
-        "why": "The market had originally viewed Japanese real estate as a destination for foreign safe-haven allocation; if the declaration system increases transaction friction, foreign inflows will slow, and demand for Japan's real estate-related assets and yen assets faces revaluation.",
-        "chain": "Japan requires homebuyers to declare nationality → foreign transaction friction and compliance costs rise → foreign homebuying demand falls → Japanese real estate prices come under pressure → valuations of related REITs and developers are revised down",
+        "what": "Japan is requiring all homebuyers to declare their nationality, raising concerns that foreign investment will be curbed.",
+        "why": "Markets had viewed Japanese real estate as a destination for foreign capital seeking safe-haven allocations; if the declaration system increases transaction frictions, foreign inflows will slow, and demand for Japanese real estate-related assets and yen-denominated assets will need to be reassessed.",
+        "chain": "Japan requires homebuyers to declare their nationality → Transaction frictions and compliance costs for foreign investors rise → Foreign homebuying demand declines → Japanese real estate prices come under pressure → Valuations of related REITs and developers are revised downward",
         "notes": [
-          "Why this has transmission power: Japanese real estate has been an important allocation direction for overseas capital in recent years, and prices in central Tokyo are sensitive to foreign inflows; institutional friction will directly change marginal buying.",
-          "Declaring nationality is not the same as banning purchases: it raises information transparency and compliance costs, but the market worries it is a prelude to further restrictions, and expectations matter more than the rule itself.",
-          "What REITs are: real estate investment trusts, which hold properties and distribute rental income to investors; changes in interest rates and property prices are directly reflected in their prices.",
-          "Relationship with the yen: foreign homebuyers need to exchange into yen, and slower foreign inflows will weaken yen demand, but compared with interest rate differentials, this channel has a smaller impact.",
-          "Implications for cross-border capital flows: institutional friction lowers a country's investability rating and, in the long run, raises that country's risk premium."
+          "Why this has a transmission effect: Japanese real estate has been an important allocation destination for overseas capital in recent years. Home prices in central Tokyo are sensitive to foreign inflows, and institutional frictions directly alter marginal buying demand.",
+          "Declaring nationality does not mean purchases are prohibited: It increases information transparency and compliance costs, but markets worry that it is a precursor to further restrictions, with expectations having a greater impact than the rules themselves.",
+          "What REITs are: Real estate investment trusts hold properties and distribute rental income to investors. Changes in interest rates and property prices are directly reflected in their prices.",
+          "The relationship with the yen: Foreign investors need to convert funds into yen to buy property. Slower foreign inflows weaken demand for the yen, but this channel has a smaller impact than interest rate differentials.",
+          "Implications for cross-border capital flows: Institutional frictions lower the investability rating of a country's assets and raise that country's risk premium over the long term."
         ]
       }
     }
@@ -151,15 +151,15 @@
         ]
       },
       "insight_en": {
-        "what": "The US tech stock selloff deepens, and star stocks in Asia's AI supply chain are exposed to new vulnerabilities due to rising financing costs.",
-        "why": "The market had originally treated Asia's AI supply chain as a pure beneficiary of computing power demand; rising financing costs have changed expectations for the sustainability of AI capital expenditure, and the valuations and earnings expectations of related stocks both need to be revalued.",
-        "chain": "US Treasury yields remain elevated → AI companies' financing costs rise → data center and computing power capex slows → order expectations for Asia's chip and server supply chain are revised down → related stocks suffer a double hit to valuation and earnings",
+        "what": "The sell-off in U.S. technology stocks is deepening, and rising financing costs are exposing new vulnerabilities in the star stocks of Asia's AI supply chain.",
+        "why": "Markets had viewed Asia's AI supply chain simply as a beneficiary of demand for computing power; rising financing costs have altered expectations for the sustainability of AI capital expenditure, requiring a reassessment of both valuations and earnings expectations for the related stocks.",
+        "chain": "U.S. Treasury yields remain elevated → Financing costs for AI companies rise → Capital expenditure on data centers and computing capacity slows → Order expectations for Asia's chip and server supply chains are revised downward → Related stocks suffer a double hit to valuations and earnings",
         "notes": [
-          "Why financing costs matter for AI: AI infrastructure is heavy-asset investment, and data centers and GPU clusters are supported by debt and equity financing; rising interest rates directly raise project funding costs and return thresholds.",
-          "What picks-and-shovels means: the people selling shovels in a gold rush, a metaphor for suppliers that do not directly make AI applications but sell hardware such as chips, servers, and optical modules; they are most sensitive to the capex cycle.",
-          "Why Asia's supply chain is hit first: Asian companies sit in the AI hardware manufacturing segment, and their orders come from US giants' capex; once financing conditions tighten, order cuts transmit first to the manufacturing side.",
-          "What double hit means: earnings expectations are revised down at the same time that valuation multiples fall due to rising discount rates; the numerator and denominator deteriorate together, amplifying the share price decline.",
-          "Connection with US Treasury yields: the risk-free rate is the anchor for US tech giants' financing and valuations; rising long-end yields simultaneously压低 growth stock valuations and raise project financing costs."
+          "Why financing costs matter for AI: AI infrastructure is capital-intensive, with data centers and GPU clusters supported by debt and equity financing. Higher interest rates directly raise projects' cost of capital and hurdle rates.",
+          "What picks-and-shovels means: People who sell shovels during a gold rush, a metaphor for suppliers that do not develop AI applications directly but instead sell hardware such as chips, servers, and optical modules. They are the most sensitive to the capital expenditure cycle.",
+          "Why Asia's supply chain gets hit first: Asian companies operate in AI hardware manufacturing, with orders coming from U.S. giants' capital expenditure. Once financing conditions tighten, order cuts are transmitted first to manufacturing.",
+          "What a double hit means: As earnings expectations are revised downward, valuation multiples also decline because of higher discount rates. The numerator and denominator deteriorate simultaneously, amplifying the share price decline.",
+          "The link to U.S. Treasury yields: The risk-free rate anchors financing and valuations for U.S. technology giants. Higher long-end yields simultaneously depress growth stock valuations and increase project financing costs."
         ]
       }
     },
@@ -182,15 +182,15 @@
         ]
       },
       "insight_en": {
-        "what": "DeepSeek releases an updated AI model, saying it is faster and leaner, increasing the challenge to leading US models.",
-        "why": "The market had originally priced in that US giants' lead in model capability could sustain high investment and high returns; if a more efficient Chinese model lowers unit inference costs, the structure of computing power demand and expectations for giants' capex both need to be revalued.",
-        "chain": "DeepSeek launches a more efficient model → unit inference cost falls → the market questions the necessity of massive computing power investment → US AI giants' capex expectations are revised down → computing power chips and the data center supply chain come under pressure",
+        "what": "DeepSeek has released an updated AI model, saying it is faster and leaner, intensifying its challenge to leading U.S. models.",
+        "why": "Markets had priced in the assumption that U.S. giants' lead in model capabilities could sustain high investment and high returns; if more efficient Chinese models drive down unit inference costs, both the composition of demand for computing power and expectations for the giants' capital expenditure will need to be reassessed.",
+        "chain": "DeepSeek launches a more efficient model → Unit inference costs fall → Markets question the need for massive investment in computing capacity → Capital expenditure expectations for U.S. AI giants are revised downward → Compute chip and data center supply chains come under pressure",
         "notes": [
-          "Why efficient models matter: if the same results require less computing power, unit inference costs fall and cloud providers' and enterprises' AI usage costs decline, but shipment expectations for hardware suppliers will be revised down.",
-          "What inference cost is: the computing power cost consumed each time a model answers a question; the leaner and more efficient the model, the lower the cost per call and the lower the commercialization threshold for AI applications.",
-          "Implications for Nvidia and the chip chain: training-side demand may remain strong, but if efficiency improves on the inference side, unit computing power demand falls, and the market will reassess chip shipment growth.",
-          "The open-source versus closed-source debate: DeepSeek approaching leading models at lower cost will compress closed-source models' pricing power and change the profit distribution of the AI industry.",
-          "Why this hits the capex narrative: part of US giants' high valuations is built on the assumption that sustained large-scale capex creates moats; an efficiency shock will shake that assumption."
+          "Why efficient models matter: If the same results require less computing power, unit inference costs fall, lowering the cost of AI use for cloud providers and businesses, but hardware suppliers' shipment expectations will be revised downward.",
+          "What inference costs are: The cost of the computing resources a model consumes each time it answers a question. The leaner and more efficient the model, the lower the cost per call and the lower the barrier to commercializing AI applications.",
+          "Implications for Nvidia and other companies in the chip supply chain: Training demand may remain strong, but if inference becomes more efficient, unit computing requirements decline, prompting markets to reassess chip shipment growth.",
+          "The open-source versus closed-source contest: By approaching the performance of leading models at a lower cost, DeepSeek will erode the pricing power of closed-source models and change the distribution of profit margins across the AI industry.",
+          "Why this challenges the capital expenditure narrative: U.S. giants' high valuations are built in part on the assumption that sustained, large-scale capital expenditure creates a moat. An efficiency shock undermines that assumption."
         ]
       }
     }

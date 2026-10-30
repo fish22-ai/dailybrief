@@ -1,6 +1,6 @@
 {
   "date": "2026-10-29",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Healey avoids bond market wobble with ‘uneventful’ first Budget",
@@ -8,54 +8,88 @@
       "url": "https://www.ft.com/content/d7788234-ffaf-49a5-9528-cff0a1685fe9?syn-25a6b1a6=1",
       "published": "2026-10-29 01:16",
       "raw_summary": "Gilts hold on to pre-Budget gains following modest package of tax and spending changes",
-      "insight": {}
+      "insight": {
+        "what": "英国政府公布税收和支出调整温和的预算，英国国债保住公布前涨幅。",
+        "why": "市场检验的是预算会否超预期增加举债；温和调整没有触发债市震荡，英国国债暂不需要因财政负面意外而大幅降价。",
+        "chain": "预算税收支出调整温和 → 超预期举债担忧未明显加剧 → 新债争夺资金的担忧未加剧 → 买家未因供给冲击要求更高回报 → 既有国债无需额外降价吸引买盘 → 英国国债保住预算前涨幅",
+        "notes": [
+          "英国国债是英国政府向投资者借钱的凭证，通常约定支付利息并在到期时偿还本金。它也能在到期前交易，因此政府没有改变还款承诺，市场价格仍会变化。",
+          "预算怎样影响债券供给？政府支出超过收入的缺口叫财政赤字（fiscal deficit），通常需要借债弥补。赤字扩大往往增加发债需求，但实际发行规模还取决于旧债到期、现金储备等因素，不能只看某一项减税或增支。",
+          "为什么多发债会压低原有债券价格？新旧国债争取的是相近的一批投资资金。当资金需求增长慢于债券供给时，买家会要求更有吸引力的回报；原有债券承诺的利息不变，就需要通过降低买入价格来提高吸引力。",
+          "到期收益率（yield to maturity，YTM）是根据买入价格、未来利息和到期还本计算的综合年化回报指标，通常假设发行人按约支付。其他条件不变，买入价格越低，同样的利息和本金对应的收益率越高，因此债券价格与收益率反向变动。",
+          "财政可信度还有另一层影响：投资者担心政府长期借债失控时，会要求额外回报，这部分可称为风险补偿（risk premium）。温和预算没有引发恐慌，不等于赤字下降或政府融资成本已经全面降低。",
+          "这条链解释的是预算为什么没有带来额外下跌压力，不是已证实的唯一归因。保住预算前涨幅不等于预算后继续大涨；摘要也没有提供具体期限、收益率或发债计划，不能据此推断英国央行将提前降息。"
+        ]
+      }
     },
     {
-      "title": "Bank of England able to take UK Budget in its stride despite slippage in deficit reduction",
+      "title": "Copper’s AI-fuelled boom gets a reality check",
       "source": "FT Markets",
-      "url": "https://www.ft.com/content/4fe7b495-a682-4f69-a385-a02c892db0d7",
-      "published": "2026-10-29 00:39",
-      "raw_summary": "Higher energy prices and interest costs take their toll on borrowing outlook",
-      "insight": {}
+      "url": "https://www.ft.com/content/6b5b96f5-0d2a-4161-911f-71dda46ccb9d?syn-25a6b1a6=1",
+      "published": "2026-10-29 13:00",
+      "raw_summary": "Tariff threats from the US may have driven up the price but the industry has shifted spending on the basis of long-term demand",
+      "insight": {
+        "what": "报道指美国关税威胁或助推铜价，铜业已依据长期需求调整投资。",
+        "why": "市场需区分人工智能带来的长期用铜增长与关税引起的短期备货；前者增加持续消耗，后者主要改变采购时点，铜价和铜矿股需重新评估上涨基础。",
+        "chain": "关税威胁抬高进口成本顾虑 → 赶在征税前到货的价值增加 → 买方更愿提前锁定现有铜货 → 提前备货将未来采购前移 → 短期争抢货源抬高买方报价 → 若抢运超预期且供应未补足，即时交付的铜价才获支撑",
+        "notes": [
+          "先区分事实与解释：候选材料只说关税威胁可能助推价格，没有给出税率、实施日期、库存变化或当日涨跌。链条展示的是提前采购渠道，不能把它当成抢运已经发生、且足以解释全部铜价涨幅的证据。",
+          "关税是进口时征收的税。进口商担心将来税负增加，就有动力赶在政策生效前采购和到货。但提前采购也要付仓储、保险和借款利息；只有规避税负的预期收益足够大，提前备货才划算。",
+          "提前备货不等于最终消费增长。企业把明年要买的铜提前买入，今年采购量增加，明年采购量就可能相应减少。判断行情能否持续，要看铜是否真正进入电网、设备和建筑，而不只是从一个仓库搬到另一个仓库。",
+          "不同地区的铜价可以分化。美国提前吸引货源，会改变其他地区可立即交付的数量；关税真正实施后，又会改变跨境采购成本和贸易方向。因此，美国铜价上涨不能直接推出全球铜价同步、同幅上涨，还要比较各地库存和供需。",
+          "人工智能如何增加铜需求？主要通过数据中心供电、电缆、变压器以及配套电网建设，而不只是芯片本身。但宣布数据中心投资，不等于当期已经用铜；项目能否获得电力、何时开工和实际建设规模，决定需求兑现速度。",
+          "资本开支（capital expenditure）是建矿、扩产等能在多年内提供产能的长期投入。矿山从勘探、审批到投产往往需要多年，因此长期需求预期可以提前推动投资，却不能立即增加供给；等新增产能集中投产时，又可能压低未来铜价。",
+          "铜矿股不是铜价的简单复制。铜价上涨、开采成本不变时，每吨铜贡献的利润会增加；但能源、人工和建矿支出上升会抵消收益。面试中应追问：上涨来自持续消费还是提前备货，企业增加投资后还能留下多少现金？"
+        ]
+      }
     }
   ],
   "policy": [
     {
-      "title": "Google supplier Biwin, GPU leader Moore Threads see stocks plunge despite revenue surge",
+      "title": "Hegseth fires Pentagon’s top military planner as Trump weighs new Iran strikes",
       "source": "SCMP",
-      "url": "https://www.scmp.com/tech/tech-trends/article/3372535/google-supplier-biwin-gpu-leader-moore-threads-see-stocks-plunge-despite-revenue-surge",
-      "published": "2026-10-29 13:35",
-      "raw_summary": "Shares of Chinese semiconductor suppliers Biwin Storage Technology and Moore Threads tumbled on Thursday alongside a broader rout in mainland technology stocks, despite blockbuster third-quarter reven",
-      "insight": {}
-    },
-    {
-      "title": "Flávio Bolsonaro denies fleeing Brazil after landing in Miami",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&at_campaign=rss",
-      "published": "2026-10-29 09:14",
-      "raw_summary": "The defeated Brazilian candidate claims to be the victim of a coup d’état and political persecution, recycling unsubstantiated allegations of “electoral fraud”.",
-      "insight": {}
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3372530/hegseth-fires-pentagons-top-military-planner-trump-weighs-new-iran-strikes",
+      "published": "2026-10-29 12:54",
+      "raw_summary": "US Defence Secretary Pete Hegseth has fired the Pentagon’s top military planner, a defence official said on Wednesday, the latest in a series of generals to be ousted and one that comes even as Presid",
+      "insight": {
+        "what": "美国防长赫格塞思撤换最高军事规划官员，特朗普正考虑再次打击伊朗。",
+        "why": "市场要重新检验对伊冲突升级是否已充分定价；真正敏感的是海湾供货受阻风险，原油价格不应仅因人事变动被机械上调。",
+        "chain": "美国考虑再次打击伊朗 → 冲突外溢风险进入供应评估 → 海运受阻情景压低可供油量 → 断供情景抬高未来采购成本 → 防范涨价增加提前锁价需求 → 若断供风险超出预期且其他供应难补位，布伦特原油期货价格才获支撑",
+        "notes": [
+          "这条新闻包含两件不同的事：撤换军事规划官员，以及考虑再次打击伊朗。前者不能单独证明战争将扩大，后者也不等于新一轮打击已经发生。链条中的运输受阻和断供是市场评估的情景，不是摘要确认的事实。",
+          "为什么尚未断供，价格也会变化？资产价格反映对未来的判断。投资者会同时考虑正常供货与供应中断等情景；中断情景被赋予更高概率，就会改变今天愿意支付的价格。但若市场早已充分计入同样风险，重复消息不一定带来新的涨幅。",
+          "伊朗风险为什么能影响其他国家出口的石油？霍尔木兹海峡连接波斯湾与外海，是多个海湾产油国的重要出口通道。冲突升级会使市场评估航运、保险和装运是否受扰，但不能直接假设海峡已经关闭。",
+          "布伦特原油是国际原油定价的重要基准。期货（futures）是约定未来按标准条件交易的合约。担心未来油价上涨的用油企业可以先买入相关期货，以合约盈利抵消之后采购成本的增加；这叫套期保值（hedging）。",
+          "锁定价格不等于锁定实物供应。期货能帮助管理价格变化，却不能保证油轮按时到港，也不能消除运输中断。企业仍需安排实物合同、库存和替代运输路线，因此不能把金融合约当成断供问题的完整解决方案。",
+          "为什么最后要看其他供应能否补位？其他产油国增产、库存释放或需求下降，都能减轻短缺。油价取决于可供数量相对需求的变化，不只取决于冲突是否发生；地缘紧张也可能与油价下跌同时出现。",
+          "若油价持续上涨，能源进口国的燃料和运输成本会增加，并向商品价格传递。但央行不一定加息：它还要判断涨价是否持续、是否扩散到工资和其他服务，以及高能源成本是否已经明显压低经济活动。"
+        ]
+      }
     }
   ],
   "tech": [
     {
-      "title": "Air Liquide’s Sales Grow on Sustained AI-Related Demand",
+      "title": "Furiosa AI CEO on $2.9B Valuation",
       "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-10-29/air-liquide-sales-grow-sustained-ai-related-demand-semiconductor-chip-making",
-      "published": "2026-10-29 14:43",
-      "raw_summary": "Air Liquide SA revenue grew to its highest in nearly four years, propelled by increased demand in its artificial intelligence-exposed unit.",
-      "insight": {}
-    },
-    {
-      "title": "STMicro Forecasts Growth As Recovery in Chip Demand Continues",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-10-29/stmicro-forecasts-growth-as-recovery-in-chip-demand-continues",
-      "published": "2026-10-29 14:08",
-      "raw_summary": "STMicroelectronics NV forecast fourth-quarter revenue growth as a recovery in chip demand continues after a prolonged slump.",
-      "insight": {}
+      "url": "https://www.bloomberg.com/news/videos/2026-10-29/furiosa-ai-ceo-on-2-9b-valuation-video",
+      "published": "2026-10-29 11:33",
+      "raw_summary": "June Paik, Founder and CEO of South Korean AI Chip startup FuriosaAI, discusses the firm's $620 million Series D fundraising round, quadrupling the firm's valuation. He also discusses the company's bu",
+      "insight": {
+        "what": "FuriosaAI创始人介绍6.2亿美元融资，公司估值达29亿美元。",
+        "why": "新增资金改善独立芯片商持续研发和准备量产的能力；市场需重估替代供应商成形的概率，以及领先芯片商还能维持多久的定价优势。",
+        "chain": "融资增加可用现金 → 研发与软件适配获资金支持 → 推进产品验证的能力增强 → 客户评估替代方案的空间扩大 → 潜在替代约束领先厂商提价 → 提价受限压低单片利润预期 → 盈利预期下修压低股票估值 → 若替代订单超预期且需求增长未抵消，英伟达等领先芯片商股价才承压",
+        "notes": [
+          "FuriosaAI是一家韩国人工智能芯片公司。6.2亿美元是本轮融资金额，29亿美元是公司估值。股权估值（equity valuation）是投资者依据交易条件判断的公司股权整体价值，不是公司收入，也不是银行账户里的现金。",
+          "融资改变的是资金约束，不是直接证明技术领先。芯片研发需要持续支付人员、设计工具、试制和测试费用；更多资金能降低项目因缺钱中断的风险。摘要没有披露资金用途明细，因此不能断言这笔钱已经形成确定的量产能力。",
+          "芯片能运行，不等于客户能方便地使用。软件适配是让客户现有模型、开发工具和业务系统在新芯片上正常运行。迁移需要工程师投入、重新测试和维护，客户会把这些成本与芯片采购价一起比较，而不只看厂商宣称的计算速度。",
+          "更多融资也不等于制造环节没有约束。芯片设计企业通常需要专业工厂代为生产，还要协调封装、存储器和交付。资金能支持下单和工程开发，但不能自动解决先进制造产能不足或产品质量不稳定的问题。",
+          "为什么新进入者会影响领先厂商？客户拥有性能合格、供货可靠的替代方案后，可以分散采购，或用竞争报价争取折扣。售价下降而每片芯片成本没有同步下降时，单片利润会减少。不过，只有可信的替代方案才构成有效议价筹码。",
+          "产业成本曲线要看完成同一任务的总成本，而不是单颗芯片售价。采购设备、电力消耗、软件迁移和设备闲置都会影响实际成本。新芯片即使便宜，若运行效率低或迁移昂贵，也未必能降低客户的整体支出。",
+          "链条后半段是竞争兑现后的定价路径，不是融资公告已经造成的经营变化。领先厂商股价是否承压，要看替代规模是否超过市场预期；如果整个算力市场增长足够快，新旧供应商仍能同时增加销量和利润。后续应核对客户付费采购、重复订单和实际交付，而不是只看融资估值。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261029150211186418909wbs2ka1KoTvJZ)', 'type': 'new_api_error'}}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -78,11 +112,11 @@
       "tier": "stable"
     },
     "cnbc_fin": {
-      "count": 11,
+      "count": 10,
       "tier": "stable"
     },
     "economist_fin": {
-      "count": 11,
+      "count": 9,
       "tier": "stable"
     },
     "wallstreetcn": {

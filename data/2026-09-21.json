@@ -20,6 +20,19 @@
           "为什么干预只能放缓跌势、不能扭转趋势？干预消耗外汇储备，如果基本面压力持续，储备会被耗尽，所以市场会测试央行的决心。",
           "这条对区域资产的含义：印尼盾走弱可能带动周边新兴市场货币被一起抛售，因为投资者常把新兴市场当作一个整体来配置。"
         ]
+      },
+      "insight_en": {
+        "what": "Bank Indonesia said that the rupiah's depreciation stems from high oil prices pushing up global inflation and a deteriorating fiscal outlook, and that it will continue to intervene in the foreign exchange market to maintain stability.",
+        "why": "The market may originally have viewed the rupiah's weakness as a matter of short-term sentiment, but Bank Indonesia's remarks redefine it as a fundamental shock involving oil prices, inflation, and the fiscal outlook, implying that emerging-market currencies and local-currency assets need to be repriced to reflect higher risk premiums.",
+        "chain": "High oil prices → Global inflation expectations rise → Indonesia's import costs and subsidy pressures increase → Fiscal deficit risk rises → Foreign investors demand higher compensation → The rupiah is sold off → Bank Indonesia intervenes by selling dollars → FX reserves are drawn down, and the rupiah remains under pressure but its decline slows",
+        "notes": [
+          "What is central bank intervention in the foreign exchange market? The central bank sells dollars from its reserves and buys the local currency in the foreign exchange market, increasing demand for the local currency and thereby supporting the exchange rate.",
+          "Why do high oil prices hurt Indonesia? Indonesia is a net importer of crude oil, so rising oil prices mean a larger import bill, worsening both the trade balance and the fiscal subsidy burden.",
+          "Why does the fiscal outlook affect the exchange rate? If the market worries that the government's deficit will widen and bond issuance will increase, investors will demand higher interest rates as compensation before they are willing to hold the country's assets, increasing capital outflow pressure.",
+          "What is a risk premium? Investors demand an additional return as compensation for holding riskier assets, and this additional return is the risk premium; when the risk premium rises, asset prices fall.",
+          "Why can intervention only slow the decline rather than reverse the trend? Intervention uses up FX reserves, and if fundamental pressures persist, the reserves will be exhausted, so the market will test the central bank's resolve.",
+          "What this means for regional assets: A weakening Indonesian rupiah could trigger a simultaneous sell-off in neighboring emerging-market currencies, because investors often allocate to emerging markets as a whole."
+        ]
       }
     },
     {
@@ -39,6 +52,19 @@
           "监管升级为什么影响资产价格？银行收紧融资后，对冲基金借不到便宜钱，只能卖出资产还债，卖压会压低相关资产价格。",
           "这类事件往往先影响流动性差的资产，因为大家都想先卖容易卖的，最后才轮到难卖的，难卖的资产跌幅更大。",
           "对普通投资者的含义：即使不直接持有对冲基金，也可能通过银行股、券商股或市场流动性收紧间接受到影响。"
+        ]
+      },
+      "insight_en": {
+        "what": "Following the blowup of AI hedge fund Situational Awareness, the Federal Reserve and the Bank of England have stepped up scrutiny of banks' financing of trading firms.",
+        "why": "The market originally viewed the hedge fund's blowup as an isolated incident, but heightened regulatory scrutiny means banks will tighten financing for trading firms, raising the cost of leverage and putting assets in high-risk strategies that rely on leverage under deleveraging pressure.",
+        "chain": "Hedge fund blowup → Regulators suspect inadequate risk management at banks → Fed and BoE step up scrutiny of prime brokers → Banks tighten financing for trading firms → The cost of leverage rises → Highly leveraged strategies are forced to reduce positions → Related assets are sold off",
+        "notes": [
+          "What is a prime broker? A prime broker is a bank division that provides hedge funds with a package of services such as financing, clearing, and custody; hedge funds rely on it to increase leverage.",
+          "What is leverage? It means using borrowed money to increase the size of an investment, magnifying both gains and losses; a blowup occurs when losses become so large that margin is insufficient, leading to forced liquidation of positions.",
+          "Why do regulators need to investigate banks? If banks provide financing to too many highly leveraged institutions, a wave of blowups at those institutions will leave banks with bad debts, potentially triggering systemic risk.",
+          "Why does tighter regulation affect asset prices? After banks tighten financing, hedge funds can no longer borrow cheaply and have no choice but to sell assets to repay debt, and the selling pressure drives down the prices of related assets.",
+          "Such events often affect illiquid assets first, because everyone wants to sell easy-to-sell assets first and leaves hard-to-sell assets until last, with the hard-to-sell assets suffering larger declines.",
+          "Implications for ordinary investors: Even without direct holdings in hedge funds, investors may be indirectly affected through bank stocks, brokerage stocks, or tighter market liquidity."
         ]
       }
     }
@@ -62,6 +88,19 @@
           "这条也涉及地缘：能源贸易流向改变往往伴随政治关系变化，可能影响未来制裁、保险和结算安排。",
           "对资产价格的含义：加拿大能源股、油轮航运股可能受益，中东和俄罗斯相关资产可能承压。"
         ]
+      },
+      "insight_en": {
+        "what": "China sharply increased its imports of crude oil and liquefied natural gas from Canada in August, against a backdrop of deteriorating trade relations between Canada and the United States.",
+        "why": "The market originally assumed that China's energy imports depended heavily on the Middle East and Russia, but this development changes expectations for energy trade flows, leaving Canadian energy exporters, shipping, and tanker freight rates facing reassessment.",
+        "chain": "Canada–U.S. trade friction escalates → Canada seeks to diversify its energy exports → China increases purchases of Canadian crude oil and LNG → Demand for trans-Pacific energy transportation rises → Tanker freight rates are pushed higher → The energy market shares of the Middle East and Russia are squeezed → The fiscal positions and currencies of the affected exporting countries come under pressure",
+        "notes": [
+          "What is LNG? LNG is liquefied natural gas, made by cooling natural gas into a liquid for long-distance transport by ship; it is the main method of transoceanic transport apart from pipeline natural gas.",
+          "Why does trade friction redirect energy flows? Canada previously sold most of its energy exports to the United States, but deteriorating relations mean it needs new buyers; China happens to need to diversify its import sources, so the two sides are a natural match.",
+          "Why do tanker freight rates matter? Freight rates are a cost component of energy trade; higher rates raise landed costs and also improve the profitability of shipping companies that own tankers.",
+          "Implications for the Middle East and Russia: If China buys less energy from them, their export revenues fall, and their fiscal positions and currencies may come under pressure.",
+          "This development also has a geopolitical dimension: Changes in energy trade flows are often accompanied by changes in political relations, potentially affecting future sanctions, insurance, and settlement arrangements.",
+          "Implications for asset prices: Canadian energy stocks and tanker shipping stocks may benefit, while assets related to the Middle East and Russia may come under pressure."
+        ]
       }
     }
   ],
@@ -84,6 +123,19 @@
           "资本开支是什么？企业用于购买长期资产（如服务器、厂房）的支出，是芯片和云厂商收入的重要来源。",
           "这条对投资的含义：不能只看AI需求有多强，还要看供给端能不能跟上，瓶颈可能让部分环节的利润重新分配。"
         ]
+      },
+      "insight_en": {
+        "what": "New data center projects worth a total of approximately $68 billion in the United States have been held up by local opposition.",
+        "why": "The market originally assumed that demand for AI computing power would drive data center construction without limit, but this development shows that land, electricity, and community approvals are becoming bottlenecks. Computing capacity may expand more slowly than expected, affecting the pace of capital expenditure by chipmakers and cloud providers.",
+        "chain": "Demand for AI computing power surges → Data center construction accelerates → Local residents object to electricity and water consumption and noise → Project approvals face obstacles → Data center supply growth slows → Computing capacity rental rates are supported → The pace of chip orders and cloud providers' capital expenditure is reassessed",
+        "notes": [
+          "Why do data centers consume so much electricity and water? Running servers requires large amounts of electricity, and cooling systems require large amounts of water; a large data center consumes as much electricity as a small city.",
+          "Why do local communities oppose them? Residents worry about higher electricity prices, water scarcity, noise, and land use, all of which can affect voting and local politics.",
+          "Why does slower growth in the supply of computing capacity affect chips? If data centers cannot be built, cloud providers will slow the pace of chip purchases, and chip orders may fall short of expectations.",
+          "What are computing capacity rental rates? Cloud providers rent computing capacity to AI companies by the hour or month; rental rates rise when supply is tight and fall when there is oversupply.",
+          "What is capital expenditure? It is spending by companies on purchasing long-term assets, such as servers and factory buildings, and is an important source of revenue for chipmakers and cloud providers.",
+          "What this means for investment: It is not enough to look only at the strength of AI demand; it is also necessary to assess whether supply can keep up, as bottlenecks may redistribute profits across some segments."
+        ]
       }
     },
     {
@@ -103,6 +155,19 @@
           "数据中心和电力为什么受益？AI需要大量算力和电力，澳大利亚有能源优势，可能吸引相关投资。",
           "澳元资产为什么受影响？如果AI投资带动经济增长和资本流入，澳元和澳大利亚资产可能走强。",
           "这条的局限：政府表态不等于实际投资落地，还要看后续预算、监管和私人资本是否跟进。"
+        ]
+      },
+      "insight_en": {
+        "what": "The Australian government said it would rely on the adoption and development of artificial intelligence to drive economic growth over the coming decades.",
+        "why": "The market may originally have viewed AI as a competition between the United States and China, but this development also brings Australia into the AI-driven growth narrative, implying that its economic structure beyond mining and related assets may be repriced.",
+        "chain": "Australia's population ages and productivity growth slows → The government bets on AI to boost productivity → AI investment and demand for data centers rise → Investment in electricity and computing infrastructure increases → Related energy and technology assets benefit → The attractiveness of Australian dollar-denominated assets changes",
+        "notes": [
+          "What is productivity? It is the amount of output per unit of labor or capital input; higher productivity means the same inputs can generate more output and is central to long-term economic growth.",
+          "Why does population aging drag on growth? The working population shrinks while pension and healthcare spending increase, putting greater pressure on public finances and making economic growth more likely to slow.",
+          "How does AI boost productivity? Through automation, data analysis, and decision support, it enables the same people and machines to do more, but the effects take time to materialize.",
+          "Why do data centers and the power sector benefit? AI requires large amounts of computing power and electricity, and Australia has energy advantages that may attract related investment.",
+          "Why are Australian dollar-denominated assets affected? If AI investment drives economic growth and capital inflows, the Australian dollar and Australian assets may strengthen.",
+          "The caveat here: A government statement does not mean actual investment will materialize; it remains to be seen whether subsequent budgets, regulation, and private capital follow through."
         ]
       }
     }

@@ -30,6 +30,10 @@ REM 第三方 key 在那里一律 401，整天降级成规则模式（页面显�
 
 chcp 65001 >nul
 set PYTHONIOENCODING=utf-8
+REM LLM 中转站不走代理：实测本机代理节点到 agentrouter.org 会 502（2026-10-30），
+REM 而直连 0.3s 就通。RSS 抓取不受影响（它们本来就该走代理出海）。
+set NO_PROXY=agentrouter.org
+set no_proxy=agentrouter.org
 cd /d "%~dp0.."
 set "ROOT=%CD%"
 set "LOG=%ROOT%\logs\cron.log"

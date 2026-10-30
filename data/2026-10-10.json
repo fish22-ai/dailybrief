@@ -19,6 +19,18 @@
           "长端和短端有什么区别？短端收益率主要反映未来几年的政策利率预期，长端收益率还包含期限溢价，即投资者持有长期债券要求的额外补偿。",
           "中期选举后公布意味着什么？时间点拖后说明短期内不会有实质性动作，市场会先交易预期，真正落地前长端收益率的波动更多是情绪驱动。"
         ]
+      },
+      "insight_en": {
+        "what": "U.S. Treasury Secretary Bessent said that U.S. national debt has reached approximately $41 trillion and that the government is developing a fiscal consolidation plan expected to be announced after the midterm elections.",
+        "why": "Markets had been pricing in a continually widening U.S. fiscal deficit and steadily increasing Treasury supply. This statement suggests that future debt issuance pressure may ease, requiring a reassessment of long-end U.S. Treasury yields and the dollar's trajectory.",
+        "chain": "Treasury secretary signals fiscal consolidation → Markets expect lower future Treasury supply → Supply pressure on long-end U.S. Treasuries declines → Long-end yields fall → The dollar becomes less attractive；Meanwhile, expectations of fiscal tightening → Expectations of slower economic growth → Rate-cut expectations rise → Short-end yields also come under pressure",
+        "notes": [
+          "Why does the size of the national debt matter? A larger national debt requires the government to continually issue new debt to roll over old debt, and increased supply depresses bond prices and pushes up yields.",
+          "What does fiscal consolidation mean? It means the government intends to reduce the deficit, either by increasing tax revenue or by cutting spending, with the aim of reducing the amount of new borrowing needed each year.",
+          "Why do markets care about debt issuance plans? If the Treasury reduces its issuance of long-term Treasuries, the supply of long-end bonds falls, supporting bond prices and lowering yields if demand remains unchanged.",
+          "What is the difference between the long end and the short end? Short-end yields mainly reflect expectations for policy rates over the next few years, while long-end yields also include a term premium, the additional compensation investors demand for holding long-term bonds.",
+          "What does an announcement after the midterm elections imply? The deferred timing indicates that there will be no substantive action in the near term. Markets will initially trade on expectations, and fluctuations in long-end yields will be driven more by sentiment before the plan is actually implemented."
+        ]
       }
     },
     {
@@ -38,6 +50,19 @@
           "为什么用国库券替代长债？短期融资成本通常更低，但滚动频率高，会增加未来再融资风险。",
           "收益率曲线趋平意味着什么？长端收益率下降幅度大于短端，或短端上升幅度大于长端，曲线变平，市场对长期增长和通胀的预期可能偏谨慎。",
           "为什么花旗的预测重要？作为一级交易商，花旗与财政部有直接沟通渠道，其预测常被视为市场共识的风向标。"
+        ]
+      },
+      "insight_en": {
+        "what": "Citi expects that the U.S. Treasury may reduce auction sizes for long-term Treasuries, possibly even discontinue issuance of 20-year bonds, and instead issue more Treasury bills.",
+        "why": "Markets had expected long-term bond supply to continue increasing. If this forecast materializes, it will change the supply-demand dynamics for long-end U.S. Treasuries, and markets will need to reprice both the shape of the long-end yield curve and institutional allocation behavior.",
+        "chain": "Citi forecasts reduced long-term bond issuance → Expected supply of long-end U.S. Treasuries declines → Long-end bond prices receive support → Long-end yields fall relative to short-end yields → The yield curve flattens；Meanwhile, increased Treasury bill issuance → Short-end supply increases → Short-end yields come under pressure",
+        "notes": [
+          "What is a Treasury auction? The Treasury regularly auctions Treasury securities of different maturities to borrow money, and auction sizes directly affect the supply of bonds in the market.",
+          "What is the difference between 20-year and 30-year bonds? The 20-year bond was introduced later and is less liquid than the 30-year bond. Discontinuing its issuance would remove one source of long-end supply.",
+          "What are Treasury bills? They generally refer to short-term Treasury securities maturing within one year. They have short maturities and good liquidity, and increased Treasury bill issuance means the Treasury is relying more heavily on short-term financing.",
+          "Why replace long-term bonds with Treasury bills? Short-term financing costs are typically lower, but more frequent rollovers will increase future refinancing risk.",
+          "What does a flattening yield curve mean? Long-end yields fall more than short-end yields, or short-end yields rise more than long-end yields, causing the curve to flatten. Markets may be cautious in their expectations for long-term growth and inflation.",
+          "Why does Citi's forecast matter? As a primary dealer, Citi has direct communication channels with the Treasury, and its forecasts are often viewed as a bellwether for market consensus."
         ]
       }
     }
@@ -61,6 +86,19 @@
           "为什么能源股承压？油价下跌会压缩能源公司的利润空间，盈利预期下调导致股价承压。",
           "澳大利亚拒绝购买说明什么？并非所有盟友都会跟随美国，制裁联盟可能出现裂痕，影响协议的实际效果。"
         ]
+      },
+      "insight_en": {
+        "what": "Trump announced that a diesel deal had been reached with Russia; analysts believe the move is intended to contain fuel prices ahead of the midterm elections.",
+        "why": "Markets had expected sanctions on Russia to remain in place and energy supply to remain constrained. If implemented, this deal will increase global diesel supply and lower refined product prices, thereby affecting inflation expectations and the path of interest rates.",
+        "chain": "The U.S. imports Russian diesel → Global diesel supply increases → Diesel prices fall → Transportation and industrial costs decline → Overall inflationary pressure eases → Rate-cut expectations rise → Short-end U.S. Treasury yields fall；Meanwhile, diesel prices decline → Energy sector earnings expectations are revised down → Energy stocks come under pressure",
+        "notes": [
+          "Why is diesel important? Diesel is used in trucks, ships, and industrial equipment, and its price directly affects transportation costs and logistics expenses for almost all goods.",
+          "The relationship between sanctions and imports: Previous sanctions on Russia restricted Russian energy exports. If the U.S. actively imports, this amounts to a de facto easing of sanctions and increases market supply.",
+          "How do inflation expectations affect interest rates? Easing inflationary pressure leads markets to expect that the central bank will not need to be as hawkish, raising the probability of rate cuts; short-end interest rates are sensitive to this.",
+          "Midterm elections and fuel prices: Lowering oil prices before elections is a common political objective because oil prices directly affect voters' perceptions of the economy.",
+          "Why do energy stocks come under pressure? Falling oil prices squeeze energy companies' profit margins, and downward revisions to earnings expectations put pressure on stock prices.",
+          "What does Australia's refusal to buy indicate? Not all allies will follow the U.S.; fractures may emerge in the sanctions coalition, affecting the deal's actual impact."
+        ]
       }
     }
   ],
@@ -82,6 +120,18 @@
           "保险成本如何传导？数据中心保费上升会增加运营成本，最终可能转嫁给AI服务的使用者。",
           "为什么这改变产业格局？算力不再只是技术问题，也是安全问题，各国可能加速建设本土算力以降低外部依赖。"
         ]
+      },
+      "insight_en": {
+        "what": "Ukrainian drones attacked and destroyed an AI data center belonging to Russia's Yandex, which was used to train its AI models.",
+        "why": "Markets had assumed that AI computing infrastructure was located in relatively safe regions. This event changes how geopolitical risk is priced into the deployment of computing capacity, requiring a reassessment of data center locations and insurance costs.",
+        "chain": "Drone attack on a data center → Yandex's computing capacity is impaired → AI model training is interrupted → Russia's AI development is hindered → Geopolitical risk in the global supply chain for computing capacity increases → Data center insurance and security costs increase → Technology companies become more cautious about deploying computing capacity overseas",
+        "notes": [
+          "What kind of company is Yandex? Often called Russia's Google, it is Russia's largest internet company, with businesses spanning search, maps, AI, and more.",
+          "Why are data centers important? AI model training requires large amounts of computing power, and data centers are the physical facilities that house this computing power. If they are destroyed, training progress is directly affected.",
+          "How does geopolitical risk affect the deployment of computing capacity? Companies may initially plan to build data centers in low-cost locations, but if those areas face a risk of conflict, they will shift to safer but more expensive regions.",
+          "How does insurance cost transmission work? Rising data center insurance premiums will increase operating costs, which may ultimately be passed on to users of AI services.",
+          "Why does this change the industry landscape? Computing power is no longer just a technological issue but also a security issue. Countries may accelerate the buildout of domestic computing capacity to reduce external dependence."
+        ]
       }
     },
     {
@@ -101,6 +151,19 @@
           "芯片需求如何传导？AI公司扩张算力，直接增加对英伟达等芯片厂商的订单，推高芯片价格和供应链压力。",
           "利润率为什么可能被压缩？如果算力成本上升速度快于收入增长，AI公司的利润空间就会变窄。",
           "对估值的影响？收入高增长支撑高估值，但若基础设施瓶颈导致增长不及预期，估值可能回调。"
+        ]
+      },
+      "insight_en": {
+        "what": "OpenAI's annualized revenue is expected to reach or exceed $70 billion by year-end, while the company faces AI infrastructure challenges.",
+        "why": "Markets had been divided over the revenue growth rates of AI giants and the sustainability of their investment in computing capacity. If this figure materializes, it will bolster confidence in AI commercialization, but infrastructure bottlenecks may constrain growth.",
+        "chain": "Rapid growth in OpenAI's revenue → AI commercialization is shown to be viable → Market confidence in AI sector valuations strengthens → Technology giants increase investment in computing capacity → Chip demand rises → The chip supply chain comes under strain → Computing costs rise → AI companies' profit margins may be squeezed",
+        "notes": [
+          "What is annualized revenue? It is calculated by multiplying the current month's revenue by 12 to estimate full-year revenue, a method often used for high-growth companies.",
+          "Why does $70 billion matter? This figure far exceeds most analysts' expectations, indicating strong demand for AI subscriptions and enterprise services.",
+          "What are the infrastructure challenges? Training and running AI models require large numbers of GPUs and substantial amounts of electricity, and insufficient supply will limit revenue growth.",
+          "How does chip demand transmission work? AI companies' expansion of computing capacity directly increases orders for chipmakers such as Nvidia, pushing up chip prices and intensifying supply chain pressure.",
+          "Why might profit margins be squeezed? If computing costs rise faster than revenue, AI companies' profit margins will narrow.",
+          "What is the impact on valuations? Rapid revenue growth supports high valuations, but if infrastructure bottlenecks cause growth to fall short of expectations, valuations may correct."
         ]
       }
     }

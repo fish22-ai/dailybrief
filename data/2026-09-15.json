@@ -21,6 +21,20 @@
           "美元走强原因：美国利率上升，美元资产回报更高，全球资金买入美元，推高美元汇率。",
           "新兴市场压力：美元走强和全球利率上升会提高新兴市场借美元的成本，并促使资金回流美国。"
         ]
+      },
+      "insight_en": {
+        "what": "The benchmark 10-year U.S. Treasury yield rose to 5.02%, its highest level since 2007, as investors sold Treasuries in anticipation of a Federal Reserve rate hike this week.",
+        "why": "Markets had been pricing in the rate-hiking cycle nearing its end, but are now raising expectations again for a rate hike this week and for interest rates to stay higher for longer; global risk-free rates are rising, requiring equity and bond valuations and the U.S. dollar to be reassessed.",
+        "chain": "Inflation and oil prices remain high → Markets expect the Fed to raise rates this week → Investors sell U.S. Treasuries → 10Y U.S. Treasury yield rises to 5.02% → Global risk-free rate Rf rises → Discount rates for highly valued growth stocks rise → Stock prices come under pressure；U.S. dollar assets become more attractive → U.S. dollar strengthens → Emerging markets face capital outflow pressure",
+        "notes": [
+          "The 10-year U.S. Treasury yield is the annualized return investors earn by holding a 10-year U.S. Treasury bond to maturity, and is also the benchmark risk-free rate for global asset pricing.",
+          "When yields rise, bond prices fall: bond prices and yields move in opposite directions because when new bonds pay higher interest, older bonds must fall in price to attract buyers.",
+          "Why do rate-hike expectations push up long-term yields? Rising short-term policy rates push up the entire yield curve; at the same time, concerns about inflation and Treasury supply lead the market to demand a higher term premium.",
+          "The term premium is the extra compensation investors demand for holding long-term bonds rather than rolling over investments in short-term bonds; it increases when fiscal deficits and inflation uncertainty rise.",
+          "Why are growth stocks hurt? Most growth-stock earnings lie in the future, so when the discount rate rises, the present value of future cash flows falls more sharply.",
+          "Why the U.S. dollar strengthens: U.S. interest rates rise, dollar assets offer higher returns, and global investors buy dollars, pushing up the dollar's exchange rate.",
+          "Pressure on emerging markets: a stronger dollar and higher global interest rates increase the cost of dollar borrowing for emerging markets and encourage capital to flow back to the United States."
+        ]
       }
     },
     {
@@ -40,6 +54,19 @@
           "财政风险溢价是投资者因为担心一国财政恶化而要求的额外回报，风险溢价下降会提升该国货币资产的吸引力。",
           "日元走强不只由利差决定，也受财政纪律和市场信心影响；财政风险下降时，日元资产可能获得支撑。",
           "如果财政刺激规模受限，日本内需相关行业盈利预期会降温，日股周期板块可能承压。"
+        ]
+      },
+      "insight_en": {
+        "what": "Japan's Finance Minister Satsuki Katayama said she would not fund tax cuts by issuing additional deficit-financing bonds, and would review revenue and expenditure and closely scrutinize budget requests for the next fiscal year.",
+        "why": "Markets were concerned that Japan's tax cuts and defense spending would increase government bond issuance and worsen its fiscal position; this commitment lowers the term premium on Japanese government bonds, supports the yen and eases pressure on global bond yields.",
+        "chain": "Finance minister pledges not to rely on deficit-financing bonds → Markets revise JGB supply expectations downward → JGB term premium declines → JGB yields fall → Japan's fiscal risk premium declines → Yen-denominated assets become more attractive → Yen strengthens；Scale of fiscal stimulus is constrained → Expectations for Japanese domestic demand cool → Cyclical sectors of Japan's stock market come under pressure",
+        "notes": [
+          "JGBs are Japanese government bonds, the Japanese government's main borrowing instrument, and their yields are an important reference for global long-term interest rates.",
+          "The term premium is the additional compensation investors require for holding long-term bonds; the greater the supply of government bonds and the greater the fiscal uncertainty, the higher this compensation.",
+          "Why do the Japanese finance minister's remarks matter? If tax cuts are financed through additional government bond issuance, JGB supply will increase, pushing up yields and potentially drawing away funds allocated to overseas bonds.",
+          "The fiscal risk premium is the extra return investors demand because of concerns about deterioration in a country's fiscal position; a lower risk premium makes assets denominated in that country's currency more attractive.",
+          "Yen strength is determined not only by interest rate differentials, but also by fiscal discipline and market confidence; yen-denominated assets may receive support when fiscal risk declines.",
+          "If the scale of fiscal stimulus is constrained, earnings expectations for industries tied to Japanese domestic demand will cool, and cyclical sectors of Japan's stock market may come under pressure."
         ]
       }
     }
@@ -63,6 +90,19 @@
           "香港是中资券商连接内地资本和全球市场的重要节点，所以香港券商股和港元流动性对这类监管更敏感。",
           "这类政策信号还会影响外资对中国金融开放和监管可预测性的判断，进而影响中概金融股风险溢价。"
         ]
+      },
+      "insight_en": {
+        "what": "The China Securities Regulatory Commission and industry associations are closing loopholes in brokerage compensation and extending oversight to brokerages' offshore businesses.",
+        "why": "Markets had assumed that compensation and anti-corruption oversight primarily targeted domestic operations; with offshore businesses now also covered, compliance costs and revenue uncertainty for Chinese brokerages' cross-border expansion are rising, putting pressure on brokerage stocks and offshore capital flows in Hong Kong.",
+        "chain": "Regulators close compensation loopholes → Brokerages' compliance costs rise → Offshore business expansion is constrained → Cross-border capital flows face greater monitoring → Overseas revenue expectations for Chinese brokerages decline → Earnings forecasts for brokerage stocks are revised downward → Hong Kong-listed Chinese brokerages come under pressure；Monitoring of cross-border capital flows tightens → Offshore renminbi CNH liquidity tightens → Renminbi exchange rate volatility increases",
+        "notes": [
+          "Brokerages' offshore businesses are the international operations conducted by domestic brokerages through overseas subsidiaries in places such as Hong Kong, including cross-border investment banking, trading and asset management.",
+          "Compensation loopholes refer to ways of circumventing domestic compensation limits and regulation through methods such as offshore subsidiaries, bonus deferrals or expense reimbursements.",
+          "Why does regulation affect valuations? Higher compliance costs and slower business expansion depress future profits, leading markets to lower earnings expectations for brokerage stocks.",
+          "Stricter monitoring of cross-border capital flows will affect fund inflows and outflows and liquidity in the offshore renminbi CNH market.",
+          "Hong Kong is an important hub through which Chinese brokerages connect mainland capital with global markets, so Hong Kong brokerage stocks and Hong Kong dollar liquidity are more sensitive to this type of regulation.",
+          "Such policy signals also affect foreign investors' assessments of the opening of China's financial sector and regulatory predictability, which in turn affect the risk premium on overseas-listed Chinese financial stocks."
+        ]
       }
     }
   ],
@@ -85,6 +125,19 @@
           "出口管制会限制高端芯片和设备流向中国，迫使供应链分成不同区域，重复建设会抬高成本。",
           "中美都不愿放慢 AI，意味着竞争优先于安全协调，长期来看政策反弹和供应链摩擦风险仍在。"
         ]
+      },
+      "insight_en": {
+        "what": "Trump rejected calls to slow AI during a call with Nvidia CEO Jensen Huang, who was on stage, and China also opposed an AI slowdown.",
+        "why": "Markets had worried that AI safety regulation and U.S.-China restrictions would slow investment in computing capacity; simultaneous signals from both countries against a slowdown reduce regulatory risk and reinforce expectations for capital expenditure on chips and computing capacity, but deepen supply chain fragmentation.",
+        "chain": "Both China and the U.S. oppose slowing AI → Expectations of tighter AI regulation decline → Tech giants pursue more aggressive capital expenditure → Demand for compute chips rises → Advanced-node manufacturing and packaging capacity tightens → Competition in the chip supply chain intensifies → Earnings expectations for chip stocks are revised upward；Geopolitical competition → Export control risk rises → Supply chains become regionalized → Cost curve shifts upward",
+        "notes": [
+          "AI guardrails are safeguards for AI, referring to regulatory limits on model capabilities, data use and deployment.",
+          "Why are chip stocks sensitive to regulation? If regulation forces AI companies to slow training and deployment, orders for GPUs and advanced chips will decline.",
+          "Capital expenditure is spending by cloud providers and technology companies on buying servers and chips and building data centers; it directly determines chip demand.",
+          "Advanced-node manufacturing and packaging are key stages in producing high-performance AI chips; chip prices and profit margins are more resilient when capacity is tight.",
+          "Export controls restrict the flow of high-end chips and equipment to China, forcing supply chains to split into different regions; building duplicate facilities raises costs.",
+          "Neither China nor the U.S. is willing to slow AI, meaning competition takes priority over safety coordination; risks of a policy backlash and supply chain friction remain over the long term."
+        ]
       }
     },
     {
@@ -104,6 +157,19 @@
           "AI Agent 是能自主规划、调用工具和执行任务的 AI 程序，这里被用来辅助研发。",
           "如果训练门槛下降，算力需求可能从少数巨头的大规模训练转向更多公司的推理和微调。",
           "巨头模型稀缺性下降，意味着市场愿意给的估值溢价可能收窄，但拥有分发和数据的公司仍有优势。"
+        ]
+      },
+      "insight_en": {
+        "what": "7 doctoral students trained a 7-billion-parameter large model from scratch in 3 months and made the code, data and training logs public, with hundreds of AI agents participating in research and development.",
+        "why": "Markets had assumed that tech giants monopolized large-model training through their computing power and capital expenditure; low-cost replication lowers barriers to training, changes the composition of demand for computing capacity and challenges the scarcity premium of leading models.",
+        "chain": "Training methods are open-sourced → Barriers to large-model training fall → More teams can develop their own models → Demand for inference computing capacity increases → Cloud providers and small chips see rising demand → Tech giants' models become less scarce → Valuation premiums for AI leaders come under pressure；AI agents participate in research and development → Automated R&D becomes more efficient → Long-term computing cost curve shifts downward",
+        "notes": [
+          "7 billion parameters refers to the number of adjustable weights inside the model; 7B is a small- to medium-sized large model, not a cutting-edge trillion-parameter model.",
+          "Training is the process of learning from vast amounts of data from scratch, while inference is the process of answering questions after a model has been trained; the two have different chip requirements.",
+          "Open-source code and training logs enable replication by other teams, lowering trial-and-error costs and weakening the technological barriers of closed-source models.",
+          "An AI agent is an AI program that can autonomously plan, call tools and execute tasks; here, AI agents are used to assist research and development.",
+          "If barriers to training fall, demand for computing capacity may shift from large-scale training by a few tech giants to inference and fine-tuning by more companies.",
+          "As tech giants' models become less scarce, the valuation premium the market is willing to pay may narrow, but companies with distribution and data still have an advantage."
         ]
       }
     }

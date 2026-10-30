@@ -19,6 +19,18 @@
           "日元升值对日本出口企业不利，因为海外利润换回日元后缩水，日经指数因此承压。",
           "全球传导：日元套息平仓意味着卖出海外资产换回日元还债，美国国债、新兴市场股票都可能被抛售。"
         ]
+      },
+      "insight_en": {
+        "what": "The Bank of Japan raised interest rates by 25 basis points to 1.25%, the highest level in 31 years, citing persistent inflation risks.",
+        "why": "Markets had expected Japan to maintain ultra-low interest rates; the rate hike upended expectations that the yen would remain a cheap global funding currency, requiring yen carry trades and Japanese government bonds to be repriced.",
+        "chain": "Stubborn inflation in Japan → Bank of Japan rate hike → Higher yen funding costs → Unwinding of carry trades → Yen appreciation → Repricing of the Japanese government bond yield curve → Pressure on global risk assets",
+        "notes": [
+          "What is a carry trade? Borrow a low-interest-rate currency (such as the yen), exchange it for a high-interest-rate currency, and invest to earn the interest rate differential. After a rise in yen interest rates, borrowing yen becomes more expensive, making the trade no longer worthwhile.",
+          "Why does a 31-year high matter? Japan has long maintained zero or even negative interest rates and has been the world's last remaining source of cheap funding. Rates turning positive mean higher global funding costs.",
+          "Short-end Japanese government bond yields actually fell after the rate hike because markets had already priced it in well in advance, leading to a 'buy the rumor, sell the news' reversal once the decision was announced.",
+          "Yen appreciation hurts Japanese exporters because their overseas profits shrink when converted back into yen, putting pressure on the Nikkei index.",
+          "Global transmission: Unwinding yen carry trades means selling overseas assets and converting the proceeds back into yen to repay debt. U.S. Treasuries and emerging-market equities could both be sold off."
+        ]
       }
     },
     {
@@ -37,6 +49,18 @@
           "人民币升值对A股是利好，因为外资换汇后能买到更多人民币资产，同时升值预期会吸引更多热钱流入。",
           "为什么这跟日本央行加息有关？日元加息导致美元走弱，非美货币集体升值，人民币也顺势走强。",
           "中间价连续调强是2023年以来最长，说明这不是单日波动，而是持续的政策意图。"
+        ]
+      },
+      "insight_en": {
+        "what": "The offshore renminbi reached its highest level against the U.S. dollar since July 2022, and the central parity rate was set stronger for eight consecutive trading days, the longest streak of stronger fixings since 2023.",
+        "why": "Markets had been concerned about depreciation pressure on the renminbi; consecutively stronger central parity fixings sent a clear signal of exchange rate stabilization, changing expectations for renminbi assets and foreign capital inflows.",
+        "chain": "The central bank repeatedly sets a stronger central parity rate → Signals exchange rate stabilization → Depreciation expectations ease → Foreign investors become more willing to hold renminbi assets → Northbound fund inflows → A-shares and renminbi bonds benefit；At the same time, expectations of a weaker U.S. dollar also support renminbi appreciation",
+        "notes": [
+          "What is the central parity rate? It is the reference exchange rate of the renminbi against the U.S. dollar announced every morning by China's central bank, with the market rate allowed to fluctuate within a ±2% band. Consecutively stronger central parity fixings effectively mean the authorities are guiding the renminbi toward appreciation.",
+          "What is the difference between the offshore and onshore renminbi? The offshore renminbi (CNH) trades freely offshore and better reflects international investor sentiment; the onshore renminbi (CNY) is more tightly constrained by the central bank's central parity rate.",
+          "Renminbi appreciation is positive for A-shares because foreign investors can buy more renminbi assets after converting their currency, while appreciation expectations attract more hot money inflows.",
+          "Why is this related to the Bank of Japan's rate hike? The rate hike in Japan weakens the U.S. dollar, leading non-dollar currencies to appreciate across the board, with the renminbi strengthening as well.",
+          "The streak of stronger central parity fixings is the longest since 2023, indicating that this is not a single-day fluctuation but sustained policy intent."
         ]
       }
     }
@@ -59,6 +83,18 @@
           "对哪些资产影响最大？依赖美国政府采购的欧洲和亚洲企业，以及相关国家的货币。",
           "这类政策通常有滞后效应，从备忘录到具体执行需要时间，但市场会提前定价预期。"
         ]
+      },
+      "insight_en": {
+        "what": "The White House issued a memorandum requiring the restoration of the principle of reciprocity in government procurement, involving the Department of Defense and the Office of the U.S. Trade Representative.",
+        "why": "Markets had expected U.S. government procurement to be relatively open; reciprocity means higher barriers to foreign companies' access to U.S. government procurement, increasing expectations that trade tensions will escalate.",
+        "chain": "The White House pushes for reciprocity in government procurement → Foreign suppliers face restrictions → Trading partners may retaliate → Global trade barriers rise → Multinational earnings expectations are revised down → Currencies and stock markets in the countries concerned come under pressure",
+        "notes": [
+          "What is reciprocity in government procurement? Simply put, if you do not let me into your government procurement market, I will not let you into mine. It is a form of trade protectionism.",
+          "How large is government procurement? U.S. federal government procurement exceeds $600 billion annually, spanning defense, infrastructure, IT, and other sectors, with a significant impact on the revenues of the companies involved.",
+          "Why do markets care? Higher trade barriers raise corporate costs and squeeze profits while provoking retaliation from trading partners, creating an escalating spiral.",
+          "Which assets are most affected? European and Asian companies that depend on U.S. government procurement, as well as the currencies of the countries concerned.",
+          "Such policies usually have a lagged effect. It takes time to move from a memorandum to implementation, but markets price in expectations in advance."
+        ]
       }
     }
   ],
@@ -80,6 +116,18 @@
           "对全球AI算力成本的影响：如果华为能提供有竞争力的替代品，全球AI芯片价格可能下降，算力成本曲线下移。",
           "英伟达中国收入占比约20%，失去这部分市场会显著影响其增长预期。"
         ]
+      },
+      "insight_en": {
+        "what": "Huawei is accelerating the release of its next-generation AI chips, launching them several months early, with the aim of replacing Nvidia in China and competing globally.",
+        "why": "Markets had expected Nvidia to dominate China's AI chip market; Huawei's accelerated launch means domestic substitution is progressing faster, requiring downward revisions to expectations for Nvidia's China revenue.",
+        "chain": "Early release of Huawei AI chips → Accelerated domestic substitution → Decline in Nvidia's market share in China → Downward revision to Nvidia's revenue expectations → Reshaping of related supply chains and the AI compute cost curve",
+        "notes": [
+          "Why can Huawei replace Nvidia? U.S. export controls restrict Nvidia's sales of high-end chips to China, and Huawei, as a domestic alternative, benefits from policy support and customer demand.",
+          "The competitive landscape for AI chips: Nvidia has a global market share of more than 80%, but its share in China is declining because of the controls. Huawei's Ascend series is the main alternative.",
+          "What does Huawei's early release mean? It indicates that domestic chip R&D is progressing faster than expected and that demand for AI compute in China is strong, with demand outstripping supply.",
+          "Impact on global AI compute costs: If Huawei can provide competitive alternatives, global AI chip prices could fall, shifting the compute cost curve downward.",
+          "China accounts for about 20% of Nvidia's revenue, and losing this part of the market would significantly affect its growth expectations."
+        ]
       }
     },
     {
@@ -98,6 +146,18 @@
           "软银的AI投资逻辑：孙正义认为AI是未来最大的投资机会，通过借款加杠杆来放大收益。",
           "风险在哪里？如果Arm股价大幅下跌，软银可能被要求追加保证金，被迫抛售资产，形成负反馈。",
           "对AI产业链的影响：软银是AI领域最大的投资者之一，其投资规模直接影响AI芯片和算力基础设施的需求。"
+        ]
+      },
+      "insight_en": {
+        "what": "SoftBank will increase its margin loan secured by Arm shares by $5 billion to $25 billion to expand its AI investments.",
+        "why": "Markets had been concerned that SoftBank had limited funding sources for AI investment; the expanded loan means SoftBank has more firepower to bet on AI, raising expectations for AI capital expenditure.",
+        "chain": "SoftBank expands its Arm-backed loan → Increased financing capacity → Greater AI investment → Higher demand for AI compute → Chip and compute supply chains benefit → But high leverage also increases SoftBank's own risk",
+        "notes": [
+          "What is a margin loan? It means borrowing from a bank using shares you hold as collateral. If the share price falls, the bank will require additional collateral or force liquidation.",
+          "Why use Arm shares as collateral? Arm is one of SoftBank's most valuable assets. A rise in its share price increases its collateral value, allowing SoftBank to borrow more.",
+          "SoftBank's AI investment rationale: Masayoshi Son believes AI is the biggest investment opportunity of the future and uses borrowing to add leverage and amplify returns.",
+          "Where are the risks? If Arm's share price falls sharply, SoftBank could face margin calls and be forced to sell assets, creating a negative feedback loop.",
+          "Impact on the AI value chain: SoftBank is one of the largest investors in AI, and the scale of its investment directly affects demand for AI chips and compute infrastructure."
         ]
       }
     }

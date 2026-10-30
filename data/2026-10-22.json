@@ -21,19 +21,19 @@
   ],
   "policy": [
     {
-      "title": "Who blinked first? Fragile EU-China trade peace sparks new war of words",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/china/diplomacy/article/3371807/who-blinked-first-fragile-eu-china-trade-peace-sparks-new-war-words",
-      "published": "2026-10-22 20:00",
-      "raw_summary": "Less than two weeks after Brussels and Beijing struck a surprise deal to avert an escalating trade dispute, their fragile rapprochement has descended into a battle over who blinked first. In Brussels ",
+      "title": "India increases growth forecast for fiscal year",
+      "source": "DW",
+      "url": "https://www.dw.com/en/india-increases-growth-forecast-for-fiscal-year/a-79798971?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-10-30 00:30",
+      "raw_summary": "India's Ministry of Finance has increased its growth forecasts for the current fiscal year. But it also warned about inflation, particularly for fuel and energy, amid continued instability in the Midd",
       "insight": {}
     },
     {
-      "title": "US-China ties need more working-level dialogues, not just summits: business chamber",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/economy/article/3371746/us-china-ties-need-more-working-level-dialogues-not-just-summits-business-chamber",
-      "published": "2026-10-22 20:00",
-      "raw_summary": "The president of the American Chamber of Commerce in China (AmCham China) has urged Beijing and Washington to push more negotiations down to working-level officials, saying businesses need greater lon",
+      "title": "China leaders demand more loyalty and more initiative",
+      "source": "DW",
+      "url": "https://www.dw.com/en/china-leaders-demand-more-loyalty-and-more-initiative/a-79799138?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-10-30 00:16",
+      "raw_summary": "The CCP session emphasized internal discipline, as expected, but left the question of Xi Jinping's successor unanswered. The party seems anxious of any instability as geopolitics heats up and China's ",
       "insight": {}
     }
   ],
@@ -55,7 +55,7 @@
       "insight": {}
     }
   ],
-  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261022210515913625321wbs2kfuf9Gwwm)', 'type': 'new_api_error'}}",
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 gpt-6.1sol 无可用渠道 (request id: 20261030221620559002446wbs2ka9o7sSMw)', 'type': 'new_api_error'}}",
   "source_stats": {
     "fed": {
       "count": 4,
@@ -74,7 +74,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 12,
+      "count": 10,
       "tier": "stable"
     },
     "cnbc_fin": {
@@ -122,7 +122,7 @@
       "tier": "stable"
     },
     "dw_world": {
-      "count": 0,
+      "count": 10,
       "tier": "stable"
     },
     "defensenews": {

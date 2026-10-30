@@ -18,6 +18,17 @@
           "补充核心一级资本后，银行满足监管要求，可以释放更多信贷空间，支持实体经济，中长期利好经济增长与银行盈利。",
           "银行补充资本主要通过发行股票、可转债等方式，会增加市场上股票和债券的供给，对资产价格有压力。"
         ]
+      },
+      "insight_en": {
+        "what": "Agricultural Bank of China plans to issue A-shares to the Ministry of Finance and other investors, raising no more than RMB 160 billion to replenish Common Equity Tier 1 capital.",
+        "why": "Large-scale refinancing by major banks directly increases the supply of shares and dilutes existing shareholders' equity; at the same time, capital replenishment strengthens lending capacity, affecting bank stock valuations and expectations for bond supply.",
+        "chain": "Major banks raise additional equity capital → The supply of shares in the stock market increases → Bank earnings per share are diluted → Bank stock valuations come under pressure → Capital adequacy ratios rise → Lending capacity strengthens → Supply in the bond market increases → Government bond yields rise",
+        "notes": [
+          "Common Equity Tier 1 capital is a bank's most stable form of capital and is mainly used to absorb unexpected losses. The lower a bank's Common Equity Tier 1 capital ratio, the more it needs to replenish its capital.",
+          "A private placement involves issuing new shares to specific investors (in this case, the Ministry of Finance, tobacco companies, etc.), increasing total shares outstanding and thereby diluting earnings per share and return on equity, which tends to be negative for bank share prices in the short term.",
+          "After replenishing Common Equity Tier 1 capital, banks meet regulatory requirements and can free up more lending capacity to support the real economy, benefiting economic growth and bank profitability over the medium to long term.",
+          "Banks mainly replenish capital by issuing shares, convertible bonds, and similar instruments, increasing the supply of stocks and bonds in the market and putting pressure on asset prices."
+        ]
       }
     },
     {
@@ -35,6 +46,17 @@
           "无风险利率通常用美国国债收益率来衡量，是金融资产定价的基准，利率上升，未来收益折现价值降低，股票估值承压。",
           "美元走强是因为高利率吸引全球资本流入美国，增加对美元的需求。",
           "新兴市场对美元利率更为敏感，因为其外债多以美元计价，美元升值加重偿债负担，资本外流压力增大。"
+        ]
+      },
+      "insight_en": {
+        "what": "New York Fed President Williams says rising Treasury yields reflect a strong economic outlook and is considering whether to raise interest rates again.",
+        "why": "Markets had expected an economic slowdown to lead the Fed to turn dovish, but the official's remarks indicate that further rate hikes remain possible, changing interest rate expectations and affecting U.S. Treasuries, the U.S. dollar, and global risk assets.",
+        "chain": "An official sends a hawkish signal → Rate-hike expectations rise → Risk-free rates rise → Discount rates for global assets increase → Pressure on highly valued stocks intensifies → The U.S. dollar strengthens → Capital flows out of emerging markets",
+        "notes": [
+          "Hawkish refers to a preference for raising interest rates and tightening monetary policy to control inflation, while dovish refers to a preference for cutting interest rates and easing policy to support employment and growth.",
+          "The risk-free rate is typically measured by U.S. Treasury yields and serves as the benchmark for pricing financial assets. When interest rates rise, the discounted value of future returns falls, putting pressure on stock valuations.",
+          "The U.S. dollar strengthens because high interest rates attract global capital into the United States, increasing demand for the dollar.",
+          "Emerging markets are more sensitive to U.S. dollar interest rates because much of their external debt is denominated in dollars. Dollar appreciation increases their debt-servicing burden and intensifies capital outflow pressure."
         ]
       }
     },
@@ -55,6 +77,18 @@
           "美元走强原因：高利率吸引资本流入美国，美元需求增加。",
           "鹰派 vs 鸽派：鹰派优先压通胀，通胀高于目标就倾向加息；鸽派优先保增长、保就业，对通胀容忍度高，不喜欢加息。"
         ]
+      },
+      "insight_en": {
+        "what": "Fed Governor Barr said he might support rate hikes if inflation remains above the 2% target.",
+        "why": "Markets had been betting on rate cuts, but these remarks raise expectations that interest rates will remain high or even rise again, making short-dated U.S. Treasuries and the U.S. dollar more sensitive.",
+        "chain": "Inflation remains elevated → Fed turns more hawkish → Rate-cut expectations decline → 2Y U.S. Treasury yield↑ → Highly valued growth stocks come under pressure",
+        "notes": [
+          "Two-year Treasuries are the most sensitive to the policy rate, reflecting market expectations for the interest rate path over the next two years.",
+          "Higher yields mean lower bond prices: Bond prices and yields move inversely, so a rise in yields means a fall in bond prices, hurting the capital gains of investors holding existing bonds.",
+          "Most growth-stock earnings lie in the distant future. When interest rates rise, the present value of those distant earnings falls more sharply, so growth stocks are hit harder.",
+          "Why the U.S. dollar strengthens: High interest rates attract capital into the United States, increasing demand for the dollar.",
+          "Hawkish vs dovish: Hawks prioritize curbing inflation and tend to favor rate hikes when inflation is above target; doves prioritize protecting growth and employment, are more tolerant of inflation, and dislike rate hikes."
+        ]
       }
     },
     {
@@ -72,6 +106,17 @@
           "本国货币升值会让出口商品变贵，因此强劲出口可能导致本币升值，转而削弱未来出口竞争力，形成自我修正。",
           "出口超预期可能加重国内通胀压力，影响韩国央行货币政策取向，从而影响利率与韩元汇率。",
           "该数据也反映全球贸易与科技周期，一定程度上影响全球风险偏好。"
+        ]
+      },
+      "insight_en": {
+        "what": "South Korea's year-to-date exports total US$709.4 billion, exceeding last year's full-year record, with projections suggesting that the full-year total could surpass US$1 trillion.",
+        "why": "Strong exports reflect global demand and supply chain resilience, affecting expectations for South Korea's economic growth, the Korean won exchange rate, and earnings expectations for related industries.",
+        "chain": "South Korean exports hit a record high → South Korean economic growth expectations are revised upward → Demand for the Korean won increases → The Korean won appreciates → South Korea's export competitiveness weakens → Export growth may slow → Stock prices absorb the positive news",
+        "notes": [
+          "Exports are an important engine of South Korean economic growth. Strong export data boost activity in industries such as machinery, electronics, and shipbuilding, thereby lifting related stock market sectors.",
+          "Appreciation of the domestic currency makes exports more expensive, so strong exports may lead to domestic currency appreciation, which in turn weakens future export competitiveness, creating a self-correcting mechanism.",
+          "Stronger-than-expected exports may intensify domestic inflationary pressures, influencing the Bank of Korea's monetary policy stance and thereby affecting interest rates and the Korean won exchange rate.",
+          "The data also reflect global trade and technology cycles and influence global risk appetite to some extent."
         ]
       }
     }
@@ -93,6 +138,17 @@
           "避险资产如黄金、美元与日元通常在冲突升级时受益，因为资金寻求安全。",
           "地缘政治冲突不确定性高，市场情绪波动大，交易成本增加，给投资带来额外风险。"
         ]
+      },
+      "insight_en": {
+        "what": "The U.S. military attacked three Iranian oil tankers, and Iran subsequently attacked a group of U.S. Navy destroyers, with the two sides exchanging fire near the Strait of Hormuz.",
+        "why": "The Strait of Hormuz is a key transit route for roughly 20% of global oil shipments. An escalation in the conflict directly affects the risk of oil supply disruptions, changing the pricing of crude oil, shipping, and safe-haven assets.",
+        "chain": "The U.S.–Iran conflict escalates → Transit risks in the Strait of Hormuz rise → Insurance premiums for crude oil shipments rise → Oil prices rise → Inflation expectations rise → The Fed becomes more hawkish → Global risk assets come under pressure → Safe-haven assets such as gold rise",
+        "notes": [
+          "The Strait of Hormuz lies between Iran and Oman and is a chokepoint for oil exports from the Middle East. Large volumes of crude oil and liquefied natural gas pass through it daily, and a blockage would deal a severe blow to global oil supply.",
+          "Rising oil prices directly push up inflation, while higher inflation leads central banks to tighten monetary policy, raising interest rates and hurting stock and bond markets.",
+          "Safe-haven assets such as gold, the U.S. dollar, and the Japanese yen typically benefit when conflicts escalate because capital seeks safety.",
+          "Geopolitical conflicts involve high uncertainty, sharp swings in market sentiment, and higher transaction costs, creating additional investment risks."
+        ]
       }
     },
     {
@@ -111,6 +167,17 @@
           "如果通胀预期下降，央行可能更宽松，有利于股市和债市，但美元可能走弱。",
           "乌克兰局势复杂，谈判进展不确定性高，市场反应往往先入为主。"
         ]
+      },
+      "insight_en": {
+        "what": "U.S. special envoys Witkoff and Kushner have arrived in Moscow to advance ceasefire talks on Ukraine.",
+        "why": "Markets are watching whether the Russia–Ukraine conflict is moving toward a ceasefire. If peace talks make progress, energy supply and geopolitical risk premiums will decline, affecting oil prices, expectations for Europe's economy, and safe-haven assets.",
+        "chain": "The United States and Russia restart peace talks → Ceasefire expectations strengthen → Geopolitical risk premiums decline → Brent crude comes under pressure → Global inflation expectations fall → Pressure on central banks to tighten eases → Appetite for risk assets recovers",
+        "notes": [
+          "The Russia–Ukraine conflict has disrupted global energy and food supplies. Progress in peace talks would ease these supply concerns and push down commodity prices.",
+          "A geopolitical risk premium is the portion of an asset's price driven higher by investors' demands for additional compensation for potential conflicts or supply disruptions.",
+          "If inflation expectations decline, central banks may adopt a more accommodative stance, benefiting stock and bond markets, but the U.S. dollar may weaken.",
+          "The situation in Ukraine is complex, progress in negotiations is highly uncertain, and market reactions are often shaped by preconceptions."
+        ]
       }
     },
     {
@@ -128,6 +195,17 @@
           "高油价会推高生产运输成本，侵蚀企业利润，并通过通胀影响央行政策。",
           "长期冲突也增加企业投资与供应链不确定性，抑制经济增长。",
           "避险情绪升温时，资金转向黄金、美元等防御资产。"
+        ]
+      },
+      "insight_en": {
+        "what": "The United States has launched new attacks on Iranian military targets, amid concerns about becoming embroiled in a prolonged war.",
+        "why": "If the U.S.–Iran military conflict becomes protracted, risks to crude oil supply will persist or even increase, while it may also create fiscal pressures for the United States and reshape the geopolitical landscape, affecting global capital flows.",
+        "chain": "Risk of a prolonged U.S.–Iran conflict → Military operations continue → Crude oil supply remains under threat → Oil prices remain high → Inflation remains stubborn → The Fed maintains high interest rates → Global economic growth slows → Stock markets come under pressure",
+        "notes": [
+          "A prolonged war requires substantial military spending, which may increase the U.S. fiscal deficit and affect the scale of bond issuance and Treasury yields, with subsequent transmission to global interest rates.",
+          "High oil prices raise production and transportation costs, erode corporate profits, and influence central bank policy through inflation.",
+          "Prolonged conflicts also increase uncertainty surrounding corporate investment and supply chains, constraining economic growth.",
+          "When risk aversion rises, capital shifts toward defensive assets such as gold and the U.S. dollar."
         ]
       }
     }
@@ -217,5 +295,6 @@
       "count": 20,
       "tier": "optional"
     }
-  }
+  },
+  "tech": []
 }

@@ -18,6 +18,17 @@
           "收益率上升意味着新发债券利息更高，旧债券吸引力下降，价格下跌。",
           "短债收益率上升会吸引资金从股市流入债市，导致股市，尤其是高估值股票，面临抛压。"
         ]
+      },
+      "insight_en": {
+        "what": "The yield on the 2-year U.S. Treasury rose 2 basis points to 4.42%, its highest level since January 2025.",
+        "why": "The market had expected the Federal Reserve to cut rates, but a recent rebound in inflation and officials' remarks have pushed interest rate expectations higher, lifting short-term U.S. Treasury yields and transmitting the impact to other assets.",
+        "chain": "Inflation rebounds → Expectations of Fed rate cuts weaken → 2-year U.S. Treasury yields rise → Bond prices fall → Treasuries become less attractive → Funds flow into higher-yielding short-term bonds → Funds are diverted from the stock market → High-valuation growth stocks come under pressure",
+        "notes": [
+          "The 2-year Treasury yield reflects market expectations for interest rates over the next two years and is the most sensitive to changes in policy rates.",
+          "Bond prices and yields move in opposite directions: when yields rise, bond prices fall.",
+          "Rising yields mean newly issued bonds pay higher interest, making existing bonds less attractive and lowering their prices.",
+          "Rising short-term bond yields attract funds from the stock market into the bond market, putting the stock market, especially high-valuation stocks, under selling pressure."
+        ]
       }
     },
     {
@@ -35,6 +46,17 @@
           "无风险利率上升，意味着所有未来现金流折现到现在的价值下降，资产估值随之降低。",
           "风险溢价是投资者因承担额外风险而要求的额外回报，主权债券风险上升，风险溢价增加，债券收益率进一步走高。",
           "该言论可能只是观点，不一定导致实际价格变动，但反映了市场情绪的变化。"
+        ]
+      },
+      "insight_en": {
+        "what": "Norway's sovereign wealth fund said that sovereign bonds are no longer as safe and stable as they once were.",
+        "why": "Markets view sovereign bonds as risk-free assets whose yields serve as the benchmark for global asset pricing, and the statement shook market confidence in safe assets, affecting valuations across asset classes.",
+        "chain": "Safety of sovereign bonds is questioned → Expectations for the risk-free rate rise → Global assets are repriced → Bond yields rise → Risk premium for holding bonds increases → Valuations of risk assets such as stocks and real estate decline",
+        "notes": [
+          "Sovereign bonds are generally considered to carry almost no default risk, so their yields are used as the benchmark for the risk-free rate.",
+          "A rise in the risk-free rate means that the present value of all future cash flows falls, lowering asset valuations accordingly.",
+          "The risk premium is the additional return investors demand for bearing additional risk; higher sovereign bond risk increases the risk premium, pushing bond yields up further.",
+          "The statement may simply be an opinion and does not necessarily lead to actual price changes, but it reflects a shift in market sentiment."
         ]
       }
     },
@@ -54,6 +76,17 @@
           "资本外流会导致新兴市场货币贬值，因为投资者卖出当地货币以换成美元等硬通货。",
           "避险情绪下，资金会流向美国国债、黄金等安全资产，推高它们的价格。"
         ]
+      },
+      "insight_en": {
+        "what": "The Economist reported that Senegal's sovereign debt is managed through \"total return swaps\", but risks are mounting and the market is concerned about its sustainability.",
+        "why": "Debt problems in emerging markets affect global investors' risk appetite for emerging-market assets, leading to capital outflows and currency depreciation.",
+        "chain": "Senegal's debt risks rise → Emerging-market bonds are sold off → Emerging-market currencies depreciate → Capital flows out → Risk aversion among global investors increases → Funds flow into developed-market assets",
+        "notes": [
+          "A total return swap is a financial derivative that allows investors to receive a bond's returns and bear its risks without actually holding the bond.",
+          "As debt risks in emerging markets rise, investors demand higher yields, causing bond prices to fall.",
+          "Capital outflows cause emerging-market currencies to depreciate because investors sell local currencies in exchange for hard currencies such as the U.S. dollar.",
+          "When risk aversion prevails, funds flow into safe assets such as U.S. Treasuries and gold, pushing up their prices."
+        ]
       }
     },
     {
@@ -71,6 +104,17 @@
           "央行加息是为了抑制通胀，通常通过提高基准利率来实现。",
           "利率上升，贷款成本增加，企业利润和家庭可支配收入减少，进而影响消费和投资。",
           "经济增长放缓会降低企业盈利预期，导致股市估值下降。"
+        ]
+      },
+      "insight_en": {
+        "what": "The Economist reported that global inflation is picking up again and central banks around the world are resuming rate hikes.",
+        "why": "The market had thought inflation was under control and the rate-hiking cycle was over, but the rebound in inflation is forcing central banks to tighten policy, changing interest rate expectations and affecting all assets.",
+        "chain": "Global inflation rebounds → Central banks are forced to raise rates → Interest rates rise → Borrowing costs for businesses and individuals increase → Consumption and investment decline → Economic growth slows → Stock markets fall",
+        "notes": [
+          "Inflation refers to a general rise in prices, which erodes the purchasing power of money.",
+          "Central banks raise interest rates to curb inflation, typically by increasing benchmark rates.",
+          "Higher interest rates increase borrowing costs, reducing corporate profits and household disposable income, which in turn affects consumption and investment.",
+          "Slower economic growth lowers expectations for corporate earnings, causing stock market valuations to fall."
         ]
       }
     }
@@ -92,6 +136,17 @@
           "油价上涨是通胀的重要因素，因为能源成本会传导至其他商品和服务。",
           "央行面对通胀压力，可能收紧货币政策，如加息，这会提升长期债券收益率，进而压制股票估值。"
         ]
+      },
+      "insight_en": {
+        "what": "After U.S. strikes on five Iranian oil tankers, Brent crude prices rose to $100 per barrel for the first time since July.",
+        "why": "Oil prices have broken through an important psychological threshold, bringing market concerns about supply disruptions into focus and shifting inflation expectations accordingly; bond and stock markets will feel the impact.",
+        "chain": "U.S. strikes on Iranian oil tankers → Risk of crude oil supply disruptions → Brent crude prices break above $100 → Global inflation expectations rise → Expectations of central bank policy tightening strengthen → Long-term bond yields rise → Stock market valuations come under pressure",
+        "notes": [
+          "Brent crude is one of the most widely used global benchmarks for crude oil prices.",
+          "Crude oil supply disruptions directly push up oil prices because supply declines.",
+          "Higher oil prices are an important driver of inflation because energy costs are transmitted to other goods and services.",
+          "Faced with inflationary pressure, central banks may tighten monetary policy, for example by raising interest rates, which increases long-term bond yields and in turn weighs on stock valuations."
+        ]
       }
     },
     {
@@ -110,6 +165,17 @@
           "供应链中断可能迫使央行加息以控制通胀，影响资本市场。",
           "物流和零售等行业将受冲击，而航运公司可能因运价上涨而受益。"
         ]
+      },
+      "insight_en": {
+        "what": "Houthi forces launched an offensive in the Bab el-Mandeb Strait, threatening the safety of shipping in the Red Sea and potentially triggering another global shipping crisis.",
+        "why": "The Red Sea is an important global trade route, and supply chain disruptions drive up transportation costs, affecting global trade and inflation and reducing investors' risk appetite.",
+        "chain": "Red Sea shipping is disrupted → Transportation costs rise → Global trade costs increase → Goods prices rise → Inflationary pressures intensify → Expectations of central bank monetary tightening rise → Stock and bond markets fluctuate",
+        "notes": [
+          "The Bab el-Mandeb Strait connects the Red Sea and the Gulf of Aden and is a key passage for global oil and cargo shipments.",
+          "Higher shipping costs push up the prices of imported goods, exacerbating inflation.",
+          "Supply chain disruptions may force central banks to raise rates to control inflation, affecting capital markets.",
+          "Industries such as logistics and retail will be hit, while shipping companies may benefit from higher freight rates."
+        ]
       }
     },
     {
@@ -127,6 +193,17 @@
           "财政赤字扩大可能影响国家信用评级，增加借贷成本。",
           "国债收益率上升会吸引外资流入，但也可能导致韩元升值，影响出口。",
           "区域内的股票市场可能因预期利率上升而承压。"
+        ]
+      },
+      "insight_en": {
+        "what": "South Korea announced a record defense budget to address geopolitical risks.",
+        "why": "Increased defense spending will widen the fiscal deficit and affect government bond supply; South Korean government bond yields may rise, affecting regional assets.",
+        "chain": "South Korea's defense budget increases → Government fiscal spending expands → Fiscal deficit widens → Government bond supply increases → South Korean government bond yields rise → South Korean won exchange rate fluctuates → Prices of regional financial assets change",
+        "notes": [
+          "An increase in the defense budget requires the government to raise funds by issuing bonds; the increased supply in the bond market depresses bond prices and pushes up yields.",
+          "A wider fiscal deficit may affect the country's credit rating and increase borrowing costs.",
+          "Higher government bond yields attract foreign capital inflows, but may also cause the South Korean won to appreciate, affecting exports.",
+          "Stock markets in the region may come under pressure from expectations of higher interest rates."
         ]
       }
     }
@@ -216,5 +293,6 @@
       "count": 20,
       "tier": "optional"
     }
-  }
+  },
+  "tech": []
 }

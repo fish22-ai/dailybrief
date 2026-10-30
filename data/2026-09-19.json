@@ -23,6 +23,22 @@
           "成长股估值：成长股利润多在远期，利率上升会提高折现率，远期利润折成现值后缩水。",
           "鹰派与鸽派：鹰派更担心通胀，倾向加息；鸽派更担心增长和就业，倾向降息或推迟加息。"
         ]
+      },
+      "insight_en": {
+        "what": "Federal Reserve Chair Warsh explained this week's rate hike decision but has not dispelled market uncertainty about how many more rate hikes are needed.",
+        "why": "Markets had been assessing whether rate hikes were coming to an end; Warsh's communication raises the possibility of a higher terminal rate, requiring short-dated U.S. Treasuries, the U.S. dollar, and growth stocks with high valuations to be repriced.",
+        "chain": "Warsh does not clearly signal an end to rate hikes → Market expectations of rate hikes strengthen → Short-dated U.S. Treasury yields rise → U.S. dollar assets become more attractive → U.S. dollar strengthens → Capital outflow pressure on emerging markets increases → Emerging-market currencies and equities come under pressure",
+        "notes": [
+          "Warsh is the Federal Reserve Chair, and the Federal Reserve influences borrowing costs throughout the economy by setting policy rates.",
+          "The terminal rate is the peak policy rate that markets expect the current rate-hiking cycle to reach; it sets the pricing anchor for short-dated bonds and exchange rates.",
+          "Short-dated U.S. Treasury yields are the most sensitive to policy rates because the interest rate path over the next two years directly determines returns on short-term bonds.",
+          "A bond's yield can be understood as the annualized return from holding it to maturity, commonly measured by yield to maturity.",
+          "Bond prices fall when yields rise; the two move inversely because newly issued bonds offer higher interest rates, so existing bonds must trade at a discount to attract buyers.",
+          "Mechanism behind U.S. dollar strength: Higher U.S. interest rates make overseas investors more willing to convert their funds into dollars to buy dollar-denominated assets, increasing demand for the dollar.",
+          "Mechanism behind pressure on emerging markets: These countries often borrow in U.S. dollars, so a stronger dollar and higher dollar interest rates increase debt-servicing costs and encourage capital to flow back to the United States.",
+          "Growth stock valuation: Most of growth stocks' earnings lie in the distant future, so rising interest rates increase the discount rate and reduce the present value of those future earnings.",
+          "Hawks and doves: Hawks are more concerned about inflation and tend to favor rate hikes; doves are more concerned about growth and employment and tend to favor rate cuts or postponing rate hikes."
+        ]
       }
     },
     {
@@ -44,6 +60,21 @@
           "日元贬值会提高日本出口企业海外利润换算成日元后的价值，所以日经225中出口股受益。",
           "日经225是日本主要股价指数，出口企业权重较高，对日元汇率敏感。",
           "日本市场剧本反转的关键：汇率不只看单次加息，还看加息后的利差和未来路径。"
+        ]
+      },
+      "insight_en": {
+        "what": "The Bank of Japan raised interest rates, but the yen weakened past 157, the 10-year Japanese government bond yield fell, and the Nikkei 225 rose 1.5%.",
+        "why": "Markets had expected the rate hike to strengthen the yen, push up Japanese government bond yields, and weigh on equities; the opposite outcome indicates that the hike was interpreted as still dovish and that the yen carry trade did not reverse.",
+        "chain": "Bank of Japan raises interest rates → Statement is interpreted as dovish → Yen funding costs remain low → Borrowing yen to buy higher-yielding assets continues → Yen is sold → Yen weakens past 157；Expectations that rate hikes are nearing an end → Long-term interest rate expectations decline → 10-year Japanese government bond yield falls；Yen depreciates → Earnings expectations for Japanese exporters rise → Nikkei 225 rises",
+        "notes": [
+          "A Bank of Japan rate hike means raising the short-term policy rate for the yen, which would normally attract capital inflows into the yen and strengthen it.",
+          "But markets focus more on central bank communication: If a rate hike is accompanied by signals that there will not be a series of large hikes afterward, traders will view the degree of tightening as limited.",
+          "The yen carry trade involves borrowing yen at low interest rates and converting it into higher-yielding currencies or assets to earn the interest rate differential. As long as yen funding costs remain low and the yen does not appreciate, this trade continues.",
+          "As carry trades continue, investors sell yen and buy higher-yielding assets, so the yen depreciates instead and global risk assets receive liquidity support.",
+          "A decline in the 10-year Japanese government bond yield indicates that markets have lowered their expectations for long-term interest rates, possibly judging that economic growth and inflation are insufficient to support continued rate hikes.",
+          "Yen depreciation increases the value of Japanese exporters' overseas profits when converted into yen, so shares of exporters in the Nikkei 225 benefit.",
+          "The Nikkei 225 is a major Japanese stock index with a relatively high weighting in exporters, making it sensitive to the yen exchange rate.",
+          "The key to the reversal of the expected scenario in Japanese markets: Exchange rates depend not just on a single rate hike, but also on interest rate differentials after the hike and the future rate path."
         ]
       }
     }
@@ -69,6 +100,21 @@
           "能源进口国需要更多美元买能源，经常账户恶化，本币容易承压。",
           "制裁还可能推动贸易流向重组，比如俄罗斯能源转向亚洲，改变全球运费和价差。"
         ]
+      },
+      "insight_en": {
+        "what": "Trump signed a comprehensive sanctions bill against Russia named after the late Senator Lindsey Graham.",
+        "why": "Markets had been assessing the impact of the Russia-Ukraine conflict on energy supplies; comprehensive sanctions could restrict Russian trade and financing, increasing the geopolitical risk premium on energy and safe-haven assets.",
+        "chain": "United States expands sanctions on Russia → Russia's financing and trade are restricted → Energy and metals supplies are expected to tighten → Commodity prices rise → Global inflation expectations rise → Expectations of central bank rate cuts decline → Bond yields rise；Safe-haven demand increases → U.S. dollar and gold strengthen",
+        "notes": [
+          "Sanctions exert pressure on a target country by restricting trade, financing, and asset transactions, altering the supply of affected commodities and capital flows.",
+          "If sanctions on Russia involve energy, they will lead to expectations of tighter global oil and gas supplies; energy prices have a major impact on inflation and trade balances.",
+          "Rising commodity prices increase business costs and household energy spending, in turn pushing up inflation expectations.",
+          "When inflation expectations rise, it becomes harder for central banks to cut rates, and the bond market reflects this in advance through higher yields.",
+          "Rising bond yields mean falling bond prices; this is the fundamental inverse relationship in bond pricing.",
+          "Safe-haven assets such as the U.S. dollar, gold, and some government bonds tend to attract capital inflows when wars and sanctions escalate.",
+          "Energy-importing countries need more U.S. dollars to buy energy; their current accounts deteriorate, and their currencies tend to come under pressure.",
+          "Sanctions may also drive a reconfiguration of trade flows, such as Russian energy shifting toward Asia, changing global freight rates and price differentials."
+        ]
       }
     }
   ],
@@ -93,6 +139,21 @@
           "估值传导：算力供给扩张预期上升，芯片、设备、电力公司的收入预期上修，股价可能提前反映。",
           "但IPO申请不等于融资完成，最终发行价格和需求会影响传导强度。"
         ]
+      },
+      "insight_en": {
+        "what": "Nvidia-backed AI data center developer Nscale publicly filed for an IPO, with partners including Nvidia and Microsoft.",
+        "why": "Markets had been concerned that AI data center construction depended on cash from a handful of giants; an IPO opens up an equity financing channel and reinforces expectations of sustained capital expenditure on computing capacity.",
+        "chain": "Demand for AI computing capacity is high → Data centers require massive capital expenditure → Nscale files for an IPO → An equity financing channel opens → Capacity to expand data centers increases → Nvidia GPU orders increase → Demand for power and cooling equipment rises → Revenue expectations across related supply chains are revised upward",
+        "notes": [
+          "An IPO is an initial public offering, in which a company issues shares to the public and lists on a stock exchange, allowing it to obtain equity financing rather than relying solely on bank loans or private placements.",
+          "Data centers are the physical infrastructure for AI computing capacity, housing servers, GPUs, networks, and cooling systems, with high construction and electricity costs.",
+          "Capital expenditure is the money businesses spend on long-term assets, such as building data centers or buying chips, and determines the future supply of computing capacity.",
+          "Nvidia sells GPUs in this chain; stronger data center expansion provides greater support for GPU orders.",
+          "Power, cooling, and network equipment support data centers; expanding computing capacity drives demand for these upstream inputs.",
+          "If AI data centers rely mainly on the giants' own cash, a contraction in financing will slow construction; an IPO provides a new channel, prompting markets to reassess the pace of expansion.",
+          "Valuation transmission: Stronger expectations for expansion in the supply of computing capacity lead to upward revisions in revenue expectations for chip, equipment, and power companies, which share prices may reflect in advance.",
+          "But an IPO filing does not mean that financing has been completed; the final offering price and demand will affect the strength of the transmission."
+        ]
       }
     },
     {
@@ -114,6 +175,21 @@
           "成本曲线指生产或提供算力的单位成本随规模和技术变化；限制供给会让成本曲线更难下降。",
           "科技巨头的资本开支回报取决于建多少数据中心、花多少钱、能收到多少算力租金。",
           "如果电力、土地、审批成为瓶颈，AI扩张会从有钱就行变成有电和许可才行。"
+        ]
+      },
+      "insight_en": {
+        "what": "Virginia's governor has established an AI task force and is pushing for restrictions on data centers, giving local communities a greater say in site selection.",
+        "why": "Markets had assumed that AI data centers could expand rapidly; restrictions could raise power, land, and permitting costs, altering the distribution of computing capacity and its cost curve.",
+        "chain": "Restrictions on data centers tighten → Approvals for new projects slow → Land and grid connection costs rise → Data center operators' costs increase → Computing capacity rental prices face upward pressure → AI training and inference costs rise → Returns on tech giants' capital expenditure come under pressure",
+        "notes": [
+          "Northern Virginia is one of the world's largest data center clusters, serving as a connection point for substantial cloud computing and internet traffic.",
+          "Data centers require large amounts of electricity and land, and local residents are often concerned about electricity prices, noise, and land use, making local permitting authority crucial.",
+          "The state government's establishment of an AI task force systematizes AI policy, while restrictions on data centers change the pace at which computing infrastructure is deployed.",
+          "Slower permitting reduces new supply in the short term, but demand is still growing; supply shortages will push up data center rents and computing capacity prices.",
+          "Higher grid connection costs feed into operators' costs and may eventually be passed on to cloud providers and AI companies renting computing capacity.",
+          "The cost curve refers to how the unit cost of producing or providing computing capacity changes with scale and technology; supply restrictions make it harder for the cost curve to shift downward.",
+          "Tech giants' returns on capital expenditure depend on how many data centers they build, how much they spend, and how much rental income they can earn from computing capacity.",
+          "If power, land, and permitting become bottlenecks, AI expansion will shift from needing only money to needing power and permits."
         ]
       }
     }

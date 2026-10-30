@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>
+(function () {
+  var l = 'zh';
+  try { if (window.localStorage.getItem('dailybrief.lang') === 'en') l = 'en'; }
+  catch (e) { /* 禁用存储：保持中文 */ }
+  document.documentElement.setAttribute('data-lang', l);
+})();
+</script>
+<title>知势 DailyBrief · 2026-09-24</title>
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#171612" media="(prefers-color-scheme:dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="知势 DailyBrief">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=3d954ee5c8">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+/* ── 主题变量层 ──
+   [预留·皮肤主题] 颜色、圆角、阴影全部收在这一处，没有一个写死在下面的规则里。
+   将来加皮肤不用动 HTML、也不用动渲染代码，只追加一组覆盖即可：
+     html[data-skin="ink"]{--bg:#0f1115;--card:#171a20;--accent:#c9a227;--card-r:8px}
+     html[data-skin="paper"]{--bg:#f3efe6;--card:#fffdf7;--accent:#8a5a2b}
+   然后在 <html> 上加 data-skin="ink"。若要做切换器，也只需一个按钮写
+   localStorage + setAttribute，本文件的其余部分完全不受影响。 */
+/* [2026-09-11 改版] 版式沿用简单四段（发生了什么/市场为什么在意/金融传导/解析），
+   只换了配色与品牌区：颜色取自 dailybrief-ui 参考站的暖色调，
+   顶部 brand 区是「勢」logo + 知势 DailyBrief。 */
+:root{--bg:#faf8f3;--card:#fff;--line:#e8e5db;--ink:#191918;--dim:#6b6a62;
+ --faint:#9a988f;--accent:#b44322;--chain:#1c4e4f;--chainbg:#eef4f1;
+ --chainline:#d6e3da;--code:#f2f1eb;--warn:#8a6100;
+ --pill:#f3f0e8;--pillline:#e2dcc9;--card-r:14px;
+ --serif:Georgia,"Songti SC","Noto Serif CJK SC","SimSun",serif;
+ --card-sd:0 1px 2px rgba(30,27,20,.06),0 10px 26px -12px rgba(30,27,20,.14);
+ --card-sd-hi:0 2px 6px rgba(30,27,20,.08),0 18px 38px -16px rgba(30,27,20,.22)}
+body{font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
+ background:var(--bg);color:var(--ink);padding:26px 18px 56px}
+.wrap{max-width:1240px;margin:0 auto}
+/* 顶部品牌区：势 logo（深色圆角块）+ 知势 DailyBrief，照 dailybrief-ui 的 masthead。 */
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+ padding-bottom:13px;border-bottom:1px solid var(--line)}
+header .logo{width:38px;height:38px;border-radius:9px;background:var(--ink);color:var(--bg);
+ display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);
+ font-size:19px;font-weight:700;flex:none}
+.hd{flex:1;min-width:0}
+h1{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.2px;
+ display:flex;align-items:baseline;gap:6px;line-height:1.2}
+h1 .en{font-size:12px;font-weight:500;color:var(--faint);letter-spacing:0}
+.date{color:var(--dim);font-size:14px}
+.badge{font-size:12px;padding:2px 9px;border-radius:10px;background:#efece4;color:var(--dim)}
+.badge.rules{background:#fff3cd;color:var(--warn)}
+/* 副标题跟在 logo 那块品牌区里（h1 下面一行），跟 9.11 复杂版一致 */
+header .sub{font-size:12px;color:var(--faint);margin-top:2px}
+.note{font-size:13px;color:var(--warn);background:#fdf3df;border:1px solid #ecd9a8;
+ border-radius:6px;padding:9px 13px;margin:14px 0}
+h2{font-size:14px;margin:26px 0 12px;color:var(--dim);letter-spacing:1px;
+ display:flex;align-items:center;gap:10px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+/* ── 抽卡卡片 ──
+   一条事件 = 一张独立卡片：大圆角 + 双层阴影 + 悬停微抬，像一张能抽出来的卡。
+   宽屏保持"左新闻 1/3、右解读 2/3"，窄屏叠成单栏（见下面的媒体查询）。
+   [预留·左右滑动抽卡] .cards 容器内就是 .deck（横向滚动轨道），默认已经是
+   滑动卡组。若只想要原来的竖排平铺，改一行：.deck-track{display:block}
+   并把 .deck-slide{flex:0 0 100%} 删掉即可。两种形态共用同一份卡片样式。 */
+.cards{display:block}
+article{background:var(--card);border:1px solid var(--line);border-radius:var(--card-r);
+ margin-bottom:16px;display:grid;grid-template-columns:minmax(240px,1fr) 2fr;
+ overflow:hidden;box-shadow:var(--card-sd);
+ transition:transform .18s ease,box-shadow .18s ease}
+article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
+.news{padding:16px 18px;border-right:1px solid var(--line);background:#faf9f4}
+.news a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;
+ display:block;margin-bottom:8px}
+.news a:hover{color:var(--accent);text-decoration:underline}
+.src{color:var(--faint);font-size:12px}
+.raw{color:var(--dim);font-size:12.5px;margin-top:9px;padding-top:9px;
+ border-top:1px dashed var(--line)}
+/* ── 英文摘要折叠（.orig）──
+   英文源的卡片：标题永远直接显示（那是这条新闻本身），只把英文摘要收进这个
+   details，中文版手机端点「查看英文摘要」才展开。桌面端不折（屏幕够宽，英文
+   直接摊开更好读），靠 author CSS 覆盖浏览器给 details 的 display:none ——
+   作者样式优先于 UA 样式。 */
+.orig{margin-bottom:8px}
+.orig>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;
+ align-items:center;gap:6px;font-size:12.5px;color:var(--dim);background:var(--code);
+ border:1px solid var(--line);border-radius:999px;padding:5px 13px}
+.orig>summary::-webkit-details-marker{display:none}
+.orig>summary::after{content:"\25be";font-size:10px;opacity:.7;
+ transition:transform .15s ease}
+.orig[open]>summary::after{transform:rotate(180deg)}
+.orig>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.orig>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.orig[open]>summary{margin-bottom:9px}
+.orig>.raw{margin-top:0;padding-top:0;border-top:0}
+@media(min-width:761px){
+ .orig{margin-bottom:0}
+ .orig>summary{display:none}
+ .orig>*:not(summary){display:block;content-visibility:visible}
+}
+/* ── 中/英语言切换（html[data-lang]）──
+   两种语言的文字**都在 HTML 里**，这里只决定显示哪一种。页面首选是中文：index.html
+   上写死 data-lang="zh"，<head> 里那段小脚本再按 localStorage 覆盖 —— 禁用 JS 时
+   就是中文版，不闪、也不会两种语言一起露出来。 */
+html[data-lang="zh"] .le{display:none}
+html[data-lang="en"] .lz{display:none}
+.langbtn{flex:none;display:inline-flex;align-items:stretch;height:32px;
+ border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.langbtn button{appearance:none;border:0;background:transparent;color:var(--faint);
+ cursor:pointer;padding:0 11px;font:600 11px/1 -apple-system,BlinkMacSystemFont,
+ "Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:.6px}
+.langbtn button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.langbtn button[aria-pressed="false"]:hover{color:var(--accent)}
+.langbtn button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+/* ── 英文版里的中文原文（.zhsrc / .enread）──
+   中文版：中文解读就是正文 —— .zhsrc 连 summary 一起藏掉、内容强制摊开。
+   英文版：换成上面的 .enread，.zhsrc 退回成一枚「中文原文」折叠按钮、默认收起。
+   和 .orig 那套一样是**双保险**：CSS 压一层，open 属性由 LANG_JS 再显式设一遍。 */
+.enread{display:none}
+html[data-lang="en"] .enread{display:block}
+html[data-lang="en"] .orig>summary{display:none}
+html[data-lang="en"] .orig>*:not(summary){display:block;content-visibility:visible}
+.zhsrc>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;
+ align-items:center;gap:7px;font-size:12.5px;color:var(--dim);background:var(--code);
+ border:1px solid var(--line);border-radius:999px;padding:5px 13px;margin-top:2px}
+.zhsrc>summary::-webkit-details-marker{display:none}
+.zhsrc>summary::marker{content:""}
+.zhsrc>summary::after{content:"\25be";font-size:10px;opacity:.7;
+ transition:transform .15s ease}
+.zhsrc[open]>summary::after{transform:rotate(180deg)}
+.zhsrc>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.zhsrc>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.zhsrc[open]>summary{margin-bottom:11px}
+/* 中文原文块里的段落标签**永远保持中文** —— 这一块本来就是"原文"，
+   标签跟着页面语言切反而精神分裂（英文页面里摊开一段中文，标签却写着 Show analysis）。
+   选择器比上面的 html[data-lang] 规则多一层，能压得住。 */
+html[data-lang="en"] .zhsrc .le{display:none}
+html[data-lang="en"] .zhsrc .lz{display:inline}
+html[data-lang="zh"] .zhsrc>summary{display:none}
+html[data-lang="zh"] .zhsrc>*:not(summary){display:block;content-visibility:visible}
+/* 没有英文的期次（历史数据 / 翻译失败）：英文版也当中文版读，别把唯一的内容折起来 */
+html[data-lang="en"] .zhsrc[data-forceopen]>summary{display:none}
+html[data-lang="en"] .zhsrc[data-forceopen]>*:not(summary){display:block;
+ content-visibility:visible}
+.noen{display:none}
+html[data-lang="en"] .noen{display:block;font-size:12px;color:var(--faint);
+ margin-bottom:10px;line-height:1.6}
+/* 卡片顶端一条色带 + 板块标签。因为滑卡把所有板块并成一条，卡片本身要自报板块。 */
+article{position:relative}
+article[data-cat]{overflow:hidden}
+article[data-cat]::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+article[data-cat="markets"]::before{background:var(--accent)}
+article[data-cat="policy"]::before{background:#a8690f}
+/* 科技板块：冷色系里挑了个沉一点的蓝灰，和赤陶(市场)/赭黄(政策)拉开，又不跳出暖调底子。 */
+article[data-cat="tech"]::before{background:#42557d}
+.catpill{display:inline-block;font-size:11px;letter-spacing:.4px;
+ padding:2px 9px;border-radius:999px;margin-bottom:8px}
+.catpill[data-cat="markets"]{background:#fbece7;color:#b44322}
+.catpill[data-cat="policy"]{background:#f3ead3;color:#8a620f}
+.catpill[data-cat="tech"]{background:#e7eaf2;color:#3f527a}
+@media(prefers-color-scheme:dark){
+ .catpill[data-cat="markets"]{background:#3a241c;color:#d98a63}
+ .catpill[data-cat="policy"]{background:#2f2a16;color:#e0b872}
+ .catpill[data-cat="tech"]{background:#232a3c;color:#93a5cf}
+}
+
+/* ── 滑卡卡组 ──
+   一次只显示一张卡片，桌面用 ←  → 方向键 / 按钮翻，手机左右滑动翻。
+   轨道本身可横向滚动（touch 天然支持），按钮和方向键也只是把 scrollLeft 挪一格；
+   滚动结束时按 scroll-snap 对齐，所以键盘和手指落到同一套位置逻辑上。 */
+.deck{position:relative}
+/* align-items:flex-start 让每张 slide 保持自身高度 —— 卡片高低不齐时，
+   脚本才能量出"当前这张"和"最高那张"的差，把翻页键上提到当前卡正下方。 */
+.deck-track{display:flex;align-items:flex-start;overflow-x:auto;
+ overscroll-behavior-x:contain;
+ scroll-snap-type:x mandatory;gap:14px;padding:2px 2px 12px;
+ scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck-track::-webkit-scrollbar{display:none}
+.deck-slide{flex:0 0 100%;scroll-snap-align:center}
+.deck-slide article{margin-bottom:0}
+.deck-ctl{display:flex;align-items:center;justify-content:center;gap:14px;
+ margin-top:4px;min-height:34px}
+.deck-btn{appearance:none;border:1px solid var(--line);background:var(--card);
+ color:var(--dim);border-radius:999px;width:34px;height:34px;cursor:pointer;
+ font:16px/1 monospace;display:inline-flex;align-items:center;justify-content:center;
+ box-shadow:var(--card-sd);transition:opacity .15s ease,color .15s ease,transform .15s ease}
+.deck-btn:hover:not([disabled]){color:var(--accent);transform:translateY(-1px)}
+.deck-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.deck-btn[disabled]{opacity:.35;cursor:default}
+.deck-pos{color:var(--faint);font-size:13px;letter-spacing:.5px;min-width:52px;
+ text-align:center}
+.deck-hint{color:var(--faint);font-size:12px;text-align:center;margin:2px 0 0}
+.deck-empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
+ border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
+/* 跨天是整页跳转，压暗一下表示"正在换下一期"，免得手指一松像没反应 */
+html.nav-away body{opacity:.4;transition:opacity .12s ease}
+.read{padding:16px 19px}
+.seg{margin-bottom:13px}
+.seg:last-child{margin-bottom:0}
+.lb{font-size:11.5px;color:var(--faint);letter-spacing:.8px;margin-bottom:5px}
+.tx{font-size:13.5px;color:#33332f;line-height:1.72}
+.seg.what .tx{font-size:15px;font-weight:600;color:var(--ink);line-height:1.55}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 6px;margin-bottom:5px}
+.flow:last-child{margin-bottom:0}
+/* 多条传导链（prompt 里要求用「；」隔开的并行路径，如汇率/跨境资金流那条）。
+   一条 8 环的链自己就会折成好几行，后面再接一条，光看药丸根本分不出是两条 ——
+   所以每条挂个序号、左侧压一条竖线，两条之间再补一条虚线。
+   序号用 ①②③ 这种中性编号，**不写「主线/支线」**：那是替模型认它没说的层级 ——
+   实际输出里常是并列的（美国侧/加拿大侧、芯片/电力），贴主次标签是错的。
+   只有一条链时这些 class 压根不出现，版式和以前一模一样。 */
+.flow.multi{padding-left:10px;border-left:2px solid var(--chainline)}
+.flow.multi+.flow.multi{margin-top:8px;padding-top:9px;
+ border-top:1px dashed var(--chainline)}
+.flb{flex:none;align-self:stretch;display:inline-flex;align-items:center;
+ font-size:12px;color:var(--chain);opacity:.68;
+ padding-right:8px;margin-right:2px;border-right:1px solid var(--chainline)}
+.hop{background:var(--chainbg);border:1px solid var(--chainline);color:var(--chain);
+ border-radius:6px;padding:3px 8px;font-size:12.5px;line-height:1.5}
+.arw{color:var(--chain);opacity:.55;font-size:12px}
+/* ── 解析折叠 ──
+   用原生 <details>/<summary>，**不写一行 JS**：零脚本、键盘可达、禁用 JS 也能展开。
+   按钮的两种文案都在 HTML 里，只用 CSS 切换显示 —— 不靠 content 伪元素塞文字，
+   这样读屏器和"页面内查找"都能拿到真实文字。 */
+.notes{border-top:1px dashed var(--line);padding-top:11px}
+.notes>summary{list-style:none;cursor:pointer;user-select:none;
+ display:inline-flex;align-items:center;gap:7px;font-size:12.5px;
+ color:var(--accent);background:var(--pill);border:1px solid var(--pillline);
+ border-radius:999px;padding:5px 13px;transition:background .15s ease}
+.notes>summary::-webkit-details-marker{display:none}
+.notes>summary::marker{content:""}
+.notes>summary:hover{background:var(--pillline)}
+.notes>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.notes>summary::after{content:"\25be";font-size:10px;opacity:.75;
+ transition:transform .15s ease}
+.notes[open]>summary::after{transform:rotate(180deg)}
+.cnt{color:var(--faint);font-size:11.5px}
+.tg-close{display:none}
+.notes[open] .tg-open{display:none}
+.notes[open] .tg-close{display:inline}
+.notes>ul{list-style:none;margin-top:12px}
+.notes li{position:relative;padding-left:15px;margin-bottom:9px;font-size:13px;
+ color:#33332f;line-height:1.72}
+.notes li:last-child{margin-bottom:0}
+.notes li::before{content:"*";position:absolute;left:2px;top:1px;color:var(--faint)}
+.nk{color:var(--ink)}
+.fml{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
+ background:var(--code);border-left:2px solid var(--accent);border-radius:4px;
+ padding:7px 10px;margin:6px 0;font-size:12.5px;line-height:1.6;
+ white-space:pre-wrap;overflow-x:auto}
+/* 近似上下分式：不引 MathJax/KaTeX，纯 flex 把分子摞在分母上、中间一条横线。
+   分子分母各自 stretch 撑满列宽，所以横线自动等于较宽那行的宽度。 */
+.frac{display:flex;align-items:center;gap:.55em;flex-wrap:wrap;white-space:normal}
+.fh{white-space:pre-wrap}
+.fq{display:inline-flex;flex-direction:column;align-items:stretch;text-align:center}
+.fn{padding:0 .55em 3px}
+.fd{padding:3px .55em 0;border-top:1.5px solid currentColor}
+code{font-family:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
+ background:var(--code);border-radius:3px;padding:1px 4px;font-size:12.5px}
+.noread{padding:16px 19px;color:var(--faint);font-size:13px;display:flex;align-items:center}
+.empty{color:var(--faint);font-size:13px;background:var(--card);border:1px solid var(--line);
+ border-radius:var(--card-r);padding:14px 17px;box-shadow:var(--card-sd)}
+/* 归档与设置都用原生 <details>：一次点击展开，不上 9.11 那套「底栏 → 抽屉 → 遮罩」。 */
+.archive{margin-top:30px;background:var(--card);border:1px solid var(--line);
+ border-radius:var(--card-r);padding:14px 18px;box-shadow:var(--card-sd)}
+.archive>summary{list-style:none;cursor:pointer;user-select:none;
+ display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dim);
+ letter-spacing:1px}
+.archive>summary::-webkit-details-marker{display:none}
+.archive>summary::after{content:"\25be";font-size:10px;opacity:.7;margin-left:auto;
+ transition:transform .15s ease}
+.archive[open]>summary::after{transform:rotate(180deg)}
+.archive[open]>summary{margin-bottom:10px}
+.archive>summary:hover{color:var(--accent)}
+.archive>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.archive a{display:inline-block;margin:0 8px 8px 0;padding:4px 10px;background:#efece4;
+ border-radius:6px;color:#4a4740;text-decoration:none;font-size:13px}
+.archive a:hover{background:#e6e2d6}
+.archive a.cur{background:var(--ink);color:#fff}
+/* 年 / 月 两层分组（2026-10-04）：三角标 + 逐层缩进，天链接在月里只写"日"。
+   颜色一律用主题变量，暗色与 ink/paper 皮肤自动跟着走。 */
+.archive .ay:first-child{margin-top:0}
+.archive .ay>summary,.archive .am>summary{list-style:none;cursor:pointer;user-select:none;
+ display:flex;align-items:center;gap:7px;color:var(--dim)}
+.archive .ay>summary::-webkit-details-marker,
+.archive .am>summary::-webkit-details-marker{display:none}
+.archive .ay>summary::before,.archive .am>summary::before{content:"\25b8";font-size:9px;
+ opacity:.7;transition:transform .15s ease}
+.archive .ay[open]>summary::before,
+.archive .am[open]>summary::before{transform:rotate(90deg)}
+.archive .ay>summary{font-size:12.5px;font-weight:600;padding:4px 0}
+.archive .ay>summary:hover,.archive .am>summary:hover{color:var(--accent)}
+.archive .ay>summary:focus-visible,.archive .am>summary:focus-visible{
+ outline:2px solid var(--accent);outline-offset:2px}
+.archive .am{margin:0 0 2px 15px}
+.archive .am>summary{font-size:12.5px;padding:3px 0}
+.archive .am-n{font-size:11px;color:var(--faint);margin-left:6px}
+/* 月历（2026-10-04 第二轮）：月里不再是平铺的一排「日」按钮，而是按真实日历铺
+   7 列。有简报的日子是可点的实心块，没有的日子只留一枚小点 —— 格子在位，所以
+   「这个月哪几天有」看一眼形状就知道，点阵又比满格数字轻，不至于喧哗。
+   实心块的底色/字色沿用上面的 .archive a / a.cur，暗色皮肤因此自动跟着走。 */
+.archive .bcal{display:grid;grid-template-columns:repeat(7,32px);gap:4px;
+ padding:4px 0 10px 15px}
+.archive .bcal .bd-h{font-size:11px;color:var(--faint);text-align:center;
+ padding-bottom:2px}
+.archive .bcal .bd-pad{visibility:hidden}
+.archive .bcal .bd,.archive .bcal a{height:32px;display:flex;align-items:center;
+ justify-content:center;border-radius:8px}
+.archive .bcal .bd::after{content:"";width:3px;height:3px;border-radius:50%;
+ background:var(--line)}
+.archive .bcal a{margin:0;padding:0;font-size:12.5px}
+.archive .bcal a::after{display:none}
+/* 设置项：样式照抄 9.11 复杂版 */
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer}
+.opt input{margin-top:3px;width:16px;height:16px;accent-color:var(--accent)}
+.opt span{font-size:13.5px}
+.opt em{display:block;font-style:normal;color:var(--faint);font-size:12px;margin-top:3px;
+ line-height:1.6}
+/* 设置齿轮：顶栏最右，点开是一个右下角弹出的面板。
+   原来是页脚上方一整块 <details>「设置」，占一行还容易看不见；改成图标后
+   设置和归档不再混在一起，顶栏右上也终于有个正经用途。 */
+.gear{position:relative;flex:none}
+.gear>summary{list-style:none;cursor:pointer;user-select:none;
+ width:32px;height:32px;border-radius:999px;border:1px solid var(--line);
+ background:var(--card);color:var(--dim);font-size:15px;line-height:1;
+ display:inline-flex;align-items:center;justify-content:center}
+.gear>summary::-webkit-details-marker{display:none}
+.gear>summary::marker{content:""}
+.gear>summary:hover{color:var(--accent);border-color:var(--pillline)}
+.gear>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gear[open]>summary{color:var(--accent);border-color:var(--pillline)}
+.gear-panel{position:absolute;right:0;top:calc(100% + 8px);z-index:20;
+ width:min(330px,84vw);background:var(--card);border:1px solid var(--line);
+ border-radius:12px;padding:4px 14px;box-shadow:var(--card-sd-hi);text-align:left}
+footer{margin-top:24px;color:var(--faint);font-size:12px;text-align:center;line-height:1.8}
+/* 手机：单栏。卡片仍是滑卡卡组里的一张（.deck-slide 保持 100% 宽），
+   只是卡内两栏叠成一栏 —— 解读是阅读重心，字号要略微放大，
+   传导链的环格要能整行排下，公式块允许横向滚动而不是硬换行把公式劈开，
+   折叠按钮要有够大的触摸目标。 */
+@media(max-width:760px){
+ body{padding:16px 12px 40px}
+ .wrap{max-width:100%}
+ article{grid-template-columns:1fr;margin-bottom:0}
+ .deck-track{gap:12px;padding:2px 0 10px}
+ .news{border-right:0;border-bottom:1px solid var(--line);padding:14px 15px}
+ .read{padding:14px 15px}
+ .tx{font-size:14.5px;line-height:1.78}
+ .seg.what .tx{font-size:15.5px}
+ /* 手机端的解析列表：解析每条都是 2~3 行的长句，6~8 条跟正文一个字号铺下来
+    就是"一大坨"。所以给它一套比正文矮一档的排法 —— 字号小半档、行高收一点，
+    每条做成一块淡底小卡片，条目之间自然断开；卡片里反过来把公式块抠成白底
+    （+ 原本就有的左侧朱线），公式照样跳得出来。星号不要了，卡片本身就是边界。 */
+ .notes li{font-size:13.5px;line-height:1.7;margin-bottom:6px;
+  padding:8px 11px;background:var(--code);border-radius:8px}
+ .notes li::before{display:none}
+ .notes .fml{background:var(--card)}
+ .hop{font-size:13px;padding:4px 9px}
+ /* 公式不换行会被劈开读不懂，让它自己横滚。分式是 flex 布局，不能锁 pre。 */
+ .fml:not(.frac){font-size:12px;white-space:pre;overflow-x:auto;
+  -webkit-overflow-scrolling:touch}
+ .notes>summary{font-size:13.5px;padding:8px 15px}   /* 触摸目标别太小 */
+ /* 手机端新闻栏：标签、标题、来源、摘要按钮各占一行顺排（2026-10-13 起标题
+    不再折进按钮里，标题就是这条新闻本身，折起来等于把它藏了）。不再用浮动拼
+    「标签 + 按钮」同一行 —— 标题回到两者之间后那行拼法就散了，而且浮动会让
+    后续行盒挤进标签旁边的窄缝（中文源的卡看着像从右上角起头）。 */
+ .orig>summary{margin:9px 0 0;padding:3px 10px;font-size:11px;gap:4px}
+ .orig[open]>summary{margin-bottom:7px}
+ .deck-btn{width:38px;height:38px}
+ h1{font-size:19px}
+ .archive .bcal{grid-template-columns:repeat(7,28px);padding-left:12px}
+ .archive .bcal .bd,.archive .bcal a{height:28px}
+ .archive .am{margin-left:12px}
+}
+/* 手机窄屏也保持横向流式：.flow 默认 flex-wrap:wrap，节点从左往右排、
+   放不下自动换行，箭头维持 "→"（不再转成上下竖排）。 */
+/* 悬停微抬只是锦上添花，晕动症用户把动效关掉后不该还在动 */
+@media(prefers-reduced-motion:reduce){
+ article,.notes>summary,.notes>summary::after{transition:none}
+ html.nav-away body{transition:none}
+ article:hover{transform:none}
+}
+@media(prefers-color-scheme:dark){
+ :root{--bg:#171612;--card:#1e1d18;--line:#322f28;--ink:#e9e6dc;--dim:#b1ab9c;
+  --faint:#8a857a;--accent:#d98a63;--chain:#7fb8a4;--chainbg:#1b2620;
+  --chainline:#2e4238;--code:#292720;--warn:#e0b872;
+  --pill:#2b2820;--pillline:#3f3a2d;
+  --card-sd:0 1px 2px rgba(0,0,0,.4),0 12px 28px -12px rgba(0,0,0,.6);
+  --card-sd-hi:0 2px 6px rgba(0,0,0,.5),0 20px 44px -14px rgba(0,0,0,.75)}
+ .news{background:#211f1a}
+ .archive a{background:#2a2821;color:#c7c2b4}
+ .archive a.cur{background:var(--accent);color:#fff}
+ .badge{background:#2a2821}
+ .note{background:#2a2418;border-color:#5c4a1e;color:#e0b872}
+ .badge.rules{background:#3a2f14;color:#e0b872}
+ .tx,.notes li{color:#d8d4c9}
+}</style></head><body><div class="wrap">
+<header><span class="logo" aria-hidden="true">勢</span>
+<div class="hd"><h1>知势 <span class="en">DailyBrief</span></h1>
+<p class="sub"><span class="lz">读懂全球前沿动态</span><span class="le">English news, with the mechanism spelled out</span></p></div>
+<span class="date">2026-09-24</span><span class="badge rules"><span class="lz">规则模式</span><span class="le">Rules mode</span></span><div class="langbtn" role="group" aria-label="Language"><button type="button" data-lang-set="zh" aria-pressed="true">中</button><button type="button" data-lang-set="en" aria-pressed="false">EN</button></div><details class="gear"><summary aria-label="设置" title="设置" data-aria-zh="设置" data-aria-en="Settings">⚙︎</summary><div class="gear-panel"><label class="opt"><input type="checkbox" id="opt-orig"><span><span class="lz">默认展开英文摘要<em>关闭时，英文源的卡片在手机端只显示标题与中文解读，英文摘要需点「查看英文摘要」展开；桌面端始终显示。</em></span><span class="le">Always show the English excerpt<em>When off, cards from English sources show only the headline and the brief on mobile — tap 「Show English excerpt」 to expand. Always expanded on desktop.</em></span></span></label></div></details></header>
+<div class="note"><span class="lz">今日为规则模式：只按来源权重与时间筛出了条目，<b>没有 AI 解读</b>。原因：InternalServerError: Error code: 503 - {&#x27;error&#x27;: {&#x27;message&#x27;: &#x27;当前分组 default 下对于模型 gpt-6.1sol 无可用渠道 (request id: 202610301823301484134626p9sdJ4s0oL1i)&#x27;, &#x27;type&#x27;: &#x27;new_api_error&#x27;}}</span><span class="le">Rules mode today: items were picked by source weight and recency only, so <b>there is no AI brief</b>. Reason: InternalServerError: Error code: 503 - {&#x27;error&#x27;: {&#x27;message&#x27;: &#x27;当前分组 default 下对于模型 gpt-6.1sol 无可用渠道 (request id: 202610301823301484134626p9sdJ4s0oL1i)&#x27;, &#x27;type&#x27;: &#x27;new_api_error&#x27;}}</span></div>
+<div class="deck-track" tabindex="0" data-older="2026-09-23.html" data-newer="2026-09-25.html"><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets"><span class="lz">市场 · 货币 · 金融</span><span class="le">Markets · FX · Finance</span></div><a href="https://www.cnbc.com/2026/10/29/european-central-bank-interest-rates.html" target="_blank" rel="noopener noreferrer">European Central Bank keeps key interest rate on hold at 2.5%</a><div class="src">CNBC Economy · 2026-10-29 22:48</div><details class="orig"><summary><span class="lz">查看英文摘要</span><span class="le">Show English excerpt</span></summary><div class="raw">Markets saw the decision as a hawkish pause and were last pricing in a 67% chance of a December rate hike.</div></details></div><div class="noread"><span class="lz">今日无 AI 解读（规则模式）</span><span class="le">No AI brief today (rules mode)</span></div></article></div><div class="deck-slide"><article data-cat="markets"><div class="news"><div class="catpill" data-cat="markets"><span class="lz">市场 · 货币 · 金融</span><span class="le">Markets · FX · Finance</span></div><a href="https://www.ft.com/content/5ded8d57-46f5-406c-a4ce-e58415b8d4ad?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">European oil majors lift buybacks as Iran war drives bumper profits</a><div class="src">FT Markets · 2026-10-29 19:40</div><details class="orig"><summary><span class="lz">查看英文摘要</span><span class="le">Show English excerpt</span></summary><div class="raw">Shell boss says he does not want surplus cash to ‘burn a hole in our pockets’</div></details></div><div class="noread"><span class="lz">今日无 AI 解读（规则模式）</span><span class="le">No AI brief today (rules mode)</span></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy"><span class="lz">政策 · 地缘大事件</span><span class="le">Policy · Geopolitics</span></div><a href="https://www.whitehouse.gov/presidential-actions/2026/10/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-domestic-petroleum-production-refining-and-logistics-capacity-c139/" target="_blank" rel="noopener noreferrer">Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logistics Capacity</a><div class="src">White House · 2026-10-23 04:41</div><details class="orig"><summary><span class="lz">查看英文摘要</span><span class="le">Show English excerpt</span></summary><div class="raw">MEMORANDUM FOR THE SECRETARY OF WAR SUBJECT: Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on </div></details></div><div class="noread"><span class="lz">今日无 AI 解读（规则模式）</span><span class="le">No AI brief today (rules mode)</span></div></article></div><div class="deck-slide"><article data-cat="policy"><div class="news"><div class="catpill" data-cat="policy"><span class="lz">政策 · 地缘大事件</span><span class="le">Policy · Geopolitics</span></div><a href="https://www.federalregister.gov/documents/2026/10/19/2026-21432/continuation-of-the-national-emergency-with-respect-to-the-democratic-republic-of-the-congo" target="_blank" rel="noopener noreferrer">Continuation of the National Emergency With Respect to the Democratic Republic of the Congo</a><div class="src">Federal Register · 2026-10-19 00:00</div><details class="orig"><summary><span class="lz">查看英文摘要</span><span class="le">Show English excerpt</span></summary><div class="raw">美国总统行政令 / 公告原文（Federal Register 一手文件）</div></details></div><div class="noread"><span class="lz">今日无 AI 解读（规则模式）</span><span class="le">No AI brief today (rules mode)</span></div></article></div><div class="deck-slide"><article data-cat="tech"><div class="news"><div class="catpill" data-cat="tech"><span class="lz">科技 · AI 与产业</span><span class="le">Tech · AI &amp; Industry</span></div><a href="https://www.bloomberg.com/news/articles/2026-10-30/murata-boosts-mlcc-output-investment-to-keep-pace-with-ai-demand" target="_blank" rel="noopener noreferrer">Murata Invests $6.4 Billion to Double Output and Meet AI Demand</a><div class="src">Bloomberg Technology · 2026-10-30 13:07</div><details class="orig"><summary><span class="lz">查看英文摘要</span><span class="le">Show English excerpt</span></summary><div class="raw">Murata Manufacturing Co. will invest ¥1 trillion ($6.4 billion) over five years to more than double sales of its capacitors, which are in unprecedente</div></details></div><div class="noread"><span class="lz">今日无 AI 解读（规则模式）</span><span class="le">No AI brief today (rules mode)</span></div></article></div><div class="deck-slide"><article data-cat="tech"><div class="news"><div class="catpill" data-cat="tech"><span class="lz">科技 · AI 与产业</span><span class="le">Tech · AI &amp; Industry</span></div><a href="https://www.bloomberg.com/news/videos/2026-10-30/envision-s-zheng-on-china-s-ai-data-center-buildout-video" target="_blank" rel="noopener noreferrer">Envision&#x27;s Zheng on China&#x27;s AI Data Center Buildout</a><div class="src">Bloomberg Technology · 2026-10-30 12:25</div><details class="orig"><summary><span class="lz">查看英文摘要</span><span class="le">Show English excerpt</span></summary><div class="raw">Ricky Zheng, General Manager of AIDC at Envision Group, says the company plans to develop data centres around the world powered by renewable energy, w</div></details></div><div class="noread"><span class="lz">今日无 AI 解读（规则模式）</span><span class="le">No AI brief today (rules mode)</span></div></article></div></div><div class="deck-ctl" role="group" aria-label="卡片导航" data-aria-zh="卡片导航" data-aria-en="Card navigation"><button class="deck-btn deck-prev" type="button" aria-label="上一张" data-aria-zh="上一张" data-aria-en="Previous card" disabled>‹</button><span class="deck-pos">1/6</span><button class="deck-btn deck-next" type="button" aria-label="下一张" data-aria-zh="下一张" data-aria-en="Next card">›</button></div><p class="deck-hint"><span class="lz">← → 或按钮切换 · 手机左右滑动 · 滑到头翻到相邻一期</span><span class="le">← → or the buttons · swipe on mobile · keep going to jump to the adjacent issue</span></p>
+<details class="archive"><summary><span class="lz">历史归档</span><span class="le">Archive</span></summary><details class="ay" open><summary><span class="lz">2026 年</span><span class="le">2026</span></summary><details class="am"><summary><span class="lz">10 月</span><span class="le">Oct</span><span class="am-n"><span class="lz">26 期</span><span class="le">26 issues</span></span></summary><div class="bcal"><span class="bd-h"><span class="lz">一</span><span class="le">Mo</span></span><span class="bd-h"><span class="lz">二</span><span class="le">Tu</span></span><span class="bd-h"><span class="lz">三</span><span class="le">We</span></span><span class="bd-h"><span class="lz">四</span><span class="le">Th</span></span><span class="bd-h"><span class="lz">五</span><span class="le">Fr</span></span><span class="bd-h"><span class="lz">六</span><span class="le">Sa</span></span><span class="bd-h"><span class="lz">日</span><span class="le">Su</span></span><span class="bd-pad"></span><span class="bd-pad"></span><span class="bd-pad"></span><span class="bd"></span><a class="bd" href="2026-10-02.html" title="2026-10-02">2</a><a class="bd" href="2026-10-03.html" title="2026-10-03">3</a><a class="bd" href="2026-10-04.html" title="2026-10-04">4</a><a class="bd" href="2026-10-05.html" title="2026-10-05">5</a><a class="bd" href="2026-10-06.html" title="2026-10-06">6</a><a class="bd" href="2026-10-07.html" title="2026-10-07">7</a><a class="bd" href="2026-10-08.html" title="2026-10-08">8</a><a class="bd" href="2026-10-09.html" title="2026-10-09">9</a><a class="bd" href="2026-10-10.html" title="2026-10-10">10</a><a class="bd" href="2026-10-11.html" title="2026-10-11">11</a><span class="bd"></span><a class="bd" href="2026-10-13.html" title="2026-10-13">13</a><a class="bd" href="2026-10-14.html" title="2026-10-14">14</a><a class="bd" href="2026-10-15.html" title="2026-10-15">15</a><span class="bd"></span><a class="bd" href="2026-10-17.html" title="2026-10-17">17</a><a class="bd" href="2026-10-18.html" title="2026-10-18">18</a><a class="bd" href="2026-10-19.html" title="2026-10-19">19</a><a class="bd" href="2026-10-20.html" title="2026-10-20">20</a><a class="bd" href="2026-10-21.html" title="2026-10-21">21</a><a class="bd" href="2026-10-22.html" title="2026-10-22">22</a><a class="bd" href="2026-10-23.html" title="2026-10-23">23</a><a class="bd" href="2026-10-24.html" title="2026-10-24">24</a><a class="bd" href="2026-10-25.html" title="2026-10-25">25</a><a class="bd" href="2026-10-26.html" title="2026-10-26">26</a><a class="bd" href="2026-10-27.html" title="2026-10-27">27</a><a class="bd" href="2026-10-28.html" title="2026-10-28">28</a><a class="bd" href="2026-10-29.html" title="2026-10-29">29</a><span class="bd"></span><span class="bd"></span></div></details><details class="am" open><summary><span class="lz">9 月</span><span class="le">Sep</span><span class="am-n"><span class="lz">19 期</span><span class="le">19 issues</span></span></summary><div class="bcal"><span class="bd-h"><span class="lz">一</span><span class="le">Mo</span></span><span class="bd-h"><span class="lz">二</span><span class="le">Tu</span></span><span class="bd-h"><span class="lz">三</span><span class="le">We</span></span><span class="bd-h"><span class="lz">四</span><span class="le">Th</span></span><span class="bd-h"><span class="lz">五</span><span class="le">Fr</span></span><span class="bd-h"><span class="lz">六</span><span class="le">Sa</span></span><span class="bd-h"><span class="lz">日</span><span class="le">Su</span></span><span class="bd-pad"></span><span class="bd"></span><span class="bd"></span><span class="bd"></span><span class="bd"></span><span class="bd"></span><a class="bd" href="2026-09-06.html" title="2026-09-06">6</a><a class="bd" href="2026-09-07.html" title="2026-09-07">7</a><span class="bd"></span><a class="bd" href="2026-09-09.html" title="2026-09-09">9</a><a class="bd" href="2026-09-10.html" title="2026-09-10">10</a><a class="bd" href="2026-09-11.html" title="2026-09-11">11</a><a class="bd" href="2026-09-12.html" title="2026-09-12">12</a><a class="bd" href="2026-09-13.html" title="2026-09-13">13</a><span class="bd"></span><a class="bd" href="2026-09-15.html" title="2026-09-15">15</a><a class="bd" href="2026-09-16.html" title="2026-09-16">16</a><span class="bd"></span><a class="bd" href="2026-09-18.html" title="2026-09-18">18</a><a class="bd" href="2026-09-19.html" title="2026-09-19">19</a><a class="bd" href="2026-09-20.html" title="2026-09-20">20</a><a class="bd" href="2026-09-21.html" title="2026-09-21">21</a><a class="bd" href="2026-09-22.html" title="2026-09-22">22</a><a class="bd" href="2026-09-23.html" title="2026-09-23">23</a><a class="bd cur" href="2026-09-24.html" title="2026-09-24">24</a><a class="bd" href="2026-09-25.html" title="2026-09-25">25</a><span class="bd"></span><span class="bd"></span><span class="bd"></span><a class="bd" href="2026-09-29.html" title="2026-09-29">29</a><a class="bd" href="2026-09-30.html" title="2026-09-30">30</a></div></details></details></details>
+<footer>每天更新 · 市场货币金融 / 政策地缘大事件<br>
+<span class="lz">条目来自各源公开 RSS 与 API，解读由 Claude 生成，仅供学习参考，不构成投资建议</span><span class="le">Items come from public RSS feeds and APIs; the brief is written by Claude. For study and reference only — not investment advice.</span></footer>
+</div>
+<script>
+(function () {
+  function init() {
+    var track = document.querySelector('.deck-track');
+    if (!track || track.children.length === 0) return;
+    var slides = track.children;
+    var prev = document.querySelector('.deck-prev');
+    var next = document.querySelector('.deck-next');
+    var pos = document.querySelector('.deck-pos');
+    var ctl = document.querySelector('.deck-ctl');
+    var N = slides.length;
+    // 相邻一期的 URL（更旧 / 更新），由 build_site 写在轨道上；没有就是没有。
+    var older = track.getAttribute('data-older') || '';
+    var newer = track.getAttribute('data-newer') || '';
+    var maxH = 0;
+    var lastI = -1;
+    // 卡片高低不齐，轨道却按最高的那张留白 —— 量出差额，把翻页键上提到当前卡
+    // 正下方（负 margin 吃掉差额）。**不改轨道高度**：改了会把相邻卡裁掉或抖一下。
+    function measure() {
+      maxH = 0;
+      for (var k = 0; k < N; k++) {
+        var h = slides[k].offsetHeight;
+        if (h > maxH) maxH = h;
+      }
+    }
+    // 跨天是**换页**（每天一个 HTML），所以只能整页跳转。跳之前把整页压暗一点，
+    // 免得手指一松没反应、过几百毫秒才突然换页，像卡住了。
+    function jump(href) {
+      document.documentElement.classList.add('nav-away');
+      location.href = href;
+    }
+    // 文案跟语言走：DECK_JS 是一份静态字符串，中英两句都写在这里，按
+    // <html data-lang> 挑一句（和页面上 .lz/.le 那套同一个开关）。
+    function T(zh, en) {
+      return document.documentElement.getAttribute('data-lang') === 'en' ? en : zh;
+    }
+    function dayLabel(href) {
+      var m = /(\d{4})-(\d{2})-(\d{2})\.html$/.exec(href);
+      if (!m) return T('相邻一期', 'adjacent issue');
+      return T((+m[2]) + '月' + (+m[3]) + '日', (+m[2]) + '/' + (+m[3]));
+    }
+    function update() {
+      var w = track.clientWidth;
+      var i = Math.round(track.scrollLeft / w);
+      if (i < 0) i = 0;
+      if (i > N - 1) i = N - 1;
+      if (pos) pos.textContent = (i + 1) + '/' + N;
+      // 到头了但还连着别的一期，按钮就不该灰 —— 它这一下是"翻天"而不是"翻卡"。
+      var head = (i <= 0), tail = (i >= N - 1);
+      if (prev) {
+        prev.disabled = head && !newer;
+        prev.title = head && newer
+          ? T('上一天：', 'Previous day: ') + dayLabel(newer)
+          : T('上一张', 'Previous card');
+      }
+      if (next) {
+        next.disabled = tail && !older;
+        next.title = tail && older
+          ? T('下一天：', 'Next day: ') + dayLabel(older)
+          : T('下一张', 'Next card');
+      }
+      // 只在手机端收：桌面屏幕高，翻页时下方归档卡片跟着上下跳反而碍眼。
+      if (ctl && slides[i]) {
+        var narrow = window.matchMedia('(max-width:760px)').matches;
+        ctl.style.marginTop = narrow
+          ? (4 - (maxH - slides[i].offsetHeight)) + 'px' : '';
+      }
+      // 换卡了：当前卡的顶边不在视口里就把它拉回来（**只往上拉，不往下推**）。
+      // 不做这一步的话，从长卡滑到短卡（比如刚展开过解析的那张），文档一下子矮一截，
+      // 浏览器会把滚动位置夹到页面最底 —— 新卡就变成"从下半截开始显示、下面一片空"。
+      if (i !== lastI) {
+        lastI = i;
+        var top = slides[i].getBoundingClientRect().top + window.scrollY - 8;
+        if (top > 0 && window.scrollY > top) window.scrollTo(0, top);
+      }
+    }
+    // 语言一换，翻页键的 tooltip（「上一天：10月12日」）也得跟着换 ——
+    // 它是在 update() 里拼的，所以留个口子给 LANG_JS 重跑一次。
+    window.__deckUpdate = update;
+    function go(i) {
+      // 越过两端就是跨天：往后翻接更旧的一期，往回翻接更新那期的**最后一张**
+      // （带 #last，落地后直接定位过去，接着往回滑的手感不会断）。
+      if (i > N - 1) {
+        if (older) return jump(older);
+        i = N - 1;
+      } else if (i < 0) {
+        if (newer) return jump(newer + '#last');
+        i = 0;
+      }
+      var w = track.clientWidth;
+      track.scrollTo({ left: i * w, behavior: 'smooth' });
+    }
+    if (prev) prev.addEventListener('click', function () {
+      go(Math.round(track.scrollLeft / track.clientWidth) - 1);
+    });
+    if (next) next.addEventListener('click', function () {
+      go(Math.round(track.scrollLeft / track.clientWidth) + 1);
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    // 展开/收起解析会改变卡片高度（toggle 不冒泡，靠捕获阶段收到）
+    track.addEventListener('toggle', function () { measure(); update(); }, true);
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { go(Math.round(track.scrollLeft / track.clientWidth) + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft')  { go(Math.round(track.scrollLeft / track.clientWidth) - 1); e.preventDefault(); }
+    });
+    // 手机上"滑到头再滑"就跨天。轨道本身 overflow:auto + 两端 contain，到边就拖不动了，
+    // 所以这里自己认手势：已经贴边、又朝外拖过 70px（且横向明显大于纵向）才认，
+    // 免得把正常翻卡或竖向滚动误判成跨天。认出来就交给 go()，方向逻辑只有一份。
+    var sx = 0, sy = 0, dragging = false;
+    track.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) return;
+      dragging = true;
+      sx = e.touches[0].clientX;
+      sy = e.touches[0].clientY;
+    }, { passive: true });
+    track.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      var dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+      if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      dragging = false;
+      var edge = track.scrollWidth - track.clientWidth - 2;
+      if (dx < 0 && track.scrollLeft >= edge) go(N);       // 拖到最末还往左拽 → 更旧的一期
+      else if (dx > 0 && track.scrollLeft <= 2) go(-1);    // 拖回最前还往右拽 → 更新的一期
+    }, { passive: true });
+    track.addEventListener('touchend', function () { dragging = false; }, { passive: true });
+    measure();
+    // 从更新的一期往回翻过来的（URL 带 #last）：直接落到最后一张，接手的位置才连得上。
+    // 定位完就把 hash 抹掉，否则刷新又会跳一次。
+    if (location.hash === '#last' && N > 1) {
+      track.scrollLeft = (N - 1) * track.clientWidth;
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    update();
+    window.addEventListener('resize', function () { measure(); update(); }, { passive: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+<script>
+(function () {
+  var OPT_KEY = 'dailybrief.showOrig';
+  var LANG_KEY = 'dailybrief.lang';
+  function store(k, v) {
+    try {
+      if (v === undefined) return window.localStorage.getItem(k);
+      window.localStorage.setItem(k, v);
+    } catch (e) { /* 隐私模式或禁用存储：当作没设置过，别让页面挂掉 */ }
+    return null;
+  }
+  function lang() {
+    return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh';
+  }
+  function applyOrig() {
+    var desktop = window.matchMedia('(min-width:761px)').matches;
+    // 英文版里左栏本来就是英文原文，没必要再折一次 —— 直接摊开。
+    var on = (lang() === 'en') || desktop || store(OPT_KEY) === '1';
+    var ds = document.querySelectorAll('.orig');
+    for (var i = 0; i < ds.length; i++) ds[i].open = on;
+    var cb = document.getElementById('opt-orig');
+    if (cb) cb.checked = store(OPT_KEY) === '1';
+  }
+  function applyLang() {
+    var l = lang();
+    // 1. 语言按钮：当前那一半压成实心
+    var btns = document.querySelectorAll('.langbtn button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-pressed',
+        btns[i].getAttribute('data-lang-set') === l ? 'true' : 'false');
+    }
+    // 2. 中文原文块：中文版强制摊开；英文版默认收起 —— 除非这一期没有英文
+    //    （历史数据 / 翻译失败），那时摊着才有内容可读。
+    var zs = document.querySelectorAll('.zhsrc');
+    for (var j = 0; j < zs.length; j++) {
+      zs[j].open = (l === 'zh') || zs[j].hasAttribute('data-forceopen');
+    }
+    // 3. aria-label / title 是属性，CSS 切不了，得逐个换。
+    //    （title 只覆盖原本就有 title 的元素，免得凭空长出 tooltip。）
+    var marks = document.querySelectorAll('[data-aria-zh]');
+    for (var k = 0; k < marks.length; k++) {
+      var txt = marks[k].getAttribute('data-aria-' + l);
+      if (!txt) continue;
+      marks[k].setAttribute('aria-label', txt);
+      if (marks[k].hasAttribute('title')) marks[k].setAttribute('title', txt);
+    }
+    applyOrig();
+    // 翻页键的 tooltip（「上一天：10月12日」）由 DECK_JS 拼，喊它重拼一次
+    if (window.__deckUpdate) window.__deckUpdate();
+  }
+  var lbtns = document.querySelectorAll('.langbtn button');
+  for (var n = 0; n < lbtns.length; n++) {
+    lbtns[n].addEventListener('click', function () {
+      var v = this.getAttribute('data-lang-set');
+      document.documentElement.setAttribute('data-lang', v);
+      store(LANG_KEY, v);
+      applyLang();
+    });
+  }
+  var box = document.getElementById('opt-orig');
+  if (box) box.addEventListener('change', function () {
+    store(OPT_KEY, box.checked ? '1' : '0');
+    applyOrig();
+  });
+  // 齿轮面板：原生 <details> 不会自己收，补上「点外面」和 Esc。
+  // 点齿轮本身不用管 —— 那一下在 .gear 里，contains 命中就放过，交给 details 自己翻。
+  var gear = document.querySelector('.gear');
+  if (gear) {
+    document.addEventListener('click', function (e) {
+      if (gear.open && !gear.contains(e.target)) gear.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') gear.open = false;
+    });
+  }
+  applyLang();
+  // 窗口尺寸只影响 .orig 的桌面/手机判断，不必重跑整套语言逻辑
+  window.addEventListener('resize', applyOrig);
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function () {});
+  });
+}
+</script>
+</body></html>

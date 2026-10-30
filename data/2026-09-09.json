@@ -19,6 +19,18 @@
           "对于股票等风险资产而言，利率上升意味着未来现金流折算到现在的价值下降，尤其是依赖远期增长的成长型公司受冲击更大。",
           "美伊冲突若导致霍尔木兹海峡（全球约五分之一石油运输的必经之路）受阻，油价可能进一步跳升。"
         ]
+      },
+      "insight_en": {
+        "what": "Brent crude prices broke above $100 per barrel for the first time since July last year, as the escalation of the U.S.–Iran conflict sparked concerns over supply disruptions.",
+        "why": "The market had already priced in part of the geopolitical risk premium, but the breach of the $100 threshold means that expectations of a supply shock have shifted from a 'tail risk' to the 'base case,' requiring global inflation expectations and central bank policy paths to be repriced.",
+        "chain": "Escalation of the U.S.–Iran military conflict → Stronger expectations of disruptions to Iranian crude exports → Expected global crude supply shortfall widens → Brent crude prices break above $100 → Energy inflation expectations rise → Central banks have less room to cut rates → Upward pressure on bond yields → Increased pressure on equity valuations",
+        "notes": [
+          "Brent crude is the pricing benchmark for around two-thirds of global crude oil trade, and changes in its price directly affect countries' import costs.",
+          "Rising oil prices directly push up the prices of refined petroleum products such as gasoline and diesel, with the increases then transmitted to production costs across industries such as transportation and chemicals, ultimately resulting in higher consumer prices.",
+          "Central banks raising interest rates or keeping them high to combat inflation will keep risk-free rates (i.e., government bond yields) elevated, thereby increasing financing costs for businesses and individuals and restraining economic activity.",
+          "For risk assets such as equities, higher interest rates mean a lower present value of future cash flows, with growth companies that depend on longer-term growth hit particularly hard.",
+          "If the U.S.–Iran conflict disrupts the Strait of Hormuz, through which around one-fifth of global oil shipments must pass, oil prices could jump further."
+        ]
       }
     },
     {
@@ -37,6 +49,18 @@
           "联合干预是指多国央行或财政部协同在外汇市场买卖货币，以影响汇率走势，这通常被视为强力信号。",
           "日本出口企业盈利与日元汇率高度负相关，日元升值会降低其海外收入换算回日元的价值。",
           "贝森特'我就是市场'的表态，意在强调官方拥有无限资源，足以对抗任何规模的投机力量。"
+        ]
+      },
+      "insight_en": {
+        "what": "U.S. Treasury Secretary Bessent warned speculators against shorting the yen, saying 'I am the market,' following earlier joint U.S.–Japanese intervention in the FX market to support the yen.",
+        "why": "This changes market expectations of a one-way depreciation path for the yen, suggesting that the authorities have a clear bottom line regarding current exchange-rate levels; short yen trades face policy intervention risk, and volatility in the yen and Japanese assets will rise.",
+        "chain": "U.S. warning against shorting the yen → Speculative short covering → Increased demand for yen → Yen appreciation → Downward revisions to Japanese exporters' earnings expectations → Pressure on the Nikkei index → Accelerated unwinding of carry trades → Increased volatility in global risk assets",
+        "notes": [
+          "Shorting the yen means investors borrow yen and sell it, expecting to profit by buying it back at a lower price in the future; this is a bet on yen depreciation.",
+          "A carry trade involves borrowing a low-interest-rate currency, such as the yen, to invest in higher-yielding assets and earn the interest-rate differential. When the yen suddenly appreciates, these trades incur losses, and unwinding the positions pushes the yen even higher.",
+          "Joint intervention refers to coordinated purchases and sales of currencies in the FX market by central banks or finance ministries from multiple countries to influence exchange-rate movements; this is usually viewed as a strong signal.",
+          "Japanese exporters' earnings are highly negatively correlated with the yen's exchange rate, as yen appreciation reduces the value of their overseas revenue when converted back into yen.",
+          "Bessent's statement, 'I am the market,' is intended to emphasize that the authorities have unlimited resources sufficient to counter speculative forces of any size."
         ]
       }
     },
@@ -57,6 +81,18 @@
           "美元走强会使得以美元计价的资产对海外投资者更贵，同时增加新兴市场国家的偿债成本，引发资本流出。",
           "基点（bps）是利率变动的最小单位，1个基点等于0.01%。"
         ]
+      },
+      "insight_en": {
+        "what": "The U.S. 2-year Treasury yield rose 2 basis points to 4.42%, its highest level since January 2025.",
+        "why": "The new high in yields indicates that the market is repricing expectations for Fed rate cuts, most likely because of a rebound in recent inflation data or hawkish comments from officials; rising expectations for short-term interest rates directly hit all assets that depend on low interest rates.",
+        "chain": "Rebound in inflation data → Market scales back rate-cut expectations → U.S. 2-year Treasury yield rises → Risk-free rate increases → Pressure on highly valued growth stocks → Pullback in the technology sector → U.S. Dollar Index strengthens → Increased capital outflow pressure on emerging markets",
+        "notes": [
+          "The 2-year Treasury yield is the most sensitive to interest-rate policy, reflecting the market's expectation of the average central bank benchmark rate over the next two years.",
+          "Rising yields mean falling bond prices; the two move inversely.",
+          "The risk-free rate is the anchor for global asset pricing; when it rises, the discounted value of all future cash flows declines, putting broad pressure on asset prices.",
+          "A stronger dollar makes dollar-denominated assets more expensive for overseas investors while increasing debt-servicing costs for emerging-market countries, triggering capital outflows.",
+          "Basis points (bps) are the smallest unit of interest-rate changes; 1 basis point equals 0.01%."
+        ]
       }
     },
     {
@@ -74,6 +110,17 @@
           "避险资产通常指在市场动荡时能保值或增值的资产，如黄金、美元等。比特币是否具备这一属性存在争议，但在特定环境下确实吸收了部分避险需求。",
           "比特币总量上限为2100万个，其供应稀缺性被类比为'数字黄金'。",
           "连续上涨可能吸引趋势跟踪型资金入场，进一步推高价格，形成正反馈循环。"
+        ]
+      },
+      "insight_en": {
+        "what": "Bitcoin rose for a third consecutive week as traders sought safe-haven assets amid market volatility.",
+        "why": "Bitcoin's gains contrast with sharp volatility in equity, bond and FX markets; the market may view it as a tool for hedging geopolitical risks and monetary policy uncertainty, changing how some capital is allocated across risks.",
+        "chain": "Heightened geopolitical risk → Increased volatility in traditional assets → Some capital seeks non-sovereign assets → Increased demand for Bitcoin → Bitcoin prices rise → Digital asset-related sectors attract capital inflows → Lower correlation with traditional markets",
+        "notes": [
+          "Non-sovereign assets are assets that do not rely on the credit backing of any national government; Bitcoin is the most typical example and is viewed by some investors as a tool for avoiding risks specific to a single country.",
+          "Safe-haven assets generally refer to assets that can preserve or increase their value during market turmoil, such as gold and the U.S. dollar. Whether Bitcoin has this characteristic is disputed, but it has indeed absorbed some safe-haven demand under certain conditions.",
+          "Bitcoin's total supply is capped at 21 million, and its scarcity of supply draws comparisons with 'digital gold'.",
+          "Consecutive gains may attract trend-following capital, pushing prices higher and creating a positive feedback loop."
         ]
       }
     }
@@ -96,6 +143,18 @@
           "有效供给不只是产量，还包括能及时运达市场的量，绕行导致运输周转率下降。",
           "市场对通胀预期的变化会传导至长期国债收益率，影响房贷利率、企业融资成本等实体经济变量。"
         ]
+      },
+      "insight_en": {
+        "what": "Brent crude prices rose above $100 per barrel after the U.S. and U.K. launched a new round of airstrikes against Yemen's Houthi forces and Iranian targets.",
+        "why": "The Red Sea and the Strait of Hormuz are major arteries for global energy transportation; escalating military action directly threatens supply, reinforcing market expectations that oil prices will remain elevated, which will intensify global inflationary pressure and constrain central banks' policy space.",
+        "chain": "U.S. and U.K. airstrikes against Houthi forces and Iranian targets → Shipping risks rise in the Red Sea and the Strait of Hormuz → Crude oil shipping insurance premiums jump → Some oil tankers reroute around the Cape of Good Hope → Effective crude supply declines → Oil prices break above $100 → Global energy costs rise → Inflation expectations increase",
+        "notes": [
+          "Houthi forces control parts of Yemen's coastal areas, and their attacks on merchant vessels directly threaten the Red Sea shipping route.",
+          "The Red Sea is a shortcut connecting the Mediterranean Sea and the Indian Ocean via the Suez Canal; rerouting around the Cape of Good Hope adds around a week to the voyage and substantial fuel costs.",
+          "Higher tanker shipping insurance premiums directly increase the landed cost of crude oil, even if its free-on-board price remains unchanged.",
+          "Effective supply includes not just production but also the volume that can reach the market in time; detours reduce shipping turnover rates.",
+          "Changes in market inflation expectations are transmitted to long-term government bond yields, affecting real-economy variables such as mortgage rates and corporate financing costs."
+        ]
       }
     },
     {
@@ -115,6 +174,18 @@
           "能源板块盈利预期上升会推动其股价上涨，但与整体股市形成跷跷板效应。",
           "此事件与单纯的经济制裁不同，它表明冲突已从金融领域扩展到实体打击，风险溢价更高。"
         ]
+      },
+      "insight_en": {
+        "what": "The U.S. military announced that it had destroyed 5 Iranian oil tankers in response to Iran's attack on U.S. Navy warships.",
+        "why": "Directly destroying oil tankers is a physical blow to Iran's oil export capacity, far more forceful than the ineffectual impact of economic sanctions; the market is pricing in the probability and scale of a cutoff in Iranian crude supplies, sharply pushing oil prices higher at the margin.",
+        "chain": "Iran attacks U.S. warships → U.S. destroys Iranian oil tankers → Iran's oil export capacity is damaged → Global heavy crude supply shortfall widens → Brent crude prices surge → Energy sector's future profitability increases sharply → Inflation expectations spiral upward",
+        "notes": [
+          "Iran is a major member of the Organization of the Petroleum Exporting Countries, with average daily exports of around 1.5 million barrels; destroying tankers directly reduces available shipping capacity.",
+          "Heavy crude is Iran's main oil export and is used to produce diesel and fuel oil; a shortage in its supply cannot easily be made up quickly with light crude.",
+          "Once expectations of an oil supply shortfall form, they will attract speculative buying, further amplifying price volatility.",
+          "Higher earnings expectations for the energy sector will push up its share prices, but create a seesaw effect with the broader stock market.",
+          "This event differs from purely economic sanctions: it indicates that the conflict has expanded from the financial sphere to physical strikes, carrying a higher risk premium."
+        ]
       }
     },
     {
@@ -132,6 +203,17 @@
           "韩元汇率与本国资产收益率和资本流动密切相关，收益率上升在短期内可能吸引外资流入，但长期若由财政恶化驱动，则会削弱币值信心。",
           "军工产业具有长周期、高确定性的订单特点，预算增加直接改善其未来现金流预期。",
           "韩国作为美国盟友，其防务自主意识的提升反映在全球供应链的'安全优先'趋势上，影响跨国企业的区域布局决策。"
+        ]
+      },
+      "insight_en": {
+        "what": "South Korea has raised its defense budget to a record high to address threats from North Korea and uncertainty in relations with its allies.",
+        "why": "Geopolitical tensions in Northeast Asia are escalating, and increased defense spending means the fiscal deficit could widen, affecting the scale of South Korean government bond issuance and sovereign credit assessments, while the defense industry supply chain receives firm orders.",
+        "chain": "Geopolitical tensions → South Korea increases its defense budget → Fiscal spending rises → Government bond issuance increases → South Korean government bond yields rise → Pressure on the won's exchange rate → Defense companies' orders surge → Related stocks and supply chains benefit",
+        "notes": [
+          "Defense budgets are usually financed through government bond issuance; increased supply depresses bond prices and raises yields.",
+          "The won's exchange rate is closely linked to domestic asset yields and capital flows; rising yields may attract foreign capital inflows in the short term, but if driven by fiscal deterioration over the long term, they will undermine confidence in the currency's value.",
+          "The defense industry is characterized by long-cycle orders with a high degree of certainty; budget increases directly improve expectations for its future cash flows.",
+          "The growing emphasis on defense autonomy in South Korea, a U.S. ally, is reflected in the 'security first' trend in global supply chains, affecting multinational companies' decisions on their regional footprints."
         ]
       }
     },
@@ -151,6 +233,18 @@
           "航运成本上升会以滞后的方式传导至零售价格，推升消费者物价指数。",
           "欧洲和亚洲的大型经济体高度依赖此航道，相关影响对它们的冲击远大于美国。",
           "这一事件与第21条关于美加贸易战的内容共同构成了全球供应链摩擦的两大主线。"
+        ]
+      },
+      "insight_en": {
+        "what": "Iran-backed Houthi forces have launched an attack on the Bab el-Mandeb Strait, threatening to trigger a fresh Red Sea shipping crisis.",
+        "why": "The Bab el-Mandeb Strait is a key chokepoint linking the Red Sea and the Gulf of Aden, through which around 10% of global seaborne trade volume passes; escalating military conflict will directly increase freight shipping costs from Asia to Europe and the security risk premium.",
+        "chain": "Houthis attack the Bab el-Mandeb Strait → Risks to merchant vessel transit surge → Shipping companies announce suspensions or rerouting → Shipping capacity tightens on Asia–Europe routes → Freight rate index surges → Cost of imported goods rises → Imported inflation pressure intensifies → Expectations of monetary tightening by European and Asian central banks increase",
+        "notes": [
+          "The Bab el-Mandeb Strait is only about 26 kilometers wide at its narrowest point and is one of the world's busiest corridors for transporting energy and goods.",
+          "Some insurers have already announced that they intend to raise war-risk insurance premiums for vessels passing through the area, a direct catalyst for rising freight rates.",
+          "Higher shipping costs will be transmitted to retail prices with a lag, pushing up the consumer price index.",
+          "The major economies of Europe and Asia are highly dependent on this shipping route, and the impact on them is far greater than on the U.S.",
+          "This event and the discussion of the U.S.–Canada trade war in item 21 together form the two main strands of global supply chain friction."
         ]
       }
     }
@@ -240,5 +334,6 @@
       "count": 20,
       "tier": "optional"
     }
-  }
+  },
+  "tech": []
 }

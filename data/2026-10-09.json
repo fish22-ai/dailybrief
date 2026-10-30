@@ -20,6 +20,19 @@
           "折现率抬升为什么伤害成长股？成长股的大部分利润在未来，未来利润折回今天要除以一个利率因子，利率越高，折回后的现值越小。",
           "为什么美元会走强？美债收益率高，全球资金愿意换美元买美债，美元需求上升，汇率走强，反过来压制新兴市场货币和资产。"
         ]
+      },
+      "insight_en": {
+        "what": "PIMCO's chief investment officer warned that the 10-year U.S. Treasury yield could rise above 6% for the first time since 2000 as leveraged investors are forced to sell bonds at a loss.",
+        "why": "The market had thought that the 10-year U.S. Treasury yield had already peaked near 4%. This warning shifts the pricing anchor for long-term interest rates upward, repricing the valuation denominators of all global risk assets.",
+        "chain": "Losses on hedge funds' bond holdings → Forced liquidation and selling → Increased selling pressure on long-dated U.S. Treasuries → Higher 10-year Treasury yield → Higher discount rates for global assets → Pressure on high-valuation and long-duration assets；At the same time, higher U.S. Treasury yields → Greater appeal of dollar-denominated assets → Increased capital outflow pressure on emerging markets",
+        "notes": [
+          "Why does the 10-year U.S. Treasury yield matter? It is the benchmark risk-free rate Rf for global asset pricing; other assets (stocks, corporate bonds, and overseas bonds) are priced by adding a risk premium on top of it.",
+          "Bond prices and yields move inversely: when yields rise, the prices of outstanding bonds fall, and anyone holding those bonds incurs unrealized losses.",
+          "What does forced liquidation mean for leveraged investors? Hedge funds often use borrowed money to buy bonds. When bond prices fall, collateral values shrink, brokers demand additional margin, and funds have no choice but to sell, pushing prices down further and creating a negative feedback loop.",
+          "What does a yield above 6% mean? It means the U.S. government's long-term borrowing costs return to their 2000 level, with mortgage rates, corporate lending rates, and equity discount rates all rising in tandem.",
+          "Why do higher discount rates hurt growth stocks? Most of growth stocks' earnings come in the future. Discounting future earnings back to today requires dividing by an interest rate factor; the higher the interest rate, the lower the resulting present value.",
+          "Why would the dollar strengthen? Higher U.S. Treasury yields make global investors willing to convert funds into dollars to buy U.S. Treasuries, increasing demand for dollars and strengthening the exchange rate, which in turn weighs on emerging-market currencies and assets."
+        ]
       }
     },
     {
@@ -38,6 +51,18 @@
           "为什么这份研究关键？它用数据把关税和2.9个百分点的涨价直接挂钩，打破了'关税只是短暂冲击'的假设。",
           "降息推迟意味着什么？市场原本押注美联储很快降息，现在预期落空，短端国债收益率下不去，美元保持强势。",
           "传导到股票：无风险利率不降，股票折现率就降不下来，高估值的科技成长股对利率最敏感，承压最大。"
+        ]
+      },
+      "insight_en": {
+        "what": "Research by the Federal Reserve Bank of New York shows that, as of February 2026, tariffs had pushed up prices in 67 categories of goods, cumulatively contributing 2.9 percentage points to inflation.",
+        "why": "The market had previously viewed tariffs mainly as a one-off price shock that would not affect long-term inflation expectations. This research establishes them as a persistent source of inflation, reducing the Federal Reserve's room to cut interest rates.",
+        "chain": "Tariffs take effect → Importers' costs rise → Costs are passed on to consumers → Core goods inflation becomes stickier → Federal Reserve rate cuts are delayed → Short-term U.S. Treasury yields remain elevated → Dollar stays firm, growth stocks come under pressure",
+        "notes": [
+          "What is core inflation? Inflation excluding food and energy. The Federal Reserve places more weight on it because it reflects underlying price pressures.",
+          "Why do tariffs push up inflation? Imported goods are taxed, and importers must either absorb the hit to profits themselves or add the costs to selling prices; the latter pushes up prices.",
+          "Why is this research crucial? It uses data to directly link tariffs to a 2.9-percentage-point increase in prices, overturning the assumption that 'tariffs are only a temporary shock.'",
+          "What do delayed rate cuts mean? The market had been betting that the Federal Reserve would cut rates soon, but those expectations have now been disappointed, leaving short-term Treasury yields unable to fall and the dollar strong.",
+          "Transmission to equities: if the risk-free rate does not fall, equity discount rates cannot fall either. Highly valued technology growth stocks are the most sensitive to interest rates and face the greatest pressure."
         ]
       }
     }
@@ -60,6 +85,18 @@
           "为什么对冲体系重要？境外机构持有人民币资产怕汇率波动，需要外汇衍生品来对冲，市场深度不够他们就不敢长期持有。",
           "这条逻辑成立的条件：资本账户开放程度、人民币资产回报率、汇率预期稳定性，三者缺一不可。"
         ]
+      },
+      "insight_en": {
+        "what": "The South China Morning Post argued that China should seize the window created by the widening China-U.S. interest rate differential to improve its renminbi financing, hedging, and asset absorption framework and promote renminbi internationalization.",
+        "why": "The market had thought that a negative China-U.S. interest rate differential would only intensify depreciation pressure on the renminbi. This commentary reinterprets it as a window for low-cost financing, changing the narrative around cross-border capital flows.",
+        "chain": "Widening China-U.S. interest rate differential → Offshore renminbi funding costs lower than dollar funding costs → Greater willingness among offshore entities to borrow renminbi → Increased cross-border use of the renminbi → Higher international demand for the renminbi → Some support for the exchange rate；But if the interest rate differential remains negative → Carry-trade capital flows reverse → Short-term depreciation pressure persists",
+        "notes": [
+          "What is the China-U.S. interest rate differential? It is the difference between Chinese and U.S. government bond yields. A negative differential means Chinese yields are lower than U.S. yields, which has historically attracted capital into dollar-denominated assets.",
+          "Why can a widening interest rate differential still benefit the renminbi? Because the renminbi, with its low funding costs, can serve as a funding currency for carry trades. Offshore institutions borrow renminbi and convert it into dollars to invest, and this process itself requires buying renminbi first.",
+          "What is an asset absorption framework? It means providing investment outlets for renminbi held offshore, such as renminbi-denominated bonds, stocks, and wealth management products; otherwise, holders of renminbi have no choice but to convert it back into dollars.",
+          "Why is the hedging framework important? Offshore institutions holding renminbi assets are concerned about exchange rate fluctuations and need FX derivatives to hedge. Without sufficient market depth, they are reluctant to hold these assets for the long term.",
+          "Conditions for this logic to hold: the degree of capital account openness, returns on renminbi assets, and the stability of exchange rate expectations; all three are indispensable."
+        ]
       }
     },
     {
@@ -77,6 +114,17 @@
           "为什么防务协议影响油价？中东是全球原油主产区，联盟变化会改变市场对供应中断概率的判断。",
           "为什么土耳其排除进攻性角色重要？这说明协议偏防御，降低了短期军事冲突概率，油价的风险溢价不会立刻飙升。",
           "传导到资产：油价上行会推高全球通胀，进而影响各国央行的利率路径，最终反映在债券收益率和汇率上。"
+        ]
+      },
+      "insight_en": {
+        "what": "Turkey's foreign minister said Ankara was assessing defense support for Saudi Arabia while ruling out an offensive role, following the signing of the Mecca Joint Defense Agreement by Turkey, Pakistan, and Saudi Arabia.",
+        "why": "The market had thought the Middle East's defense landscape was dominated by the United States. This agreement signals a restructuring of the regional security architecture that could affect capital flows in the Middle East and risk premiums in energy pricing.",
+        "chain": "Signing of the trilateral defense agreement → Restructuring of regional security alliances → Repricing of the Middle East geopolitical risk premium → Fluctuations in crude oil supply expectations → Higher oil price risk premium → Rising inflation expectations in energy-importing countries → Pressure on the relevant currencies and bonds",
+        "notes": [
+          "What is a geopolitical risk premium? The additional compensation the market demands for the 'possibility of conflict,' usually reflected in oil prices, gold, and defense stocks.",
+          "Why does a defense agreement affect oil prices? The Middle East is a major global crude oil producing region, and changes in alliances alter the market's assessment of the probability of supply disruptions.",
+          "Why does Turkey's exclusion of an offensive role matter? It indicates that the agreement is primarily defensive, reducing the probability of near-term military conflict, so the risk premium in oil prices will not immediately surge.",
+          "Transmission to assets: higher oil prices push up global inflation, which in turn affects central banks' interest rate paths across countries and is ultimately reflected in bond yields and exchange rates."
         ]
       }
     }
@@ -99,6 +147,18 @@
           "为什么光互联会成为瓶颈？GPU算力增长快，但把成千上万块GPU连起来需要极高带宽，光模块扩产周期长，跟不上GPU部署速度。",
           "供给瓶颈的双面性：对光模块厂商是利好（订单饱满、议价力强），对云厂商是利空（部署变慢、成本上升）。"
         ]
+      },
+      "insight_en": {
+        "what": "Nvidia-backed Lumentum said its optical components for AI servers are already sold out until early 2029 as technology companies rush to buy faster interconnect components.",
+        "why": "The market had thought the bottleneck in AI computing capacity was GPUs. This news shows that optical interconnects have become the new bottleneck, expanding the segments benefiting from AI capital expenditure from chips to optical modules.",
+        "chain": "Larger AI clusters → Need for faster interconnects between GPUs → Surge in demand for optical modules → Lumentum's production capacity sold out until 2029 → Demand for optical components exceeds supply → Higher prices and greater order visibility → Upward revisions to earnings expectations for the optical module and optical communications sectors；At the same time, supply bottlenecks → Cloud providers forced to shift capital expenditure toward optical interconnects → Potential slowdown in the pace of computing capacity deployment",
+        "notes": [
+          "What is an optical module? AI servers transmit data between one another using optical signals. Optical modules convert electrical signals into optical signals; the larger the clusters and the more interconnections, the greater the demand for optical modules.",
+          "Why does being sold out until 2029 matter? This shows that investment in AI infrastructure is not a short-term burst but is supported by long-term orders, changing the market's skeptical view of the sustainability of AI capital expenditure.",
+          "What is capital expenditure? It is the money cloud providers and technology companies spend on buying servers and building data centers. This is the most upstream source of demand in the AI value chain.",
+          "Why would optical interconnects become a bottleneck? GPU computing power is growing rapidly, but connecting thousands upon thousands of GPUs requires extremely high bandwidth. Optical module capacity expansion has long lead times and cannot keep pace with GPU deployment.",
+          "The two sides of supply bottlenecks: positive for optical module manufacturers (full order books and strong pricing power), but negative for cloud providers (slower deployment and higher costs)."
+        ]
       }
     },
     {
@@ -117,6 +177,18 @@
           "为什么科技巨头发短债？它们现金流强、信用评级高，发短债成本低，用来支持AI数据中心等资本开支。",
           "传导到股票：如果机构资金转去买短债，科技股的边际买盘减少，估值扩张动力减弱。",
           "这条逻辑的另一面：短债融资成本低，反而让科技巨头更容易维持高额资本开支，对AI产业链上游是利好。"
+        ]
+      },
+      "insight_en": {
+        "what": "Franklin Templeton's CEO said short-term bonds issued by major technology companies are the sweet spot for AI investing, offering both safety and yield.",
+        "why": "The market had equated AI investing with buying technology stocks. This view extends AI exposure to short-dated credit, changing institutional investors' allocation mix within the AI theme.",
+        "chain": "Expansion of AI capital expenditure → Technology giants increase bond issuance to raise funds → Increased supply of short-term corporate bonds → Institutional capital shifts from equities to short-term bonds → Pressure on capital flows into technology stocks → But short-term bond yields provide stable returns → Lower AI financing costs → Greater sustainability of capital expenditure",
+        "notes": [
+          "What are short-term bonds? They are bonds that mature within one year, have prices that are not very sensitive to interest rate changes, carry low risk, and offer higher returns than money market funds.",
+          "Why are they called the sweet spot? When interest rates are high, short-term bonds allow investors to lock in relatively high yields without worrying about the large price swings associated with long-term bonds.",
+          "Why do technology giants issue short-term bonds? They have strong cash flows and high credit ratings, so issuing short-term bonds is inexpensive for them, and they use the proceeds to support capital expenditure such as AI data centers.",
+          "Transmission to equities: if institutional capital shifts into short-term bonds, marginal buying demand for technology stocks decreases, weakening the impetus for valuation expansion.",
+          "The other side of this logic: low short-term bond financing costs actually make it easier for technology giants to sustain high capital expenditure, benefiting the upstream segments of the AI value chain."
         ]
       }
     }

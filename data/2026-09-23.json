@@ -20,6 +20,19 @@
           "航运股为什么受益？运费就是航运公司的收入，运价飙升时拥有可用运力的船东盈利弹性极大。",
           "霍尔木兹海峡为什么关键？全球约五分之一的海运原油经过该海峡，任何中断威胁都会立即推高运费和保险成本。"
         ]
+      },
+      "insight_en": {
+        "what": "As the Iran war disrupts shipping and very large crude carriers are in short supply, daily tanker charter rates on the key route from the Middle East to China have more than doubled since late August to a record $1.2 million.",
+        "why": "Markets had been pricing in only a short-lived disruption from the geopolitical conflict, but the continued surge in freight rates now signals a structural increase in energy transportation costs; shipping stocks, oil prices, and downstream inflation expectations all need to be repriced.",
+        "chain": "Iran conflict → Shipping route risks rise → Shortage of very large crude carriers → Freight rates on the Middle East-China route↑ → Landed crude oil costs↑ → Asian refiners' margins come under pressure → Refined product prices face upward pressure → Inflation expectations rise",
+        "notes": [
+          "Why are tanker freight rates surging? Shipowners are demanding greater compensation for risk, while the number of available vessels has fallen because of rerouting and risk avoidance, so both supply and demand are pushing prices higher.",
+          "What is a very large crude carrier (VLCC)? It is the main vessel type used to transport crude oil, capable of carrying about 2 million barrels per voyage, and the Middle East-to-China route is one of the world's most important crude oil shipping routes.",
+          "How are higher freight rates transmitted to oil prices? The landed cost of crude oil equals the FOB price plus freight charges, so a doubling of freight rates directly raises import costs for Asian buyers, effectively imposing a disguised tax increase on consuming countries.",
+          "What does this mean for inflation? Higher energy transportation costs will gradually feed through to the costs of refined products, chemicals, and logistics, potentially prompting central banks to keep interest rates high for longer.",
+          "Why do shipping stocks benefit? Freight charges are revenue for shipping companies, and when rates surge, shipowners with available capacity have substantial earnings upside.",
+          "Why is the Strait of Hormuz critical? About one-fifth of the world's seaborne crude oil passes through the strait, and any threat of disruption immediately pushes up freight rates and insurance costs."
+        ]
       }
     },
     {
@@ -39,6 +52,19 @@
           "财政压力如何影响资产价格？如果市场担心政府还债能力，会要求更高收益率才愿意买国债，这会推高全社会借贷成本，压制股票估值。",
           "经合组织是什么？由主要发达国家组成的经济政策协调机构，其预测和警告常被市场视为政策风向参考。",
           "为什么这会影响汇率？一国财政恶化可能削弱其货币信用，资本外流压力上升，汇率承压。"
+        ]
+      },
+      "insight_en": {
+        "what": "The OECD warned that government bond yields are surging, with debt interest payments putting increasing pressure on countries' public finances.",
+        "why": "Markets had expected fiscal pressures to ease once interest rates peaked, but elevated long-term yields mean government financing costs continue to rise; government bond supply, the term premium, and fiscal sustainability have become new pricing variables.",
+        "chain": "High stock of government debt → Long-term government bond yields remain elevated → Interest payments as a share of the budget↑ → Fiscal deficit pressures intensify → Expected government bond supply increases → Term premium rises → Long-term yields rise further → Underlying level of global risk-free rates shifts higher",
+        "notes": [
+          "What is the term premium? It is the additional compensation investors demand for holding long-term rather than short-term bonds, because longer horizons entail greater uncertainty.",
+          "Why do long-term yields receive more attention than short-term yields? Short-term yields mainly reflect expectations for central bank policy rates, while long-term yields incorporate fiscal risks, inflation expectations, and the term premium, serving as the anchor for long-term financing costs across the economy.",
+          "Rising yields mean falling bond prices: Bond prices and yields move inversely, reducing the market value of existing bond holdings.",
+          "How do fiscal pressures affect asset prices? If markets worry about a government's ability to repay its debt, they will demand higher yields to buy its bonds, pushing up economy-wide borrowing costs and weighing on equity valuations.",
+          "What is the OECD? It is an economic policy coordination organization made up of major developed countries, and its forecasts and warnings are often viewed by markets as indicators of policy direction.",
+          "Why does this affect exchange rates? A deterioration in a country's public finances may undermine the credibility of its currency, increasing capital outflow pressure and putting downward pressure on the exchange rate."
         ]
       }
     }
@@ -62,6 +88,19 @@
           "避险资产有哪些？黄金、美债、日元、瑞郎等，地缘风险下降时这些资产需求减弱。",
           "如果会谈破裂呢？风险溢价会迅速回补，油价和运费可能跳涨，这是当前最大的尾部风险。"
         ]
+      },
+      "insight_en": {
+        "what": "The United States and Iran held talks for the first time since the ceasefire broke down in June; Trump had previously threatened annihilation, and the two sides are still exchanging fire intermittently.",
+        "why": "Markets had been pricing in a prolonged or even escalating conflict in the Middle East, but the resumption of talks has reduced the probability of all-out war; the geopolitical risk premium embedded in oil prices may decline, while demand for safe-haven assets falls.",
+        "chain": "United States and Iran resume talks → Probability of all-out war declines → Middle East geopolitical risk premium falls → Concerns about crude oil supply disruptions ease → Oil prices fall → Shipping freight rates decline → Global inflation expectations cool → Bond yields fall",
+        "notes": [
+          "What is a geopolitical risk premium? It is the additional premium in asset prices resulting from political uncertainty such as wars or sanctions, which dissipates when tensions ease.",
+          "Why are oil prices most sensitive to the situation in the Middle East? A large share of the world's crude oil is produced in the region and shipped through the Strait of Hormuz, and any conflict could cut off supply.",
+          "Why is the resumption of talks important? Even without an agreement, as long as both sides are willing to talk, markets will see a lower probability of escalation, and the risk premium will decline accordingly.",
+          "What is the impact on the bond market? Lower oil prices reduce inflation expectations, and lower inflation expectations push bond yields down and bond prices up.",
+          "What are some safe-haven assets? Gold, U.S. Treasuries, the Japanese yen, and the Swiss franc, among others; demand for these assets weakens when geopolitical risks decline.",
+          "What if the talks break down? The risk premium would quickly return, and oil prices and freight rates could jump; this is currently the biggest tail risk."
+        ]
       }
     }
   ],
@@ -84,6 +123,19 @@
           "为什么选择欧洲和中东？这些地区有政策补贴、能源成本优势和连接亚欧非的地理位置。",
           "云服务价格竞争如何演变？算力供给增加可能压低云服务单价，利好AI应用企业，但压缩云厂商利润率。"
         ]
+      },
+      "insight_en": {
+        "what": "Alibaba is accelerating the expansion of its data centers in Europe and the Middle East, bringing its global infrastructure capacity to 20 gigawatts.",
+        "why": "Markets had assumed that Chinese cloud providers faced constraints on overseas expansion, but this move changes expectations for the global computing capacity supply landscape; higher capital expenditure by Alibaba Cloud will drive demand for chips, servers, and power equipment.",
+        "chain": "Alibaba expands overseas data centers → Global supply of computing capacity increases → Server and chip purchase volumes↑ → Orders for chipmakers such as Nvidia increase → Data center electricity demand rises → Local energy and power grid investment increases → Cloud service price competition intensifies → Small and midsize cloud providers' profits come under pressure",
+        "notes": [
+          "What does a gigawatt represent? One gigawatt equals 1 billion watts; a large data center campus typically consumes tens to hundreds of megawatts, and 20 gigawatts is equivalent to dozens of large campuses.",
+          "Why do tech giants need to build data centers? AI training and inference require enormous computing capacity, which comes from chip clusters, and these chips must run in data centers.",
+          "Why is capital expenditure important? Data center construction is capital-intensive and directly drives demand for chips, servers, optical transceivers, power equipment, and cooling equipment.",
+          "What is the impact on the chip supply chain? Alibaba's purchases of GPUs and in-house chips will change the distribution of orders among vendors such as Nvidia and AMD, while also accelerating China's development of its own chips.",
+          "Why choose Europe and the Middle East? These regions offer government subsidies, energy cost advantages, and geographic locations linking Asia, Europe, and Africa.",
+          "How will price competition in cloud services evolve? An increase in computing capacity supply may lower cloud service unit prices, benefiting AI application companies but squeezing cloud providers' profit margins."
+        ]
       }
     },
     {
@@ -103,6 +155,19 @@
           "创纪录收益率意味着什么？一方面说明融资成本高，另一方面说明市场对软银AI叙事仍有信心，愿意承担风险。",
           "如果AI回报不及预期会怎样？软银偿债压力将急剧上升，评级可能被下调，形成信用事件。",
           "对 broader 市场的影响？软银是AI投资风向标，其融资能力和意愿影响整个科技行业的资本开支预期。"
+        ]
+      },
+      "insight_en": {
+        "what": "SoftBank Group has launched one of the largest junk bond offerings in history to raise funds for AI investment, with record-high yields.",
+        "why": "Markets had expected junk bond issuance to meet with a tepid reception in a high-interest-rate environment, but SoftBank's successful fundraising at high yields shows that enthusiasm for AI investment can still attract capital; credit spreads and the sustainability of AI capital expenditure have become the focus of attention.",
+        "chain": "SoftBank issues a large volume of bonds → Junk bond supply increases → Credit spreads widen → Financing costs rise → But expectations of AI investment returns support demand → Capital flows into AI-related assets → Tech stock valuations gain support → Credit risks emerge if AI returns fall short of expectations",
+        "notes": [
+          "What are junk bonds? They are bonds issued by companies with below-investment-grade credit ratings, carrying a higher risk of default and therefore requiring higher yields to attract investors.",
+          "What is a credit spread? It is the difference between a corporate bond's yield and the yield on a government bond of the same maturity, reflecting the market's pricing of the company's default risk.",
+          "Why is SoftBank issuing bonds rather than using its own funds? Masayoshi Son has chosen to increase leverage to scale up AI investment, betting that AI returns will exceed financing costs.",
+          "What do record-high yields mean? On the one hand, they indicate high financing costs; on the other, they show that the market still has confidence in SoftBank's AI narrative and is willing to take on risk.",
+          "What happens if AI returns fall short of expectations? SoftBank's debt-servicing pressure would rise sharply, and its credit rating could be downgraded, triggering a credit event.",
+          "What is the impact on the broader market? SoftBank is a bellwether for AI investment, and its ability and willingness to raise financing affect capital expenditure expectations across the technology sector."
         ]
       }
     }

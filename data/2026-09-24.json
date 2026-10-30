@@ -1,0 +1,161 @@
+{
+  "date": "2026-09-24",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "European Central Bank keeps key interest rate on hold at 2.5%",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/10/29/european-central-bank-interest-rates.html",
+      "published": "2026-10-29 22:48",
+      "raw_summary": "Markets saw the decision as a hawkish pause and were last pricing in a 67% chance of a December rate hike.",
+      "insight": {}
+    },
+    {
+      "title": "European oil majors lift buybacks as Iran war drives bumper profits",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/5ded8d57-46f5-406c-a4ce-e58415b8d4ad?syn-25a6b1a6=1",
+      "published": "2026-10-29 19:40",
+      "raw_summary": "Shell boss says he does not want surplus cash to ‘burn a hole in our pockets’",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logistics Capacity",
+      "source": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/presidential-determination-pursuant-to-section-303-of-the-defense-production-act-of-1950-as-amended-on-domestic-petroleum-production-refining-and-logistics-capacity-c139/",
+      "published": "2026-10-23 04:41",
+      "raw_summary": "MEMORANDUM FOR THE SECRETARY OF WAR SUBJECT: Presidential Determination Pursuant to Section 303 of the Defense Production Act of 1950, as Amended, on Domestic Petroleum Production, Refining, and Logis",
+      "insight": {}
+    },
+    {
+      "title": "Continuation of the National Emergency With Respect to the Democratic Republic of the Congo",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21432/continuation-of-the-national-emergency-with-respect-to-the-democratic-republic-of-the-congo",
+      "published": "2026-10-19 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Murata Invests $6.4 Billion to Double Output and Meet AI Demand",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-30/murata-boosts-mlcc-output-investment-to-keep-pace-with-ai-demand",
+      "published": "2026-10-30 13:07",
+      "raw_summary": "Murata Manufacturing Co. will invest ¥1 trillion ($6.4 billion) over five years to more than double sales of its capacitors, which are in unprecedented demand from AI data center operators.",
+      "insight": {}
+    },
+    {
+      "title": "Envision's Zheng on China's AI Data Center Buildout",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-30/envision-s-zheng-on-china-s-ai-data-center-buildout-video",
+      "published": "2026-10-30 12:25",
+      "raw_summary": "Ricky Zheng, General Manager of AIDC at Envision Group, says the company plans to develop data centres around the world powered by renewable energy, with Latin America, Southern Europe and Africa emer",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 gpt-6.1sol 无可用渠道 (request id: 202610301823301484134626p9sdJ4s0oL1i)', 'type': 'new_api_error'}}",
+  "source_stats": {
+    "fed": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 1,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}

@@ -19,6 +19,18 @@
           "为什么股票估值承压？股票的未来现金流折现到今天的价值，使用的折现率就是无风险利率加上风险溢价，折现率走高，股票的现值就变小。",
           "美联储、欧央行、英央行是主要关注对象，它们加息会通过利率和汇率渠道影响全球资产比价。"
         ]
+      },
+      "insight_en": {
+        "what": "The Economist reports that inflation is rising again in many countries around the world, and central banks in many countries are preparing to resume rate hikes.",
+        "why": "Markets had been betting that major central banks were about to end their tightening cycles and return to easing. This report confirms the stickiness of inflation and the risk of renewed rate hikes, putting global bond markets under pressure and leaving the logic underpinning equity valuations open to reassessment.",
+        "chain": "Global inflation rebounds → Central banks resume rate hikes → Global monetary policy tightens → The prevailing level of risk-free rates rises → Risk asset valuations come under broad pressure",
+        "notes": [
+          "What is the risk-free rate? It usually refers to government bond yields and serves as an anchor for pricing all assets.",
+          "Why do rate hikes push up the risk-free rate? Central bank rate hikes directly affect short-term interest rates and are also transmitted to long-term government bond yields.",
+          "What does a rise in the risk-free rate mean? The market's required rate of return on investment rises accordingly, meaning bond yields rise and prices fall.",
+          "Why do equity valuations come under pressure? A stock's future cash flows are discounted to their value today using a discount rate equal to the risk-free rate plus a risk premium; as the discount rate rises, the stock's present value falls.",
+          "The Federal Reserve, the European Central Bank, and the Bank of England are the main focus; their rate hikes affect relative asset prices globally through interest rate and exchange rate channels."
+        ]
       }
     },
     {
@@ -38,6 +50,18 @@
           "为什么这利好银行股？注资降低了银行因资本不足而被迫收缩业务的风险，也减少了未来需要通过市场高价融资的预期。",
           "对债券影响：银行资本实力增强，其发行的金融债和二级资本债的信用风险降低。"
         ]
+      },
+      "insight_en": {
+        "what": "The Ministry of Finance plans to issue RMB 300 billion in special treasury bonds to replenish the common equity Tier 1 capital of eight centrally administered financial enterprises, including Industrial and Commercial Bank of China and Agricultural Bank of China.",
+        "why": "Markets had been concerned that low capital adequacy ratios would constrain bank lending and create latent asset-quality risks. This move directly alleviates that concern and helps stabilize expectations regarding financial system risk.",
+        "chain": "The Ministry of Finance injects capital into banks → Banks' common equity Tier 1 capital increases → Capital adequacy ratios rise → Banks' lending capacity increases → Banks' funding costs fall → Bank stock valuations recover",
+        "notes": [
+          "What is common equity Tier 1 capital? It is a bank's most stable and highest-quality capital, primarily used to absorb unexpected losses, and is a core indicator of bank health.",
+          "What is the capital adequacy ratio? A bank's total capital divided by its risk-weighted assets, reflecting its ability to withstand risks using its own capital.",
+          "Why do capital injections increase lending capacity? Only after meeting capital adequacy requirements do banks have the capacity to expand risk assets such as loans and support the real economy.",
+          "Why is this positive for bank stocks? Capital injections reduce the risk that banks will be forced to scale back their business because of insufficient capital, and also reduce expectations that they will need to raise funds at high cost in the market in the future.",
+          "Impact on bonds: Stronger bank capital positions reduce the credit risk of the financial bonds and Tier 2 capital bonds they issue."
+        ]
       }
     },
     {
@@ -55,6 +79,17 @@
           "为什么市场关心这个案子？它直接触及上市公司、投资机构与投票顾问三方关系，牵动公司治理定价。",
           "如果ISS服务收缩，基金投票成本上升，可能导致更多基金按管理层建议投票，改变股东大会的制衡格局。",
           "由于监管层开始介入，这一领域的商业模式与责任边界面临重塑，相关公司业务和收入稳定性下降。"
+        ]
+      },
+      "insight_en": {
+        "what": "The U.S. SEC has sued proxy advisory firm ISS, accusing it of ignoring subpoenas and cooperating with a securities regulatory investigation.",
+        "why": "Markets had been watching for a possible tightening of SEC oversight of proxy advisory firms. This enforcement action indicates tougher-than-expected oversight, affecting corporate governance-related services and the shareholder voting ecosystem.",
+        "chain": "SEC enforcement action against ISS → Compliance costs for proxy advisory services rise → Some firms may exit the market → Communication costs between listed companies and shareholders rise → Corporate governance service prices face reassessment",
+        "notes": [
+          "ISS is Institutional Shareholder Services, which provides voting recommendations and corporate governance ratings to large investment institutions and serves as the default reference for many funds' voting decisions.",
+          "Why does the market care about this case? It directly touches on the relationship among listed companies, investment institutions, and proxy advisers, affecting corporate governance pricing.",
+          "If ISS scales back its services, funds' voting costs will rise, potentially causing more funds to vote in line with management recommendations and changing the system of checks and balances at shareholder meetings.",
+          "As regulators begin to intervene, business models and the boundaries of responsibility in this sector face being redefined, making the businesses and revenues of the companies involved less stable."
         ]
       }
     },
@@ -74,6 +109,18 @@
           "为什么通胀预期影响央行？央行若认为通胀预期失控，会推迟降息甚至转为加息，这一点会压制股市估值。",
           "为什么油价上涨往往伴随美元走强？美国是能源净出口国，油价上涨改善其贸易条件和能源企业盈利，强化了美元的地位。",
           "注意资产相关性：高油价往往利多石油相关股票和大宗商品，利空航空、物流等成本敏感型股票。"
+        ]
+      },
+      "insight_en": {
+        "what": "The Trump administration has issued threats over attacks on Iranian oil tankers, with oil prices rising to high levels and diesel prices reaching an all-time high.",
+        "why": "Disruptions to Middle Eastern oil supplies have exacerbated the already tight global crude oil supply-demand balance. Markets are concerned that inflationary pressures will rise again, affecting the Federal Reserve's rate-cutting path and global risk appetite.",
+        "chain": "Geopolitical conflict escalates → Global crude oil supplies come under pressure → Diesel prices hit a new high → Inflation expectations rise → Central banks' scope for rate cuts narrows → Risk asset prices come under pressure",
+        "notes": [
+          "Why are diesel prices more sensitive? Diesel is the main fuel for industry and freight transport; demand is highly inelastic, and price elasticity is greater when supply tightens.",
+          "How are higher oil prices transmitted to inflation? Energy costs directly push up production and logistics costs, which are then transmitted to final prices for goods and services.",
+          "Why do inflation expectations influence central banks? If central banks believe inflation expectations are out of control, they will delay rate cuts or even switch to rate hikes, which weighs on equity valuations.",
+          "Why do higher oil prices often coincide with a stronger U.S. dollar? The United States is a net energy exporter, so rising oil prices improve its terms of trade and energy companies' earnings, strengthening the dollar's position.",
+          "Note asset correlations: High oil prices tend to benefit oil-related stocks and commodities, while hurting cost-sensitive stocks in sectors such as aviation and logistics."
         ]
       }
     }
@@ -96,6 +143,18 @@
           "对股市的影响：地缘冲突提高风险溢价，全球股市尤其依赖低价能源的行业（航空、化工）将明显承压。",
           "它与通胀预期是一组嵌套关系：冲突推高油价，油价强化通胀预期，央行的货币政策因此转向紧缩。"
         ]
+      },
+      "insight_en": {
+        "what": "The United States carried out strikes against three Iranian oil tankers in response to Iran's attack on a U.S. warship, escalating the standoff between the two sides in the Strait of Hormuz.",
+        "why": "Markets had assumed that the U.S.-Iran conflict would remain confined to diplomacy and sanctions. The direct military confrontation has now escalated further, posing material risks to energy supplies and global shipping security.",
+        "chain": "Direct exchange of fire between the United States and Iran → Risk of disrupted passage through the Strait of Hormuz rises → Global crude oil supply risk premium rises → Oil prices rise → Inflation expectations rise → Demand for safe-haven assets surges",
+        "notes": [
+          "Why is the Strait of Hormuz important? Around one-fifth of global oil trade passes through this strait; if it is blockaded or attacked, energy prices will surge.",
+          "Why does escalating conflict benefit both gold and the U.S. dollar? Both are traditional safe-haven assets, and capital flows into them in search of safety during market turmoil.",
+          "But note that if the conflict persists for a prolonged period, increased U.S. fiscal and military spending could also undermine confidence in the dollar, resulting in both the dollar and gold rising.",
+          "Impact on equities: Geopolitical conflict raises risk premiums, and global stock markets, especially sectors that rely on low-cost energy (aviation and chemicals), will come under significant pressure.",
+          "Its relationship with inflation expectations is nested: Conflict pushes up oil prices, oil prices reinforce inflation expectations, and central banks' monetary policy consequently shifts toward tightening."
+        ]
       }
     },
     {
@@ -114,6 +173,18 @@
           "欧元区集体影响：德国是欧元区最大经济体，若其经济走弱，会拖累整个欧元区前景。",
           "投资者关注点不只是选举本身，而是之后组阁和执政能力，极右翼如果进入联邦政府，对欧洲一体化构成潜在威胁。",
           "德国国债在欧洲央行的购债计划中权重最大，利率水平变化也会传导到整个欧元区债券市场。"
+        ]
+      },
+      "insight_en": {
+        "what": "Preliminary vote counts in the eastern German state of Thuringia show the far-right Alternative for Germany party leading by a clear margin, potentially winning a state election for the first time.",
+        "why": "Markets had expected Germany to remain politically stable. The far right's gains could weaken the German federal government's support base, affecting the direction and efficiency of future fiscal stimulus and energy policies.",
+        "chain": "Far-right party leads in state election → Federal government faces greater difficulty advancing policies → Fiscal stimulus and energy transition plans are delayed → Expectations for Germany's economic recovery weaken → German government bond yields fall",
+        "notes": [
+          "Why does political instability affect the economy? Obstacles to policy implementation weaken the government's ability to execute policy and increase uncertainty for businesses and investment.",
+          "How do markets price political risk? Sovereign bonds often attract safe-haven buying, pushing yields lower, while the domestic stock market and currency come under pressure.",
+          "Impact across the euro area: Germany is the euro area's largest economy; if its economy weakens, it will weigh on the outlook for the entire euro area.",
+          "Investors are focused not just on the election itself, but also on the subsequent formation of a government and its ability to govern. If the far right enters the federal government, it would pose a potential threat to European integration.",
+          "German government bonds have the largest weighting in the European Central Bank's bond purchase program, and changes in interest rate levels are also transmitted across the entire euro area bond market."
         ]
       }
     }
@@ -203,5 +274,6 @@
       "count": 20,
       "tier": "optional"
     }
-  }
+  },
+  "tech": []
 }

@@ -1,40 +1,73 @@
 {
   "date": "2026-09-29",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
-      "title": "China has three new criteria for humanoid robot IPOs. Few, if any, meet them",
-      "source": "CNBC Finance",
-      "url": "https://www.cnbc.com/2026/09/29/china-criteria-humanoid-robot-ipos.html",
-      "published": "2026-09-29 13:13",
-      "raw_summary": "China's securities regulator is raising the bar for public listings of humanoid robot startups with three specific criteria, according to three sources.",
-      "insight": {}
+      "title": "Bond sell-off deepens and oil rises as Iran-US deal hopes fade",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/d751ad99-531d-4990-9a4c-ee89a9fc1b2d?syn-25a6b1a6=1",
+      "published": "2026-09-29 05:38",
+      "raw_summary": "Brent crude jumps and 10-year Treasury yield surpasses 5.2% as hopes for US-Iran agreement fade",
+      "insight": {
+        "what": "美伊协议希望转淡，布伦特原油上涨，十年期美国国债按现价计算的到期年化回报超过5.2%。",
+        "why": "协议缓和石油供给冲击的预期被削弱，市场要重估物价上涨压力和降息时点；美国国债所需回报提高，原有债券价格承压。",
+        "chain": "美伊协议希望转淡 → 石油供应受阻担忧升温 → 原油采购价格上涨 → 企业生产运输成本增加 → 物价涨幅收窄预期推迟 → 未来降息空间预期收窄 → 债券买家要求更高回报 → 十年期美国国债降价补偿",
+        "notes": [
+          "到期收益率 YTM，是根据债券现价、未来利息和到期还本计算的年化回报指标。报道中的5.2%指这一指标，不是债券每年支付的固定利息比例，也不保证提前卖出时仍能获得这一回报；它是该条报道的历史报价，不代表当前行情。",
+          "为什么协议希望减弱会推高油价？买家原本期待外交协议降低生产、运输或交易受阻的风险；希望转淡后，愿意为可靠供货支付更多。布伦特原油是国际石油贸易的重要定价基准，但其上涨本身不能证明实际产量已经下降。",
+          "通胀是整体物价持续上涨；通胀回落通常指涨幅收窄，不是价格普遍下跌。石油既是燃料，也是部分工业原料，涨价会增加运输和生产成本；企业把多少成本转嫁给消费者，还取决于竞争和需求强弱。",
+          "央行为什么更难降息？降低利率会鼓励借贷和支出。如果能源涨价进一步带动其他商品、服务和工资上涨，过早刺激需求会增加压低通胀的难度。链条描述的是这种风险上升后的定价方向，并不是说每次油价上涨都会触发加息。",
+          "为什么要求回报提高，旧债就要降价？固定利息债券承诺支付的金额不会随市场变化而增加。买家想获得更高回报，就只能降低买入价格；这样，相同利息和到期还本相对于买入成本就更有吸引力。",
+          "十年期国债不能只按下一次央行会议来理解。其收益率包含未来多年短期利率的预期，还包含期限溢价 term premium，即投资者为长期承担利率和价格波动风险而要求的额外补偿。能源冲击也会增加长期不确定性，因此不能把收益率上涨全部解释成加息预期。",
+          "还要考虑反向力量：昂贵能源会挤压居民购买力和企业利润，削弱经济增长。如果增长损失占主导，投资者反而会增加国债配置，压低收益率。因此，报道中油价和国债收益率同时上涨，不足以证明所有债券抛售都由石油因素造成。"
+        ]
+      }
     },
     {
-      "title": "澳洲联储主席Bullock：债券市场反应有序，但我们正密切关注。 考虑过维持利率和加息25个基点。 AI热潮带来的通胀风险正在积累。 一个上行通胀风险已显现，两个正在积累。 加息通过澳元渠道影响通胀。 可在不造成失业的情况下逐步提高失业率。 多重通胀压力使当前形势非常困难。",
+      "title": "澳洲联储主席Bullock：通胀由国内产能压力推动。 除上述压力外，中东地区也带来了额外冲击。 通胀压力将比此前预期持续更长时间。 若有必要，将再次加息以抑制物价。 失业率目前仍处于历史低位。 需要压低过剩需求，但衰退并非我们的基准情景。 不会过度关注8月CPI数据，需要维持紧缩的金融环境。",
       "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3171937",
-      "published": "2026-09-29 13:55",
+      "url": "https://wallstreetcn.com/livenews/3171930",
+      "published": "2026-09-29 13:33",
       "raw_summary": "",
-      "insight": {}
+      "insight": {
+        "what": "澳洲联储主席称物价上涨压力将比预期更持久，必要时再次加息，衰退并非其主要预判。",
+        "why": "这削弱了利率较快下降的预期，短期澳大利亚国债需重估；澳元能否受益，取决于澳大利亚相对海外的利息回报差距。",
+        "chain": "物价上涨压力预计更持久 → 高利率维持时间预期延长 → 未来短期利率预期抬高 → 短债买家要求更高回报 → 旧债固定利息吸引力下降 → 两至三年期国债降价补偿；澳大利亚利率预期抬高 → 相对海外利息优势扩大 → 澳元资产利息吸引力增强 → 境外资金配置意愿提高 → 兑换澳元的需求增加 → 若海外利率未同步上升且避险抛售未抵消，澳元才可能升值",
+        "notes": [
+          "澳洲联储是澳大利亚的中央银行。政策利率 policy rate，是央行用来影响短期资金价格的基准利率；澳大利亚使用现金利率目标，影响银行之间的隔夜借款成本，并进一步传导到存款、房贷和企业贷款利率。",
+          "这次表态的重点不只是中东带来的能源冲击，还包括国内产能压力：当企业设备、劳动力等资源已较充分使用，需求继续增加就更容易推高价格。央行认为压力更持久，意味着不能仅等待外部能源价格自行回落。",
+          "加息如何压低物价上涨压力？借款更贵，会减少部分购房、消费和企业投资，缓解需求对有限供给的挤压。代价是经济和就业放慢；主席不把衰退作为主要预判，不等于保证加息不会伤害就业。",
+          "为什么看两至三年期国债？其定价较集中地反映未来两三年的短期利率路径。如果投资者预计高利率维持更久，就会提高这段期限内持有国债所要求的回报，而不只是关注本次会议是否加息。",
+          "到期收益率 YTM，是把买入价格、利息和到期还本结合起来计算的年化回报指标。旧债利息固定，价格下跌会提高新买家的到期收益率；所以债券价格承压与收益率上行，是同一次重新定价的两个侧面。",
+          "汇率看的是相对利率。利差 interest rate differential，就是两地利率的差距。汇率支线先把海外利率等因素视为不变：澳大利亚利息优势扩大，才会提高持有澳元资产的吸引力；如果海外利率同步上升，优势未必扩大。",
+          "高利差不是无风险利润。套期保值 hedging，是通过合约等方式降低价格波动风险；外国投资者若锁定未来兑换汇率，相应成本通常会抵消相当一部分利差。若不锁定汇率，又要承担澳元贬值风险，市场恐慌时仍会出现资金撤离。",
+          "链条描述的是相对原先预期的定价压力，不是声称这段发言之后国债价格必然下跌、澳元已经上涨。必要时再次加息也不是无条件承诺；如果措辞早已被市场预料，新增价格反应可以很小。"
+        ]
+      }
     }
   ],
   "policy": [
     {
-      "title": "US ban on Canadian alcohol and dairy comes into effect as trade war drags on",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cm1j43y146d2o?at_medium=RSS&at_campaign=rss",
-      "published": "2026-09-29 12:10",
-      "raw_summary": "It is the latest escalation in the Canada-US trade war after negotiations collapsed in late August, with no word on when talks may resume.",
-      "insight": {}
-    },
-    {
-      "title": "‘Ballot must replace the bullets’, South Sudan tells General Assembly ahead of elections",
-      "source": "UN News",
-      "url": "https://news.un.org/feed/view/en/story/2026/09/1168475",
-      "published": "2026-09-28 20:00",
-      "raw_summary": "South Sudan remains committed to holding general elections in December to conclude its transition period, the country’s Permanent Representative to the United Nations Cecilia Adout Majok Adeng, told t",
-      "insight": {}
+      "title": "Implementing the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026",
+      "source": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/implementing-the-lindsey-o-graham-sanctioning-russia-and-iran-act-of-2026/",
+      "published": "2026-10-17 08:34",
+      "raw_summary": "By the authority vested in me as President by the Constitution and the laws of the United States of America, including the Lindsey O. Graham Sanctioning Russia and Iran Act of 2026 (22 U.S.C. 10802 et",
+      "insight": {
+        "what": "白宫发布行政命令，推进实施2026年制裁俄罗斯与伊朗的法律。",
+        "why": "制裁从立法走向执行，市场需重估俄伊贸易受阻的概率；原油对能源出口受限最敏感，但标题不足以判断实际损失规模。",
+        "chain": "美国推进制裁法执行 → 受限交易被追责风险上升 → 银行加强相关付款审查 → 相关跨境付款摩擦增加 → 买家转向替代供货来源 → 替代货源采购竞争加剧 → 若能源交易确受限且替代供应不足，国际油价才可能上涨",
+        "notes": [
+          "信息边界很重要：候选材料只提供实施命令的标题和开头，没有具体条文。不能据此断言全面石油禁运、某些银行被冻结，或特定关税已经生效。链条以新增限制确实约束相关贸易为前提，是机制推演，不是已经观察到的交易变化。",
+          "制裁 sanctions，是政府对特定国家、机构、个人或交易施加限制。它与普通加征关税不同：关税通常是提高进口成本，制裁还可能涉及禁止交易、冻结资产或限制金融服务；本次具体采用哪些工具，需要查看正式条文。",
+          "为什么银行是关键环节？跨境贸易不仅需要货物，也需要付款。银行担心处理违规交易受到处罚，就会核查买卖双方、货物和资金来源；审查时间增加、付款被拒或需要更换银行，都会增加相关交易的难度。",
+          "俄罗斯或伊朗卖得更困难，不等于全球石油产量同比例减少。货物可以转销其他市场，也可以通过降价吸引愿意承担额外成本的买家。必须区分原产地售价打折、运输付款成本上升，以及全球实际可获得供应减少。",
+          "国际油价持续上行需要供应约束真正生效。其他产油国增产、库存释放或需求下降，都能缓冲冲击；只有能源交易确实受限、替代供应又不足，买家争夺剩余货源才更容易推高国际报价。",
+          "如果油价因此上涨，后续才会传导到企业成本、居民支出和央行利率预期。这里仍存在两股力量：物价上涨压力限制降息空间，而购买力受损又拖累增长，不能把制裁机械地等同于国债收益率上升。",
+          "面试中应追问：受限对象和商品是什么，何时生效，有无过渡期与豁免，是否影响第三国交易方？再用实际装运量、付款可得性、运费和保险费用验证，而不是仅根据法案名称估算损失多少石油供应。",
+          "实施命令的抓取日期为10月17日，市场板块的美伊谈判报道为9月29日。两者涉及相通的能源风险机制，但不能把十月的命令倒推为九月市场波动的原因。"
+        ]
+      }
     }
   ],
   "tech": [
@@ -44,18 +77,23 @@
       "url": "https://www.bloomberg.com/news/videos/2026-09-29/ai-data-centers-face-scrutiny-in-australia-video",
       "published": "2026-09-29 13:20",
       "raw_summary": "Australia's data centre boom is facing headwinds, with local opposition to new developments adding to concerns about the costs and benefits of rapid AI expansion. The debate is being amplified by Prim",
-      "insight": {}
-    },
-    {
-      "title": "US-China AI Race: Five Key Flashpoints Explained",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-09-29/us-china-ai-race-five-key-flashpoints-explained",
-      "published": "2026-09-29 11:32",
-      "raw_summary": "Both the US and China see artificial intelligence as the new focal point of their economic rivalry. US President Donald Trump declared on Sept. 13 that “whoever wins AI, wins.” The question is whether",
-      "insight": {}
+      "insight": {
+        "what": "澳大利亚数据中心（集中运行计算设备的机房）建设遭地方反对，扩张成本与收益受到更多审视。",
+        "why": "快速扩充算力（计算处理能力）的假设受到挑战；建设延迟会推迟收款，机房业主与提供远程计算服务的公司需重估投资回报。",
+        "chain": "新建机房遭地方反对 → 项目审批协调负担加重 → 建成时间预期向后推 → 预计出租收款时间推迟 → 已投入资金占用时间拉长 → 未来租金折回今天更少 → 若延误兑现且租金不能补偿，受阻项目业主估值才可能下降",
+        "notes": [
+          "报道确认的是地方反对与审视增加，不是全国禁止建设，也没有给出具体项目停工、预算削减或芯片订单取消。链条分析的是地方阻力转化为建设延期后的影响，不能把这些后续结果当成已经发生的事实。",
+          "买到芯片不等于形成可用算力。计算设备还需要机房、电力接入、散热设施和持续运营条件，缺少任何一个环节都难以提供服务。这条新闻的重要性在于基础设施扩张受到约束，而不是芯片设计本身出现突破或倒退。",
+          "资本开支 capital expenditure，是企业为机房、服务器等长期使用的资产投入的资金。项目如果已经花钱却迟迟不能收费，资金回收期就会延长；如果企业能够同步推迟采购和付款，部分损失则能得到缓解，不能只看延期而不看付款安排。",
+          "折现 discounting，是把未来收到的钱换算成今天愿意支付的金额；换算后的金额称为现值 present value。同样金额的租金越晚收到，通常越不值钱，因为等待期间这笔资金本可用于其他投资。这里即使利率不变，仅收款时间推迟也会降低价值。",
+          "地方阻力还会改变成本曲线：增加协调、选址和建设支出后，如果提供的计算服务数量不变，每单位服务需要承担的成本就更高。但本条材料没有具体成本数字，不能据此量化澳大利亚算力会贵多少。",
+          "受影响者并不一致。受阻的新项目面临成本和回收期压力，已经取得电力接入条件、能够立即提供服务的机房却可能因供应稀缺而提高租金；因此，不能把所有数据中心企业都视为同方向受损。",
+          "云服务商是通过网络出租计算、存储等服务的公司。它们可以把部分投资转移到其他地区，所以澳大利亚建设放慢不等于全球芯片需求同步减少；但受数据存放要求、网络响应时间和当地客户需求限制，也不是所有业务都能迁走。",
+          "验证投资影响，要看项目审批和电力接入是否实际推迟、原定投入能否暂停、客户租约何时起租，以及竞争地区能否承接建设。只有把建设进度、现金支出和未来收费放在一起，才能判断巨头的资本开支回报是否真正恶化。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "id 11 属于 policy，却被放进 tech",
   "source_stats": {
     "fed": {
       "count": 8,
@@ -110,7 +148,7 @@
       "tier": "stable"
     },
     "whitehouse": {
-      "count": 0,
+      "count": 20,
       "tier": "stable"
     },
     "ustr": {
@@ -154,7 +192,7 @@
       "tier": "stable"
     },
     "qbitai": {
-      "count": 0,
+      "count": 10,
       "tier": "optional"
     }
   }

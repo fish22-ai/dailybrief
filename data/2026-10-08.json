@@ -20,6 +20,19 @@
           "为什么利好边缘国家？如果法国这个核心国家都被要求更高收益率，意大利、西班牙等信用更弱的国家会被要求更高补偿，形成连锁反应。",
           "欧元为什么承压？资本看到欧元区内部风险上升，会把资金换成美元或其他货币，欧元需求下降。"
         ]
+      },
+      "insight_en": {
+        "what": "France's finance minister said French government bonds still have buyers and issuance every two weeks is proceeding smoothly, but investors are demanding higher yields than in the past, and called for the deficit to be narrowed as soon as possible.",
+        "why": "Markets had feared that deteriorating French public finances would trigger a sell-off similar to the one during the eurozone debt crisis; the finance minister's remarks shift the focus from 'whether bonds can be issued' to 'rising borrowing costs,' and the yield spread of French government bonds over German government bonds and euro-denominated assets need to be repriced.",
+        "chain": "Large fiscal deficit → Investors demand higher yields → French government bond prices fall → French-German yield spread widens → Financing costs rise for peripheral eurozone countries → Downward pressure on the euro",
+        "notes": [
+          "What is a government bond yield spread? It is the difference between two countries' government bond yields, such as those of France and Germany. Germany is considered the safest borrower in the eurozone, and a wider spread indicates greater market concern about France's ability to repay its debt.",
+          "Why do bond prices fall when yields rise? Bond prices and yields move inversely: newly issued bonds must pay higher interest to attract buyers, making the fixed interest payments on existing bonds less attractive, so their prices have to fall.",
+          "Why is issuance every two weeks so critical? The government relies on issuing bonds on a rolling basis to repay old debt and cover the deficit. If bonds cannot be sold at a particular issuance, that is a liquidity crisis. By emphasizing that there is 'absolutely no problem,' the finance minister is reassuring the market.",
+          "Why are fiscal deficits worrying? The larger the deficit, the more the government borrows. In the future, it must either raise taxes, print money, or default, so investors demand higher compensation in advance.",
+          "Why is this positive for peripheral countries? If even a core country like France is required to offer higher yields, countries with weaker creditworthiness, such as Italy and Spain, will be required to offer even greater compensation, setting off a chain reaction.",
+          "Why is the euro under pressure? When investors see rising risks within the eurozone, they convert their funds into US dollars or other currencies, reducing demand for the euro."
+        ]
       }
     },
     {
@@ -38,6 +51,18 @@
           "为什么新兴市场资金会重新配置？全球资金在各国之间比较回报率和风险，印度加息后回报率上升，会从其他新兴市场抽走部分资金。",
           "为什么这次重要？印度是主要新兴经济体，它的货币政策转向会影响整个新兴市场的利率预期和资金流向。",
           "高盛和汇丰的预测为什么重要？大行预测会影响市场预期，如果市场提前定价12月加息，印度债券和卢比现在就会动。"
+        ]
+      },
+      "insight_en": {
+        "what": "India's central bank raised interest rates for the first time since 2023 amid rising inflation risks, and HSBC and Goldman Sachs expect another hike in December.",
+        "why": "Markets may previously have expected India to follow the global rate-cutting cycle; this hike breaks the assumption that 'interest rates have peaked,' and Indian bond yields, the rupee, and emerging-market capital flows all need to be reassessed.",
+        "chain": "Inflation rises in India → Central bank raises interest rates → Indian bond yields rise → Appreciation pressure on the Indian rupee → Foreign capital flows into India's bond market → Reallocation of emerging-market capital",
+        "notes": [
+          "Why can rate hikes curb inflation? Rate hikes increase borrowing costs, prompting businesses and individuals to borrow and spend less. Demand falls, easing upward pressure on prices.",
+          "Why does the rupee appreciate? After a rate hike, yields on Indian assets increase. Foreign investors looking to buy Indian bonds must first convert their funds into rupees, increasing demand for the rupee.",
+          "Why is emerging-market capital reallocated? Global investors compare returns and risks across countries. After India raises rates, returns rise, drawing some capital away from other emerging markets.",
+          "Why is this important? India is a major emerging economy, and a shift in its monetary policy affects interest rate expectations and capital flows across emerging markets.",
+          "Why do Goldman Sachs' and HSBC's forecasts matter? Forecasts from major banks influence market expectations. If markets price in a December rate hike in advance, Indian bonds and the rupee will move now."
         ]
       }
     }
@@ -59,6 +84,18 @@
           "为什么影响大宗商品？中国是全球最大的原材料进口国，消费和投资减弱意味着对石油、铜、铁矿石等需求下降。",
           "为什么影响股市？消费股盈利直接和居民花钱挂钩，预期收入下降时，投资者会下调估值。",
           "黄金周为什么是观察窗口？这是中国最重要的消费旺季之一，数据能反映全年消费趋势。"
+        ]
+      },
+      "insight_en": {
+        "what": "The number of travelers during China's Golden Week surged, but consumer spending was weak, raising doubts about the strength of the recovery in China's domestic demand.",
+        "why": "Markets had expected Golden Week data to demonstrate a recovery in consumption; the weak data undermined expectations of 'a rebound in Chinese demand,' and assets linked to Chinese consumption, as well as commodities, need to be repriced.",
+        "chain": "More travel but less spending → Weak consumer confidence → Lower corporate revenue expectations → Downward pressure on Chinese consumer stocks → Weaker import demand → Downward pressure on commodity prices",
+        "notes": [
+          "Why does more travel not mean stronger consumption? Travel only shows that people are on the move, but spending per person is what businesses actually earn. If people go out but do not spend, it shows that households lack confidence in their future income.",
+          "Why does consumer confidence matter? Consumption is one of the main engines of China's economic growth. A lack of confidence means households prefer saving to spending, slowing the economic recovery.",
+          "Why does this affect commodities? China is the world's largest importer of raw materials. Weaker consumption and investment mean lower demand for oil, copper, iron ore, and other commodities.",
+          "Why does this affect the stock market? Earnings of consumer stocks are directly tied to household spending. When expected revenue falls, investors lower valuations.",
+          "Why is Golden Week a period to watch? It is one of China's most important peak periods for consumer spending, and the data can reflect consumption trends for the full year."
         ]
       }
     }
@@ -82,6 +119,19 @@
           "为什么云厂商资本开支重要？谷歌、微软、亚马逊买芯片建数据中心，它们的支出决定AI产业链的收入天花板。",
           "51%增长意味着什么？在如此大的基数上还能增长51%，说明AI需求不是短期炒作，而是真实且持续的。"
         ]
+      },
+      "insight_en": {
+        "what": "TSMC's quarterly revenue grew 51% year over year, with AI demand remaining strong, providing a positive signal for investors assessing the strength of the AI sector.",
+        "why": "Markets are concerned that AI capital expenditure has peaked; the sharp revenue growth at TSMC, a key foundry for AI chips, confirms that demand remains, and valuations across the AI computing supply chain need to be revised upward again.",
+        "chain": "Strong AI demand → Sharp increase in TSMC's revenue → Tight chip foundry capacity → Rising chip prices → Higher AI server costs → Increased capital expenditure by cloud providers → Upward revision to AI supply chain valuations",
+        "notes": [
+          "Why is TSMC a bellwether? It is the world's largest chip foundry. Nvidia, Apple, and AMD all have their chips manufactured by TSMC, and its revenue directly reflects downstream demand.",
+          "What is contract manufacturing? After chip companies design their chips, they send them to a factory such as TSMC for manufacturing, and TSMC charges a manufacturing fee.",
+          "Why does AI demand have such a large impact? Training and running large models require a large number of high-performance chips, and almost all of these chips need to be manufactured by TSMC.",
+          "Why does tight capacity push up prices? When demand exceeds supply, TSMC can raise prices. Costs rise for downstream chip companies, which ultimately pass them on to cloud providers and consumers.",
+          "Why does cloud providers' capital expenditure matter? Google, Microsoft, and Amazon buy chips to build data centers, and their spending determines the revenue ceiling for the AI supply chain.",
+          "What does 51% growth mean? Achieving 51% growth from such a large base shows that AI demand is not short-term hype but is real and sustained."
+        ]
       }
     },
     {
@@ -100,6 +150,18 @@
           "什么是先进封装？把多个芯片堆叠或连接在一起，让它们协同工作，提升性能。AI芯片尤其依赖这种技术。",
           "为什么供应链节奏重要？芯片制造是高度计划性的，任何一环缺货都会打乱整个生产排期，设备订单会随之波动。",
           "股价为什么反应剧烈？Besi的估值建立在'先进封装需求爆发'的预期上，预期推迟意味着近期盈利可能不达预期。"
+        ]
+      },
+      "insight_en": {
+        "what": "BE Semiconductor shares fell sharply as its flagship technology faced pressure from a global memory shortage.",
+        "why": "Markets had been optimistic about Besi's next-generation packaging technology, but the memory shortage has disrupted chip supply chain schedules; demand for Besi's equipment may be delayed, and its valuation needs to be lowered.",
+        "chain": "Memory shortage → Chipmakers prioritize maintaining memory production → Advanced packaging equipment purchases are postponed → Besi's orders decline → Revenue forecasts are lowered → Share price falls",
+        "notes": [
+          "What does Besi do? It produces chip packaging equipment that assembles manufactured chips into finished products. Advanced packaging is a key step in improving chip performance.",
+          "Why does a memory shortage affect Besi? Chipmakers have limited resources. When memory is in short supply, they prioritize memory production, postponing equipment purchases for other stages.",
+          "What is advanced packaging? It involves stacking or connecting multiple chips so they can work together to improve performance. AI chips are especially dependent on this technology.",
+          "Why does supply chain timing matter? Chip manufacturing is highly planned, and a shortage at any stage disrupts the entire production schedule, causing equipment orders to fluctuate accordingly.",
+          "Why did the share price react so sharply? Besi's valuation is built on expectations of 'explosive growth in demand for advanced packaging.' A delay in the expected growth means near-term earnings may fall short of expectations."
         ]
       }
     }

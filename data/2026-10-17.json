@@ -21,15 +21,15 @@
         ]
       },
       "insight_en": {
-        "what": "The U.S. Treasury announced that the fiscal year 2026 federal budget deficit is close to $2 trillion, an increase of about 12% from the previous fiscal year.",
-        "why": "The market was originally pricing a slow convergence of the fiscal deficit and manageable long-end supply pressure; a further widening of the deficit means Treasury issuance will have to increase, and the term premium and yields on long-end Treasuries face upward revision, requiring a revaluation of long-duration assets.",
-        "chain": "Fiscal deficit widens → Treasury issuance increases → Long-bond supply pressure rises → Term premium rises → 10Y/30Y U.S. Treasury yields↑ → Discount rate on long-duration assets rises → High-valuation growth stocks and real estate come under pressure; the dollar is supported by higher rates",
+        "what": "The U.S. Treasury announced that the federal budget deficit for fiscal year 2026 was close to $2 trillion, up approximately 12% from the previous fiscal year.",
+        "why": "The market had been pricing in a gradual narrowing of the fiscal deficit and manageable supply pressure at the long end; a renewed widening of the deficit means Treasury issuance will need to increase, putting upward pressure on the term premium and yields on long-dated Treasuries and requiring long-duration assets to be revalued.",
+        "chain": "Widening fiscal deficit → Increased Treasury issuance → Greater supply pressure on long-term bonds → Higher term premium → 10Y/30Y U.S. Treasury yields↑ → Higher discount rates for long-duration assets → Pressure on highly valued growth stocks and real estate；The U.S. dollar is supported by high interest rates",
         "notes": [
-          "Budget deficit = the gap between what the government spends in a year and what it takes in; the gap must be covered by issuing Treasury bonds, so the larger the deficit, the more bond supply there is.",
-          "Term premium: the extra compensation investors demand for holding long-term Treasuries rather than rolling over short-term Treasuries. When supply increases, buyers demand higher compensation, pushing long-end yields higher.",
-          "Why is the long end more sensitive than the short end? Short-end yields are mainly determined by the policy rate, while the long end also incorporates expectations for future inflation and supply; deficit news mainly hits the long end.",
-          "A rise in the term premium pushes up the long end of the entire yield curve, and stock valuation discounts future cash flows at interest rates; a higher discount rate means lower valuation, and assets with longer duration (earnings further out) fall more.",
-          "Rising Treasury yields also raise the financing costs of household mortgages and corporate bond issuance, which is why the news says it has become 'the biggest challenge for the economy.'"
+          "Budget deficit = the amount by which government spending exceeds revenue in a year. The shortfall must be financed by issuing government bonds, so the larger the deficit, the greater the bond supply.",
+          "Term premium: the additional compensation investors require for holding long-term Treasuries rather than rolling over short-term Treasuries. When supply increases, buyers demand greater compensation, pushing long-end yields higher.",
+          "Why is the long end more sensitive than the short end? Short-end yields are primarily determined by policy rates, while the long end also incorporates expectations for future inflation and supply. Deficit news primarily affects the long end.",
+          "A rise in the term premium pushes yields higher across the long end of the yield curve, while equity valuations discount future cash flows at interest rates. Higher discount rates mean lower valuations, and the longer an asset's duration (the further into the future its earnings lie), the larger its decline.",
+          "Rising Treasury yields also increase financing costs for household mortgages and corporate bond issuance, which is also why the news describes this as the 'economy's biggest challenge'."
         ]
       }
     },
@@ -52,15 +52,15 @@
         ]
       },
       "insight_en": {
-        "what": "Citi said that a survey questionnaire sent to primary dealers last Friday shows the U.S. Treasury is considering reducing long-term Treasury issuance in next month's refunding announcement.",
-        "why": "The market was originally worried that a widening deficit would bring a flood of long-bond supply; this news points to the Treasury potentially actively compressing long-end supply, and long-end yields and the term premium face downward revision, providing support for long bonds and long-duration assets.",
-        "chain": "Treasury considers cutting long-bond issuance → Long-end supply expectations decline → Term premium falls → 30Y U.S. Treasury yields↓ → Long-bond prices↑ → Discount rate on long-duration growth stocks declines → Valuation supported; meanwhile short-end supply increases relatively, and the curve shape steepens",
+        "what": "Citi said a survey questionnaire sent to primary dealers last Friday indicated that the U.S. Treasury was considering reducing long-term Treasury issuance in next month's refunding announcement.",
+        "why": "The market had been concerned that a widening deficit would unleash a flood of long-term bond supply. This news suggests that the Treasury may proactively reduce long-end supply, putting downward pressure on long-end yields and the term premium and supporting long-term bonds and long-duration assets.",
+        "chain": "Treasury considers reducing long-term bond issuance → Lower expectations for long-end supply → Lower term premium → 30Y U.S. Treasury yields↓ → Long-term bond prices↑ → Lower discount rates for long-duration growth stocks → Support for valuations；At the same time, short-end supply increases in relative terms, and the curve tends to steepen",
         "notes": [
-          "Primary dealers = large banks eligible to bid directly for Treasuries from the Treasury; the Treasury regularly asks their opinions, and the questionnaire content is often seen as a leading signal of policy intent.",
-          "Refunding announcement = the document in which the Treasury quarterly announces its Treasury issuance plan for the next three months; the market pays close attention to the maturity structure arrangements in it.",
-          "Cutting long-bond issuance and increasing short-bond issuance will push down long-end yields and raise relative short-end supply, steepening the yield curve (widening the long-short spread).",
-          "Why is this in the opposite direction from the previous item? The previous item is a rise in the total deficit (increased supply pressure), while this item is a possible adjustment to the maturity structure of supply (reduced long-end pressure); the two must be priced separately.",
-          "Note that this is a strategist's inference rather than an official decision; if next month's announcement does not cut issuance, long-end yields may rebound upward, which is event risk."
+          "Primary dealers = large banks eligible to bid for Treasuries directly from the Treasury. The Treasury regularly seeks their views, and the contents of these questionnaires are often viewed as leading signals of policy intentions.",
+          "Refunding announcement = the document in which the Treasury publishes its issuance plans for the next three months each quarter. The market pays close attention to the planned maturity mix.",
+          "Reducing long-term bond issuance and increasing short-term bond issuance will depress long-end yields and increase relative supply at the short end, steepening the yield curve (widening the spread between long- and short-term rates).",
+          "Why does this item point in the opposite direction to the previous one? The previous item concerns an increase in the overall deficit (greater supply pressure), while this one concerns a potential adjustment to the maturity structure of supply (less pressure at the long end). The two need to be priced separately.",
+          "Note that this is an inference by strategists rather than an official decision. If next month's announcement does not include a reduction, long-end yields could reverse higher; this constitutes event risk."
         ]
       }
     }
@@ -85,15 +85,15 @@
         ]
       },
       "insight_en": {
-        "what": "Trump signed an executive order suspending a broad new sanctions package against Russia, after he previously reached a diesel-related agreement with Putin.",
-        "why": "The market was originally pricing an escalation of sanctions on Russia, restricted Russian oil supply, and higher oil prices; the suspension of sanctions weakens expectations of tighter supply, the risk premium on crude oil and European natural gas faces downward revision, and energy stocks and inflation expectations adjust accordingly.",
-        "chain": "Suspension of sanctions on Russia → Expectations of restricted Russian oil and gas exports decline → Crude oil supply risk premium falls → Brent oil price↓ → Energy stock earnings expectations revised down → Inflation expectations decline → Downward pressure on U.S. Treasury yields; meanwhile safe-haven demand declines, and safe-haven buying of the dollar and gold weakens",
+        "what": "Trump signed an executive order suspending a sweeping plan for new sanctions against Russia, after reaching a diesel-related agreement with Putin.",
+        "why": "The market had been pricing in escalating sanctions against Russia, constraints on Russian oil supply, and rising oil prices; the suspension of sanctions weakens expectations of tighter supply, putting downward pressure on risk premiums in crude oil and European natural gas prices and prompting adjustments in energy stocks and inflation expectations.",
+        "chain": "Suspension of sanctions against Russia → Reduced expectations of restrictions on Russian oil and gas exports → Lower crude oil supply risk premium → Brent crude prices↓ → Downward revisions to energy stocks' earnings expectations → Lower inflation expectations → Downward pressure on U.S. Treasury yields；At the same time, lower safe-haven demand weakens safe-haven buying of the U.S. dollar and gold",
         "notes": [
-          "Sanctions risk premium: the extra increase in oil prices that the market factors in advance because of fears that supply will be cut off; this portion is erased when sanctions ease.",
-          "Why is diesel important? Diesel is a core fuel for industry and transportation, and Russia is a major exporter; expectations for diesel supply directly affect European industrial and transportation costs.",
-          "Falling oil prices will push down overall inflation (energy is an important component of CPI), thereby affecting the market's pricing of the central bank's rate path.",
-          "A suspension of sanctions is not the same as permanent cancellation; the executive order is reversible, and the market usually only lowers the probability rather than completely eliminating the risk premium.",
-          "Geopolitical easing also reduces safe-haven demand, and gold and the dollar as safe-haven assets may weaken, but this will offset each other with interest rate factors."
+          "Sanctions risk premium: the additional increase the market prices into oil in advance out of concern that supply could be cut off. This portion is erased when sanctions are eased.",
+          "Why does diesel matter? Diesel is a core fuel for industry and transportation, and Russia is a major exporter. Diesel supply expectations directly affect European industrial and transportation costs.",
+          "Falling oil prices lower headline inflation (energy is an important component of CPI), thereby affecting how the market prices central banks' interest rate paths.",
+          "A suspension of sanctions does not mean permanent removal. Executive orders are reversible, and the market typically reduces the risk premium on a probability-weighted basis rather than eliminating it entirely.",
+          "Easing geopolitical tensions also reduces safe-haven demand. Gold and the U.S. dollar may weaken as safe-haven assets, but these effects and interest rate factors can offset one another."
         ]
       }
     },
@@ -116,15 +116,15 @@
         ]
       },
       "insight_en": {
-        "what": "The White House issued an executive order formally implementing the Lindsay Graham Sanctions Russia and Iran Act of 2026.",
-        "why": "The market was originally uncertain whether this bill would actually be implemented and how many exemptions there would be after implementation; the executive order confirming implementation provides a legal basis for sanctions on Russia and Iran, compliance costs for energy and shipping rise, and the supply risk premium for related commodities is re-included.",
-        "chain": "Sanctions bill formally implemented → Compliance costs for Russian and Iranian energy and shipping rise → Expectations of related export disruptions heat up → Risk premium on crude oil and oil shipping freight rates rises → Upward pressure on energy prices → Inflation expectations rise → Upward pressure on U.S. Treasury yields; meanwhile safe-haven sentiment pushes up the dollar",
+        "what": "The White House issued an executive order formally implementing the Lindsey Graham Sanctioning Russia and Iran Act of 2026.",
+        "why": "The market had been uncertain whether the act would actually be implemented and how extensive the exemptions would be once it was implemented; the executive order confirming implementation provides a legal basis for sanctions against Russia and Iran, raises compliance costs for energy and shipping, and brings supply risk premiums back into the pricing of the related commodities.",
+        "chain": "Formal implementation of the sanctions act → Higher compliance costs for energy and shipping involving Russia and Iran → Heightened expectations of disruptions to related exports → Higher risk premiums in crude oil prices and oil tanker freight rates → Upward pressure on energy prices → Higher inflation expectations → Upward pressure on U.S. Treasury yields；At the same time, safe-haven sentiment lifts the U.S. dollar",
         "notes": [
-          "Executive order = an implementation document issued by the president under legal authority; here it translates a bill passed by Congress into the specific implementation level.",
-          "Note the tension with the previous item: formal implementation of the bill (tightening) coexists with the executive order exempting some provisions and suspending new sanctions (easing); the market must judge the actual enforcement intensity rather than just looking at the headline.",
-          "Compliance costs: banks, shipowners, and traders need to do more due diligence to avoid penalties, and this cost will be passed on to freight rates and commodity prices.",
-          "Oil shipping freight rates (such as VLCC freight) are highly sensitive to sanctions, because sanctions lengthen transport distances and reduce available vessels.",
-          "The impact of sanctions-related news on asset prices is usually pulse-like; unless actual supply disruptions are confirmed by data, the premium tends to fall back."
+          "Executive order = an implementing document issued by the president under statutory authority. Here, it translates an act passed by Congress into concrete implementation.",
+          "Note the tension with the previous item: formal implementation of the act (tightening) coexists with exemptions from certain provisions and the suspension of new sanctions under an executive order (easing). The market needs to assess the actual intensity of enforcement rather than just the headlines.",
+          "Compliance costs: banks, shipowners, and traders need to conduct more due diligence to avoid fines. These costs are passed through to freight rates and commodity prices.",
+          "Oil tanker freight rates (such as VLCC freight rates) are highly sensitive to sanctions because sanctions lengthen shipping distances and reduce the number of available vessels.",
+          "Sanctions-related news typically affects asset prices in short-lived bursts. Unless actual supply disruptions are confirmed by data, premiums tend to fall back."
         ]
       }
     }
@@ -149,15 +149,15 @@
         ]
       },
       "insight_en": {
-        "what": "Anthropic submitted a draft AI safety regulation bill it drafted itself to U.S. lawmakers, proposing a plan to regulate AI safety and security.",
-        "why": "The market originally assumed the direction of AI regulation was uncertain and might be imposed externally; a leading lab proactively proposing a draft means the regulatory framework may tilt toward 'corporate self-regulation + compliance thresholds,' compliance costs will become an industry competitive barrier, and the relative position of AI companies will change.",
-        "chain": "Leading lab submits regulatory draft → Regulatory framework expectations tilt toward compliance thresholds → Compliance costs for small and medium AI companies rise relatively → Industry concentration increases → Leading vendors' competitive position strengthens → Certainty of their computing power procurement and capital expenditure rises → Upstream chip and data center demand expectations become more stable",
+        "what": "Anthropic submitted a draft AI safety regulation bill that it had written itself to U.S. lawmakers, proposing a framework for regulating AI safety and security.",
+        "why": "The market had assumed that the direction of AI regulation was uncertain and that regulation might be externally imposed; a leading lab proactively proposing a draft means the regulatory framework may tilt toward 'corporate self-regulation + compliance thresholds'. Compliance costs would become competitive barriers in the industry, changing the relative positions of AI companies.",
+        "chain": "A leading lab submits a regulatory draft → Expectations for the regulatory framework shift toward compliance thresholds → Relatively higher compliance costs for small and medium-sized AI companies → Increased industry concentration → Stronger competitive positions for leading firms → Greater certainty around their compute procurement and capital expenditure → More stable demand expectations for upstream chips and data centers",
         "notes": [
-          "Why would a company propose a bill itself? By actively participating in rule-making, it can design regulation as a threshold favorable to itself while reducing the risk of sudden heavy penalties.",
-          "Compliance cost is an entry barrier: large companies can afford it, small companies cannot, and regulation may instead help leading companies consolidate share.",
-          "If AI safety regulation is implemented, it will affect rules on model training, data use, and computing power deployment, thereby affecting the order pace of cloud vendors and chip vendors.",
-          "This item is currently only a draft submission and has not yet been legislated; the market is pricing probability rather than a certain event.",
-          "Comparison: if regulation is imposed externally and is stricter, computing power expansion may be restricted, and upstream chip demand expectations may instead be revised down; the direction depends on the final provisions."
+          "Why would a company propose a bill itself? By proactively participating in rulemaking, it can shape regulation into barriers that favor itself while reducing the risk of sudden, heavy penalties.",
+          "Compliance costs are a barrier to entry: large companies can absorb them, while small companies cannot. Regulation may instead help leading companies consolidate their market shares.",
+          "If implemented, AI safety regulation will affect the rules governing model training, data use, and compute deployment, thereby affecting the pace of orders for cloud providers and chipmakers.",
+          "This currently involves only the submission of a draft, which has not yet been enacted. The market is pricing in a probability rather than a certain event.",
+          "In contrast, if regulation is externally imposed and stricter, compute expansion could be constrained, and demand expectations for upstream chips could instead be revised downward. The direction depends on the final provisions."
         ]
       }
     },
@@ -180,15 +180,15 @@
         ]
       },
       "insight_en": {
-        "what": "NVIDIA CEO Jensen Huang spoke about the sharp drop in AI stocks, saying 'this too shall pass' and emphasizing the benefits brought by technology.",
-        "why": "The market is selling off AI-related stocks due to doubts about the returns on AI capital expenditure; the head of a leading chip vendor publicly speaking out tries to stabilize expectations for computing power demand, and whether the valuation discount in the AI supply chain can narrow depends on this.",
-        "chain": "Sharp drop in AI stocks triggers concerns that computing power demand has peaked → NVIDIA CEO publicly speaks out to reassure → Market expectations for the sustainability of AI capital expenditure stabilize → Valuation discount for NVIDIA and the upstream supply chain narrows → Data center and chip order expectations maintained → Selling pressure on related stocks eases",
+        "what": "Nvidia CEO Jensen Huang commented on the sharp sell-off in AI stocks, saying 'All of this will pass' and emphasizing the benefits of the technology.",
+        "why": "The market is selling AI-related stocks amid doubts about returns on AI capital expenditure; the head of a leading chipmaker is speaking publicly in an attempt to stabilize expectations for compute demand. Whether valuation discounts across the AI value chain can narrow depends on this.",
+        "chain": "Sharp declines in AI stocks trigger concerns that compute demand has peaked → Nvidia's CEO offers public reassurance → Market expectations for the sustainability of AI capital expenditure stabilize → Valuation discounts for Nvidia and its upstream supply chain narrow → Expectations for data center and chip orders hold steady → Selling pressure on related stocks eases",
         "notes": [
-          "Why does the CEO's statement have influence? NVIDIA is at the core of the AI computing power supply chain, and its order visibility is regarded as a barometer of industry-wide capital expenditure.",
-          "Note that this is 'talk' rather than data: statements can only affect expectations, not change actual orders; if subsequent earnings or cloud vendors' capital expenditure guidance is revised down, the reassuring effect will be overturned.",
-          "The background of the AI stock selloff is market doubt about whether huge capital expenditure can be converted into profit; it is a re-pricing at the valuation level, not an immediate deterioration in fundamentals.",
-          "For interview purposes, the key is to separate 'expectation management' from 'fundamental data': the former affects short-term sentiment, the latter determines the medium-term trend.",
-          "Supply chain transmission: NVIDIA expectations stable → Upstream foundry, memory, power supply, and cooling order expectations stable → Earnings expectations of related companies not revised down."
+          "Why are the CEO's comments influential? Nvidia sits at the heart of the AI compute supply chain, and its order visibility is viewed as a barometer of industry-wide capital expenditure.",
+          "Note that this is 'verbal reassurance' rather than data: comments can only influence expectations, not change actual orders. If subsequent earnings reports or cloud providers' capital expenditure guidance bring downward revisions, the reassuring effect will be reversed.",
+          "The backdrop to the sharp sell-off in AI stocks is market doubt over whether massive capital expenditure can translate into profits. This is a repricing of valuations, not an immediate deterioration in fundamentals.",
+          "For interviews, the key is to distinguish 'expectations management' from 'fundamental data': the former affects short-term sentiment, while the latter determines the medium-term trend.",
+          "Supply chain transmission: Stable expectations for Nvidia → Stable expectations for upstream foundry, memory, power supply, and cooling orders → No downward revisions to related companies' earnings expectations."
         ]
       }
     }

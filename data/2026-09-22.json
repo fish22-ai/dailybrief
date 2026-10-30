@@ -19,6 +19,18 @@
           "日元升值为什么打压日股？日本很多大企业收入来自海外，日元升值后，海外利润换回日元就变少了，盈利预期下降，股价承压。",
           "什么叫平仓？把借来的头寸买回来还掉。套利交易平仓就是卖出用借来的日元买入的资产，再买回日元还债，这个过程会自我强化：越多人平仓，资产越跌、日元越涨，越多人被迫平仓。"
         ]
+      },
+      "insight_en": {
+        "what": "The Bank of Japan continues to tighten monetary policy, pushing up yen funding costs and putting global carry trades that borrow yen to buy high-yield assets under pressure to unwind.",
+        "why": "Markets had assumed that the yen would remain cheap to borrow over the long term and could be borrowed in unlimited amounts, but that premise has now been overturned. Leveraged investments in global high-yield assets, emerging market bonds, and US equities need to be repriced, and the yen itself could strengthen as capital flows back.",
+        "chain": "The Bank of Japan raises interest rates → yen funding costs rise → profits narrow on carry trades that borrow yen to buy high-yield assets → carry traders sell overseas assets and buy back yen to unwind positions → high-yield bonds and emerging market assets are sold off → demand for yen increases and the yen appreciates → Japanese exporters' earnings shrink when translated into yen, putting pressure on Japanese equities；volatility in global risk assets rises",
+        "notes": [
+          "What is a carry trade? Borrowing a currency with an extremely low interest rate (such as the yen), exchanging it for a currency with a higher interest rate or buying high-yield assets, and earning the interest rate differential. As long as the exchange rate does not move, it is a sure profit; but once funding costs rise or the exchange rate moves against the trade, profits will be wiped out or even turn into losses.",
+          "Why has the yen long been a funding currency? Japan has maintained ultra-low or even negative interest rates for a long time, making yen borrowing extremely cheap. Global investors have become accustomed to treating it as a cheap source of funding.",
+          "Why do Bank of Japan rate hikes affect the world? Because carry trades are enormous in scale and cross national borders. When positions are unwound, investors must simultaneously sell overseas assets and buy back yen, which depresses overseas asset prices and pushes up the yen at the same time.",
+          "Why does yen appreciation put pressure on Japanese equities? Many large Japanese companies earn revenue overseas. When the yen appreciates, their overseas profits convert into fewer yen, lowering earnings expectations and putting pressure on share prices.",
+          "What does unwinding a position mean? Buying back what was borrowed and returning it. Unwinding a carry trade means selling the assets bought with borrowed yen, then buying back yen to repay the debt. This process is self-reinforcing: the more people unwind their positions, the further asset prices fall and the more the yen rises, forcing still more people to unwind."
+        ]
       }
     },
     {
@@ -37,6 +49,18 @@
           "什么是央行公信力？市场相信央行会兑现控制通胀的承诺。如果市场不信，通胀预期就会自己往上走——工人要求更高工资、企业提前涨价，形成自我实现的通胀，央行就被迫用更大力度的加息来压制。",
           "折现率为什么影响成长股？股票价值等于未来所有盈利折算到今天的总和。折现率就是折算时用的利率。利率越高，未来的钱折算到今天越不值钱，尤其是盈利主要在遥远未来的成长股，估值缩水最明显。",
           "为什么美元会走强？美国利率相对其他国家上升，持有美元资产能获得更高回报，全球资金流入美国，美元需求增加，美元升值。"
+        ]
+      },
+      "insight_en": {
+        "what": "An FT commentary argues that the continued rise in bond yields reflects worsening inflation expectations and that central banks should tighten monetary policy further to maintain their credibility.",
+        "why": "Markets had been pricing in central banks nearing the end of their rate-hiking cycles or even cutting rates soon. If long-end yields rise because of inflation expectations, it means markets do not trust central banks to control inflation. Expectations for rate cuts need to be pushed further out, and the world's longest-duration assets—growth stocks, real estate, and long-duration government bonds—must all be revalued.",
+        "chain": "Inflation expectations rise → investors demand higher bond yields as compensation → long-end government bond yields rise → if central banks do not raise rates, their credibility suffers and inflation expectations become further unanchored → markets expect central banks to be forced into a more hawkish stance → short-end yields rise in tandem → discount rates rise, compressing valuations of high-valuation growth stocks and long-duration assets → the dollar strengthens on its interest rate advantage, and capital flows out of emerging markets",
+        "notes": [
+          "What is yield? A bond essentially means you lend money to the issuer and receive your principal and interest back at maturity. Yield is the annualized rate of return on this investment. When yields rise, newly issued bonds become more attractive, and the prices of outstanding bonds fall.",
+          "Why is a rise in long-end yields more concerning? The long end reflects market expectations for inflation and policy over many years ahead. A rise at the short end may merely reflect expectations for a rate hike at the next meeting, whereas a rise at the long end indicates that markets are questioning central banks' ability to control inflation over the long term.",
+          "What is central bank credibility? Markets believe that the central bank will deliver on its promise to control inflation. If markets do not believe it, inflation expectations will rise on their own—workers demand higher wages and companies raise prices in advance, creating self-fulfilling inflation and forcing the central bank to use larger rate hikes to suppress it.",
+          "Why does the discount rate affect growth stocks? A stock's value equals the sum of all future earnings discounted to the present. The discount rate is the interest rate used in that calculation. The higher the interest rate, the less future money is worth today, with the most pronounced valuation declines in growth stocks whose earnings lie mainly in the distant future.",
+          "Why would the dollar strengthen? When US interest rates rise relative to those in other countries, holding dollar assets offers higher returns. Global capital flows into the United States, demand for the dollar increases, and the dollar appreciates."
         ]
       }
     }
@@ -59,6 +83,18 @@
           "为什么芯片和军工受稀土影响？芯片制造中的抛光、刻蚀环节需要稀土材料；军工中的精确制导、雷达、夜视设备依赖稀土永磁和发光材料。供应中断会直接影响生产。",
           "去风险化是什么意思？企业为了不再依赖单一供应来源，把供应链分散到多个国家。这个过程会推高成本，因为新供应链初期规模小、效率低，但能降低断供风险。"
         ]
+      },
+      "insight_en": {
+        "what": "Escalating friction between China and the United States over rare earth export controls could hinder negotiations to extend the Busan trade agreement ahead of the summit between Xi Jinping and Trump.",
+        "why": "Markets had expected a temporary easing of China-US trade tensions, and extending the trade truce could reduce tariff uncertainty. Friction over rare earths has shaken that expectation. Supply chains in the chip, defense, and new energy industries that depend on rare earths face the risk of supply disruptions, and related assets need to be repriced.",
+        "chain": "China-US rare earth negotiations remain deadlocked → extension of the trade truce is obstructed → tariffs may be raised again → chip, defense, and electric vehicle supply chains that depend on rare earth permanent magnet materials face the risk of supply disruptions → affected companies face higher costs and delayed deliveries → corporate earnings expectations are revised down and share prices come under pressure → safe-haven capital flows into gold and government bonds；if the friction becomes prolonged, global supply chains accelerate de-risking, pushing up long-term production costs",
+        "notes": [
+          "What are rare earths? A group of chemical elements that are key raw materials for producing permanent magnet materials, catalysts, and lasers. Mobile phones, electric vehicle motors, and missile guidance systems all depend on them. China accounts for the vast majority of global rare earth processing capacity.",
+          "Why can rare earths become a bargaining chip in trade negotiations? Because alternative sources are scarce and building new capacity takes years. If China restricts exports, the United States cannot find enough alternatives in the short term, and the relevant industries will be directly hit.",
+          "What is a trade truce? An interim agreement reached by China and the United States during their trade war, in which both sides agree to suspend the imposition of certain additional tariffs in exchange for concessions from the other side in certain areas. Extending the truce means tariffs do not escalate, which is positive for markets.",
+          "Why are chips and the defense industry affected by rare earths? The polishing and etching stages of chip manufacturing require rare earth materials; precision guidance, radar, and night-vision equipment in the defense industry rely on rare earth permanent magnet and luminescent materials. Supply disruptions directly affect production.",
+          "What does de-risking mean? To avoid relying on a single source of supply, companies diversify their supply chains across multiple countries. This process pushes up costs because new supply chains initially operate at a small scale and with low efficiency, but it can reduce the risk of supply disruptions."
+        ]
       }
     }
   ],
@@ -80,6 +116,18 @@
           "算力成本曲线为什么重要？大模型训练需要海量算力，算力越便宜，能训练模型的公司就越多，AI 应用落地越快。算力成本下降是 AI 产业从少数巨头走向广泛商业化的关键。",
           "阿里云为什么受益？如果阿里自己造芯片，云业务的算力成本下降，它可以更便宜地卖 AI 算力给外部客户，同时支撑自家大模型训练。市场会把它从电商公司重新定价为 AI 基础设施公司。"
         ]
+      },
+      "insight_en": {
+        "what": "Alibaba has unveiled an accelerator it calls China's most powerful AI chip, directly positioning it against Nvidia and supporting the large-scale expansion of its AI cloud business.",
+        "why": "Markets had assumed that China's AI computing capacity depended heavily on Nvidia and that US export controls would choke off China's AI development. If Alibaba's in-house chips meet performance requirements, they will change the supply landscape for computing capacity in China. Expectations for Nvidia's share of the Chinese market will need to be lowered, and Alibaba Cloud's capital expenditure and competitive position will need to be reassessed.",
+        "chain": "Alibaba releases an in-house AI chip → China's supply of computing capacity increases and its dependence on Nvidia declines → the marginal effect of US export controls weakens → Alibaba Cloud can expand computing capacity at lower cost → the cost curve for domestic AI model training shifts downward → more companies can afford large models and AI applications are deployed faster → revenue expectations for Nvidia in the Chinese market are revised down；Alibaba Cloud's valuation framework shifts from that of an e-commerce company to that of an AI infrastructure provider",
+        "notes": [
+          "How do AI chips differ from conventional chips? AI chips (accelerators) specialize in matrix operations, the most computation-intensive work in large model training and inference. They are much faster than general-purpose CPUs, but excel only at this type of task. Nvidia's GPUs are currently the most widely used AI accelerators.",
+          "Why is Nvidia's position so strong? Besides its lead in hardware performance, an even more important factor is its CUDA software ecosystem, which developers have become accustomed to writing code for. Switching chips means rewriting software, so migration costs are high.",
+          "What do US export controls restrict? They restrict Nvidia from selling its most advanced AI chips to China, with the aim of slowing China's AI development. If China can produce its own alternatives with adequate performance, the controls will become less effective.",
+          "Why is the cost curve for computing capacity important? Training large models requires massive amounts of computing capacity. The cheaper that capacity is, the more companies can train models and the faster AI applications can be deployed. Falling computing costs are key to moving the AI industry from a handful of giants to broad commercialization.",
+          "Why does Alibaba Cloud benefit? If Alibaba makes its own chips, the cloud business's computing costs fall. It can sell AI computing capacity to external customers at lower prices while supporting the training of its own large models. Markets will reprice it from an e-commerce company to an AI infrastructure company."
+        ]
       }
     },
     {
@@ -98,6 +146,18 @@
           "什么是资本开支？企业花在长期资产上的钱，比如建数据中心、买芯片、研发。资本开支增加会压低短期利润，但如果能带来未来收入增长，市场会给更高估值。",
           "闭环为什么有价值？如果模型、芯片、云都用自己的，就不需要等外部供应商的产能或出口许可，迭代节奏自己掌控。在出口管制背景下，这个闭环是战略资产。",
           "Qwen 系列是什么？阿里开源的大模型系列，开发者可以免费下载使用。开源能快速扩大生态，让更多企业在 Qwen 基础上开发应用，反过来推动阿里云的算力需求。"
+        ]
+      },
+      "insight_en": {
+        "what": "Alibaba announced new advances in omni-modal models at the Apsara Conference, with both Qwen4 and its next-generation video model in training, and expressed its firm commitment to investing in three pillars: AI models, AI chips, and AI cloud.",
+        "why": "Markets had worried that China-US computing capacity restrictions would slow the pace of iteration of China's large models. Alibaba's simultaneous push across the three layers of models, chips, and cloud means it is trying to build a closed loop that does not depend on external computing capacity. This changes market expectations for the pace of Alibaba's capital expenditure and the competitive landscape for Chinese AI models.",
+        "chain": "Alibaba invests in models, chips, and cloud simultaneously → a closed loop from computing capacity to models takes shape → dependence on external chip suppliers decreases → computing capacity bottlenecks become less of a constraint on the pace of model iteration → the Qwen series becomes more competitive, attracting more developers and enterprise customers → AI computing capacity accounts for a larger share of Alibaba Cloud's revenue mix → markets reassess Alibaba's growth trajectory and the payback period for its capital expenditure",
+        "notes": [
+          "What is an omni-modal model? A model that can simultaneously process multiple forms of information, such as text, images, audio, and video. Omni-modal models are contrasted with text-only models and are closer to the way humans perceive the world.",
+          "Why develop models, chips, and cloud together? Model training requires computing capacity, that capacity comes from chips, and the chips are deployed in the cloud. Integrating the three allows chips and cloud architecture to be optimized for in-house models, making them more efficient than general-purpose solutions and less likely to be held back by external suppliers.",
+          "What is capital expenditure? Money a company spends on long-term assets, such as building data centers, buying chips, and research and development. Higher capital expenditure depresses short-term profits, but if it can generate future revenue growth, markets will assign a higher valuation.",
+          "Why is a closed loop valuable? If a company uses its own models, chips, and cloud, it does not need to wait for external suppliers' capacity or export licenses and controls its own pace of iteration. In the context of export controls, this closed loop is a strategic asset.",
+          "What is the Qwen series? Alibaba's open-source series of large models, which developers can download and use for free. Open-sourcing can rapidly expand the ecosystem, allowing more companies to develop applications based on Qwen, which in turn drives demand for Alibaba Cloud's computing capacity."
         ]
       }
     }

@@ -21,6 +21,20 @@
           "为什么美元会走强？美债收益率上升意味着持有美元资产回报更高，全球资本追逐收益流入美国，推升美元需求。",
           "新兴市场为什么承压？美元走强意味着新兴市场以美元计价的债务偿还成本上升，同时资本外流压力加大，本币贬值。"
         ]
+      },
+      "insight_en": {
+        "what": "Global bond markets suffered a sharp sell-off this week, with the 10-year U.S. Treasury yield rising to its highest level since 2002.",
+        "why": "Markets had expected interest rates to peak and bond markets to stabilize, but yields breaking through multiyear highs mean bond investors are demanding greater compensation, and all assets anchored to the risk-free rate (equities, credit bonds, and real estate) need to be repriced.",
+        "chain": "Global bond sell-off → 10Y U.S. Treasury yield↑ to its highest level since 2002 → Bond prices fall → Risk-free rate Rf rises → Equity discount rates rise → Present values of highly valued assets shrink；At the same time, higher yields attract cross-border capital inflows into U.S. dollar assets → U.S. dollar strengthens → Emerging-market currencies and debt come under pressure",
+        "notes": [
+          "What is the 10-year U.S. Treasury yield? It is the yield to maturity (YTM) on 10-year Treasury notes issued by the U.S. Treasury, regarded globally as a benchmark for the risk-free rate Rf. It is the annualized return investors earn by buying the bonds and holding them to maturity.",
+          "Why does the yield matter? It is the anchor for global asset pricing. Equity valuations, corporate bond financing costs, and mortgage rates all reference it. When the risk-free rate rises, discount rates for all risky assets rise along with it, making future cash flows worth less when discounted to the present.",
+          "Bond prices and yields move inversely: When bonds are sold heavily in the market, bond prices fall, allowing new buyers to buy at lower prices, so the yield to maturity rises for the same coupon.",
+          "Why is it the highest since 2002? This means current interest rates have returned to levels seen more than twenty years ago, requiring a fundamental adjustment in valuation logic for investors accustomed to a low-interest-rate environment.",
+          "What is the term premium? It is the additional compensation investors require for holding long-term bonds rather than rolling over short-term bonds, because the longer the lock-in period, the greater the uncertainty. When selling intensifies, the term premium widens and long-end yields rise faster.",
+          "Why would the U.S. dollar strengthen? Higher U.S. Treasury yields mean higher returns on U.S. dollar assets, drawing global capital into the United States in pursuit of yield and boosting demand for the dollar.",
+          "Why do emerging markets come under pressure? A stronger U.S. dollar means higher repayment costs for emerging markets' dollar-denominated debt, while capital outflow pressure intensifies and local currencies depreciate."
+        ]
       }
     },
     {
@@ -41,6 +55,20 @@
           "通缩为什么可怕？物价持续下跌，消费者预期未来更便宜而推迟消费，企业收入下降、裁员，形成恶性循环。日本困在通缩里二十多年。",
           "高市政府政策方向不同意味着什么？不再单纯靠货币宽松刺激需求，转而强调供给能力提升和财政纪律，市场需要重新评估日本国债的供需和利率路径。",
           "日元升值对日本股市的影响？日元升值使日本出口企业海外利润折算回日元缩水，日经指数往往承压；但进口成本下降，对消费者有利。"
+        ]
+      },
+      "insight_en": {
+        "what": "Japan's Economic and Fiscal Policy Minister Minoru Kiuchi said Japan no longer needs unconventional monetary stimulus from the central bank, has emerged from deflation, and that the Takaichi government's policies differ from Abenomics.",
+        "why": "Markets had expected Japan to maintain ultra-loose monetary policy (yield curve control, YCC, and negative interest rates), but these remarks suggest that Japan remains on course for monetary policy normalization, potentially shaking the foundations of the yen carry trade.",
+        "chain": "Japanese official says ultra-loose monetary policy is unnecessary → Markets expect the Bank of Japan to continue tightening → Japanese government bond yields rise → Yen carry trades become less attractive → Global yen-funded carry-trade capital flows back to Japan → Yen appreciates → Global risk assets (especially U.S. equities and emerging-market assets boosted by carry-trade capital) face capital outflow pressure",
+        "notes": [
+          "What is yield curve control (YCC)? The Bank of Japan commits to keeping the 10-year government bond yield at an extremely low level (such as around 0%) through unlimited bond purchases, aiming to lower borrowing costs across the economy.",
+          "What is a carry trade? Investors borrow yen at extremely low interest rates, convert it into higher-interest-rate currencies (such as the U.S. dollar or Australian dollar), and invest in high-yielding assets to earn the interest rate differential. These trades are enormous in scale and have been an important driver of global asset gains over many years.",
+          "Why are carry trades vulnerable to Japanese rate hikes? If yen interest rates rise, the cost of borrowing yen increases, narrowing or even eliminating the scope for carry profits. Investors then need to unwind their positions, selling overseas assets and converting the proceeds back into yen to repay their debt, triggering a global asset sell-off.",
+          "What is Abenomics? It is the combination of ultra-loose monetary policy, fiscal stimulus, and structural reforms pursued by former Prime Minister Shinzo Abe, centered on using yen depreciation and monetary easing to combat deflation and stimulate growth.",
+          "Why is deflation frightening? Prices keep falling, consumers delay spending because they expect prices to be lower in the future, and companies suffer declining revenue and lay off workers, creating a vicious cycle. Japan was trapped in deflation for more than twenty years.",
+          "What does the Takaichi government's different policy direction mean? It means no longer relying solely on monetary easing to stimulate demand, instead emphasizing improvements in supply capacity and fiscal discipline. Markets need to reassess Japanese government bond supply and demand and the interest rate path.",
+          "How does yen appreciation affect Japan's stock market? Yen appreciation reduces Japanese exporters' overseas profits when translated back into yen, often putting pressure on the Nikkei index; however, lower import costs benefit consumers."
         ]
       }
     }
@@ -64,6 +92,19 @@
           "市场会怎么交易这条新闻？做多欧洲柴油期货（预期涨价）、做空美国柴油期货（预期跌价），或者做多能源股中受益于高油价的上游企业。",
           "这类政策的风险是什么？出口禁令可能违反WTO规则，遭到贸易伙伴报复；且美国炼油商可能减产，反而减少国内供给，效果适得其反。"
         ]
+      },
+      "insight_en": {
+        "what": "Trump threatened to ban diesel exports to lower U.S. domestic oil prices and pressured Europe to release diesel reserves.",
+        "why": "Markets had expected energy trade to flow freely, but the threat of an export ban changes expectations for global diesel supply and demand. The spread between U.S. domestic oil prices and global oil prices could widen, requiring both energy assets and inflation expectations to be repriced.",
+        "chain": "Trump threatens to ban diesel exports → U.S. diesel exports are expected to decline → Global diesel supply tightens → European diesel prices rise → European energy costs rise → European inflationary pressure intensifies → Expectations for ECB rate cuts diminish → Eurozone bond yields rise；At the same time, U.S. domestic diesel supply increases → U.S. diesel prices fall → U.S. inflation is pushed lower in the short term → But divergence in global oil prices intensifies",
+        "notes": [
+          "Why would a U.S. diesel export ban push up European diesel prices? Europe is one of the main destinations for U.S. diesel exports. If the United States stops selling, Europe will need to find other suppliers, but global diesel supply is inelastic in the short term, so prices rise when demand exceeds supply.",
+          "Why does Trump want to do this? Ahead of the November midterm elections, U.S. domestic gasoline and diesel prices are among voters' top concerns. Lowering oil prices helps electoral prospects.",
+          "How would an export ban affect global inflation? Higher European diesel prices would be transmitted to transportation, agricultural, and industrial costs, ultimately pushing up Europe's overall price level and making it harder for the ECB to cut rates.",
+          "Why would U.S. domestic oil prices fall as a result? Lower exports mean more diesel stays in the domestic market, increasing supply and lowering prices. But this comes at the expense of exporters' interests.",
+          "How might the market trade this news? Go long European diesel futures (expecting prices to rise), short U.S. diesel futures (expecting prices to fall), or go long upstream energy stocks that benefit from higher oil prices.",
+          "What are the risks of this type of policy? An export ban could violate WTO rules and provoke retaliation from trading partners; U.S. refiners might also cut production, reducing domestic supply instead and making the policy counterproductive."
+        ]
       }
     }
   ],
@@ -86,6 +127,19 @@
           "国产替代的逻辑：如果中国无法通过正规或非正规渠道获得英伟达芯片，只能加速自主研发，华为昇腾、寒武纪等国产AI芯片厂商获得政策和资金支持。",
           "为什么这对全球AI竞争格局重要？算力是AI竞争的底层资源。如果中国获取算力受限，大模型训练进度受影响，中美AI差距可能拉大。"
         ]
+      },
+      "insight_en": {
+        "what": "U.S. federal prosecutors arrested a California man and charged him with illegally smuggling $300 million worth of servers equipped with Nvidia chips into China.",
+        "why": "Markets had expected U.S. controls on chip exports to China to be effectively enforced, but this case reveals loopholes that could trigger tougher enforcement and stricter export reviews, increasing uncertainty around Nvidia's sales to China.",
+        "chain": "Chip-smuggling case is exposed → U.S. government steps up export enforcement → Nvidia's sales to China face stricter scrutiny → Expectations for Nvidia's revenue in China decline → Nvidia's share price comes under pressure → Investors reassess AI chip supply chain risks → Stocks linked to domestic substitution (such as Huawei Ascend and Cambricon) attract more attention；At the same time, smuggling channels are blocked → China's cost of acquiring AI computing capacity rises → Progress in training large AI models in China may slow",
+        "notes": [
+          "Why is the smuggling of Nvidia chips so important? Nvidia GPUs such as the A100 and H100 are core hardware for training large AI models. The United States bans exports of high-end chips to China to curb China's AI development. Smuggling means these controls may be circumvented.",
+          "What does $300 million represent? Assuming each server contains multiple GPUs, this could amount to hundreds of servers and thousands of high-end chips, enough to provide the computing capacity for a medium-sized AI data center.",
+          "What does this mean for Nvidia? If controls tighten, Nvidia could be forced to further scale back sales to China, with revenue from China (which once accounted for roughly 20% or more of its total revenue) continuing to decline. However, Nvidia could also receive more U.S. government procurement orders as a result.",
+          "What are export controls? The U.S. government, through the Commerce Department's Bureau of Industry and Security (BIS), establishes rules restricting exports of certain technologies and products to specific countries. Violators face criminal prosecution.",
+          "The logic behind domestic substitution: If China cannot obtain Nvidia chips through formal or informal channels, it has no choice but to accelerate independent research and development, with domestic AI chipmakers such as Huawei Ascend and Cambricon receiving policy and funding support.",
+          "Why does this matter for the global AI competitive landscape? Computing capacity is the foundational resource in AI competition. If China's access to computing capacity is restricted, progress in training large models will be affected, potentially widening the AI gap between China and the United States."
+        ]
       }
     },
     {
@@ -105,6 +159,19 @@
           "这对英伟达股价的影响？中国区收入占英伟达总收入的比重虽在下降，但仍是重要市场。监管风险升级会增加不确定性，压制估值。",
           "为什么投资者会关注其他芯片股？如果英伟达对华销售受限，AMD、英特尔等可能获得部分替代订单，国产AI芯片厂商也可能受益于政策支持。",
           "这条新闻和上一条的关系？上一条是具体走私案件，这一条是监管对整个走私现象的反思和问责，说明问题不是个案，而是系统性的。"
+        ]
+      },
+      "insight_en": {
+        "what": "Nvidia AI chips continue to flow into China, and U.S. officials are questioning why the company failed to detect smuggling red flags.",
+        "why": "Markets had believed Nvidia's compliance framework was robust, but escalating regulatory questions could lead to fines, investigations, or even stricter export licensing conditions, increasing Nvidia's compliance costs and policy risk.",
+        "chain": "Regulators question Nvidia's inadequate compliance → A formal investigation may be launched → Nvidia faces fines or tighter export licensing → Sales to China are further restricted → Nvidia's revenue forecasts are revised downward → Share price comes under pressure → Investors shift to other AI chip suppliers (AMD and Intel) or domestic substitution stocks；At the same time, compliance costs rise → Nvidia's profit margins come under pressure",
+        "notes": [
+          "Why is Nvidia being questioned? U.S. law requires exporters to know their customers and the end uses of their products. If chips reach China through third-party intermediaries, Nvidia could be deemed to have conducted insufficient due diligence.",
+          "What are warning signs (red flags)? Examples include unusually large customer orders, a customer's registered address being inconsistent with its scale of operations, or a customer's refusal to disclose the end use. Exporters that identify these signs should halt transactions and report them.",
+          "What are the possible consequences? Fines, suspension of export licenses, mandatory engagement of third-party auditors, and even criminal liability for senior executives. For Nvidia, compliance costs would rise, and sales to China could shrink further.",
+          "How does this affect Nvidia's share price? Although China's share of Nvidia's total revenue is declining, it remains an important market. Escalating regulatory risk increases uncertainty and weighs on valuations.",
+          "Why would investors focus on other chip stocks? If Nvidia's sales to China are restricted, AMD, Intel, and others could receive some replacement orders, while domestic AI chipmakers could also benefit from policy support.",
+          "How does this news relate to the previous item? The previous item concerns a specific smuggling case, while this one concerns regulators' reassessment of the broader smuggling phenomenon and their pursuit of accountability, indicating that the problem is not an isolated case but a systemic one."
         ]
       }
     }

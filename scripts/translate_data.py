@@ -52,12 +52,18 @@ def main() -> int:
     g.add_argument("--date", help="只补这一天（YYYY-MM-DD）")
     g.add_argument("--recent", type=int, help="补最近 N 期")
     g.add_argument("--all", action="store_true", help="补全部期次")
+    ap.add_argument("--exclude", default="",
+                    help="逗号分隔的日期列表，从待补名单里剔除（另有任务在写这些文件时用）")
     args = ap.parse_args()
 
     dates = all_dates()
     if not dates:
         print("data/ 下没有日期 JSON", file=sys.stderr)
         return 1
+
+    if args.exclude:
+        skip = {d.strip() for d in args.exclude.split(",") if d.strip()}
+        dates = [d for d in dates if d not in skip]
 
     if args.date:
         todo = [args.date] if args.date in dates else []

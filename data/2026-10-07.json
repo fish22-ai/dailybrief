@@ -20,6 +20,19 @@
           "无风险利率通常用美国国债收益率代表，因为美国政府违约风险极低，它是所有风险资产定价的锚。",
           "AI交易的逻辑是：市场相信AI能带来巨大利润增长，因此愿意给相关公司更高估值；但这个逻辑一旦被利率或业绩打断，回撤也会集中发生。"
         ]
+      },
+      "insight_en": {
+        "what": "The S&P 500 hit an all-time high as AI stocks continued to rise despite the bond market sell-off, but gains are increasingly dependent on a handful of technology giants.",
+        "why": "The market had initially worried that rising long-term interest rates would weigh on valuations, but capital continues to pour into AI leaders; this has changed the expectation that 'high interest rates inevitably depress stock indices,' but also makes the index more sensitive to a handful of stocks' earnings and the sentiment surrounding them.",
+        "chain": "Strong AI earnings expectations → Funds concentrate their buying in leading stocks → The S&P 500 hits a new high → Index concentration rises → Any pullback in the leaders amplifies index volatility → Investors' tolerance for rising bond yields declines",
+        "notes": [
+          "Why is a bond market sell-off usually bearish for equities? Rising long-term Treasury yields raise the risk-free rate, increasing the discount rate used to convert future corporate profits into today's value, so highly valued stocks should theoretically come under pressure.",
+          "But this time is different: the market believes that earnings growth at AI leaders can offset the rise in the discount rate, so money keeps flowing into them, taking the stock index to a new high.",
+          "Index concentration means that a handful of large-cap stocks account for a large share of an index's weight. When they dominate its gains, the index no longer represents the broader economy, but rather the fortunes of these few companies.",
+          "Why is concentration a risk? If the leaders' earnings fall short of expectations or sentiment reverses, declines in heavily weighted stocks will drag down the entire index, and ordinary investors holding index funds will also be forced to bear the impact.",
+          "The risk-free rate is usually represented by U.S. Treasury yields because the U.S. government's default risk is extremely low; it is the anchor for pricing all risk assets.",
+          "The logic of the AI trade is that the market believes AI can deliver enormous profit growth and is therefore willing to assign higher valuations to related companies; but once this logic is disrupted by interest rates or earnings, drawdowns will also be concentrated."
+        ]
       }
     },
     {
@@ -39,6 +52,19 @@
           "文章说美元强势不再可靠，可能因为市场担心美国财政赤字、债务水平或政策不确定性，即使利率高也不愿长期持有美元。",
           "跨境资金流是理解汇率的关键：资金流入一国，对该国货币需求增加，货币升值；流出则贬值。",
           "对新兴市场而言，美元走强通常意味着以美元计价的债务负担加重，因为还债需要更多本币。"
+        ]
+      },
+      "insight_en": {
+        "what": "The bond market sell-off has strengthened the dollar, but The Economist notes that the dollar's strength is no longer as reliable as it once was.",
+        "why": "The market had initially expected bond market weakness to weaken the dollar, but rising yields instead attracted capital into the dollar; however, the article suggests that this relationship is weakening, implying that the macroeconomic logic behind dollar pricing may be changing.",
+        "chain": "Bonds are sold off → Treasury yields rise → Returns on dollar-denominated assets rise on a relative basis → Cross-border capital flows into the dollar → The dollar strengthens → But market confidence in the dollar is weaker than before → The sustainability of dollar strength is in doubt",
+        "notes": [
+          "A bond sell-off means prices fall; bond prices and yields move inversely, so a sell-off corresponds to a rise in yields.",
+          "Why do rising yields attract capital? Investors seek higher returns. When U.S. Treasury yields are higher than those in other countries, demand to convert money into dollars to buy U.S. Treasuries increases, pushing up the dollar's exchange rate.",
+          "An exchange rate is essentially the relative price of two currencies. A stronger dollar means that one dollar buys more foreign currency, or that foreign currency buys fewer dollars.",
+          "The article says dollar strength is no longer reliable, possibly because the market is worried about the U.S. fiscal deficit, debt levels, or policy uncertainty and is unwilling to hold dollars for the long term even when interest rates are high.",
+          "Cross-border capital flows are key to understanding exchange rates: inflows into a country increase demand for its currency, causing it to appreciate; outflows cause depreciation.",
+          "For emerging markets, a stronger dollar usually means a heavier burden of dollar-denominated debt, because repayment requires more local currency."
         ]
       }
     }
@@ -62,6 +88,19 @@
           "但减税也减少政府收入，可能扩大财政赤字；赤字扩大往往意味着政府发债增加，长期看反而可能推高长期利率。",
           "这条政策的传导不是立即的：从柴油成本下降到终端商品价格，中间有库存、合同和定价周期，通常需要数月。"
         ]
+      },
+      "insight_en": {
+        "what": "The White House issued an emergency executive order on diesel tax relief, using presidential authority to grant tax relief for diesel fuel.",
+        "why": "Diesel is a core cost for transportation and agriculture, and tax cuts will reduce the marginal costs of logistics and production, changing market expectations for the short-term path of inflation and, in turn, affecting interest rates and energy-related assets.",
+        "chain": "Diesel tax relief → Transportation costs fall → Goods distribution costs decline → Short-term inflationary pressures ease → Market expectations of rate hikes weaken → Bond yields fall → Cyclical and transportation stocks benefit",
+        "notes": [
+          "Unlike gasoline, diesel is mainly used in trucks, trains, agricultural machinery, and heavy equipment; it is the lifeblood of the economy's logistics network.",
+          "Tax relief means the government collects less revenue and business costs fall. If the cost reductions are transmitted to final prices, they will lower inflation.",
+          "Why does the market care about inflation? High inflation will force the central bank to raise interest rates, which will increase financing costs across the economy and depress stock and bond prices.",
+          "An executive order is a directive issued directly by the president that does not require congressional legislation and is typically used in emergencies or situations requiring a rapid response.",
+          "But tax cuts also reduce government revenue and may widen the fiscal deficit; a larger deficit often means more government bond issuance, which could actually push up long-term interest rates in the long run.",
+          "The transmission of this policy is not immediate: the path from lower diesel costs to final goods prices involves inventories, contracts, and pricing cycles, and usually takes several months."
+        ]
       }
     }
   ],
@@ -84,6 +123,19 @@
           "资本开支是科技巨头花钱建数据中心、买设备、建厂的支出。芯片制造项目会牵动巨额资本开支，影响相关设备商和材料商。",
           "这条新闻的重要性在于它是否真的改变算力供应链，而不只是公关表态；投资者应关注实际投产时间、良率和订单。"
         ]
+      },
+      "insight_en": {
+        "what": "Intel will continue to participate in Musk's Terafab chip manufacturing project, which aims to break into high-end chip production.",
+        "why": "The market had initially viewed advanced chip manufacturing as dominated by TSMC and Samsung, and successful new entrants would change the supply landscape; Intel's participation also has implications for the credibility of its foundry strategy and the direction of its capital expenditure.",
+        "chain": "The Terafab project advances → Intel provides manufacturing capabilities → Sources of advanced chip supply increase → The monopoly position of TSMC/Samsung is challenged → Chip foundry prices and bargaining power change → The cost curve for downstream AI computing power may shift downward",
+        "notes": [
+          "Advanced chip manufacturing is a business that very few companies can engage in because fab construction costs are extremely high and technological barriers to entry are formidable; TSMC and Samsung are the main players.",
+          "Intel has both chip design and foundry businesses. Foundry services involve manufacturing chips for others and earning manufacturing fees.",
+          "Musk's Tesla and xAI both need large quantities of AI chips. Building their own manufacturing capabilities could reduce their reliance on TSMC, but it is extremely difficult.",
+          "How a change in the supply landscape affects prices: if a new player successfully achieves mass production, chip supply increases, foundry prices may fall, and costs for downstream AI companies decline.",
+          "Capital expenditure is what technology giants spend on building data centers, buying equipment, and constructing factories. Chip manufacturing projects will involve enormous capital expenditure and affect related equipment and materials suppliers.",
+          "The importance of this news lies in whether it really changes the computing power supply chain, rather than merely being a public relations statement; investors should watch actual production start dates, yields, and orders."
+        ]
       }
     },
     {
@@ -103,6 +155,19 @@
           "拥挤度指太多投资者持有同一种交易。当所有人都看多AI，一旦有人开始卖出，缺乏买盘会导致价格急跌。",
           "利率上升由央行紧缩或债券抛售导致，它同时影响所有风险资产，但高估值、远期盈利的资产受伤最重。",
           "这条新闻本身不改变AI技术前景，但改变市场情绪和资金流向，短期对芯片股、算力股和科技基金影响明显。"
+        ]
+      },
+      "insight_en": {
+        "what": "Billionaire Dalio warned that AI is a 'classic bubble' nearing its bursting point because of rising interest rates.",
+        "why": "The market had been pricing in the long-term growth brought by AI, and Dalio's warning is a reminder that rising interest rates could deflate high valuations; this has changed some funds' risk appetite for AI assets, putting chip stocks and highly valued technology stocks under pressure.",
+        "chain": "Interest rates rise → The discount rate increases → The present value of AI profits expected far in the future declines → AI asset valuations come under pressure → Investors reassess crowding in the AI trade → Capital flows out of AI leaders → Chip and computing-power stocks pull back",
+        "notes": [
+          "A bubble means asset prices are far above intrinsic value, sustained by optimistic expectations and capital inflows; once expectations reverse, prices will fall rapidly.",
+          "Dalio is the founder of Bridgewater Associates. His warnings carry weight in the market because he has accurately warned of macroeconomic risks on multiple occasions.",
+          "Why does a higher discount rate hurt AI stocks? Most of the profits of AI companies will not materialize until many years from now; the higher interest rates are, the lower the present value of those future profits.",
+          "Crowding means that too many investors are positioned in the same trade. When everyone is bullish on AI, a lack of buying interest will cause prices to plunge once someone starts selling.",
+          "Rising interest rates result from central bank tightening or bond sell-offs. They affect all risk assets at the same time, but assets with high valuations and earnings far in the future are hit hardest.",
+          "This news does not itself change the outlook for AI technology, but it changes market sentiment and capital flows, having a significant short-term impact on chip stocks, computing-power stocks, and technology funds."
         ]
       }
     }

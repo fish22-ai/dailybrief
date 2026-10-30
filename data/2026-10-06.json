@@ -19,6 +19,18 @@
           "为什么先冲击垃圾债：评级越低的企业越依赖再融资，一旦基准利率抬高，它们多付的利息占利润比例更大，市场先怀疑它们能否还上。",
           "信用利差扩大意味着市场对企业的违约担忧加重，这会同时压低企业债券价格和股票估值。"
         ]
+      },
+      "insight_en": {
+        "what": "A sharp sell-off in U.S. Treasuries has pushed up borrowing costs, with the impact starting to be transmitted to junk-rated corporate bonds, making bond issuance more expensive for lower-rated companies.",
+        "why": "Markets had expected interest rates to fall and credit spreads to narrow, but Treasury yields are now rising, raising the anchor for risk asset pricing; high-yield bonds and highly leveraged companies must be revalued.",
+        "chain": "Treasuries are sold off → Treasury prices fall → Treasury yields rise → The benchmark risk-free rate rises → Junk bonds must offer higher interest rates → Credit spreads widen → Financing costs for highly leveraged companies rise → Their share prices and bond prices come under pressure",
+        "notes": [
+          "Treasury yields are the starting point for the entire yield curve: all other bonds are priced using Treasury yields as a benchmark, plus an additional layer of yield reflecting borrower risk, known as the credit spread.",
+          "Treasury prices and Treasury yields move in opposite directions because coupon payments are fixed; when prices fall, buyers receive the same coupon payments for less money, so their effective rate of return rises.",
+          "Junk bonds, also called high-yield bonds, are bonds issued by companies with lower credit ratings and carry high default risk, so they must pay higher interest rates than Treasuries to attract investors.",
+          "Why junk bonds are hit first: the lower companies' credit ratings, the more they rely on refinancing; once benchmark interest rates rise, their additional interest payments account for a larger share of profits, and the market first questions whether they can repay.",
+          "Widening credit spreads mean the market is becoming more concerned about corporate defaults, which depresses both corporate bond prices and equity valuations."
+        ]
       }
     },
     {
@@ -37,6 +49,18 @@
           "为什么大选前会抛售：竞选承诺往往意味着更多财政支出或减税，市场担心赤字扩大、发债增加，债券供给多了价格就下跌。",
           "欧元区银行大量持有本国国债，国债价格下跌会直接侵蚀银行资本，这就是所谓主权风险与银行风险相互传导。",
           "欧元走弱的原因：一国资产风险上升时，国际资金会撤出该国资产，换成其他货币，欧元需求下降。"
+        ]
+      },
+      "insight_en": {
+        "what": "The bond market sell-off is intensifying ahead of France's general election, with investors concerned about France's fiscal outlook and the euro area's stability being called into question.",
+        "why": "Markets had viewed French government bonds as core safe assets in the euro area, but now demand a higher term premium; the spread between French and German government bonds is widening, and euro-denominated assets face revaluation.",
+        "chain": "Fiscal pledges increase ahead of the general election → Markets worry about a widening deficit → French government bonds are sold off → The spread between French and German government bonds widens → The euro area's risk premium rises → The euro comes under pressure → Valuations of banks and funds holding French government bonds suffer；If spreads continue to widen, financing costs in peripheral euro area countries will also be pushed higher",
+        "notes": [
+          "The term premium is the additional compensation investors demand for bearing uncertainty about future interest rates and inflation risk when holding long-term bonds; the more uncertain the fiscal outlook, the higher this compensation.",
+          "The French-German government bond spread is French government bond yields minus German government bond yields; German government bonds are regarded as the safest assets in the euro area, so a widening spread means declining market confidence in France.",
+          "Why a sell-off occurs ahead of a general election: campaign pledges often mean more fiscal spending or tax cuts; markets worry about a widening deficit and increased bond issuance, and a larger supply of bonds pushes prices down.",
+          "Euro area banks hold large amounts of their home countries' government bonds, so falling government bond prices directly erode bank capital; this is the so-called mutual transmission of sovereign risk and banking risk.",
+          "Why the euro weakens: when the risk of a country's assets rises, international capital withdraws from those assets and is converted into other currencies, reducing demand for the euro."
         ]
       }
     }
@@ -59,6 +83,18 @@
           "通胀压力增加会限制央行降息：如果央行降息刺激经济，可能让通胀更难回落，所以它宁愿维持高利率更久。",
           "债券收益率上升对欧元的影响是双向的：收益率高吸引资金流入买欧元资产，但增长受损又可能拖累欧元，最终取决于哪股力量更强。"
         ]
+      },
+      "insight_en": {
+        "what": "Ukraine launched a large-scale attack on the Moscow region with 650 drones; Russia said at least two people were killed, and both sides are intensifying their strikes.",
+        "why": "Markets had been pricing in the possibility of a gradual easing of the conflict, but this attack indicates an escalation in the fighting and no prospect of a near-term ceasefire, pushing energy and European security risk premiums back up.",
+        "chain": "Large-scale drone attack → Expectations of conflict escalation strengthen → Hopes for a ceasefire fade → Energy supply risk premiums rise → Crude oil and European natural gas prices receive support → Inflationary pressures in Europe increase → The ECB's scope for rate cuts narrows → Euro area bond yields and the euro both experience volatility",
+        "notes": [
+          "A risk premium is the extra return investors demand over risk-free assets because they are concerned that certain events may occur; this premium rises when conflict escalates.",
+          "Why conflict affects energy prices: Russia is a major global exporter of oil and gas, and Ukraine is a transit route; escalating fighting raises market concerns about supply disruptions, making oil and gas prices more likely to rise than fall.",
+          "European natural gas prices have a major impact on inflation in Europe because many European countries use natural gas for power generation and heating, so higher gas prices directly push up the consumer price index.",
+          "Rising inflationary pressures limit a central bank's ability to cut interest rates: if it cuts rates to stimulate the economy, inflation may become harder to bring down, so it would rather keep interest rates high for longer.",
+          "The impact of rising bond yields on the euro can go both ways: higher yields attract capital inflows to purchase euro-denominated assets, but damage to growth may weigh on the euro; the ultimate outcome depends on which force is stronger."
+        ]
       }
     },
     {
@@ -77,6 +113,18 @@
           "为什么军工股会受益：军演和军购预期增加，意味着未来订单可能增加，军工企业的收入预期改善。",
           "印度卢比承压的原因：如果区域局势紧张，外资可能撤出印度资产，换成美元等避险货币，卢比需求下降。",
           "这类事件对市场的传导通常是短期的，除非演变成实际冲突，否则风险溢价会随时间回落。"
+        ]
+      },
+      "insight_en": {
+        "what": "U.S. F-35 stealth fighter jets participated in joint exercises with the Indian military on Indian soil for the first time, at a location near the Pakistani border.",
+        "why": "Markets had regarded South Asia's geopolitical landscape as stable, but these exercises show deepening U.S.-India military cooperation, which could alter regional arms procurement and the pricing of security risk.",
+        "chain": "U.S.-India joint military exercises → Military cooperation deepens → India becomes more inclined to buy U.S.-made equipment → Expectations of a regional arms race rise → South Asia's geopolitical risk premium rises → The Indian rupee and Indian government bonds face temporary pressure；Meanwhile, order expectations for U.S. defense companies improve, supporting their share prices",
+        "notes": [
+          "The F-35 is the United States' most advanced stealth fighter jet, and it is usually exported to core allies; obtaining the F-35 means mutual military trust between the two countries has reached a very high level.",
+          "A rising geopolitical risk premium means foreign investors demand higher returns when investing in the region's assets, or simply reduce their allocations, putting pressure on the local currency and bonds.",
+          "Why defense stocks benefit: more military exercises and rising expectations of arms purchases mean future orders may increase, improving revenue expectations for defense companies.",
+          "Why the Indian rupee comes under pressure: if regional tensions rise, foreign capital may withdraw from Indian assets and be converted into safe-haven currencies such as the U.S. dollar, reducing demand for the rupee.",
+          "The transmission of such events to markets is usually short-term; unless they develop into an actual conflict, the risk premium will decline over time."
         ]
       }
     }
@@ -99,6 +147,18 @@
           "8.2万亿美元是亚洲AI基建的总投资规模估计，这个数字越大，说明债务融资的潜在规模也越大。",
           "如果AI投资回报不及预期，传导路径是：企业收入下降 → 还贷困难 → 银行不良贷款上升 → 银行收紧信贷 → AI企业融资更难，形成负反馈。"
         ]
+      },
+      "insight_en": {
+        "what": "Asian banks are racing to lend to chip and data center projects as part of Asia's US$8.2 trillion AI infrastructure boom, with risky lending on the rise.",
+        "why": "Markets had assumed AI investment was funded mainly through equity financing, but debt financing is now entering on a large scale, meaning leverage in AI capital expenditure is rising and the banking system is becoming more closely tied to the AI cycle.",
+        "chain": "AI infrastructure demand surges → Data center and chip projects require enormous funding → Banks compete to lend → AI-related debt in Asia grows → Banks' exposure to the AI cycle increases → If returns on AI investment fall short of expectations, default risk on related loans rises → Valuations of bank stocks and AI-related bonds come under pressure；If AI demand persists, chip and data center companies expand faster",
+        "notes": [
+          "The difference between debt financing and equity financing: debt financing means borrowing money, which requires repayment of principal and interest but does not dilute equity; equity financing means selling shares in exchange for money, which does not need to be repaid but entails sharing future profits.",
+          "Why banks are willing to lend: AI infrastructure projects typically have data centers or semiconductor equipment as collateral and long-term contracts supporting cash flows, so banks consider the risks manageable.",
+          "Exposure to the AI cycle refers to how much of a bank's lending is related to the AI industry; if AI investment slows, these loans may not be recoverable, causing losses for the bank.",
+          "US$8.2 trillion is the estimated total investment in AI infrastructure in Asia; the larger this figure, the greater the potential scale of debt financing.",
+          "If returns on AI investment fall short of expectations, the transmission path is: Corporate revenue falls → Loan repayment becomes difficult → Banks' non-performing loans rise → Banks tighten credit → AI companies find it harder to obtain financing, creating a negative feedback loop."
+        ]
       }
     },
     {
@@ -117,6 +177,18 @@
           "英伟达中国收入不确定性上升，意味着分析师很难预测它未来能卖多少到中国，估值时会给更低确定性溢价。",
           "国产替代预期升温：如果中国买不到美国芯片，就会加速扶持本国芯片企业，相关公司股价可能受益。",
           "政策消息对英伟达股价影响大，因为任何管制收紧都可能直接削减它的收入，市场会迅速重新定价。"
+        ]
+      },
+      "insight_en": {
+        "what": "Nvidia AI chips continue to flow into China despite U.S. export restrictions, with authorities questioning why the ban has failed to stop them.",
+        "why": "Markets had expected export controls to reduce Nvidia's revenue from China, but chips are still flowing in, indicating the controls have limited effectiveness and that Nvidia's revenue expectations and geopolitical policy risks need to be reassessed.",
+        "chain": "The U.S. restricts AI chip exports to China → Nvidia's compliant chips continue to flow into China → The effectiveness of the controls is questioned → The U.S. may tighten restrictions → Uncertainty over Nvidia's revenue from China rises → Its share price becomes more sensitive to policy news；Meanwhile, China's access to computing power is constrained, and expectations for domestic substitution grow",
+        "notes": [
+          "Export controls are government restrictions on the sale of certain products to specific countries; the U.S. restricts sales of Nvidia's high-end AI chips to China to slow China's AI development.",
+          "Why chips can still flow in: they may be re-exported through third parties or gray-market channels, or Nvidia may introduce lower-specification chips that meet export control standards; all of these operate at the margins of compliance.",
+          "Greater uncertainty over Nvidia's revenue from China means analysts find it difficult to predict how much it will be able to sell to China in the future, so they assign a lower certainty premium in valuations.",
+          "Rising expectations for domestic substitution: if China cannot buy U.S. chips, it will accelerate efforts to support domestic chipmakers, and the share prices of the companies concerned may benefit.",
+          "Policy news has a major impact on Nvidia's share price because any tightening of controls could directly reduce its revenue, and the market will quickly reprice it."
         ]
       }
     }

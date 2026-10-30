@@ -22,6 +22,21 @@
           "为什么美元会走强？美国利率相对其他经济体上升，持有美元资产的利息回报更有吸引力，跨境资金买入美元，美元需求增加、汇率上行；反过来，新兴市场本币资产吸引力下降，资金有外流压力。",
           "鹰派与鸽派：鹰派更怕通胀失控，倾向加息、收紧货币；鸽派更怕失业和经济下行，倾向降息、放松货币。市场对这两派权重的判断，直接决定短端利率怎么走。"
         ]
+      },
+      "insight_en": {
+        "what": "U.S. CPI rose 0.4% month on month in August, while core CPI rose 0.2%. Inflation showed no sign of cooling, and the market is concerned that the Fed may be forced to raise interest rates.",
+        "why": "The market had been pricing in continued rate cuts by the Fed. These data shift expectations toward no cuts or even rate hikes, requiring short-dated U.S. Treasuries and the U.S. dollar to be repriced, with global bond yields moving higher in tandem.",
+        "chain": "CPI exceeds expectations → Inflation stickiness persists → Rate-cut expectations shift to rate-hike expectations → The 2-year U.S. Treasury yield rises → Short-dated U.S. Treasury prices fall → Global bond yields follow higher → Discount rates for highly valued growth stocks rise → Share prices come under pressure；The U.S. dollar strengthens due to interest rate differentials → Emerging-market currencies and foreign capital inflows come under pressure",
+        "notes": [
+          "CPI stands for Consumer Price Index. It measures changes in the prices of a basket of goods and services and is the indicator most commonly used by the market to assess inflation. Core CPI, which excludes food and energy, better reflects inflation stickiness because food and energy prices are volatile and easily affected by short-term factors.",
+          "Why do 2-year U.S. Treasuries react the most? The shorter a bond's maturity, the more closely its price tracks the market's expected path of policy rates over the next few years. The 2-year maturity roughly corresponds to the two-year interest rate path that the market is eager to price in, so when rate-hike expectations change, it moves first.",
+          "Yields and bond prices move in opposite directions: a bond's coupon payments are fixed, so when the market requires a higher yield before it is willing to buy, the only option is to lower the price, allowing buyers to purchase at a lower price so that the fixed future coupon payments correspond to a higher yield to maturity (YTM, the annualized return from holding the bond to maturity).",
+          "Why do global bond yields rise together? German government bonds and U.S. Treasuries can substitute for each other, and investors compare their relative returns after deducting currency hedging costs. Higher U.S. Treasury yields attract capital away from German government bonds, pushing their prices down and their yields up; the German 10-year government bond yield is therefore approaching its highest levels since 2009.",
+          "What is a discount rate? Converting money that will only be earned in the future into its value today requires discounting it at an interest rate. That interest rate is the discount rate, which is usually benchmarked to the risk-free rate (Rf, generally represented by government bond yields). When the discount rate rises, the present value of future cash flows falls.",
+          "Why are growth stocks hurt more? The bulk of growth stocks' profits lies far in the future, and the further away those profits are, the more heavily they are discounted. When interest rates rise, their valuations therefore shrink more noticeably than those of value stocks with stable cash flows.",
+          "Why does the U.S. dollar strengthen? When U.S. interest rates rise relative to those in other economies, the interest returns from holding U.S. dollar assets become more attractive. Cross-border capital buys U.S. dollars, increasing demand for the currency and pushing up its exchange rate; conversely, emerging-market local-currency assets become less attractive, creating capital outflow pressure.",
+          "Hawks and doves: hawks are more concerned about inflation getting out of control and favor raising interest rates and tightening monetary policy; doves are more concerned about unemployment and economic downturns and favor cutting interest rates and easing monetary policy. The market's assessment of the relative weight of these two camps directly determines how short-term interest rates move."
+        ]
       }
     }
   ],
@@ -44,6 +59,20 @@
           "为什么看长端美债：长端收益率大致等于未来短端利率预期加上期限溢价（term premium，即投资者持有长期债券所要求的额外补偿）。通胀不确定性和财政风险上升，期限溢价会扩大。",
           "加元为什么承压：加拿大对美出口占其经济比重很高，出口下滑意味着外汇收入减少、经济走弱预期上升，市场预期加拿大央行更可能降息，利差变得不利于加元。",
           "产能迁移是慢变量：建厂、认证、供应链重组往往需要数年，短期企业只能自己吸收成本或涨价，所以冲击先体现在利润率和价格上，而不是立刻看到产能转移。"
+        ]
+      },
+      "insight_en": {
+        "what": "The U.S.-Canada trade war continues, forcing the previously highly integrated cross-border automotive parts supply chain to restructure and squeezing parts manufacturers' profits.",
+        "why": "The market had assumed that costs in the North American automotive supply chain would remain stable. Tariffs have raised the cost of cross-border components, both pushing up U.S. auto-related inflation and prompting downward revisions to expectations for the Canadian dollar and related manufacturers' earnings.",
+        "chain": "The U.S. and Canada impose tariffs on each other → Cross-border component costs rise → Automakers' profits are squeezed → Production capacity is reshored or relocated to third countries → U.S. car prices rise → Overall inflationary pressures intensify → The Fed's room to cut rates is constrained → Long-term U.S. Treasury yields struggle to fall；Canadian exports weaken → The Canadian dollar comes under pressure",
+        "notes": [
+          "Why automotive supply chains cross borders: a component may be produced in one country and assembled in another, and complete vehicles cross borders multiple times. Tariffs are charged at each crossing, effectively charging the same supply chain repeatedly; the more integrated the chain, the greater the damage.",
+          "Who bears the tariffs? Nominally, importers pay them, but importers can pass them on to consumers through higher prices or push down the purchase prices paid to suppliers. The cost is ultimately shared among consumers, automakers, and parts suppliers, with those that have less bargaining power bearing more of it.",
+          "Why tariffs push up inflation: the transmission of higher import costs to retail prices constitutes cost-push inflation. Monetary policy cannot easily address this directly because rate hikes suppress demand, not the costs themselves.",
+          "Why this makes it harder for central banks to cut rates: rising inflation weakens the case for rate cuts. Even if the economy is slowing, central banks must weigh the risk of inflation expectations getting out of control, so rate cuts may be delayed and their size reduced.",
+          "Why focus on long-term U.S. Treasuries? Long-term yields are roughly equal to expected future short-term interest rates plus the term premium (term premium, i.e., the additional compensation investors require for holding long-term bonds). When inflation uncertainty and fiscal risks rise, the term premium widens.",
+          "Why the Canadian dollar comes under pressure: Canada's exports to the U.S. account for a large share of its economy. Falling exports mean lower foreign exchange earnings and growing expectations of economic weakness. The market expects the Bank of Canada to be more likely to cut rates, making interest rate differentials unfavorable to the Canadian dollar.",
+          "Relocating production capacity is a slow-moving process: building plants, obtaining certifications, and restructuring supply chains often take years. In the short term, companies can only absorb the costs themselves or raise prices, so the impact appears first in profit margins and prices rather than in an immediate relocation of capacity."
         ]
       }
     }
@@ -68,6 +97,21 @@
           "折旧与利润率的关系：服务器按若干年折旧摊销进成本，如果芯片迭代快、实际寿命短，会计上缩短折旧年限会直接抬高云业务的单位成本，压低利润率，这是资本开支能否转化为利润的关键变量。",
           "对竞争格局的含义：谁能拿到电力和芯片，谁就能接住AI需求，资本开支能力本身变成护城河，中小玩家更难追赶，行业集中度可能进一步上升。",
           "三倍这个数字要看基数和时间：到2032年是多年计划，市场会按年度投入节奏、融资方式和最终回报率分段定价，而不是一次性把三倍产能算进利润。"
+        ]
+      },
+      "insight_en": {
+        "what": "Microsoft plans to more than triple the scale of its data centers by 2032 to reduce customer attrition caused by computing capacity shortages.",
+        "why": "The market had been concerned that AI capital expenditure had peaked. This news confirms that the tech giants are continuing to ramp up investment, requiring upward revisions to expectations for computing capacity supply, power demand, and chip orders, as well as a reassessment of the timing of cloud providers' costs and returns.",
+        "chain": "Demand for computing capacity outstrips supply → Microsoft triples capacity → Capital expenditure rises sharply → Chip and server orders increase → Foundry and HBM capacity tightens → Advanced packaging and memory prices rise → Upstream suppliers' earnings estimates are revised upward → Share prices gain earnings support；Data center power consumption surges → Investment in power grids and power equipment rises → Power equipment companies' order forecasts are revised upward",
+        "notes": [
+          "What data centers are and why they are a computing capacity bottleneck: training and running inference on large models require massive amounts of parallel computing, which must take place in data centers that connect thousands or tens of thousands of chips. Insufficient chips, server space, or power can each create a shortage of computing capacity.",
+          "What capital expenditure means: money a company spends on long-term assets (plants, equipment, servers) is not charged in full to current-period expenses but is depreciated over several years. Therefore, capacity expansion depresses accounting profits and free cash flow in the current period, while the returns only become apparent several years later.",
+          "Why the chip supply chain benefits: data center expansion directly translates into orders for accelerator cards, servers, optical transceivers, and switches; these in turn require advanced-node foundry services, HBM, and advanced packaging. Limited capacity at these stages makes price increases more likely, with the upstream segments seeing the pricing upside first.",
+          "What HBM is: memory made by stacking multiple layers of memory chips and packaging them directly together with computing chips. Its bandwidth is far higher than that of conventional memory, making it a key component in AI training. Global supply is concentrated among a handful of manufacturers, so it is a typical supply-constrained segment.",
+          "Why power has become a new bottleneck: the power draw of a single AI rack is far higher than that of traditional servers, and data center site selection increasingly depends on grid capacity and electricity prices. Building power generation facilities, transformers, and transmission lines takes far longer than buying servers; if power supply cannot keep up, it will constrain the pace of expansion.",
+          "The relationship between depreciation and profit margins: server depreciation and amortization are recognized as costs over a number of years. If chip generations advance rapidly and their actual useful lives are short, shortening the depreciation period for accounting purposes directly raises unit costs in the cloud business and lowers profit margins. This is a key variable in whether capital expenditure can translate into profits.",
+          "Implications for the competitive landscape: whoever can secure power and chips can meet AI demand. Capital expenditure capacity itself becomes a moat, making it harder for small and midsize players to catch up and potentially further increasing industry concentration.",
+          "The threefold figure needs to be considered in terms of the starting base and the time frame: the plan runs for multiple years through 2032, and the market will price it in stages based on the annual pace of investment, financing methods, and the ultimate rate of return, rather than factoring all of the tripled capacity into profits at once."
         ]
       }
     }

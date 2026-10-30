@@ -22,16 +22,16 @@
         ]
       },
       "insight_en": {
-        "what": "Sources say the Bank of Japan will keep interest rates unchanged at its October meeting and hint that a rate hike as early as December is possible, or slightly raise its inflation forecast for fiscal 2027.",
-        "why": "The market had been pushing back the timing of a BOJ rate hike, and this signal puts a December hike back into pricing. Japanese short-end rates and JGB yields therefore face upward revision, and the yen exchange rate gains support.",
-        "chain": "Bank of Japan hints at a possible December rate hike → market prices in the hike timing earlier → Japanese short-end rates rise → JGB yields rise and JGB prices fall → attractiveness of yen assets increases → yen exchange rate strengthens → profit expectations of exporters are pressured lower",
+        "what": "Sources say the Bank of Japan will keep interest rates unchanged at its October meeting and signal a possible rate hike as early as December, and may slightly raise its inflation forecast for fiscal 2027.",
+        "why": "Markets had pushed back the expected timing of a Japanese rate hike, but this signal puts a December hike back into market pricing. Short-term yen interest rates and Japanese government bond yields therefore face upward repricing, while the yen exchange rate gains support.",
+        "chain": "Bank of Japan signals a possible December rate hike → Markets price in an earlier rate hike → Japanese short-term interest rates rise → Japanese government bond yields rise, Japanese government bond prices fall → Yen-denominated assets become more attractive → Yen exchange rate strengthens → Earnings expectations for exporters are lowered",
         "notes": [
-          "After ending negative interest rates, the Bank of Japan has long kept its policy rate at an extremely low level; any hint of a rate hike is a repricing of one of the world's lowest funding costs.",
-          "Why do short-end rates move first? The short end reflects expectations for the policy rate path over the next one to two years, so an earlier hike timing is first reflected at the short end.",
-          "Bond prices and yields move inversely: the market demands higher yields before it is willing to hold JGBs, so the price of outstanding JGBs falls.",
-          "A stronger yen erodes Japanese exporters' overseas profits when converted into yen, so export stocks and the yen exchange rate often move in opposite directions.",
-          "Japan is an important source of funding for global carry trades; higher yen interest rates raise the financing cost of trades such as borrowing yen to buy higher-yielding assets.",
-          "An upward revision to the fiscal 2027 inflation forecast means the Bank of Japan sees inflation as more persistent, providing a reason for a December rate hike."
+          "Since ending negative interest rates, the Bank of Japan has kept its policy rate extremely low for a prolonged period; any hint of a rate hike represents a repricing of one of the world's lowest funding costs.",
+          "Why do short-term interest rates move first? The short end reflects expectations for the policy rate path over the next year or two, so an earlier expected rate hike is reflected first at the short end.",
+          "Bond prices and yields move inversely: when markets require higher yields to hold Japanese government bonds, the prices of outstanding Japanese government bonds fall.",
+          "A stronger yen reduces Japanese exporters' overseas profits when translated into yen, so exporters' shares and the yen exchange rate often move in opposite directions.",
+          "Japan is a major source of funding for global carry trades, and higher yen interest rates increase the funding costs of trades such as borrowing yen to buy higher-yielding assets.",
+          "An upward revision to the fiscal 2027 inflation forecast means the Bank of Japan sees inflation as more persistent, providing a rationale for a December rate hike."
         ]
       }
     },
@@ -54,15 +54,15 @@
         ]
       },
       "insight_en": {
-        "what": "US defense stocks fell sharply as investors bet on a big Democratic election win, putting Trump's proposed $500 billion increase in military spending at risk.",
-        "why": "The market had already priced a large military spending expansion into defense companies' future orders and earnings; as election expectations shifted, this growth expectation was cut, and defense stocks needed to be revalued.",
-        "chain": "Polls show Democrats may win big → probability of Trump's $500 billion military spending increase passing falls → defense companies' future order expectations are cut → earnings forecasts are revised down → defense stock valuations come under pressure → capital flows out of the defense sector",
+        "what": "U.S. defense stocks plunged as investors bet on a landslide Democratic election victory, putting Trump's proposed $500 billion increase in military spending at risk.",
+        "why": "Markets had priced a large expansion in military spending into defense companies' future orders and earnings. The shift in election expectations has lowered these growth expectations, requiring defense stocks to be revalued.",
+        "chain": "Polls show Democrats may win a landslide → Probability of approval for Trump's $500 billion increase in military spending declines → Expectations for defense companies' future orders are lowered → Earnings forecasts are revised down → Defense stock valuations come under pressure → Funds flow out of the defense sector",
         "notes": [
-          "Defense stock valuations depend heavily on government budgets and order visibility; changes in fiscal expansion expectations directly rewrite earnings forecasts.",
-          "Why can election expectations affect stock prices? Because military spending authorization and appropriations are decided by Congress, and the party landscape determines whether the budget can be implemented.",
-          "Weaker support from both parties for high budgets means that even maintaining existing spending is more difficult; it is not just that the increment disappears, but that the existing stock is also under pressure.",
-          "This is an expectations trade rather than a realized fact; if the election result is the opposite of the bet, stock prices may correct in reverse.",
-          "The defense sector has weaker links to interest rates and exchange rates; it is mainly a repricing of fiscal and political risk premiums."
+          "Defense stock valuations depend heavily on government budgets and order visibility; changes in expectations for fiscal expansion directly alter earnings forecasts.",
+          "Why can election expectations affect stock prices? Congress decides on military spending authorization and appropriations, so the balance of power between parties determines whether budgets can be implemented.",
+          "Weakening support from both parties for large budgets means even maintaining current spending becomes more difficult: not only does incremental spending disappear, but existing spending also comes under pressure.",
+          "This is a trade based on expectations rather than an event that has already occurred; if the election outcome runs counter to these bets, stock prices could adjust in the opposite direction.",
+          "The defense sector has a relatively weak relationship with interest rates and exchange rates; this is primarily a repricing of fiscal and political risk premiums."
         ]
       }
     }
@@ -87,15 +87,15 @@
         ]
       },
       "insight_en": {
-        "what": "The US Army Contracting Command announced 21,450 contracts awarded in fiscal 2026, with a total value of $6.8 billion, higher than the previous year.",
-        "why": "This confirms that US Army procurement spending is still expanding, defense contractors' order visibility improves, and market expectations for defense sector revenue gain support.",
-        "chain": "Total Army procurement contract value rises → defense contractors' backlog increases → future revenue visibility improves → earnings forecasts are revised up → defense stocks gain support → upstream military supply chain benefits",
+        "what": "The U.S. Army Contracting Command announced that it awarded 21,450 contracts in fiscal 2026, with a total value of $6.8 billion, up from the previous year.",
+        "why": "This confirms that U.S. Army procurement spending continues to expand, with improved order visibility for defense contractors and support for market expectations for defense sector revenue.",
+        "chain": "Total value of Army procurement contracts rises → Defense contractors' order backlogs increase → Visibility of future revenue improves → Earnings forecasts are revised up → Defense stocks gain support → Upstream defense supply chain benefits",
         "notes": [
-          "Procurement contracts are a leading indicator of defense companies' revenue; there is usually a delivery cycle between contract award and revenue recognition.",
-          "Why focus on the total rather than individual contracts? Individual contracts are volatile, while the total better reflects procurement trends.",
-          "When Army procurement expansion is consistent with the overall direction of the defense budget, the support for sector valuation is stronger.",
-          "The contract amount is a ceiling rather than immediately received revenue; actual recognition depends on delivery progress and appropriations.",
-          "The upstream supply chain includes suppliers of components, materials, and electronic systems, and order transmission occurs sequentially."
+          "Procurement contracts are a leading indicator of defense companies' revenue, and there is usually a delivery lead time between contract award and revenue recognition.",
+          "Why focus on the total value rather than individual contracts? Individual contract values fluctuate substantially, while the total value better reflects procurement trends.",
+          "When Army procurement expansion is aligned with the direction of the overall defense budget, it provides stronger support for sector valuations.",
+          "Contract values are ceilings rather than revenue received immediately; actual revenue recognition depends on delivery progress and appropriations.",
+          "The upstream supply chain includes suppliers of components, materials, and electronic systems, and the transmission of orders occurs in stages."
         ]
       }
     }
@@ -120,15 +120,15 @@
         ]
       },
       "insight_en": {
-        "what": "The Trump administration banned US civilian government agencies from using products or services of Chinese AI startup DeepSeek.",
-        "why": "This changes market expectations for Chinese AI models entering the US public sector market and also strengthens the pricing of US-China AI supply chain decoupling; related computing power and cloud service procurement may shift to domestic suppliers.",
-        "chain": "US government bans DeepSeek → public sector AI procurement excludes Chinese models → domestic AI suppliers gain replacement demand → Chinese AI companies' overseas market space narrows → US-China AI supply chains are further decoupled → computing power and cloud service procurement tilts toward domestic suppliers",
+        "what": "The Trump administration has banned U.S. civilian government agencies from using products or services from Chinese AI startup DeepSeek.",
+        "why": "This changes market expectations for Chinese AI models' entry into the U.S. public-sector market and reinforces market pricing of a split between U.S. and Chinese AI supply chains, while related compute and cloud service procurement may shift to domestic suppliers.",
+        "chain": "U.S. government bans the use of DeepSeek → Public-sector AI procurement excludes Chinese models → Domestic AI suppliers benefit from substitution demand → Overseas market opportunities for Chinese AI companies narrow → U.S. and Chinese AI supply chains become further separated → Compute and cloud service procurement tilts toward domestic suppliers",
         "notes": [
-          "Government agency procurement bans have a demonstration effect, and private sector risk appetite may also tighten accordingly.",
-          "Why does this affect the computing power supply chain? Restrictions on the use of AI models change the flow of cloud services and chip procurement, creating regionalized supply chains.",
-          "For DeepSeek, losing the US public sector market directly affects revenue space and overseas expansion expectations.",
-          "Domestic replacement suppliers gain order transfers, but it takes time to pass compliance and procurement processes.",
-          "Such bans are policy risks that raise the compliance cost of cross-border AI cooperation."
+          "Government agency procurement bans have a demonstration effect; private-sector risk appetite may also decline as a result.",
+          "Why does this affect the compute supply chain? Restrictions on the use of AI models will redirect cloud service and chip procurement, creating regionalized supply chains.",
+          "For DeepSeek, losing access to the U.S. public-sector market directly affects its revenue potential and expectations for overseas expansion.",
+          "Domestic alternative suppliers benefit from redirected orders, but need time to go through compliance and procurement processes.",
+          "Such bans constitute policy risk and will increase the compliance costs of cross-border AI cooperation."
         ]
       }
     },
@@ -152,16 +152,16 @@
         ]
       },
       "insight_en": {
-        "what": "Chip startup Tenstorrent completed $1.5 billion in financing at a valuation of about $6.2 billion; CEO Jim Keller said the funds will be used to advance AI chips.",
-        "why": "This adds a competitor challenging Nvidia in the AI chip race, affects market expectations for the computing power supply landscape and Big Tech capital expenditure, and requires a reassessment of competitive positioning in AI chips.",
-        "chain": "Tenstorrent obtains large financing → AI chip competitors increase → sources of computing power supply diversify → Nvidia's monopoly premium faces long-term pressure → Big Tech capital expenditure may be spread across multiple suppliers → the AI chip industry cost curve shifts down",
+        "what": "Chip startup Tenstorrent has completed a $1.5 billion funding round at a valuation of about $6.2 billion, and CEO Jim Keller says the funds will be used to advance AI chip development.",
+        "why": "This adds a competitor challenging Nvidia to the AI chip market, affecting market expectations for the compute supply landscape and tech giants' capital expenditure and requiring a reassessment of competitive positioning in AI chips.",
+        "chain": "Tenstorrent secures substantial funding → Number of AI chip competitors increases → Sources of compute supply diversify → Nvidia's monopoly premium faces long-term pressure → Tech giants may spread capital expenditure across multiple suppliers → AI chip industry's cost curve shifts downward",
         "notes": [
-          "The AI chip market is currently highly concentrated; a new entrant obtaining large financing means the long-term supply landscape may change.",
-          "Why focus on the valuation? The $6.2 billion valuation reflects the primary market's pricing of its technology route and order prospects.",
-          "Diversification of computing power supply helps lower chip procurement costs and changes the industry cost curve.",
-          "If Big Tech capital expenditure is spread across multiple suppliers, the pricing power of any single supplier will be weakened.",
-          "For startups, the cycle from financing to mass production and delivery is long; the short-term impact on Nvidia's position is limited and is more about long-term competition expectations.",
-          "Jim Keller is a well-known chip architect, and his involvement increases the market's technical credibility for the company."
+          "The AI chip market is currently highly concentrated; substantial funding for a new entrant means the long-term supply landscape could change.",
+          "Why focus on valuation? The $6.2 billion valuation reflects the primary market's pricing of its technological approach and order prospects.",
+          "Diversifying compute supply helps lower chip procurement costs, changing the industry's cost curve.",
+          "If tech giants spread capital expenditure across multiple suppliers, any single supplier's pricing power will weaken.",
+          "Startups face a long cycle from financing to mass-production delivery, so the near-term impact on Nvidia's position is limited; the implications are more about expectations for long-term competition.",
+          "Jim Keller is a well-known chip architect, and his involvement enhances the company's technical credibility in the market."
         ]
       }
     }

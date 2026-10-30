@@ -23,6 +23,20 @@
           "为什么市场关注订单归属？晶圆厂建一座先进制程工厂动辄百亿美元级资本开支，订单归属直接决定产能利用率和折旧摊薄，进而影响毛利率。",
           "混搭模式如果成立，说明什么？说明AI芯片客户开始主动分散供应风险，不再把全部算力命脉押在单一地区或单一厂商上，这会改变整个供应链的议价结构。"
         ]
+      },
+      "insight_en": {
+        "what": "There are reports that Musk's AI project is adopting a hybrid approach to compute chips: Intel provides its advanced 14A process for front-end fabrication, while TSMC handles back-end packaging and yield management.",
+        "why": "This changes market expectations about where advanced-process orders will go: the market had originally bet on a single foundry handling all AI compute orders, but orders are now being split, and both the commercial credibility of Intel's advanced process technology and the value of TSMC's packaging services are being repriced.",
+        "chain": "AI compute demand surges → Capacity at a single foundry comes under strain → Customers split orders to reduce dependence → Intel's 14A process secures front-end orders → Intel's credibility in advanced process technology is restored → TSMC's packaging and operational capabilities are priced separately → The order mix for semiconductor equipment and materials suppliers changes",
+        "notes": [
+          "What is advanced process technology? In chip manufacturing, the smaller the minimum transistor size, the more transistors can fit into the same area, resulting in greater computing power and lower power consumption. 14A refers to a 1.4-nanometer-class process node; the smaller the number, the more advanced the technology.",
+          "What do the front end and back end refer to? The front end involves etching circuits onto wafers and determines the upper limit of chip performance; the back end involves packaging, testing, and yield ramp-up and determines whether large-scale production is possible and costs can be kept under control.",
+          "Why is Intel handling only the front end a compromise? Intel's weakest areas in recent years have been fab operations and yields. Handing the back end to TSMC effectively acknowledges that Intel cannot address these shortcomings in the near term, but at least it preserves its access to advanced-process orders.",
+          "Why is this not necessarily bearish for TSMC? Even if Intel takes a share of front-end orders, TSMC still handles packaging and yield management, so the value it captures per chip may not decline.",
+          "What is yield? The proportion of chips produced from a wafer that meet specifications. When yields are low, unit costs are high, and customers are reluctant to place large orders.",
+          "Why does the market focus on where orders go? For a foundry, building an advanced-process fab can easily require capital expenditure on the order of $10 billion. Order allocation directly determines capacity utilization and the extent to which depreciation costs are spread over output, which in turn affects gross margins.",
+          "What would it mean if the hybrid model works? It would mean that AI chip customers are beginning to actively diversify supply risks, no longer putting all their critical computing capacity in the hands of a single region or supplier. This would change the balance of bargaining power across the entire supply chain."
+        ]
       }
     }
   ],

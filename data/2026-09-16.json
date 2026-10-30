@@ -21,6 +21,20 @@
           "为什么消费和地产股受伤？按揭利率跟随市场利率上行，居民月供负担加重、可支配支出减少，地产成交和零售销售都会放缓。",
           "注意：通胀数据本身不等于加息，它改变的是市场对央行下一步动作的概率分布，资产价格反映的是这个概率变化。"
         ]
+      },
+      "insight_en": {
+        "what": "UK CPI rose 3.1% year on year in August, marking a five-month high and exceeding the central bank's 2.8% forecast; the release came just hours before the central bank's interest rate decision.",
+        "why": "Markets had expected inflation to fall back toward the 2% target, allowing the central bank to pivot to rate cuts. These data overturned that expectation, increasing the likelihood of rate hikes or interest rates staying high for longer and prompting a repricing of short-end sterling interest rates and UK gilts.",
+        "chain": "Petrol prices push up inflation → Inflation exceeds the central bank's forecast → Markets scale back rate-cut expectations → UK 2-year gilt yields rise → Sterling strengthens → UK mortgage rates struggle to fall → UK consumer and property stocks come under pressure",
+        "notes": [
+          "CPI (Consumer Price Index) measures changes in the prices of a basket of goods and services consumed by households and is the indicator most commonly used by central banks to assess inflation.",
+          "Why do 2-year gilts react first? They reflect market expectations for the policy rate path over the next two years and are the most sensitive to changes in the central bank's stance.",
+          "Bond prices and yields move inversely: when yields rise, the prices of outstanding bonds fall; when yields fall, the prices of outstanding bonds rise.",
+          "The Bank of England has a 2% inflation target. When inflation is above target, the central bank tends to hold or even raise interest rates; this is the so-called 'hawkish' bias.",
+          "Why sterling strengthens: higher interest rate expectations attract international capital into sterling-denominated assets, and increased demand for sterling pushes up the exchange rate.",
+          "Why are consumer and property stocks hurt? Mortgage rates rise along with market interest rates, increasing households' monthly repayment burdens and leaving less money available to spend, so both property transactions and retail sales slow.",
+          "Note: inflation data in themselves do not mean a rate hike. They change the market's probability distribution for the central bank's next move, and asset prices reflect this change in probabilities."
+        ]
       }
     },
     {
@@ -40,6 +54,19 @@
           "供应链成本上升对制造业利润的传导：投入成本涨，但终端提价能力有限，毛利率被压缩。",
           "对美联储的含义：如果通胀下降变慢，降息时间表就要往后推，市场对利率路径的预期随之调整。",
           "这里的资产联动：美债收益率上行、美元偏强、对利率敏感的成长股承压，而能源和部分大宗商品价格获得支撑。"
+        ]
+      },
+      "insight_en": {
+        "what": "US manufacturing is facing a new round of supply-chain cost inflation, with Trump's military action against Iran and tariffs pushing up input prices, while the AI boom is also squeezing supplies of some components.",
+        "why": "Markets had expected supply-chain pressures to ease and inflation to continue falling. This combination could cause 'cost-push inflation' to resurface, supporting US Treasury yields and the US dollar while squeezing profits in manufacturing industries that rely on imported components.",
+        "chain": "Military action against Iran pushes up oil prices → Tariffs raise the cost of imported raw materials → AI demand diverts supplies of components such as chips → Manufacturing input prices rise → Businesses pass on costs, pushing up goods prices → Disinflation slows → Expectations of Federal Reserve rate cuts decline → US Treasury yields rise",
+        "notes": [
+          "Cost-push inflation: inflation driven not by excessively strong demand but by rising production costs such as raw materials, transportation and tariffs, which businesses pass on to consumers.",
+          "Why do tariffs push up inflation? After paying tariffs, importers either absorb the costs themselves, squeezing profits, or raise prices for downstream buyers, with some of the costs ultimately reflected in retail prices.",
+          "Why does the AI boom squeeze component supplies? Data centers purchase large quantities of chips, memory and power equipment, causing supplies of these components to be allocated preferentially to high-priced AI orders and making them harder and more expensive for other manufacturers to obtain.",
+          "The transmission of rising supply-chain costs to manufacturers' profits: input costs rise, but the ability to raise end-product prices is limited, squeezing gross margins.",
+          "Implications for the Federal Reserve: if inflation falls more slowly, the rate-cut timetable must be pushed back, and market expectations for the interest rate path adjust accordingly.",
+          "The asset-price linkages here: US Treasury yields rise, the dollar tends to strengthen, and interest-rate-sensitive growth stocks come under pressure, while energy and some commodity prices receive support."
         ]
       }
     }
@@ -63,6 +90,19 @@
           "财政扩张对美元的影响：短期可能因加息预期支撑美元，但中长期赤字扩大可能削弱美元信用，方向取决于市场更关注哪一端。",
           "地缘冲突的资产含义：能源价格获支撑、避险资产如黄金和美债短期受追捧，但财政成本上升又会推高收益率，两个力量相互拉扯。"
         ]
+      },
+      "insight_en": {
+        "what": "The US Congressional Budget Office estimates that military action against Iran has already cost about $38 billion and used up two-thirds of US missile interceptors.",
+        "why": "Markets had not fully priced in the fiscal cost and depletion of military stockpiles associated with this conflict. This figure implies that the US fiscal deficit could widen further and Treasury supply could increase, while also supporting demand to replenish defense inventories.",
+        "chain": "Military action against Iran costs $38 billion → Federal fiscal spending increases → The fiscal deficit widens → Treasury issuance rises → Increased Treasury supply pushes down prices → Treasury yields rise → Defense companies receive restocking orders → Earnings expectations for the defense sector improve",
+        "notes": [
+          "Fiscal deficit: the amount by which government spending exceeds revenue in a year, which must be financed by issuing government bonds.",
+          "Why does increased government bond issuance push down prices? As bond supply increases, buyers require higher yields to be willing to hold them, causing prices to fall.",
+          "The rise in Treasury yields is transmitted throughout the economy: interest rates on business loans, mortgages and credit cards all rise in tandem, curbing consumption and investment.",
+          "What it means to use up two-thirds of missile interceptors: inventories fall sharply, and the Pentagon needs to place new orders with defense companies to replenish them, directly benefiting missile manufacturers.",
+          "The impact of fiscal expansion on the dollar: in the short term, rate-hike expectations may support the dollar, but over the medium to long term, a widening deficit may undermine the dollar's credibility. The direction depends on which side markets focus on more.",
+          "Asset implications of geopolitical conflict: energy prices receive support, and safe-haven assets such as gold and US Treasuries are sought after in the short term, but rising fiscal costs also push up yields, with the two forces pulling in opposite directions."
+        ]
       }
     },
     {
@@ -82,6 +122,19 @@
           "外资买国债意味着什么：需求增加推高国债价格、压低收益率，加拿大政府的融资成本下降。",
           "资源类项目为什么吸引外资：加拿大有石油、天然气、关键矿产，在全球能源转型和供应链安全背景下具有战略价值。",
           "这条新闻的传导速度较慢：招商计划从签约到资金落地通常需要数年，对短期汇率的直接影响有限，更多是中期预期变化。"
+        ]
+      },
+      "insight_en": {
+        "what": "Canada has launched a C$1 trillion global drive to attract investment, unveiled more than 160 projects, and turned to the EU for investment amid its trade war with the US.",
+        "why": "Markets had viewed Canada as a resource-based economy dependent on the US. This shift implies that capital flows could be reallocated, with the Canadian dollar, Canadian government bonds and resource-related assets affected by cross-border capital flows.",
+        "chain": "The Canada-US trade war continues → Canadian exports come under pressure → The government launches a trillion-dollar drive to attract investment → Sovereign wealth funds from Europe and the Middle East are attracted → Foreign capital flows into Canadian resource and infrastructure projects → Demand for the Canadian dollar increases → The Canadian dollar exchange rate receives support → Foreign investors increase their holdings of Canadian government bonds",
+        "notes": [
+          "Sovereign wealth funds: long-term investment funds established using FX reserves by countries such as Norway, the UAE and Saudi Arabia. They are vast in size, and their allocation choices can affect a country's capital inflows.",
+          "Why is Canada turning to the EU? The trade war with the US has exposed Canadian exports to the US to tariff barriers, making it necessary to find alternative markets and funding sources and reduce dependence on a single market.",
+          "The impact of capital inflows on exchange rates: foreign investors must first convert their funds into Canadian dollars to buy Canadian assets, increasing demand for the Canadian dollar and strengthening the exchange rate.",
+          "What foreign purchases of government bonds mean: increased demand pushes up government bond prices and lowers yields, reducing the Canadian government's financing costs.",
+          "Why resource projects attract foreign investment: Canada has oil, natural gas and critical minerals, which have strategic value in the context of the global energy transition and supply-chain security.",
+          "The transmission process for this news is relatively slow: investment attraction plans typically take several years from signing agreements to funds being deployed, so the direct impact on the exchange rate in the short term is limited, with the effect mainly taking the form of changes in medium-term expectations."
         ]
       }
     }
@@ -105,6 +158,19 @@
           "这条新闻属于'预期管理'：它不直接改变任何财务数字，但改变了市场对Meta未来AI投入节奏的判断。",
           "对比风险：如果监管最终强制要求放缓，或独立评估发现重大安全问题，需求预期可能反转，所以这是条件性的判断。"
         ]
+      },
+      "insight_en": {
+        "what": "Meta CEO Zuckerberg said AI labs should rely on independent evaluation organizations rather than slow the pace of AI research and development because of regulatory pressure.",
+        "why": "Markets had been concerned that tighter AI regulation would slow the tech giants' R&D and reduce returns on capital expenditure. This statement suggests that Meta may continue its heavy AI investment, leaving expectations for compute demand and chip purchases unchanged.",
+        "chain": "Zuckerberg advocates independent evaluation rather than a slowdown → Meta maintains intensive AI R&D → Data center and compute procurement does not slow → Order expectations for chips from Nvidia and others remain stable → AI infrastructure capital expenditure remains high → Demand for power and cooling equipment rises in tandem",
+        "notes": [
+          "Independent evaluation organizations: third parties, rather than the companies themselves, test AI models for safety, bias and risks, serving a role equivalent to an external audit.",
+          "Why does this matter to markets? If major AI labs voluntarily slow down because of regulatory pressure, compute demand will fall, requiring downward revisions to revenue expectations for chips and cloud services. Zuckerberg's statement that he will not slow down amounts to demand-side confirmation for the compute supply chain.",
+          "Capital expenditure: long-term spending by businesses to purchase equipment and build data centers. AI capital expenditure by Meta, Microsoft and Google is a core source of revenue for chipmakers such as Nvidia.",
+          "The transmission chain for compute demand: the larger the AI model, the more GPUs are needed for training and inference, and GPU purchases drive the entire chain of chips, servers, power and cooling.",
+          "This news is a form of 'expectations management': it does not directly change any financial figures, but it changes the market's assessment of the pace of Meta's future AI investment.",
+          "Countervailing risks: if regulators ultimately mandate a slowdown, or independent evaluations reveal major safety issues, demand expectations could reverse, so this assessment is conditional."
+        ]
       }
     },
     {
@@ -124,6 +190,19 @@
           "半导体出口对韩元的意义：韩国出口中半导体占比高，芯片出口收入增加意味着外汇流入增加，韩元获得支撑。",
           "AI基础设施投资包括什么：数据中心、GPU集群、电力和冷却系统，这些都需要大量资本开支，带动相关设备需求。",
           "这条新闻的传导周期：从政府表态到实际投资落地需要时间，对芯片股的短期影响更多是情绪和预期层面，中期才反映在订单和产能上。"
+        ]
+      },
+      "insight_en": {
+        "what": "South Korea's deputy prime minister said the country cannot afford to slow AI progress and must continue to advance artificial intelligence rapidly.",
+        "why": "Markets had been concerned that AI chip export controls and geopolitical friction would slow South Korea's AI industry. This statement implies that South Korea will continue to expand compute investment, supporting demand for memory chips, AI servers and power.",
+        "chain": "The South Korean government states that it will not slow AI development → Investment in compute infrastructure increases → Samsung and SK Hynix expand HBM memory chip production capacity → HBM supply increases but demand grows even stronger → Memory chip prices receive support → South Korean semiconductor export revenue rises → The won exchange rate receives fundamental support",
+        "notes": [
+          "HBM (high-bandwidth memory chips): high-speed memory specifically designed to accompany AI GPUs. Nvidia's AI chips must be paired with HBM, making it a key link in the AI compute supply chain.",
+          "Why does South Korea matter? Samsung and SK Hynix together account for most of the global memory chip market, and HBM production capacity is mainly concentrated in South Korea, so the pace of South Korean AI investment directly affects global AI chip supply.",
+          "The impact of export controls: the US restricts exports of advanced chips to China, and South Korean companies need to balance compliance and market share. The government's statement that it will not slow down implies that it will seek alternative markets and new directions for capacity expansion.",
+          "The significance of semiconductor exports for the won: semiconductors account for a large share of South Korea's exports, so increased chip export revenue means greater FX inflows, supporting the won.",
+          "What AI infrastructure investment includes: data centers, GPU clusters, and power and cooling systems, all of which require substantial capital expenditure and drive demand for related equipment.",
+          "The transmission cycle for this news: it takes time for government statements to translate into actual investment. The short-term impact on chip stocks is more about sentiment and expectations, and it is only in the medium term that it is reflected in orders and capacity."
         ]
       }
     }

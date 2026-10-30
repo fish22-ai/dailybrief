@@ -1,61 +1,120 @@
 {
   "date": "2026-10-25",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
-      "title": "泽连斯基：不会为结束冲突放弃更多领土",
+      "title": "标普出台新规，3750亿美元基金将受影响",
       "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3185162",
-      "published": "2026-10-25 08:38",
-      "raw_summary": "据乌克兰通讯社24日报道，乌总统泽连斯基23日接受美国广播公司采访时称，乌克兰准备尽快结束同俄罗斯的军事冲突，但不会为了结束冲突而放弃更多领土。泽连斯基表示，乌方愿为停火达成协议，但拒绝接受关于放弃25%领土的提议。他说，俄军目前实际控制了乌方约19.3%的领土。放弃25%领土意味着乌克兰要放弃顿巴斯未被占领的区域，乌方对此绝不接受。（新华国际）",
-      "insight": {}
+      "url": "https://wallstreetcn.com/livenews/3185168",
+      "published": "2026-10-25 09:41",
+      "raw_summary": "据外媒10月24日报道，美国标普道琼斯指数公司出台新规，调整成长股和价值股的划分规则。新规将把无形资产、预期盈利、自由现金流纳入价值股评估因素；成长股评估标准不再参考个股过去12个月的上涨势头。新规将在当地时间12月21日美股开盘前生效。跟踪指数的基金需要相应调仓，约3750亿美元被动基金将受到影响。研究人员和基金经理认为，价值股长期表现低迷，部分原因在于现有衡量标准存在缺陷。（央视财经）",
+      "insight": {
+        "what": "标普调整成长股和价值股划分，12月21日生效，影响约3750亿美元按指数投资的基金。",
+        "why": "原本按旧分类配置的资金需要调整目标持仓，重估来自规则驱动的买卖，而非企业盈利变化；成分或权重改变的股票最敏感。",
+        "chain": "股票分类规则改变 → 指数成分与权重重算 → 跟踪基金调整目标持仓 → 需增配股票产生买入需求 → 买单消耗现有卖盘 → 若卖盘补充不足，增配股票价格才受推升",
+        "notes": [
+          "指数（index）是按规则选出的一组股票，并规定每只股票占组合的比例，这个比例就是权重。指数基金以跟随这一组合的表现为目标，因此分类规则改变后，需要按新的股票名单和比例调整持仓，而不是由基金经理重新判断公司好坏。",
+          "成长股（growth stocks）分类侧重收入或利润的增长，价值股（value stocks）分类侧重股价相对企业基本面是否便宜。两者是不同的选股标准，不代表成长股一定贵、价值股一定值得买，也不能据此预先确定哪些公司会被调入或调出。",
+          "为什么纳入无形资产？无形资产（intangible assets）包括专利、软件等没有实物形态的资源，部分内部研发形成的资源不会完整体现在账面资产中。把它们纳入评估，会改变一些公司的相对便宜程度，但不等于科技公司都会被划为价值股。",
+          "新增指标分别看什么？预期盈利是对未来利润的估计，不是已经赚到的钱；自由现金流（free cash flow）通常指经营产生的现金扣除设备、软件等长期投资后剩余的部分。新规增加了对未来赚钱能力和现金创造能力的考察，不能简单理解为只按账面资产选价值股。",
+          "成长股分类不再参考过去12个月涨幅，意味着最近上涨本身不再贡献这一项分类得分。它不等于所有近期上涨的股票都会被卖出，因为最终归属还取决于其他指标及完整计算规则。",
+          "3750亿美元是受规则影响的基金规模，不是新增流入，也不是全部都要交易。实际买卖取决于新旧权重差、基金规模以及投资者存入或取出的资金；同一只股票在成长组合被减持、在价值组合被增持，两边需求还可能抵消。",
+          "买入为什么能推高价格？原价愿意卖出的股票数量有限，买单消耗这部分供给后，剩余买单需要接受更高价格才能成交。被减配股票的机制相反；价格影响大小取决于净买卖需求相对日常成交量有多大，而不只是基金总规模有多大。",
+          "12月21日是规则生效日，不是市场才开始反应的日子。基金会提前准备，其他交易者也会预先买卖，相关预期可能已经进入价格。因此，这是一条资金重新分配的线索，不是“调入必涨、调出必跌”的交易保证。"
+        ]
+      },
+      "insight_en": {
+        "what": "S&P is revising its classification of growth and value stocks, effective December 21, affecting approximately $375 billion in index-based funds.",
+        "why": "Funds invested according to the old classification need to adjust their target holdings; repricing comes from rule-driven buying and selling rather than changes in corporate earnings. Stocks whose index membership or weights change are the most sensitive.",
+        "chain": "Stock classification rules change → Index constituents and weights are recalculated → Tracking funds adjust their target holdings → Stocks requiring increased allocations generate buying demand → Buy orders consume existing sell orders → Only if sell orders are not sufficiently replenished are the prices of stocks receiving increased allocations pushed higher",
+        "notes": [
+          "An index is a group of stocks selected according to rules that also specify the proportion of the portfolio assigned to each stock; this proportion is its weight. Index funds aim to track the performance of this portfolio, so after the classification rules change, they need to adjust their holdings to the new stock list and proportions, rather than having fund managers reassess whether companies are good or bad.",
+          "The classification of growth stocks focuses on revenue or earnings growth, while the classification of value stocks focuses on whether share prices are cheap relative to corporate fundamentals. These are different stock selection criteria; they do not mean that growth stocks are necessarily expensive or that value stocks are necessarily worth buying, nor can they determine in advance which companies will be added or removed.",
+          "Why include intangible assets? Intangible assets include resources without physical form, such as patents and software, and some resources created through internal research and development are not fully reflected in book assets. Including them in the assessment changes how cheap some companies appear relative to others, but does not mean that all technology companies will be classified as value stocks.",
+          "What does each new metric measure? Expected earnings are estimates of future profits, not money already earned; free cash flow generally refers to the cash remaining from operations after deducting long-term investments in equipment, software, and similar assets. The new rules add an assessment of future earnings capacity and cash generation capacity; they cannot simply be understood as selecting value stocks solely on the basis of book assets.",
+          "The growth stock classification no longer considers price gains over the past 12 months, meaning that recent price increases themselves no longer contribute to this component of the classification score. This does not mean that all stocks that have recently risen will be sold, because their final classification still depends on other metrics and the complete calculation rules.",
+          "The $375 billion is the size of the funds affected by the rules, not new inflows, and not all of it needs to be traded. Actual buying and selling depend on differences between old and new weights, fund size, and investor subscriptions or redemptions; when holdings of the same stock are reduced in a growth portfolio and increased in a value portfolio, trading demand on the two sides may also offset.",
+          "Why can buying push prices higher? The number of shares available for sale at the original price is limited. After buy orders consume this supply, the remaining buy orders need to accept higher prices to be executed. The mechanism is the opposite for stocks whose allocations are reduced; the size of the price impact depends on net buying or selling demand relative to normal trading volume, not just the total size of the funds.",
+          "December 21 is the effective date of the rules, not the day the market begins to react. Funds prepare in advance, other traders also buy and sell ahead of time, and the relevant expectations may already be reflected in prices. This is therefore a clue about capital reallocation, not a trading guarantee that “inclusion means a rise and removal means a fall.”"
+        ]
+      }
     },
     {
-      "title": "高盛将韩国Kospi指数12个月目标价下调25%，因对人工智能交易担忧加剧",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3185194",
-      "published": "2026-10-25 16:49",
-      "raw_summary": "随着市场对人工智能交易的担忧加剧，高盛集团策略师将韩国Kospi指数的目标位下调25%。这是该行今年多次上调目标后的首次大幅下调。Timothy Moe等分析师把该指数未来12个月的目标位从12,000点下调至9,000点，理由是基准指数较6月高点下跌逾35%后，需要采用更为保守的估值假设。策略师认为，这轮抛售已令韩国股票处于严重低估状态，调整后的目标仍意味着该指数较当前水平有逾60%的上涨空间。",
-      "insight": {}
+      "title": "French government and corporate bond yields are converging",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/473c0e0b-d4f7-449c-9192-648b82077222?syn-25a6b1a6=1",
+      "published": "2026-10-24 17:30",
+      "raw_summary": "Some companies’ bonds now yield less than government bonds",
+      "insight": {
+        "what": "法国国债与公司债收益率趋近，部分公司的债券收益率已低于法国国债。",
+        "why": "这挑战了“本国国债总应比企业债收益率低”的习惯判断。法国国债与公司债需要按各自偿债来源和交易条件定价，不能套用固定的风险排序。",
+        "chain": "部分公司债收益率低于国债 → 国债定价对应更高折现率 discount rate → 未来本息折算时折扣更大 → 同额收款的今天价值更低 → 买方为同等本息出价更低 → 若期限及本息安排相同，国债价格低于这些公司债",
+        "notes": [
+          "收益率不是债券每年支付的固定利息。常见口径是到期收益率（yield to maturity，YTM）：根据当前买入价格和约定的未来本息，计算出的年化回报尺度。它以本息按约支付为前提，不保证投资者实际获得这一回报；提前卖出、利息再投资条件变化或发行人无法偿债，都会改变结果。",
+          "折现率（discount rate）是把未来收款换算为今天价值时采用的回报门槛。买方要求的回报越高，为同一组未来本息愿意支付的价格就越低。因此，对本息安排不变的债券，收益率上升对应价格下跌；两者是同一报价的不同表达，不是必须先后发生的两个事件。",
+          "为什么必须强调可比条件？币种、到期时间、提前还款条款、买卖便利程度以及违约后的受偿顺序，都会影响收益率。要进一步比较债券价格，还须控制各期本息金额。摘要没有提供这些细节，所以链条展示的是同等收款条件下的定价关系，不能直接用两只不同债券的价格验证。",
+          "利差（yield spread）是两只债券收益率的差。公司债相对法国国债的利差为负，只说明它的报价收益率较低，不说明公司不存在无法按时还债的风险，也不能仅凭这一点认定公司比国家更安全。",
+          "国家和企业为什么可以有不同的风险？法国政府主要依靠税收偿债，跨国企业则可以从多个国家取得收入，因此企业的偿债来源并不完全依附法国财政。政府财政压力增加、企业财务改善或债券供求变化，都可以改变两者的相对定价；摘要没有确认本次变化由哪一项主导。",
+          "法国国债不能无条件等同于无风险利率（risk-free rate，Rf）。无风险利率是定价时采用的低风险基础回报参照，而法国国债仍包含本国财政和市场交易条件的影响。法国使用欧元，但不能单方面决定欧元发行；共同货币不意味着各成员国政府债券风险相同。",
+          "面试追问时，先问究竟是谁在动。收益率趋近可以来自国债收益率上升，也可以来自公司债收益率下降，或两者共同变化。前者对应国债跌价，后者对应公司债涨价；没有具体期限和时间序列，不能把标题直接复述成“法国国债遭到抛售”，更不能据此预测倒挂一定会消失。"
+        ]
+      },
+      "insight_en": {
+        "what": "French government bond and corporate bond yields are converging, with some companies' bond yields already below those of French government bonds.",
+        "why": "This challenges the conventional assumption that domestic government bonds should always yield less than corporate bonds. French government bonds and corporate bonds need to be priced according to their respective sources of debt repayment and trading conditions, rather than a fixed risk ranking.",
+        "chain": "Some corporate bond yields are below government bond yields → Government bond pricing corresponds to a higher discount rate → Future principal and interest payments are discounted more heavily → The same payments have a lower present value → Buyers bid less for the same principal and interest → If maturities and principal and interest payment schedules are identical, government bond prices are lower than those of these corporate bonds",
+        "notes": [
+          "Yield is not the fixed interest a bond pays each year. A common measure is yield to maturity (YTM): an annualized measure of return calculated from the current purchase price and the agreed future principal and interest payments. It assumes that principal and interest are paid as agreed and does not guarantee that investors will actually earn this return; selling before maturity, changes in interest reinvestment conditions, or the issuer's inability to repay debt will all change the outcome.",
+          "The discount rate is the required rate of return used to convert future payments into their present value. The higher the return buyers require, the lower the price they are willing to pay for the same set of future principal and interest payments. Therefore, for a bond with an unchanged principal and interest payment schedule, a rise in yield corresponds to a fall in price; these are two different ways of expressing the same quote, not two events that must occur in sequence.",
+          "Why must comparable conditions be emphasized? Currency, maturity, early redemption provisions, ease of buying and selling, and repayment priority after default all affect yields. To compare bond prices further, the principal and interest amounts in each period must also be held constant. The summary does not provide these details, so the chain illustrates the pricing relationship under identical payment conditions and cannot be verified directly using the prices of two different bonds.",
+          "A yield spread is the difference between the yields of two bonds. A negative spread on a corporate bond relative to French government bonds only indicates that its quoted yield is lower; it does not mean that the company faces no risk of failing to repay debt on time, nor is this alone sufficient to conclude that the company is safer than the state.",
+          "Why can states and companies have different risks? The French government relies primarily on tax revenue to repay debt, while multinational companies can earn revenue from multiple countries, so their sources of debt repayment are not entirely tied to France's public finances. Greater fiscal pressure on the government, improvements in corporate finances, or changes in bond supply and demand can all alter their relative pricing; the summary does not confirm which factor is driving this change.",
+          "French government bonds cannot unconditionally be equated with the risk-free rate (Rf). The risk-free rate is a low-risk reference for the base return used in pricing, while French government bonds still reflect the effects of the country's public finances and market trading conditions. France uses the euro but cannot unilaterally decide on euro issuance; a common currency does not mean that all member states' government bonds carry the same risk.",
+          "When answering follow-up questions in an interview, first ask which yield is actually moving. Yield convergence can result from rising government bond yields, falling corporate bond yields, or changes in both. The former corresponds to falling government bond prices, while the latter corresponds to rising corporate bond prices; without specific maturities and time series, the headline cannot simply be restated as “French government bonds are being sold off,” much less used to predict that the inversion will necessarily disappear."
+        ]
+      }
     }
   ],
   "policy": [
     {
-      "title": "Trump hails tariffs for new US$4.2 billion Audi plant in Georgia",
+      "title": "Gulf economies accelerate diversification as recession looms over Iran war",
       "source": "SCMP",
-      "url": "https://www.scmp.com/news/world/united-states-canada/article/3372051/trump-hails-tariffs-new-us42-billion-audi-plant-georgia",
-      "published": "2026-10-25 12:44",
-      "raw_summary": "President Donald Trump defended his decision to wield tariffs during a campaign rally in Georgia, saying they have made the US richer, as he announced that Volkswagen agreed to build a new US$4.2 bill",
-      "insight": {}
-    },
-    {
-      "title": "Saudi Arabia looks to US for an AI edge as Yemen's Houthis up pressure",
-      "source": "DW",
-      "url": "https://www.dw.com/en/saudi-arabia-looks-to-us-for-an-ai-edge-as-yemen-s-houthis-up-pressure/a-79735138?maca=en-rss-en-world-4025-rdf",
-      "published": "2026-10-25 17:13",
-      "raw_summary": "The US is helping Saudi Arabia fight the Houthi group in Yemen with AI-assisted targeting. But AI is not a magic bullet, experts say, and there are technological, political and human rights issues to ",
-      "insight": {}
+      "url": "https://www.scmp.com/week-asia/economics/article/3371922/gulf-economies-accelerate-diversification-recession-looms-over-iran-war",
+      "published": "2026-10-25 12:00",
+      "raw_summary": "Before the outbreak of the war triggered by the US-Israeli attack on Iran in February, the Gulf monarchies were living the prosperity dream that was the envy of the world. Their hydrocarbon-fuelled ec",
+      "insight": {
+        "what": "报道指伊朗战事令海湾经济面临衰退风险，海湾经济体正加快发展石油以外产业。",
+        "why": "市场需检验战前增长预期是否仍成立：战事会影响企业收款与投资者要求的回报，海湾股票和政府债券不能只按油价上涨估值。",
+        "chain": "战事增加经营中断风险 → 企业回款更难确定 → 投资者要求更多风险补偿 → 股票折现率 discount rate 提高 → 未来利润折算时折扣加大 → 同额利润的今天价值降低 → 若风险未计价且其他利好不足抵消，海湾相关股价承压",
+        "notes": [
+          "经济多元化（economic diversification）是发展旅游、物流、制造、金融等收入来源，减少对石油的依赖。这则摘要没有给出新财政方案、投资金额或执行时间，不能把“加快多元化”直接当成已经落地的新增需求；“面临衰退风险”也不等于衰退已经得到经济数据确认。",
+          "高油价为什么不一定让产油国受益？卖油收入同时取决于每桶价格和实际卖出的数量。若运输受阻、设施停产或运输保险费用增加，价格上涨的好处会被部分抵消。不同国家的出口路线、财政积累和生产受损程度不同，不能把海湾视为同一个资产。",
+          "非石油产业为什么也会受冲击？旅游依赖旅客愿意到访，物流依赖运输通畅，大型项目依赖设备交付和施工连续。战争提高经营中断风险后，即使订单没有取消，收款时间和金额也会更不确定；产业多元化并不等于短期内摆脱地缘风险。",
+          "风险溢价（risk premium）是投资者相对更稳妥的投资所要求的额外回报。企业未来收款越不确定，投资者通常要求越多补偿。这个要求不会自动让企业多赚钱，而会体现为投资者愿意支付更低价格，或者干脆减少配置。",
+          "折现（discounting）是把未来收入换算为今天的价值。其他条件不变时，风险补偿要求提高，会抬高折现率，使同样一笔未来利润对应更低的当前估值。链条隔离的是风险上升这一条作用，并非断言当地股市已经下跌；利率下降、政策支持或盈利改善都可能抵消压力。",
+          "政府债券的传导要看财政缺口。收入减少而已承诺支出难以削减时，政府需要动用积累或增加借款。如果新增发债超过投资者原本愿意承接的数量，买方会要求更高收益率，同类存量债券价格也会承压。这是条件推演，材料没有披露已发生新增融资。",
+          "资本流动可以从主权财富基金理解。主权财富基金（sovereign wealth fund）是代表国家管理投资资产的机构。若政府调用这类资金支持国内项目，新增海外投资会减少，资金压力更大时才涉及卖出既有海外资产；少买海外资产与集中抛售不是一回事，报道也未证明已经发生这种调动。",
+          "不能直接推导海湾货币会明显贬值。沙特、阿联酋等维持本币对美元的固定兑换比率，压力可以通过外汇储备、本地资金松紧和财政调整体现，而不必立刻反映为兑换价格变化。科威特参考一篮子货币，各国汇率安排也不能一概而论。"
+        ]
+      },
+      "insight_en": {
+        "what": "The report says the war in Iran is putting Gulf economies at risk of recession, and Gulf economies are accelerating the development of non-oil industries.",
+        "why": "The market needs to test whether prewar growth expectations still hold: the war affects corporate cash receipts and the returns investors require, so Gulf stocks and government bonds cannot be valued solely on the basis of rising oil prices.",
+        "chain": "War increases the risk of business disruption → Corporate cash receipts become less certain → Investors require more compensation for risk → The equity discount rate rises → Future profits are discounted more heavily → The same profits have a lower present value → If the risk is not priced in and other positive factors are insufficient to offset it, Gulf-related share prices come under pressure",
+        "notes": [
+          "Economic diversification means developing sources of income such as tourism, logistics, manufacturing, and finance to reduce reliance on oil. This summary does not provide a new fiscal plan, investment amounts, or an implementation schedule, so “accelerating diversification” cannot simply be treated as new demand that has already materialized; “facing recession risk” also does not mean that a recession has already been confirmed by economic data.",
+          "Why do high oil prices not necessarily benefit oil-producing countries? Oil revenue depends on both the price per barrel and the quantity actually sold. If transport is disrupted, facilities halt production, or transport insurance costs rise, the benefits of price increases will be partly offset. Countries differ in their export routes, accumulated fiscal buffers, and the extent of damage to production, so the Gulf cannot be treated as a single asset.",
+          "Why are non-oil industries also affected? Tourism depends on travelers being willing to visit, logistics depends on smooth transport, and large projects depend on equipment deliveries and uninterrupted construction. Once war raises the risk of business disruption, even if orders are not canceled, the timing and amount of cash receipts become more uncertain; industrial diversification does not mean escaping geopolitical risk in the short term.",
+          "A risk premium is the additional return investors require relative to a safer investment. The more uncertain a company's future cash receipts are, the more compensation investors generally require. This requirement does not automatically make companies earn more money; instead, it is reflected in investors' willingness to pay lower prices or simply reduce their allocations.",
+          "Discounting means converting future income into its present value. Other things being equal, a greater requirement for risk compensation raises the discount rate, giving the same future profits a lower current valuation. The chain isolates the effect of rising risk; it does not assert that local stock markets have already fallen. Lower interest rates, policy support, or improved earnings may all offset the pressure.",
+          "Transmission to government bonds depends on the fiscal gap. When revenue falls and committed spending is difficult to cut, the government needs to draw on accumulated resources or increase borrowing. If additional bond issuance exceeds the amount investors were originally willing to absorb, buyers will require higher yields, and the prices of comparable outstanding bonds will also come under pressure. This is conditional analysis; the material does not disclose that additional financing has already occurred.",
+          "Capital flows can be understood through sovereign wealth funds. A sovereign wealth fund is an institution that manages investment assets on behalf of a country. If the government taps such funds to support domestic projects, new overseas investment will decline; selling existing overseas assets would be involved only if funding pressure becomes greater. Buying fewer overseas assets is not the same as a concentrated sell-off, and the report does not establish that such a transfer of funds has already occurred.",
+          "It cannot be directly inferred that Gulf currencies will depreciate significantly. Saudi Arabia, the UAE, and others maintain fixed exchange rates between their currencies and the US dollar. Pressure can be reflected in FX reserves, domestic liquidity conditions, and fiscal adjustments without immediately appearing as changes in exchange rates. Kuwait references a basket of currencies, and countries' exchange rate arrangements cannot all be treated as the same."
+        ]
+      }
     }
   ],
-  "tech": [
-    {
-      "title": "Pennsylvania will require labels on AI-generated ads",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
-      "published": "2026-10-25 02:32",
-      "raw_summary": "On Thursday, Pennsylvania Governor Josh Shapiro signed the Artificial Intelligence Deceptive Advertising Act into law, requiring disclosures on AI-generated ads. The law requires any ad - whether it's",
-      "insight": {}
-    },
-    {
-      "title": "I hope Apple’s touchscreen MacBook takes some lessons from this Lenovo laptop",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/report/1018131/apple-macbook-touchscreen-stylus-pencil-lenovo-laptop-analysis",
-      "published": "2026-10-24 22:00",
-      "raw_summary": "It looks like the long-rumored touchscreen MacBook might actually get announced next week, and after using the Lenovo Yoga 9n for our testing of Nvidia's RTX Spark platform, it got me thinking: this i",
-      "insight": {}
-    }
-  ],
-  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261025172940437092793r977zghiHVQbU)', 'type': 'new_api_error'}}",
+  "tech": [],
   "source_stats": {
     "fed": {
       "count": 2,
@@ -82,7 +141,7 @@
       "tier": "stable"
     },
     "economist_fin": {
-      "count": 13,
+      "count": 12,
       "tier": "stable"
     },
     "wallstreetcn": {

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "‘Do no harm’ — what gilt investors want from Healey in the Budget",
@@ -8,15 +8,21 @@
       "url": "https://www.ft.com/content/244ae9ad-0778-4afe-8b6a-c2b1b9f81771?syn-25a6b1a6=1",
       "published": "2026-10-26 13:00",
       "raw_summary": "Big bond investors hope for ‘reassurance’ from new chancellor and warn against tweaking key fiscal rules",
-      "insight": {}
-    },
-    {
-      "title": "Singapore to store Saudi oil in underground caverns",
-      "source": "FT Markets",
-      "url": "https://www.ft.com/content/1baa5eb0-d6e3-4989-beb0-1b29879ff606?syn-25a6b1a6=1",
-      "published": "2026-10-26 14:57",
-      "raw_summary": "Agreement with Saudi Aramco aims to secure energy supplies for south-east Asia amid Middle East war disruption",
-      "insight": {}
+      "insight": {
+        "what": "英国大型国债投资者敦促新财相在预算案中维持财政规则，避免削弱市场信心。",
+        "why": "投资者担心借债约束改变后，未来国债发行规模更难预测；英国长期国债需要重估承担不确定性所要求的回报。",
+        "chain": "投资者担忧借债规则调整 → 未来借债约束更难判断 → 国债供给规模更难预测 → 持有长债要求更多风险补偿 → 买方降低既有国债出价 → 若担忧未被计价且买盘未增强，英国长债价格才可能下跌",
+        "notes": [
+          "英国国债是英国政府发行的债券：投资者向政府提供资金，政府依约支付利息并偿还本金。预算案列明政府的收入与支出安排，会影响政府需要向市场借多少钱。",
+          "财政规则（fiscal rules）是政府对赤字、债务或支出设定的约束，帮助投资者判断借债是否可持续。修改规则的计算口径可以扩大借债空间，但不等于已经增加支出，仍须看预算案的具体安排。",
+          "为什么发债增加会影响价格？新增债券需要投资者拿出更多资金购买。如果愿意投入的资金没有同步增加，政府通常需要提供更有吸引力的回报。市场上的旧债也要调整价格，才能与新债竞争。",
+          "期限溢价（term premium）是投资者相对于持续持有短期债券，为承担长期持债的不确定性而要求的额外回报。财政安排更难预测，会增加未来债券供给和利率的不确定性；即使央行降息预期不变，长期持债所需的风险补偿也能上升。",
+          "到期收益率（YTM）是根据当前买价和约定的付息、还本现金流计算的年化回报指标，不等于债券的票面利率。既有债券承诺支付的金额不变，买入价格越低，对应回报越高，所以收益率上升与债券价格下跌是同一轮重新定价的两面。",
+          "为什么关注长债？折现（discounting）就是把未来收到的钱换算成今天的价值。投资者要求的回报提高时，同一笔未来收入的今天价值就会下降；在其他条件相近时，主要现金流越晚到来的债券，价格通常越敏感。",
+          "收益率上升不一定带来英镑上涨。如果回报提高来自经济强劲或央行收紧政策，可能吸引海外资金；如果来自对财政信誉的担忧，海外投资者也可能减持英国资产并卖出英镑。必须先判断收益率为什么上升。",
+          "报道反映的是投资者诉求，不是已公布的扩张性预算，也没有提供债券已经因此下跌的证据。链条描述的是担忧加深时的定价路径；后续应核对预算借款规模、发债计划和国债拍卖需求，预算若恢复信任，传导方向可以反转。"
+        ]
+      }
     }
   ],
   "policy": [
@@ -26,36 +32,45 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3372131/saudi-coalition-intercepts-missile-houthis-claim-new-attack-riyadh-airport",
       "published": "2026-10-26 13:49",
       "raw_summary": "The Saudi-led military coalition fighting Yemen’s Houthis struck several of the group’s missile launchers and storage facilities, a spokesman said on Monday, while the Iran-backed group claimed a new ",
-      "insight": {}
-    },
-    {
-      "title": "U.S. influence in Latin America at stake in runoff election in Brazil",
-      "source": "NPR",
-      "url": "https://www.npr.org/2026/10/25/nx-s1-6011223/u-s-influence-in-latin-america-at-stake-in-runoff-election-in-brazil",
-      "published": "2026-10-26 05:22",
-      "raw_summary": "A polarizing presidential election runoff in Latin America's largest economy and biggest democracy pits leftist Lula da Silva's legacy against Trump ally Flavio Bolsonaro, son of the former Brazilian ",
-      "insight": {}
+      "insight": {
+        "what": "沙特主导的联军称，在利雅得再次遇袭后，已打击胡塞武装导弹发射及储存设施。",
+        "why": "反复交火使原油稳定供应的预期受检验，油价需要重估断供风险；但报道没有确认实际产量或运输已经受损。",
+        "chain": "利雅得再遇袭并引发反击 → 供油受波及的风险受关注 → 断供后的补货成本受重视 → 提前储油的保障价值提高 → 买方愿为可靠交付加价 → 若风险未被计价且供应缓冲不足，原油价格才可能上涨",
+        "notes": [
+          "从军事冲突到油价，中间必须经过能源供应这一环。沙特是重要原油出口国，因此市场会评估冲突是否威胁产油设施、出口港口或运输安排；但袭击发生在沙特，不等于油田已经停产，更不能直接推断主要海峡被封锁。",
+          "为什么尚未断供，油价也能受到影响？炼厂和其他用油企业需要连续获得原料。如果断供后的临时补货更昂贵，提前储油或锁定交付就更有价值，买方愿意为确定供应支付更高价格。这是风险改变购买意愿的机制，不代表报道已经证实企业大规模囤油。",
+          "地缘风险溢价（geopolitical risk premium）是市场因为担忧冲突造成供应损失，而在价格中加入的额外补偿。它反映对未来风险的定价，不等于已经发生的实物短缺；风险消退时，即使当日产量没有增加，这部分加价也能回落。",
+          "供应缓冲决定风险能否推高价格。可释放的库存、其他产油国的闲置产能和可替代运输路线，都能降低补货困难。反过来，库存偏低、备用产能难以及时启用时，同样的冲突消息更容易影响油价。",
+          "油价上涨也不能直接推出央行加息。燃料和运输成本会先上升，但央行还要判断涨价是否持续、是否扩散到工资和其他商品。如果只是短期供应冲击，央行未必收紧政策；如果冲突同时打击经济需求，国债还可能因避险买盘而上涨。",
+          "链条描述的是冲突扩散这一风险方向，而不是军事反击的唯一结果。反击也可能削弱后续袭击能力，从而降低供应担忧。判断净影响应观察实际产量、装船与航运情况，以及原油交付报价，不能把每次军事行动都当作油价上涨信号。"
+        ]
+      }
     }
   ],
   "tech": [
     {
-      "title": "Can the AI Boom Survive a Margin Squeeze?",
+      "title": "Musk Says $40 Billion Debt Deal for AI Chips Has Closed",
       "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-10-26/can-the-ai-boom-survive-a-margin-squeeze-video",
-      "published": "2026-10-26 15:07",
-      "raw_summary": "In this episode of Merryn Talks Money, Merryn Somerset Webb and Steve Hou, head of research at Silicon Data, delve into an emerging issue in the economics of artificial intelligence: token prices are ",
-      "insight": {}
-    },
-    {
-      "title": "SK Hynix Leveraged Funds to Be Delisted in US as AI Rally Cools",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-10-26/sk-hynix-leveraged-funds-to-be-delisted-in-us-as-ai-rally-cools",
-      "published": "2026-10-26 12:33",
-      "raw_summary": "Two leveraged exchange-traded funds tied to SK Hynix Inc. will be liquidated just months after their debut in the US, as investor appetite for the artificial intelligence trade moderates.",
-      "insight": {}
+      "url": "https://www.bloomberg.com/news/videos/2026-10-26/musk-says-40-billion-debt-deal-for-ai-chips-has-closed-video",
+      "published": "2026-10-26 15:32",
+      "raw_summary": "Elon Musk said SpaceX has closed a $40 billion debt deal to pay for the chips needed to fuel its artificial intelligence ambitions. People familiar with the discussions, though, told Bloomberg News th",
+      "insight": {
+        "what": "马斯克称，太空探索技术公司已完成400亿美元债务融资，用于购买人工智能芯片。",
+        "why": "融资完成提高芯片采购的资金确定性，改变扩张受融资约束的评估；芯片供应商股票与融资方债务需要分别重估。",
+        "chain": "巨额购芯片融资交易完成 → 采购计划的资金障碍降低 → 芯片订单兑现把握提高 → 供应商收入预期获得支撑 → 扣除成本后的利润预期改善 → 未来收益的今天价值提高 → 若利润增量未被计价且所需回报不变，芯片供应商股价才可能上涨",
+        "notes": [
+          "债务融资（debt financing）是通过承担还本付息义务获得资金，不是销售收入，也不是利润。它能缓解近期资金约束，却增加未来必须支付的本息，因此不能只看采购能力增强，而忽略偿债负担。",
+          "信息边界很重要：材料给出的是马斯克的说法，没有披露融资期限、利率、抵押安排或最终采购对象。完成融资交易也不等于资金已经全部提取，更不等于芯片已经交付，不能据此补出具体贷款结构或供应商名单。",
+          "资本开支（capital expenditure）是购买可供多年使用的生产资产所花的钱。自用芯片和服务器通常先计入资产，再通过折旧逐期计入成本。因此，购置设备会先消耗现金，却通常不会在购买当期一次性扣减全部利润；借款利息还会形成另外的负担。",
+          "融资额不等于当期芯片供应商收入。资金需要经过采购、交付和收入确认，才能转化为供应商报表上的销售。如果订单原本已经公布，融资完成主要降低取消或延期风险，未必增加行业总需求，更不能把400亿美元全部归给某一家芯片企业。",
+          "收入怎样传到利润？供应商必须扣除制造、研发等成本，销售增加才有机会形成更多盈利。如果大客户议价压低售价，或者扩产成本上升，销量增加也未必带来同幅度的利润增长。链条呈现的是采购兑现后的估值路径，不是在声称供应商已经上调盈利预测。",
+          "为什么利润改善不保证股价上涨？股票价值取决于未来能留给股东的现金，以及投资者要求多高的回报。未来现金增加、所需回报不变，折算到今天的价值才会提高；如果市场早已计入这些订单，或者同时提高风险补偿，融资公告未必带来股价上涨。",
+          "融资解决的是资金瓶颈，不是所有算力瓶颈。芯片交货、设备部署、机房供电和散热仍会约束扩张速度。只有设备投入使用并被充分利用，固定投入才能分摊到更多计算任务上，单位计算成本才会下降；借到更多钱本身不会自动改变成本曲线。",
+          "债权人关心的是本息能否按期收回。信用利差（credit spread）是相对于期限接近、信用风险较低的债务，出借人要求的额外收益补偿。如果新增经营现金不足以覆盖本息，投资者会要求更高补偿，既有债务价格承压。但融资也会补充近期可用资金，不能仅凭借款金额大就断言偿债能力恶化。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 202610261607196799934099hl6zEg8Qo4oa)', 'type': 'new_api_error'}}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -74,7 +89,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 7,
+      "count": 6,
       "tier": "stable"
     },
     "cnbc_fin": {

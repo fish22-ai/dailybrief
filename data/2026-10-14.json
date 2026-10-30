@@ -21,15 +21,15 @@
         ]
       },
       "insight_en": {
-        "what": "Japanese banks and insurers are repatriating funds into domestic bonds as local yields surge, ending decades of overseas yield-seeking.",
-        "why": "The market had assumed that Japanese capital outflows would continue to suppress global yields; now that assumption is broken, and U.S. Treasuries and overseas assets face selling pressure.",
-        "chain": "JGB yields ↑ → relative appeal of overseas assets ↓ → Japanese institutions repatriate to domestic bonds → U.S. Treasury demand ↓ → U.S. Treasury yields ↑ → globally high-valued assets under pressure；yen carry trade unwind → yen appreciation",
+        "what": "Japanese banks and insurers are returning to domestic bonds as yields at home surge, ending decades of seeking yield overseas.",
+        "why": "The market had assumed that continued outflows of Japanese capital would depress global yields. That assumption has now been overturned, leaving U.S. Treasuries and overseas assets facing selling pressure.",
+        "chain": "Japanese government bond yields↑ → Relative attractiveness of overseas assets↓ → Japanese institutions repatriate capital → Demand for U.S. Treasuries↓ → U.S. Treasury yields↑ → Global assets with high valuations come under pressure；Unwinding of yen carry trades → Yen appreciation",
         "notes": [
-          "Why are Japanese institutions repatriating? Japan has long maintained ultra-low interest rates, forcing institutions to go overseas to buy U.S. Treasuries, Australian bonds, and other assets in pursuit of yield. Now that domestic JGB yields have risen to attractive levels, repatriation is a rational choice.",
-          "What is a carry trade? Borrowing low-yielding yen, converting it into dollars to buy higher-yielding assets, and earning the interest rate spread. Once the yen appreciates or Japanese rates rise, the trade loses money and triggers an unwind.",
-          "Why are U.S. Treasury yields rising? Japan is one of the largest overseas holders of U.S. Treasuries; reduced demand means lower prices and higher yields.",
-          "The logic behind global asset pressure: U.S. Treasury yields are the anchor for the global risk-free rate. When they rise, the discount rate for all risk assets rises, and valuations shrink.",
-          "Rising yields, falling bond prices: bond prices and yields move inversely."
+          "Why are Japanese institutions returning to the domestic market? Japan has long maintained ultra-low interest rates, forcing institutions to seek yield overseas by buying U.S. Treasuries, Australian government bonds, and other assets. Now that domestic government bond yields have risen to attractive levels, returning to the domestic market is a rational choice.",
+          "What is a carry trade? Borrow yen at low interest rates, convert it into U.S. dollars, and buy higher-yielding assets to earn the interest rate differential. Once the yen appreciates or Japanese interest rates rise, the trade loses money, triggering an unwinding.",
+          "Why do U.S. Treasury yields rise? Japan is one of the largest foreign holders of U.S. Treasuries. Lower demand means lower prices and higher yields.",
+          "The logic behind pressure on global assets: U.S. Treasury yields anchor the global risk-free rate. A rise in these yields means higher discount rates for all risk assets and lower valuations.",
+          "Bond prices fall when yields rise: Bond prices and yields move inversely."
         ]
       }
     },
@@ -52,15 +52,15 @@
         ]
       },
       "insight_en": {
-        "what": "New York Fed President Williams said the Fed may not need to raise rates in 2027, contrary to market traders' expectations.",
-        "why": "The market had originally priced in further rate hikes in 2027; these remarks lowered expectations for the long-term rate path, repricing short-end U.S. Treasuries and rate-sensitive assets.",
-        "chain": "Williams dovish → 2027 rate hike expectations ↓ → long-term rate path shifts down → 10Y U.S. Treasury yields ↓ → growth stock discount rate ↓ → valuation recovery；dollar weakens → emerging market capital inflows",
+        "what": "New York Fed President Williams said the Federal Reserve may not need to raise interest rates in 2027, contrary to market traders' expectations.",
+        "why": "The market had priced in further rate hikes in 2027. These remarks lowered expectations for the long-term interest rate path, prompting a repricing of short-dated U.S. Treasuries and interest-rate-sensitive assets.",
+        "chain": "Williams strikes a dovish tone → Expectations for 2027 rate hikes↓ → Long-term interest rate path shifts lower → 10Y U.S. Treasury yield↓ → Discount rates for growth stocks↓ → Valuation recovery；U.S. dollar weakens → Capital inflows into emerging markets",
         "notes": [
-          "Why the 10-year Treasury? It reflects the market's expectations for the long-term rate path, including future economic growth and inflation.",
-          "What is the discount rate? The interest rate used to convert future cash flows into today's value. When the discount rate falls, the present value of future earnings rises, benefiting growth stocks.",
-          "Why does disagreement with traders' expectations matter? Fed officials' remarks are policy signals, and the market adjusts pricing accordingly. Divergence means future volatility may increase.",
-          "The logic behind dollar weakness: lower rate expectations reduce the appeal of dollar assets, and capital flows out of the United States.",
-          "Hawkish vs. dovish: hawks prioritize fighting inflation and favor rate hikes; doves prioritize supporting growth and have a higher tolerance for inflation. Williams leans dovish."
+          "Why the 10-year Treasury? It reflects market expectations for the long-term interest rate path, including future economic growth and inflation.",
+          "What is a discount rate? The interest rate used to discount future cash flows to their present value. When the discount rate falls, the present value of future earnings rises, benefiting growth stocks.",
+          "Why does a divergence from traders' expectations matter? Remarks by Fed officials are policy signals, and markets adjust their pricing accordingly. Divergence means volatility could increase in the future.",
+          "The logic behind a weaker U.S. dollar: Lower interest rate expectations reduce the attractiveness of U.S. dollar assets, leading to capital outflows from the United States.",
+          "Hawks vs. doves: Hawks prioritize curbing inflation and favor rate hikes; doves prioritize supporting growth and have a higher tolerance for inflation. Williams leans dovish."
         ]
       }
     }
@@ -85,15 +85,15 @@
         ]
       },
       "insight_en": {
-        "what": "Iran's economic difficulties are intensifying, hardliners are pressuring the government, the oil minister has resigned, and political infighting is deepening.",
-        "why": "The market had priced in stable Iranian oil exports; intensifying infighting could affect export policy, and oil prices and geopolitical risk premiums face repricing.",
-        "chain": "Iranian infighting intensifies → oil policy uncertainty ↑ → export disruption risk ↑ → crude oil supply expectations ↓ → oil prices ↑ → global inflation expectations ↑ → central bank rate hike pressure ↑",
+        "what": "Iran's economic difficulties are worsening, hardliners are pressuring the government, the oil minister has resigned, and political infighting is deepening.",
+        "why": "The market had priced in stable Iranian oil exports. Intensifying infighting could affect export policy, leaving oil prices and the geopolitical risk premium facing reassessment.",
+        "chain": "Infighting in Iran intensifies → Oil policy uncertainty↑ → Risk of export disruptions↑ → Expected crude oil supply↓ → Oil prices↑ → Global inflation expectations↑ → Pressure on central banks to raise rates↑",
         "notes": [
           "Why does Iran matter? It is an OPEC member, and its oil exports affect global supply. Political instability could lead to export disruptions.",
-          "What is a geopolitical risk premium? The extra premium added to oil prices by the market to account for possible supply disruptions.",
-          "How do rising oil prices affect inflation? Energy is a production cost. Rising oil prices push up overall prices, and central banks may be forced to raise rates.",
+          "What is a geopolitical risk premium? An additional premium that markets build into oil prices to account for potential supply disruptions.",
+          "How do higher oil prices affect inflation? Energy is a production cost. Higher oil prices push up overall prices, and central banks may be forced to raise rates.",
           "Why does the oil minister's resignation matter? He is responsible for export policy, and his resignation means policy could change.",
-          "Transmission to assets: rising oil prices benefit energy stocks and hurt oil-consuming sectors such as airlines and transportation."
+          "Transmission to assets: Higher oil prices benefit energy stocks but hurt oil-consuming industries such as aviation and transportation."
         ]
       }
     }
@@ -119,14 +119,14 @@
       },
       "insight_en": {
         "what": "ASML raised its full-year sales forecast as increased AI spending boosted demand for its chipmaking equipment.",
-        "why": "The market had been worried about a downturn in the chip cycle; ASML's raised guidance indicates strong AI demand, and the semiconductor equipment sector and AI compute chain are being repriced.",
-        "chain": "AI spending ↑ → chip demand ↑ → fab expansion → ASML equipment orders ↑ → revenue expectations ↑ → semiconductor equipment stocks ↑ → AI compute chain valuation ↑",
+        "why": "The market had been concerned about a downturn in the semiconductor cycle. ASML's upward revision to its forecast indicates strong AI demand, prompting a repricing of the semiconductor equipment sector and the AI compute value chain.",
+        "chain": "AI spending↑ → Chip demand↑ → Wafer fabs expand capacity → ASML equipment orders↑ → Revenue expectations↑ → Semiconductor equipment stocks↑ → AI compute value chain valuations↑",
         "notes": [
-          "What is ASML? A Dutch company that produces lithography machines, the most core equipment in chip manufacturing, with a global monopoly.",
-          "Why is ASML important? It is upstream in the chip supply chain, and its orders reflect fabs' expectations for future chip demand.",
-          "How does AI spending transmit? AI requires large amounts of computing chips, chips require fabs to manufacture, and fabs require ASML equipment.",
-          "What is the semiconductor cycle? The chip industry has boom and bust cycles, and ASML's raised guidance indicates the cycle may be turning upward.",
-          "Why do stock prices rise? Raised revenue expectations mean future earnings increase, and valuations improve."
+          "What is ASML? It is a Dutch company that manufactures lithography machines, the most critical equipment in chipmaking, and holds a global monopoly.",
+          "Why does ASML matter? It operates upstream in the chip supply chain, and its orders reflect wafer fabs' expectations for future chip demand.",
+          "How does AI spending transmission work? AI requires large numbers of computing chips, chips need to be manufactured in wafer fabs, and wafer fabs need ASML equipment.",
+          "What is the semiconductor cycle? The chip industry goes through boom and bust cycles. ASML's upward revision to its forecast indicates that the cycle may be turning upward.",
+          "Why does the share price rise? An upward revision to revenue expectations means higher future earnings and a higher valuation."
         ]
       }
     },
@@ -149,15 +149,15 @@
         ]
       },
       "insight_en": {
-        "what": "ASML warned that surging AI spending is causing a shortage of chipmaking equipment supply, making it unable to meet demand.",
-        "why": "The market had assumed supply chains could keep up with AI demand; a supply shortage means chip capacity expansion is constrained, and compute supply bottlenecks could push chip prices higher.",
-        "chain": "AI demand ↑ → ASML equipment supply shortage → fab expansion constrained → chip supply ↓ → chip prices ↑ → compute costs ↑ → AI application costs ↑",
+        "what": "ASML warned that surging AI spending has led to a shortage of chipmaking equipment, with supply unable to meet demand.",
+        "why": "The market had assumed that the supply chain could keep pace with AI demand. Supply shortages mean chip production capacity expansion is constrained, and bottlenecks in the supply of computing power could push up chip prices.",
+        "chain": "AI demand↑ → ASML equipment supply shortages → Wafer fab capacity expansion constrained → Chip supply↓ → Chip prices↑ → Compute costs↑ → AI application costs↑",
         "notes": [
-          "Why does the supply shortage matter? If there is not enough equipment, fabs cannot expand capacity, and chip supply is constrained.",
-          "How do chip prices affect things? Demand exceeding supply pushes prices higher, raising costs for downstream AI companies.",
-          "What is compute cost? AI training and inference require large amounts of chips; when chips become more expensive, compute becomes more expensive.",
-          "Why can't ASML expand production? Lithography machine production is complex, and expanding capacity requires time and investment.",
-          "Transmission to assets: chip stocks benefit from rising prices, while AI application companies come under pressure from rising costs."
+          "Why do supply shortages matter? If there is not enough equipment, wafer fabs cannot expand capacity, constraining chip supply.",
+          "What is the impact of chip prices? Demand exceeding supply pushes up prices, increasing costs for downstream AI companies.",
+          "What are compute costs? AI training and inference require large numbers of chips. When chips become more expensive, compute becomes more expensive.",
+          "Why can't ASML expand capacity? Lithography machines are complex to produce, and expanding capacity requires time and investment.",
+          "Transmission to assets: Chip stocks benefit from higher prices, while AI application companies come under pressure from rising costs."
         ]
       }
     }

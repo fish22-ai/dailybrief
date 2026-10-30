@@ -22,16 +22,16 @@
         ]
       },
       "insight_en": {
-        "what": "The International Monetary Fund warned that risks in the government bond market are worsening, and yields could jump sharply and in a disorderly manner.",
-        "why": "The market had assumed that the bond market could smoothly absorb high debt and high inflation. This warning shook the expectation that 'interest rates can decline moderately,' and long-end government bonds and all assets priced off government bond yields as an anchor need to be revalued.",
-        "chain": "Rising debt and inflation risks → IMF warns of disorderly sell-off risk → Investors demand higher term premium compensation → Long-end government bond yields jump → Government bond prices fall → Equity and bond valuation anchors shift up → High-valuation assets come under pressure；the US dollar strengthens due to the dual attraction of safe-haven demand and high yields",
+        "what": "The International Monetary Fund warned that risks in government bond markets are worsening and that yields could rise sharply and in a disorderly manner.",
+        "why": "Markets had assumed that the bond market could smoothly absorb high debt and high inflation, but this warning undermines expectations that 'interest rates can decline gradually,' requiring a revaluation of long-dated government bonds and all assets that use government bond yields as a pricing anchor.",
+        "chain": "Debt and inflation risks rise → IMF warns of disorderly selling risk → Investors demand a higher term premium as compensation → Long-term government bond yields surge → Government bond prices fall → The valuation anchor for stocks and bonds moves higher → Assets with high valuations come under pressure；The dollar strengthens on the dual appeal of safe-haven status and high interest rates",
         "notes": [
-          "What is term premium? The longer investors lend to the government, the more they worry about inflation and default during that period, so they demand extra compensation. This extra return is the term premium.",
-          "Why are long-end government bonds more dangerous? Short-end government bonds mature in a few months, so price fluctuations are small; long-end government bonds take decades to repay principal, so when interest rates change, prices fluctuate sharply.",
-          "Why are government bond yields the 'pricing anchor'? Government bonds are regarded as risk-free assets, and their yields are the risk-free rate. All stocks, corporate bonds, and mortgage rates are priced by adding a layer of risk compensation on top of this base.",
-          "What does disorderly jump mean? It is not a slow rise, but everyone wanting to sell at the same time with no buyers, causing prices to fall off a cliff, yields to spike instantly, and market liquidity to dry up.",
-          "Why are high-valuation assets hit hardest? Most of their earnings are many years in the future. When interest rates rise, the value of these distant earnings discounted to today shrinks the most.",
-          "Transmission to ordinary people: Rising government bond yields push up mortgage rates and corporate borrowing costs, thereby suppressing consumption and investment."
+          "What is the term premium? The longer investors lend money to the government, the more they worry about inflation and default during that period, so they demand extra compensation; this additional return is the term premium.",
+          "Why are long-dated government bonds riskier? Short-dated government bonds mature in a few months and have small price fluctuations; with long-dated government bonds, investors must wait decades for principal repayment, so changes in interest rates cause sharp price swings.",
+          "Why are government bond yields a 'pricing anchor'? Government bonds are regarded as risk-free assets, and their yields are the risk-free rate; all stocks, corporate bonds, and mortgage rates are priced by adding a layer of risk compensation on top of this.",
+          "What does a disorderly surge mean? It is not a gradual rise; rather, everyone wants to sell at the same time, no one is willing to buy, prices plunge, yields spike instantly, and market liquidity dries up.",
+          "Why are assets with high valuations hit hardest? Most of their earnings lie many years in the future, and when interest rates rise, the present value of those future earnings shrinks the most.",
+          "Transmission to ordinary people: Higher government bond yields push up mortgage rates and corporate borrowing costs, which in turn dampen consumption and investment."
         ]
       }
     },
@@ -55,16 +55,16 @@
         ]
       },
       "insight_en": {
-        "what": "Cleveland Fed President Hammack said that tighter monetary policy may be needed to prevent an 'inflation mindset' from taking root.",
-        "why": "The market had been pricing the pace of rate cuts. This statement puts 'keeping rates high or even raising rates again' back on the table, making short-end US Treasury yields and the US dollar more sensitive.",
-        "chain": "Inflation may become entrenched → Fed officials release hawkish signals → Rate cut expectations decline → 2-year US Treasury yields rise → The US dollar strengthens → Pressure for capital outflows from emerging markets increases → High-valuation growth stocks come under pressure",
+        "what": "Cleveland Fed President Hammack said tighter monetary policy may be needed to prevent an 'inflationary mindset' from taking root.",
+        "why": "Markets had been pricing in the pace of rate cuts, but these remarks put 'keeping interest rates high or even raising them again' back on the table, making short-term U.S. Treasury yields and the dollar more sensitive.",
+        "chain": "Inflation may become entrenched → Fed officials send a hawkish signal → Rate-cut expectations decline → 2-year U.S. Treasury yields rise → The dollar strengthens → Capital outflow pressure on emerging markets intensifies → Growth stocks with high valuations come under pressure",
         "notes": [
-          "What is an 'inflation mindset'? If businesses and consumers both expect prices to keep rising, they will raise prices and spend in advance, forming a self-fulfilling inflation spiral. The Fed fears this most.",
-          "Hawkish vs dovish: Hawks prioritize fighting inflation and lean toward raising rates and tightening; doves prioritize protecting growth and employment, have a higher tolerance for inflation, and dislike raising rates.",
-          "Why do 2-year Treasury yields move first? They are most sensitive to the policy rate and directly reflect the market's expectations for the Fed's rate path over the next two years.",
-          "Yields rise and bond prices fall: Bond prices and yields move inversely.",
-          "Why does the US dollar strengthen? High interest rates attract global capital into the United States to buy dollar assets, increasing demand for the dollar.",
-          "Impact on emerging markets: A stronger dollar and rising US Treasury yields cause capital to flow back from emerging markets to the United States, putting pressure on emerging market currencies and stock markets."
+          "What is an 'inflationary mindset'? If businesses and consumers both expect prices to keep rising, they will raise prices preemptively and bring purchases forward, creating a self-fulfilling inflationary spiral, which the Fed fears most.",
+          "Hawks vs. doves: Hawks prioritize curbing inflation and favor rate hikes and tightening; doves prioritize supporting growth and employment, are more tolerant of inflation, and dislike rate hikes.",
+          "Why do 2-year Treasuries move first? They are the most sensitive to the policy rate and directly reflect market expectations for the Fed's interest rate path over the next two years.",
+          "Bond prices fall when yields rise: Bond prices and yields move inversely.",
+          "Why does the dollar strengthen? High interest rates attract global capital to the United States to buy dollar-denominated assets, increasing demand for dollars.",
+          "Impact on emerging markets: A stronger dollar and rising U.S. Treasury yields draw capital from emerging markets back to the United States, leading to depreciation of emerging-market currencies and pressure on their stock markets."
         ]
       }
     }
@@ -90,16 +90,16 @@
         ]
       },
       "insight_en": {
-        "what": "A Saudi minister vowed a 'serious response' to Houthi attacks on airports, after earlier attacks killed 13 people.",
-        "why": "The market had been pricing a de-escalation in the Middle East. This escalation reignites the geopolitical risk premium, raises concerns about crude oil supply disruptions, and makes oil prices and safe-haven assets more sensitive.",
-        "chain": "Houthis attack Saudi airports → Saudi Arabia vows retaliation → Middle East geopolitical risk escalates → Concerns about crude oil supply disruptions rise → Oil prices rise → Inflation expectations pick up → Central bank room for rate cuts is constrained → Upward pressure on bond yields increases；gold strengthens on safe-haven demand",
+        "what": "A Saudi minister vowed a 'serious response' to the Houthis' attack on an airport, which had left 13 people dead.",
+        "why": "Markets had been pricing in an easing of tensions in the Middle East, but this escalation has revived the geopolitical risk premium and heightened concerns about crude oil supply disruptions, making oil prices and safe-haven assets more sensitive.",
+        "chain": "Houthis attack a Saudi airport → Saudi Arabia vows retaliation → Geopolitical risks in the Middle East escalate → Concerns over crude oil supply disruptions rise → Oil prices rise → Inflation expectations pick up → Central banks' room for rate cuts narrows → Upward pressure on bond yields intensifies；Gold strengthens on safe-haven demand",
         "notes": [
-          "Why does the Middle East situation affect oil prices? About one-third of the world's seaborne oil passes through the Strait of Hormuz, and Saudi Arabia is one of the largest oil producers. Any supply disruption will push oil prices higher.",
-          "What is geopolitical risk premium? Investors are willing to pay a higher price than normal to cope with possible supply disruptions. This extra price is the risk premium.",
-          "How do higher oil prices transmit to interest rates? Oil prices push up transportation and manufacturing costs, which in turn push up overall prices. To suppress inflation, central banks may delay rate cuts or even raise rates.",
-          "Why does gold benefit? Gold is regarded as a safe-haven asset. When geopolitical risks rise, capital flows into gold in search of value preservation.",
-          "Impact on stock markets: Higher oil prices benefit energy stocks but are negative for major oil users such as airlines and transportation. The overall stock market comes under pressure from higher costs and changes in rate expectations.",
-          "Background on Saudi Arabia and the Houthis: The Houthis are closely tied to Iran, while Saudi Arabia supports the Yemeni government. The conflict between the two sides has lasted for years, and this attack is a signal of escalation."
+          "Why does the situation in the Middle East affect oil prices? About one-third of global seaborne oil passes through the Strait of Hormuz, and Saudi Arabia is one of the largest oil producers; any supply disruption will push up oil prices.",
+          "What is the geopolitical risk premium? To prepare for possible supply disruptions, investors are willing to pay more than the normal price; this additional amount is the risk premium.",
+          "How does the transmission from higher oil prices to interest rates work? Higher oil prices push up transportation and manufacturing costs, which in turn raise overall prices; central banks may delay rate cuts or even raise rates to curb inflation.",
+          "Why does gold benefit? Gold is regarded as a safe-haven asset, and when geopolitical risks rise, capital flows into gold to preserve value.",
+          "Impact on the stock market: Rising oil prices benefit energy stocks but hurt major oil users such as airlines and transportation companies; the stock market as a whole comes under pressure from higher costs and changes in interest rate expectations.",
+          "Background on Saudi Arabia and the Houthis: The Houthis have close ties to Iran, while Saudi Arabia supports Yemen's government; their conflict has lasted for years, and this attack signals an escalation."
         ]
       }
     }
@@ -125,16 +125,16 @@
         ]
       },
       "insight_en": {
-        "what": "China's ChangXin Memory Technologies announced a breakthrough in memory chip technology, after Samsung and SK Hynix had pursued it for years.",
-        "why": "The market had assumed that high-end memory processes were monopolized by Samsung, SK Hynix, and Micron. This breakthrough changes expectations for the memory chip supply landscape, and the pricing power and capital expenditure plans of the relevant giants need to be reassessed.",
-        "chain": "CXMT technological breakthrough → High-end memory supply landscape changes → Samsung and SK Hynix pricing power challenged → Memory chip prices may decline → Cost curves of downstream cloud providers and AI companies improve → Pace of computing power expansion accelerates → Capital expenditure in the memory supply chain is reallocated",
+        "what": "China's ChangXin Memory Technologies announced a breakthrough in memory chip technology that Samsung and SK Hynix had been pursuing for years.",
+        "why": "Markets had assumed that Samsung, SK Hynix, and Micron held a monopoly on memory chips made using advanced processes, but this breakthrough changes expectations for the memory chip supply landscape, requiring a reassessment of these giants' pricing power and capital expenditure plans.",
+        "chain": "ChangXin Memory Technologies achieves a technological breakthrough → The high-end memory supply landscape changes → Samsung's and SK Hynix's pricing power is challenged → Memory chip prices may decline → Cost curves improve for downstream cloud providers and AI companies → Computing capacity expands faster → Capital expenditure is reallocated across the memory industry supply chain",
         "notes": [
-          "What are memory chips? They are where computers and servers temporarily store data. AI training requires large amounts of high-speed memory and is one of the key bottlenecks in computing power.",
-          "Why are Samsung and SK Hynix important? Together with Micron, the three occupy the vast majority of the global memory market and have long enjoyed oligopolistic pricing power.",
-          "What does the technological breakthrough mean? If CXMT can stably mass-produce high-end memory, the market will change from a three-player monopoly to four-player competition, and both prices and profit margins will be compressed.",
-          "Impact on the AI industry: Memory is one of the core costs of AI servers. Lower memory prices mean lower training and inference costs, which benefits computing power expansion.",
-          "Impact on Samsung and SK Hynix: Their high profit margins are built on tight supply. New entrants will weaken this pricing power, and capital expenditure plans may be adjusted.",
-          "Geopolitical background: US export controls on Chinese chips mainly focus on advanced logic chips. Memory chips are another battlefield, and CXMT's breakthrough means the controls' effectiveness is limited."
+          "What are memory chips? They are where computers and servers temporarily store data. AI training requires large amounts of high-speed memory, one of the key bottlenecks in computing capacity.",
+          "Why are Samsung and SK Hynix important? Together with Micron, they account for the vast majority of the global memory market and have long enjoyed oligopolistic pricing power.",
+          "What does the technological breakthrough mean? If ChangXin can reliably mass-produce high-end memory, the market will shift from a monopoly held by three companies to competition among four, squeezing both prices and profit margins.",
+          "Impact on the AI industry: Memory is one of the main costs of AI servers, so lower memory prices mean lower training and inference costs, supporting the expansion of computing capacity.",
+          "Impact on Samsung and SK Hynix: Their high profit margins are built on tight supply; new entrants will weaken that pricing power, and capital expenditure plans may be adjusted.",
+          "Geopolitical background: U.S. controls on chip exports to China focus mainly on advanced logic chips; memory chips are another battleground, and ChangXin's breakthrough means the controls' effectiveness is limited."
         ]
       }
     },
@@ -158,16 +158,16 @@
         ]
       },
       "insight_en": {
-        "what": "An Anthropic envoy said the company is considering investing in data centers in Australia to expand AI computing power buildout.",
-        "why": "The market had originally believed that AI computing power investment was concentrated in the United States. This plan changes expectations for the geographic distribution of data centers, and related infrastructure and power assets in Australia need to be revalued.",
-        "chain": "Anthropic considers Australian data centers → AI computing power investment spreads to Asia-Pacific → Australian data center and power demand rise → Local infrastructure asset valuations increase → Global computing power supply chain landscape becomes more decentralized → Order sources for chip suppliers such as Nvidia become more diversified",
+        "what": "An Anthropic special envoy said the company is considering investing in data centers in Australia to expand AI computing infrastructure.",
+        "why": "Markets had assumed that investment in AI computing capacity was concentrated in the United States, but this plan changes expectations for the geographic distribution of data centers, requiring a revaluation of related infrastructure and power assets in Australia.",
+        "chain": "Anthropic considers data centers in Australia → Investment in AI computing capacity spreads to the Asia-Pacific region → Demand for data centers and electricity in Australia rises → Local infrastructure asset valuations increase → The global computing capacity supply chain becomes more dispersed → Sources of orders for chip suppliers such as Nvidia become more diversified",
         "notes": [
-          "Why do AI companies build data centers? Training and running large models requires large GPU clusters. These chips must be placed in data centers, and computing power is the production capacity of AI companies.",
-          "Why choose Australia? Australia has relatively low power costs, abundant renewable energy, a stable political environment, and proximity to Asian markets.",
-          "Impact on the Australian economy: Data center investment drives demand for infrastructure such as construction, power, and fiber optics, benefiting related assets and employment.",
-          "Significance for the global computing power landscape: Computing power shifts from being concentrated in the United States to being distributed globally, reducing single-region risk but also increasing coordination costs.",
-          "Impact on chip suppliers: Where data centers are built, GPU orders flow there, and suppliers such as Nvidia gain a broader customer distribution.",
-          "Who is Anthropic? It is an AI company developing the Claude large model and competing with OpenAI. Computing power expansion is key to maintaining its competitiveness."
+          "Why do AI companies need to build data centers? Training and running large models require large numbers of GPU clusters, and these chips must be housed in data centers; computing capacity is an AI company's production capacity.",
+          "Why choose Australia? Australia has relatively low electricity costs, abundant renewable energy, and a stable political environment, and it is close to Asian markets.",
+          "Impact on Australia's economy: Data center investment drives demand for construction, power, fiber optics, and other infrastructure, benefiting related assets and employment.",
+          "Implications for the global computing capacity landscape: Computing capacity is shifting from concentration in the United States to global dispersion, reducing single-region risk but also increasing coordination costs.",
+          "Impact on chip suppliers: Wherever data centers are built, GPU orders flow to that location, so suppliers such as Nvidia have a more geographically dispersed customer base.",
+          "Who is Anthropic? It is the AI company that develops the large model Claude and competes with OpenAI; expanding computing capacity is key to maintaining its competitiveness."
         ]
       }
     }

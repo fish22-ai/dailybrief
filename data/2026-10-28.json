@@ -55,7 +55,7 @@
       "insight": {}
     }
   ],
-  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 deepseek-v4-flash 无可用渠道 (request id: 20261028150200942144272q8wwsQD0KG9Xe)', 'type': 'new_api_error'}}",
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 2026103100383541395649wbs2k3qVJEjLT)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 1,
@@ -74,7 +74,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 7,
+      "count": 5,
       "tier": "stable"
     },
     "cnbc_fin": {
