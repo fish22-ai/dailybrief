@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-31",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "股权高度集中，年内17家港股公司被香港证监会公示",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3191916",
+      "published": "2026-10-31 09:54",
+      "raw_summary": "10月27日，遭香港证监会点名股权高度集中的上市公司——新吉奥房车的股价盘中闪崩，收盘大跌超33%，而该股年内累计最高涨幅一度接近15倍。今年以来，香港证监会已公示17家同类港股公司，这类个股筹码锁定超过九成，流通盘稀少，暴涨暴跌频发。港交所发言人表示，港交所一向负责公众持股量监管，但这与证监会股权集中风险提示属于两套独立的监管体系，评判逻辑不同。对于投资者来说，公司的单一合规指标无法充分反映流动",
+      "insight": {}
+    },
+    {
+      "title": "AI抄底者遭重创，抛售狂潮终结连续三周跌势",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3191864",
+      "published": "2026-10-31 08:07",
+      "raw_summary": "科技股深度抛售给那些坚持“All-in AI”交易的投资者带来了痛苦的回撤；处于风暴中心的科技股接连暴跌，投资者纷纷跑回此前被冷落已久的防御性板块。 由市场对技术能否带来足够利润以证明当前债务驱动的投资热潮合理性的日益焦虑所驱动的三周暴跌，在周五达到高潮——纳斯达克100指数暴跌3.5%，为6月初以来最大跌幅。",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Spain train disaster clouds Sánchez chances of re-election",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cmeweppr990qo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-31 13:44",
+      "raw_summary": "The Spanish PM is hit by a succession of crises just weeks before a snap general election.",
+      "insight": {}
+    },
+    {
+      "title": "Trump's tariffs could shutter this Canadian town - its residents are fighting to save it",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cmly016ep243o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-10-31 10:39",
+      "raw_summary": "A century-old paper mill in Témiscaming, Quebec is indefinitely closed after the US imposed 50% tariffs on its products, putting hundreds out of work.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "OpenAI’s Altman Meets Samsung Executives as Chip Crunch Deepens",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-31/openai-sam-altman-samsung-executives-memory-crunch-deepens",
+      "published": "2026-10-31 14:40",
+      "raw_summary": "OpenAI Chief Executive Officer Sam Altman met with Samsung Group’s top executives in South Korea on Saturday to deepen cooperation on memory chips and AI infrastructure as global shortages intensify.",
+      "insight": {}
+    },
+    {
+      "title": "世界模型首次指导设计芯片！超大核NPU700TOPS，99%算力可用",
+      "source": "量子位",
+      "url": "https://www.qbitai.com/2026/10/506866.html",
+      "published": "2026-10-31 13:11",
+      "raw_summary": "AI算力利用“九九成”",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 202610311543182944609364qkwl6ING3g17)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 17,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
