@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-01",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Bond investors sit out ‘most consequential’ US midterm elections in years",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/937308d7-aa2e-4dac-b19b-423d83bc1253?syn-25a6b1a6=1",
+      "published": "2026-11-01 13:00",
+      "raw_summary": "Big fund managers are pressing ‘pause’ as vote and economic data releases loom",
+      "insight": {}
+    },
+    {
+      "title": "Investors trim growth bets over fears of US economy’s AI exposure",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
+      "published": "2026-10-31 22:00",
+      "raw_summary": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Delegation of Authority Under Section 8335 of the National Defense Authorization Act for Fiscal Year 2026",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22386/delegation-of-authority-under-section-8335-of-the-national-defense-authorization-act-for-fiscal-year",
+      "published": "2026-11-02 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {}
+    },
+    {
+      "title": "Adjusting Imports of Robotics, Industrial Machinery, and Their Parts and Components Into the United States",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22385/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united",
+      "published": "2026-11-02 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+      "published": "2026-10-31 05:41",
+      "raw_summary": "Boom’s airliner may be delayed, and its data center power business lost a customer.",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261101150128857244052q8wwskknzcaDF)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 7,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 17,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
