@@ -21,6 +21,20 @@
           "十年期国债不能只按下一次央行会议来理解。其收益率包含未来多年短期利率的预期，还包含期限溢价 term premium，即投资者为长期承担利率和价格波动风险而要求的额外补偿。能源冲击也会增加长期不确定性，因此不能把收益率上涨全部解释成加息预期。",
           "还要考虑反向力量：昂贵能源会挤压居民购买力和企业利润，削弱经济增长。如果增长损失占主导，投资者反而会增加国债配置，压低收益率。因此，报道中油价和国债收益率同时上涨，不足以证明所有债券抛售都由石油因素造成。"
         ]
+      },
+      "insight_en": {
+        "what": "As hopes of an Iran-US deal faded, Brent crude rose and the ten-year Treasury's yield to maturity at current prices moved above 5.2%.",
+        "why": "The expectation that a deal would ease the oil supply shock has been dented, so the market must re-rate inflation pressure and the timing of rate cuts. The required return on Treasuries rises, putting pressure on existing bond prices.",
+        "chain": "Hopes of an Iran-US deal fade → concern about oil supply disruption builds → procurement costs for crude rise → production and transport costs for firms increase → the expected pace of disinflation is pushed back → the expected room for future rate cuts narrows → bond buyers demand a higher return → ten-year Treasuries fall in price as compensation",
+        "notes": [
+          "Yield to maturity (YTM) is the annualised return computed from a bond's current price, future coupons and principal at maturity. The 5.2% quoted is this measure, not the fixed coupon rate, and it does not guarantee the same return if you sell early; it is also a historical quote from the report, not today's market.",
+          "Why does a fading deal lift oil? Buyers had expected a diplomatic agreement to reduce the risk of production, transport or transaction disruption; once that hope dims, they pay more for reliable supply. Brent is a major pricing benchmark, but its rise does not by itself prove output has actually fallen.",
+          "Inflation is a sustained rise in overall prices; disinflation means the pace of increase slows, not that prices generally fall. Oil is both a fuel and an industrial input, so higher prices raise transport and production costs, and how much firms pass on depends on competition and demand.",
+          "Why does this make rate cuts harder? Lower rates encourage borrowing and spending. If energy costs push other prices, services and wages up, stimulating demand too early makes disinflation harder. The chain describes the pricing direction after this risk rises, not a claim that every oil rally triggers hikes.",
+          "Why must old bonds fall in price when the required return rises? A fixed-coupon bond's promised payments do not increase with the market. A buyer wanting a higher return can only pay a lower price, making the same coupons and principal more attractive relative to cost.",
+          "The ten-year cannot be read off the next central bank meeting alone. Its yield embeds expectations for short rates over many years plus a term premium — the extra compensation for bearing rate and inflation uncertainty over a long horizon. Energy shocks add long-term uncertainty, so the whole yield rise cannot be attributed to hike expectations.",
+          "There is also an offsetting force: expensive energy squeezes household purchasing power and corporate profits, hurting growth. If the growth loss dominates, investors may add Treasuries and push yields down. Oil and yields rising together therefore does not prove every bond sale is oil-driven."
+        ]
       }
     },
     {
@@ -42,6 +56,21 @@
           "汇率看的是相对利率。利差 interest rate differential，就是两地利率的差距。汇率支线先把海外利率等因素视为不变：澳大利亚利息优势扩大，才会提高持有澳元资产的吸引力；如果海外利率同步上升，优势未必扩大。",
           "高利差不是无风险利润。套期保值 hedging，是通过合约等方式降低价格波动风险；外国投资者若锁定未来兑换汇率，相应成本通常会抵消相当一部分利差。若不锁定汇率，又要承担澳元贬值风险，市场恐慌时仍会出现资金撤离。",
           "链条描述的是相对原先预期的定价压力，不是声称这段发言之后国债价格必然下跌、澳元已经上涨。必要时再次加息也不是无条件承诺；如果措辞早已被市场预料，新增价格反应可以很小。"
+        ]
+      },
+      "insight_en": {
+        "what": "RBA Governor Bullock said domestic capacity pressure is driving inflation, with the Middle East an additional shock; inflation pressure will last longer than previously expected, and the Bank will hike again if necessary. Recession is not her base case.",
+        "why": "This weakens expectations for faster rate cuts, so short-dated Australian bonds must be repriced. Whether the AUD benefits depends on the interest-rate gap between Australia and overseas.",
+        "chain": "Inflation pressure is expected to last longer → expectations for how long high rates persist extend → expected future short rates rise → short-bond buyers demand a higher return → the fixed coupons on old bonds become less attractive → two- to three-year bonds fall in price; Australian rate expectations rise → the interest advantage over overseas widens → AUD assets become more attractive on carry → foreign allocation willingness improves → demand to convert into AUD rises → only if overseas rates do not rise in step and safe-haven selling does not offset it may the AUD appreciate",
+        "notes": [
+          "The RBA is Australia's central bank. The policy rate is the benchmark used to influence short-term funding costs; Australia uses a cash rate target that sets overnight interbank borrowing costs and transmits to deposit, mortgage and business loan rates.",
+          "The statement is not only about the Middle East energy shock but about domestic capacity pressure: when equipment and labour are already close to fully used, extra demand pushes prices up more easily. If the central bank sees the pressure as persistent, it cannot simply wait for external energy prices to fall on their own.",
+          "How do hikes curb inflation? Costlier borrowing reduces some housing purchases, consumption and business investment, easing the squeeze of demand on limited supply. The cost is slower growth and employment; not making recession the base case is not a guarantee that hikes will not hurt jobs.",
+          "Why the two- to three-year bonds? Their pricing concentrates the expected short-rate path over that horizon. If investors expect high rates for longer, they raise the return required to hold bonds over that period, beyond whether this particular meeting hikes.",
+          "YTM combines purchase price, coupons and principal at maturity into an annualised return. Old bonds' coupons are fixed, so a falling price raises the YTM for new buyers; a falling price and a rising yield are two sides of the same repricing.",
+          "FX is about relative rates. The interest rate differential is the gap between two economies' rates. The FX branch of the chain holds overseas rates constant: only if Australia's interest advantage widens does holding AUD assets become more attractive; if overseas rates rise in step, the advantage need not widen.",
+          "A high rate spread is not risk-free profit. Hedging lowers price risk through contracts; a foreign investor who locks the future conversion rate pays a cost that typically absorbs much of the spread. Without hedging, they carry AUD depreciation risk, and money can still leave in a panic.",
+          "The chain describes pricing pressure relative to prior expectations, not a claim that bonds must fall or the AUD has risen after the remarks. Hiking \"if necessary\" is not an unconditional promise, and if the language was already anticipated, the incremental price reaction can be small."
         ]
       }
     }
@@ -67,6 +96,21 @@
           "面试中应追问：受限对象和商品是什么，何时生效，有无过渡期与豁免，是否影响第三国交易方？再用实际装运量、付款可得性、运费和保险费用验证，而不是仅根据法案名称估算损失多少石油供应。",
           "实施命令的抓取日期为10月17日，市场板块的美伊谈判报道为9月29日。两者涉及相通的能源风险机制，但不能把十月的命令倒推为九月市场波动的原因。"
         ]
+      },
+      "insight_en": {
+        "what": "The White House issued an executive order to implement the 2026 law sanctioning Russia and Iran.",
+        "why": "Sanctions move from legislation to execution, so the market must re-rate the probability that Russia-Iran trade is disrupted. Crude is most sensitive to restrictions on energy exports, but a title alone cannot size the actual loss.",
+        "chain": "The US moves to implement the sanctions law → the risk of enforcement against restricted transactions rises → banks tighten review of related payments → cross-border payment friction increases → buyers shift to alternative suppliers → competition for alternative supply intensifies → only if energy trade is genuinely restricted and alternatives are thin may international oil prices rise",
+        "notes": [
+          "The information boundary matters: the material provides only the implementing order's title and opening, without detailed provisions. It cannot support claims of a full oil embargo, frozen banks or specific tariffs already in force. The chain assumes the new restrictions do bind relevant trade — it is a mechanism, not an observed change in transactions.",
+          "Sanctions are government restrictions on specific countries, entities, individuals or transactions. Unlike ordinary tariffs, which raise import costs, sanctions can also prohibit transactions, freeze assets or restrict financial services; which tools are used requires the formal text.",
+          "Why are banks the key link? Cross-border trade needs payment as well as goods. Fearing penalties for processing prohibited transactions, banks scrutinise counterparties, cargo and the source of funds; longer checks, refused payments or forced changes of bank all make trade harder.",
+          "Russia or Iran selling with more difficulty is not the same as global output falling proportionally. Cargo can be resold to other markets or discounted to buyers willing to bear extra costs. Distinguish a discount at origin, higher shipping and payment costs, and an actual fall in globally available supply.",
+          "A sustained rise in international prices requires the supply constraint to bite. More output from other producers, inventory releases or weaker demand can buffer the shock; only if energy trade is truly restricted and alternatives are thin does competition for remaining barrels bid up quotes.",
+          "If prices rise on this, the effects then pass to corporate costs, household spending and rate expectations. Two forces coexist: inflation pressure limits cuts, while damaged purchasing power drags growth, so sanctions cannot be mechanically equated with higher yields.",
+          "In an interview, ask: who and what are restricted, when does it take effect, are there transition periods and waivers, and does it hit third-country parties? Then verify with actual shipments, payment availability, freight and insurance — not by estimating lost supply from the act's name.",
+          "The implementing order was fetched on 17 October while the market story on Iran-US talks is dated 29 September. They share an energy-risk mechanism, but the October order cannot be back-dated as the cause of September volatility."
+        ]
       }
     }
   ],
@@ -90,6 +134,21 @@
           "受影响者并不一致。受阻的新项目面临成本和回收期压力，已经取得电力接入条件、能够立即提供服务的机房却可能因供应稀缺而提高租金；因此，不能把所有数据中心企业都视为同方向受损。",
           "云服务商是通过网络出租计算、存储等服务的公司。它们可以把部分投资转移到其他地区，所以澳大利亚建设放慢不等于全球芯片需求同步减少；但受数据存放要求、网络响应时间和当地客户需求限制，也不是所有业务都能迁走。",
           "验证投资影响，要看项目审批和电力接入是否实际推迟、原定投入能否暂停、客户租约何时起租，以及竞争地区能否承接建设。只有把建设进度、现金支出和未来收费放在一起，才能判断巨头的资本开支回报是否真正恶化。"
+        ]
+      },
+      "insight_en": {
+        "what": "Data-centre construction in Australia (facilities that concentrate computing equipment) faces local opposition, putting the costs and benefits of expansion under closer scrutiny.",
+        "why": "The assumption of rapidly adding compute is being challenged. Delays defer revenue, so data-centre landlords and cloud providers must re-rate investment returns.",
+        "chain": "New facilities meet local opposition → permitting and coordination burdens grow → expected completion dates slip → expected rental income is deferred → capital already invested is locked up longer → future rent discounted to today is worth less → only if delays materialise and rents fail to compensate may the valuations of blocked projects' owners fall",
+        "notes": [
+          "The report confirms local opposition and heightened scrutiny, not a national ban, and gives no specific project halt, budget cut or cancelled chip order. The chain analyses what happens if local resistance becomes delay; those outcomes are not yet facts.",
+          "Buying chips is not the same as having usable compute. Equipment still needs buildings, power connections, cooling and ongoing operations; missing any link prevents service. The story matters because infrastructure expansion is constrained, not because chip design moved.",
+          "Capital expenditure is money invested in long-lived assets such as buildings and servers. If a project has spent but cannot charge, the payback period lengthens; if the company can defer purchases and payments in step, part of the loss is mitigated — look at payment arrangements, not delay alone.",
+          "Discounting converts future money into what you would pay today; the result is present value. The later the same rent arrives, the less it is worth, because the money could be invested elsewhere while waiting. Here, even with rates unchanged, deferral alone lowers value.",
+          "Local resistance also shifts the cost curve: added coordination, siting and construction spending mean a higher cost per unit of compute if output is unchanged. But the material has no cost numbers, so it cannot quantify how much dearer Australian compute becomes.",
+          "The affected parties are not identical. Blocked new projects face cost and payback pressure, while facilities that already have power and can serve immediately may raise rents on scarcity. Not every data-centre company loses in the same direction.",
+          "Cloud providers rent compute and storage over networks. They can shift some investment elsewhere, so slower building in Australia is not a synchronous fall in global chip demand; but data-residency rules, latency and local customer needs mean not everything can move.",
+          "To verify the investment impact, check whether approvals and power connections actually slip, whether committed spend can be paused, when customer leases start billing, and whether other regions can absorb construction. Only build progress, cash outlay and future billing together show whether the giants' capex returns truly deteriorate."
         ]
       }
     }

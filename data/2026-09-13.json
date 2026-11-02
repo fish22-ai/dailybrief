@@ -22,6 +22,21 @@
           "鹰派与鸽派：鹰派把压低通胀放在第一位，宁可牺牲一点增长也要加息；鸽派更看重增长和就业，对通胀容忍度更高，不喜欢加息。",
           "这条的关键词是油价，而不是欧洲央行的意愿：只要能源价格高位维持，欧洲央行降息的空间就被压缩，这条链条的起点在能源市场，不在央行。"
         ]
+      },
+      "insight_en": {
+        "what": "ECB governing council member and Austrian central bank governor Holzmann warned that high oil prices could force the ECB to raise rates further, with inflation risk higher than a few months ago.",
+        "why": "Markets had priced the ECB's hiking cycle as over with cuts next. This remark puts the oil-drives-inflation-drives-tightening chain back on the table, so euro short rates, the euro and European equities all need repricing.",
+        "chain": "Oil stays high → euro-area disinflation slows → the market withdraws rate-cut bets → hike expectations revive → the two-year Bund yield rises → the euro appreciates against the dollar; euro appreciation → exporters' overseas revenue shrinks in translation → export-stock earnings expectations are cut",
+        "notes": [
+          "The ECB's rate decisions are voted by the Governing Council, on which national central bank governors sit, so their public remarks are important clues for the rate path — but one person's view is not the final decision.",
+          "Why oil matters to the ECB: the euro area is a net energy importer, so higher oil directly lifts the energy component and transmits again through transport, chemical feedstocks and food packaging, slowing disinflation.",
+          "Why watch the two-year Bund: German Bunds are the euro area's risk-free benchmark, the two-year is most sensitive to the policy rate, and the market prices the next two years of hikes and cuts through it.",
+          "Higher yields mean lower prices: coupons are fixed, so when the required yield rises, future cash flows discounted at the higher rate are worth less; the longer the duration, the bigger the price fall.",
+          "Why the euro appreciates: as hike expectations rise, the relative return on euro assets improves, cross-border funds must buy euros to buy them, demand rises and the currency strengthens.",
+          "Euro appreciation itself lowers import prices and partly offsets the oil-driven inflation pressure — a self-dampening mechanism in tightening, which is why oil's final effect on inflation is not unlimited.",
+          "Hawks and doves: hawks put beating inflation first and will hike at some cost to growth; doves weight growth and jobs more and tolerate inflation longer.",
+          "The keyword here is oil, not the ECB's wishes: as long as energy stays high, room for cuts is compressed. The chain starts in the energy market, not the central bank."
+        ]
       }
     },
     {
@@ -43,6 +58,21 @@
           "收益率曲线变陡是什么意思：短端被降息预期压住、长端被期限溢价和债券供给推上去，两者利差扩大。对银行而言期限利差改善有利于放贷，对估值而言折现率上行则是压力。",
           "为什么股票也受影响：股票估值是把未来的盈利折算成今天的价值，折现率等于无风险利率加上风险溢价。无风险利率上行，盈利越靠后的公司缩水越明显，所以成长股对长端收益率最敏感。",
           "和上一条的联动：如果油价把通胀顶在高位，央行就更难降息，长端收益率的压力只会更大，两条新闻其实是同一套利率逻辑的两个入口。"
+        ]
+      },
+      "insight_en": {
+        "what": "The Economist argues that sticky inflation, heavy corporate funding needs and vast government debt are jointly pushing long-term yields higher, with victims beyond bondholders.",
+        "why": "Markets had read rising long yields as a temporary delay to cuts. This framing points to structurally higher bond supply and term premium, meaning the discount rate used by all long-duration assets — equities, property — rises across the board.",
+        "chain": "Inflation stays sticky → central bank delays cuts → government issuance is huge → long-bond supply exceeds demand → investors demand a higher term premium → the 10-year Treasury yield rises → long-bond prices fall; the risk-free rate rises → equity discount rates rise → highly valued growth stocks come under pressure",
+        "notes": [
+          "What is the term premium? The longer you lend to the government, the more chances of inflation surprises, fiscal deterioration and poor liquidity, so investors demand extra return over short bonds. It is not an expectation of the future policy rate.",
+          "Why long and short bonds react differently: the short end mainly reflects the policy-rate path over the next two to three years, while the long end adds term premium, long-run inflation expectations and government supply — so the long end need not follow the short end.",
+          "Yields and prices move inversely: coupons are fixed, so a higher required yield discounts the same cash flows more heavily and the price falls; the longer the duration, the greater the sensitivity.",
+          "Why supply depresses prices: a wider deficit means more issuance, and if demand from banks, foreign investors and central banks does not grow in step, only a lower price — a higher yield — clears the market.",
+          "What corporate funding demand means: corporate and government bonds compete for the same capital, pushing up real rates — the true price of money after inflation. That is money itself getting dearer, not short-lived sentiment.",
+          "What a steeper curve means: the short end is anchored by cut expectations while the long end is pushed by premium and supply, widening the gap. Banks benefit from better lending spreads, but higher discount rates pressure valuations.",
+          "Why stocks are affected too: equity valuation discounts future earnings to today; the discount rate is the risk-free rate plus a risk premium. When the risk-free rate rises, firms with more distant earnings shrink the most, so growth stocks are most sensitive to the long end.",
+          "The link to the previous item: if oil holds inflation up, cuts get harder and long-yield pressure only builds — the two stories are two entrances to the same rate logic."
         ]
       }
     }
@@ -68,6 +98,21 @@
           "为什么这类行政令对市场是非线性的：范围可以随谈判随时调整，企业无法做长期资本开支规划，只能推迟投资、增加库存缓冲，这些都会进一步推高成本。",
           "需要跟踪的后续：加拿大的反制措施、豁免清单的具体商品、以及措施是否从整车延伸到关键零部件，后者对供应链的杀伤力大得多。"
         ]
+      },
+      "insight_en": {
+        "what": "The US issued two presidential proclamations adjusting the scope of additional tariffs on Canada, citing discrimination against US commerce in motor-vehicle trade, and banning imports of some Canadian products.",
+        "why": "Markets had assumed the US-Canada auto tariff list was settled. These proclamations turn a fixed list into a scope that can be adjusted at will — up to outright import bans — so North American auto supply-chain costs, vehicle pricing and the Canadian dollar all need revaluation.",
+        "chain": "Canadian auto policy is deemed discriminatory → the US widens the tariff scope → some Canadian products are banned from import → automakers' North American supply-chain costs rise → vehicle price increases push up US core goods inflation → the Fed turns more cautious on cuts → Treasury yields and the dollar find support; risk premium on Canadian assets rises → the CAD comes under pressure",
+        "notes": [
+          "How tariffs are collected: the US importer pays at customs, raising import costs first; the importer then passes them on through prices or absorbs them in margins, and the passed-on part is ultimately borne by US consumers and firms.",
+          "Why the \"discrimination against US commerce\" framing matters: US trade law authorises the president to impose tariffs or restrict imports upon finding unfair trade practices — the wording is the legal basis, not just diplomacy.",
+          "Modifying scope versus excluding imports: the former adjusts which products carry extra duties, possibly widening the list; the latter bars products from the US market outright — stronger and with less room to negotiate.",
+          "Why auto supply chains are special: parts can cross borders multiple times and may be taxed each crossing, so tariffs stack along the chain and the final cost amplifies beyond the headline rate.",
+          "Inflation implications: goods tariffs push up core goods prices; if sustained, they make it harder for the Fed to confirm inflation is returning to target, delaying cuts — the path from trade policy to interest rates.",
+          "FX implications: when terms of trade deteriorate — exports blocked, import costs up — markets demand more risk premium, the country's assets are sold and its currency weakens, while the dollar strengthens on haven status and rate advantage.",
+          "Why such proclamations are non-linear for markets: the scope can shift with negotiations at any time, so firms cannot plan long-term capex and instead defer investment and buffer with inventory, further raising costs.",
+          "What to track: Canada's retaliation, the specific exempted goods, and whether measures extend from finished vehicles to key components — the latter would hurt the supply chain far more."
+        ]
       }
     }
   ],
@@ -92,6 +137,21 @@
           "需要警惕的反向力量：电价上涨和社区反对可能促使地方监管重新收紧，形成放松与反弹之间的政策摆动，这是这条链条最大的不确定性。",
           "对资产价格的含义：受益方向是电力设备、天然气、独立发电商和数据中心运营商；受压方向是对电价敏感的制造业和居民用电支出。"
         ]
+      },
+      "insight_en": {
+        "what": "The Trump administration is easing environmental regulation to accelerate AI data-centre construction, granting exemptions on emissions and permitting.",
+        "why": "Markets had treated power supply and environmental permitting as hard constraints on AI expansion and priced compute costs accordingly. Deregulation shortens build times and cuts compliance costs, but also raises power demand — changing the pace of AI capex and the pricing of power assets.",
+        "chain": "Environmental limits are relaxed → data-centre permitting and construction speed up → power demand rises in concentration → grid and gas-generation investment increases → local power prices rise → data-centre operating costs are pushed back up; compute supply increases → unit compute cost falls → AI application deployment accelerates",
+        "notes": [
+          "Data-centre cost structure: up front it is land, buildings and servers (capex); the biggest long-run operating item is electricity, so the long-term path of power prices directly sets the compute cost curve.",
+          "Why power is the AI bottleneck: one large data centre uses as much electricity as a small-to-mid-size city, while transmission lines, substations and gas turbines take years from approval to operation; when supply lags demand, prices rise first in local markets.",
+          "How US power is priced: several regions run capacity auctions that pay for future supply years ahead, plus hourly spot markets. Once demand forecasts are revised up, the higher clearing prices show up in power prices immediately.",
+          "What deregulation actually relaxes: emissions permits, air-quality review and environmental assessment processes, which used to lengthen approvals and add compliance costs; exemption effectively removes the time cost from the project cycle.",
+          "Why natural gas comes in: the most realistic increment of dispatchable power in the short run is gas generation, so higher gas demand lifts US domestic gas prices and affects LNG export competitiveness.",
+          "What it means for hyperscaler capex: shorter build times lead cloud and AI firms to order earlier and lock power earlier, pulling capex forward and straining supply chains for transformers, gas turbines and cooling.",
+          "The counterforce to watch: rising power prices and community opposition may push local regulators to tighten again — a swing between loosening and backlash that is the chain's biggest uncertainty.",
+          "Asset-price implications: beneficiaries are power equipment, natural gas, independent power producers and data-centre operators; pressured are power-sensitive manufacturers and household electricity budgets."
+        ]
       }
     },
     {
@@ -113,6 +173,21 @@
           "对中国的特殊含义：高端训练芯片受出口管制限制，转向推理和应用层反而绕开了部分受限环节，用成熟制程加软件优化去换效率。",
           "需要跟踪的指标：智能体产品的付费率、单用户收入、云厂商推理收入的环比变化，以及国产AI芯片出货量中推理与训练的比例。",
           "反向风险：如果应用层迟迟不能产生足够收入，前期算力投入会变成沉没成本，行业很可能出现一轮整合与出清。"
+        ]
+      },
+      "insight_en": {
+        "what": "Bloomberg reports that China's AI industry is pivoting from the race over models and compute to deploying and commercialising agents.",
+        "why": "Markets had valued Chinese AI companies on model parameters and compute reserves. This shifts the anchor from training compute to realised revenue and inference demand, changing the pricing of chip demand structure and the profit path of application-layer firms.",
+        "chain": "Chinese AI firms pivot to agent deployment → growth of training compute demand slows → the share of inference compute rises → dependence on the very top training chips falls → demand for domestic inference chips and servers rises → application-layer firms start generating revenue → the valuation anchor shifts from model scale to users and gross margin; many suppliers → inference call prices fall → unit compute cost becomes the competitive key",
+        "notes": [
+          "Model versus agent: a large model is the underlying capability that answers and generates; an agent is software built on it that calls tools and completes multi-step tasks — closer to something people will pay for.",
+          "Training versus inference: training is a one-off, massive investment to teach the model; inference runs the model at each use, with costs growing with usage. As the business focus shifts from research to application, the compute mix shifts from training to inference.",
+          "Why this changes chip demand: training favours the most advanced GPUs and high-bandwidth memory, while inference cares more about throughput and efficiency per unit cost — where domestic chips enter more easily, reducing rigid dependence on top training chips.",
+          "The change in valuation anchor: under the compute narrative the market priced parameters and reserves; under the commercialisation narrative it looks at paying users, cost per call and gross margin — from storytelling to profit and cash flow.",
+          "Why a price war appears: inference is replicable, customers can switch, and there are many suppliers, so prices drift down; survivors tend to have the lowest unit compute cost plus data or scenario moats.",
+          "The China-specific angle: export controls constrain top training chips, so moving to inference and applications bypasses some restricted links, trading mature process nodes plus software optimisation for efficiency.",
+          "Metrics to track: agent products' paying rates, revenue per user, quarter-on-quarter inference revenue at cloud providers, and the inference-to-training split in domestic AI chip shipments.",
+          "The reverse risk: if the application layer fails to generate enough revenue, earlier compute spending becomes sunk cost, and the industry likely consolidates."
         ]
       }
     }

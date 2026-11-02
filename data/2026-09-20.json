@@ -20,6 +20,19 @@
           "对美元的影响路径：非美元结算渠道减少意味着全球贸易对美元的需求更稳固，美元指数获得支撑，进而压低以美元计价的大宗商品价格。",
           "注意这条新闻的信号意义大于实际资金影响：一个试点平台的成员变动，短期不会改变全球外汇储备结构，但会改变市场对人民币国际化速度的预期。"
         ]
+      },
+      "insight_en": {
+        "what": "Saudi Arabia's central bank has quit the China-led cross-border currency platform, part of Beijing's push to build a de-dollarisation alternative.",
+        "why": "Markets had treated mBridge as an early signal of RMB cross-border settlement infrastructure. Saudi withdrawal weakens the expectation of non-dollar oil settlement, tilting the RMB-internationalisation versus dollar-reserve balance back toward the dollar.",
+        "chain": "Saudi Arabia quits mBridge → oil-in-yuan settlement expectations cool → RMB cross-border use cases shrink → offshore RMB demand weakens → downward pressure on offshore RMB rates → support for the RMB exchange rate fades → relative demand for dollar assets recovers → Treasury yields get marginal support",
+        "notes": [
+          "What is mBridge? A cross-border payment pilot built jointly by several central banks, using central bank digital currencies for settlement and bypassing SWIFT (the global interbank messaging system) and the dollar clearing system.",
+          "Why does Saudi Arabia matter? It is one of the world's largest oil exporters. If oil were invoiced and settled in RMB, global demand for the currency would rise sharply — the most important piece of the RMB internationalisation puzzle.",
+          "De-dollarisation is not the same as dollar collapse: leaving one pilot platform slows the pace, it does not mean Saudi Arabia has chosen the dollar or the yuan outright; more likely it is adjusting chips in a geopolitical game.",
+          "Offshore RMB (CNH) versus onshore (CNY): the offshore market is freer and more volatile, and fewer cross-border use cases directly depress offshore demand.",
+          "The transmission to the dollar: fewer non-dollar settlement channels make the world's trade demand for dollars more solid, supporting the dollar index and in turn pressing dollar-priced commodities.",
+          "Note that the signal matters more than the money flow here: a membership change at a pilot platform will not move global reserve composition in the short run, but it changes expectations about the speed of RMB internationalisation."
+        ]
       }
     },
     {
@@ -38,6 +51,18 @@
           "为什么这对市场重要？2020-2022年平台经济经历了一轮强监管，市场一直在判断监管是否见顶。合规评价指南如果落地，说明监管进入制度化阶段，不确定性和突发性处罚风险下降，但常态化合规成本上升。",
           "头部平台和中小平台影响不同：合规成本对大平台来说是固定支出，占比小；对中小平台可能是生死线，这会加速行业集中。",
           "数据互联互通意味着什么？平台的数据不再是孤岛，监管部门可以跨平台追踪商家和交易行为，这对刷单、虚假宣传等行为的打击力度上升。"
+        ]
+      },
+      "insight_en": {
+        "what": "China's market regulator said it will draw up a compliance evaluation guide for online trading platforms and accelerate the national platform-monitoring system, pushing regulatory data to connect across levels and departments.",
+        "why": "Markets had priced that platform-economy regulation had passed its trough after normalisation. A compliance guide means regulation is shifting from case-by-case penalties to an institutional, predictable framework, so platforms' compliance costs and data-compliance spending must be re-estimated.",
+        "chain": "The compliance guide is introduced → platform compliance costs rise → smaller platforms face greater operating pressure → industry concentration increases → top platforms gain bargaining power but face tighter data oversight → platform margins are re-estimated → valuations within the internet sector diverge",
+        "notes": [
+          "What is the compliance evaluation guide? A scoring framework for platforms covering data security, consumer protection and merchant management; the result may affect whether a platform qualifies for certain business licences.",
+          "What is the national monitoring platform? A cross-department, cross-level data-sharing system that lets regulators see platform transaction data in near real time and raises enforcement efficiency.",
+          "Why does this matter to markets? Platform economics went through a hard regulatory round in 2020-22 and the market has been judging whether regulation has peaked. If the guide lands, regulation enters an institutional phase: less uncertainty and surprise-penalty risk, but recurring compliance costs rise.",
+          "Top and smaller platforms are affected differently: compliance is a fixed cost, small for giants but potentially existential for small platforms, which accelerates concentration.",
+          "Data interconnection means platform data is no longer an island: regulators can track merchants and transactions across platforms, raising the cost of fake orders and false advertising."
         ]
       }
     }
@@ -61,6 +86,19 @@
           "注意这是分析人士的预期，不是峰会结果本身：市场会提前定价这种预期，如果峰会结果不及预期，资产价格可能反向调整。",
           "中美峰会的关键观察点：关税是否下调、科技出口管制是否松动、是否有新的贸易协议框架。"
         ]
+      },
+      "insight_en": {
+        "what": "Analysts expect China to hold a stronger hand at the Xi-Trump summit in Washington.",
+        "why": "Markets had worried that deteriorating US-China ties would escalate tariffs and accelerate supply-chain decoupling. This shifts expectations about the summit's direction: a stronger Chinese position raises the odds of tariff relief or trade de-escalation, so export chains and supply-chain assets need repricing.",
+        "chain": "China's negotiating position strengthens → the market expects tariff easing → exporters' earnings expectations improve → decoupling fears cool → cross-border capital returns to Chinese assets → the RMB gains support → valuations of China export and supply-chain stocks recover",
+        "notes": [
+          "Why might China's hand be stronger? Possible reasons: rising irreplaceability in critical minerals and new-energy supply chains, US inflation making tariff costs harder to bear, and deepening trade ties with other economies adding leverage.",
+          "The mechanism from tariffs to markets: tariffs raise import costs, push up inflation and compress profits. Easing tariffs lowers import costs, eases inflation and improves corporate earnings.",
+          "What is supply-chain decoupling? Firms moving production out of China to reduce dependence on Chinese manufacturing. If decoupling slows, China's position as the global manufacturing hub is more secure.",
+          "Why does returning cross-border capital matter? Stronger foreign demand for Chinese assets lifts the RMB and valuations of A-shares and Hong Kong stocks.",
+          "Note this is an analyst expectation, not the summit outcome: markets price it in advance, and if the summit disappoints, prices may reverse.",
+          "Key things to watch at the summit: whether tariffs come down, whether tech export controls loosen, and whether any new trade framework emerges."
+        ]
       }
     }
   ],
@@ -83,6 +121,19 @@
           "对英伟达的影响：中国是全球最大的AI算力市场之一，如果国产替代加速，英伟达在华收入增速会放缓，但短期内英伟达在全球高端训练芯片上仍不可替代。",
           "对国内产业链的影响：华为昇腾芯片的供应链企业、算力租赁公司、基于国产算力做AI应用的公司都会受益。"
         ]
+      },
+      "insight_en": {
+        "what": "Huawei's Wang Tao said the company aims to build the AI compute foundation, and that one good chip is far from enough; the CANN software ecosystem has crossed an inflection point.",
+        "why": "Markets had assumed domestic AI chips were constrained by process nodes and ecosystem gaps and could not replace Nvidia. Huawei shifting the competitive axis from a single chip to a compute foundation plus software ecosystem changes the assessment of domestic AI compute usability and substitution speed, forcing a re-look at the valuation logic of the domestic compute chain.",
+        "chain": "Huawei fills in the software ecosystem → domestic AI chip usability improves → migration costs for large-model developers fall → demand for domestic compute rises → Nvidia's China share comes under pressure → the domestic chip supply chain benefits → compute rental and AI infrastructure valuations are reshaped",
+        "notes": [
+          "What is CANN? Huawei's proprietary AI computing framework, analogous to Nvidia's CUDA. CUDA is the programming interface for Nvidia chips; code written for CUDA must be rewritten for another chip, which is the core of Nvidia's ecosystem moat.",
+          "Why is the software ecosystem more important than the chip itself? Once developers are locked into an ecosystem, migration costs are high. However good the silicon, without a usable toolchain large-model developers will not switch.",
+          "What is a compute foundation? Not just chips but servers, networking, storage, software frameworks and developer tools — a full stack. Huawei's point is that the competition is system versus system.",
+          "What does crossing the inflection point mean? CANN's developer count, available models and toolchain maturity have reached a critical mass where positive feedback begins: more developers improve the ecosystem, which attracts more developers.",
+          "Impact on Nvidia: China is one of the largest AI compute markets. Faster domestic substitution slows Nvidia's China revenue growth, though it remains hard to replace at the global high end for training chips in the short run.",
+          "Impact on the domestic chain: suppliers to Huawei's Ascend chips, compute-rental companies and AI application firms built on domestic compute all benefit."
+        ]
       }
     },
     {
@@ -102,6 +153,19 @@
           "对半导体供应链的影响：AI开发加速直接拉动GPU、HBM（高带宽内存）、先进封装等需求，台积电、SK海力士等供应商受益。",
           "潜在的反弹风险：如果AI安全事件发生，公众舆论可能推动监管突然收紧，这种政策不确定性本身也是市场需要定价的风险。",
           "对中国的含义：美国加速AI开发可能加大中美AI竞争压力，中国国产算力替代的紧迫性上升。"
+        ]
+      },
+      "insight_en": {
+        "what": "Trump said he will name an AI czar while continuing to push tech companies to accelerate development, calling AI safety risks a hoax.",
+        "why": "Markets had expected AI regulation to tighten gradually. This stance implies further loosening in the US, so tech giants' capex and product cadence will not slow for regulation, supporting expectations for AI compute demand and semiconductor supply chains.",
+        "chain": "US AI regulation loosens → tech giants accelerate AI development → compute capex rises → demand for Nvidia and other chips rises → data-centre and power infrastructure investment expands → the upstream AI chain benefits → but accumulated safety risks may trigger a later regulatory backlash",
+        "notes": [
+          "What is an AI czar? A cross-agency coordinator for AI policy, aligning the White House's stance across departments, similar to the earlier pandemic-coordinator role.",
+          "Why does deregulation matter to markets? Regulatory risk is one of the biggest uncertainties in AI development. With it reduced, tech companies can commit capex more boldly and compute demand expectations rise.",
+          "What does calling AI safety risks a hoax mean? A preference for free-market competition without slowing AI for safety concerns — a different direction from the previous administration's emphasis on safety testing.",
+          "Impact on the semiconductor chain: faster AI development directly pulls GPU, HBM (high-bandwidth memory) and advanced packaging demand; TSMC and SK Hynix benefit.",
+          "The rebound risk: if a safety incident occurs, public opinion could drive sudden tightening, and that policy uncertainty is itself a risk the market must price.",
+          "Implication for China: faster US development increases competitive pressure and raises the urgency of domestic compute substitution."
         ]
       }
     }
