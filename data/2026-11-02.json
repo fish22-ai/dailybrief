@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-02",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Global AI sell-off eases after Nasdaq’s worst month in over a year",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/d7fe99f8-d292-4cb5-a8fd-45be0f8cc2b3?syn-25a6b1a6=1",
+      "published": "2026-11-02 13:18",
+      "raw_summary": "US tech stocks set to start week higher following bruising rout",
+      "insight": {}
+    },
+    {
+      "title": "Junk debt rout sparks ‘bloodbath’ for credit investors",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
+      "published": "2026-11-01 22:54",
+      "raw_summary": "Aggressive tactics to shift assets beyond reach of creditors have added fuel to sell-off",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Nine killed as small jet crashes on Florida street",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cm369yy7lw73o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-02 15:33",
+      "raw_summary": "Transportation Secretary Sean Duffy described the crash, which happened near President Trump's Mar-a-Lago resort, as a \"horrific tragedy\".",
+      "insight": {}
+    },
+    {
+      "title": "Trump makes fevered campaign push in final weekend before election",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c3j47gjx29vro?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-02 12:04",
+      "raw_summary": "The US president rallied in states that Republicans previously won - showcasing how tight Tuesday's elections could be in determining control of Congress.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "North Korea’s Hackers Supercharge Crypto Heists With AI Skills",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-02/north-korea-s-hackers-supercharge-crypto-heists-with-ai-skills",
+      "published": "2026-11-02 14:22",
+      "raw_summary": "The North Korean group accused of the world’s largest-ever crypto heist is a state-sponsored collective of elite hackers, groomed from an early age to hunt for “big game.” Artificial intelligence has ",
+      "insight": {}
+    },
+    {
+      "title": "Hong Kong Chip IPOs Tap Intertwined Investors, Boss’s Networks",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-02/hong-kong-chip-ipos-tap-intertwined-investors-boss-s-networks",
+      "published": "2026-11-02 13:18",
+      "raw_summary": "Hong Kong listing hopefuls are shedding light on the inner workings of their initial public offerings, revealing cross-investments and personal connections, just as regulators step up scrutiny of stru",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261102153646134702895wbs2kVGAzlhLR)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 7,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 18,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
