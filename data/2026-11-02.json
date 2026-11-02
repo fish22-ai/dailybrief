@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Global AI sell-off eases after Nasdaq’s worst month in over a year",
@@ -8,7 +8,30 @@
       "url": "https://www.ft.com/content/d7fe99f8-d292-4cb5-a8fd-45be0f8cc2b3?syn-25a6b1a6=1",
       "published": "2026-11-02 13:18",
       "raw_summary": "US tech stocks set to start week higher following bruising rout",
-      "insight": {}
+      "insight": {
+        "what": "纳斯达克刚录得一年多来最差单月，11 月 2 日美股科技股开盘反弹，全球 AI 股抛售暂时缓和。",
+        "why": "市场原本把 AI 资本开支当成不会中断的成长故事，这轮下跌是在给「回报不确定」重新定价，估值锚从成长叙事退回利率约束。",
+        "chain": "AI 资本开支持续扩张 → 市场开始质疑回报周期 → 科技股盈利预期下修 → 纳斯达克创一年多最差单月 → 趋势与杠杆资金被迫减仓 → 抛售自我强化、跌幅放大 → 估值回落到利率能支撑的位置 → 卖压衰竭、指数技术性反弹",
+        "notes": [
+          "为什么抛售会自我强化？趋势跟随策略和风险平价基金按「波动率」决定仓位：波动率上升 → 模型要求降杠杆 → 被动卖出 → 波动率再升。这个正反馈叫波动率反馈循环，也是「跌起来没底」的机械原因，不是基本面每天都变坏。",
+          "估值与利率的关系可以写成 `P/E = 1/(r − g)`（戈登增长模型的变形）。r 是无风险利率加风险溢价，g 是永续增长率。r 上行而 g 不变，合理的市盈率就被压低 —— 所以「利率是估值的重力」不是比喻，是分母。",
+          "「最差单月」怎么读？它按月末收盘价算整月累计跌幅，衡量的是持续性抛压；和单日暴跌（V 型恐慌）性质不同 —— 前者说明资金在分批撤退，修复也更慢。",
+          "如果 AI 资本开支的回报不达预期，损失不走「成本」，而是走减值（impairment）：折旧年限假设拉得越长，当期利润越好看；一旦认输，会把过去几年攒的利润一次性砸掉。",
+          "面试可以这样收尾：这轮下跌不是「AI 不行了」，而是市场把贴现率 r 提上去以后，远期现金流占比极高的资产必须先跌 —— 同样的分歧，价值股受伤远比成长股轻。"
+        ]
+      },
+      "insight_en": {
+        "what": "Nasdaq has just posted its worst month in over a year; US tech stocks opened higher on 2 November, easing the global AI sell-off for now.",
+        "why": "The market had priced AI capex as an uninterrupted growth story. This drawdown is a repricing of return uncertainty — the valuation anchor shifting from narrative back to the rate constraint.",
+        "chain": "AI capex keeps expanding → market starts questioning the payback period → tech earnings estimates cut → Nasdaq posts worst month in over a year → trend and leveraged funds forced to de-risk → selling feeds on itself, losses amplify → valuations fall back to what rates can support → selling exhausts, index bounces technically",
+        "notes": [
+          "Why does a sell-off feed on itself? Trend-following and risk-parity funds size positions by volatility: vol rises → models demand less leverage → forced selling → vol rises again. This positive feedback is the volatility feedback loop, and it is the mechanical reason drawdowns feel bottomless even when fundamentals barely move day to day.",
+          "The link between valuation and rates can be written as `P/E = 1/(r − g)`, a rearrangement of the Gordon growth model. Here r is the risk-free rate plus a risk premium and g is perpetual growth. If r rises and g does not, the justified P/E falls — so \"rates are gravity for valuations\" is not a metaphor, it is the denominator.",
+          "\"Worst month\" should be read as the cumulative decline measured on month-end closes. It captures sustained distribution; it is not the same as a single-day crash, which is a V-shaped panic. Persistent selling means capital is leaving in tranches, and repair is slower.",
+          "If AI capex returns disappoint, the loss does not flow through cost of goods — it flows through impairment. Longer assumed useful lives flatter current profits; admitting the mistake dumps several years of accumulated earnings into one quarter.",
+          "A good interview close: this is not \"AI is over\". It is that once the discount rate r moves up, assets whose cash flows sit far in the future must fall first — the same disagreement hurts value stocks far less than growth stocks."
+        ]
+      }
     },
     {
       "title": "Junk debt rout sparks ‘bloodbath’ for credit investors",
@@ -16,35 +39,127 @@
       "url": "https://www.ft.com/content/fdc9a85d-d2c4-465f-99ca-609d68b6d443?syn-25a6b1a6=1",
       "published": "2026-11-01 22:54",
       "raw_summary": "Aggressive tactics to shift assets beyond reach of creditors have added fuel to sell-off",
-      "insight": {}
+      "insight": {
+        "what": "美国高收益债（垃圾债）遭集中抛售，部分发行人把资产转移出债权人追索范围，投资者称之为「血洗」。",
+        "why": "信用债定价的核心是违约后能收回多少，资产被腾挪意味着回收率下降，同样的违约概率需要更高的利差补偿，再融资成本随之上行。",
+        "chain": "发行人把资产移出抵押池 → 债权人可追索资产减少 → 预期违约回收率下降 → 投资者要求更高信用利差 → 高收益债价格下跌、YTM 上行 → 发行人再融资成本抬升 → 低评级企业现金流更紧 → 违约概率进一步上升",
+        "notes": [
+          "信用利差的定价近似式：`y_corporate = y_treasury + Spread`，而 `Spread ≈ PD × (1 − 回收率)`。PD 是违约概率，回收率是违约后债权人实际拿回的比例。这条式子说明：回收率下降和违约概率上升，对利差是同一方向。",
+          "回收率（recovery rate）为什么关键？因为债券投资者的期望损失不是「本金全没」，而是「本金 × (1 − 回收率)」。资产被移走，法律上债权还在，但变现时发现抵押池是空的 —— 这是近年 liability management 操作的核心。",
+          "什么是 liability management？发行人在真正违约前，通过交换要约（exchange offer）把旧债换成期限更长、抵押更弱的新债。法律上不算违约，经济上等同于庭外重组，评级机构往往事后才降级。",
+          "高收益债对利率的敏感度是双重的：无风险利率上行抬高分母，经济下行又抬高 PD，两头顶在一起，所以它的回撤常比股票更剧烈 —— 流动性还更差，想卖时买盘已经消失。",
+          "面试追问「垃圾债和股票谁先反应」：通常是信用先动。债券持有人的收益上限是票息、下行是本金，一旦判断回收率恶化就必须减仓，没有「等反弹」的余地。"
+        ]
+      },
+      "insight_en": {
+        "what": "US high-yield (junk) bonds are being sold heavily after some issuers moved assets beyond creditors' reach; investors are calling it a \"bloodbath\".",
+        "why": "Credit is priced off expected recovery. Assets moved out of reach mean a lower recovery rate, so the same default probability demands a wider spread — and refinancing costs rise from there.",
+        "chain": "Issuers move assets out of the collateral pool → fewer assets creditors can claim → expected recovery rate falls → investors demand wider credit spreads → high-yield prices drop, YTM rises → issuers' refinancing costs climb → weaker cash flow at low-rated firms → default probability rises further",
+        "notes": [
+          "A working approximation for credit spreads: `y_corporate = y_treasury + Spread`, where `Spread ≈ PD × (1 − recovery rate)`. PD is the probability of default and recovery is what creditors actually get back. The formula says lower recovery and higher PD push the spread the same way.",
+          "Why is the recovery rate decisive? Because a bondholder's expected loss is not \"the whole principal\" but `principal × (1 − recovery)`. Move the assets and the claim still exists on paper, but at enforcement the collateral pool turns out to be empty — the core of recent liability-management plays.",
+          "What is liability management? Before an actual default, an issuer exchanges old notes for new ones with longer maturities and weaker security via an exchange offer. It is not legally a default but economically an out-of-court restructuring, and ratings agencies often downgrade only afterwards.",
+          "High yield is doubly rate-sensitive: higher risk-free rates raise the denominator while a slowing economy raises PD. Both bite at once, so drawdowns are often sharper than equities — and liquidity is worse, so bids vanish exactly when you want to sell.",
+          "Likely follow-up: which reacts first, junk bonds or stocks? Usually credit. A bondholder's upside is capped at the coupon and the downside is principal, so once recovery looks impaired you must cut — there is no \"wait for the bounce\" option."
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Nine killed as small jet crashes on Florida street",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cm369yy7lw73o?at_medium=RSS&at_campaign=rss",
-      "published": "2026-11-02 15:33",
-      "raw_summary": "Transportation Secretary Sean Duffy described the crash, which happened near President Trump's Mar-a-Lago resort, as a \"horrific tragedy\".",
-      "insight": {}
-    },
     {
       "title": "Trump makes fevered campaign push in final weekend before election",
       "source": "BBC",
       "url": "https://www.bbc.co.uk/news/articles/c3j47gjx29vro?at_medium=RSS&at_campaign=rss",
       "published": "2026-11-02 12:04",
       "raw_summary": "The US president rallied in states that Republicans previously won - showcasing how tight Tuesday's elections could be in determining control of Congress.",
-      "insight": {}
+      "insight": {
+        "what": "美国中期选举前最后一个周末，特朗普在共和党传统票仓密集拉票；民调显示周二的国会控制权之争异常胶着。",
+        "why": "国会归属决定财政支出、税收与监管的可行边界。市场原本定价「分裂政府＝政策僵局」，若一边倒，财政赤字与关税风险都要重新定价。",
+        "chain": "中期选举临近 → 国会控制权不确定 → 财政与关税路径不明 → 长端国债期限溢价抬升 → 收益率曲线陡峭化 → 美元与实际利率同步走强 → 新兴市场资本外流压力上升 → 高外债经济体汇率承压",
+        "notes": [
+          "什么是中期选举？总统四年任期中间那次国会改选（众议院全部席位、参议院约三分之一）。历史上执政党几乎总在中期丢席位，所以它相当于对总统的「期中考试」。",
+          "期限溢价 term premium：投资者借钱给政府一段长时间，要求的额外补偿，覆盖通胀不确定性和财政可持续性。赤字扩大 → 国债供给增加 → 期限溢价上升 → 长端利率上行。这就是「财政风险走长端」的机制。",
+          "为什么「分裂政府」反而利好债市？政策僵局意味着新增支出和减税都难落地，赤字扩张放缓。所以选举结果对国债的影响不只取决于谁赢，还取决于赢多少 —— 压倒性胜利才是债市的坏消息。",
+          "关税为什么是即时变量？关税由行政部门依据现有授权就能调整，不需要国会立法。所以选举结果对贸易政策的影响几天内就能反映到进口价格和通胀预期上。",
+          "面试可以点一句：真正被定价的不是党派，而是「政策变化的幅度」。不确定性本身就有价格，它体现在期限溢价和期权隐含波动率里。"
+        ]
+      },
+      "insight_en": {
+        "what": "On the final weekend before the US midterms, Trump campaigned hard in traditionally Republican states; polls show Tuesday's fight for Congress is unusually tight.",
+        "why": "Who controls Congress sets the feasible boundary for spending, taxes and regulation. The market had priced \"split government = gridlock\"; a one-sided result forces repricing of deficit and tariff risk.",
+        "chain": "Midterms approach → control of Congress uncertain → fiscal and tariff path unclear → term premium on long-dated Treasuries rises → yield curve steepens → dollar and real yields strengthen together → capital outflow pressure on emerging markets → currencies of high-external-debt economies come under strain",
+        "notes": [
+          "What are the midterms? The congressional elections held midway through a president's four-year term (all House seats plus roughly a third of the Senate). The incumbent party has historically almost always lost seats, so it works as a mid-term report card on the president.",
+          "Term premium: the extra compensation investors demand for lending to the government for a long horizon, covering inflation uncertainty and fiscal sustainability. A wider deficit → more Treasury supply → higher term premium → higher long-end yields. This is the mechanism behind \"fiscal risk shows up at the long end\".",
+          "Why is gridlock good for bonds? A stalemate means new spending and tax cuts cannot pass, so deficit expansion slows. The election's bond impact therefore depends not just on who wins but on the margin — a landslide is the bad outcome for duration.",
+          "Why are tariffs an immediate variable? Tariffs can be adjusted by the executive branch under existing authority without new legislation. So the election's effect on trade policy can reach import prices and inflation expectations within days.",
+          "A crisp line for interviews: what gets priced is not the party but the size of the policy change. Uncertainty itself carries a price, and it shows up in term premium and implied option volatility."
+        ]
+      }
+    },
+    {
+      "title": "Iran warns new war with US could last longer as Trump threatens ‘the hammer’",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/world/middle-east/article/3372947/iran-warns-new-war-us-could-last-longer-trump-threatens-hammer",
+      "published": "2026-11-02 13:58",
+      "raw_summary": "Iran warned on Sunday that any renewed war with the United States could last longer than the previous round of fighting, after US President Donald Trump said he still had to “take care” of more target",
+      "insight": {
+        "what": "伊朗警告，若与美国重开战事，持续时间可能长于上一轮；特朗普称仍有更多目标需要「处理」。",
+        "why": "市场原本定价的是有限冲突加快速降温。冲突长期化会改变霍尔木兹海峡的通行风险溢价，原油与航运成本首当其冲。",
+        "chain": "美伊表态互相升级 → 冲突长期化概率上升 → 霍尔木兹通行风险溢价上升 → 原油近月合约相对远月升水 → 航运保险与运费上涨 → 运输成本推高核心通胀 → 央行降息路径后移 → 长端利率上行、成长股承压",
+        "notes": [
+          "霍尔木兹海峡为什么是定价开关？全球约五分之一的海运原油经此通过，替代路线（管道、绕行好望角）运力有限。任何封锁威胁都会立刻反映在布伦特原油近月与远月的价差上。",
+          "期货升水（backwardation）：近月价格高于远月，说明现货紧张、买家愿意为「现在拿到货」付溢价。它是供应风险最直接的读数 —— 比新闻标题更早、更诚实。",
+          "为什么油价会进核心通胀？能源直接计入 CPI 的能源分项，同时通过运费、化肥、塑料等投入品间接渗透。央行通常「看穿」一次性油价冲击，但会紧盯二轮效应 —— 也就是工资和服务价格是否跟着涨。",
+          "地缘风险溢价不是供需变化，而是投资者为不确定性付的保险费。它的特点是来得快、去得也快：只要冲突降温，这部分溢价会在几天内回吐，所以不宜当成长期趋势来配置。",
+          "面试可以补一句：真正决定通胀路径的不是油价水平，而是它停留的时间。停留越久，越容易渗进通胀预期，央行就越难无视。"
+        ]
+      },
+      "insight_en": {
+        "what": "Iran warned that a renewed war with the US could last longer than the previous round, after Trump said more targets still needed to be \"taken care of\".",
+        "why": "The market had priced a limited conflict that cools quickly. A prolonged conflict changes the transit risk premium through the Strait of Hormuz, hitting crude and shipping costs first.",
+        "chain": "US and Iranian rhetoric escalate → probability of a prolonged conflict rises → transit risk premium through Hormuz rises → front-month crude trades at a premium to back months → shipping insurance and freight rates rise → transport costs push core inflation higher → central bank rate cuts get pushed back → long-end yields rise, growth stocks under pressure",
+        "notes": [
+          "Why is Hormuz the pricing switch? About a fifth of seaborne crude passes through it, and alternatives (pipelines, routing around the Cape of Good Hope) have limited capacity. Any threat of closure shows up immediately in the Brent front-to-back spread.",
+          "Backwardation: front-month prices above deferred months means physical crude is tight — buyers pay up to get barrels now. It is the most direct read on supply risk, earlier and more honest than headlines.",
+          "Why does oil reach core inflation? Energy sits directly in the CPI energy component and also seeps in indirectly through freight, fertiliser and plastics. Central banks usually \"look through\" a one-off oil shock but watch second-round effects closely — that is, whether wages and services prices follow.",
+          "A geopolitical risk premium is not a change in supply and demand; it is insurance paid for uncertainty. It arrives fast and leaves fast: once tensions cool, the premium unwinds within days, so it is a poor basis for long-term positioning.",
+          "Worth adding in an interview: what determines the inflation path is not the oil price level but how long it stays there. The longer it lingers, the more it leaks into expectations, and the harder it is for a central bank to ignore."
+        ]
+      }
     }
   ],
   "tech": [
     {
-      "title": "North Korea’s Hackers Supercharge Crypto Heists With AI Skills",
+      "title": "Singapore’s STTGDC Eyes $2.4 Billion Loan, Adds to AI Debt Binge",
       "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-02/north-korea-s-hackers-supercharge-crypto-heists-with-ai-skills",
-      "published": "2026-11-02 14:22",
-      "raw_summary": "The North Korean group accused of the world’s largest-ever crypto heist is a state-sponsored collective of elite hackers, groomed from an early age to hunt for “big game.” Artificial intelligence has ",
-      "insight": {}
+      "url": "https://www.bloomberg.com/news/articles/2026-11-02/singapore-s-sttgdc-eyes-2-4-billion-loan-adds-to-ai-debt-binge",
+      "published": "2026-11-02 09:58",
+      "raw_summary": "Singapore-based data center operator STT GDC Pte. is in talks with banks for a S$3.1 billion ($2.4 billion) syndicated loan, according to people familiar with the matter, as the AI boom continues to f",
+      "insight": {
+        "what": "新加坡数据中心运营商 STT GDC 正与银行洽谈 31 亿新元（约 24 亿美元）银团贷款，AI 算力需求推动数据中心债务融资持续膨胀。",
+        "why": "数据中心从轻资产运营变成重资产加高杠杆，现金流高度依赖长期租约。一旦 AI 需求增速放缓，这批债务的偿付假设就要整体重估。",
+        "chain": "AI 训练与推理需求爆发 → 数据中心资本开支激增 → 企业转向银团贷款与债券融资 → 数据中心债务供给上升 → 评级机构审视租约集中度 → 融资成本抬升、期限缩短 → 项目 IRR 下降 → 新增产能扩张放缓",
+        "notes": [
+          "银团贷款（syndicated loan）：多家银行按份额共同放贷，单笔金额大、期限通常 3 到 7 年，定价多为 `SOFR + 利差`。它比发债快、比双边贷款额度大，是重资产项目扩张的标准工具。",
+          "项目融资的核心指标是 DSCR（偿债覆盖率）：`DSCR = 可用现金流 / 当期还本付息`，银行通常要求 1.2 到 1.3 倍以上。它衡量的是「现金流掉多少，还款还撑不撑得住」。",
+          "为什么 AI 债务值得警惕？算力设备按 3 到 5 年折旧，而数据中心债务期限可能拉到 7 年以上 —— 设备还没折旧完，贷款还没到期，中间要靠持续的技术更新来维持租金，形成期限错配。",
+          "数据中心的现金流本质是「类债券」：靠 10 到 15 年长约锁定租金。所以它同时怕两件事 —— 租户信用恶化（PD 上升）和利率上行（折现率上升），和长久期债券一模一样。",
+          "面试可以对比：云厂商是用自己的资产负债表扩张，数据中心运营商是用杠杆替客户扩张。后者把 AI 需求的波动放大了，一旦增速放缓，受伤的顺序是先运营商、后设备商。"
+        ]
+      },
+      "insight_en": {
+        "what": "Singapore data-centre operator STT GDC is in talks with banks for a S$3.1 billion (US$2.4 billion) syndicated loan, as AI compute demand keeps inflating data-centre debt financing.",
+        "why": "Data centres have shifted from asset-light operations to heavy assets plus high leverage, with cash flow dependent on long leases. If AI demand growth slows, the whole repayment assumption has to be revalued.",
+        "chain": "AI training and inference demand surges → data-centre capex jumps → operators turn to syndicated loans and bonds → data-centre debt supply rises → rating agencies scrutinise lease concentration → funding costs rise and tenors shorten → project IRR falls → new capacity expansion slows",
+        "notes": [
+          "A syndicated loan is underwritten by several banks each taking a share: large ticket size, typically 3 to 7 years, priced at `SOFR + spread`. It is faster than a bond deal and larger than a bilateral loan, which is why it is the standard tool for heavy-asset expansion.",
+          "The key project-finance metric is DSCR (debt service coverage ratio): `DSCR = cash flow available for debt service / debt service due`, with banks typically requiring 1.2 to 1.3 times or more. It measures how much cash flow can fall before repayment breaks.",
+          "Why is AI debt worth watching? Compute equipment depreciates over 3 to 5 years while data-centre debt can run beyond 7 years — the kit is obsolete before the loan matures, and rents have to be defended by continuous technology refresh. That is a maturity mismatch.",
+          "Data-centre cash flow is bond-like: rents locked in by 10 to 15 year contracts. So it fears two things at once — tenant credit deterioration (PD up) and higher rates (discount rate up) — exactly like a long-duration bond.",
+          "A useful comparison for interviews: hyperscalers expand on their own balance sheet; data-centre operators expand on leverage on behalf of customers. The latter amplifies swings in AI demand, and when growth slows the operators are hit before the equipment vendors."
+        ]
+      }
     },
     {
       "title": "Hong Kong Chip IPOs Tap Intertwined Investors, Boss’s Networks",
@@ -52,10 +167,32 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-02/hong-kong-chip-ipos-tap-intertwined-investors-boss-s-networks",
       "published": "2026-11-02 13:18",
       "raw_summary": "Hong Kong listing hopefuls are shedding light on the inner workings of their initial public offerings, revealing cross-investments and personal connections, just as regulators step up scrutiny of stru",
-      "insight": {}
+      "insight": {
+        "what": "香港芯片企业 IPO 热潮中，申报文件暴露出发行人之间的交叉投资与实控人私人网络，正值监管收紧对此类股权结构的审查。",
+        "why": "交叉投资会虚增认购需求、掩盖真实流通盘，监管收紧意味着审核周期拉长、发行折价扩大，板块估值中枢随之下移。",
+        "chain": "芯片企业扎堆赴港上市 → 保荐人引入关联方认购 → 交叉持股虚增账面需求 → 监管关注股权结构透明度 → 问询增加、上市周期拉长 → 发行折价扩大 → 上市后自由流通量偏低 → 二级市场流动性折价上升",
+        "notes": [
+          "交叉持股（cross-shareholding）：A 持有 B、B 又持有 A，或同一实控人旗下公司互相认购 IPO 份额。它会让「认购倍数」虚高，掩盖真实需求强度。",
+          "自由流通量 free float：真正可在市场上交易的股份比例。太低会导致股价容易被少量资金拉动、被排除在部分指数之外，机构也没法建仓 —— 所以估值要给流动性折价。",
+          "监管为什么在意？港股对「壳股」和股份高度集中（俗称围飞）有专门审查，防止上市后用少量筹码操纵价格，再高位派货给散户。",
+          "IPO 折价的经济含义：不确定性越高，承销商必须留出越大的折价来吸引基石投资者。折价不是「便宜」，而是对信息不对称的定价。",
+          "面试可以这样串：一级市场的结构问题不会消失，它会以「流动性折价」的形式转移到二级市场 —— 上市首日涨得再好，流通盘太小的股票长期都要还这笔账。"
+        ]
+      },
+      "insight_en": {
+        "what": "In Hong Kong's chip IPO rush, filings are exposing cross-investments between issuers and founders' personal networks, just as regulators tighten scrutiny of such ownership structures.",
+        "why": "Cross-investments inflate apparent demand and mask the true free float. Tighter scrutiny means longer approval cycles and wider issue discounts, pulling the sector's valuation centre down.",
+        "chain": "Chip companies rush to list in Hong Kong → sponsors bring in related-party subscribers → cross-shareholdings inflate book demand → regulators focus on ownership transparency → more queries, longer listing timelines → issue discounts widen → post-IPO free float stays low → secondary-market liquidity discount rises",
+        "notes": [
+          "Cross-shareholding: A holds B while B holds A, or companies under the same ultimate owner subscribe to each other's IPO allocations. It inflates the headline subscription multiple and hides how strong real demand actually is.",
+          "Free float is the proportion of shares genuinely available to trade. Too low and the price is easily moved by small amounts of capital, the stock gets excluded from some indices, and institutions cannot build a position — hence a liquidity discount in valuation.",
+          "Why do regulators care? Hong Kong specifically scrutinises shell companies and highly concentrated shareholdings (known locally as \"wai fei\"), to stop post-listing manipulation where a thin float is marked up and then distributed to retail at the top.",
+          "The economics of an IPO discount: the greater the uncertainty, the more discount underwriters must leave on the table to attract cornerstone investors. The discount is not \"cheapness\" — it is the price of information asymmetry.",
+          "A way to tie it together in an interview: primary-market structural problems do not disappear, they migrate into the secondary market as a liquidity discount. However good the first-day pop, a tiny float eventually pays that bill."
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261102153646134702895wbs2kVGAzlhLR)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -78,7 +215,7 @@
       "tier": "stable"
     },
     "cnbc_fin": {
-      "count": 5,
+      "count": 4,
       "tier": "stable"
     },
     "economist_fin": {
@@ -110,7 +247,7 @@
       "tier": "stable"
     },
     "whitehouse": {
-      "count": 7,
+      "count": 6,
       "tier": "stable"
     },
     "ustr": {

@@ -21,6 +21,20 @@
           "评级如何影响资金流？部分机构对可投资债券设有最低评级要求。但是否触发卖出，要看具体投资规则；不能把一次潜在降级直接等同于所有机构被迫清仓，也不能把维持评级等同于必然出现大量新买盘。",
           "价格反应取决于预期差。若投资者早已普遍预期评级维持，新闻带来的新增影响就很小。链条描述的是评级渠道的作用方向，不是断言当天法债一定上涨；后续应观察预算表决、财政执行以及法德国债收益率差。"
         ]
+      },
+      "insight_en": {
+        "what": "Moody's kept France's Aa3 credit rating, based on the expectation that a budget cutting the deficit by 2027 will be passed.",
+        "why": "This removes the downgrade scenario for now but does not prove the fiscal problem is solved. If downgrade risk had been priced, French government bond prices and the yield spread over Bunds need to be re-rated.",
+        "chain": "Moody's keeps the French rating → the downgrade scenario for this review disappears → the compensation demanded for rating risk falls → the return French bond investors require falls → a fixed coupon supports a higher purchase price → only if the fiscal outlook is stable and euro base rates do not rise do French bonds find it easier to rally",
+        "notes": [
+          "What is Aa3? It is Moody's rating of creditworthiness, a high grade but not a guarantee against default. This is an affirmation, not an upgrade, and certainly not evidence that French public finances have improved.",
+          "A fiscal deficit is the gap when government spending exceeds revenue in a year, normally funded by borrowing. Moody's judgment assumes a deficit-cutting budget will pass; an agency's assumption is not an approved budget.",
+          "A risk premium is the compensation demanded beyond the base return for bearing risk. Removing the downgrade scenario can reduce the compensation tied to rating uncertainty, but France's debt burden and political risk do not disappear.",
+          "Why does a lower required return raise the bond price? The contracted coupon is unchanged, so an investor accepting a lower return will pay more for the same stream of coupons and principal. YTM is the annualised return from buying at the current price, receiving the contracted amounts and holding to maturity; a higher price means a lower YTM.",
+          "Why compare French and German bonds? Both are euro-denominated with similar maturities and are affected similarly by monetary policy, so the yield gap is a cleaner read on France-specific risk. The risk-free rate Rf is the base return for the time value of money; French yields also contain domestic credit risk, so they are not a risk-free rate.",
+          "How do ratings affect flows? Some institutions have minimum rating requirements for investable bonds. But whether that triggers selling depends on the specific mandate; a potential downgrade is not every institution liquidating, and an affirmation is not guaranteed new demand.",
+          "The price reaction depends on the surprise. If investors widely expected the affirmation, the incremental impact is small. The chain describes the direction of the rating channel, not a claim that French bonds rose that day; watch the budget vote, fiscal execution and the France-Germany spread."
+        ]
       }
     }
   ],
@@ -43,6 +57,20 @@
           "为什么不能直接说美国通胀会下降？政策同时降低部分商品税负、提高另一些商品税负，净影响要看各类商品的进口金额、税率和传递程度。部分机械还属于生产设备，其降价不会直接等量体现为消费者日常购物价格下降。",
           "即使部分商品价格下降，也要区分一次性的价格调整与持续通胀。通胀是整体价格持续上涨的速度；少数商品税率下降，并不足以证明全社会价格上涨速度会持续放缓，更不能直接推出央行将降息。",
           "加元也没有确定方向。部分加拿大出口商的竞争力改善，有利于出口收入；但其他商品遭遇新税项，可能抵消收益。还需要税目范围、贸易金额、汇率结算安排及两国利率变化，才能判断整体汇率影响。"
+        ]
+      },
+      "insight_en": {
+        "what": "The US announced lower import duties on some Canadian goods from 30 October, covering some machinery while imposing duties on items such as carpets.",
+        "why": "Machinery procurement budgets estimated at the old rate must be recalculated, and the cash returns of US buyers benefit. But the new duties mean this cannot be read as broad trade de-escalation or falling inflation.",
+        "chain": "Import duties on some Canadian machinery are cut → US importers' tax burden falls → the duty-inclusive cost of that machinery drops → less cash is needed for the same equipment investment → buyers retain more cash → the present value of future cash rises → only if the cut is passed through and the required return on investment is unchanged are the beneficiaries' shares supported",
+        "notes": [
+          "A tariff is a tax on imported goods, normally paid by the importer to domestic customs rather than by the Canadian government on the US buyer's behalf. Who ultimately bears it depends on the bargaining power of exporter, importer and end buyer.",
+          "A duty cut does not necessarily become a lower purchase price. Canadian suppliers can raise their ex-duty selling price, and importers can keep part of the saving. The chain compares a scenario with volumes and other costs unchanged where the cut passes to the buyer; it does not mean every US firm gains equally.",
+          "Buying production equipment is usually capital expenditure — money spent on plant and machinery used for years. Cheaper equipment reduces cash outlay first and does not turn the entire saving into current profit; the cost is normally depreciated over its expected useful life.",
+          "Present value converts future cash into the amount you would pay today. Waiting has an opportunity cost and future receipts are uncertain. If timing, risk and the required return are unchanged, more expected retained cash supports a higher valuation.",
+          "Why can't we simply say US inflation will fall? The policy cuts taxes on some goods and raises them on others, so the net effect depends on import values, rates and pass-through by product. Some machinery is production equipment, and its cheaper price does not translate one-for-one into lower shelf prices.",
+          "Even where prices fall, distinguish a one-off price adjustment from ongoing inflation. Inflation is the rate at which the overall price level keeps rising; lower duties on a few goods do not prove the economy-wide rate will keep slowing, still less that the central bank will cut.",
+          "The Canadian dollar has no certain direction either. Better competitiveness for some exporters helps export revenue, while new duties on other goods may offset it. The tariff scope, trade values, currency settlement arrangements and relative interest rates are all needed to judge the overall FX effect."
         ]
       }
     }
@@ -68,6 +96,21 @@
           "芯片股为什么受影响？计算中心少建或晚建，会压低芯片采购的规模或推迟交付，进而影响供应商的利润和现金收入。现值是未来现金在今天的价值；若其他估值条件不变，现金减少或更晚收到，投资者愿意支付的价格就会降低。其他客户增加采购，也可能抵消这条链的影响。",
           "面试中应区分金融市场预警与产业事实：利差扩大是投资者要求回报的变化，预算削减和订单取消才是实体投资变化。后续要核对具体发行人的借款成本、债务到期安排、设备投入预算与订单，而不能仅凭全球利差指标断言算力需求已经见顶。"
         ]
+      },
+      "insight_en": {
+        "what": "Concern about AI-related borrowing pushed global credit spreads over benchmarks to a 17-month high.",
+        "why": "This weakens the expectation that the AI build-out can keep borrowing cheaply. Corporate bonds re-rate first, and the equities of debt-dependent data-centre builders and chip suppliers then face valuation adjustment.",
+        "chain": "Concern about AI borrowing rises → creditors demand a wider credit spread → new borrowing carries more risk interest → the expected net return on debt-funded expansion falls → data-centre construction forecasts are cut → chip suppliers' profit expectations fall → the present value of expected cash declines → only if total borrowing costs do rise and equipment demand cools are the relevant chip shares more likely to come under pressure",
+        "notes": [
+          "A credit spread is the yield above a comparable benchmark, normally matched for currency and maturity. It compensates not only default risk but also illiquidity and heavy new issuance. A 17-month high means tighter than recently, but without a level it does not prove a debt crisis has begun.",
+          "A wider spread does not guarantee a higher all-in borrowing rate. Corporate funding cost reflects both the benchmark rate and the extra risk compensation; if the benchmark falls more, total cost can still decline. The chain highlights the risk-premium channel, so the last step checks whether actual funding costs rose.",
+          "For existing fixed-coupon bonds, a higher required return is normally delivered through a lower price; the contracted coupon does not adjust. For issuers, the higher cost shows up mainly on new issues, refinancing maturing debt, or floating-rate borrowing.",
+          "Computing power is the capacity to run computational tasks. Building an AI data centre requires buying chips and networking equipment up front and constructing power and cooling, all of which is capex. Spending comes first and revenue builds later, so how long money can be borrowed and at what rate directly affects the pace of expansion.",
+          "Why does dearer borrowing affect construction? A project must leave an adequate return after operating costs and financing costs to be worth doing. As funding costs rise, the first casualties are projects that were only marginally viable, not every project at once. The report does not show that firms have already cut budgets.",
+          "Hyperscalers and peripheral builders are not the same. Firms with ample operating cash can pay for equipment themselves and are less sensitive to borrowing costs; debt-dependent data-centre operators and project sponsors are more constrained. Analysis must identify who carries the debt rather than treating all AI companies as one credit risk.",
+          "Why are chip stocks affected? Fewer or later data centres reduce the scale of chip purchases or delay delivery, hitting supplier profit and cash receipts. Present value is the worth of future cash today; with other valuation inputs unchanged, less cash or later cash lowers what investors will pay. Purchases by other customers can offset this chain.",
+          "In an interview, separate market warning from industrial fact: wider spreads show a change in required return, while budget cuts and cancelled orders are the real-economy change. Verify specific issuers' funding costs, maturity schedules, equipment budgets and orders rather than concluding from a global spread gauge that compute demand has peaked."
+        ]
       }
     },
     {
@@ -88,6 +131,20 @@
           "良率（yield）是生产出的芯片中达到质量要求的比例。避免搬运系统受限，有助于维护生产连续性，却不能据此断言先进制造工艺的良率已经提高，更不能把机器人豁免等同于解决所有技术瓶颈。",
           "自由现金流（free cash flow）通常指企业经营产生的现金，在扣除必要厂房设备投入后剩余的部分。少花替换设备的钱、减少停线损失，可以改善现金预期；如果现金兑现的风险和投资者要求的回报不变，这些改善能够支持更高估值。",
           "这不是新增订单或新增产能的公告。最终价值仍取决于客户是否购买产品、制造工艺是否达标，以及豁免是否覆盖实际需要的设备。跟踪重点应是适用范围、有效期限和生产安排，而不是直接上调整个芯片行业的产量预测。"
+        ]
+      },
+      "insight_en": {
+        "what": "Intel obtained a US waiver from restrictions on foreign-made robotics, arguing the equipment is essential to domestic chip production.",
+        "why": "The waiver eases concern that import curbs on robots would drag on US chipmaking and lowers the risk of forced equipment replacement and line stoppages; Intel's production costs and expected future cash benefit.",
+        "chain": "Intel obtains a robotics waiver → the risk of being forced to replace handling equipment falls → the burden of re-qualifying the production line eases → expected additional downtime falls → lost cost during stoppages falls → expected retained cash improves → the present value of expected cash rises → only if products are in demand and the process meets spec are Intel shares supported",
+        "notes": [
+          "A waiver exempts a specific entity or use from a restriction; it does not cancel the ban. The economic meaning here is avoiding a new production obstacle. The summary gives no complete equipment list or waiver duration, so it cannot be extended to all chipmakers or all imported robots.",
+          "Why do handling robots matter? Chips are built on wafers, the round semiconductor substrates, which circulate repeatedly between process tools. Automated handling links the process steps and moves material reliably and cleanly; without it, production can stall even with all the core tools in place.",
+          "Why not simply swap in another machine? New handling equipment must match building layout, tool interfaces, scheduling systems and cleanliness requirements, and must be validated for stability after installation. The issue is not just the purchase price but the time cost of adaptation, testing and interrupted output.",
+          "Why does a stoppage raise cost? When a fab stops producing, some labour, facility maintenance and depreciation continue without matching product revenue. Avoiding extra downtime avoids that loss — but relative to a scenario where the equipment is banned, not evidence that current unit costs have already fallen.",
+          "Yield is the share of produced chips that meet quality requirements. Avoiding handling constraints helps maintain continuity, but it does not prove advanced-node yields have improved, and a robotics waiver is not a solution to every technical bottleneck.",
+          "Free cash flow is usually operating cash less the investment needed for plant and equipment. Spending less on replacement tools and losing less to downtime improves cash expectations; if realisation risk and the required return are unchanged, that supports a higher valuation.",
+          "This is not an announcement of new orders or new capacity. Value still depends on customers buying the product, the process meeting specification and the waiver covering the equipment actually needed. Track scope, duration and production schedules rather than raising industry-wide output forecasts."
         ]
       }
     }

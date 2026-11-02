@@ -22,6 +22,21 @@
           "收益率上升不一定带来英镑上涨。如果回报提高来自经济强劲或央行收紧政策，可能吸引海外资金；如果来自对财政信誉的担忧，海外投资者也可能减持英国资产并卖出英镑。必须先判断收益率为什么上升。",
           "报道反映的是投资者诉求，不是已公布的扩张性预算，也没有提供债券已经因此下跌的证据。链条描述的是担忧加深时的定价路径；后续应核对预算借款规模、发债计划和国债拍卖需求，预算若恢复信任，传导方向可以反转。"
         ]
+      },
+      "insight_en": {
+        "what": "Large UK gilt investors urged the new chancellor to stick to the fiscal rules in the Budget and avoid weakening market confidence.",
+        "why": "Investors worry that if the borrowing constraint changes, future gilt issuance becomes harder to forecast; long-dated gilts must then reprice the return demanded for that uncertainty.",
+        "chain": "Investors fear the borrowing rule will be adjusted → the future borrowing constraint becomes harder to judge → the scale of gilt supply becomes harder to forecast → holding long bonds demands more risk compensation → buyers lower their bids for existing gilts → if the worry is not yet priced and demand does not improve, long gilts may fall",
+        "notes": [
+          "Gilts are bonds issued by the UK government: investors provide funds, and the government pays interest and repays principal as agreed. The Budget sets out revenue and spending plans, which affect how much the government needs to borrow from the market.",
+          "Fiscal rules are self-imposed constraints on the deficit, debt or spending that help investors judge whether borrowing is sustainable. Changing the measurement basis can widen the room to borrow, but that is not the same as having increased spending — the details of the Budget still matter.",
+          "Why does more issuance affect prices? New bonds require investors to put up more money. If the capital available does not grow in step, the government usually has to offer a more attractive return, and existing bonds must reprice to compete with the new ones.",
+          "Term premium is the extra return investors demand, relative to rolling short-dated debt, for the uncertainty of holding a long bond. Less predictable fiscal arrangements raise uncertainty about future supply and rates; the required compensation can rise even if rate-cut expectations are unchanged.",
+          "YTM is an annualised return measure computed from the current price and the contracted coupon and principal flows; it is not the coupon rate. The promised payments on an existing bond are fixed, so a lower purchase price means a higher return — rising yields and falling prices are two sides of the same repricing.",
+          "Why focus on long bonds? Discounting converts future cash into today's value. When the required return rises, the present value of the same future income falls, and bonds whose main cash flows arrive later are typically more price-sensitive.",
+          "Rising yields do not automatically lift sterling. If the higher return comes from a strong economy or tighter policy it may attract foreign capital; if it comes from doubts about fiscal credibility, foreign investors may also cut UK assets and sell sterling. You must first identify why yields are rising.",
+          "The report reflects investor demands, not a published expansionary budget, and offers no evidence that gilts have already fallen. The chain describes the pricing path when worry deepens; verify the borrowing total, the issuance plan and auction demand — if the Budget restores trust, the transmission can reverse."
+        ]
       }
     }
   ],
@@ -43,6 +58,19 @@
           "供应缓冲决定风险能否推高价格。可释放的库存、其他产油国的闲置产能和可替代运输路线，都能降低补货困难。反过来，库存偏低、备用产能难以及时启用时，同样的冲突消息更容易影响油价。",
           "油价上涨也不能直接推出央行加息。燃料和运输成本会先上升，但央行还要判断涨价是否持续、是否扩散到工资和其他商品。如果只是短期供应冲击，央行未必收紧政策；如果冲突同时打击经济需求，国债还可能因避险买盘而上涨。",
           "链条描述的是冲突扩散这一风险方向，而不是军事反击的唯一结果。反击也可能削弱后续袭击能力，从而降低供应担忧。判断净影响应观察实际产量、装船与航运情况，以及原油交付报价，不能把每次军事行动都当作油价上涨信号。"
+        ]
+      },
+      "insight_en": {
+        "what": "The Saudi-led coalition said it struck Houthi missile launch and storage sites after Riyadh was targeted again.",
+        "why": "Repeated exchanges put the expectation of stable crude supply to the test and force a repricing of disruption risk; the report does not confirm that output or shipping has actually been damaged.",
+        "chain": "Riyadh is hit again and retaliation follows → risk of spillover into oil supply draws attention → the cost of restocking after a disruption comes into focus → the insurance value of holding inventory early rises → buyers pay up for reliable delivery → only if the risk is unpriced and the supply buffer is thin may crude prices rise",
+        "notes": [
+          "Between a military conflict and the oil price there must be an energy-supply link. Saudi Arabia is a major crude exporter, so the market assesses whether the conflict threatens production facilities, export terminals or shipping. But an attack on Saudi soil is not a refinery shutdown, and certainly not evidence that a key strait is closed.",
+          "Why can prices react before supply is lost? Refineries and other users need continuous feedstock. If emergency restocking after a disruption would be more expensive, holding inventory or locking delivery in advance is worth more, and buyers will pay up for certainty. This is risk changing willingness to buy, not proof that firms are stockpiling at scale.",
+          "A geopolitical risk premium is the extra compensation embedded in the price for fear of conflict-driven supply loss. It prices future risk rather than reflecting an existing physical shortage; when the risk fades the premium can unwind even if output that day has not increased.",
+          "The supply buffer decides whether risk can lift prices. Releasable inventories, spare capacity elsewhere and alternative routes all reduce restocking difficulty. Conversely, when inventories are low and spare capacity cannot start quickly, the same headline moves prices more.",
+          "A higher oil price does not imply a rate hike. Fuel and transport costs rise first, but the central bank also judges whether the increase persists and spreads to wages and other goods. A short supply shock may not tighten policy; if the conflict also hits demand, government bonds can even rally on safe-haven flows.",
+          "The chain describes one risk direction — conflict spreading — not the only possible outcome of a strike. Retaliation can also degrade future attack capability and reduce supply concern. Judge the net effect from actual output, loadings, shipping and delivered crude quotes rather than treating every military action as a buy signal."
         ]
       }
     }
@@ -67,6 +95,21 @@
           "为什么利润改善不保证股价上涨？股票价值取决于未来能留给股东的现金，以及投资者要求多高的回报。未来现金增加、所需回报不变，折算到今天的价值才会提高；如果市场早已计入这些订单，或者同时提高风险补偿，融资公告未必带来股价上涨。",
           "融资解决的是资金瓶颈，不是所有算力瓶颈。芯片交货、设备部署、机房供电和散热仍会约束扩张速度。只有设备投入使用并被充分利用，固定投入才能分摊到更多计算任务上，单位计算成本才会下降；借到更多钱本身不会自动改变成本曲线。",
           "债权人关心的是本息能否按期收回。信用利差（credit spread）是相对于期限接近、信用风险较低的债务，出借人要求的额外收益补偿。如果新增经营现金不足以覆盖本息，投资者会要求更高补偿，既有债务价格承压。但融资也会补充近期可用资金，不能仅凭借款金额大就断言偿债能力恶化。"
+        ]
+      },
+      "insight_en": {
+        "what": "Musk said SpaceX has closed a US$40 billion debt financing to buy AI chips.",
+        "why": "Closing the financing raises certainty that the chip purchase is funded and changes the assessment of a build-out constrained by capital. Supplier equities and the borrower's debt must be re-rated separately.",
+        "chain": "A huge chip-purchase financing closes → the funding obstacle to the procurement plan falls → confidence that chip orders will be honoured rises → supplier revenue expectations are supported → profit expectations after costs improve → the present value of future earnings rises → only if the profit increment is unpriced and the required return is unchanged may chip supplier shares rise",
+        "notes": [
+          "Debt financing raises money by taking on an obligation to pay interest and principal; it is neither revenue nor profit. It eases a near-term funding constraint but adds future payments, so stronger purchasing power cannot be judged without the added debt service.",
+          "The information boundary matters: this is Musk's statement, with no disclosed tenor, coupon, security package or final purchase counterparties. Closing a financing does not mean the funds are fully drawn, still less that chips have been delivered — so no specific loan structure or supplier list can be inferred.",
+          "Capital expenditure is spending on productive assets used for years. Chips and servers for own use are typically capitalised and then depreciated through the income statement, so the outlay consumes cash immediately but usually does not hit all profit in the purchase period; interest on the debt is a separate burden.",
+          "The financing amount is not current supplier revenue. Cash must pass through procurement, delivery and revenue recognition before it becomes reported sales. If the orders were already announced, closing the financing mainly reduces cancellation or delay risk and need not raise total industry demand — and the US$40 billion cannot be attributed to a single chipmaker.",
+          "How does revenue become profit? Suppliers must absorb manufacturing and R&D costs, so only higher sales create room for more earnings. If a large customer negotiates lower prices, or expansion costs rise, higher volumes need not deliver proportional profit growth. The chain shows the valuation path after orders are honoured, not a claim that guidance has been raised.",
+          "Why does better profit not guarantee a higher share price? Equity value depends on the cash ultimately available to shareholders and the return they demand. More expected cash at an unchanged required return raises today's value; if the market has already priced the orders, or simultaneously demands more risk compensation, the announcement may not lift the stock.",
+          "Financing solves a funding bottleneck, not every compute bottleneck. Chip lead times, deployment, data-centre power and cooling still cap the pace of expansion. Fixed costs are only spread over more workloads once equipment is installed and utilised, so borrowing more does not by itself shift the cost curve.",
+          "Creditors care about timely payment of interest and principal. The credit spread is the extra yield lenders demand relative to debt of similar maturity with lower credit risk. If new operating cash is insufficient to cover debt service, investors demand more compensation and existing bonds weaken — but the financing also adds near-term liquidity, so a large borrowing alone does not prove deteriorating solvency."
         ]
       }
     }

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-01",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Bond investors sit out ‘most consequential’ US midterm elections in years",
@@ -8,33 +8,125 @@
       "url": "https://www.ft.com/content/937308d7-aa2e-4dac-b19b-423d83bc1253?syn-25a6b1a6=1",
       "published": "2026-11-01 13:00",
       "raw_summary": "Big fund managers are pressing ‘pause’ as vote and economic data releases loom",
-      "insight": {}
+      "insight": {
+        "what": "大型债券基金在中期选举和一系列经济数据公布前选择「按暂停键」，对这场被称为多年来最关键的中期选举保持观望。",
+        "why": "债市定价的是财政路径与通胀路径。选举结果决定未来两年赤字扩张的可行性，观望本身就是一个头寸 —— 久期被压低，成交量萎缩。",
+        "chain": "中期选举临近、结果高度不确定 → 大型基金不愿承担久期风险 → 组合久期被主动压低 → 长端买盘减少、市场流动性变薄 → 期限溢价易上难下 → 选举结果落地后集中建仓 → 收益率出现单日大幅波动",
+        "notes": [
+          "「sit out」不是不持有，而是不做方向性押注：基金保留底仓，但把久期降到基准以下，等事件落地再补回来。所以看成交量比看持仓更能读出观望情绪。",
+          "为什么事件风险对债市更明显？债券的收益结构是「票息 + 资本利得」，一次 20 个基点的收益率跳升，就可能吃掉一年的票息。股民可以等，债民等不起。",
+          "流动性变薄的机制：做市商在不确定性高时扩大买卖价差、减少库存，于是同样的卖单会造成更大的价格冲击。这就是「流动性本身会消失」的含义。",
+          "久期的近似含义：利率上升 1%，债券价格大约下跌 duration%。十年久期的债，收益率上行 20 个基点，价格约跌 2%。久期越长，对选举结果越敏感。",
+          "面试可以接着答：选举后债市怎么走？关键看是「分裂政府」（利好债，赤字扩张受限）还是「一边倒」（利空债，财政与关税风险同时上升）。"
+        ]
+      },
+      "insight_en": {
+        "what": "Large bond funds are sitting out what is being called the most consequential US midterm election in years, pressing pause as the vote and a run of economic data approach.",
+        "why": "Bond markets price the fiscal and inflation path. The result determines whether deficit expansion is feasible over the next two years, and waiting is itself a position — duration is cut and volumes shrink.",
+        "chain": "Midterms approach with the outcome highly uncertain → large funds refuse to carry duration risk → portfolio duration is cut below benchmark → long-end bids thin out and liquidity dries up → term premium becomes hard to push down → funds rebuild positions once the result lands → yields swing sharply in a single session",
+        "notes": [
+          "\"Sitting out\" does not mean holding nothing; it means not making a directional bet. Funds keep a core position but run duration below benchmark and add it back after the event. That is why volume reads the mood better than holdings.",
+          "Why is event risk sharper for bonds? A bond's return is coupon plus capital gain, and a 20bp jump in yields can wipe out a year of coupon. Equity investors can wait; bond investors cannot.",
+          "The liquidity mechanism: market makers widen bid-ask spreads and cut inventory when uncertainty is high, so the same sell order moves price further. That is what \"liquidity itself disappears\" means.",
+          "Duration in plain terms: if rates rise 1%, a bond's price falls roughly duration%. For a ten-year duration, a 20bp rise in yields is about a 2% price decline. The longer the duration, the more sensitive the position to the election result.",
+          "A likely follow-up: where do bonds go afterwards? It depends on whether you get a split Congress (bond-friendly, deficit expansion constrained) or a one-sided result (bond-negative, fiscal and tariff risk both rise)."
+        ]
+      }
     },
     {
-      "title": "Investors trim growth bets over fears of US economy’s AI exposure",
+      "title": "Chart of the Week: Bond investors may cheer gridlock",
       "source": "FT Markets",
-      "url": "https://www.ft.com/content/56b0d5fa-829c-47b1-b07b-b4be18f60151?syn-25a6b1a6=1",
-      "published": "2026-10-31 22:00",
-      "raw_summary": "Return to bonds after long sell-off comes as concern rises about over-reliance on tech spending",
-      "insight": {}
+      "url": "https://www.ft.com/content/9570b122-5418-41e6-b91b-b95af96ec881?syn-25a6b1a6=1",
+      "published": "2026-10-31 18:30",
+      "raw_summary": "Midterms will have higher stakes for the bond market",
+      "insight": {
+        "what": "投资者削减成长股押注，资金在长期抛售后回流债券，理由是担心美国经济对科技支出的依赖度过高。",
+        "why": "这是从「AI 是增长引擎」到「AI 是集中度风险」的叙事切换。同一个事实，风险溢价的方向反了，资产配置就必须再平衡。",
+        "chain": "美国经济增长高度依赖科技资本开支 → 投资者担心集中度风险 → 要求的股权风险溢价上升 → 资金从成长股撤出 → 回流此前被抛售的债券 → 债券收益率下行、价格回升 → 成长股折现率下降但盈利预期下修更快 → 风格再平衡持续",
+        "notes": [
+          "什么是集中度风险？当 GDP 增长或指数涨幅高度依赖单一板块，这个板块的波动就变成了系统性风险，分散化在关键时刻失效。",
+          "为什么资金回流债券？股债相关性在通胀高企时为正，但在增长担忧主导时会转负 —— 债券重新变回对冲工具。这是资金回流的根本原因，而不是「债券变便宜了」。",
+          "再平衡的机械性：组合里股票涨太多会超过目标权重，规则要求卖出股票、买入债券。这会自动放大风格切换，与基本面判断无关。",
+          "公式：`E(r) = r_f + ERP`，ERP 是股权风险溢价。当投资者对增长的确定性下降，要求的 ERP 上升，同样的盈利就对应更低的价格。",
+          "面试可以点：这不是「看空 AI」，而是「不愿意为 AI 付任何价格」。估值和情绪的区别就在这里 —— 前者算分母，后者只讲叙事。"
+        ]
+      },
+      "insight_en": {
+        "what": "Investors are trimming growth bets and returning to bonds after a long sell-off, worried that the US economy is over-reliant on tech spending.",
+        "why": "This is the narrative flip from \"AI is the growth engine\" to \"AI is concentration risk\". Same fact, opposite direction for the risk premium — so allocations have to rebalance.",
+        "chain": "US growth relies heavily on tech capex → investors worry about concentration risk → required equity risk premium rises → money leaves growth stocks → flows back into previously sold-off bonds → bond yields fall and prices recover → the discount rate falls, but earnings estimates are cut faster → the style rebalancing continues",
+        "notes": [
+          "What is concentration risk? When GDP growth or index returns depend heavily on a single sector, that sector's volatility becomes systemic risk, and diversification fails exactly when it is needed.",
+          "Why does money return to bonds? The stock-bond correlation is positive when inflation runs hot but turns negative when growth fear dominates — bonds become a hedge again. That, not \"bonds got cheap\", is the real driver.",
+          "Rebalancing is mechanical: when equities rally, they exceed target weight and the rules require selling equities and buying bonds. That amplifies style rotation independent of any fundamental view.",
+          "The formula: `E(r) = r_f + ERP`, where ERP is the equity risk premium. When confidence in growth falls, the required ERP rises, so the same earnings justify a lower price.",
+          "A crisp point for interviews: this is not \"bearish on AI\", it is \"unwilling to pay any price for AI\". That is the difference between valuation and sentiment — one does the denominator, the other just tells a story."
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Delegation of Authority Under Section 8335 of the National Defense Authorization Act for Fiscal Year 2026",
-      "source": "Federal Register",
-      "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22386/delegation-of-authority-under-section-8335-of-the-national-defense-authorization-act-for-fiscal-year",
-      "published": "2026-11-02 00:00",
-      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
-      "insight": {}
-    },
     {
       "title": "Adjusting Imports of Robotics, Industrial Machinery, and Their Parts and Components Into the United States",
       "source": "Federal Register",
       "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22385/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united",
       "published": "2026-11-02 00:00",
       "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
-      "insight": {}
+      "insight": {
+        "what": "美国发布行政公告，调整机器人、工业机械及其零部件的进口措施。",
+        "why": "机器人是制造业回流的核心投入品。对它加税会直接抬高美国本土自动化的成本，与「再工业化」目标自相矛盾 —— 这是政策内部的一个张力。",
+        "chain": "美国调整机器人及工业机械进口措施 → 进口设备成本上升 → 制造企业自动化投资回报率下降 → 资本开支推迟 → 本土产能扩张放缓 → 用工成本压力上升 → 服务价格粘性增强 → 核心通胀回落变慢",
+        "notes": [
+          "为什么对资本品加税会反噬？关税保护的是本土设备生产商，但下游用户是制造企业。如果本土没有替代产能，结果就是纯成本增加，而不是进口替代。",
+          "机器人密度：每万名制造业工人拥有的工业机器人数量，是衡量自动化水平的标准指标。韩国、新加坡最高，美国低于日本和德国。",
+          "资本开支的决策逻辑：`NPV = ∑ CFₜ/(1+r)ᵗ − 初始投资`。设备价格上升直接抬高初始投资，原本 NPV 略为正的项目立刻转负，于是被推迟。",
+          "关税与通胀的时滞：进口价格上升会在 1 到 3 个月内传导到 PPI，再到 CPI 通常还要 3 到 6 个月。所以它对核心 CPI 的影响是渐进的，容易在早期被低估。",
+          "面试可以接：产业政策的目标和手段经常互相冲突 —— 想保护本土制造，却对制造所需的设备加税。"
+        ]
+      },
+      "insight_en": {
+        "what": "The US issued a presidential proclamation adjusting import measures on robotics, industrial machinery and their parts and components.",
+        "why": "Robots are a core input for reshoring manufacturing. Tariffing them raises the cost of US automation and contradicts the reindustrialisation goal — a tension inside the policy itself.",
+        "chain": "US adjusts import measures on robotics and machinery → imported equipment costs rise → returns on automation investment fall → capex gets postponed → domestic capacity expansion slows → labour cost pressure builds → services prices stay sticky → core disinflation slows",
+        "notes": [
+          "Why does taxing capital goods backfire? The tariff protects domestic equipment makers, but the users are manufacturers. If there is no domestic substitute capacity, the result is pure cost inflation rather than import substitution.",
+          "Robot density is industrial robots per 10,000 manufacturing workers, the standard gauge of automation. South Korea and Singapore lead; the US trails Japan and Germany.",
+          "The capex decision rule: `NPV = ∑ CFₜ/(1+r)ᵗ − initial outlay`. Higher equipment prices raise the outlay directly, pushing marginally positive projects negative, so they get deferred.",
+          "The inflation lag: import prices reach PPI within one to three months and CPI typically three to six months later. The effect on core CPI is therefore gradual and easily underestimated early on.",
+          "A closing thought: industrial policy's goals and instruments often conflict — protecting domestic manufacturing while taxing the equipment that manufacturing needs."
+        ]
+      }
+    },
+    {
+      "title": "FBI blames North Korea for stolen billions from Binance in biggest hack in history",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3372858/fbi-blames-north-korea-stolen-billions-binance-biggest-hack-history",
+      "published": "2026-11-01 07:49",
+      "raw_summary": "The theft of billions of dollars from Binance within a matter of minutes, the biggest cryptocurrency heist in history, was orchestrated by North Korean hackers, the FBI said on Saturday. The Federal B",
+      "insight": {
+        "what": "FBI 认定，从币安盗走数十亿美元、史上最大规模的加密资产盗窃案由朝鲜黑客策划，资金在几分钟内被转走。",
+        "why": "这不再是技术漏洞问题，而是国家级行为体把加密资产当作融资渠道。它推高的是整个行业的合规成本与交易所的风险溢价。",
+        "chain": "国家级黑客组织攻击交易所 → 热钱包私钥或签名流程被攻破 → 资产在数分钟内跨链转移 → 交易所暂停提现并补足缺口 → 监管要求更严格的托管与储备证明 → 合规与保险成本上升 → 中小交易所被挤出 → 行业集中度上升",
+        "notes": [
+          "为什么「几分钟」是关键？链上转账不可逆，资金一旦进入混币器或拆分到大量地址，追回概率骤降。交易所的风控窗口只有分钟级，事后补救意义有限。",
+          "储备证明（Proof of Reserves）证明的是资产覆盖存款，通常用默克尔树实现。但它证明不了负债，也证明不了这些资产没有被重复质押 —— 这是它的根本局限。",
+          "朝鲜为什么偷加密货币？绕开 SWIFT 与美元清算体系，变现后用于采购与融资。在制裁环境下，这是成本最低的替代金融通道。",
+          "热钱包与冷钱包的取舍：热钱包联网、便于提现但有攻击面；冷钱包离线安全但流动性差。交易所的平衡点，本质是「用户体验 vs 安全」。",
+          "面试可以点：这类事件的市场影响不是币价，而是「信任溢价」—— 资金会向合规、储备透明的平台集中，中小平台被系统性挤出。"
+        ]
+      },
+      "insight_en": {
+        "what": "The FBI attributed the theft of billions of dollars from Binance — the largest crypto heist in history — to North Korean hackers, with funds moved within minutes.",
+        "why": "This is no longer a technical vulnerability story; it is a state actor using crypto as a funding channel. What it raises is compliance cost across the industry and the risk premium on exchanges.",
+        "chain": "A state-backed hacking group attacks an exchange → hot-wallet keys or signing flows are compromised → assets are moved across chains within minutes → the exchange halts withdrawals and covers the shortfall → regulators demand stricter custody and proof of reserves → compliance and insurance costs rise → smaller exchanges are squeezed out → industry concentration increases",
+        "notes": [
+          "Why is \"minutes\" the key word? On-chain transfers are irreversible, and once funds enter a mixer or get split across many addresses, recovery odds collapse. The control window is minutes, and after-the-fact remedies are of limited use.",
+          "Proof of Reserves shows assets covering deposits, typically via a Merkle tree. It cannot prove liabilities, nor that the assets have not been rehypothecated — that is its fundamental limit.",
+          "Why does North Korea steal crypto? It bypasses SWIFT and dollar clearing, and once converted the proceeds fund procurement and financing. Under sanctions it is the cheapest alternative financial channel.",
+          "The hot-versus-cold wallet trade-off: hot wallets are online and convenient for withdrawals but expose an attack surface; cold wallets are offline and safe but illiquid. The balance point is really user experience versus security.",
+          "A point worth making: the market impact of such events is not the coin price but the trust premium — capital concentrates in compliant platforms with transparent reserves, and smaller venues get squeezed out systematically."
+        ]
+      }
     }
   ],
   "tech": [
@@ -44,10 +136,32 @@
       "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
       "published": "2026-10-31 05:41",
       "raw_summary": "Boom’s airliner may be delayed, and its data center power business lost a customer.",
-      "insight": {}
+      "insight": {
+        "what": "超音速客机公司 Boom 的客机项目可能延期，公司转向为 AI 数据中心供电，而这块业务刚刚流失了一个客户。",
+        "why": "资本在 AI 基础设施上的回报预期，已经高到能让一家航空公司改行做电力。这是资本错配的典型信号，也是泡沫讨论里最硬的证据之一。",
+        "chain": "AI 数据中心电力需求激增 → 供电成为瓶颈环节 → 电力溢价上升、回报期缩短 → 资本从长周期研发转向短回报业务 → 超音速客机项目资源被挤占 → 项目延期、技术团队流失 → 长期创新能力被短期现金流压制",
+        "notes": [
+          "这是典型的「资本向瓶颈迁移」：当某一环供不应求，资本回报率最高的地方就是那一环，哪怕它与公司原有的技术能力毫无关系。",
+          "为什么电力成了 AI 的瓶颈？单个 AI 数据中心功耗可达数百兆瓦，相当于一座小城市。美国部分州的电网接入排队时间已经长达数年。",
+          "沉没成本与转型决策：客机项目已投入的研发是沉没成本，理性决策只看未来的边际现金流。但现实中管理层往往被沉没成本绑住，直到现金流撑不住才转向。",
+          "泡沫的判据不是估值高低，而是「资本是否流向不具备比较优势的领域」。一家造超音速飞机的公司去做数据中心供电，恰恰是这种信号。",
+          "面试可以接：AI 产业链的瓶颈正在从「芯片」向「电力 → 电网 → 土地与许可」迁移，越往后越是重资产、低毛利、强监管的生意。"
+        ]
+      },
+      "insight_en": {
+        "what": "Supersonic airliner developer Boom's aircraft programme may slip as the company pivots to powering AI data centres — a business that has just lost a customer.",
+        "why": "Expected returns in AI infrastructure are now high enough to make an aviation company switch to selling power. That is a textbook misallocation signal and among the hardest evidence in the bubble debate.",
+        "chain": "AI data-centre power demand surges → power supply becomes the bottleneck → power premiums rise and payback periods shorten → capital shifts from long-cycle R&D to shorter-payback businesses → the supersonic programme loses resources → the project slips and engineering talent leaves → long-term innovation capacity is squeezed by near-term cash flow",
+        "notes": [
+          "This is capital migrating to the bottleneck: when one link is in shortage, the highest return on capital sits there — even if it has nothing to do with the company's existing technical capability.",
+          "Why is power the AI bottleneck? A single AI data centre can draw hundreds of megawatts, the load of a small city. In some US states, grid interconnection queues now run for years.",
+          "Sunk cost versus the pivot decision: R&D already spent on the aircraft is sunk, and a rational decision looks only at future marginal cash flow. In practice management stays anchored to sunk costs until cash flow forces the turn.",
+          "The test for a bubble is not valuation level but whether capital flows into areas where the company has no comparative advantage. A supersonic aircraft maker selling data-centre power is exactly that signal.",
+          "A closing line: the AI bottleneck is migrating from chips to power, then the grid, then land and permits — and the further along you go, the more capital-intensive, lower-margin and more regulated the business becomes."
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261101150128857244052q8wwskknzcaDF)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 2,

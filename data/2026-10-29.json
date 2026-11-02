@@ -20,6 +20,19 @@
           "财政可信度还有另一层影响：投资者担心政府长期借债失控时，会要求额外回报，这部分可称为风险补偿（risk premium）。温和预算没有引发恐慌，不等于赤字下降或政府融资成本已经全面降低。",
           "这条链解释的是预算为什么没有带来额外下跌压力，不是已证实的唯一归因。保住预算前涨幅不等于预算后继续大涨；摘要也没有提供具体期限、收益率或发债计划，不能据此推断英国央行将提前降息。"
         ]
+      },
+      "insight_en": {
+        "what": "The UK government published a budget with only modest tax and spending adjustments; gilts held the gains made before the statement.",
+        "why": "What the market tested was whether the budget would borrow more than expected. A mild package avoided a bond-market wobble, so gilts did not have to reprice for a negative fiscal surprise.",
+        "chain": "Budget makes only modest tax and spending adjustments → fears of above-expected borrowing do not build → concern that new issuance will compete for capital does not build → buyers do not demand a higher return for a supply shock → existing gilts need no further price cut to attract bids → gilts keep their pre-budget gains",
+        "notes": [
+          "A gilt is the UK government's IOU to investors, normally promising interest and repayment of principal at maturity. It also trades before maturity, so even though the government's repayment promise has not changed, the market price still moves.",
+          "How does a budget affect bond supply? Spending above revenue is the fiscal deficit, normally funded by borrowing. A wider deficit usually means more issuance, but the actual amount also depends on maturing debt and cash buffers — you cannot read it off one tax cut or one spending increase.",
+          "Why does heavier issuance push existing bond prices down? New and old gilts compete for broadly the same pool of investment money. When the supply of bonds grows faster than the money available, buyers demand a more attractive return; since the coupon on existing bonds is fixed, the price must fall to deliver it.",
+          "Yield to maturity (YTM) is the annualised return implied by the purchase price, future coupons and principal repayment, normally assuming the issuer pays as agreed. All else equal, a lower purchase price on the same cash flows means a higher yield — which is why price and yield move inversely.",
+          "Fiscal credibility adds a second layer: when investors fear long-run borrowing is out of control, they demand extra compensation, a risk premium. A mild budget avoiding panic does not mean the deficit has fallen or that government funding costs are broadly lower.",
+          "This chain explains why the budget did not add fresh downward pressure; it is not proof of the only cause. Holding pre-budget gains is not the same as rallying afterwards, and the summary gives no maturities, yields or issuance plan, so it cannot support a claim that the Bank of England will cut earlier."
+        ]
       }
     },
     {
@@ -40,6 +53,20 @@
           "人工智能如何增加铜需求？主要通过数据中心供电、电缆、变压器以及配套电网建设，而不只是芯片本身。但宣布数据中心投资，不等于当期已经用铜；项目能否获得电力、何时开工和实际建设规模，决定需求兑现速度。",
           "资本开支（capital expenditure）是建矿、扩产等能在多年内提供产能的长期投入。矿山从勘探、审批到投产往往需要多年，因此长期需求预期可以提前推动投资，却不能立即增加供给；等新增产能集中投产时，又可能压低未来铜价。",
           "铜矿股不是铜价的简单复制。铜价上涨、开采成本不变时，每吨铜贡献的利润会增加；但能源、人工和建矿支出上升会抵消收益。面试中应追问：上涨来自持续消费还是提前备货，企业增加投资后还能留下多少现金？"
+        ]
+      },
+      "insight_en": {
+        "what": "Reports suggest US tariff threats may be propping up copper prices, while the copper industry has already adjusted investment to long-term demand.",
+        "why": "The market has to separate AI-driven long-term copper consumption from short-term stockpiling caused by tariffs. The former adds persistent demand; the latter mostly shifts the timing of purchases, so the basis for copper prices and miner equities needs re-testing.",
+        "chain": "Tariff threats raise concerns about import costs → the value of landing cargo before duties bite increases → buyers prefer to lock existing copper now → front-loading pulls future purchases forward → short-term competition for cargo lifts bids → if the rush beats expectations and supply does not catch up, only then is the price of immediately deliverable copper supported",
+        "notes": [
+          "Separate fact from interpretation: the material only says tariff threats may be lifting prices, with no rate, start date, inventory change or same-day move. The chain shows the front-loading channel; it is not evidence that a rush has happened or explains the entire move.",
+          "A tariff is a tax collected on imports. Importers expecting a higher future tax have an incentive to buy and land goods before it takes effect. But front-loading also costs storage, insurance and interest — it only pays if the expected duty avoided is large enough.",
+          "Stockpiling is not final consumption. If firms buy next year's copper this year, this year's purchases rise and next year's may fall correspondingly. Durability depends on whether the metal reaches grids, equipment and construction, not just moving from one warehouse to another.",
+          "Copper prices can diverge by region. US front-loading changes how much is immediately deliverable elsewhere, and once duties take effect they change cross-border costs and trade direction. A US price rise therefore does not imply a global rise of the same size; regional inventories and balances have to be compared.",
+          "How does AI raise copper demand? Mainly through data-centre power supply, cabling, transformers and the associated grid build-out, not through chips themselves. But announcing a data-centre investment is not the same as consuming copper now; grid access, start dates and actual build scale decide how fast demand arrives.",
+          "Capital expenditure is long-lived investment in mines and capacity that yields output over years. A mine takes years from exploration and permitting to production, so long-term demand expectations can pull investment forward but cannot add supply immediately — and when new capacity does arrive together, it can depress future prices.",
+          "Miner equities are not a simple proxy for the copper price. With prices up and extraction costs unchanged, profit per tonne rises; but higher energy, labour and construction costs offset it. In an interview, ask whether the rise comes from consumption or front-loading, and how much cash the company keeps after raising investment."
         ]
       }
     }
@@ -64,6 +91,20 @@
           "为什么最后要看其他供应能否补位？其他产油国增产、库存释放或需求下降，都能减轻短缺。油价取决于可供数量相对需求的变化，不只取决于冲突是否发生；地缘紧张也可能与油价下跌同时出现。",
           "若油价持续上涨，能源进口国的燃料和运输成本会增加，并向商品价格传递。但央行不一定加息：它还要判断涨价是否持续、是否扩散到工资和其他服务，以及高能源成本是否已经明显压低经济活动。"
         ]
+      },
+      "insight_en": {
+        "what": "US Defense Secretary Hegseth replaced the Pentagon's top military planning official as Trump weighs another strike on Iran.",
+        "why": "The market has to re-test whether escalation with Iran is fully priced. What is genuinely sensitive is the risk of interrupted Gulf supply; crude should not be marked up mechanically on a personnel change alone.",
+        "chain": "The US weighs another strike on Iran → spillover risk enters the supply assessment → shipping disruption scenarios cut available barrels → the disruption scenario raises future procurement costs → guarding against higher prices lifts demand to lock in prices early → if disruption risk exceeds expectations and other supply cannot fill the gap, only then is Brent crude supported",
+        "notes": [
+          "This story contains two different things: replacing the military planning official, and considering another strike on Iran. The first does not on its own prove the war will widen, and the second is not a strike that has happened. Shipping disruption and lost supply in the chain are scenarios the market assesses, not facts the summary confirms.",
+          "Why do prices move before supply is actually lost? Asset prices reflect judgments about the future. Investors weigh normal supply and disruption scenarios together; assigning a higher probability to disruption changes what they will pay today. But if the same risk was already fully priced, repeated headlines need not add further gains.",
+          "Why can Iran risk affect oil exported by other countries? The Strait of Hormuz links the Gulf to open water and is a key export route for several Gulf producers. Escalation makes the market assess whether shipping, insurance and loading are impaired — but it is not a basis for assuming the strait is closed.",
+          "Brent is a major benchmark for international crude pricing. A futures contract agrees a trade on standard terms for a future date. A fuel user worried about higher prices can buy the future now so that gains on the contract offset the later rise in procurement cost — that is hedging.",
+          "Locking a price is not locking physical supply. Futures manage price exposure but cannot guarantee a tanker arrives on time or remove a transport interruption. Firms still need physical contracts, inventory and alternative routes, so a financial contract is not a complete answer to a supply cut.",
+          "Why does the last link depend on other supply? Higher output elsewhere, inventory releases or weaker demand all ease the shortage. The oil price depends on available barrels relative to demand, not merely on whether conflict occurs; geopolitical tension can also coincide with falling prices.",
+          "If oil keeps rising, fuel and transport costs rise in importing countries and pass into goods prices. But a central bank need not hike: it also judges whether the rise persists, whether it spreads to wages and other services, and whether expensive energy is already visibly slowing activity."
+        ]
       }
     }
   ],
@@ -86,6 +127,20 @@
           "为什么新进入者会影响领先厂商？客户拥有性能合格、供货可靠的替代方案后，可以分散采购，或用竞争报价争取折扣。售价下降而每片芯片成本没有同步下降时，单片利润会减少。不过，只有可信的替代方案才构成有效议价筹码。",
           "产业成本曲线要看完成同一任务的总成本，而不是单颗芯片售价。采购设备、电力消耗、软件迁移和设备闲置都会影响实际成本。新芯片即使便宜，若运行效率低或迁移昂贵，也未必能降低客户的整体支出。",
           "链条后半段是竞争兑现后的定价路径，不是融资公告已经造成的经营变化。领先厂商股价是否承压，要看替代规模是否超过市场预期；如果整个算力市场增长足够快，新旧供应商仍能同时增加销量和利润。后续应核对客户付费采购、重复订单和实际交付，而不是只看融资估值。"
+        ]
+      },
+      "insight_en": {
+        "what": "FuriosaAI's founder laid out a US$620 million raise that values the company at US$2.9 billion.",
+        "why": "Fresh capital improves an independent chipmaker's ability to keep developing and prepare for volume production. The market has to re-rate the probability that a viable alternative supplier emerges, and how long the leading vendor can hold its pricing advantage.",
+        "chain": "The raise adds available cash → R&D and software enablement get funded → the ability to push products through validation improves → customers have more room to evaluate alternatives → potential substitution constrains the leader's pricing → capped pricing lowers per-chip profit expectations → earnings estimates are cut and the multiple compresses → only if substitution orders beat expectations and demand growth fails to offset them do leading chipmakers such as Nvidia come under pressure",
+        "notes": [
+          "FuriosaAI is a Korean AI chip company. US$620 million is the round size and US$2.9 billion is the company valuation. Equity valuation is the value investors place on the equity under the deal terms — it is neither revenue nor cash in the bank.",
+          "Funding changes the capital constraint; it does not by itself prove technical leadership. Chip development requires continuous spending on people, design tools, prototyping and testing, and more cash lowers the risk of a project stalling for lack of money. The summary does not break down use of proceeds, so it cannot support a claim that volume capability is now secured.",
+          "A chip that runs is not a chip customers can easily use. Software enablement means getting customers' existing models, developer tools and business systems to run on the new silicon. Migration costs engineering time, retesting and maintenance, and customers weigh those against the purchase price rather than judging on claimed speed alone.",
+          "More funding also does not remove manufacturing constraints. Fabless designers depend on specialist foundries and must coordinate packaging, memory and delivery. Money can support orders and engineering work, but it does not by itself solve advanced-node capacity shortages or yield instability.",
+          "Why do new entrants affect incumbents? Once customers have a qualified, reliably supplied alternative, they can split purchases or use competing quotes to negotiate discounts. When the selling price falls but cost per chip does not, per-unit profit shrinks — though only a credible alternative is real bargaining power.",
+          "The industry cost curve is about total cost per task completed, not the price of one chip. Equipment purchase, power consumption, software migration and idle capacity all matter. A cheaper chip that runs inefficiently or is expensive to migrate may not lower a customer's overall spend.",
+          "The second half of the chain is the pricing path after competition materialises, not a change already caused by the funding announcement. Whether incumbents de-rate depends on substitution exceeding expectations; if the overall compute market grows fast enough, old and new suppliers can both increase volumes and profits. Verify paid orders, repeat orders and deliveries rather than the funding valuation."
         ]
       }
     }

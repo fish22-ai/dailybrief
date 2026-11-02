@@ -20,6 +20,19 @@
           "央行可以卖出美元储备、买入比索来稳定汇率，但会消耗外汇储备。如果存在外汇管制，压力还可能表现为官方汇率与其他交易渠道汇率之间的差距扩大，而不是官方报价立即贬值。摘要未交代具体汇率制度。",
           "本币资产如何受影响？海外投资者即使赚到比索利息，换回美元时仍可能被贬值抵消。比索计价债券直接涉及这项汇率风险；美元计价债券则更依赖发行人是否有足够美元还债，不能把两类债券视为同一种风险。"
         ]
+      },
+      "insight_en": {
+        "what": "Pre-election polling in Argentina shows a tight race, and some analysts warn the peso faces depreciation pressure.",
+        "why": "A tight race weakens certainty that existing policy continues; investors need a higher return to hold pesos, so the exchange rate and local-currency assets have to be repriced.",
+        "chain": "A tight race raises policy uncertainty → the future exchange-rate arrangement becomes harder to judge → investors reduce their willingness to hold pesos → demand to switch into dollars for safety rises → currency conversion adds peso selling pressure → only if dollar demand persists and intervention is insufficient does the peso face further depreciation pressure",
+        "notes": [
+          "Why do elections move the exchange rate? Fiscal spending, money issuance and FX management affect the peso's purchasing power and convertibility. A close race raises uncertainty about the policy outcome; the summary gives no candidate platforms, so it cannot be said that a particular winner is necessarily bearish for the peso.",
+          "A risk premium is the extra return demanded for additional uncertainty. The same peso interest rate becomes less attractive once policy risk rises; if the compensation does not adjust, investors are more inclined to switch into dollars. The chain describes that pressure, not a fact that large-scale selling has occurred.",
+          "Why does conversion create depreciation pressure? Investors sell pesos and buy dollars; if at the prevailing rate there are too few buyers for pesos, a lower peso price is needed to attract them. More pesos per dollar means depreciation, not appreciation.",
+          "Buying dollars does not mean money has left the country. Residents switching pesos into domestic dollar deposits also raise dollar demand; only a shift into foreign assets involves cross-border flows. The report gives no flow data, so safe-haven intent cannot be written as capital flight already happening.",
+          "The central bank can sell reserves and buy pesos to stabilise the rate, but that consumes reserves. With exchange controls, pressure may instead show up as a widening gap between the official rate and other channels rather than an immediate move in the official quote. The summary does not specify the regime.",
+          "How are local-currency assets affected? Even if a foreign investor earns peso interest, converting back to dollars may give it all back through depreciation. Peso bonds carry that FX risk directly; dollar bonds depend more on whether the issuer has the dollars to pay, and the two cannot be treated as the same risk."
+        ]
       }
     },
     {
@@ -40,6 +53,20 @@
           "政策利率（policy rate）是央行设定的短期利率目标，先影响银行间借钱的成本，再向其他融资成本传导。两年期美国国债较敏感，是因为其定价很看重未来两年短期利率的平均水平；无需等美联储真正调整利率，预期变化就能推动价格。",
           "到期收益率是按当前价格买入债券、按约收到利息和本金并持有至到期时，对应的年化回报指标，不等于债券票面写明的利率。实际投资回报还会受利息再投资条件和提前卖出价格影响。",
           "收益率下降为什么对应债券价格上涨？旧债承诺支付的利息和本金没有改变；当市场愿意接受更低回报时，就愿意为这组固定现金支付更高价格。反过来，要求的收益率提高，就必须压低买入价格。若通胀仍迫使美联储加息，这条住房利好债券的支线就会被抵消。"
+        ]
+      },
+      "insight_en": {
+        "what": "Reports show US September housing data deteriorated further, just as the Fed weighs whether to keep raising rates.",
+        "why": "Weaker housing undermines the case that the economy can absorb further hikes, so the market must re-rate how long high rates persist. Two-year Treasuries are more sensitive, but weak housing is not an immediate rate cut.",
+        "chain": "September housing data weakens → expected spending on housing-related goods falls → expected overall spending softens → the expectation that demand pushes prices up weakens → the need for further hikes declines → expectations for future short rates come under pressure → the two-year Treasury yield comes under pressure → only if inflation constraints ease and lower rate expectations dominate is there upside for two-year prices",
+        "notes": [
+          "First separate what the report provides: it says housing data worsened, without specific indicators or magnitudes. So it cannot be asserted that national house prices are broadly falling, mortgage defaults are surging or construction has sharply contracted. The chain traces the direction of the drag, not a confirmed market reaction.",
+          "How do rates affect housing? For new borrowers, a higher mortgage rate raises the monthly payment, reducing affordable purchase price and willingness to buy. Existing US fixed-rate borrowers do not see payments rise when the Fed hikes, so the impact shows up first in new transactions.",
+          "Aggregate demand is total spending on goods and services by households, firms and government. Weaker housing affects construction, renovation, appliances and related jobs, so it is not just a property-sector issue; strength elsewhere can offset part of the drag.",
+          "Why does weaker demand help inflation? With less spending, firms lose sales more easily when raising prices, which constrains pricing power. But energy shortages and wage growth can still push prices up, and housing-related prices enter inflation statistics with a lag, so one housing signal does not prove inflation is under control.",
+          "The policy rate is the central bank's short-term target, affecting interbank borrowing costs first and other funding costs through transmission. Two-year Treasuries are sensitive because their pricing heavily weights the average expected short rate over two years; expectations can move the price before any actual policy change.",
+          "YTM is the annualised return from buying at the current price, receiving contracted interest and principal, and holding to maturity; it is not the coupon printed on the bond. Realised returns also depend on reinvestment conditions and the price at which you sell early.",
+          "Why does a lower yield mean a higher price? The promised coupon and principal are unchanged; if the market accepts a lower return, it will pay more for that fixed cash flow. Conversely, a higher required yield forces a lower purchase price. If inflation still forces the Fed to hike, this housing-driven bond support gets offset."
         ]
       }
     }
@@ -64,6 +91,20 @@
           "期货是约定在未来特定时间、按标准条件交付商品的合约；远月指交付时间较晚的合约。炼厂和运输设施需要筹资、许可与施工，所以可信的扩产政策通常更直接影响较远交付期的供给判断，而不是立刻增加现货。",
           "价格可以在产能投运前反映预期，不必等待实际增产。但支持规模太小、执行缓慢，或者全球需求增长更快，都可能抵消新增供应的影响。面试中应先问新增多少可用产能、何时能用，再讨论油价方向。"
         ]
+      },
+      "insight_en": {
+        "what": "The White House issued a presidential determination under Section 303 of the Defense Production Act concerning US petroleum production, refining and logistics capacity.",
+        "why": "It adds a policy option for supporting expanded output and changes medium-term fuel supply expectations rather than immediate production; gasoline futures and refinery valuations have to be reassessed.",
+        "chain": "The president determines the domestic oil industry needs support → the legal basis for government support strengthens → expectations of purchase guarantees for projects improve → more stable expected revenue helps financing → refiners become more willing to expand → medium-term gasoline supply expectations rise → more supply weakens sellers' bargaining power → only if execution is credible and demand does not accelerate in step is there downward pressure on deferred gasoline futures",
+        "notes": [
+          "What is Section 303? It allows the government to expand industrial capacity deemed necessary for national defence through purchases, purchase commitments and equipment support. A presidential determination is the legal step that unlocks those authorities; it is not a subsidy already paid or a set purchase volume.",
+          "The summary gives no funding amount, specific instrument, beneficiary project or start date. The chain therefore picks one plausible mechanism — purchase guarantees enabling expansion — rather than asserting a contract has been signed. Only follow-up execution documents can verify the scale.",
+          "Why do purchase guarantees help financing? If someone commits to buy the project's future output, revenue uncertainty falls and banks and shareholders can better judge whether the investment is recoverable. That makes raising construction capital easier, but the guaranteed price, tenor and credibility of execution all matter.",
+          "Production, refining and logistics are not interchangeable. More production capacity adds crude supply; more refining capacity turns more crude into gasoline and diesel; better logistics removes transport bottlenecks. A refinery expansion adds product supply but also adds crude demand, so it does not mechanically lower every oil price.",
+          "The crack spread is the gap between product prices and the crude cost needed to make them, a key refining profitability gauge before full operating costs. If new refining supply pushes gasoline down while crude costs do not fall, incumbent unit margins come under pressure; policy support does not mean the whole industry's profit improves.",
+          "Futures are contracts to deliver a commodity at a set future time on standard terms; deferred months are the later delivery dates. Refineries and logistics need financing, permits and construction time, so credible expansion policy usually moves the supply outlook for later delivery rather than adding spot barrels now.",
+          "Prices can reflect expectations before capacity runs, without waiting for actual output. But support that is too small, execution that is slow, or faster global demand growth can offset the added supply. In an interview, ask how much usable capacity is added and when, before discussing the direction of prices."
+        ]
       }
     },
     {
@@ -84,6 +125,20 @@
           "为什么看近月原油期货？近月合约距离交付较近，对当前库存和近期运输更敏感。买家如果主要担心未来几周拿不到油，近期交付价格往往比远期更直接受影响；若担忧的是油田长期损毁，较远交付期也会被重估。",
           "油价上涨不自动等于央行加息。能源涨价先提高交通和生产成本，央行还要判断它是否持续、是否传到工资及其他商品服务价格。国债同时受到通胀担忧和投资者寻求安全资产的影响，因此不能机械断言油涨就意味着所有债券下跌。",
           "判断涨价能否持续，要检查出口装船、实际航运、运输保险费用，以及其他产油国能否增产、政府能否释放储备。若替代供应充足，或全球需求同时走弱，军事风险也未必形成持续上涨行情。"
+        ]
+      },
+      "insight_en": {
+        "what": "Reports point to additional troop deployments and some personnel withdrawals in the Middle East, with attention on a potential strike against Iran.",
+        "why": "This makes the market re-rate the probability that a conflict with Iran spills into Gulf oil supply and shipping. What changes is disruption risk, not output already lost, and front-month crude is the most sensitive.",
+        "chain": "Troops deploy and some personnel withdraw → the market raises its guard on Iran conflict → concern about interrupted Gulf supply deepens → buyers increase precautionary stocking → expected near-term crude demand rises → buyers pay a premium for certainty of delivery → only if the added risk is not fully priced and substitute supply is thin is there upside for front-month crude futures",
+        "notes": [
+          "A military deployment is not an attack that has happened, still less damaged oil facilities. The report provides a risk signal; the chain discusses how it affects buyer expectations and cannot be written as crude supply already reduced or futures already higher.",
+          "Why does an Iran-related conflict affect global oil prices? The risk is not only Iranian output but the safety of Gulf export facilities, tanker routes and the Strait of Hormuz. Even with wells producing, crude that cannot be loaded or shipped in time reduces the supply buyers can obtain — and the summary does not report those routes as blocked.",
+          "Why do demand expectations shift before any supply is lost? If refiners and traders fear they cannot buy later, they prefer to buy earlier and hold more inventory. Purchases that belonged to the future get pulled forward, supporting near-term prices; actual stocking still depends on tank capacity, financing costs and risk judgment.",
+          "A supply risk premium is the part of the price paid for potential disruption, not an equivalent physical shortage that has occurred. If military action does not widen and shipping normalises, that premium can unwind, so a short-term rally should not be fully explained as long-run scarcity.",
+          "Why look at front-month crude futures? The nearby contract is closest to delivery and most sensitive to current inventories and near-term shipping. If the main worry is not getting barrels over the next few weeks, nearby delivery prices react most directly; if the worry is long-term damage to fields, deferred months get repriced too.",
+          "Higher oil does not automatically mean a rate hike. Energy costs raise transport and production costs first, and the central bank must judge whether the move persists and reaches wages and other prices. Government bonds are pulled both by inflation fear and by safe-haven demand, so rising oil does not mechanically mean all bonds fall.",
+          "To judge persistence, check export loadings, actual shipping and insurance costs, and whether other producers can raise output or governments can release reserves. If substitute supply is ample, or global demand weakens at the same time, military risk need not produce a sustained rally."
         ]
       }
     }
@@ -108,6 +163,21 @@
           "折现（discounting）是把未来拿到的钱换算成今天的价值。在投资者要求的回报不变时，预计未来能够获得更多现金，今天愿意支付的价格就会提高；若竞争或经营风险上升，投资者要求更高回报，这项好处会被抵消。",
           "竞争格局为什么会受影响？更充足的资金可以支持持续训练模型和提供服务，使竞争者面临追加投入或接受竞争地位下降的取舍。但竞争者跟进也会提高全行业支出、压低服务价格，因此算力需求增长与大模型企业盈利改善不是同一件事。",
           "后续应核验实际到账的新资金、是否只是老股转让、明确的采购承诺和交付安排。老股转让通常是新投资者向原股东付款，不直接增加公司的经营现金；即使供应商确实受益，若股价已经反映这些订单，也不构成新的上涨理由。"
+        ]
+      },
+      "insight_en": {
+        "what": "OpenAI plans a new funding round that would value the company at US$1.25 trillion.",
+        "why": "The market must re-rate whether the capital can support computing-power expansion, which then shifts order expectations for chips and cloud providers; a target price is not money actually raised.",
+        "chain": "A new funding plan improves financing expectations → expected capacity to buy compute strengthens → chip and cloud order expectations rise → supplier revenue expectations improve → profit expectations on the added orders rise → expected distributable cash rises → the discounted value of future cash increases → only if the funding produces incremental cash returns and the benefit is not already priced is there upside for supplier shares",
+        "notes": [
+          "Valuation is the price a transaction would put on the whole company; it is not cash the company receives. US$1.25 trillion is only a target, and the summary discloses no amount raised, outcome or use of proceeds — so it cannot be treated as a new compute budget. The chain is an assessment path, not a report that purchases have increased.",
+          "Equity financing is investors paying cash for shares. For the same amount raised, a higher valuation means existing shareholders typically give up a smaller stake. But however high the target, someone must accept the terms before usable capital exists.",
+          "Computing power is the capacity of chips to run training and inference. More cash improves the ability to buy chips and rent capacity, but it cannot create chips, power or buildings. Funding improves the ability to pay, not the availability of compute, and certainly not the unit cost.",
+          "Capital expenditure is spending on assets used for years, such as servers and data centres. If OpenAI rents cloud services, that spending is not all its own capex; the cloud provider buying servers to serve the contract generates capex on the supplier side.",
+          "Orders are not revenue, and revenue is not profit. Orders must be delivered and meet recognition conditions, and suppliers still bear chip fabrication, depreciation, power and operating costs. Only the cash left after necessary outlays and reinvestment determines value to shareholders.",
+          "Discounting converts future money into today's value. With the required return unchanged, expecting more future cash raises what investors will pay today; if competition or operating risk rises and they demand a higher return, the benefit is offset.",
+          "Why does the competitive landscape matter? More funding supports continuous model training and service delivery, forcing rivals to invest more or accept a weaker position. But rivals following suit raises industry spending and can push service prices down, so rising compute demand and improving model-company profitability are not the same thing.",
+          "Verify the new money actually received, whether it is only secondary shares changing hands, and any firm purchase commitments and delivery schedules. Secondary sales are paid to existing shareholders and do not add operating cash; and even if suppliers benefit, a price that already reflects the orders is not a new reason to rise."
         ]
       }
     }

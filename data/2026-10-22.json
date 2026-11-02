@@ -1,61 +1,198 @@
 {
   "date": "2026-10-22",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
-    {
-      "title": "上海金融监管局出台17项措施推动数字金融发展，探索建立数字金融评价体系",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3183697",
-      "published": "2026-10-22 19:09",
-      "raw_summary": "上海金融监管局网站发布《推动上海银行业保险业数字金融高质量发展的若干措施》，《若干措施》提出，上海金融监管局将探索建立数字金融评价体系，对数字金融发展水平和成效进行监测分析。加强督促指导，对政策落实不到位、执行走偏等问题予以纠正。强化监督管理，对相关风险及违规经营行为采取风险提示、监管约谈、监管通报、行政处罚等措施。",
-      "insight": {}
-    },
     {
       "title": "India mounts costly defence of rupee",
       "source": "FT Markets",
       "url": "https://www.ft.com/content/4577cc43-d98b-43fc-8183-72777286ab80?syn-25a6b1a6=1",
       "published": "2026-10-22 12:00",
       "raw_summary": "Central bank has spent about $90bn of money raised from diaspora to shore up currency",
-      "insight": {}
+      "insight": {
+        "what": "印度央行出手保卫卢比，已动用约 900 亿美元——主要来自海外印度人存款等筹集来的资金——来支撑汇率。",
+        "why": "这暴露的是外汇储备的「构成」问题：用负债型资金干预，等于借美元守住汇率，一旦资金撤离，防线会双向崩塌。",
+        "chain": "卢比贬值压力上升 → 央行抛美元买入卢比 → 外汇储备下降 → 动用 NRI 存款等负债型资金补充 → 干预能力被市场看穿 → 贬值预期自我强化 → 进口价格上升、输入型通胀抬头 → 央行被迫加息、增长承压",
+        "notes": [
+          "为什么用海外印度人（NRI）存款有问题？它是「负债」，到期要还、还要付利息，不是真正的自有储备。用短久期负债去捍卫汇率，本质是期限错配。",
+          "外汇储备够不够看什么？两个传统指标：进口覆盖月数（一般 3 到 6 个月）和 Guidotti-Greenspan 规则（储备应覆盖一年内到期的短期外债）。只看总额会误判。",
+          "为什么干预会「被看穿」？市场能算出你每月烧多少美元。一旦消耗速度可预测，投机盘就知道防线在哪，攻击反而更集中。",
+          "输入型通胀的传导：本币贬值 → 进口能源与中间品涨价 → PPI 上行 → CPI 上行 → 央行加息 → 融资成本上升、投资放缓。这是一条完整的「贬值税」。",
+          "面试可以点：汇率保卫战里，储备的「质量」比「数量」重要 —— 借来的美元守不住本币。"
+        ]
+      },
+      "insight_en": {
+        "what": "India's central bank is mounting a costly defence of the rupee, having spent about US$90 billion — much of it raised from diaspora deposits — to shore up the currency.",
+        "why": "This exposes the composition of reserves: intervening with liability-type funding means borrowing dollars to defend the currency, and if that money leaves, the defence collapses from both sides.",
+        "chain": "Downward pressure on the rupee builds → central bank sells dollars to buy rupees → FX reserves fall → it replenishes with NRI deposits and other liability-type funds → the market sees through the intervention capacity → depreciation expectations feed on themselves → import prices rise and imported inflation picks up → the central bank is forced to hike, hurting growth",
+        "notes": [
+          "Why are non-resident Indian (NRI) deposits a problem? They are liabilities — repayable at maturity and interest-bearing — not genuine owned reserves. Defending a currency with short-dated liabilities is a maturity mismatch.",
+          "How much reserve is enough? Two conventional gauges: import cover in months (typically three to six) and the Guidotti-Greenspan rule, where reserves should cover short-term external debt due within a year. Looking only at the headline total misleads.",
+          "Why does intervention get \"seen through\"? The market can calculate how many dollars you burn each month. Once the burn rate is predictable, speculators know where the line is and attacks concentrate.",
+          "Imported inflation transmission: currency depreciates → imported energy and intermediates get dearer → PPI rises → CPI rises → the central bank hikes → funding costs rise and investment slows. That is a complete depreciation tax.",
+          "A point for interviews: in a currency defence, the quality of reserves matters more than the quantity — borrowed dollars cannot defend a domestic currency."
+        ]
+      }
+    },
+    {
+      "title": "Global stocks tumble as oil prices rise",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/6e318b81-a771-4842-9754-e265fef2852f?syn-25a6b1a6=1",
+      "published": "2026-10-22 20:12",
+      "raw_summary": "Crude prices jump 3.5% while Eurozone bond sell-off deepens",
+      "insight": {
+        "what": "全球股市下挫，原油跳涨 3.5%，欧元区债市抛售加深，风险资产与债券同时承压。",
+        "why": "油价上涨同时推高通胀预期、压低增长预期，这是「滞胀式」冲击 —— 股票和债券无法互相分散，传统的 60/40 组合会失效。",
+        "chain": "中东局势升级 → 原油供给风险溢价上升 → 油价单日涨 3.5% → 通胀预期抬升 → 央行降息路径后移 → 长端收益率上行 → 债券价格下跌 → 折现率上升压制股票估值 → 股债同跌、分散化失效",
+        "notes": [
+          "为什么股债会同跌？平时油价上涨利好能源股、伤害消费股，股指反应温和；但当油价被解读为「通胀 → 加息」，债券先跌，折现率上升再压股票，两边就同向了。",
+          "60/40 组合的前提是股债负相关。这个相关性在通胀高波动时期会转正，1970 年代和 2022 年都出现过 —— 这是资产配置最痛的场景。",
+          "3.5% 的单日涨幅在原油里属于大波动：原油日波动率约 2% 到 3%，3.5% 大致是 1.5 个标准差，通常需要事件驱动，而不是供需渐变。",
+          "欧元区债市为什么更脆弱？成员国财政能力不一，风险厌恶时利差（spread）走阔，外围国家（意大利、希腊）承担更高融资成本，货币统一但财政不统一的结构性缺陷暴露。",
+          "面试可以接：判断冲击是「供给冲击」还是「需求冲击」决定政策反应 —— 供给冲击下央行左右为难，加息压通胀会伤增长，不加息通胀预期会脱锚。"
+        ]
+      },
+      "insight_en": {
+        "what": "Global equities tumbled as crude jumped 3.5% and the euro-area bond sell-off deepened, with risk assets and government bonds under pressure at the same time.",
+        "why": "Higher oil pushes inflation expectations up and growth expectations down at once — a stagflationary shock where stocks and bonds stop hedging each other and the classic 60/40 portfolio fails.",
+        "chain": "Middle East tensions escalate → supply risk premium on crude rises → oil jumps 3.5% in a session → inflation expectations rise → expected rate cuts get pushed back → long-end yields rise → bond prices fall → a higher discount rate compresses equity valuations → stocks and bonds fall together, diversification fails",
+        "notes": [
+          "Why do stocks and bonds fall together? Normally higher oil helps energy shares and hurts consumers, leaving the index roughly flat. But when oil is read as \"inflation → hikes\", bonds sell off first and the higher discount rate then presses on equities, aligning both.",
+          "The 60/40 portfolio assumes negative stock-bond correlation. That correlation turns positive when inflation is volatile — as in the 1970s and in 2022 — which is the most painful regime for asset allocation.",
+          "A 3.5% one-day move is large for crude: daily volatility runs about 2% to 3%, so 3.5% is roughly one and a half standard deviations and usually needs an event, not a gradual shift in supply and demand.",
+          "Why is the euro-area bond market more fragile? Member states have differing fiscal capacity, so spreads widen in risk-off episodes and peripherals (Italy, Greece) pay more. Monetary union without fiscal union is the structural flaw.",
+          "A closing point: whether a shock is supply-side or demand-side determines the policy response — under a supply shock the central bank is trapped, since hiking fights inflation but kills growth, while not hiking lets expectations drift."
+        ]
+      }
     }
   ],
   "policy": [
     {
-      "title": "India increases growth forecast for fiscal year",
+      "title": "Ship reported on fire off Oman as Iran escalation fears mount",
       "source": "DW",
-      "url": "https://www.dw.com/en/india-increases-growth-forecast-for-fiscal-year/a-79798971?maca=en-rss-en-world-4025-rdf",
-      "published": "2026-10-30 00:30",
-      "raw_summary": "India's Ministry of Finance has increased its growth forecasts for the current fiscal year. But it also warned about inflation, particularly for fuel and energy, amid continued instability in the Midd",
-      "insight": {}
+      "url": "https://www.dw.com/en/ship-reported-on-fire-off-oman-as-iran-escalation-fears-mount/a-79792733?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-10-29 18:04",
+      "raw_summary": "A ship in the Strait of Hormuz is reported to be on fire, a British maritime agency says. Iran has meanwhile said it has shot down another US drone as military tensions with Washington continue.",
+      "insight": {
+        "what": "英国海事机构报告，霍尔木兹海峡一艘船起火；伊朗称又击落一架美国无人机，局势升级的担忧加剧。",
+        "why": "霍尔木兹承载全球约五分之一的海运原油。任何「通行受阻」的证据都会立刻抬升运费与保险，而不是等到实际断供才反应。",
+        "chain": "海峡船只遇袭起火 → 战争险费率跳升 → 船东绕行或停航 → 有效运力下降 → 原油与 LNG 运费上涨 → 到岸成本上升 → 亚洲炼厂利润被压缩 → 成品油价格传导至终端",
+        "notes": [
+          "战争险（war risk premium）是即时变量：在船体险之外单独加保，按航次报价，冲突升级时费率可以在几天内翻数倍。它比油价更早反映风险。",
+          "为什么绕行解决不了问题？霍尔木兹没有替代航道。绕好望角只适用于部分航线，且多出 10 到 14 天航程，等于占用运力。",
+          "LNG 比原油更脆弱：卡塔尔 LNG 几乎全部经霍尔木兹出口，LNG 船改道成本极高，而亚洲是主要买家 —— 所以亚欧气价对海峡事件最敏感。",
+          "「有效运力」的概念：船绕远路，同样的船队能完成的航次减少，运价就上涨。这和油轮市场的吨海里（ton-mile）需求是同一套逻辑。",
+          "面试可以点：地缘冲击影响通胀的路径是「运费 → 到岸成本 → 终端价格」，比油价本身更慢，但也更持久。"
+        ]
+      },
+      "insight_en": {
+        "what": "A ship was reported on fire in the Strait of Hormuz, a British maritime agency said, while Iran claimed to have downed another US drone — deepening fears of escalation.",
+        "why": "Hormuz carries about a fifth of seaborne crude. Any evidence that transit is impaired immediately lifts freight and insurance, well before actual supply is lost.",
+        "chain": "A vessel is attacked and catches fire in the strait → war-risk premiums jump → shipowners reroute or suspend voyages → effective capacity falls → crude and LNG freight rates rise → landed costs climb → Asian refinery margins are squeezed → refined product prices pass through to end users",
+        "notes": [
+          "The war-risk premium is an immediate variable: cover written on top of hull insurance, quoted per voyage, and it can multiply within days when conflict escalates. It reacts earlier than the oil price itself.",
+          "Why does rerouting not solve it? Hormuz has no alternative channel. Routing around the Cape of Good Hope works only for some voyages and adds 10 to 14 days, which consumes capacity.",
+          "LNG is more fragile than crude: almost all Qatari LNG exits through Hormuz, LNG carriers are expensive to divert, and Asia is the main buyer — which is why Asian and European gas prices are most sensitive to incidents there.",
+          "\"Effective capacity\" is the concept: longer voyages mean fewer completed trips from the same fleet, so freight rates rise. It is the same logic as ton-mile demand in tanker markets.",
+          "A point for interviews: the geopolitical route into inflation runs freight → landed cost → shelf price, which is slower than the oil price but more persistent."
+        ]
+      }
     },
     {
-      "title": "China leaders demand more loyalty and more initiative",
-      "source": "DW",
-      "url": "https://www.dw.com/en/china-leaders-demand-more-loyalty-and-more-initiative/a-79799138?maca=en-rss-en-world-4025-rdf",
-      "published": "2026-10-30 00:16",
-      "raw_summary": "The CCP session emphasized internal discipline, as expected, but left the question of Xi Jinping's successor unanswered. The party seems anxious of any instability as geopolitics heats up and China's ",
-      "insight": {}
+      "title": "Who blinked first? Fragile EU-China trade peace sparks new war of words",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3371807/who-blinked-first-fragile-eu-china-trade-peace-sparks-new-war-words",
+      "published": "2026-10-22 20:00",
+      "raw_summary": "Less than two weeks after Brussels and Beijing struck a surprise deal to avert an escalating trade dispute, their fragile rapprochement has descended into a battle over who blinked first. In Brussels ",
+      "insight": {
+        "what": "布鲁塞尔与北京两周前达成避免贸易争端升级的临时协议，如今双方重回互相指责，「谁先眨眼」的脆弱和平出现裂痕。",
+        "why": "关税休战只是把冲突从「税率」转到「执行与解释」。企业面对的不是确定性，而是更长的观望期，投资决策被推迟。",
+        "chain": "中欧达成临时贸易协议 → 执行细节与解释权出现分歧 → 双方互相指责、舆论升级 → 企业无法判断最终规则 → 投资与采购决策推迟 → 供应链继续双轨化布局 → 长期成本上升、效率下降",
+        "notes": [
+          "为什么临时协议不稳定？它通常只约定税率上限和谈判期限，没有争端解决机制。执行阶段的解释权之争，就是下一轮冲突的起点。",
+          "关税休战对企业的伤害不在成本，而在「不确定性」：资本开支要 3 到 5 年回收，规则一年一变，NPV 根本算不出来。",
+          "供应链双轨化（dual sourcing）的代价：同样产能建两套，规模效应下降、单位成本上升，这部分成本最终由消费者承担。",
+          "「谁先眨眼」的博弈结构：双方都在等对方让步，但如果国内政治压力大，让步的政治成本高于经济收益，僵局就会长期化。",
+          "面试可以接：贸易摩擦的长期影响不是关税税率，而是全球生产网络重新分区，效率损失是永久的。"
+        ]
+      },
+      "insight_en": {
+        "what": "Less than two weeks after Brussels and Beijing struck a surprise deal to avert an escalating trade dispute, the fragile rapprochement has descended into a new war of words.",
+        "why": "A tariff truce only moves the conflict from rates to implementation and interpretation. What firms face is not certainty but a longer waiting period, so investment decisions get deferred.",
+        "chain": "The EU and China reach an interim trade deal → disputes emerge over implementation and interpretation → both sides trade accusations and rhetoric escalates → companies cannot judge the final rules → investment and procurement decisions are postponed → supply chains keep building dual tracks → long-run costs rise and efficiency falls",
+        "notes": [
+          "Why is an interim deal unstable? It typically sets a tariff ceiling and a negotiating deadline without a dispute-settlement mechanism. The fight over interpretive authority at implementation is where the next round begins.",
+          "The damage to firms is not the cost but the uncertainty: capex needs three to five years to pay back, and if the rules change annually the NPV simply cannot be computed.",
+          "The cost of dual sourcing: two sets of capacity for the same output, weaker scale economies and higher unit costs — ultimately paid by consumers.",
+          "The structure of a \"who blinks first\" game: each side waits for the other to concede, but when domestic political pressure is high, conceding costs more politically than the economic gain, so the standoff persists.",
+          "A closing thought: the lasting effect of trade friction is not the tariff rate but the redrawing of global production networks, and that efficiency loss is permanent."
+        ]
+      }
     }
   ],
   "tech": [
-    {
-      "title": "AI Buildout Becoming an Economic Predictor, Says Economist Slok",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-10-22/ai-buildout-becoming-economic-predictor-economist-slok-video",
-      "published": "2026-10-22 20:32",
-      "raw_summary": "Torsten Slok, chief economist at Apollo, discusses risks related to delays in data center construction, calling the AI buildout “a very, very critical driver of growth at the moment” for the US econom",
-      "insight": {}
-    },
     {
       "title": "Meta Reports $825 Billion in Future Spending Commitments",
       "source": "Bloomberg Technology",
       "url": "https://www.bloomberg.com/news/articles/2026-10-22/meta-reports-825-billion-in-future-spending-commitments",
       "published": "2026-10-22 19:35",
       "raw_summary": "Meta Platforms Inc. said it has agreed to spend about $825 billion in the future on various leases and contracts, many of them related to computing power and infrastructure for artificial intelligence",
-      "insight": {}
+      "insight": {
+        "what": "Meta 披露已签约的未来支出承诺约 8250 亿美元，其中很大一部分与算力相关（租赁与采购合同）。",
+        "why": "这把「AI 资本开支」从年度费用变成多年期刚性承诺。它锁定未来现金流支出，一旦收入增速放缓，这些承诺就变成杠杆。",
+        "chain": "Meta 签订多年期算力租赁与采购合同 → 未来支出承诺累积至 8250 亿美元 → 自由现金流被长期锁定 → 收入增速一旦放缓即触发压力 → 评级机构审视债务与承诺比率 → 融资成本上升 → 回购与分红空间被压缩 → 估值从成长股向重资产公司靠拢",
+        "notes": [
+          "为什么「承诺」比「资本开支」更值得看？资本开支可以一年一年调，多年期合同是刚性的，弹性小得多 —— 它把未来的选择权提前卖掉了。",
+          "租赁的会计处理：经营租赁现在也要上表（IFRS 16 / ASC 842），确认使用权资产与租赁负债，所以它已不在表外，但披露位置常在附注里被忽略。",
+          "8250 亿美元的量级参考：相当于 Meta 一年收入的数倍。这种规模的承诺，本质是把公司从「科技平台」变成「算力的长期租户」。",
+          "折旧与承诺的错配：设备按 3 到 5 年折旧，合同可能 10 年以上。前期折旧轻、后期重，利润的时间分布被拉长 —— 这是账面利润好看的技术原因之一。",
+          "面试可以点：看 AI 投入要看「承诺/收入」这个比率，而不是单看资本开支增速 —— 前者才反映刚性程度。"
+        ]
+      },
+      "insight_en": {
+        "what": "Meta disclosed about US$825 billion in future spending commitments, much of it tied to computing power through leases and contracts.",
+        "why": "This turns AI capex from an annual expense into multi-year rigid commitments. It locks up future cash outflow, and if revenue growth slows those commitments become leverage.",
+        "chain": "Meta signs multi-year compute leases and purchase contracts → future commitments accumulate to US$825 billion → free cash flow is locked up for years → any slowdown in revenue growth creates immediate pressure → rating agencies scrutinise debt and commitments → funding costs rise → buyback and dividend capacity is squeezed → the valuation shifts from growth stock toward heavy-asset company",
+        "notes": [
+          "Why do commitments matter more than capex? Capex can be adjusted year by year; multi-year contracts are rigid and far less flexible — they sell off future optionality in advance.",
+          "Lease accounting: operating leases now sit on balance sheet under IFRS 16 / ASC 842, recognised as a right-of-use asset and a lease liability. It is no longer off balance sheet, but the disclosure often hides in the notes.",
+          "Scale check on US$825 billion: several times Meta's annual revenue. A commitment of that size effectively turns the company from a tech platform into a long-term tenant of compute.",
+          "The depreciation mismatch: equipment depreciates over three to five years while contracts can run beyond ten. Depreciation is light early and heavy later, stretching out the profit profile — one technical reason reported earnings look better.",
+          "A point for interviews: judge AI spending by the commitments-to-revenue ratio, not by the capex growth rate — the ratio captures rigidity."
+        ]
+      }
+    },
+    {
+      "title": "Chip Stocks Face Peak-Earnings in 2027, Says NewEdge’s Dawson",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-10-22/chip-stocks-face-peak-earnings-in-2027-newedge-s-dawson-video",
+      "published": "2026-10-22 18:44",
+      "raw_summary": "Cameron Dawson, chief investment officer at NewEdge Wealth, warns that markets are pricing in peak earnings for chip stocks next year and raising concerns about their earnings power in 2028. She speak",
+      "insight": {
+        "what": "NewEdge 首席投资官 Dawson 警告，市场已经把芯片股 2027 年的峰值盈利定价进去，对预期差越来越敏感。",
+        "why": "当股价隐含「盈利见顶」的假设，任何低于峰值路径的数据都会触发估值下修，风险回报变得不对称。",
+        "chain": "AI 需求推动芯片盈利连续超预期 → 股价提前定价 2027 年峰值盈利 → 估值消化完毕、容错空间消失 → 任何交付延迟或订单下修 → 盈利预期下修 → 估值与盈利双杀 → 板块波动率上升",
+        "notes": [
+          "「峰值盈利」（peak earnings）是什么意思？市场假设某年的盈利是周期顶部、之后会回落。按顶部盈利给倍数，等于把周期高点当成了永续。",
+          "周期股的正确估值方法：用中周期盈利（mid-cycle earnings），或者用 PB 而不是 PE。峰值 PE 看起来很便宜，恰恰是最危险的信号。",
+          "为什么「预期差」比「绝对值」重要？价格已经包含预期，只有偏离预期的那部分才产生收益。这就是 buy the rumor, sell the news 的定价逻辑。",
+          "半导体周期的三个驱动：库存周期（3 到 4 年）、资本开支周期（设备）、技术代际（制程与 AI 架构）。三者叠加时波动最大。",
+          "面试可以接：芯片股最大的风险不是需求消失，而是需求被提前透支 —— 客户为锁产能重复下单（double ordering），真实需求被高估。"
+        ]
+      },
+      "insight_en": {
+        "what": "NewEdge CIO Cameron Dawson warned that markets are already pricing peak earnings for chip stocks in 2027 and are increasingly sensitive to any shortfall versus expectations.",
+        "why": "When the price embeds a peak-earnings assumption, any data below that path triggers a de-rating, and the risk-reward becomes asymmetric.",
+        "chain": "AI demand drives repeated earnings beats for chipmakers → share prices price in 2027 peak earnings ahead of time → the valuation absorbs everything and the margin for error disappears → any delivery delay or order cut → earnings estimates are cut → both earnings and multiples compress → sector volatility rises",
+        "notes": [
+          "What does \"peak earnings\" mean? The market assumes a given year is the cyclical top and earnings fall afterwards. Applying a multiple to peak earnings treats the cycle high as perpetual.",
+          "The right way to value cyclicals: use mid-cycle earnings, or price-to-book rather than P/E. A low P/E on peak earnings looks cheap precisely when it is most dangerous.",
+          "Why does the surprise matter more than the level? Price already contains expectations, so only the deviation from expectations generates return. That is the pricing logic behind \"buy the rumour, sell the news\".",
+          "Three drivers of the semiconductor cycle: inventory (three to four years), capex (equipment), and technology generations (nodes and AI architectures). Volatility peaks when all three align.",
+          "A closing line: the biggest risk for chip stocks is not demand disappearing but demand being pulled forward — customers double-order to secure capacity, which overstates true demand."
+        ]
+      }
     }
   ],
-  "fallback_reason": "InternalServerError: Error code: 503 - {'error': {'message': '当前分组 default 下对于模型 gpt-6.1sol 无可用渠道 (request id: 20261030221620559002446wbs2ka9o7sSMw)', 'type': 'new_api_error'}}",
   "source_stats": {
     "fed": {
       "count": 4,

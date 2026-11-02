@@ -12,3 +12,6 @@ _measure.js
 __pycache__/
 *.pyc
 .venv/
+work/
+preview/
+deepsea-fish/
