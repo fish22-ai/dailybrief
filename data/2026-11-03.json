@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-03",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Australia raises rates to highest level since 2008 financial crisis",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/60283bdf-e45d-4723-a68e-5a857a5b949e?syn-25a6b1a6=1",
+      "published": "2026-11-03 14:40",
+      "raw_summary": "Central bank’s fifth increase this year comes as inflation remains above target",
+      "insight": {}
+    },
+    {
+      "title": "澳洲联储主席布洛克：为了降低通胀，加息是必要的。 收紧政策旨在应对国内产能压力。 需要放缓经济增长和抬升失业率来降低CPI。 不能让高通胀预期变得根深蒂固。 现在的阵痛将避免未来产生更大的阵痛。 赞成维持利率不变的委员看到了更多的下行风险，认为需要再等待一段时间以获取更多数据。 未来一年的通胀基本上已成定局，这不是一个令人满意的处境。",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3193066",
+      "published": "2026-11-03 12:33",
+      "raw_summary": "",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "China moves to simplify forex settlements and make cross-border business easier",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/economy/policy/article/3373093/china-moves-simplify-forex-settlements-and-make-cross-border-business-easier",
+      "published": "2026-11-03 15:00",
+      "raw_summary": "China plans to expand foreign exchange settlement services and streamline cross-border trade payments, in a move to lower transaction costs and facilitate international commerce. The State Administrat",
+      "insight": {}
+    },
+    {
+      "title": "Trump to remove Rwanda and South Africa from US trade deal",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c9j346xg0mkvo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-03 11:00",
+      "raw_summary": "The move comes barely a week after Rwanda's defence ministry was hit with sanctions by the US Treasury.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Nvidia Tells Data Center Clients to Trim China Business, FT Says",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-03/nvidia-tells-data-center-clients-to-trim-china-business-ft-says",
+      "published": "2026-11-03 13:39",
+      "raw_summary": "Nvidia Corp. has instructed its cloud computing clients to scale back their exposure to Chinese companies, the Financial Times reported, citing unidentified people.",
+      "insight": {}
+    },
+    {
+      "title": "China Plans Broad AI Guardrails After Global Security Lapses",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-03/china-plans-broad-ai-guardrails-after-global-security-lapses",
+      "published": "2026-11-03 13:24",
+      "raw_summary": "China plans to roll out a broad set of standards governing the AI safety from development through deployment, representing some of the most comprehensive guidelines to guard against a loss of control ",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261103150127692014996wbs2kC2T07P3n)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 7,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 17,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
