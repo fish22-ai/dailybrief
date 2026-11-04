@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-04",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Live coverage: Trump admits Iran war a factor as Republicans routed",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1",
+      "published": "2026-11-04 16:11",
+      "raw_summary": "President’s party defeated in battleground races from Kansas to South Carolina",
+      "insight": {}
+    },
+    {
+      "title": "Treasury yields fall as investors crowd into bonds for safety amid election stock sell-off",
+      "source": "CNBC Finance",
+      "url": "https://www.cnbc.com/2026/11/03/treasury-yields-fall-as-democrats-win-big-in-us-midterm-elections.html",
+      "published": "2026-11-04 15:27",
+      "raw_summary": "Treasury yields fell on Tuesday night, as investors sought shelter from a sell-off in equity futures sparked by big victories from Democrats in the U.S. midterm elections.",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Why North Korea’s Kim sees no need for another Trump ‘photo-op summit’",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/politics/article/3373219/why-north-koreas-kim-sees-no-need-another-trump-photo-op-summit",
+      "published": "2026-11-04 13:14",
+      "raw_summary": "Kim Jong-un’s powerful sister on Wednesday rejected holding any further talks with the United States, days after the FBI accused North Korea of stealing more than US$6 billion from a cryptocurrency ex",
+      "insight": {}
+    },
+    {
+      "title": "Could the AI boom make borrowing more expensive in Europe?",
+      "source": "DW",
+      "url": "https://www.dw.com/en/could-the-ai-boom-make-borrowing-more-expensive-in-europe/a-79511985?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-11-03 18:27",
+      "raw_summary": "France, Germany and Italy face a volatile bond market as war inflation bites. With US tech giants now issuing billions in AI bonds, they are competing with cash-strapped European governments.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Semight Is Said to Tap Citic, Goldman, JPMorgan for Hong Kong Listing",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/semight-is-said-to-tap-citic-goldman-jpmorgan-for-hong-kong-listing",
+      "published": "2026-11-04 11:40",
+      "raw_summary": "Semight Instruments Co., a Chinese maker of test instruments for semiconductors, has picked banks to help prepare for its Hong Kong listing, according to people familiar with the matter.",
+      "insight": {}
+    },
+    {
+      "title": "Nvidia China Clients to Get 1% of $70 Billion RTX Chips Ordered",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/nvidia-china-clients-to-get-1-of-70-billion-rtx-chips-ordered",
+      "published": "2026-11-04 11:14",
+      "raw_summary": "Chinese AI developers expect to receive just a small fraction of the advanced Nvidia Corp. chips they’ve ordered over the next several months, as the US company struggles to boost production to meet s",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261104161527439452408q8wwsBk7r5XjO)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 18,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
