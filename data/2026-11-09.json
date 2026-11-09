@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-09",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Asian stocks rebound after AI rout",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/b8644327-86e7-4d1c-a71f-3fb1d552723b?syn-25a6b1a6=1",
+      "published": "2026-11-09 15:09",
+      "raw_summary": "Declines last week had pushed many indices into bear market territory",
+      "insight": {}
+    },
+    {
+      "title": "在岸人民币兑美元北京时间16:30官方收报6.6735，较上一交易日官方收盘价跌24点，较上日夜盘收盘涨28点。",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3196803",
+      "published": "2026-11-09 16:30",
+      "raw_summary": "",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Cop31 leaders urge world to accelerate fight against global warming",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/world/article/3373785/cop31-leaders-urge-world-accelerate-fight-against-global-warming",
+      "published": "2026-11-09 16:13",
+      "raw_summary": "Leaders of ⁠the Cop31 climate summit urged the world to accelerate the fight against global warming as rising temperatures and an increasing number of climate-driven disasters threaten lives and the g",
+      "insight": {}
+    },
+    {
+      "title": "The world's largest telecoms firm is on trial and the outcome has global implications",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/11/08/nx-s1-6030670/the-worlds-largest-telecoms-firm-is-on-trial-and-the-outcome-has-global-implications",
+      "published": "2026-11-09 06:04",
+      "raw_summary": "Huawei, the world's biggest telecommunications company, is on trial in New York, accused of stealing American technology and evading US sanctions.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Nvidia's Probe Into Huang Affair Adds to AI Trade Risks",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-11-09/nvidia-s-probe-into-huang-affair-adds-to-ai-trade-risks-video",
+      "published": "2026-11-09 15:48",
+      "raw_summary": "Nvidia's probe into CEO Jensen Huang, following his admission of an affair with a woman identified in a series of reports as a suspected Chinese spy, threatens to further roil an AI market shaken by c",
+      "insight": {}
+    },
+    {
+      "title": "Ardian Raises €1 Billion Europe Semiconductor Fund With Middle East Backing",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-09/ardian-raises-1-billion-europe-semiconductor-fund-with-middle-east-backing",
+      "published": "2026-11-09 15:00",
+      "raw_summary": "Private capital firm Ardian SAS has raised €1 billion for its debut semiconductor fund, attracting significant interest from investors based in the Middle East as artificial intelligence adoption driv",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 2026110917062292905814lh28gNWA9DPW7)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 19,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
