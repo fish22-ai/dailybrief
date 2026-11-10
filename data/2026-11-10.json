@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-10",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "Investors pile into defensive stocks amid fears AI bull market may be over",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/efe9653b-6802-485e-8eae-97fa2e6df770?syn-25a6b1a6=1",
+      "published": "2026-11-10 13:00",
+      "raw_summary": "Consumer staples and healthcare among sectors to perform strongly as investors fret over future tech earnings",
+      "insight": {}
+    },
+    {
+      "title": "报道：Anthropic撤回披露IPO筹资目标的文件",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3197468",
+      "published": "2026-11-10 14:56",
+      "raw_summary": "据路透报道，Anthropic PBC发出后又撤回了一份申报文件。该文件似乎显示，公司拟通过首次公开募股(IPO)筹集至多693亿美元。这家人工智能实验室最初向投行人士发送了一份申报文件副本，其中显示公司拟以每股70至80美元的价格发售约8.67亿股股票。随后，Anthropic又发送一封电子邮件，称这些细节并不准确。",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Singapore adds lustre to bullion hub with gold vault service for central banks",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3373902/singapore-adds-lustre-bullion-hub-gold-vault-service-central-banks",
+      "published": "2026-11-10 14:16",
+      "raw_summary": "Singapore on Tuesday launched a gold storage service for foreign central banks and other financial institutions, as it seeks to bolster its position as a major precious metals trading hub. The Monetar",
+      "insight": {}
+    },
+    {
+      "title": "Trump says more US attacks on Iran 'highly unlikely'",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-10 13:33",
+      "raw_summary": "The president says the US is keeping \"status quo\" with Iran but remains “locked and loaded” should the situation change.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "SoftBank Logs $7 Billion Loss After US Data Center Costs Swell",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-10/softbank-group-earnings-loss-after-ai-worries-hit-tech-stocks-masayoshi-son",
+      "published": "2026-11-10 14:35",
+      "raw_summary": "SoftBank Group Corp. reported its first net loss in almost two years after swallowing a $3.7 billion writedown over a US data-center project amid rising fears around the sustainability of AI growth.",
+      "insight": {}
+    },
+    {
+      "title": "Moonshot Rents Nvidia’s Top AI Chips in China, Documents Show",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-10/moonshot-rents-nvidia-s-top-ai-chips-in-china-documents-show",
+      "published": "2026-11-10 12:54",
+      "raw_summary": "Moonshot AI accessed a trove of Nvidia Corp.’s most advanced chips this summer, according to documents filed with Beijing regulators, highlighting the Chinese artificial intelligence champion’s relian",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261110150135311948673r977zIckPKNfI)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 16,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 5,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
