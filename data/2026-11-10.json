@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Investors pile into defensive stocks amid fears AI bull market may be over",
@@ -8,33 +8,127 @@
       "url": "https://www.ft.com/content/efe9653b-6802-485e-8eae-97fa2e6df770?syn-25a6b1a6=1",
       "published": "2026-11-10 13:00",
       "raw_summary": "Consumer staples and healthcare among sectors to perform strongly as investors fret over future tech earnings",
-      "insight": {}
+      "insight": {
+        "what": "投资者加仓消费必需品与医疗保健等防御股，担忧 AI 牛市行情见顶、科技股盈利前景恶化。",
+        "why": "市场原本定价 AI 盈利无虞、成长股单边走强，资金转向防御打破了这一预期，成长与防御的风格价差、指数隐含波动率都要重新定价。",
+        "chain": "AI 盈利预期动摇 → 成长股风险溢价上升 → 折现率上行压低现值 → 基金减仓科技股 → 资金转入防御板块 → 防御股相对估值走阔 → 指数波动率重新定价",
+        "notes": [
+          "什么是防御股：必需消费品、医疗保健、公用事业这类行业，需求对经济周期不敏感，盈利稳定，所以在跌市里相对抗跌；与之相对的进攻性板块是科技、可选消费等高 beta 品种。",
+          "风险溢价 risk premium 是这次轮动的核心变量：股票要求的回报率 = 无风险利率 Rf + 风险溢价。当 AI 盈利的确定性下降，投资者要求更高的溢价作补偿，要求回报率整体上移。",
+          "折现定价机制：`P = E1/(1+Rf+RP)^1 + E2/(1+Rf+RP)^2 + …`，分子是各期预期盈利 E，分母是要求回报率。盈利预期 E 下修、或要求回报率上升，现值都会缩水；高估值成长股的盈利集中在远期年份，远期现金流的现值对折现率最敏感，所以跌得比防御股狠。",
+          "为什么资金不直接离场：公募基金大多有股票仓位下限，不能整体减仓，只能做风格切换——把仓位从高 beta 科技股搬到低 beta 防御股。防御股因此获得超额流入，相对估值溢价走阔。",
+          "观察指标：成长/防御相对强弱指数、VIX 隐含波动率、科技股 forward P/E。若三者同向走阔，说明是风格切换而非短暂避险，轮动还会延续。"
+        ]
+      },
+      "insight_en": {
+        "what": "Investors are piling into defensive sectors such as consumer staples and healthcare, worried that the AI-driven bull market may be topping out and tech earnings are deteriorating.",
+        "why": "Markets had been pricing in untroubled AI earnings and a one-way growth rally; the rotation into defensives breaks that expectation, forcing a repricing of the growth-vs-defensive style spread and of index implied volatility.",
+        "chain": "AI earnings expectations wobble → risk premium on growth stocks rises → higher discount rate cuts present value → funds trim tech positions → money rotates into defensives → defensive valuation premium widens → index volatility repriced",
+        "notes": [
+          "What are defensives: consumer staples, healthcare and utilities see demand that is insensitive to the business cycle, so earnings are stable and they hold up better in drawdowns; the aggressive counterparts are high-beta tech and discretionary names.",
+          "The equity risk premium is the core variable here: required return = risk-free rate Rf + risk premium. As confidence in AI earnings falls, investors demand a higher premium, pushing the required return up across the board.",
+          "Discounting mechanics: `P = E1/(1+Rf+RP)^1 + E2/(1+Rf+RP)^2 + …`, where the numerator is expected earnings E in each period and the denominator is the required return. A downgrade to E or a rise in the required return shrinks present value; growth stocks book earnings far in the future, so their distant cash flows are hit hardest by discounting.",
+          "Why funds rotate instead of exiting: most mandates carry a minimum equity allocation, so managers shift style — selling high-beta tech to buy low-beta defensives. That extra inflow is what widens the defensive premium.",
+          "What to watch: growth-vs-defensive relative strength, VIX implied volatility, and tech forward P/E. If all three widen together, this is a style rotation rather than a brief risk-off, and the rotation has further to run."
+        ]
+      }
     },
     {
-      "title": "报道：Anthropic撤回披露IPO筹资目标的文件",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3197468",
-      "published": "2026-11-10 14:56",
-      "raw_summary": "据路透报道，Anthropic PBC发出后又撤回了一份申报文件。该文件似乎显示，公司拟通过首次公开募股(IPO)筹集至多693亿美元。这家人工智能实验室最初向投行人士发送了一份申报文件副本，其中显示公司拟以每股70至80美元的价格发售约8.67亿股股票。随后，Anthropic又发送一封电子邮件，称这些细节并不准确。",
-      "insight": {}
+      "title": "A key report for where inflation stood in October comes out Tuesday. Here's what to expect",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/11/09/october-cpi-report-2026-inflation.html",
+      "published": "2026-11-10 05:03",
+      "raw_summary": "The CPI headline reading is expected to show an increase of 0.3% while the core is forecast to increase 0.2%.",
+      "insight": {
+        "what": "美国 10 月 CPI 周二公布，市场预期 headline 环比涨 0.3%、core 环比涨 0.2%。",
+        "why": "这份报告直接校准 Fed 的降息路径预期：偏热则降息押注回撤、美债收益率与美元上行；偏冷则反向。短端 2Y 美债最敏感。",
+        "chain": "CPI 公布超预期 → 利率期货重定价 → 降息预期回撤 → 2Y 美债收益率上行 → 美元指数走强 → 黄金与成长股承压",
+        "notes": [
+          "CPI 有两个口径：headline 包含食品和能源，波动大；core 剔除二者，Fed 更看重 core，因为它反映趋势。这次 core 预期环比 +0.2%，折年率约 2.5%，仍高于 2% 目标。",
+          "为什么 2Y 先动：`y2 ≈ 未来两年政策利率预期均值 + term premium`，2Y 美债收益率近似等于市场对未来两年 Fed 路径的定价。政策路径预期一变，2Y 立即重定价；10Y 还叠加期限溢价 term premium 与长期增长预期，反应相对钝一些。",
+          "对黄金和成长股的传导走实际利率：`实际利率 = 名义收益率 - 预期通胀`。名义收益率上行快于通胀预期时实际利率上升，压制不生息的黄金，以及远期现金流占比高的高久期成长股。",
+          "汇率支线：美债收益率相对其他 G10 利差走阔，套息资金流入美元，美元指数走强，反过来又压制大宗商品价格（美元计价）。",
+          "面试角度：答 CPI 交易先给基准情形（符合预期、波动有限），再给偏离情形的弹性排序——2Y 美债、利率期货隐含的会议概率、美元、黄金、成长股，从直接到间接。"
+        ]
+      },
+      "insight_en": {
+        "what": "The October US CPI lands Tuesday, with the headline expected up 0.3% month-on-month and core up 0.2%.",
+        "why": "The print directly calibrates the market's Fed easing path: a hot number unwinds rate-cut bets and lifts Treasury yields and the dollar; a cool one does the reverse. The short end, the 2Y, is most sensitive.",
+        "chain": "CPI beats expectations → rate futures reprice → rate-cut bets pared back → 2Y Treasury yield rises → dollar index strengthens → gold and growth stocks pressured",
+        "notes": [
+          "Two CPI measures: headline includes food and energy and is volatile; core strips them out, and the Fed watches core because it captures the trend. Core is expected at +0.2% m/m, roughly a 2.5% annualized pace, still above the 2% target.",
+          "Why the 2Y moves first: `y2 ≈ average expected policy rate over two years + term premium`. The 2Y yield is essentially the market's pricing of the Fed path over the next two years, so it reprices instantly; the 10Y also carries the term premium and long-run growth expectations, so it reacts more slowly.",
+          "The pass-through to gold and growth stocks runs through the real rate: `real rate = nominal yield - expected inflation`. When nominal yields rise faster than inflation expectations, the real rate rises, hurting non-yielding gold and long-duration growth stocks whose cash flows sit far out.",
+          "FX side-line: wider US yield spreads versus G10 peers pull carry flows into the dollar; a stronger dollar in turn weighs on dollar-priced commodities.",
+          "Interview angle: answer CPI trades in two scenarios — the base case (in line, muted reaction) and the surprise case with a sensitivity ordering: 2Y Treasury, meeting probabilities implied by futures, dollar, gold, growth stocks, from most to least direct."
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Singapore adds lustre to bullion hub with gold vault service for central banks",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3373902/singapore-adds-lustre-bullion-hub-gold-vault-service-central-banks",
-      "published": "2026-11-10 14:16",
-      "raw_summary": "Singapore on Tuesday launched a gold storage service for foreign central banks and other financial institutions, as it seeks to bolster its position as a major precious metals trading hub. The Monetar",
-      "insight": {}
-    },
     {
       "title": "Trump says more US attacks on Iran 'highly unlikely'",
       "source": "BBC",
       "url": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss",
       "published": "2026-11-10 13:33",
       "raw_summary": "The president says the US is keeping \"status quo\" with Iran but remains “locked and loaded” should the situation change.",
-      "insight": {}
+      "insight": {
+        "what": "Trump 表示对伊朗的进一步军事打击极不可能，美国对伊维持现状，但称美军仍保持战备状态。",
+        "why": "市场此前在中东油价与黄金里定价了美伊冲突升级的尾部风险，这一表态直接压缩地缘风险溢价，能源与避险资产需要重定价。",
+        "chain": "冲突升级概率下降 → 地缘风险溢价回吐 → 布伦特油价下行 → 能源分项拖累通胀预期 → 降息预期边际增强 → 美债收益率与美元承压",
+        "notes": [
+          "商品价格里的地缘风险溢价 risk premium：油价除了供需基本面，还含一块「断供概率 × 断供损失」的溢价。概率预期一下降，溢价直接从价格里挤出来，不需要任何真实的供需变化。",
+          "布伦特 Brent 是全球约三分之二原油贸易的定价基准，对中东供应风险最敏感；美国 WTI 相对钝一些。所以地缘降温时布伦特跌得更领先。",
+          "通胀传导链条：`CPI 能源分项 ← 汽油零售价 ← 原油期货`。油价下移先压低 headline 通胀；Fed 看的 core 虽不含能源，但能源回落会拉低家庭的通胀预期（如密歇根调查），间接影响政策立场。",
+          "利率传导：`名义收益率 ≈ 预期政策利率路径 + 期限溢价 term premium`。降息预期增强会把预期路径整体下移，2Y 先行、10Y 跟随，美元随之走弱。",
+          "并行支线：避险资金同时从黄金和日元等传统避险资产撤出，属于「买预期、卖事实」——溢价在风险最高时最贵，降温表态落地即回吐。",
+          "警惕口头表态的脆弱性：极不可能不等于承诺。这类行情是双向跳变，一旦中东出现新导火索，溢价会瞬间加回，追单边仓位风险很高。"
+        ]
+      },
+      "insight_en": {
+        "what": "Trump said further US military strikes on Iran are highly unlikely, that Washington will keep the status quo with Tehran, but stressed US forces remain ready for action.",
+        "why": "Markets had been pricing a US-Iran escalation tail risk inside Middle East oil and gold; the remark compresses that geopolitical risk premium, forcing a repricing of energy and safe-haven assets.",
+        "chain": "Escalation probability falls → geopolitical risk premium unwinds → Brent crude drifts lower → energy component drags inflation expectations → rate-cut expectations firm slightly → Treasury yields and dollar pressured",
+        "notes": [
+          "The geopolitical risk premium inside commodities: oil price = supply-demand fundamentals plus a premium worth (disruption probability x disruption cost). When the probability falls, the premium is squeezed out of the price with no change in physical flows.",
+          "Brent prices roughly two-thirds of globally traded crude and is the most sensitive benchmark to Middle East supply risk; WTI is slower to react, so Brent leads on de-escalation.",
+          "Inflation pass-through: `CPI energy component <- gasoline retail prices <- crude futures`. Lower oil first pulls down headline CPI; core excludes energy, but cheaper energy drags down household inflation expectations (e.g. the Michigan survey), indirectly shaping the policy stance.",
+          "Rates pass-through: `nominal yield ≈ expected policy rate path + term premium`. Firmer rate-cut expectations shift the whole expected path lower — the 2Y leads, the 10Y follows, and the dollar weakens alongside.",
+          "A parallel side-line: safe-haven money also exits gold and the yen — classic buy-the-rumor, sell-the-fact — the premium is richest when risk peaks and bleeds out on any de-escalation headline.",
+          "Beware the fragility of verbal remarks: highly unlikely is not a commitment. These moves are two-way jumps; any new trigger in the Middle East slams the premium straight back, so chasing one side is risky."
+        ]
+      }
+    },
+    {
+      "title": "China puts yuan within easier reach of Africa, but adoption faces major hurdles: report",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/economy/policy/article/3373817/china-puts-yuan-within-easier-reach-africa-adoption-faces-major-hurdles-report",
+      "published": "2026-11-10 14:18",
+      "raw_summary": "China is making it easier for African countries to pay for Chinese-led infrastructure projects in yuan, but weak banking rules, high debt levels and historical dependence on the US dollar and euro con",
+      "insight": {
+        "what": "中国推动非洲国家用人民币支付中资基建项目，但银行监管薄弱、债务高企与对美元欧元的路径依赖仍制约普及。",
+        "why": "人民币国际化在结算层再进一步，但报告确认瓶颈在制度与网络效应：改变的是长期货币份额预期，对短期离岸 CNH 汇率影响边际。",
+        "chain": "人民币结算渗透上升 → 离岸人民币池子扩大 → CNH 流动性改善 → 汇率波动缓冲增强 → 美元结算依赖下降 → 储备多元化逻辑强化",
+        "notes": [
+          "人民币国际化分三层：计价 → 结算 → 储备。非洲走的是结算层——用人民币支付中资项目；要升级到储备货币，还差银行体系开放和资本可自由兑换两道门槛。",
+          "离岸 CNH 与在岸 CNY 的区别：CNH 在香港等离岸市场自由交易，CNY 受每日中间价和波动区间管理。离岸池子越大，市场化定价越有深度，买卖点差和冲击成本越小。",
+          "路径依赖为什么难破：非洲出口的铜、石油全球以美元计价，外债以美元欧元计价。持有美元负债却收人民币现金会放大货币错配 currency mismatch——除非双边贸易同步人民币化，否则企业没有动机切换。",
+          "对汇率为何偏长期：`汇率 ≈ 贸易差额 + 资本流动 + 货币政策差`。结算货币切换改变的是贸易流量的计价构成，量级相对跨境资本流动仍小，所以短期 CNH 反应有限，影响要按年计。",
+          "面试角度：对比美元的网络效应（石油美元 petrodollar 循环——石油以美元计价，出口国回存美元买美债），说明结算货币切换需要贸易、融资、储备三条链同时咬合，单点突破不够。"
+        ]
+      },
+      "insight_en": {
+        "what": "China is making it easier for African countries to pay for Chinese-led infrastructure projects in yuan, but weak banking rules, heavy debts and dollar-euro path dependence still curb adoption.",
+        "why": "Yuan internationalization advances another step at the settlement layer, but the report confirms the bottleneck is institutional and network-driven: it moves the long-run currency-share expectation, while the near-term impact on offshore CNH is marginal.",
+        "chain": "Yuan settlement penetration rises → offshore yuan pool expands → CNH liquidity improves → FX volatility buffer strengthens → dollar settlement reliance eases → reserve diversification thesis reinforced",
+        "notes": [
+          "Yuan internationalization has three layers: invoicing, settlement, then reserves. Africa sits at the settlement layer — paying Chinese-led projects in yuan; graduating to a reserve currency still requires banking-system openness and capital convertibility.",
+          "Offshore CNH versus onshore CNY: CNH trades freely in Hong Kong and other offshore hubs, while CNY is managed via the daily fix and a trading band. A bigger offshore pool gives market pricing more depth and tighter bid-ask spreads and impact costs.",
+          "Why path dependence is hard to break: Africa's copper and oil exports are priced in dollars globally and its external debt is in dollars and euros. Earning yuan while owing dollars magnifies currency mismatch — without simultaneous yuanization of two-way trade, firms have little incentive to switch.",
+          "Why the FX impact is long-horizon: `FX rate ≈ trade balance + capital flows + monetary policy differential`. A settlement switch changes the composition of trade flows, which is small next to cross-border capital flows, so the CNH effect is marginal now and compounds over years.",
+          "Interview angle: contrast with the dollar's network effect (the petrodollar loop — oil priced in dollars, exporters recycle dollars into Treasuries); settlement-currency switching needs trade, funding and reserve channels to click together, and a single breakthrough is not enough."
+        ]
+      }
     }
   ],
   "tech": [
@@ -44,7 +138,30 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-10/softbank-group-earnings-loss-after-ai-worries-hit-tech-stocks-masayoshi-son",
       "published": "2026-11-10 14:35",
       "raw_summary": "SoftBank Group Corp. reported its first net loss in almost two years after swallowing a $3.7 billion writedown over a US data-center project amid rising fears around the sustainability of AI growth.",
-      "insight": {}
+      "insight": {
+        "what": "软银录得近两年首次净亏损约 70 亿美元，其中对美国数据中心项目减记 37 亿，市场担忧 AI 增长可持续性。",
+        "why": "减记是 AI 资本开支只增不减叙事的第一个硬数据裂口，巨头 capex 预期与算力供应链的远期盈利久期都要重新检视。",
+        "chain": "数据中心项目减记 → 巨头 AI 资本开支预期下修 → 算力订单可见度下降 → 供应链盈利久期缩短 → 算力股折现值下修 → AI 板块风险溢价上升",
+        "notes": [
+          "减记 writedown 是什么：账面资产（这里是数据中心相关投入）被认定未来现金流撑不起原值，一次性减值计入损益。它不烧现金，但向市场宣告「这类投资的回报率假设错了」，这才是杀伤力所在。",
+          "为什么 AI 资本开支是整条叙事的地基：`供应链盈利 = 全行业 capex × 份额`，Nvidia 等算力股的远期盈利直接挂在云厂商和主权项目的 capex 上；capex 增速放缓会压缩整条远期盈利曲线。",
+          "久期与折现的关系：高增长股的现金流集中在远期，久期 duration 长，对折现率极敏感：`P = Σ CFt/(1+r)^t`，r 上行或远期 CF 下修，远期年份的现值缩水最狠——这就是 AI 板块回撤幅度放大的数学原因。",
+          "软银的特殊角色：它既是 AI 巨头（OpenAI、Arm）的大股东，又亲自下场做重资产数据中心，亏损同时来自投资端估值和实体回报两条线，等于给「AI 循环融资」结构做了一次压力测试。",
+          "观察信号：北美四大云厂商下一季度 capex 指引、AI 服务器订单出货比、算力租赁价格。三者同步走弱才能确认周期拐点，单一公司减记可能只是个体执行问题。"
+        ]
+      },
+      "insight_en": {
+        "what": "SoftBank logged its first net loss in nearly two years, about $7 billion, including a $3.7 billion writedown on a US data-center project as markets question AI growth sustainability.",
+        "why": "The writedown is the first hard crack in the capex-only-goes-up narrative, forcing a recheck of mega-cap AI capex expectations and the earnings duration of the compute supply chain.",
+        "chain": "Data-center project writedown → mega-cap AI capex expectations cut → compute order visibility declines → supply-chain earnings duration shortens → compute stocks' present value marked down → AI sector risk premium rises",
+        "notes": [
+          "What a writedown is: an asset on the books (here, data-center spend) is judged unable to generate cash flows supporting its carrying value, so it is impaired through P&L in one hit. It burns no cash, but it tells the market the return assumptions on this class of investment were wrong — that is the real damage.",
+          "Why AI capex is the foundation of the whole narrative: `supply-chain earnings = industry-wide capex x market share`. The forward earnings of Nvidia-type compute names sit directly on cloud and sovereign capex; slower capex growth compresses the entire forward earnings curve.",
+          "Duration and discounting: growth stocks concentrate cash flows far in the future, giving them long duration and acute sensitivity to the discount rate: `P = Σ CFt/(1+r)^t`. A higher r or lower far-out CF hurts distant-year present values the most — the math behind AI drawdowns being extra deep.",
+          "SoftBank's peculiar role: it is both a major shareholder in AI champions (OpenAI, Arm) and an owner of capital-intensive data centers, so losses arrive on two lines at once — investment marks and physical returns. It is a stress test of the AI circular-financing structure.",
+          "Signals to watch: next-quarter capex guidance from the big four US clouds, the AI server book-to-bill ratio, and GPU rental prices. All three weakening together confirms an inflection; one company's writedown may just be execution."
+        ]
+      }
     },
     {
       "title": "Moonshot Rents Nvidia’s Top AI Chips in China, Documents Show",
@@ -52,10 +169,32 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-10/moonshot-rents-nvidia-s-top-ai-chips-in-china-documents-show",
       "published": "2026-11-10 12:54",
       "raw_summary": "Moonshot AI accessed a trove of Nvidia Corp.’s most advanced chips this summer, according to documents filed with Beijing regulators, highlighting the Chinese artificial intelligence champion’s relian",
-      "insight": {}
+      "insight": {
+        "what": "监管备案文件显示 Moonshot AI 今夏租赁了大量 Nvidia 最先进芯片，中国 AI 公司在出口管制下仍依赖美系算力。",
+        "why": "出口管制封不住租赁通道，改变了管制有效性与中国算力供给曲线的预期：国产替代紧迫性边际下降，套利空间浮出水面。",
+        "chain": "租赁通道绕开管制 → 中国算力供给超预期 → 国产替代紧迫性下降 → 算力成本曲线下移 → 中国 AI 应用迭代提速 → 国产化逻辑重定价",
+        "notes": [
+          "出口管制的边界：管制约束的是向中国出口或在境内使用特定型号芯片；租赁云端算力处于合规灰区——算力按 token 或小时计费，芯片不出境，监管颗粒度跟不上商业模式创新。",
+          "国产替代逻辑为何受冲击：`国产芯片需求 = 政策强制替代 + 进口不可得`。第二条一旦松动，国产算力厂商（华为昇腾等）的确定性订单预期就要打折，而这是国产算力链估值的核心假设。",
+          "算力成本曲线：`训练成本 ≈ 芯片单价 × 卡时`。能租到 H100/B200 级算力，意味着单位 token 成本显著低于纯国产方案，中国 AI 应用的单位经济模型直接改善，迭代速度加快。",
+          "对 Nvidia 是双刃剑：短期重新打开被管制压缩的中国收入，但给美方收紧「云端租赁」口径提供了新理由——政策尾部风险是双向的。",
+          "面试角度：把出口管制理解为价格和时间的函数，而不是绝对禁运——只要价差够大，总会出现租赁、拆卡、转口等套利形态；真正的约束变量是管制规则的迭代速度与执法强度。"
+        ]
+      },
+      "insight_en": {
+        "what": "Regulatory filings show Moonshot AI rented a trove of Nvidia's most advanced chips this summer, underscoring Chinese AI firms' reliance on US compute despite export controls.",
+        "why": "Renting slips past export controls, changing expectations about both the controls' effectiveness and China's compute supply curve: urgency for domestic substitution eases at the margin, and the arbitrage channel is now in the open.",
+        "chain": "Rental channel bypasses controls → China's compute supply beats expectations → urgency for domestic substitution eases → compute cost curve shifts down → Chinese AI applications iterate faster → localization thesis repriced",
+        "notes": [
+          "The boundary of export controls: the rules restrict exporting or in-country use of specific chip models; renting cloud compute sits in a compliance gray zone — billed by token or hour, the chips never leave the US, and regulatory granularity lags business-model innovation.",
+          "Why the substitution thesis takes the hit: `domestic chip demand = policy-driven substitution + import unavailability`. Once the second term loosens, the assured-order outlook for domestic accelerators (Huawei Ascend and peers) gets marked down — and that is the core assumption underpinning the local compute chain's valuation.",
+          "The compute cost curve: `training cost ≈ chip price x GPU-hours`. Access to H100/B200-class compute means a unit-token cost far below the pure-domestic route, directly improving the unit economics and iteration speed of Chinese AI applications.",
+          "A double-edged sword for Nvidia: near term it reopens Chinese revenue that the controls had compressed, but it hands Washington a fresh reason to tighten the cloud-rental rules — the policy tail risk cuts both ways.",
+          "Interview angle: read export controls as a function of price and time, not an absolute embargo — whenever the price gap is wide enough, rentals, card-pulling and transshipment arbitrage appear; the real binding variable is how fast the rules iterate and how hard they are enforced."
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261110150135311948673r977zIckPKNfI)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 4,
