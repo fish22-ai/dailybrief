@@ -169,20 +169,12 @@ article:hover{transform:translateY(-2px);box-shadow:var(--card-sd-hi)}
  .orig>summary{display:none}
  .orig>*:not(summary){display:block;content-visibility:visible}
 }
-/* ── 中/英语言切换（html[data-lang]）──
-   两种语言的文字**都在 HTML 里**，这里只决定显示哪一种。页面首选是中文：index.html
-   上写死 data-lang="zh"，<head> 里那段小脚本再按 localStorage 覆盖 —— 禁用 JS 时
-   就是中文版，不闪、也不会两种语言一起露出来。 */
+/* ── 双语标记（html[data-lang]）──
+   2026-11-11 按反馈去掉了顶栏的中/EN 切换按钮，站点固定中文：<html data-lang="zh">
+   写死，不再有 localStorage 覆盖。两种语言的文字仍然都在 HTML 里（数据不丢），
+   但 .le 一律隐藏；将来若要恢复英文版，把按钮和 head 里那段脚本加回来即可。 */
 html[data-lang="zh"] .le{display:none}
 html[data-lang="en"] .lz{display:none}
-.langbtn{flex:none;display:inline-flex;align-items:stretch;height:32px;
- border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
-.langbtn button{appearance:none;border:0;background:transparent;color:var(--faint);
- cursor:pointer;padding:0 11px;font:600 11px/1 -apple-system,BlinkMacSystemFont,
- "Segoe UI","Microsoft YaHei",sans-serif;letter-spacing:.6px}
-.langbtn button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.langbtn button[aria-pressed="false"]:hover{color:var(--accent)}
-.langbtn button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* ── 英文版里的中文原文（.zhsrc / .enread）──
    中文版：中文解读就是正文 —— .zhsrc 连 summary 一起藏掉、内容强制摊开。
    英文版：换成上面的 .enread，.zhsrc 退回成一枚「中文原文」折叠按钮、默认收起。
@@ -1073,16 +1065,14 @@ if ('serviceWorker' in navigator) {
 }
 </script>"""
 
-# 设置项的行为，照抄 9.11 复杂版（同一个 localStorage key：dailybrief.showOrig），
-# 外加 2026-10-12 的中/英语言开关（dailybrief.lang）。
-# 语言那一半只负责三件事：记住选择、把当前语言那半压成实心、把 <details> 的 open
-# 和 aria-label/title 摆对 —— 文字本身的显示/隐藏全在 CSS 里（html[data-lang]）。
+# 设置项的行为，照抄 9.11 复杂版（同一个 localStorage key：dailybrief.showOrig）。
+# 2026-11-11 去掉了中/EN 切换按钮：语言那一半只剩「把中文原文块摊开、aria 用中文」
+# 这点固定动作（见 applyLang），不再有 localStorage 里的语言选择。
 # 桌面端强制摊开英文原文 —— 不赌浏览器对未 open 的 details 用 display:none 还是
 # content-visibility 隐藏，后者光靠 CSS 覆盖压不住，英文原文会被吞成空白。
 SETTINGS_JS = """<script>
 (function () {
   var OPT_KEY = 'dailybrief.showOrig';
-  var LANG_KEY = 'dailybrief.lang';
   function store(k, v) {
     try {
       if (v === undefined) return window.localStorage.getItem(k);
@@ -1090,37 +1080,22 @@ SETTINGS_JS = """<script>
     } catch (e) { /* 隐私模式或禁用存储：当作没设置过，别让页面挂掉 */ }
     return null;
   }
-  function lang() {
-    return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh';
-  }
   function applyOrig() {
     var desktop = window.matchMedia('(min-width:761px)').matches;
-    // 英文版里左栏本来就是英文原文，没必要再折一次 —— 直接摊开。
-    var on = (lang() === 'en') || desktop || store(OPT_KEY) === '1';
+    var on = desktop || store(OPT_KEY) === '1';
     var ds = document.querySelectorAll('.orig');
     for (var i = 0; i < ds.length; i++) ds[i].open = on;
     var cb = document.getElementById('opt-orig');
     if (cb) cb.checked = store(OPT_KEY) === '1';
   }
+  // 站点固定中文（2026-11-11 去掉中/EN 切换按钮）：中文原文块一律摊开，
+  // aria-label/title 固定取中文那一份。结构没变，所以还留着这一趟遍历。
   function applyLang() {
-    var l = lang();
-    // 1. 语言按钮：当前那一半压成实心
-    var btns = document.querySelectorAll('.langbtn button');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].setAttribute('aria-pressed',
-        btns[i].getAttribute('data-lang-set') === l ? 'true' : 'false');
-    }
-    // 2. 中文原文块：中文版强制摊开；英文版默认收起 —— 除非这一期没有英文
-    //    （历史数据 / 翻译失败），那时摊着才有内容可读。
     var zs = document.querySelectorAll('.zhsrc');
-    for (var j = 0; j < zs.length; j++) {
-      zs[j].open = (l === 'zh') || zs[j].hasAttribute('data-forceopen');
-    }
-    // 3. aria-label / title 是属性，CSS 切不了，得逐个换。
-    //    （title 只覆盖原本就有 title 的元素，免得凭空长出 tooltip。）
+    for (var j = 0; j < zs.length; j++) zs[j].open = true;
     var marks = document.querySelectorAll('[data-aria-zh]');
     for (var k = 0; k < marks.length; k++) {
-      var txt = marks[k].getAttribute('data-aria-' + l);
+      var txt = marks[k].getAttribute('data-aria-zh');
       if (!txt) continue;
       marks[k].setAttribute('aria-label', txt);
       if (marks[k].hasAttribute('title')) marks[k].setAttribute('title', txt);
@@ -1128,15 +1103,6 @@ SETTINGS_JS = """<script>
     applyOrig();
     // 翻页键的 tooltip（「上一天：10月12日」）由 DECK_JS 拼，喊它重拼一次
     if (window.__deckUpdate) window.__deckUpdate();
-  }
-  var lbtns = document.querySelectorAll('.langbtn button');
-  for (var n = 0; n < lbtns.length; n++) {
-    lbtns[n].addEventListener('click', function () {
-      var v = this.getAttribute('data-lang-set');
-      document.documentElement.setAttribute('data-lang', v);
-      store(LANG_KEY, v);
-      applyLang();
-    });
   }
   var box = document.getElementById('opt-orig');
   if (box) box.addEventListener('change', function () {
@@ -1157,17 +1123,6 @@ SETTINGS_JS = """<script>
   applyLang();
   // 窗口尺寸只影响 .orig 的桌面/手机判断，不必重跑整套语言逻辑
   window.addEventListener('resize', applyOrig);
-})();
-</script>"""
-
-# 语言：进页面第一件事就把 <html data-lang> 定下来。放在 <head> 里、样式表之前，
-# 免得"先画出中文再跳到英文"闪一下。读不到（首次访问 / 禁用存储）就是中文版。
-LANG_HEAD = """<script>
-(function () {
-  var l = 'zh';
-  try { if (window.localStorage.getItem('dailybrief.lang') === 'en') l = 'en'; }
-  catch (e) { /* 禁用存储：保持中文 */ }
-  document.documentElement.setAttribute('data-lang', l);
 })();
 </script>"""
 
@@ -1373,14 +1328,6 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 
     archive = render_archive(dates, current)
 
-    # 语言开关：顶栏的中/EN 分段控件（2026-10-12）。两种语言的正文都在页面里，
-    # 这个按钮只改 <html data-lang>（外加存进 localStorage），不重新请求页面。
-    langbtn = (
-        '<div class="langbtn" role="group" aria-label="Language">'
-        '<button type="button" data-lang-set="zh" aria-pressed="true">中</button>'
-        '<button type="button" data-lang-set="en" aria-pressed="false">EN</button>'
-        '</div>')
-
     # 设置：顶栏右边的齿轮（原来在页脚前单独占一行）。行为照抄 9.11
     # （同样的 id / localStorage key）。︎ 是文本变体选择符 —— 不加的话
     # iOS/安卓会把 ⚙ 渲染成彩色 emoji，跟顶栏的素色图标格格不入。
@@ -1409,7 +1356,6 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <html lang="zh-CN" data-lang="zh"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-{LANG_HEAD}
 <title>{esc(BRAND)} · {esc(payload.get("date"))}</title>
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme:light)">
@@ -1424,7 +1370,7 @@ def render_page(payload: dict, dates: list[str], current: str) -> str:
 <header><span class="logo" aria-hidden="true">勢</span>
 <div class="hd"><h1>{esc(cn)} <span class="en">{esc(en or "DailyBrief")}</span></h1>
 {sub_html}</div>
-<span class="date">{esc(payload.get("date"))}</span>{badge}{langbtn}{settings}</header>
+<span class="date">{esc(payload.get("date"))}</span>{badge}{settings}</header>
 {note}
 {body}
 {archive}

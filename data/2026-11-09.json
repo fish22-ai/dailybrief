@@ -1,6 +1,6 @@
 {
   "date": "2026-11-09",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Asian stocks rebound after AI rout",
@@ -8,33 +8,73 @@
       "url": "https://www.ft.com/content/b8644327-86e7-4d1c-a71f-3fb1d552723b?syn-25a6b1a6=1",
       "published": "2026-11-09 15:09",
       "raw_summary": "Declines last week had pushed many indices into bear market territory",
-      "insight": {}
+      "insight": {
+        "what": "AI 抛售后亚洲股市反弹，而上周的下跌已把多个指数推入技术性熊市区间。",
+        "why": "反弹的成色取决于谁在买：空头回补和被动再平衡只是技术修复，只有长线资金回流才算趋势转向。",
+        "chain": "上周 AI 抛售 → 多个指数较高点回落两成 → 估值吸引力出现 → 空头回补与再平衡买盘进场 → 指数技术性反弹 → 成交量与上涨广度决定能否延续",
+        "notes": [
+          "技术性熊市的定义：从高点回落 20% 就算，是约定俗称的刻度，不是基本面结论——跌幅本身不构成买入理由。",
+          "反弹的三种买盘：空头回补最快也最短，被动再平衡机械且时点固定，长线配置最慢但最扎实；先搞清是哪一种，再谈持续性。",
+          "亚洲的 beta 更高：出口链（半导体、代工、设备）对 AI 资本开支的敏感度高于内需，所以跌得急、弹得也急。",
+          "看广度比看指数可靠：`上涨家数 / 下跌家数` 若明显改善才是修复，只有少数权重股拉指数通常是诱多。"
+        ]
+      }
     },
     {
-      "title": "在岸人民币兑美元北京时间16:30官方收报6.6735，较上一交易日官方收盘价跌24点，较上日夜盘收盘涨28点。",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3196803",
-      "published": "2026-11-09 16:30",
-      "raw_summary": "",
-      "insight": {}
+      "title": "How the UK could borrow more without spooking gilt markets",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/87a7c28c-deed-457e-b247-cf9bb83d5947?syn-25a6b1a6=1",
+      "published": "2026-11-09 13:00",
+      "raw_summary": "Bringing Britain in line with peers would allow development corporations to do more without imperilling the government’s fiscal targets",
+      "insight": {
+        "what": "英国讨论如何在扩大基建借贷的同时不惊动金边债券市场，思路是把开发公司装进财政规则框架。",
+        "why": "核心矛盾是财政空间与市场信任：同一笔债务记在谁的资产负债表上、受什么规则约束，决定金边债的期限溢价会不会被推上去。",
+        "chain": "增长乏力需要投资 → 政府想扩大借贷 → 市场担心赤字失控 → 把借款装进开发公司框架 → 财政规则的可信度得以维持 → 金边债期限溢价不被打高",
+        "notes": [
+          "财政规则的信誉直接就是利率：`收益率 = 预期短端均值 + 期限溢价 + 信用溢价`，规则越可信，投资者要求的补偿越低。",
+          "表外融资的争议：开发公司独立举债可以绕开赤字统计，但项目现金流不足时，最终还是隐性政府债务。",
+          "2022 年特拉斯的教训：没有配套财源的减税让金边债暴跌、养老金 LDI 策略爆仓，说明市场信任是有阈值的。",
+          "观察指标：10 年期 gilt 收益率、债务管理办公室的发行计划、以及利息支出占财政支出的比重。"
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Cop31 leaders urge world to accelerate fight against global warming",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/world/article/3373785/cop31-leaders-urge-world-accelerate-fight-against-global-warming",
-      "published": "2026-11-09 16:13",
-      "raw_summary": "Leaders of ⁠the Cop31 climate summit urged the world to accelerate the fight against global warming as rising temperatures and an increasing number of climate-driven disasters threaten lives and the g",
-      "insight": {}
-    },
     {
       "title": "The world's largest telecoms firm is on trial and the outcome has global implications",
       "source": "NPR",
       "url": "https://www.npr.org/2026/11/08/nx-s1-6030670/the-worlds-largest-telecoms-firm-is-on-trial-and-the-outcome-has-global-implications",
       "published": "2026-11-09 06:04",
       "raw_summary": "Huawei, the world's biggest telecommunications company, is on trial in New York, accused of stealing American technology and evading US sanctions.",
-      "insight": {}
+      "insight": {
+        "what": "华为在纽约受审，被指控窃取美国技术并规避制裁，判决结果被认为具有全球影响。",
+        "why": "这不只是一家公司的事：判决会界定企业要不要为关联方的违规负责，直接影响所有跨国公司的制裁合规架构。",
+        "chain": "案件进入庭审 → 关联方交易与制裁规避的边界被界定 → 跨国企业合规架构被迫调整 → 供应链审查与尽调成本上升 → 全球科技供应链进一步分层",
+        "notes": [
+          "制裁合规接近严格责任：很多情形下不要求证明你「知情」，只要交易客观上违规就要担责，所以内控比事后抗辩重要得多。",
+          "关联方（affiliate）是执法重点：通过子公司、代理、经销商间接交易，是罚单最集中的地方，也是最容易踩的坑。",
+          "判决的溢出效应：一旦确立母公司对关联方负责的标准，所有有跨境业务的科技公司都要重画合规地图。",
+          "商业后果：实体清单意味着美国技术与零部件断供，短期靠库存和替代料，长期看的是自主化进度。"
+        ]
+      }
+    },
+    {
+      "title": "Cop31 leaders urge world to accelerate fight against global warming",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/world/article/3373785/cop31-leaders-urge-world-accelerate-fight-against-global-warming",
+      "published": "2026-11-09 16:13",
+      "raw_summary": "Leaders of ⁠the Cop31 climate summit urged the world to accelerate the fight against global warming as rising temperatures and an increasing number of climate-driven disasters threaten lives and the g",
+      "insight": {
+        "what": "COP31 峰会领导人呼吁各国加快应对气候变暖，极端天气事件增多成为主要推力。",
+        "why": "气候议程真正的抓手是钱和技术：碳市场规则、转型金融与补贴，决定新能源与化石能源的相对成本。",
+        "chain": "极端天气频发 → 政治压力上升 → 峰会推动减排承诺加码 → 碳价与补贴政策调整 → 化石能源相对成本上升 → 新能源投资与相关资产重定价",
+        "notes": [
+          "碳价的作用机制：把排放的外部成本内部化，只有 `边际减排成本 < 碳价` 的技术才会被真正采用。",
+          "转型金融（transition finance）：给高碳行业改造提供资金，关键是可核查的减排路径，否则就是洗绿（greenwashing）。",
+          "对大宗的影响：碳成本会抬高钢铁、水泥、电解铝的成本曲线；欧盟 CBAM 等于把碳价输出到进口端。",
+          "承诺与执行的差距：COP 公报没有强制力，真正的约束来自国内立法与碳市场——看落地，不看公报。"
+        ]
+      }
     }
   ],
   "tech": [
@@ -44,7 +84,17 @@
       "url": "https://www.bloomberg.com/news/videos/2026-11-09/nvidia-s-probe-into-huang-affair-adds-to-ai-trade-risks-video",
       "published": "2026-11-09 15:48",
       "raw_summary": "Nvidia's probe into CEO Jensen Huang, following his admission of an affair with a woman identified in a series of reports as a suspected Chinese spy, threatens to further roil an AI market shaken by c",
-      "insight": {}
+      "insight": {
+        "what": "英伟达就 CEO 黄仁勋与一名被指疑似间谍身份女性的关系启动调查，给本已脆弱的 AI 交易再添风险。",
+        "why": "治理风险直接打在估值溢价上：管理层可信度本身就是 AI 叙事的一部分，一旦与国家安全交叉，折价会先于业绩出现。",
+        "chain": "高管关系被曝光 → 公司启动内部调查 → 治理与合规风险显性化 → 机构要求更高风险补偿 → 部分资金调整持仓 → AI 龙头的估值溢价收窄",
+        "notes": [
+          "治理折价（governance discount）：投资者对治理有瑕疵的公司要求更高回报率，等价于给估值打折，压力期折价会放大。",
+          "敏感点在国家安全：一旦牵涉出口管制或情报问题，公司面对的不只是舆论，还有许可证审查与国会听证。",
+          "事件驱动的三段式：短期看情绪与流动性，中期看调查结论，长期看是否改变订单与客户关系。",
+          "组合含义：单一龙头在指数里权重过高时，公司治理事件会变成系统性风险——这是集中度风险最现实的版本。"
+        ]
+      }
     },
     {
       "title": "Ardian Raises €1 Billion Europe Semiconductor Fund With Middle East Backing",
@@ -52,10 +102,19 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-09/ardian-raises-1-billion-europe-semiconductor-fund-with-middle-east-backing",
       "published": "2026-11-09 15:00",
       "raw_summary": "Private capital firm Ardian SAS has raised €1 billion for its debut semiconductor fund, attracting significant interest from investors based in the Middle East as artificial intelligence adoption driv",
-      "insight": {}
+      "insight": {
+        "what": "私募机构 Ardian 募集 10 亿欧元欧洲半导体基金，中东主权资金是重要出资方。",
+        "why": "资本正从财务投资转向战略产业投资：主权基金用石油美元换芯片产能，本质是把资源租金换成产业安全。",
+        "chain": "芯片成为战略资产 → 欧洲需要本土产能 → 私募募集专项基金 → 中东主权资金参与出资 → 资本流向晶圆与设备 → 补贴与私人资本形成合力",
+        "notes": [
+          "主权财富基金（SWF）的动机不只是财务回报，还包括技术转移与产业安全，所以能接受更长的锁定期和更低的流动性。",
+          "基金结构：LP 出钱、GP 管理，carry 与门槛收益率（hurdle rate）决定激励；产业基金常附加「本地投资比例」条款。",
+          "半导体的资本密集度：一座先进晶圆厂百亿美元级，`单位成本 = 设备 + 厂房 + 良率爬坡损耗`，规模与良率决定生死。",
+          "地缘约束：中东既是资本提供方，也是技术接收方，投资流向会被出口管制反向限制。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 2026110917062292905814lh28gNWA9DPW7)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 3,

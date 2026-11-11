@@ -1,61 +1,120 @@
 {
   "date": "2026-11-04",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
-    {
-      "title": "Live coverage: Trump admits Iran war a factor as Republicans routed",
-      "source": "FT Markets",
-      "url": "https://www.ft.com/content/77c2eaca-4fe1-4c69-b3bd-c517b045ff37?syn-25a6b1a6=1",
-      "published": "2026-11-04 16:11",
-      "raw_summary": "President’s party defeated in battleground races from Kansas to South Carolina",
-      "insight": {}
-    },
     {
       "title": "Treasury yields fall as investors crowd into bonds for safety amid election stock sell-off",
       "source": "CNBC Finance",
       "url": "https://www.cnbc.com/2026/11/03/treasury-yields-fall-as-democrats-win-big-in-us-midterm-elections.html",
       "published": "2026-11-04 15:27",
       "raw_summary": "Treasury yields fell on Tuesday night, as investors sought shelter from a sell-off in equity futures sparked by big victories from Democrats in the U.S. midterm elections.",
-      "insight": {}
+      "insight": {
+        "what": "中期选举民主党拿下关键席位，股指期货遭抛售，资金涌向国债避险，收益率下行。",
+        "why": "重点不是谁赢，而是政策组合的预期变了：财政与监管路径的不确定性上升，风险资产被折价，久期资产反而受追捧。",
+        "chain": "民主党赢下关键席位 → 财政与监管路径预期改变 → 股指期货抛售 → 避险资金买入国债 → 收益率下行、债券价格上涨 → 成长股折现率下降但风险溢价上升",
+        "notes": [
+          "债券价格与收益率反向：`P = Σ C/(1+y)^t + F/(1+y)^n`。久期 D 衡量敏感度，`ΔP/P ≈ −D × Δy`，收益率下行 1bp，久期越长涨得越多。",
+          "这次是避险买盘，不是降息交易：risk-off 驱动的资金通常先买长端（久期长、涨得多）；若是美联储转鸽，则短端下行更快，曲线变陡。",
+          "判断「真避险」：看通胀预期（breakeven）有没有一起下来。若名义收益率降、通胀预期不动，实际利率降幅更大，黄金同时受益。",
+          "别把历史统计当因果：中期选举后一年标普正收益概率偏高，但样本只有十几次，且每次都叠加了不同的货币环境。"
+        ]
+      }
+    },
+    {
+      "title": "Marshall Wace and Millennium hit as hedge funds suffer in October’s AI rout",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/fae029f1-f03e-4509-852e-396fa4863271?syn-25a6b1a6=1",
+      "published": "2026-11-03 23:21",
+      "raw_summary": "Wall Street’s tech correction and bond market turbulence spark losses for sector",
+      "insight": {
+        "what": "10 月 AI 板块回调叠加债市波动，Marshall Wace、Millennium 等大型多策略对冲基金出现明显亏损。",
+        "why": "多策略的杠杆和「分散化幻觉」同时被检验：当 AI 主题成了所有 pod 的共同 beta，账面中性只是名义中性，回撤时相关性瞬间趋近 1。",
+        "chain": "AI 龙头回调 → 成长因子集体下跌 → 各 pod 同向亏损 → 风控触发降杠杆 → 抛售流动性最好的资产 → 波动率与相关性同步上升 → 二次去杠杆",
+        "notes": [
+          "多策略（multi-manager）模式：几十个独立小组各自限额，总部统一加杠杆（常见 4-6 倍），追求低波动、高夏普，靠的是组间低相关。",
+          "分散化什么时候失效：`σ_p² = ΣΣ w_i w_j σ_i σ_j ρ_ij`。压力情景下 ρ→1，分散化收益清零，但杠杆还在，亏损被同比例放大。",
+          "去杠杆螺旋：亏损→追保或降杠杆→卖出→价格再跌→再亏损。而且会先卖流动性最好的资产，所以龙头反而跌得更急。",
+          "可观察的先行指标：prime broker 融资余额、回购利率（repo）、以及基金赎回条款（lockup、notice period）——条款越松，赎回冲击越突然。"
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Why North Korea’s Kim sees no need for another Trump ‘photo-op summit’",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/week-asia/politics/article/3373219/why-north-koreas-kim-sees-no-need-another-trump-photo-op-summit",
-      "published": "2026-11-04 13:14",
-      "raw_summary": "Kim Jong-un’s powerful sister on Wednesday rejected holding any further talks with the United States, days after the FBI accused North Korea of stealing more than US$6 billion from a cryptocurrency ex",
-      "insight": {}
-    },
     {
       "title": "Could the AI boom make borrowing more expensive in Europe?",
       "source": "DW",
       "url": "https://www.dw.com/en/could-the-ai-boom-make-borrowing-more-expensive-in-europe/a-79511985?maca=en-rss-en-world-4025-rdf",
       "published": "2026-11-03 18:27",
       "raw_summary": "France, Germany and Italy face a volatile bond market as war inflation bites. With US tech giants now issuing billions in AI bonds, they are competing with cash-strapped European governments.",
-      "insight": {}
+      "insight": {
+        "what": "美国科技巨头大举发行 AI 相关债券，与财政吃紧的欧洲政府在债市争夺资金，法德意国债波动加剧。",
+        "why": "这是私人部门资本开支挤出公共债务的经典情形：AI 融资需求推高无风险利率与期限溢价，高负债国的再融资成本被动抬升。",
+        "chain": "AI 资本开支扩张 → 科技巨头大量发债 → 全球长久期供给增加 → 期限溢价上行 → 欧洲主权债利差走阔 → 高负债国利息支出上升 → 财政空间收窄",
+        "notes": [
+          "期限溢价（term premium）：投资者持有长债要求的额外补偿，`长端收益率 ≈ 预期未来短端均值 + 期限溢价`。发债供给增加，是最直接抬升它的力量。",
+          "挤出效应（crowding out）：政府与企业争抢同一池储蓄，实际利率被推高，利率敏感的私人投资（地产、基建）首先被挤掉。",
+          "欧洲的脆弱点：意大利债务/GDP 高、增长低，BTP 与 Bund 的利差一走阔，利息支出立刻上升，形成「利差—财政」负反馈。",
+          "和 2022 年的区别：那次是通胀驱动（央行加息、曲线平行上移），这次是供给驱动（发债量），所以更可能表现为曲线陡峭化而非整体上移。"
+        ]
+      }
+    },
+    {
+      "title": "Democratic-led US Congress to turn up heat on Beijing over AI, Taiwan: analyst",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3373232/democratic-led-us-congress-turn-heat-beijing-over-ai-taiwan-analyst",
+      "published": "2026-11-04 14:49",
+      "raw_summary": "Follow the SCMP’s live coverage here A Democratic-controlled US Congress will ramp up pressure on Beijing over Taiwan, artificial intelligence (AI) and export controls, even if the US midterm results ",
+      "insight": {
+        "what": "分析人士预计民主党控制的美国国会将在 AI、台湾与出口管制议题上对华加大施压。",
+        "why": "对华强硬是美国两党少有的共识项，换党不换方向；真正的变化是「立法化」——把出口管制与投资审查从行政裁量变成法律，政策可逆性下降。",
+        "chain": "民主党掌控国会 → 对华法案进入立法日程 → 出口管制与投资审查法律化 → 行政反复的空间收窄、约束变硬 → 中国科技企业海外融资与供应链受限 → 中美科技资产估值分化",
+        "notes": [
+          "行政裁量 vs 立法：关税、实体清单可以随政府更替反复，法律一旦通过就难逆转，对应的国家风险溢价（country risk premium）更持久。",
+          "对外投资审查（outbound screening）：限制美资投中国 AI、半导体、量子，直接打到一级市场的估值和退出路径，比出口管制更伤创新生态。",
+          "二级市场的传导：ADR 退市风险、指数纳入规则、可投资性折价——同一家公司在中美两地估值差会长期存在。",
+          "企业的应对：供应链「中国+1」与转口，但原产地规则和实质性改变标准正在收紧，转口的成本优势在变小。"
+        ]
+      }
     }
   ],
   "tech": [
-    {
-      "title": "Semight Is Said to Tap Citic, Goldman, JPMorgan for Hong Kong Listing",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-04/semight-is-said-to-tap-citic-goldman-jpmorgan-for-hong-kong-listing",
-      "published": "2026-11-04 11:40",
-      "raw_summary": "Semight Instruments Co., a Chinese maker of test instruments for semiconductors, has picked banks to help prepare for its Hong Kong listing, according to people familiar with the matter.",
-      "insight": {}
-    },
     {
       "title": "Nvidia China Clients to Get 1% of $70 Billion RTX Chips Ordered",
       "source": "Bloomberg Technology",
       "url": "https://www.bloomberg.com/news/articles/2026-11-04/nvidia-china-clients-to-get-1-of-70-billion-rtx-chips-ordered",
       "published": "2026-11-04 11:14",
       "raw_summary": "Chinese AI developers expect to receive just a small fraction of the advanced Nvidia Corp. chips they’ve ordered over the next several months, as the US company struggles to boost production to meet s",
-      "insight": {}
+      "insight": {
+        "what": "中国 AI 公司未来数月只能拿到所订购英伟达芯片的约 1%，供应严重不足。",
+        "why": "供需缺口被政策硬切开，价格信号失效，算力变成配给品：中国的模型训练被迫从堆卡转向提效，国产替代从备选变成刚需。",
+        "chain": "出口管制叠加产能优先本土客户 → 对华交付比例降至约 1% → 算力租赁价格上行 → 训练成本上升、迭代放缓 → 国产芯片拿到验证窗口 → 软件生态迁移成本成为胜负手",
+        "notes": [
+          "配给替代价格：正常市场靠涨价出清，管制下变成许可加配额，黑市溢价与租赁价格就成了真实的影子价格（shadow price）。",
+          "训练成本可以粗略写成 `成本 ≈ 卡数 × 时长 × 单价`；卡受限时，只能用更长训练时间、更小的模型或更高的数据效率去替代算力。",
+          "国产替代的瓶颈不在峰值算力：卡间互联、HBM 显存带宽、以及 CUDA 生态的迁移成本，才是真正卡脖子的三处。",
+          "投资含义分层：算力租赁与 IDC 先受益（量价齐升），芯片厂商看良率与生态，模型公司则被「算力税」压缩毛利。"
+        ]
+      }
+    },
+    {
+      "title": "AMD rides data center riches to &#8216;largest and most profitable&#8217; quarter in history",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1026148/amd-earnings-q3-2026-data-center-pc",
+      "published": "2026-11-04 09:15",
+      "raw_summary": "AMD CEO Lisa Su said in the company's quarterly earnings call on Tuesday that Q3 2026 was \"was the largest and most profitable in our history.\" AMD reported a record $13.4 billion in quarterly revenue",
+      "insight": {
+        "what": "AMD 数据中心业务推动第三季度创下历史最高营收与利润，单季营收约 137 亿美元。",
+        "why": "AI 资本开支的「第二供应商」逻辑开始兑现：英伟达供给紧张、大客户要求多源，AMD 的份额与定价权同时改善，AI 交易从单一龙头扩散到整条算力链。",
+        "chain": "云厂商上调 AI 资本开支 → 单一供应商风险被重视 → AMD 加速卡拿到订单 → 数据中心收入创新高 → 毛利率随规模改善 → 软件生态追赶 → 估值从周期股向成长股切换",
+        "notes": [
+          "第二供应商（second source）：采购方为避开锁定和议价劣势，会主动扶持替代供应，份额提升往往快于性能追赶，这是 AMD 这轮的核心逻辑。",
+          "经营杠杆：芯片的流片、IP、软件都是固定成本，收入放量时毛利率弹性很大——这也意味着下行时跌得同样快。",
+          "估值方法：周期股用 `EV/EBITDA` 更稳，但 AI 供应链现在给的是成长股倍数，锚定的是订单能见度（backlog）和客户 capex 指引。",
+          "风险在集中度：客户就是那几家超大规模云厂商，capex 一转向，收入波动会被放大，这也是估值折价的来源。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261104161527439452408q8wwsBk7r5XjO)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -74,7 +133,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 11,
+      "count": 10,
       "tier": "stable"
     },
     "cnbc_fin": {

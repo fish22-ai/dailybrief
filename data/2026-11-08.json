@@ -1,6 +1,6 @@
 {
   "date": "2026-11-08",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Anthropic to press ahead with IPO targeting $1.5tn valuation",
@@ -8,7 +8,17 @@
       "url": "https://www.ft.com/content/314e17df-e7af-4814-b208-70a0557cb452?syn-25a6b1a6=1",
       "published": "2026-11-07 05:00",
       "raw_summary": "Claude maker intends to list before Thanksgiving despite brutal tech rout",
-      "insight": {}
+      "insight": {
+        "what": "Anthropic 计划在感恩节前启动 IPO，目标估值约 1.5 万亿美元，逆着科技股抛售推进。",
+        "why": "这是给整个 AI 资产找「公开市场的定价锚」：私募估值能不能被二级市场接住，决定后面所有 AI 公司的融资成本和退出路径。",
+        "chain": "Anthropic 推进 IPO → 投行路演测试公开市场胃口 → 认购不足则被迫下调定价 → 一级市场估值跟着重估 → AI 初创融资收紧 → 烧钱模式承压、行业整合加速",
+        "notes": [
+          "估值锚的意义：IPO 定价是公开市场真金白银愿意付的价格。一旦低于最后一轮私募估值，就是「down round 的公开版」，会连锁影响所有未上市 AI 公司。",
+          "1.5 万亿美元怎么理解：相当于把未来很多年的现金流提前贴现。高增长阶段市场更看 `P/S = 市值 / 营收`，但它隐含的增长假设比 P/E 更激进。",
+          "承销机制决定上市后的抛压：超额配售权（greenshoe）稳住首日，基石投资者锁仓，锁定期（lock-up）到期才是真正的供给冲击。",
+          "窗口判断看波动率而不是估值：科技股刚经历大幅回调，波动率高的时候机构不愿建仓，这才是 IPO 能不能发出去的关键变量。"
+        ]
+      }
     },
     {
       "title": "Americans are on a 'treadmill of high inflation' and more rate hikes are likely, Fed's Daly says",
@@ -16,46 +26,95 @@
       "url": "https://www.cnbc.com/2026/11/06/fed-daly-interest-rates-inflation.html",
       "published": "2026-11-07 03:05",
       "raw_summary": "San Francisco Fed President Mary Daly called Friday's jobs report \"good news for American workers,\" but noted the pressure inflation is exerting on household finances",
-      "insight": {}
+      "insight": {
+        "what": "旧金山联储主席 Daly 称美国消费者正处在「高通胀跑步机」上，进一步加息的可能性上升。",
+        "why": "这是把央行的反应函数说清楚了：只要通胀回落得不够快，实际利率就得继续往上抬，市场对后续降息的定价必须往后推。",
+        "chain": "通胀黏在目标之上 → 官员释放继续加息信号 → 短端利率预期上移 → 实际利率上升 → 长久期资产折现率抬升 → 成长股与地产承压",
+        "notes": [
+          "反应函数（reaction function）：央行按通胀与就业偏离目标的程度调整利率。市场交易的是这条函数，不是某一次会议的表态。",
+          "泰勒规则是常用近似：`i = r* + π + 0.5 × (π − π*) + 0.5 × (y − y*)`，通胀缺口越大，合意政策利率越高，可以用来判断当前是偏松还是偏紧。",
+          "「跑步机」的隐喻很准：名义收入在涨，购买力没涨。当名义利率低于通胀，储蓄实际上在被征税，这叫金融抑制（financial repression）。",
+          "资产含义：实际利率上行同时压制黄金、成长股和长久期债券，唯一舒服的是现金和短端——这就是「现金为王」的宏观条件。"
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Houthis say at least 33 killed in Saudi air strike",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
-      "published": "2026-11-08 12:03",
-      "raw_summary": "Saudi Arabia, which leads a coalition fighting the Houthis in Yemen, has not commented.",
-      "insight": {}
-    },
     {
       "title": "Will Democrats sway ‘unshackled’ Trump’s Russia-Ukraine stance after midterm rout?",
       "source": "SCMP",
       "url": "https://www.scmp.com/news/world/russia-central-asia/article/3373681/will-democrats-sway-unshackled-trumps-russia-ukraine-stance-after-midterm-rout",
       "published": "2026-11-08 15:00",
       "raw_summary": "The Republicans’ defeat in the US midterm elections was watched closely in Russia, where some observers are predicting it could herald more support for Ukraine when the Democrats take over Congress in",
-      "insight": {}
+      "insight": {
+        "what": "中期选举惨败后，俄罗斯正密切观察民主党能否改变特朗普在俄乌问题上的立场。",
+        "why": "援助与制裁的立法权在国会，党争改变的是「援助的持续性」；而战争的定价，本质是对持久战概率的定价。",
+        "chain": "共和党中期选举失利 → 国会援乌力量增强 → 援助拨款与对俄制裁立法推进 → 战争持久化概率上升 → 欧洲防务开支与能源价格重定价 → 新兴市场风险溢价分化",
+        "notes": [
+          "立法与行政的分工：对外援助要国会拨款，制裁要立法，所以中期选举对外交的实质影响往往通过「钱」体现，而不是通过总统讲话。",
+          "战争怎么定价：市场不赌谁赢，赌的是打多久。持久战意味着能源与国防开支长期化，这两条线才有可交易的持续性。",
+          "俄方的观察逻辑：美国援助续得上，谈判筹码就少；援助断档，防线就承压——双方都在等这个变量，所以战场会围着它调整节奏。",
+          "资产映射：欧洲天然气、国防军工，以及乌克兰重建相关的基建与材料订单，是最直接的三条线。"
+        ]
+      }
+    },
+    {
+      "title": "Israel's president tasks opposition leader Eisenkot with forming government",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-08 06:19",
+      "raw_summary": "Neither PM Benjamin Netanyahu's bloc nor that of his rival secured a majority in last week's election.",
+      "insight": {
+        "what": "以色列总统授权反对派领导人艾森科特组建政府，此前选举中内塔尼亚胡阵营与对手均未过半。",
+        "why": "政府更替会改变加沙与对伊朗的政策路径，中东风险溢价的方向，取决于新政府选择收缩还是继续强硬。",
+        "chain": "选举无多数 → 总统授权反对派组阁 → 联合政府谈判 → 政策路线可能转向收缩 → 地区冲突风险溢价下降 → 油价与以色列资产重定价",
+        "notes": [
+          "组阁机制有明确时钟：议会制下总统提名最可能组阁的人，通常给 28 到 42 天，谈不成就要重新大选——政治不确定性是有到期日的。",
+          "联合政府的软肋：小党握着关键席位，政策被「要价」绑架，所以新政府的对外路线通常比竞选承诺温和，这是市场容易误判的地方。",
+          "风险溢价落在哪：地缘风险主要体现为油价的地缘升水和主权 CDS 利差，而不是直接砸在股指上。",
+          "反向情形：组阁失败、重新大选，不确定性延长，风险溢价反而会往上走。"
+        ]
+      }
     }
   ],
   "tech": [
-    {
-      "title": "CoreWeave Asks Texas Governor-Elect for Data Center Cooperation",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-07/coreweave-asks-texas-governor-elect-for-data-center-cooperation",
-      "published": "2026-11-08 04:33",
-      "raw_summary": "CoreWeave Inc. sent a letter to Texas Governor-elect Gina Hinojosa seeking to work with her incoming administration on present and future data center projects in the state.",
-      "insight": {}
-    },
     {
       "title": "AI Backlash Spreads Across Europe With Data Center Protests",
       "source": "Bloomberg Technology",
       "url": "https://www.bloomberg.com/news/articles/2026-11-07/ai-backlash-spreads-across-europe-with-data-center-protests",
       "published": "2026-11-08 02:20",
       "raw_summary": "Protests against data centers continued across Europe on Saturday as citizens took to the streets to voice their concerns about the impact on society and the environment.",
-      "insight": {}
+      "insight": {
+        "what": "欧洲多国出现针对数据中心的抗议，焦点是电力消耗、水资源与对社区的影响。",
+        "why": "数据中心的瓶颈正从芯片转向「社会许可」：电力接入与地方审批成了硬约束，建设周期被拉长，算力供给的价格弹性明显下降。",
+        "chain": "数据中心密集落地 → 电价与水耗压力显性化 → 居民抗议、地方政府收紧审批 → 并网与许可周期拉长 → 项目延期、单位算力成本上升 → 算力租赁价格获得支撑",
+        "notes": [
+          "社会许可（social license）：项目能不能建，不只看许可证，还要看社区接受度，这是欧洲基建的隐性成本，也是最容易低估的一项。",
+          "电力才是硬瓶颈：并网排队（interconnection queue）常以年计，`可用算力 = min(芯片, 电力, 冷却)`，木桶最短的那块决定实际产出。",
+          "能效指标 PUE：`PUE = 数据中心总能耗 / IT 设备能耗`，越接近 1 越高效。欧洲对 PUE 和余热回收的强制要求，会直接淘汰老旧机房。",
+          "投资含义：电力设备、冷却系统，以及手握现成并网容量的存量运营商，比从零新建的项目更受益。"
+        ]
+      }
+    },
+    {
+      "title": "The US let Nvidia sell chips to an empty office in China",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
+      "published": "2026-11-07 23:43",
+      "raw_summary": "Concerns are being raised that neither the Commerce Department nor Nvidia are doing their due diligence when it comes to vetting Chinese firms cleared to handle the company's H200 AI chips. According ",
+      "insight": {
+        "what": "调查发现美国商务部与英伟达对获批中国客户的尽调不足，芯片被卖到一间空办公室。",
+        "why": "出口管制的有效性取决于最终用户核查，一旦核查流于形式，管制就变成纸面合规，政策收紧的压力会转向更严格的许可与审计。",
+        "chain": "出口许可依赖客户尽调 → 尽调不足、地址为空壳 → 芯片流入非授权终端 → 国会与监管介入调查 → 许可审查趋严、审批拉长 → 合规成本上升、灰色通道收窄",
+        "notes": [
+          "最终用户核查（end-user verification）：管制的关键不是清单本身，而是「谁在用、用来干什么」，这需要实地核查与持续监控，成本很高。",
+          "空壳公司（shell company）套利：用真实注册地址配虚假办公场所通过审查，是转口贸易的经典手法，也是执法最难的一环。",
+          "合规经济学：审查越严合规成本越高，中小分销商先出局，集中度上升，但黑市溢价也同步抬高。",
+          "后续风险：一旦出现标志性案例，国会会推动「推定拒绝」（presumption of denial）式立法，到那时连合规申请都很难获批。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 2026110815330272511866157v67YSmAQN0D)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 3,

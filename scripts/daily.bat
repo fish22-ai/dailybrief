@@ -121,6 +121,19 @@ if errorlevel 1 (
     echo [%date% %time%] run_daily 失败，已保留本地已有产物，终止 >> "%LOG%"
     exit /b 1
 )
+
+REM ---------- 额度守卫：LLM 不可用就不要推到线上 ----------
+REM 中转站额度耗尽时 run_daily 会降级写 mode=rules，页面上每张卡都是
+REM 「今日无 AI 解读」——投简历的站不能这么露怯（2026-11-03~11-09 连续七天
+REM 就是这么挂上去的）。这里直接停手：不 build、不 commit、不 push，也不写
+REM logs\.last_success，留给 agent 代笔（scripts/agent_brief.py）补写后再推。
+set "MODE="
+for /f "usebackq delims=" %%m in (`python -c "import json;print(json.load(open('data/%TODAY%.json',encoding='utf-8')).get('mode',''))"`) do set "MODE=%%m"
+if /i "%MODE%"=="rules" (
+    echo [%date% %time%] LLM 不可用，当日为规则模式：不推送上线，等 agent 代笔 >> "%LOG%"
+    exit /b 0
+)
+
 REM 必须渲**全部**日期，不能只渲最新一天：归档列表与跨天导航是渲染时烤进每一页的，
 REM 只渲最新一天会让老页面的归档永远停在它自己那天（2026-09-15 发现 9.12 看不到
 REM 9.13/9.15 就是这么来的）。数据比渲染器新的页面（9.11 那版七段存档）由

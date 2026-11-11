@@ -1,6 +1,6 @@
 {
   "date": "2026-11-03",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Australia raises rates to highest level since 2008 financial crisis",
@@ -8,15 +8,35 @@
       "url": "https://www.ft.com/content/60283bdf-e45d-4723-a68e-5a857a5b949e?syn-25a6b1a6=1",
       "published": "2026-11-03 14:40",
       "raw_summary": "Central bank’s fifth increase this year comes as inflation remains above target",
-      "insight": {}
+      "insight": {
+        "what": "澳洲联储再度加息，政策利率升至 2008 年金融危机以来最高，为年内第五次加息，通胀仍高于目标区间。",
+        "why": "关键不是加了多少，而是央行选择用增长和就业去换通胀预期——把实际利率推到中性之上，市场对澳洲转向降息的定价必须往后推。",
+        "chain": "通胀连续超目标 → 央行判断预期有脱锚风险 → 加息把实际利率推过中性 → 房贷与租金成本上行 → 家庭可支配收入被压缩 → 消费与服务通胀降温 → 降息预期后移、澳元获支撑",
+        "notes": [
+          "名义利率不等于真实成本：`实际利率 r ≈ i − πᵉ`（i 为名义政策利率，πᵉ 为通胀预期）。只有当 i 高过 πᵉ，钱才真的变贵；本轮的核心变化就是 r 由负转正。",
+          "中性利率 r*：既不踩油门也不踩刹车的利率。政策利率高于 r* 叫限制性（restrictive）立场，低于 r* 才叫宽松——判断紧不紧要看 r 与 r* 的差，不是看绝对水平。",
+          "通胀预期为什么可怕：一旦企业按预期涨价、工人按预期要工资，就形成工资-价格螺旋（wage-price spiral）。同样的产出缺口对应更高通胀，压低通胀需要更高失业率，这个代价叫牺牲率（sacrifice ratio）。",
+          "汇率这一层：加息提高澳元套息交易（carry trade）的吸引力，但澳元是高 beta 的风险货币，全球避险时照样跌——利差和风险偏好经常反向拉扯。"
+        ]
+      }
     },
     {
-      "title": "澳洲联储主席布洛克：为了降低通胀，加息是必要的。 收紧政策旨在应对国内产能压力。 需要放缓经济增长和抬升失业率来降低CPI。 不能让高通胀预期变得根深蒂固。 现在的阵痛将避免未来产生更大的阵痛。 赞成维持利率不变的委员看到了更多的下行风险，认为需要再等待一段时间以获取更多数据。 未来一年的通胀基本上已成定局，这不是一个令人满意的处境。",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3193066",
-      "published": "2026-11-03 12:33",
-      "raw_summary": "",
-      "insight": {}
+      "title": "Todd Boehly insurer amasses billions in lending tied to his Beverly Hills project",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/e633f11e-ebc2-4482-94de-72c3a3b89841?syn-25a6b1a6=1",
+      "published": "2026-11-03 13:00",
+      "raw_summary": "Security Benefit’s loans come as regulators heighten scrutiny of insurance groups that extend credit to companies affiliated with their owners",
+      "insight": {
+        "what": "Boehly 旗下的 Security Benefit 向与其所有者关联的地产项目放贷数十亿美元，监管正加强对险资输血股东关联方的审查。",
+        "why": "保险负债是刚性的保单准备金，资产端却押在关联方的低流动性项目上——风险从私募股权漏进保单持有人，这正是监管最忌讳的关联交易套利。",
+        "chain": "私募基金收购保险公司 → 保单准备金变成低成本长期资金 → 向股东关联项目放贷 → 资产久期拉长、估值不透明 → 监管资本与评级承压 → 保单持有人与再保对手承担尾部风险",
+        "notes": [
+          "保险的钱为什么便宜：保费先收后赔，这笔钱叫浮存金（float），久期长、赔付可预测，相当于一笔低息长期杠杆——伯克希尔的模式就是靠它放大复利。",
+          "关联交易（related-party transaction）的问题在定价：资产以什么价格装进受监管主体，直接决定偿付能力充足率；监管的抓手是强制披露与事前审批。",
+          "会计会推迟坏消息：很多债券/贷款按摊余成本（amortized cost）计价，只要不卖出、不认定减值，账面价值就不动——`账面价值 ≠ 可回收金额`，风险被时间掩盖。",
+          "监管逻辑：风险资本（RBC）规则会给无评级、非公开的资产更高风险系数，资本占用一升，这种套利的空间就被压缩。"
+        ]
+      }
     }
   ],
   "policy": [
@@ -26,36 +46,75 @@
       "url": "https://www.scmp.com/economy/policy/article/3373093/china-moves-simplify-forex-settlements-and-make-cross-border-business-easier",
       "published": "2026-11-03 15:00",
       "raw_summary": "China plans to expand foreign exchange settlement services and streamline cross-border trade payments, in a move to lower transaction costs and facilitate international commerce. The State Administrat",
-      "insight": {}
+      "insight": {
+        "what": "中国拟扩大外汇结算便利化、简化跨境贸易收付流程，降低企业交易成本。",
+        "why": "政策意图是把真实合规的贸易流从审批摩擦里放出来，用便利化换结汇意愿——在贬值预期下，企业「持汇不结」才是汇率压力的真正来源。",
+        "chain": "简化单证与流程 → 企业收付汇时间缩短 → 结汇意愿回升 → 银行代客结售汇改善 → 在岸外汇供需修复 → 即期汇率与跨境资金流转稳",
+        "notes": [
+          "结售汇制度：出口收汇后企业可以结汇换人民币，也可以留在外汇账户。留存比例高，官方储备不增，但市场上可交易的美元供给就少了。",
+          "贬值预期会自我实现：预期人民币继续贬，企业推迟结汇、提前购汇，美元需求前置、供给后置，汇率越跌越没人卖——这是典型的预期驱动型贬值。",
+          "便利化不等于自由化：底色仍是「真实贸易背景」，只是把逐笔事前审批换成事后核查与抽查，合规成本下降，但违规成本上升。",
+          "对市场的传导：跨境人民币结算占比上升 → 减少对美元清算体系的依赖 → 汇率波动向实体的传导链条变短，企业套保需求结构也会变。"
+        ]
+      }
     },
     {
-      "title": "Trump to remove Rwanda and South Africa from US trade deal",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c9j346xg0mkvo?at_medium=RSS&at_campaign=rss",
-      "published": "2026-11-03 11:00",
-      "raw_summary": "The move comes barely a week after Rwanda's defence ministry was hit with sanctions by the US Treasury.",
-      "insight": {}
+      "title": "US strikes Iran’s Qeshm Island ahead of midterms as Trump says deal ‘could happen’",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3373075/us-strikes-irans-qeshm-island-ahead-midterms-trump-says-deal-could-happen",
+      "published": "2026-11-03 12:39",
+      "raw_summary": "The United States has attacked an Iranian island in the Strait of Hormuz, the latest in a series of covert, limited strikes ahead of the US midterm elections, as President Donald Trump signalled progr",
+      "insight": {
+        "what": "美国在中期选举前对伊朗霍尔木兹海峡的格什姆岛发动有限打击，同时特朗普称协议「仍有可能」。",
+        "why": "这是以打促谈的边缘策略：霍尔木兹承载全球约两成海运原油，一次误判就能把油价风险溢价打上去，再顺着通胀传导到利率与长久期资产。",
+        "chain": "有限军事打击 → 伊朗以骚扰航运回应 → 原油风险溢价抬升 → 航运保险与运费上涨 → 成品油与运输成本上行 → 通胀预期回升 → 降息路径收窄、长端利率承压",
+        "notes": [
+          "风险溢价（risk premium）不是「油没了」，而是市场为「可能没了」付的保险费：看涨期权偏斜变陡、近月合约贵过远月（backwardation）都是它的痕迹。",
+          "霍尔木兹的分量：全球约五分之一的原油海运和大量 LNG 经此，最窄处仅约 21 海里，封锁成本低、恢复成本极高——供给弹性在这个点上接近于零。",
+          "传导到通胀有时滞：油价先影响运输燃料，再进核心商品，通常滞后 1-3 个月；央行真正盯的是二次效应（工资与通胀预期），而不是油价本身。",
+          "地缘冲击的交易特征：波动率高、持续短。`油价脉冲 ≠ 趋势`，除非产油设施被实际摧毁，否则溢价会随时间衰减。"
+        ]
+      }
     }
   ],
   "tech": [
-    {
-      "title": "Nvidia Tells Data Center Clients to Trim China Business, FT Says",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-03/nvidia-tells-data-center-clients-to-trim-china-business-ft-says",
-      "published": "2026-11-03 13:39",
-      "raw_summary": "Nvidia Corp. has instructed its cloud computing clients to scale back their exposure to Chinese companies, the Financial Times reported, citing unidentified people.",
-      "insight": {}
-    },
     {
       "title": "China Plans Broad AI Guardrails After Global Security Lapses",
       "source": "Bloomberg Technology",
       "url": "https://www.bloomberg.com/news/articles/2026-11-03/china-plans-broad-ai-guardrails-after-global-security-lapses",
       "published": "2026-11-03 13:24",
       "raw_summary": "China plans to roll out a broad set of standards governing the AI safety from development through deployment, representing some of the most comprehensive guidelines to guard against a loss of control ",
-      "insight": {}
+      "insight": {
+        "what": "中国拟推出覆盖开发到部署全流程的 AI 安全标准体系，是迄今最全面的监管框架之一。",
+        "why": "监管从「内容合规」扩到「模型能力与部署安全」，合规成本被前置，直接改变国内 AI 公司的产品节奏与算力投入结构。",
+        "chain": "统一安全标准出台 → 训练评测与备案成本上升 → 中小模型厂商出清或转垂类 → 头部合规优势放大 → 落地节奏放慢但可预期性提升 → 风险溢价收窄、成长溢价受抑",
+        "notes": [
+          "备案制：生成式 AI 上线前要做安全评估与算法备案，属于先审后用；欧盟 AI Act 走的是风险分级，美国偏行业自律加出口管制，三套逻辑不同。",
+          "合规成本是固定成本：对大厂可以摊薄，对初创就是门槛，行业集中度上升——和金融牌照的效应类似。",
+          "估值的两条腿：政策不确定性下降会压风险溢价（折现率 r 下降，估值抬升），但增长预期 g 同时被约束，净效应取决于哪个更快。简单写就是 `P = E/(r−g)`。",
+          "看海外映射：标准明确后，外资对中国 AI 资产的「政策折价」有可能收窄，但前提是执行一致、可预期，而不是运动式收紧。"
+        ]
+      }
+    },
+    {
+      "title": "Nvidia Tells Data Center Clients to Trim China Business, FT Says",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-03/nvidia-tells-data-center-clients-to-trim-china-business-ft-says",
+      "published": "2026-11-03 13:39",
+      "raw_summary": "Nvidia Corp. has instructed its cloud computing clients to scale back their exposure to Chinese companies, the Financial Times reported, citing unidentified people.",
+      "insight": {
+        "what": "英伟达要求云与数据中心客户缩减对中国业务的敞口（FT 报道）。",
+        "why": "出口管制从「卖什么」延伸到「卖给谁的下游」——把合规责任压到客户侧，等于用商业合同执行管制，中国获取算力的灰色通道被进一步收窄。",
+        "chain": "美国管制继续收紧 → 英伟达要求客户披露并限制中国敞口 → 云厂商合规成本上升 → 对华算力租赁与转售受限 → 中国训练算力边际变紧 → 国产替代与租赁价格上行",
+        "notes": [
+          "管制的长臂：出口管理条例（EAR）里的再出口与「明知」标准，让卖方对最终用途负责，所以厂商会把终端用途声明写进合同，用商业条款替代行政审查。",
+          "算力租赁的本质是把 GPU 小时当商品卖；管制一旦盯住「谁在用」，境外云就成了受限通道——新加坡、中东转口被查就是这个逻辑。",
+          "国产替代的经济学：短期性能差距意味着同等效果要更多卡、更多电，训练成本更高；但需求刚性在，国产芯片的量与价会同时往上走。",
+          "对英伟达的影响：中国收入占比下降是确定的损失，但合规尾部风险下降；估值锚从「中国市场期权」变成「全球 AI 资本开支周期」。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 20261103150127692014996wbs2kC2T07P3n)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -74,7 +133,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 12,
+      "count": 11,
       "tier": "stable"
     },
     "cnbc_fin": {

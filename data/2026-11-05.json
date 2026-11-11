@@ -1,6 +1,6 @@
 {
   "date": "2026-11-05",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "Euro zone inflation hits 4% for first time in three years as interest rate hike looms",
@@ -8,15 +8,35 @@
       "url": "https://www.cnbc.com/2026/11/04/euro-zone-cpi-inflation-october-ecb-rate-hike.html",
       "published": "2026-11-04 18:47",
       "raw_summary": "It was driven by energy inflation, which surged above 20% in October.",
-      "insight": {}
+      "insight": {
+        "what": "欧元区 10 月通胀三年来首次回到 4%，能源分项同比涨超 20%，市场开始押注加息。",
+        "why": "能源推动的通胀最难缠——它会渗进核心价格与工资谈判；央行一旦被迫加息，高负债国的利差先炸，货币和财政同时收紧。",
+        "chain": "能源价格飙升 → 整体通胀冲上 4% → 通胀预期与工资谈判抬头 → 央行转向鹰派 → 主权债利差走阔 → 高负债国利息支出上升 → 增长与财政双重受压",
+        "notes": [
+          "HICP 是欧元区统一口径的调和 CPI。央行盯核心（剔除能源与食品），但能源持续上涨会通过运输、供暖渗进核心，所以不能只看核心。",
+          "第二轮效应（second-round effects）：能源涨价 → 工会要求补偿性加薪 → 服务业价格上行 → 通胀变黏。这正是央行要在需求还没热起来时就动手的原因。",
+          "加息对高负债国是双杀：`利息支出 = 债务存量 × 平均票息`。利差每走阔 100bp，意大利这种债务/GDP 超 130% 的国家，财政空间立刻被吃掉一块。",
+          "交易含义：滞胀（stagflation）环境下股债容易双杀，商品与通胀挂钩债券（linker）相对占优，因为它们的现金流跟着物价走。"
+        ]
+      }
     },
     {
-      "title": "Stock market after midterm elections: What S&P 500 history shows",
-      "source": "CNBC Finance",
-      "url": "https://www.cnbc.com/2026/11/02/stock-market-after-midterm-elections-sp-500-history.html",
-      "published": "2026-11-04 02:21",
-      "raw_summary": "Midterms historically precede a strong year for the S&amp;P 500. What to know if Democrats win back Congress",
-      "insight": {}
+      "title": "US stocks post best day since August after Democrats sweep midterms",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/a0b18705-3bd8-4886-992c-b6062fdec6ea?syn-25a6b1a6=1",
+      "published": "2026-11-05 11:11",
+      "raw_summary": "Hyperscalers surge and chipmakers fall as investors bet on winners and losers from expected backlash against the AI boom",
+      "insight": {
+        "what": "民主党横扫中期选举后美股创 8 月以来最佳单日，超大规模云厂商上涨、芯片股下跌。",
+        "why": "市场在给「监管转向」定价：对 AI 泡沫的政治反弹利好有现金流和有合规能力的平台，利空纯算力卖方，同一主题内部开始分化。",
+        "chain": "民主党胜选 → 预期对 AI 与平台监管加码 → 云厂商被视为合规受益方 → 资金从芯片股轮出 → 板块内部相关性下降 → AI 交易的「一体化溢价」被拆开",
+        "notes": [
+          "板块轮动（rotation）：同一主题里从「卖铲子」切到「用铲子」——应用与云能把合规成本转嫁给用户，芯片厂则直接暴露在出口管制下。",
+          "监管成本是不对称的：平台的法务、游说、合规团队是固定成本，可以摊薄；对中小厂商就是生死线，所以监管往往利好龙头。",
+          "单日反弹别当反转：要看成交量与上涨家数广度（advance-decline line），只有少数权重股拉指数通常撑不住。",
+          "组合层面的启示：主题投资的 beta 会随政策周期切换，控制单一因子暴露比赌对个股更重要。"
+        ]
+      }
     }
   ],
   "policy": [
@@ -26,36 +46,75 @@
       "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22688/continuation-of-the-national-emergency-with-respect-to-the-threat-from-securities-investments-that",
       "published": "2026-11-05 00:00",
       "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
-      "insight": {}
+      "insight": {
+        "what": "美国延续「涉华证券投资国家安全紧急状态」，禁止美国资金投资与中国军工关联企业的行政令继续有效。",
+        "why": "这把投资禁令制度化了：紧急状态一年一续，等于给中美资本流动装了一道长期闸门，不确定性从「事件」变成「常态」。",
+        "chain": "紧急状态延续 → 投资禁令继续有效 → 美国资金被迫减持相关标的 → 指数与基金被动调仓 → 相关公司融资成本上升 → 中美资本市场进一步分割",
+        "notes": [
+          "法律工具：IEEPA 下的国家紧急状态赋予总统直接管制经济交易的权力，到期需公告延续——所以它天然是「可加码、可长期」的工具。",
+          "指数传导最猛：被列入清单的公司会被 MSCI、FTSE 剔除，被动资金无差别卖出，冲击往往大于主动基金减仓。",
+          "估值分层：同一资产在 A 股、港股、ADR 出现系统性价差，本质是可投资性（investability）折价，不是基本面差异。",
+          "企业应对：回购注销 ADR、回港双重上市——这解决交易场所，但不解决资金来源，折价依然存在。"
+        ]
+      }
     },
     {
-      "title": "Continuation of the National Emergency With Respect to the Situation in Nicaragua",
-      "source": "Federal Register",
-      "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22687/continuation-of-the-national-emergency-with-respect-to-the-situation-in-nicaragua",
-      "published": "2026-11-05 00:00",
-      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
-      "insight": {}
+      "title": "Chinese banks explore local e-CNY wallets for foreign firms via upgraded platform",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/business/banking-finance/article/3373264/chinese-banks-explore-local-e-cny-wallets-foreign-firms-upgraded-platform",
+      "published": "2026-11-05 10:00",
+      "raw_summary": "Beijing is expanding its central bank-backed digital currency network to offshore institutions, including Hong Kong branches, while banks are also exploring local e-CNY wallets for foreign firms to de",
+      "insight": {
+        "what": "中国银行业通过升级平台，为境外机构（含香港分行）探索本地数字人民币钱包服务。",
+        "why": "数字人民币的下一步不是替代支付宝，而是做跨境结算的基础设施——把清算从代理行与 SWIFT 体系里挪出来，降低对美元清算的依赖。",
+        "chain": "e-CNY 平台升级 → 境外机构可开本地钱包 → 跨境贸易用数字人民币结算 → 绕开代理行与 SWIFT 报文 → 结算时间与费用下降 → 人民币跨境使用比例上升",
+        "notes": [
+          "代理行模式（correspondent banking）：跨境美元清算靠一层层代理行加 SWIFT 报文，链条长、费用高、且可被制裁切断——这正是 e-CNY 想绕开的部分。",
+          "多边央行数字货币桥（mBridge）走的是点对点，但瓶颈在流动性安排和合规审查，技术从来不是主要障碍。",
+          "对企业的意义：结算币种多一个选项，汇率风险可以从「本币—美元—本币」变成「本币直兑」，套保成本下降。",
+          "现实约束：资本项目管制下，钱包余额与用途仍受限，便利化不等于可自由兑换——这条边界短期不会动。"
+        ]
+      }
     }
   ],
   "tech": [
-    {
-      "title": "Asia’s Richest Banker Uday Kotak Sees AI Correction Boosting Flows to India",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-05/asia-s-richest-banker-uday-kotak-sees-ai-correction-boosting-flows-to-india",
-      "published": "2026-11-05 14:09",
-      "raw_summary": "India could emerge as a beneficiary of foreign flows, if the global artificial intelligence investment boom unwinds, as investors seek markets offering more attractive valuations, Uday Kotak, Asia’s r",
-      "insight": {}
-    },
     {
       "title": "South Korea’s Current Account Surplus Hits Record on Chip Boom",
       "source": "Bloomberg Technology",
       "url": "https://www.bloomberg.com/news/articles/2026-11-05/south-korea-s-current-account-surplus-hits-record-on-chip-boom",
       "published": "2026-11-05 08:05",
       "raw_summary": "South Korea’s current-account surplus jumped to a record in September, fueled by booming semiconductor exports as global investment in artificial intelligence continues to stoke demand for the country",
-      "insight": {}
+      "insight": {
+        "what": "韩国 9 月经常账户顺差创历史新高，半导体出口在 AI 投资周期里大幅增长。",
+        "why": "这是 AI 资本开支在宏观数据里的硬证据：它不只体现在英伟达的营收上，而是变成了出口国的贸易顺差和汇率支撑。",
+        "chain": "全球 AI 资本开支上行 → HBM 与存储需求爆发 → 韩国半导体出口放量 → 经常账户顺差创新高 → 韩元获得支撑 → 央行政策空间扩大",
+        "notes": [
+          "经常账户 = 货物与服务贸易 + 初次收入 + 二次收入。半导体约占韩国出口两成，是顺差的主要来源，所以韩国是 AI 周期的高 beta 观察窗口。",
+          "存储是标准化商品：价格由供需决定，`毛利率 = (价格 − 单位成本) / 价格`，涨价周期里利润弹性极大，跌价周期里亏损也快。",
+          "HBM 不一样：AI 训练卡必需，产能被少数厂商锁定，属于卖方市场，议价权强于传统 DRAM。",
+          "宏观含义：顺差国货币倾向升值，但出口国央行通常不愿本币升太快——这就是汇率摩擦的来源。"
+        ]
+      }
+    },
+    {
+      "title": "Qualcomm is betting big on data centers as smartphone sales sink",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers",
+      "published": "2026-11-05 06:42",
+      "raw_summary": "With smartphone sales tanking by around 20 percent compared to 2025, Qualcomm is looking to data centers to help boost its bottom line. During its Q4 2026 earnings call, the company laid out its plans",
+      "insight": {
+        "what": "高通在手机业务同比下滑约 20% 的情况下，把增长押注到数据中心芯片。",
+        "why": "这是「第二曲线」被迫提前：手机存量市场见顶，AI 数据中心的资本开支是唯一足够大的池子，但要正面撞上英伟达的生态壁垒。",
+        "chain": "手机需求下滑 → 营收与毛利承压 → 研发与资本转向数据中心 → 推出 AI 加速与服务器 CPU → 客户验证周期长 → 软件生态成为胜负手",
+        "notes": [
+          "第二曲线（second curve）：主业增速见顶前必须找到新增长极，否则估值从成长股切成周期股，倍数直接被压。",
+          "生态壁垒：CUDA 的护城河是迁移成本——编译器、算子库、开发者习惯都要重写，硬件性能只是入场券。",
+          "财务视角：研发是固定成本，换赛道初期利润率会被拖低，市场愿意给多少容忍度，取决于订单能见度。",
+          "和 AMD 的对照：AMD 有 x86 服务器客户基础可以借力，高通在数据中心几乎从零起步，路径更长。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 202611051501335283361746p9sdyXVSMmOB)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 2,
@@ -74,7 +133,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 12,
+      "count": 10,
       "tier": "stable"
     },
     "cnbc_fin": {
@@ -82,7 +141,7 @@
       "tier": "stable"
     },
     "economist_fin": {
-      "count": 15,
+      "count": 11,
       "tier": "stable"
     },
     "wallstreetcn": {

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-07",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
       "title": "How Wall Street’s all-in bet on AI blew up",
@@ -8,7 +8,17 @@
       "url": "https://www.ft.com/content/5a6806f0-e82e-4b34-b761-f9877e2b511c?syn-25a6b1a6=1",
       "published": "2026-11-07 13:00",
       "raw_summary": "US midterm elections sparked a hedge fund and retail investor exodus from a trade that had taken over equity markets",
-      "insight": {}
+      "insight": {
+        "what": "中期选举成为导火索，华尔街与散户集体撤离「All in AI」这笔拥挤交易。",
+        "why": "拥挤交易的崩法不是基本面变差，而是持仓结构：所有人站在同一侧，任何触发都会变成没有买盘的下跌。",
+        "chain": "AI 成为共识主题 → 机构与散户持仓高度集中 → 选举结果改变政策预期 → 出现边际卖盘 → 缺乏承接盘导致跌幅放大 → 波动率上升、波动率目标策略降仓 → 抛压二次放大",
+        "notes": [
+          "拥挤度看三个指标：基金持仓集中度、期权偏斜（skew）、以及 AI 相关公司在指数市值中的占比。集中度越高，反转越急。",
+          "流动性是幻觉：上涨时买盘充足，下跌时做市商缩表。`有效流动性 = 报价深度 × 可成交时间`，危机时两者同时塌缩。",
+          "机械卖盘会放大跌幅：风险平价与波动率目标策略在波动率上升时按规则降仓，卖出又推高波动率，形成负反馈。",
+          "对个人投资者的含义：主题 ETF 的「分散」是假的，成分股共享同一个因子，跌起来相关性趋近 1。"
+        ]
+      }
     },
     {
       "title": "US stocks stage tepid recovery after $3.2tn rout fuelled by AI fears",
@@ -16,25 +26,55 @@
       "url": "https://www.ft.com/content/088ed252-ea9c-4b61-b2d1-37295fd0f7c2?syn-25a6b1a6=1",
       "published": "2026-11-07 06:00",
       "raw_summary": "Magnitude of rebound was feeble compared with historic recoveries from severe sell-offs",
-      "insight": {}
+      "insight": {
+        "what": "AI 恐慌蒸发 3.2 万亿美元市值后，美股只出现乏力反弹。",
+        "why": "反弹的力度本身就是信息：跌幅越深、反弹越弱，说明这是仓位驱动的出清而不是估值吸引的抄底，市场在等盈利验证。",
+        "chain": "市值蒸发 3.2 万亿 → 估值回到看似合理的区间 → 但盈利预期没有上修 → 抄底资金谨慎 → 反弹乏力、成交萎缩 → 进入等待验证的震荡期",
+        "notes": [
+          "反弹质量看三件事：成交量、上涨家数占比（breadth）、以及领涨的是防御股还是周期股。",
+          "熊市反弹的经验幅度是前期跌幅的 1/3 到 1/2；超过这个区间，就要重新评估趋势而不是继续当作反弹。",
+          "低估值可能是陷阱：`P/E = 价格 / 每股盈利`，如果分母 E 处在周期高点，低 P/E 反而意味着风险。",
+          "后续三个关键变量：AI 资本开支指引、云厂商订单、利率路径——任何一个转向都会带来重定价。"
+        ]
+      }
     }
   ],
   "policy": [
-    {
-      "title": "Ukraine: Russia hits Kyiv with airstrikes ahead of trilateral talks",
-      "source": "DW",
-      "url": "https://www.dw.com/en/ukraine-russia-hits-kyiv-with-airstrikes-ahead-of-trilateral-talks/a-79883851?maca=en-rss-en-world-4025-rdf",
-      "published": "2026-11-07 17:21",
-      "raw_summary": "The strikes hit a major bridge and energy facilities in the Kyiv region. President Volodymyr Zelenskyy accused Moscow of trying to \"push\" Ukraine \"into a blackout\" ahead of talks in Abu Dhabi.",
-      "insight": {}
-    },
     {
       "title": "European troops set to train in Poland for postwar Ukraine deployment",
       "source": "Defense News",
       "url": "https://www.defensenews.com/news/2026/11/07/european-troops-set-to-train-in-poland-for-postwar-ukraine-deployment/",
       "published": "2026-11-07 23:05",
       "raw_summary": "Britain and France will lead 2,800 troops from 11 nations in a two-week exercise testing how to move, protect and supply a force to rebuild Ukraine’s military after the war ends.",
-      "insight": {}
+      "insight": {
+        "what": "英法牵头 11 国约 2800 名士兵在波兰演习，测试战后向乌克兰部署部队的调动、防护与补给。",
+        "why": "这是「战后安排」的提前演练，意味着欧洲防务开支的期限被拉长——军工需求从应急采购转向长期产能建设。",
+        "chain": "停火框架讨论推进 → 欧洲规划战后驻军 → 多国联合演习验证后勤 → 防务预算长期化 → 军工产能扩张 → 国防板块订单能见度提升",
+        "notes": [
+          "后勤决定上限：战略投送能力、弹药储备、维修体系，才是「能不能驻」的关键，兵力数字只是政治信号。",
+          "财政背书：欧洲稳定公约对国防支出松绑，等于给军工需求加了一层不受常规赤字约束的资金来源。",
+          "投资映射：弹药、防空、无人机与维修保障的订单周期最长、可见度最高；整机平台弹性大，但受交付节奏牵制。",
+          "反向风险：停火若快速落地、驻军规模缩水，订单预期会被下修——地缘缓和对军工是利空。"
+        ]
+      }
+    },
+    {
+      "title": "History repeats in Shenzhen? China hosts another lame-duck US president",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3373654/history-repeats-shenzhen-china-hosts-another-lame-duck-us-president",
+      "published": "2026-11-07 22:00",
+      "raw_summary": "A decade after hosting a politically hobbled Barack Obama at a Group of 20 (G20) summit in Hangzhou, China is preparing to welcome another “lame-duck” US president for a multilateral gathering: Donald",
+      "insight": {
+        "what": "中国准备接待一位「跛脚鸭」美国总统出席峰会，与十年前杭州 G20 接待奥巴马形成对照。",
+        "why": "对方国内政治资本最弱的时候，恰恰是谈判窗口最不确定的时候：承诺可能兑现不了，所以中方更看重可执行的小协议而非宏大框架。",
+        "chain": "美国中期选举失利 → 总统政治资本削弱 → 外交承诺的可信度下降 → 中方转向「可执行的小交易」 → 峰会议题收窄到大豆、关税豁免等具体项 → 成果有限但风险可控",
+        "notes": [
+          "跛脚鸭（lame duck）：任期末或失去国会支持后权力受限的领导人，其对外承诺的贴现率更高——市场会用更低概率给协议定价。",
+          "谈判理论里的「承诺问题」：对手不相信你能履约，就只愿意做一次性、可验证的交易，深度合作谈不成。",
+          "对市场的映射：关税豁免、农产品采购这类「可执行项」容易落地，科技管制与投资限制则容易僵住——这才是分板块定价的依据。",
+          "历史韵脚不等于重复：2016 年杭州 G20 后美国换了政府，这次的约束是国内政治极化，机制不同。"
+        ]
+      }
     }
   ],
   "tech": [
@@ -44,18 +84,37 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-07/ai-safety-advocates-make-gains-after-110-million-midterm-fight",
       "published": "2026-11-07 22:30",
       "raw_summary": "Candidates who favor stricter oversight of artificial intelligence racked up wins in key congressional races, aided by a pro-regulation political funding group backed in part by Anthropic PBC at a tim",
-      "insight": {}
+      "insight": {
+        "what": "投入 1.1 亿美元的政治行动后，支持加强 AI 监管的候选人在关键选区集中获胜。",
+        "why": "AI 监管从「学界讨论」变成「选举议题」，意味着美国对 AI 的政策风险开始可定价——合规成本会写进商业模式的假设里。",
+        "chain": "AI 事故与就业担忧扩散 → 政治资金介入选举 → 主张监管的候选人胜选 → 国会立法议程前移 → 模型评测与责任追溯被写入法律 → 行业合规成本上升、集中度提高",
+        "notes": [
+          "政治行动委员会（PAC）的钱花在哪：主要是 swing district 的广告投放，边际席位决定议程，1.1 亿美元在少数选区就能撬动结果。",
+          "监管的三种工具：事前许可、事后责任、以及透明度披露。美国大概率走「责任 + 披露」，比欧盟的分级许可更轻。",
+          "对行业结构的影响：合规是固定成本，大厂摊薄、小厂出局——监管往往不打击龙头，反而加固护城河。",
+          "投资视角：政策风险溢价（policy risk premium）下降时估值抬升，但增长假设同时被压，两者要分开估。"
+        ]
+      }
     },
     {
-      "title": "AI Trade Faces a Post-Election Reality Check",
+      "title": "AI Selloff Exposes Data Center Boom Risks",
       "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-11-07/ai-trade-faces-a-post-election-reality-check-video",
-      "published": "2026-11-07 20:50",
-      "raw_summary": "On Bloomberg This Weekend, Yorkville Ives & Co. partner Dan Ives and Bloomberg US equities reporter Natalia Kniazhevich examine the sharp post-election technology selloff, as investors weigh political",
-      "insight": {}
+      "url": "https://www.bloomberg.com/news/videos/2026-11-06/ai-selloff-exposes-data-center-boom-risks-video",
+      "published": "2026-11-07 06:39",
+      "raw_summary": "The selloff in AI stocks is adding new uncertainty to the massive buildout of data centers across the US. Jolienne Halisky, CFO of AIB Data Centers, says financing for new projects could become more e",
+      "insight": {
+        "what": "AI 股抛售让数据中心建设热潮的风险浮出水面，新项目的融资难度上升。",
+        "why": "AI 基建是「先花钱、后收租」的重资产模式，一旦股价下跌，股权融资和项目债同时变贵，资本开支的自我循环就会卡住。",
+        "chain": "AI 股回调 → 相关公司市值缩水 → 股权与项目债融资成本上升 → 数据中心开工与租约谈判放缓 → 算力供给增速下降 → 租赁价格与利用率重新定价",
+        "notes": [
+          "重资产模式的现金流特征：前期大额 capex、后期靠长约租金回收，`NPV = Σ 租金/(1+r)^t − 初始投资`，r 上行会直接杀死项目。",
+          "融资结构：数据中心常用项目融资（project finance）+ 售后回租（sale-leaseback），对利率和租户信用极度敏感。",
+          "循环风险：芯片厂收入依赖云厂商 capex，云厂商 capex 依赖股价与债市——这是一条自我强化的链条，反过来也会自我强化地下行。",
+          "观察指标：在建面积（MW）、预租率（pre-leasing）、以及电力接入排队时长——电力往往才是真正的瓶颈。"
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 2026110723130831081286q8wwsgiSUGTKZ)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 3,
@@ -86,7 +145,7 @@
       "tier": "stable"
     },
     "wallstreetcn": {
-      "count": 0,
+      "count": 40,
       "tier": "stable"
     },
     "eastmoney": {

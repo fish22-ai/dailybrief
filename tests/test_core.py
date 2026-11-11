@@ -426,12 +426,11 @@ page = build_site.render_page(
      "policy": [], "tech": []}, ["2026-10-12"], "2026-10-12")
 check("页面默认中文（被禁用 JS 时也还是中文）",
       '<html lang="zh-CN" data-lang="zh">' in page)
-check("顶栏带中/EN 按钮",
-      'class="langbtn"' in page and 'data-lang-set="zh"' in page
-      and 'data-lang-set="en"' in page)
-check("语言选择在首屏之前生效（<head> 里读 localStorage）",
-      "localStorage.getItem('dailybrief.lang')" in page)
-check("切语言后重设 aria/title 与中文原文展开态",
+check("顶栏不再有中/EN 切换按钮（2026-11-11 反馈）",
+      'class="langbtn"' not in page and 'data-lang-set' not in page)
+check("不再按 localStorage 切语言（页面固定中文）",
+      "dailybrief.lang" not in page)
+check("中文原文块摊开、aria/title 固定用中文",
       "applyLang" in page and "data-aria-zh" in page)
 
 print("\ntranslate：英文解读")
