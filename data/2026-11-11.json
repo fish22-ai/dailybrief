@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-11",
+  "mode": "rules",
+  "markets": [
+    {
+      "title": "中国央行：支持符合条件的科技企业发行科技创新债券，拓宽直接融资渠道",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3198353",
+      "published": "2026-11-11 18:11",
+      "raw_summary": "央行发布2026年第三季度中国货币政策执行报告，其中在专栏4中提到，要健全知识产权等质押融资机制，盘活企业无形资产，更好支持研发设计、知识产权、科技成果转化、检验检测认证等专业性较强的生产性服务业发展。同时，用好科技创新与民营企业债券风险分担工具，支持符合条件的科技企业发行科技创新债券，拓宽直接融资渠道。",
+      "insight": {}
+    },
+    {
+      "title": "中国央行：把国债和信用债、贷款等利率进行比较时需考虑税收因素",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3198351",
+      "published": "2026-11-11 18:09",
+      "raw_summary": "央行发布2026年第三季度中国货币政策执行报告，其中在专栏2中提到，投资者按照税后的收益对债券进行定价。国内目前对国债利息收入免征所得税，使纳税投资者愿意接受低于应税债券的收益率，在对相关利率进行分析和比较时需还原税收因素的影响。",
+      "insight": {}
+    }
+  ],
+  "policy": [
+    {
+      "title": "Establishment of the Oval Office National Monument",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23113/establishment-of-the-oval-office-national-monument",
+      "published": "2026-11-12 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {}
+    },
+    {
+      "title": "Spain's first general strike in 14 years demands solutions to housing crisis",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/11/11/nx-s1-6037314/spain-general-strike",
+      "published": "2026-11-11 17:54",
+      "raw_summary": "Less than three weeks before a national election that could catapult the far right to power, Spain's workers are striking on Wednesday to demand that the government remedy the nation's housing crisis.",
+      "insight": {}
+    }
+  ],
+  "tech": [
+    {
+      "title": "Anthropic Aims for $3 Billion to $3.5 Billion in Japan Offering",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-11/anthropic-aims-for-3-billion-to-3-5-billion-in-japan-offering",
+      "published": "2026-11-11 15:56",
+      "raw_summary": "Anthropic PBC is seeking to raise $3 billion to $3.5 billion from Japanese investors as part of its initial public offering, keeping the fundraising target in the country after the frontier artificial",
+      "insight": {}
+    },
+    {
+      "title": "卷起来了！11月11日，大模型厂商在天猫打5折",
+      "source": "量子位",
+      "url": "https://www.qbitai.com/2026/11/509085.html",
+      "published": "2026-11-11 14:18",
+      "raw_summary": "大模型厂商智谱、MiniMax、千问办公、阿里云、Qoder都在天猫打5折。",
+      "insight": {}
+    }
+  ],
+  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 202611111834034917339109hl6zYqBLX33z)', 'type': 'new_api_error'}, 'type': 'error'}",
+  "source_stats": {
+    "fed": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 7,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 17,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 19,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
