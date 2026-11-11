@@ -1,32 +1,109 @@
 {
   "date": "2026-11-11",
-  "mode": "rules",
+  "mode": "llm",
   "markets": [
     {
-      "title": "中国央行：支持符合条件的科技企业发行科技创新债券，拓宽直接融资渠道",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3198353",
-      "published": "2026-11-11 18:11",
-      "raw_summary": "央行发布2026年第三季度中国货币政策执行报告，其中在专栏4中提到，要健全知识产权等质押融资机制，盘活企业无形资产，更好支持研发设计、知识产权、科技成果转化、检验检测认证等专业性较强的生产性服务业发展。同时，用好科技创新与民营企业债券风险分担工具，支持符合条件的科技企业发行科技创新债券，拓宽直接融资渠道。",
-      "insight": {}
+      "title": "Consumer prices rose 0.4% in October, more than expected, complicating Fed's inflation fight",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html",
+      "published": "2026-11-11 07:53",
+      "raw_summary": "The report comes at a critical juncture for the Federal Reserve as it considers its next move regarding interest rates.",
+      "insight": {
+        "what": "美国10月CPI环比涨0.4%，高于市场预期，说明通胀回落的最后一公里仍不通畅。",
+        "why": "市场原本定价12月还会再降一次息；这份数据打掉了「通胀已受控」这个前提，短端美债收益率与美元要重新定价，长久期资产的折现率上修。",
+        "chain": "CPI环比超预期 → 通胀黏性确认 → 降息预期降温 → 2年期美债收益率上行 → 美元指数走强 → 高估值成长股折现率抬升 → 纳指承压",
+        "notes": [
+          "CPI 是消费者物价指数，环比看的是一个月的涨幅，同比看的是过去十二个月累计。月度 0.4% 若持续一年，年化接近 5%，远高于美联储 2% 的目标，所以单月超预期也足以改变市场对整条利率路径的判断。",
+          "为什么先动的是 2 年期美债？2 年期收益率大致等于市场对未来两年政策利率的平均预期，再加上一点期限溢价 term premium。它不反映当下的利率，反映的是大家预期美联储接下来往哪走，所以对政策预期的变化最敏感。",
+          "债券价格和收益率反向变动，因为票息是固定的，价格必须调整到让到期收益率等于市场要求的水平：`P = C/(1+y)¹ + C/(1+y)² + … + (C+Face)/(1+y)ⁿ`。y 上升时每一项的分母都变大，价格必然下跌；久期越长，同样的 y 变化带来的跌幅越大。",
+          "股票估值是同一套折现逻辑：`PV = CF₁/(1+r)¹ + CF₂/(1+r)² + …`。成长股的大部分现金流在很远的未来，折现的年数多，r 每上一个台阶，对现值的削减就比现金流靠前的价值股更狠，这就是所谓「长久期资产」。",
+          "美元走强的机制是利差：美国利率相对其他经济体上升，`i_美元 − i_外币` 扩大，套息资金买入美元资产，美元需求增加、汇率升值；反过来，新兴市场本币贬值与美元债偿付压力同时上升，形成资本外流。",
+          "鹰派指更担心通胀、倾向收紧；鸽派指更担心增长与就业、倾向宽松。这份数据让美联储更难鸽，但也不足以让它转鹰。中间地带最折磨市场，因为不确定性本身要被计价，而计价的方式就是提高风险溢价。"
+        ]
+      },
+      "insight_en": {
+        "what": "US October CPI rose 0.4% month on month, above expectations, showing the last mile of disinflation is still sticky.",
+        "why": "Markets had priced one more Fed cut in December. This print removes the premise that inflation is contained, forcing a repricing of front-end Treasuries and the dollar, and lifting the discount rate on long-duration assets.",
+        "chain": "CPI beats forecasts → sticky inflation confirmed → rate-cut odds fall → 2-year Treasury yield rises → dollar index strengthens → growth-stock discount rate climbs → Nasdaq comes under pressure",
+        "notes": [
+          "CPI is the consumer price index: the monthly figure is one month's change, the annual figure compounds twelve. A steady 0.4% a month is roughly 5% annualised, far above the Fed's 2% target, which is why one upside surprise can move the whole path.",
+          "Why the 2-year moves first: its yield is roughly the average policy rate expected over the next two years plus a small term premium. It does not price today's rate but where the Fed is expected to go, so it reacts fastest to any change in that expectation.",
+          "Bond prices and yields move inversely because the coupon is fixed and the price must adjust until yield-to-maturity equals what the market demands: `P = C/(1+y)¹ + C/(1+y)² + … + (C+Face)/(1+y)ⁿ`. When y rises every denominator grows, so the price must fall; the longer the duration, the bigger the fall.",
+          "Equity valuation uses the same discounting logic: `PV = CF₁/(1+r)¹ + CF₂/(1+r)² + …`. Growth companies earn most of their cash flow far in the future, so every step up in r cuts their present value harder than it does for a value stock with near-term cash flows. That is what long-duration equity means.",
+          "The dollar channel is a rate differential: when US rates rise relative to others, `i_USD − i_foreign` widens, carry money buys dollar assets, dollar demand rises and the currency appreciates. On the other side, emerging-market currencies weaken and their dollar debt service gets heavier, which drives capital outflows.",
+          "Hawkish means more worried about inflation and inclined to tighten; dovish means more worried about growth and jobs. This print makes the Fed less able to be dovish without making it hawkish. The middle ground is the most uncomfortable, because uncertainty itself must be priced, and the way it gets priced is a higher risk premium."
+        ]
+      }
     },
     {
-      "title": "中国央行：把国债和信用债、贷款等利率进行比较时需考虑税收因素",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3198351",
-      "published": "2026-11-11 18:09",
-      "raw_summary": "央行发布2026年第三季度中国货币政策执行报告，其中在专栏2中提到，投资者按照税后的收益对债券进行定价。国内目前对国债利息收入免征所得税，使纳税投资者愿意接受低于应税债券的收益率，在对相关利率进行分析和比较时需还原税收因素的影响。",
-      "insight": {}
+      "title": "France and Belgium fall foul of Eurozone bond market’s new divide",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/5263808c-e8ac-44b8-baa3-af7e8c788684?syn-25a6b1a6=1",
+      "published": "2026-11-11 13:00",
+      "raw_summary": "Global sell-off during Iran war has prompted investors to zero in on new group of Eurozone countries facing debt challenges",
+      "insight": {
+        "what": "伊朗战争引发全球债市抛售，投资者把法国、比利时单独拎出来，划入财政脆弱国家的新名单。",
+        "why": "市场原本只给意大利、希腊这类老牌高债务国加风险补偿；现在法、比也被归入同一组，两国国债相对德国 Bund 的利差要重新定价，欧元区内部资金开始分层。",
+        "chain": "伊朗战争推高能源价格 → 增长与财政双重恶化 → 重估各国债务可持续性 → 法、比被划入脆弱组 → OAT对Bund利差走阔 → 套利资金撤出 → 两国融资成本上升",
+        "notes": [
+          "主权利差 spread 指一国国债收益率减去德国 Bund 收益率。Bund 被视为欧元区的无风险基准：评级最高、市场最深、流动性最好，所以其他国家借钱都要给它一笔相对补偿，这笔补偿就是利差。",
+          "利差怎么算：`Spread = y_法国 − y_德国`。利差走阔等于市场要求更高的风险补偿，也等于该国新发国债的利息负担变重。两者互为因果：财政越差，利差越宽，利息越重，财政更差。",
+          "债务可持续性看的是利率和增长谁跑得快。名义增长率 g 低于平均利率 r 时，即使不新增赤字，债务占 GDP 的比重也会自己往上走，可以粗略写成 `Δ(D/Y) ≈ (r − g) × (D/Y) − 财政盈余`。r 与 g 的缺口是这件事的核心变量。",
+          "欧元区的结构性弱点：货币统一、财政分散，没有跨国的财政转移支付。美国一个州出问题由联邦预算兜底，欧元区成员国出问题只能自己发债，所以同一个外部冲击会自动变成国别信用风险。",
+          "为什么法国比意大利更让市场紧张：法国是欧元区第二大经济体、评级在 AA 一档，OAT 是大量基金和保险的基准持仓。一旦它被降级或利差走阔，按评级和久期管钱的机构会被动减仓，卖压比小国市场大得多。",
+          "套利资金的放大器作用：买高息国债、用低息货币或回购融资的 carry trade，一旦利差反向波动、保证金被追缴，就必须同时卖掉现货，价格下跌被自己的去杠杆放大，这就是所谓「拥挤交易平仓」。",
+          "传导到汇率：成员国风险溢价上升，欧元资产吸引力下降，资金流向美元，欧元承压。这和利差走阔其实是同一件事的两种价格表现，看哪个市场反应更快而已。"
+        ]
+      },
+      "insight_en": {
+        "what": "A global bond sell-off triggered by the Iran war has led investors to single out France and Belgium as a new group of fiscally fragile euro members.",
+        "why": "Markets had charged a premium only to the old high-debt names such as Italy and Greece. Now France and Belgium join that bucket, so their spreads to Bund must be repriced and capital starts to stratify inside the euro area.",
+        "chain": "Iran war lifts energy prices → growth and fiscal position worsen → debt sustainability reassessed → France and Belgium classed as fragile → OAT-Bund spread widens → arbitrage capital exits → funding costs rise",
+        "notes": [
+          "Sovereign spread means a country's bond yield minus the German Bund yield. Bunds are treated as the euro area's risk-free benchmark: top rating, deepest market, best liquidity, so every other sovereign pays a compensation on top of it, and that compensation is the spread.",
+          "How the spread is computed: `Spread = y_France − y_Germany`. A wider spread means the market demands more compensation, and it also means new issuance costs more. The two feed each other: worse fiscal position, wider spread, heavier interest bill, worse fiscal position.",
+          "Debt sustainability is about whether the interest rate outruns growth. When nominal growth g is below the average interest rate r, the debt-to-GDP ratio rises even with no new deficit, roughly `Δ(D/Y) ≈ (r − g) × (D/Y) − primary surplus`. The gap between r and g is the core variable.",
+          "The structural weakness of the euro area: one currency, many fiscal authorities, no cross-border fiscal transfer. A US state in trouble is backstopped by the federal budget; a euro member in trouble issues its own debt, so the same external shock automatically becomes country credit risk.",
+          "Why France worries markets more than Italy: it is the second-largest euro economy, rated in the AA band, and OATs are benchmark holdings for many funds and insurers. A downgrade or a wider spread forces rating- and duration-constrained managers to sell, and that forced selling is far bigger than in a smaller market.",
+          "How arbitrage capital amplifies the move: carry trades funded in low-yielding currency or repo against high-yielding government bonds get margin calls when the spread gaps, so they sell the bonds at the same time. The price drop is amplified by their own deleveraging, which is what crowded-trade unwinds look like.",
+          "Transmission to FX: as the member risk premium rises, euro assets look less attractive, money flows to the dollar and the euro weakens. That is the same event expressed in a second price, just in a market that reacts faster."
+        ]
+      }
     }
   ],
   "policy": [
     {
-      "title": "Establishment of the Oval Office National Monument",
-      "source": "Federal Register",
-      "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23113/establishment-of-the-oval-office-national-monument",
-      "published": "2026-11-12 00:00",
-      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
-      "insight": {}
+      "title": "China’s shipyards overtake South Korea’s in LNG carrier market as demand surges",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/economy/article/3374061/chinas-shipyards-overtake-south-koreas-lng-carrier-market-demand-surges",
+      "published": "2026-11-11 17:00",
+      "raw_summary": "China has overtaken South Korea in monthly orders for liquefied natural gas (LNG) carriers for the first time, challenging its rival’s long-standing dominance in a high-value shipbuilding segment wher",
+      "insight": {
+        "what": "中国船厂月度接单首次超过韩国：全球7艘大型LNG船订单，中国拿下5艘。",
+        "why": "市场原本认为LNG船是韩国最后一块高利润堡垒；份额转移意味着高附加值造船的定价权和订单簿开始向中国倾斜，韩国船企的盈利溢价需要下修。",
+        "chain": "中国拿下5艘LNG船订单 → 高附加值订单簿转移 → 韩国船企议价力下降 → 韩国船厂毛利承压 → 中国产能利用率上升 → 配套设备需求上行 → 中韩出口结构此消彼长",
+        "notes": [
+          "LNG 船是运输零下 163 度液化天然气的专用船，核心壁垒是货舱围护系统（薄膜型），能做的船厂很少。它单价通常是大型散货船的四到六倍，是造船业利润最厚的船型，也是韩国造船最后的护城河。",
+          "为什么韩国紧张：LNG 船是韩国三大船企（HD 现代、三星重工、韩华海洋）的高毛利支柱。这块份额被切走，等于最赚钱的产品线开始面对价格竞争，而不是继续享受技术溢价。",
+          "份额怎么算：`份额 = 本国接单量 ÷ 全球接单量`。单月数据波动很大，一次第一不等于格局反转，但市场定价看的是预期，预期先于报表改变，所以单月数据也足以引发估值调整。",
+          "造船是订单驱动、产能刚性的生意：船台和船坞数量短期改不了，接了单要两到三年才交船、才确认收入。所以今天的订单簿决定的是两三年后的利润，不是当期财报，这也是造船股总是提前反应的原因。",
+          "毛利怎样被挤压：`毛利 ≈ 合同价 − 建造成本`。合同价在签约时就锁死了，钢材价格和人民币汇率却一直在动，接单越多、锁定越久，成本端的风险敞口越大。这就是船厂愿意接高价船、不愿意接低价船的原因。",
+          "对宏观的意义：高附加值出口替代低附加值出口会改善贸易条件，但短期内对韩国的贸易收支和韩元偏负面；对中国来说，受益的不只是船厂，还有钢板、船用发动机、导航与自动化设备这一整条配套链。"
+        ]
+      },
+      "insight_en": {
+        "what": "Chinese yards beat South Korean rivals in monthly orders for the first time: of seven large LNG carrier orders worldwide, China won five.",
+        "why": "Markets had treated LNG carriers as Korea's last high-margin fortress. The share shift means pricing power and order books in high-value shipbuilding are tilting toward China, so Korea's earnings premium needs to be marked down.",
+        "chain": "China wins five LNG orders → high-value order book shifts → Korean pricing power erodes → Korean yard margins compress → Chinese utilisation rises → equipment demand picks up → export mix shifts between them",
+        "notes": [
+          "An LNG carrier hauls natural gas chilled to minus 163 degrees Celsius; the core barrier is the membrane containment system and very few yards can build it. A unit typically costs four to six times a large bulk carrier, which makes it the fattest-margin segment in shipbuilding and Korea's last moat.",
+          "Why Korea cares: LNG carriers are the high-margin pillar for its big three yards, HD Hyundai, Samsung Heavy and Hanwha Ocean. Losing share means the most profitable line starts competing on price instead of collecting a technology premium.",
+          "How share is computed: `share = national orders ÷ global orders`. Monthly data is noisy and one month at the top is not a regime change, but markets price expectations, and expectations move before the financials do.",
+          "Shipbuilding is order-driven with rigid capacity: slipways and docks cannot be added quickly, and an order placed today delivers and books revenue in two to three years. Today's order book sets profits two to three years out, not this quarter, which is why yard stocks react early.",
+          "How margin gets squeezed: `gross margin ≈ contract price − build cost`. The contract price is locked at signing while steel prices and the currency keep moving, so the more you book and the longer the lock, the larger the cost exposure. That is why yards chase high-priced orders and avoid cheap ones.",
+          "Macro read-through: higher-value exports replacing lower-value ones improves the terms of trade, but it is near-term negative for Korea's trade balance and the won. For China the beneficiaries are not only yards but the whole supply chain: steel plate, marine engines, navigation and automation gear."
+        ]
+      }
     },
     {
       "title": "Spain's first general strike in 14 years demands solutions to housing crisis",
@@ -34,7 +111,32 @@
       "url": "https://www.npr.org/2026/11/11/nx-s1-6037314/spain-general-strike",
       "published": "2026-11-11 17:54",
       "raw_summary": "Less than three weeks before a national election that could catapult the far right to power, Spain's workers are striking on Wednesday to demand that the government remedy the nation's housing crisis.",
-      "insight": {}
+      "insight": {
+        "what": "西班牙14年来首次全国大罢工，抗议房租与房价；距大选不到三周，极右翼可能上台。",
+        "why": "市场原本把西班牙当欧元区财政改善的优等生；罢工与大选不确定性把政治风险溢价重新塞回定价，Bonos相对Bund的利差和IBEX都要重估。",
+        "chain": "房租与房价涨幅超收入 → 住房成为选举核心议题 → 全国大罢工施压政府 → 财政补贴承诺加码 → 赤字预期上修 → 极右翼支持率上升 → 西债利差走阔",
+        "notes": [
+          "大罢工 general strike 是跨行业、全国性的停工，和单一企业的罢工不同，它直接压掉当期产出和消费。短期损失大致是 `损失 ≈ 日均产出 × 停工天数 × 参与率`，通常只有零点几个百分点，所以它本身不足以改变宏观预测。",
+          "住房危机为什么会变成主权信用问题：租金涨幅长期高于收入涨幅，政府只能用财政补贴、租金管制和公屋投资来回应，这些都要花钱，最终落到赤字和债务上。社会问题一旦需要财政兜底，就进入了债券市场的定价范围。",
+          "政治风险溢价可以这样拆：`y_西班牙 = y_Bund + 信用风险 + 流动性溢价 + 政治溢价`。同一张债券，政治越不确定，投资者要求的补偿越高，收益率里多出来的那部分就是政治溢价。",
+          "西班牙近两年是欧元区增长最快的国家之一，旅游和移民带动就业，利差一度收窄到接近法国。问题在于：之前收窄多少，怀疑出现时就要还回去多少，而且还得更快，因为拥挤的多头要一起平仓。",
+          "极右翼上台的市场含义不是道德判断，而是财政路径：如果它兑现减税和福利承诺，赤字扩大；如果它和欧盟预算规则起冲突，复苏基金的拨款节奏也会受影响。两条都推高利差，只是时点不同。",
+          "另一条链走通胀：罢工推高工资诉求，工资上行传导到服务价格，而服务通胀是核心通胀最黏的部分，会拖慢欧洲央行的降息节奏。这条链对汇率和短端利率的影响，比财政链来得更快。"
+        ]
+      },
+      "insight_en": {
+        "what": "Spain held its first general strike in 14 years over housing costs, less than three weeks before an election that could bring the far right to power.",
+        "why": "Markets had treated Spain as the euro area's fiscal improver. The strike and election uncertainty put a political risk premium back into pricing, forcing a repricing of Bonos spreads to Bund and of the IBEX.",
+        "chain": "Rents outrun incomes → housing becomes the election issue → general strike pressures government → subsidy pledges grow → deficit forecasts revised up → far-right support rises → Spanish spread widens",
+        "notes": [
+          "A general strike is a nationwide, cross-industry stoppage, unlike a strike at one company. It directly subtracts current output and consumption. The short-run loss is roughly `loss ≈ daily output × strike days × participation rate`, usually a few tenths of a percent, so on its own it does not change the macro forecast.",
+          "Why a housing crisis becomes a sovereign credit issue: when rents outrun incomes for long enough, the government can only respond with subsidies, rent controls and public housing investment, all of which cost money and land in the deficit and the debt. Once a social problem needs a fiscal backstop, bond markets start pricing it.",
+          "Political risk premium decomposes like this: `y_Spain = y_Bund + credit risk + liquidity premium + political premium`. For the same bond, the more political uncertainty, the more compensation investors demand, and the extra yield is the political premium.",
+          "Spain has been one of the euro area's fastest growers for two years, with tourism and immigration supporting employment, and its spread had narrowed close to France's. The catch: whatever was compressed has to be given back when doubt returns, and usually faster, because crowded longs unwind together.",
+          "The market meaning of a far-right government is not a moral judgement but a fiscal path: if it delivers tax cuts and welfare pledges the deficit widens; if it clashes with EU budget rules, disbursement from the recovery fund slows. Both widen the spread, just at different times.",
+          "The second channel runs through inflation: strikes raise wage demands, wages feed service prices, and services are the stickiest part of core inflation, which slows the ECB's easing. This channel hits FX and the front end faster than the fiscal one."
+        ]
+      }
     }
   ],
   "tech": [
@@ -44,18 +146,69 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-11/anthropic-aims-for-3-billion-to-3-5-billion-in-japan-offering",
       "published": "2026-11-11 15:56",
       "raw_summary": "Anthropic PBC is seeking to raise $3 billion to $3.5 billion from Japanese investors as part of its initial public offering, keeping the fundraising target in the country after the frontier artificial",
-      "insight": {}
+      "insight": {
+        "what": "Anthropic启动IPO路演，计划向日本投资者募资30亿至35亿美元。",
+        "why": "市场原本把AI资本开支当成巨头用自有现金流就能撑住的故事；前沿实验室转向公开市场融资，AI投入开始依赖外部资本供给，估值锚也从一级市场挪到二级市场。",
+        "chain": "前沿AI公司IPO路演 → 日本募资30-35亿美元 → AI融资转向公开市场 → 估值接受二级市场检验 → 日本资金买美股新股 → 日元与日股资金面承压 → 同业AI融资成本被锚定",
+        "notes": [
+          "IPO 是首次公开发行：公司把股份卖给公众投资者并在交易所挂牌。在此之前它靠私募融资，估值由少数风投谈出来；上市之后每天由二级市场报价，估值从此有了公开参照，也意味着每天都要接受检验。",
+          "募资额和估值不是一回事：`估值 = 募资额 ÷ 出让股份比例`。募 30 亿美元、出让 10%，隐含估值就是 300 亿美元。所以看 IPO 新闻第一件事是分清它说的是融资额还是公司估值，两者差一个数量级。",
+          "为什么在日本募资值得注意：日本家庭和机构有大量海外配置需求，长期低利率让本地资金愿意买美元资产换取收益。对 Anthropic 是融资渠道，对日本是资本外流，对全球是 AI 资产又多了一个资金池。",
+          "跨境认购对汇率的影响：日本投资者要把日元换成美元去申购，`日元供给增加、美元需求增加`，日元承压。如果规模足够大，会和日本当局的汇率干预形成对冲，这也是为什么大额海外发行会被汇率市场盯上。",
+          "AI 公司的融资结构正在变化：从经营现金流和巨头战略投资，转向股权与债券市场。资本成本从近乎零的战略资金，变成有明确回报要求的公开市场资金，同样一张 GPU 订单的净现值就变低了，因为折现率上升了。",
+          "锁定期 lockup 是上市后老股东不能卖股的期限，通常 180 天。到期时股票供给突然增加，如果基本面没有同步变好，抛压会集中释放。这是市场担心这轮 IPO 成为 AI 交易拐点的技术性原因，而不是情绪化猜测。"
+        ]
+      },
+      "insight_en": {
+        "what": "Anthropic has begun marketing its IPO and aims to raise $3bn to $3.5bn from Japanese investors.",
+        "why": "Markets had framed AI capex as something the giants could fund from their own cash flow. A frontier lab turning to public markets means AI spending now depends on external capital, and the valuation anchor moves from private marks to public quotes.",
+        "chain": "Frontier AI firm markets IPO → raises $3-3.5bn in Japan → AI funding shifts to public markets → valuation tested by public investors → Japanese money buys US new issues → yen and local liquidity pressured → peers' cost of capital anchored",
+        "notes": [
+          "An IPO is an initial public offering: the company sells shares to public investors and lists on an exchange. Before that it raised private capital, with valuation negotiated by a handful of VCs; after listing it is quoted daily, so the valuation gains a public reference and a daily exam.",
+          "Fundraising size and valuation are different things: `valuation = amount raised ÷ percentage of shares sold`. Raise $3bn for 10% of the company and the implied valuation is $30bn. The first thing to check in any IPO story is which of the two is being quoted, because they differ by an order of magnitude.",
+          "Why raising in Japan matters: Japanese households and institutions have large offshore allocation needs, and years of low local rates make them willing to buy dollar assets for yield. For Anthropic it is a funding channel, for Japan it is capital outflow, for the world it is one more pool of money chasing AI assets.",
+          "FX effect of cross-border subscription: Japanese investors must sell yen to buy dollars for the deal, so `yen supply rises and dollar demand rises`, and the yen weakens. At a large enough size this offsets official intervention, which is why big offshore deals get watched by FX desks.",
+          "The funding structure of AI is changing: from operating cash flow and strategic cheques from giants toward equity and debt markets. The cost of capital moves from near-zero strategic money to public money with explicit return demands, so the net present value of the same GPU order falls, because the discount rate rose.",
+          "A lockup is the period after listing during which existing shareholders cannot sell, typically 180 days. When it expires, share supply jumps, and if fundamentals have not improved in step, selling arrives all at once. That is the technical, not emotional, reason people worry this IPO cycle marks a turning point for the AI trade."
+        ]
+      }
     },
     {
-      "title": "卷起来了！11月11日，大模型厂商在天猫打5折",
-      "source": "量子位",
-      "url": "https://www.qbitai.com/2026/11/509085.html",
-      "published": "2026-11-11 14:18",
-      "raw_summary": "大模型厂商智谱、MiniMax、千问办公、阿里云、Qoder都在天猫打5折。",
-      "insight": {}
+      "title": "Malaysia to Start Electricity Market for Data Center Operators",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-11/malaysia-to-start-electricity-market-for-data-center-operators",
+      "published": "2026-11-11 12:18",
+      "raw_summary": "Malaysia intends to launch a separate wholesale electricity market for large power consumers including data centers, the New Straits Times reported.",
+      "insight": {
+        "what": "马来西亚计划为数据中心等大用电户单设批发电力市场，让电价由专门市场出清决定。",
+        "why": "市场原本把东南亚数据中心的瓶颈算在芯片、土地和审批上；电力变成可交易、可定价的稀缺资源，数据中心的边际成本曲线被重画，选址与资本开支节奏随之改变。",
+        "chain": "数据中心用电激增 → 电网容量成为瓶颈 → 马来西亚设电力市场 → 大用户电价市场出清 → 电价上行且更波动 → 数据中心运营成本上升 → 算力扩张节奏放缓",
+        "notes": [
+          "批发电力市场是把电当商品集中交易的地方，价格由供需出清决定。多数市场采用边际定价：由满足需求的最后一台机组报价决定全网电价，所以最贵的那台机组一进来，所有买家的结算价都被它抬高。",
+          "数据中心是电老虎，一座大型园区的用电量相当于几十万户家庭。行业用 PUE（电能利用效率）衡量浪费程度，`总用电 = IT设备用电 × PUE`，PUE 越接近 1 越省电；热带地区因为制冷负荷大，PUE 天然偏高。",
+          "为什么要单设市场：如果数据中心和居民共用一个电价，不是居民补贴大用户，就是大用户把峰值成本推给居民。单独划出一个市场，本质是把电网扩容的成本和电力的稀缺性显性化，让用得多的人付得多。",
+          "电费怎么进投资决策：`NPV = Σ (收入 − 电费)/(1+r)ᵗ − 初始投资`。电费是运营期每年都发生的现金流出，对 NPV 的杀伤力远大于一次性建造成本，所以电价一涨，原本算得过来的项目可能直接翻负。",
+          "这会改变算力扩张的节奏：GPU 到货不等于能开机，电力接入排队和变电站建设的周期通常以年计。电力成为硬约束之后，芯片订单和实际上线算力之间会出现更长的时滞，这也是「买了卡却没有电」的现实版本。",
+          "马来西亚的位置：柔佛州紧邻新加坡，承接了大量从新加坡外溢的数据中心需求，因为新加坡的土地和电力都紧张。这次单设市场，等于官方承认电力已经是当地招商引资的核心筹码，而不是配套设施。",
+          "对资产价格的二阶影响：电力成本上升会推高数据中心的资本化率，`估值 = 净营运收入 ÷ 资本化率`。分母变大估值就下降，这是数据中心 REIT 与基建基金最直接的风险敞口，比租金波动来得更快。"
+        ]
+      },
+      "insight_en": {
+        "what": "Malaysia plans a separate wholesale electricity market for large users such as data centres, letting a dedicated market clear the price.",
+        "why": "Markets had counted Southeast Asian data-centre bottlenecks in chips, land and permits. Power is becoming a tradable, priced scarce input, which redraws the marginal cost curve and changes siting and capex timing.",
+        "chain": "Data-centre demand surges → grid capacity becomes the bottleneck → Malaysia creates a power market → large-user tariffs clear by market → prices rise and get volatile → operating costs climb → compute build-out slows",
+        "notes": [
+          "A wholesale power market is where electricity is traded as a commodity and the price clears supply against demand. Most use marginal pricing: the last plant needed to meet demand sets the price for everyone, so when the expensive unit switches on, every buyer's settlement price rises with it.",
+          "Data centres are power hogs: one large campus can draw as much as hundreds of thousands of homes. The industry measures waste with PUE, power usage effectiveness, `total power = IT load × PUE`. The closer PUE is to 1 the more efficient; tropical sites run higher because cooling load is heavy.",
+          "Why a separate market: if data centres and households share one tariff, either households subsidise the large user or the large user pushes peak costs onto households. Carving out a dedicated market makes grid expansion costs and power scarcity explicit, so heavy users pay for what they take.",
+          "How power costs enter the investment case: `NPV = Σ (revenue − power cost)/(1+r)ᵗ − capex`. Power is a cash outflow every year of operation, so it damages NPV far more than a one-off build cost; when tariffs rise, projects that pencilled out can flip negative.",
+          "This changes the pace of compute expansion: a delivered GPU is not a running GPU, and grid connection queues plus substation construction are measured in years. Once power is a hard constraint, the lag between chip orders and live compute lengthens, which is the real-world version of buying cards with no power to run them.",
+          "Malaysia's position: Johor sits next to Singapore and absorbs much of the data-centre demand spilling out of it, because Singapore is short of both land and power. Creating a dedicated market is an official admission that power is now the core selling point for attracting investment, not a utility afterthought.",
+          "Second-order effect on asset prices: higher power costs lift data-centre capitalisation rates, and `value = net operating income ÷ cap rate`. A bigger denominator means a lower value, which is the most direct exposure for data-centre REITs and infrastructure funds, and it moves faster than rents do."
+        ]
+      }
     }
   ],
-  "fallback_reason": "PermissionDeniedError: Error code: 403 - {'error': {'message': 'user quota is not enough (request id: 202611111834034917339109hl6zYqBLX33z)', 'type': 'new_api_error'}, 'type': 'error'}",
   "source_stats": {
     "fed": {
       "count": 4,
@@ -74,7 +227,7 @@
       "tier": "optional"
     },
     "cnbc_econ": {
-      "count": 14,
+      "count": 12,
       "tier": "stable"
     },
     "cnbc_fin": {
@@ -114,7 +267,7 @@
       "tier": "stable"
     },
     "ustr": {
-      "count": 5,
+      "count": 4,
       "tier": "stable"
     },
     "bbc_world": {
