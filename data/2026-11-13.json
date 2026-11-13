@@ -1,0 +1,238 @@
+{
+  "date": "2026-11-13",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "The Fed expected rate cuts this year. Now it’s bracing for another inflation fight",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html",
+      "published": "2026-11-13 18:00",
+      "raw_summary": "The most recent inflation reading for October had beaten expectations, coming in at 0.4% for the month.",
+      "insight": {
+        "what": "美联储原本预期今年继续降息，但10月CPI环比涨0.4%超预期后，官员转而准备重启加息。",
+        "why": "市场定价的是「降息周期延续」；现在要把加息概率重新塞回曲线，短端利率、美元和长久期资产的折现率同时被重定价。",
+        "chain": "通胀连续超预期 → 降息预期被打掉 → 短端利率 Rf 上移 → 旧债被抛售、YTM 抬升 → 全市场定价锚抬高 → 长久期资产折现率上行 → 成长股与长债估值下修",
+        "notes": [
+          "CPI 是消费者物价指数，环比看单月涨幅，同比看过去十二个月累计。月度 0.4% 若持续一年，年化约 5%，是 2% 目标的两倍半 —— 所以单月超预期也足以改写整条利率路径。",
+          "央行的「反应函数」：政策不是看通胀有多高，而是看通胀相对目标偏离多少、以及经济还能不能承受收紧。这次的关键是「通胀没降下来 + 经济没崩」，两头都指向不能降息。",
+          "债券价格与收益率反向，因为票息发行后固定：`P = C/(1+y)¹ + C/(1+y)² + … + (C+Face)/(1+y)ⁿ`。市场抛售让 P 下跌，分子不变就只能分母 y 变大，所以 YTM 是被动抬升的。久期 duration 越长，同样的 y 变动带来的价格跌幅越大。",
+          "股票用同一套折现逻辑：`PV = CF₁/(1+r)¹ + CF₂/(1+r)² + …`。成长股现金流集中在远期，折现年数多，r 上抬一档对现值的削减远大于现金流靠前的价值股 —— 这就是「长久期资产」的意思。",
+          "曲线的形状由预期决定：短端锚在政策利率预期，长端锚在增长预期加期限溢价 term premium。加息预期升温时短端上得比长端快，曲线走平甚至倒挂，`斜率 = y₁₀ − y₂` 转负，银行借短贷长的息差被压缩，信贷供给收紧。",
+          "汇率走的是利差：`i_美元 − i_外币` 扩大，套息交易 carry trade 买美元，美元升值；反过来新兴市场本币贬值，其美元债负担 `本币金额 = 美元债 × 汇率` 同步上升，形成资本外流压力。",
+          "面试要点：「预期加息」和「已经加息」是两件事，但价格只对预期定价。这次没有一次真实加息，资产已经先跌了，因为折现率里装的是预期而不是现实。"
+        ]
+      }
+    },
+    {
+      "title": "欧元区经济显现韧性 为欧洲央行加息留出空间",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3199749",
+      "published": "2026-11-13 18:21",
+      "raw_summary": "欧元区经济展现出面对伊朗冲突等不利因素时的韧性，为欧洲央行进一步加息以遏制通胀留出了空间。欧盟统计局周五公布的数据显示，拥有21个成员国的欧元区第三季度国内生产总值增长0.4%，与10月公布的初步估算一致。当时分析师仅预计增速为这一水平的一半。自中东冲突推动能源价格大幅上涨以来，欧洲央行已两次提高借贷成本。随着通胀率目前达到2%目标的两倍，而地区经济又较好地承受住了加息影响，官员正暗示12月将再次",
+      "insight": {
+        "what": "欧元区三季度GDP环比增0.4%，是初值预期的两倍；通胀仍为2%目标的两倍，官员暗示12月再加息。",
+        "why": "市场原本定价「欧洲央行加息周期已结束、明年转降息」；增长有韧性加通胀翻倍推翻了这个前提，欧元区利率曲线要整体上移。",
+        "chain": "增长超预期、扛得住加息 → 12月加息预期升温 → 德债收益率上行 → 外围主权利差走阔 → 欧元区融资成本抬升 → 高负债国财政承压 → 欧元走强、出口股承压",
+        "notes": [
+          "GDP 增速看环比更贴近政策判断：0.4% 的季度环比折年约 1.6%，且是原先预期的两倍。数据修正的意义在于改变「产出缺口还有多大」的判断 —— 缺口小，通胀就更像是需求端的问题，必须靠加息解决。",
+          "实际利率是判断政策松紧的尺子：`r_real = i − π`。名义利率 4%、通胀 4%，实际利率接近零，对4%的通胀毫无抑制作用，所以官员说「还有空间」并不是鹰派表态，而是在陈述政策仍不够紧。",
+          "主权债定价多一层利差：`y_意大利 = y_德国 + 主权利差 spread`。德国国债是欧元区的无风险基准，外围国家的收益率要在它上面加一块风险补偿；利差走阔代表市场要求更高的违约与流动性补偿。",
+          "价格公式对长久期更残酷：`P = C/(1+y)¹ + … + (C+Face)/(1+y)ⁿ`。意大利、法国这类高负债国的存量大、久期长，同样的收益率上行，它们的债券价格跌得比德国债更狠，再融资成本上升更快。",
+          "汇率的利差逻辑：`i_EUR − i_USD` 收窄，持有欧元的相对回报改善，欧元走强；但欧元升值会压缩出口企业折算回本币的利润，欧洲股指里出口权重高，所以「加息利好欧元、利空欧股」可以同时成立。",
+          "这轮通胀的源头是能源：中东冲突推高能源价格，属于供给冲击 supply shock。加息压不住供给，只能压需求，所以政策面临滞胀 stagflation 的两难 —— 这也是为什么市场对每一次加息暗示都格外敏感。",
+          "7 环之外还有一条财政支线：外围利差走阔会推高债务/GDP 的利息负担，让原本就被列入财政脆弱组的成员国更难做财政整固，主权风险与银行持有本国债的「 doom loop 」重新被讨论。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Presidential Determination Pursuant to Section 1245(d)(4)(B) and (C) of the National Defense Authorization Act for Fiscal Year 2012",
+      "source": "Federal Register",
+      "url": "https://www.federalregister.gov/documents/2026/11/13/2026-23233/presidential-determination-pursuant-to-section-1245d4b-and-c-of-the-national-defense-authorization",
+      "published": "2026-11-13 00:00",
+      "raw_summary": "美国总统行政令 / 公告原文（Federal Register 一手文件）",
+      "insight": {
+        "what": "白宫公布10月28日签署的总统认定：确认「除伊朗外原油供应充足」，为继续制裁伊朗石油买家提供法律基础。",
+        "why": "市场原本期待中东冲突下美国会为压油价放松制裁；这份认定说明供给约束会保留，原油的地缘风险溢价不能撤，通胀与利率的尾部风险重新变贵。",
+        "chain": "认定非伊朗原油供应充足 → 对伊制裁的法律前提续期 → 伊朗出口受限 → 全球原油供给收紧 → 布伦特价格获支撑 → 欧美通胀黏性上升 → 降息预期继续降温",
+        "notes": [
+          "这份文件的法源是 2012 财年国防授权法第 1245(d)(4)(B)(C) 条：总统须定期判断「除伊朗外的原油供应是否充足到足以让各国大幅减少从伊朗进口」。只有认定「充足」，才有资格对仍在买伊朗石油的外国金融机构动手。所以它是一张许可证，不是一次新制裁。",
+          "次级制裁 secondary sanctions 的作用点不是伊朗，而是第三国银行：切断其美元清算与代理行 correspondent banking 通道，等于把它踢出美元体系。对银行来说，失去美元清算的代价远大于一笔伊朗业务的手续费，所以威慑力来自通道而不是罚金。",
+          "油价进通胀的路径：能源是 CPI 里的直接分项，油价涨先推 headline CPI，再通过运费、化工原料渗进 core。名义利率可以拆成 `y = r_real + π_expected + term premium`，通胀预期那一项一动，长端利率就跟着动。",
+          "供给冲击下央行的两难：加息不能增加一桶油，只会压需求。所以央行通常选择「看穿」look through 一次性的油价冲击；但如果油价高位维持、通胀预期开始脱锚，就必须用衰退去换物价稳定。这个「换不换」的判断，就是长端利率的尾部风险。",
+          "原油的期限结构会告诉你市场怎么想：近月比远月贵是 backwardation，说明现货紧张；远月更贵是 contango，说明市场认为紧张是暂时的。持有成本模型 `F ≈ S × e^{(r + storage − convenience yield)×T}`，地缘溢价基本都堆在近月合约上。",
+          "资产映射：上游油气与油服受益于资本开支回升，航空、航运、化工在成本端受损；对石油进口国（印度、土耳其）来说，经常账户与财政补贴同时恶化，本币承压 —— 这是油价冲击最常见的跨境传导。",
+          "面试提醒：这条新闻的价值在于它是一手文件（Federal Register），比二手报道可靠。判断方向要看「认定」这个动作本身保留了哪条政策工具，而不是标题里的措辞。"
+        ]
+      }
+    },
+    {
+      "title": "Why midterms are set to push Middle East powers to relook US ties",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/politics/article/3374340/why-midterms-are-set-push-middle-east-powers-relook-us-ties",
+      "published": "2026-11-13 17:00",
+      "raw_summary": "Iran’s Middle East rivals are set to accelerate their push for greater foreign and defence policy autonomy from the United States following the Democrats’ sweeping victory in the midterm elections. Ke",
+      "insight": {
+        "what": "民主党在中期选举大胜后，沙特、阿联酋、土耳其等美国区域伙伴加快寻求外交与国防自主，降低对美依赖。",
+        "why": "市场默认美国的安全承诺与美元体系稳定；盟友分散化意味着军购流向与能源结算的币种结构会缓慢位移，美元资产的边际需求要重新评估。",
+        "chain": "民主党中期选举大胜 → 美国中东政策预期转向 → 盟友怀疑安全承诺 → 区域国家寻求防务自主 → 军购转向土耳其、韩国 → 能源结算尝试非美元 → 美元储备需求边际走弱",
+        "notes": [
+          "中期选举 midterms 不换总统，但决定国会控制权，也就决定了军援、制裁授权这些立法的阻力大小。盟友不看你说了什么，看你能不能把承诺变成预算 —— 这就是「政策连续性折价」。",
+          "美元体系靠两根柱子：贸易结算（石油以美元计价，即 petrodollar）和储备资产（各国央行持有美债）。盟友追求自主，等于同时从这两根柱子上抽走一点边际需求。",
+          "关键在「边际」二字：美元在全球外储中占比约六成，短期不会崩塌，但长端利率是由边际买家定的。外国官方买盘少一点，`需求曲线左移 → 价格下跌 → 收益率上行`，这条链路不需要存量变化就能生效。",
+          "期限溢价 term premium 是这里最脆弱的一环：海外央行是长债的稳定买家，它们退场后，长端要多给一块补偿才有人接。`y₁₀ = 平均短端预期 + 期限溢价`，第二项一上，房贷利率和企业融资成本全线上移。",
+          "防务订单的资本市场含义：军购从「买美国货」转向土耳其、韩国、中国装备，对应的是国防承包商的订单簿与产能周期。安全溢价被重新定价时，受益方往往不是被打仗的国家，而是能交货的供应商。",
+          "结算货币多元化的路径很长：先做双边本币互换 swap line，再做大宗商品本币计价，最后才是储备资产换仓。每一层都需要流动性和汇率对冲工具配套，缺一环就退不回去。",
+          "面试要点：地缘政治影响资产价格，多数时候动的不是分子（现金流），而是分母里的风险溢价。所以先问「它改变了哪个风险补偿」，再问「这个补偿体现在哪个市场」。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "Alice Huang Firm Procured Banned Nvidia Chips in China",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-11-13/alice-huang-firm-procured-banned-nvidia-chips-in-china-video",
+      "published": "2026-11-13 18:56",
+      "raw_summary": "A Chinese company founded by Alice Huang, the woman at the center of a controversy dogging Nvidia Corp., procured smuggled AI chips that were installed at a Shanghai data center with links to Megaspee",
+      "insight": {
+        "what": "彭博查阅文件显示，黄爱丽丝创办的中国公司采购了走私的英伟达AI芯片，装进上海一处与 Megaspeed 关联的数据中心。",
+        "why": "市场假设出口管制挡住了高端算力、英伟达中国收入已归零；证据说明漏洞是真的，管制只会更严，中国收入预期与合规成本要一起重估。",
+        "chain": "走私芯片证据曝光 → 美方执法与管制收紧 → 英伟达合规成本上升 → 对华销售渠道被封堵 → 中国算力供给受限 → 国产替代订单增加 → 国产算力链估值重估",
+        "notes": [
+          "出口管制 export controls 不是「禁卖」，而是许可证制加性能阈值：算力密度、互连带宽超过某条线就要许可。绕过办法无非第三国转口、拆机重组、走私，所以执法强度才是真正的变量。",
+          "为什么「走私」能打击估值：收入不是被法律确定地归零，而是被执法概率决定。不可定价的变量只能塞进风险溢价 —— 折现率 r 上行，估值下修，这和盈利下修是两条独立的打击路径。",
+          "估值有两种写法：`目标价 = EPS × 目标 P/E`，或 DCF 的 `PV = ∑ CFₜ/(1+r)ᵗ`。管制收紧同时压分子（中国收入）和抬分母（政策风险溢价），所以市场反应往往比收入占比本身更剧烈。",
+          "TAM 是这里的关键词：总可寻址市场 total addressable market。中国占全球 AI 算力需求的两成上下，任何「渠道仍通」的证据都会让卖方把这个市场重新加回模型，反之亦然。",
+          "国产替代不是线性受益：算力供给受限会外溢订单给国产 GPU、ASIC，但卡点在先进制程代工与 HBM 高带宽内存，产能上不去，订单就只能停在纸面 —— 这是「订单 ≠ 收入」的典型场景。",
+          "合规风险的载体是实体清单 entity list 和外国直接产品规则 FDPR：只要产品含美国技术或设备，即使在第三国生产也受管辖。所以「在新加坡装、运到上海」并不能切断管辖链。",
+          "面试要点：看到这类新闻别只问「英伟达跌多少」，要问它改变了哪条管制路径的发生概率，以及这个概率怎么进折现率 —— 这才叫把新闻翻译成价格。"
+        ]
+      }
+    },
+    {
+      "title": "Goldman Sees S&P 500 Rising 14% on Cheap Hyperscaler Valuations",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-13/goldman-sees-s-p-500-rising-14-on-cheap-hyperscaler-valuations",
+      "published": "2026-11-13 18:14",
+      "raw_summary": "Goldman Sachs Group Inc. strategists are bullish on US stocks for 2027, predicting the S&amp;P 500 will advance 14% over the coming year after a selloff in the biggest technology companies left their ",
+      "insight": {
+        "what": "高盛策略团队看多美股2027年，预计标普500未来一年上涨14%，理由是大科技股抛售后估值已处历史低位。",
+        "why": "市场此前在给AI资本开支的回报率打折；这份观点等于主张「悲观已充分定价」，若盈利不再下修，估值修复就是纯价格弹性。",
+        "chain": "科技股大幅回调 → 估值倍数压到低位 → 卖方上调目标点位 → 资金回流大盘科技 → 权重股拉动指数 → 风险偏好回升 → 信用利差收窄",
+        "notes": [
+          "卖方目标位的构造很朴素：`目标点位 = EPS × 目标 P/E`。所以它不是预测盈利，而是给出一个愿意付的倍数 —— 三个假设（EPS、P/E、时间）任一变动，结论就变。",
+          "P/E 的陷阱在分母：盈利处在周期高点时 P/E 显得便宜，因为分母被高估了。所以要交叉看周期调整市盈率 CAPE、`EV/EBITDA`，以及自由现金流收益率 `FCF yield = FCF/市值`。",
+          "把 P/E 还原成折现率就清楚了：戈登增长下 `P/E ≈ 1/(r − g)`。r 下行或 g 上行都抬倍数。说「估值便宜」，等价于说市场把 r 抬得太高、或把 g 砍得太狠 —— 接下来要判断这两件事哪个会先修正。",
+          "hyperscaler 指超大规模云厂商（微软、亚马逊、谷歌、Meta）。它们的资本开支是整条 AI 产业链的需求源头，所以它们的估值折价，本质是市场不信 AI 投入的回报能超过资本成本，即怀疑 `ROIC < WACC`。",
+          "「便宜」不等于「会涨」：折价可能长期不收敛，这叫价值陷阱 value trap。收敛需要催化剂 —— 盈利预期停止下修、资本开支指引收敛、或利率下行。一份卖方报告本身不是催化剂，但会改变边际资金的配置。",
+          "指数层面的风险是集中度：`R_指数 = ∑ wᵢ × Rᵢ`，市值加权下前十大权重占三成以上，「指数涨14%」很可能只是五六只股票的事。买指数和买这几只股票，风险敞口并不一样。",
+          "面试要点：听到目标位先追问三个数 —— 用哪个 EPS、哪个 P/E、隐含的 r 和 g 是多少。答不上来，这个目标位就只是一个立场，不是估值。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
