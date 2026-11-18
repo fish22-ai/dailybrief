@@ -1,0 +1,220 @@
+{
+  "date": "2026-11-18",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "US dollar rally erases ‘liberation day’ losses as rate expectations rise",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/b8215e9c-bed2-49e8-a36f-6d7aca599bba?syn-25a6b1a6=1",
+      "published": "2026-11-17 21:07",
+      "raw_summary": "US currency has increased to levels last seen in April 2025, helped by ‘perfect storm’ of dollar-positive factors",
+      "insight": {
+        "what": "美元指数收复「解放日」以来全部跌幅，回到 2025 年 4 月水平，推手是加息预期升温与多重利好叠加。",
+        "why": "市场此前定价「美元长期走弱」；利差重新走阔说明美元的高息优势回来了，全球资金配置方向要改，新兴市场首当其冲。",
+        "chain": "加息预期升温 → 美债收益率上行 → 美元利差优势扩大 → 套息资金回流美元 → 美元指数反弹 → 新兴市场货币承压 → 被迫加息稳汇率",
+        "notes": [
+          "「解放日」（liberation day）指美国宣布大规模关税那天，当时美元因政策不确定性被抛售。现在跌幅全部收复，说明市场把关税冲击重新解读成「通胀 → 加息 → 美元走强」，而不是「衰退 → 降息 → 美元走弱」。同一件事的定价方向反了，这就是汇率最典型的叙事切换。",
+          "汇率的中期驱动是利差：`美元指数 ≈ f(美国利率 − 主要贸易伙伴利率, 风险偏好)`。美债 2 年期收益率每上行 50bp，美元指数通常跟涨 2%~3%。所以看美元别只盯新闻，先看 2 年期收益率和实际利率。",
+          "实际利率比名义利率更重要：`实际利率 r ≈ 名义利率 i − 通胀预期 πᵉ`。如果通胀预期涨得比名义利率快，实际利率反而下降，美元会跌——这就是为什么「加息预期升温」不一定等于美元强，要看是名义还是实际在动。",
+          "美元走强有自反性：进口价格下降 → 通胀压力缓解 → 联储不必那么鹰 → 美元回落。这条负反馈是美元的自动稳定器，也是单边行情走不远的原因。对企业则是海外收入折算损失，标普 500 的海外收入占比约三成。"
+        ]
+      }
+    },
+    {
+      "title": "印尼央行意外加息25个基点以支撑印尼盾",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3201766",
+      "published": "2026-11-18 15:18",
+      "raw_summary": "随着印尼盾兑美元持续走弱，印尼央行出人意料地重启加息，以吸引资金流入并支撑本币，货币政策立场转向收紧。印尼央行周三将基准利率上调25个基点至6%，为6月以来首次加息，市场预计央行会将利率维持在5.75%不变。此举表明，政策制定者认为，依靠外汇市场干预和套期保值激励措施来捍卫印尼盾的空间有所缩小。印尼盾是今年迄今亚洲表现最差的货币。",
+      "insight": {
+        "what": "印尼央行意外加息 25bp 至 6%，为 6 月以来首次，市场原本预期按兵不动；印尼盾是今年亚洲最差货币。",
+        "why": "市场原以为印尼会靠外汇干预和套保激励守住汇率、不动利率；被迫加息等于承认干预空间已不够，政策重心从保增长转向保汇率。",
+        "chain": "印尼盾持续贬值 → 外储干预消耗过快 → 干预空间收窄 → 被迫加息25bp → 印尼利差走阔 → 套息资金回流 → 印尼盾止跌 → 国内信贷成本上升",
+        "notes": [
+          "央行捍卫汇率有三件工具：加息（提高本币吸引力）、外汇干预（卖美元买本币）、行政手段（强制结汇、套保要求）。正常顺序是先烧外储、最后才动利率，因为加息伤增长。所以「意外加息」本身就是信号：前两件工具已经不够用了。",
+          "三元悖论（impossible trinity）：资本自由流动、汇率稳定、货币政策独立，三者只能取其二。印尼要维持资本项目开放加汇率稳定，就只能放弃货币政策独立性——这是它在美国利率上行周期里被迫跟加的根源。",
+          "加息稳汇率靠的是利差：`套息收益 ≈ 本币利率 − 外币利率 − 预期贬值率`。基准利率从 5.75% 提到 6%，只要市场相信贬值会放缓，套息收益就由负转正，carry trade 资金回流，印尼盾止跌。但若市场不信（预期贬值率涨得更快），加息反而被读成「央行慌了」，汇率继续跌。",
+          "代价是内需：信贷利率随基准上行，消费与投资被压制，经常账户可能改善但增长走弱。这是「汇率保卫战」的典型取舍——短期稳汇率、中期付增长。对股市是双杀：折现率上升叠加盈利预期下修。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "APEC summit: What Trump, Xi and Putin want",
+      "source": "DW",
+      "url": "https://www.dw.com/en/apec-summit-what-trump-xi-and-putin-want/a-79970462?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-11-18 13:39",
+      "raw_summary": "Trump, Xi and Putin will hold their first trilateral meeting on the sidelines of APEC. With different priorities on trade, Ukraine, Iran and arms control, what does each leader hope to gain?",
+      "insight": {
+        "what": "APEC 深圳峰会期间，特朗普、习近平、普京将举行首次三方会晤，议题覆盖贸易、乌克兰、伊朗与军控。",
+        "why": "三方同时上桌意味着市场面对的是一组联动交易（贸易让步换地缘配合），而不是单线博弈；风险溢价该压还是该抬，取决于能否形成可验证的互惠安排。",
+        "chain": "三方首次会晤 → 议题捆绑交易 → 关税预期重新定价 → 供应链重构放缓 → 亚洲出口股反弹 → 油价挤出地缘溢价 → 避险资产需求下降",
+        "notes": [
+          "为什么「三方」比「双边」重要：双边只能交换两个议题，三方可以把贸易、能源、军控打包——博弈论里叫议题联结（issue linkage），能扩大共同利益区间，把零和谈判变成正和。市场对「达成协议」的概率评估因此上升，这个概率变化会在当天就反映到风险资产上。",
+          "关税本质是一种税，同时压缩两国福利：`进口价格 = 到岸价 × (1 + 关税率)`。关税下降 → 进口成本下降 → 通胀压力缓解 → 降息空间打开。所以贸易缓和的第一反应往往不是出口股，而是利率下行、债券上涨。",
+          "地缘溢价体现在油价里：伊朗与俄乌议题若出现缓和信号，原油的地缘风险溢价（geopolitical premium）被挤出，油价下行 → headline 通胀回落 → 实际利率与美元走弱。这条链条比股市反应快，当天就能在原油期货的期限结构上看到——近月贴水收窄就是信号。",
+          "反过来看风险：会晤无果，市场要重新定价「关税加码加军事对抗」的组合，避险资金涌向美元、美债、黄金，新兴市场股债汇三杀。这类事件的定价是二元式的，仓位管理比方向判断更重要。"
+        ]
+      }
+    },
+    {
+      "title": "Thailand’s businesses fret over Trump’s zero tariff on US goods, farmers comment",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/week-asia/economics/article/3374865/thailands-businesses-fret-over-trumps-zero-tariff-us-goods-farmers-comment",
+      "published": "2026-11-18 15:11",
+      "raw_summary": "Thai farmers and industries have been left pondering what the preliminary trade framework signed late on Tuesday by US President Donald Trump and Thai Prime Minister Anutin Charnvirakul means for them",
+      "insight": {
+        "what": "特朗普与泰国总理 Anutin 签署初步贸易框架：美国商品零关税进入泰国，泰国业界担忧农产品准入与标准。",
+        "why": "市场原本假设东盟会在中美之间保持等距；这份框架说明美国正用双边协议逐个拆解东盟关税壁垒，区域贸易规则被改写。",
+        "chain": "双边框架签署 → 美国商品零关税 → 泰国农业受冲击 → 东盟内部规则分化 → 供应链选址重估 → 对美出口依赖上升 → 泰铢与外资流向变化",
+        "notes": [
+          "「初步框架」（preliminary framework）通常还不是正式条约、没有法律约束力，但它是政治承诺，会立刻改变企业决策——因为工厂选址看的是未来五到十年的关税环境，不是当下的税率。所以框架一签，资本开支的方向就开始动，不等立法。",
+          "零关税是单向让利，本质用市场准入换安全与政治配合。经济上是贸易条件（terms of trade）恶化：`贸易条件 = 出口价格 / 进口价格`。进口变便宜短期利好消费者，但本国农业与制造业被低价进口品挤压，长期可能走向去工业化。",
+          "对东盟的连带影响是规则碎片化：统一的东盟自贸区规则被一个个双边协议切成不同税率。企业为享受低关税，会把产能搬到「规则最有利」的国家——这就是原产地规则套利（rules of origin arbitrage），也是近年供应链重构的真实驱动力。",
+          "汇率渠道有两个相反方向：外资涌入设厂 → 直接投资（FDI）流入 → 泰铢需求上升；但零关税进口削弱出口竞争力 → 经常账户恶化 → 泰铢承压。净效果取决于资本账户与经常账户谁的力量大，这是新兴市场汇率分析的基本框架。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "US Banks Seek Chip-Curbs Clause on Loan to Bain Data Center Firm",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-18/us-banks-seek-chip-curbs-clause-on-loan-to-bain-data-center-firm",
+      "published": "2026-11-18 16:02",
+      "raw_summary": "US banks asked for extra protection to expand financing for a data center operator that previously sold computing power to Megaspeed International Pte, a neocloud under US investigation for allegedly ",
+      "insight": {
+        "what": "美国银行给贝恩旗下数据中心运营商放贷时要求加入「芯片管制条款」，因该公司此前向正被调查的 Megaspeed 出售算力。",
+        "why": "出口管制原本被定价为「合规风险」，现在它变成了贷款合同里的条款——银行把政策风险转给借款人，数据中心的融资成本与杠杆能力要重估。",
+        "chain": "芯片走私被调查 → 银行要求管制条款 → 政策性违约风险显性化 → 数据中心融资成本上升 → 杠杆收购回报下降 → 算力扩张节奏放缓 → GPU租赁价格上行",
+        "notes": [
+          "真正的变化是风险被「合同化」：出口管制原本是行政风险，最坏结果是罚款；一旦写进贷款合同（covenant），违反就构成违约事件（event of default），银行可以直接抽贷。风险从「不确定的罚款」变成「确定的断贷」，对借款人的杀伤力大得多。",
+          "传导到融资成本：贷款人要求更高的风险补偿，`贷款利率 = 无风险利率 Rf + 信用利差 credit spread`。政策风险进 spread，spread 走阔 100bp，一笔 10 亿美元、7 年期的贷款，利息成本就多出约 7000 万美元——这直接吃掉杠杆收购（LBO）的回报。",
+          "数据中心为什么特别敏感：这类资产靠债务融资、靠长期 GPU 租赁合同覆盖利息，杠杆率通常很高。融资条件一收紧，扩张计划就要推迟，而推迟又会影响它跟云厂商签的算力供应承诺，形成连锁违约风险。",
+          "对产业链的反向影响：算力扩张放缓 → 新增供给的时点后移 → 短期 GPU 现货租赁价格上涨，因为需求还在、供给没跟上。所以「管制收紧」对芯片股是利空，对已建成产能的运营商反而可能是利好。"
+        ]
+      }
+    },
+    {
+      "title": "黄仁勋不再沉默：我愿重掌英伟达！董事会：不考虑",
+      "source": "量子位",
+      "url": "https://www.qbitai.com/2026/11/510726.html",
+      "published": "2026-11-18 09:03",
+      "raw_summary": "英伟达公布了老黄离职后的首份财报",
+      "insight": {
+        "what": "黄仁勋公开表示愿意重新执掌英伟达，董事会回应「不考虑」；同期公司发布其离任后的首份财报。",
+        "why": "英伟达的估值里含着一块「创始人溢价」；回归诉求被董事会否决，等于把这块溢价正式剔除，同时把治理风险摆到台面上。",
+        "chain": "创始人公开表态回归 → 董事会明确拒绝 → 治理折价上升 → 关键人风险重定价 → 机构投资者减持 → 估值倍数下修 → 业绩超预期被抵消",
+        "notes": [
+          "创始人溢价（founder premium）是真实的定价项：市场愿意为战略连续性、长期主义、大股东利益一致付更高倍数。它不出现在任何财务报表里，但体现在市盈率相对同行的溢价上。创始人被排除在管理层之外，这块溢价就失去了依据。",
+          "关键人风险（key-person risk）是双向的：命运过度绑定一个人，既是优势也是风险。投资人用折价来对冲这种不确定性——`合理估值 = 基准估值 × (1 − 关键人折价率)`。治理冲突公开化会让折价率上升，而且很难量化，于是表现为波动率上升和机构减仓。",
+          "财报超预期但股价不涨，说明市场在给非基本面因素定价：财报信息已进入价格，新增信息是治理冲突，价格反应的正是后者。所以读财报不能只看每股收益（EPS），还要看预期差和市场原本假设了什么。",
+          "代理问题（principal-agent problem）：股东是委托人、管理层是代理人，目标不一致就产生代理成本。创始人回归的诉求与董事会（代表股东）的判断冲突，就演变成控制权争夺——这类事件通常伴随高管流失与战略摇摆，最终反映在研发效率和产品节奏上。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 4,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 18,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
