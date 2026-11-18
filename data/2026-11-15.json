@@ -1,220 +1,220 @@
 {
-  "date": "2026-11-15",
-  "mode": "llm",
-  "markets": [
-    {
-      "title": "英国央行首席经济学家Pill表示，需要进一步加息；致力于逐步将通胀率拉回2%的目标水平；加息等待的时间过长。（英国《金融时报》）",
-      "source": "华尔街见闻",
-      "url": "https://wallstreetcn.com/livenews/3200104",
-      "published": "2026-11-14 13:03",
-      "raw_summary": "",
-      "insight": {
-        "what": "英国央行首席经济学家 Pill 放鹰：通胀回到 2% 太慢、需要进一步加息，且等待的时间已经过久。",
-        "why": "市场此前把英国央行归入「即将降息」阵营；Pill 出面说可能加息，直接打掉这一预期，英国国债 gilt 收益率与英镑要重新定价。",
-        "chain": "Pill 放鹰 → 降息预期回撤 → gilt 收益率上行 → 英镑兑美元走强 → 进口通胀降温 → 加息压力缓解",
-        "notes": [
-          "gilts（金边债）是英国国债的别称。短端 gilt 收益率主要跟随市场对 BoE 政策利率路径的预期：`r_2y ≈ 未来两年政策利率预期均值 + 期限溢价`。首席经济学家公开说「可能加息」，等于把这条预期路径整体上移，短端首当其冲。",
-          "「等待时间过长」的潜台词是通胀黏性。英国通胀里进口价格权重很大：英镑贬值 → 进口商品以英镑计价更贵 → 通胀再抬头。所以汇率和利率在这里是同一枚硬币的两面，这也是为什么加息预期反而先通过汇率渠道起作用。",
-          "对资产影响排序：短端 gilt 最敏感（直接贴政策利率）；长端还叠加期限溢价 term premium 和财政发债供给担忧。英镑则受益于利差走阔，参考利率平价：`预期汇率变动 ≈ 本外币利差之差`。",
-          "外溢效应：全球无风险利率 Rf 的任何上行都会抬高所有风险资产的折现率，对港股、新兴市场债券是边际利空，尤其压低长久期成长股的估值。"
-        ]
-      }
-    },
-    {
-      "title": "US Treasuries record worst week since Trump’s ‘liberation day’",
-      "source": "FT Markets",
-      "url": "https://www.ft.com/content/7bebace2-dc87-410a-ae29-ffd9f3176def?syn-25a6b1a6=1",
-      "published": "2026-11-14 06:12",
-      "raw_summary": "Higher than expected inflation and hawkish remarks by Fed officials have stung investors who bet a global bond rout was over",
-      "insight": {
-        "what": "美债遭遇「解放日」关税冲击以来最差一周：10 月 CPI 超预期叠加美联储官员放鹰，押注债券熊市结束的投资者被反噬。",
-        "why": "前几周市场刚押注「全球债券熊市结束、降息交易重启」，本周通胀数据和美联储官员表态把这套叙事推翻，通胀预期与期限溢价双双上修。",
-        "chain": "CPI 超预期 → 降息预期降温 → 短端收益率上行 → 期限溢价抬升 → 长端收益率跳升 → 成长股估值承压",
-        "notes": [
-          "「解放日」指 2025 年 4 月特朗普宣布对等关税那天——当时美债遭抛售、收益率一周飙升，是本轮周期的基准压力情景。本周被标记为那以来最差一周，含义是市场重新开始怀疑「通胀已被驯服」这条主线。",
-          "长端收益率可以拆开看：`y_10y ≈ 未来短期利率预期均值 + 期限溢价 term premium`。本周三项因素同时发力：通胀超预期抬第一项，美联储官员鹰派表态抬利率路径，财政发债量担忧抬期限溢价——所以长端比短端跌得更狠。",
-          "债券价格与收益率反向：`P = Σ C/(1+y)^t + Face/(1+y)^T`——收益率上行时，存量债券按更高的 y 折现，价格缩水，这就是「最差一周」账面亏损的来源。",
-          "对股市影响不对称：长久期成长股对折现率最敏感，纳指首当其冲；银行等金融股反而可能受益于更陡的收益率曲线（借短贷长的利差扩大）。"
-        ]
-      }
-    }
-  ],
-  "policy": [
-    {
-      "title": "US has floated Ukraine ceding Donbas for Nato membership, Zelensky says",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cwvg2l312ylqo?at_medium=RSS&at_campaign=rss",
-      "published": "2026-11-14 23:15",
-      "raw_summary": "The Ukrainian president says US envoys touted the exchange as part of efforts to end the war with Russia.",
-      "insight": {
-        "what": "泽连斯基披露：美国特使提出「乌克兰让出顿巴斯、换取 NATO 入约」的停火方案，俄乌和谈路径首次浮出水面。",
-        "why": "市场此前按「战争长期化」定价欧洲资产；若停火路径真实存在，欧洲风险溢价、油价里的地缘溢价和防务股逻辑都要重估。",
-        "chain": "美方抛出方案 → 和谈概率上升 → 风险溢价回落 → 欧洲股市估值修复 → 油价地缘溢价回落 → 防务股逻辑动摇",
-        "notes": [
-          "顿巴斯指乌克兰东部顿涅茨克、卢甘斯克两州，俄方目前控制大部分。用领土换 NATO 成员资格意味着事实分界线被国际安排承认——这是 2014 年以来谈判里最大的红线变更，所以消息才由泽连斯基亲自证实、且语气带着保留。",
-          "油价机制：布伦特原油价格里含一块地缘风险溢价——市场为供应中断的尾部风险支付的保险费。`油价 ≈ 供需均衡定价 + 地缘风险溢价`，停火概率每上升一分，这块溢价就被挤掉一分，先反映在原油近月合约的贴水结构上。",
-          "交易层面要分叉想：方案大概率被莫斯科反复拉锯甚至拒绝，风险溢价会快速回补。这是典型的「双向波动大、方向不确定」事件，仓位上适合期权而非单边押注。",
-          "防务股（如 Rheinmetall）估值建立在「欧洲重整军备是多年趋势」之上；即使停火，弹药补充库存与东欧军备建设仍有惯性，但边际催化（新订单新闻流）会减少，估值里的「增长加速」溢价部分受压。"
-        ]
-      }
-    },
-    {
-      "title": "China, South Korea vow to deepen ties at Apec summit as Seoul pushes North Korea talks",
-      "source": "SCMP",
-      "url": "https://www.scmp.com/news/china/diplomacy/article/3374442/china-south-korea-vow-deepen-ties-apec-summit-seoul-pushes-north-korea-talks",
-      "published": "2026-11-14 19:45",
-      "raw_summary": "China and South Korea have agreed to use next week’s Asia-Pacific Economic Cooperation summit in Shenzhen to advance bilateral ties, according to their top diplomats. The pledge by Chinese Foreign Min",
-      "insight": {
-        "what": "王毅与韩国高层会晤，中韩确认借下周在深圳举行的 APEC 峰会推进双边关系，首尔同时推动朝核议题对话。",
-        "why": "中美关税博弈仍紧的背景下，中韩靠拢给「亚太供应链去中国化」的叙事添了反向证据，出口链订单预期与韩元风险偏好边际改善。",
-        "chain": "中韩高层互认 → 峰会前关系缓和 → 贸易摩擦预期下降 → 出口链订单预期改善 → 韩元汇率走强 → 区域供应链预期趋稳",
-        "notes": [
-          "APEC（亚太经合组织）峰会落地深圳，是中国继 2014 年北京之后再次主办。主场外交通常伴随关税、签证、投资便利化的边际放松，「会前缓和」历史上是可交易的事件窗口。",
-          "中韩贸易高度互补：韩国对华出口以中间品为主（半导体、电池材料、石化品），`韩国出口 ≈ f(中国制造业景气)`。关系缓和直接作用于这条链的量价预期，三星、SK 海力士等对华营收敞口大的公司先受益。",
-          "韩元的敏感点在「北风险」：朝核对话若推进，地缘折价收窄，KOSPI 与韩元同步受益——历史上南北缓和期韩元兑美元多数走强。",
-          "边界要说清：中韩缓和不改变美韩同盟的技术出口管制（半导体设备对华限制仍由美方主导），所以这是「贸易情绪」改善，不是「技术脱钩」逆转。"
-        ]
-      }
-    }
-  ],
-  "tech": [
-    {
-      "title": "Nvidia’s Leadership Shakeup Tests AI Chip Giant",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-11-14/nvidia-s-leadership-shakeup-tests-ai-chip-giant-video",
-      "published": "2026-11-14 20:47",
-      "raw_summary": "Bloomberg senior technology and strategic industries editor Mike Shepard tells Bloomberg This Weekend that Nvidia’s appointment of longtime CFO Colette Kress as interim CEO may offer investors some st",
-      "insight": {
-        "what": "英伟达罢免黄仁勋后，任命长期 CFO Colette Kress 出任临时 CEO，试图给市场一个稳定的过渡锚点。",
-        "why": "市场原本按「创始人危机 = 治理失控」折价；正式任命临时掌门把不确定性从「谁来管」收敛为「战略是否延续」，情绪折价有望收窄。",
-        "chain": "CEO 突然去职 → 治理不确定性飙升 → 股价遭遇情绪折价 → 临时 CEO 任命 → 战略连续性预期上升 → 情绪折价部分收窄",
-        "notes": [
-          "为什么 CFO 是常见的「稳定器」人选：CFO 掌握资本配置、回购、订单指引的全部数字细节，市场会解读为「业绩指引不会变」。英伟达的 AI 资本开支叙事（超大规模云厂商 capex、数据中心营收）眼下全靠季度指引支撑。",
-          "折现框架：`股价 = Σ E[FCF_t] / (1+WACC)^t`。CEO 更替同时打击分子（对未来自由现金流 FCF 的预期）和分母（风险溢价上升推高折现率 WACC）；临时任命主要修复分母里的不确定性，分子还要看 Kress 是否维持数据中心指引。",
-          "历史参照：苹果的库克交接、微软纳德拉接任都说明「治理连续 + 财务纪律」能撑住估值；但「愿景叙事」的溢价（英伟达市值里相当一块是黄仁勋个人叙事）难以复制，这部分会永久让渡。",
-          "后续监控：未来两个季度数据中心营收指引、大客户 capex 表述有无变化、关键 GPU 团队负责人的去留（人才流失是治理危机的第二波冲击）。"
-        ]
-      }
-    },
-    {
-      "title": "“Bigger Than a Business Story”: Nvidia Shakeup",
-      "source": "Bloomberg Technology",
-      "url": "https://www.bloomberg.com/news/videos/2026-11-14/-bigger-than-a-business-story-nvidia-shakeup-video",
-      "published": "2026-11-14 21:03",
-      "raw_summary": "At the end of a week that saw revelations of ousted Nvidia CEO Jensen Huang’s alleged affairs with employees and a suspected Chinese spy, Centerview Partners Senior Counselor Richard Haass says the na",
-      "insight": {
-        "what": "黄仁勋去职风波再曝「疑似中国间谍」入职情节，评论指这已超出商业故事范畴、上升到了国家安全层面。",
-        "why": "市场此前只按公司治理折价；国安情节一旦坐实，出口管制收紧与对华营收的尾部风险会被重新计价，这是新增的下行情景。",
-        "chain": "国安情节曝光 → 华盛顿审查升温 → 出口管制或收紧 → 中国区营收承压 → 下行情景重新计价 → 股价波动率抬升",
-        "notes": [
-          "机制背景：英伟达对华业务本就被出口管制压缩（只剩特供版芯片），任何「间谍情节」都会给国会推动更严管制提供弹药——管制范围可能从「高端 GPU 禁售」扩到人才与设备审查，构成营收端的二次下修风险。",
-          "定价角度：`股价 ≈ 主线情景折现值 × (1 − 尾部风险概率 × 尾部损失)`。国安叙事不直接改盈利，而是抬高市场给尾部情景的概率权重；期权隐含波动率 IV 通常先于股价反应。",
-          "参照物：2022 年 10 月全面出口管制后，英伟达当季大幅下修中国区指引并计提存货损失——「管制收紧」对这只股票从来不是抽象风险，而是真实减分项。",
-          "与上一条（Kress 临时 CEO）对照着读：治理风险偏「情绪折价、可收窄」，国安风险偏「规则风险、不可逆」——后者对估值的伤害更持久，也是波动率定价的主导项。"
-        ]
-      }
-    }
-  ],
-  "source_stats": {
-    "fed": {
-      "count": 6,
-      "tier": "stable"
-    },
-    "ecb": {
-      "count": 9,
-      "tier": "stable"
-    },
-    "treasury_fr": {
-      "count": 4,
-      "tier": "optional"
-    },
-    "wsj_markets": {
-      "count": 0,
-      "tier": "optional"
-    },
-    "cnbc_econ": {
-      "count": 11,
-      "tier": "stable"
-    },
-    "cnbc_fin": {
-      "count": 20,
-      "tier": "stable"
-    },
-    "economist_fin": {
-      "count": 14,
-      "tier": "stable"
-    },
-    "wallstreetcn": {
-      "count": 40,
-      "tier": "stable"
-    },
-    "eastmoney": {
-      "count": 18,
-      "tier": "optional"
-    },
-    "ft_markets": {
-      "count": 20,
-      "tier": "optional"
-    },
-    "csrc_news": {
-      "count": 6,
-      "tier": "optional"
-    },
-    "safe": {
-      "count": 0,
-      "tier": "optional"
-    },
-    "federal_register": {
-      "count": 4,
-      "tier": "stable"
-    },
-    "whitehouse": {
-      "count": 8,
-      "tier": "stable"
-    },
-    "ustr": {
-      "count": 5,
-      "tier": "stable"
-    },
-    "bbc_world": {
-      "count": 20,
-      "tier": "stable"
-    },
-    "dw_world": {
-      "count": 13,
-      "tier": "stable"
-    },
-    "defensenews": {
-      "count": 10,
-      "tier": "stable"
-    },
-    "un_news": {
-      "count": 20,
-      "tier": "optional"
-    },
-    "npr_world": {
-      "count": 10,
-      "tier": "optional"
-    },
-    "scmp_china": {
-      "count": 20,
-      "tier": "optional"
-    },
-    "ars_technica": {
-      "count": 20,
-      "tier": "stable"
-    },
-    "the_verge": {
-      "count": 10,
-      "tier": "stable"
-    },
-    "bloomberg_tech": {
-      "count": 20,
-      "tier": "stable"
-    },
-    "qbitai": {
-      "count": 10,
-      "tier": "optional"
-    }
+ "date": "2026-11-15",
+ "mode": "llm",
+ "markets": [
+  {
+   "title": "英国央行首席经济学家Pill表示，需要进一步加息；致力于逐步将通胀率拉回2%的目标水平；加息等待的时间过长。（英国《金融时报》）",
+   "source": "华尔街见闻",
+   "url": "https://wallstreetcn.com/livenews/3200104",
+   "published": "2026-11-14 13:03",
+   "raw_summary": "",
+   "insight": {
+    "what": "英国央行首席经济学家 Pill 放鹰：通胀回到 2% 太慢、需要进一步加息，且等待的时间已经过久。",
+    "why": "市场此前把英国央行归入「即将降息」阵营；Pill 出面说可能加息，直接打掉这一预期，英国国债 gilt 收益率与英镑要重新定价。",
+    "chain": "Pill 放鹰 → 降息预期回撤 → gilt 收益率上行 → 英镑兑美元走强 → 进口通胀降温 → 加息压力缓解",
+    "notes": [
+     "金边债是英国国债的别称：央行官员放鹰，短端国债收益率最先反应，因为它直接贴着政策利率预期。",
+     "「等待时间过长」的潜台词是通胀黏性：英国进口比重大，英镑贬值会让进口商品变贵、通胀再抬头——汇率和利率在这里是同一枚硬币的两面。",
+     "资产影响排序：短端国债最敏感；长端还叠加财政发债供给的担忧；英镑则因利差吸引力上升而受益。",
+     "外溢效应：全球无风险利率上行会抬高所有风险资产的折现率，对港股和新兴市场是边际利空，尤其压长久期成长股。"
+    ]
+   }
+  },
+  {
+   "title": "US Treasuries record worst week since Trump’s ‘liberation day’",
+   "source": "FT Markets",
+   "url": "https://www.ft.com/content/7bebace2-dc87-410a-ae29-ffd9f3176def?syn-25a6b1a6=1",
+   "published": "2026-11-14 06:12",
+   "raw_summary": "Higher than expected inflation and hawkish remarks by Fed officials have stung investors who bet a global bond rout was over",
+   "insight": {
+    "what": "美债遭遇「解放日」关税冲击以来最差一周：10 月 CPI 超预期叠加美联储官员放鹰，押注债券熊市结束的投资者被反噬。",
+    "why": "前几周市场刚押注「全球债券熊市结束、降息交易重启」，本周通胀数据和美联储官员表态把这套叙事推翻，通胀预期与期限溢价双双上修。",
+    "chain": "CPI 超预期 → 降息预期降温 → 短端收益率上行 → 期限溢价抬升 → 长端收益率跳升 → 成长股估值承压",
+    "notes": [
+     "「解放日」指 2025 年 4 月宣布对等关税那天——美债当时遭抛售、收益率一周飙升，是本轮周期的基准压力情景。本周被标记为那以来最差一周。",
+     "长端收益率可以拆成两块：市场对未来短期利率的预期，加上持有长债要求的额外补偿。本周通胀超预期抬第一块，发债供给担忧抬第二块。",
+     "债券价格和收益率反向：收益率上行时存量债券按更高的要求回报折算，价格缩水——这就是「最差一周」账面亏损的来源。",
+     "对股市影响不对称：成长股对利率最敏感、首当其冲；银行反而可能受益于更陡的收益率曲线（借短贷长的利差扩大）。"
+    ]
+   }
   }
+ ],
+ "policy": [
+  {
+   "title": "US has floated Ukraine ceding Donbas for Nato membership, Zelensky says",
+   "source": "BBC",
+   "url": "https://www.bbc.co.uk/news/articles/cwvg2l312ylqo?at_medium=RSS&at_campaign=rss",
+   "published": "2026-11-14 23:15",
+   "raw_summary": "The Ukrainian president says US envoys touted the exchange as part of efforts to end the war with Russia.",
+   "insight": {
+    "what": "泽连斯基披露：美国特使提出「乌克兰让出顿巴斯、换取 NATO 入约」的停火方案，俄乌和谈路径首次浮出水面。",
+    "why": "市场此前按「战争长期化」定价欧洲资产；若停火路径真实存在，欧洲风险溢价、油价里的地缘溢价和防务股逻辑都要重估。",
+    "chain": "美方抛出方案 → 和谈概率上升 → 风险溢价回落 → 欧洲股市估值修复 → 油价地缘溢价回落 → 防务股逻辑动摇",
+    "notes": [
+     "顿巴斯指乌克兰东部两州，俄方目前控制大部分：用领土换北约成员资格，等于让事实分界线被国际安排承认——这是谈判里最大的红线变更。",
+     "油价里含着一块地缘保险费：市场为供应中断的尾部风险提前付钱，停火概率每上升一分，这块溢价就被挤掉一分。",
+     "交易上要分叉想：方案大概率被莫斯科反复拉锯甚至拒绝，溢价会快速回补——典型的双向波动大、方向不确定，适合期权不适合单边押注。",
+     "防务股的估值建立在「欧洲重整军备是多年趋势」上：即使停火，弹药补库存仍有惯性，但新订单的新闻流会减少，估值里的「加速」部分先被削掉。"
+    ]
+   }
+  },
+  {
+   "title": "China, South Korea vow to deepen ties at Apec summit as Seoul pushes North Korea talks",
+   "source": "SCMP",
+   "url": "https://www.scmp.com/news/china/diplomacy/article/3374442/china-south-korea-vow-deepen-ties-apec-summit-seoul-pushes-north-korea-talks",
+   "published": "2026-11-14 19:45",
+   "raw_summary": "China and South Korea have agreed to use next week’s Asia-Pacific Economic Cooperation summit in Shenzhen to advance bilateral ties, according to their top diplomats. The pledge by Chinese Foreign Min",
+   "insight": {
+    "what": "王毅与韩国高层会晤，中韩确认借下周在深圳举行的 APEC 峰会推进双边关系，首尔同时推动朝核议题对话。",
+    "why": "中美关税博弈仍紧的背景下，中韩靠拢给「亚太供应链去中国化」的叙事添了反向证据，出口链订单预期与韩元风险偏好边际改善。",
+    "chain": "中韩高层互认 → 峰会前关系缓和 → 贸易摩擦预期下降 → 出口链订单预期改善 → 韩元汇率走强 → 区域供应链预期趋稳",
+    "notes": [
+     "APEC 峰会落地深圳是主场外交：通常伴随关税、签证、投资便利化的边际放松，「会前缓和」历史上是可交易的事件窗口。",
+     "中韩贸易高度互补：韩国对华出口以半导体、电池材料等中间品为主——关系缓和直接作用于这条链的量价预期。",
+     "韩元的敏感点在「北方风险」：朝核对话若推进，地缘折价收窄，韩国股市和韩元同步受益。",
+     "边界要说清：中韩缓和不改变美韩同盟的技术出口管制（半导体设备对华限制仍由美方主导）——这是「贸易情绪」改善，不是「技术脱钩」逆转。"
+    ]
+   }
+  }
+ ],
+ "tech": [
+  {
+   "title": "Nvidia’s Leadership Shakeup Tests AI Chip Giant",
+   "source": "Bloomberg Technology",
+   "url": "https://www.bloomberg.com/news/videos/2026-11-14/nvidia-s-leadership-shakeup-tests-ai-chip-giant-video",
+   "published": "2026-11-14 20:47",
+   "raw_summary": "Bloomberg senior technology and strategic industries editor Mike Shepard tells Bloomberg This Weekend that Nvidia’s appointment of longtime CFO Colette Kress as interim CEO may offer investors some st",
+   "insight": {
+    "what": "英伟达罢免黄仁勋后，任命长期 CFO Colette Kress 出任临时 CEO，试图给市场一个稳定的过渡锚点。",
+    "why": "市场原本按「创始人危机 = 治理失控」折价；正式任命临时掌门把不确定性从「谁来管」收敛为「战略是否延续」，情绪折价有望收窄。",
+    "chain": "CEO 突然去职 → 治理不确定性飙升 → 股价遭遇情绪折价 → 临时 CEO 任命 → 战略连续性预期上升 → 情绪折价部分收窄",
+    "notes": [
+     "CFO 常被视为「稳定器」人选：他掌握资本配置、回购、订单指引的全部数字——市场解读为「业绩指引不会变」。",
+     "管理层更替同时打击两头：对未来现金流的预期（分子）下修，风险补偿上升推高折现率（分母）——估值被双向压缩。",
+     "历史参照：苹果、微软的交接说明「治理连续 + 财务纪律」能撑住估值；但绑定在创始人个人身上的「愿景溢价」难以复制，这部分会永久让渡。",
+     "后续监控：未来两个季度的数据中心营收指引、大客户开支表述有无变化、关键技术团队负责人的去留——人才流失是治理危机的第二波冲击。"
+    ]
+   }
+  },
+  {
+   "title": "“Bigger Than a Business Story”: Nvidia Shakeup",
+   "source": "Bloomberg Technology",
+   "url": "https://www.bloomberg.com/news/videos/2026-11-14/-bigger-than-a-business-story-nvidia-shakeup-video",
+   "published": "2026-11-14 21:03",
+   "raw_summary": "At the end of a week that saw revelations of ousted Nvidia CEO Jensen Huang’s alleged affairs with employees and a suspected Chinese spy, Centerview Partners Senior Counselor Richard Haass says the na",
+   "insight": {
+    "what": "黄仁勋去职风波再曝「疑似中国间谍」入职情节，评论指这已超出商业故事范畴、上升到了国家安全层面。",
+    "why": "市场此前只按公司治理折价；国安情节一旦坐实，出口管制收紧与对华营收的尾部风险会被重新计价，这是新增的下行情景。",
+    "chain": "国安情节曝光 → 华盛顿审查升温 → 出口管制或收紧 → 中国区营收承压 → 下行情景重新计价 → 股价波动率抬升",
+    "notes": [
+     "英伟达对华业务本就被出口管制压缩，任何「间谍情节」都会给国会推动更严管制提供弹药——管制范围可能从芯片禁售扩到人才与设备审查。",
+     "定价角度：国安叙事不直接改盈利，而是抬高市场给「坏情景」的概率权重——期权市场的隐含波动率通常先于股价反应。",
+     "参照 2022 年 10 月全面出口管制：英伟达当季大幅下修中国区指引并计提存货损失——「管制收紧」对它从来不是抽象风险，而是真实减分项。",
+     "和治理风险对照着读：管理层变动偏「情绪折价、可收窄」，国安风险偏「规则风险、不可逆」——后者对估值的伤害更持久。"
+    ]
+   }
+  }
+ ],
+ "source_stats": {
+  "fed": {
+   "count": 6,
+   "tier": "stable"
+  },
+  "ecb": {
+   "count": 9,
+   "tier": "stable"
+  },
+  "treasury_fr": {
+   "count": 4,
+   "tier": "optional"
+  },
+  "wsj_markets": {
+   "count": 0,
+   "tier": "optional"
+  },
+  "cnbc_econ": {
+   "count": 11,
+   "tier": "stable"
+  },
+  "cnbc_fin": {
+   "count": 20,
+   "tier": "stable"
+  },
+  "economist_fin": {
+   "count": 14,
+   "tier": "stable"
+  },
+  "wallstreetcn": {
+   "count": 40,
+   "tier": "stable"
+  },
+  "eastmoney": {
+   "count": 18,
+   "tier": "optional"
+  },
+  "ft_markets": {
+   "count": 20,
+   "tier": "optional"
+  },
+  "csrc_news": {
+   "count": 6,
+   "tier": "optional"
+  },
+  "safe": {
+   "count": 0,
+   "tier": "optional"
+  },
+  "federal_register": {
+   "count": 4,
+   "tier": "stable"
+  },
+  "whitehouse": {
+   "count": 8,
+   "tier": "stable"
+  },
+  "ustr": {
+   "count": 5,
+   "tier": "stable"
+  },
+  "bbc_world": {
+   "count": 20,
+   "tier": "stable"
+  },
+  "dw_world": {
+   "count": 13,
+   "tier": "stable"
+  },
+  "defensenews": {
+   "count": 10,
+   "tier": "stable"
+  },
+  "un_news": {
+   "count": 20,
+   "tier": "optional"
+  },
+  "npr_world": {
+   "count": 10,
+   "tier": "optional"
+  },
+  "scmp_china": {
+   "count": 20,
+   "tier": "optional"
+  },
+  "ars_technica": {
+   "count": 20,
+   "tier": "stable"
+  },
+  "the_verge": {
+   "count": 10,
+   "tier": "stable"
+  },
+  "bloomberg_tech": {
+   "count": 20,
+   "tier": "stable"
+  },
+  "qbitai": {
+   "count": 10,
+   "tier": "optional"
+  }
+ }
 }

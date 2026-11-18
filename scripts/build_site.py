@@ -106,7 +106,8 @@ CSS = """*{box-sizing:border-box;margin:0;padding:0}
  --card-sd:0 1px 2px rgba(30,27,20,.06),0 10px 26px -12px rgba(30,27,20,.14);
  --card-sd-hi:0 2px 6px rgba(30,27,20,.08),0 18px 38px -16px rgba(30,27,20,.22)}
 body{font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
- background:var(--bg);color:var(--ink);padding:26px 18px 56px}
+ background:var(--bg);color:var(--ink);padding:26px 18px 56px;
+ overflow-x:hidden;overflow-x:clip}
 .wrap{max-width:1240px;margin:0 auto}
 /* 顶部品牌区：势 logo（深色圆角块）+ 知势 DailyBrief，照 dailybrief-ui 的 masthead。 */
 header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
@@ -975,8 +976,20 @@ DECK_JS = r"""<script>
       // 只在手机端收：桌面屏幕高，翻页时下方归档卡片跟着上下跳反而碍眼。
       if (ctl && slides[i]) {
         var narrow = window.matchMedia('(max-width:760px)').matches;
-        ctl.style.marginTop = narrow
-          ? (4 - (maxH - slides[i].offsetHeight)) + 'px' : '';
+        if (narrow) {
+          var diff = Math.max(0, maxH - slides[i].offsetHeight);
+          // 翻页键上提到当前卡正下方（负 margin 吃掉差额）……
+          ctl.style.marginTop = (4 - diff) + 'px';
+          // ……但轨道高度仍按最高那张留白，键下面还有一段空白。这段区域
+          // 本来就没有画任何东西，用负 margin-bottom 把后面的内容拉上来
+          // 顶进空白里 —— 轨道高度不动，相邻卡不会被裁掉，空白却没了。
+          var pad = parseFloat(getComputedStyle(track).paddingBottom) || 0;
+          var left = diff + pad - 4 - ctl.offsetHeight;
+          ctl.style.marginBottom = left > 0 ? (-left) + 'px' : '';
+        } else {
+          ctl.style.marginTop = '';
+          ctl.style.marginBottom = '';
+        }
       }
       // 换卡了：当前卡的顶边不在视口里就把它拉回来（**只往上拉，不往下推**）。
       // 不做这一步的话，从长卡滑到短卡（比如刚展开过解析的那张），文档一下子矮一截，
