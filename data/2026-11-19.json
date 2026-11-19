@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-19",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "Bond yields are rising everywhere—except China",
+      "source": "The Economist",
+      "url": "https://www.economist.com/finance-and-economics/2026/11/19/bond-yields-are-rising-everywhere-except-china",
+      "published": "2026-11-19 18:04",
+      "raw_summary": "The Chinese central bank has cut interest rates despite itself",
+      "insight": {
+        "what": "全球债券收益率普遍上行，中国央行却逆势下调政策利率，中国国债收益率反而走低。",
+        "why": "市场原以为中国会跟随全球紧缩节奏，降息说明政策重心转向稳增长和内需，中美利差可能进一步走阔。",
+        "chain": "全球通胀回落缓慢 → 海外央行保持高利率 → 资金要求更高补偿 → 海外债券收益率上行 → 中国央行反而降息 → 中国国债收益率下行 → 中美利差进一步走阔 → 人民币汇率承压",
+        "notes": [
+          "国债收益率就是买入国债并持有到期能拿到的年化回报，也是这个国家所有借款利率的基准。",
+          "收益率上升对应债券价格下跌，两者反向变动：新债利息更高时，旧债必须降价才卖得出去。",
+          "为什么各国收益率一起涨？全球资金可以跨国流动，美国利率高，其他地方就得给出相近回报才留得住钱。",
+          "中国为什么能反着来？国内物价低迷、需求偏弱，降息是为了压低企业和居民的借款成本，刺激投资和消费。",
+          "中美利差是什么？就是两国同类债券收益率的差。中国利率更低，这个差就走阔，持有人民币资产的相对回报下降。",
+          "利差走阔为什么压汇率？资金倾向流向回报更高的货币，人民币需求减少，汇率因此有贬值压力。"
+        ]
+      }
+    },
+    {
+      "title": "Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show",
+      "source": "CNBC Finance",
+      "url": "https://www.cnbc.com/2026/11/18/fed-minutes-october-2026.html",
+      "published": "2026-11-19 03:41",
+      "raw_summary": "The Federal Reserve on Wednesday released minutes from its October policy meeting at which it voted to hold its benchmark interest rate in a range between 3.75%-4%.",
+      "insight": {
+        "what": "美联储公布 10 月会议纪要，官员预计还要继续加息，并担心人工智能投资热潮推高通胀。",
+        "why": "市场原以为利率已接近顶部，纪要显示加息还没结束，短端美债收益率和美元因此获得支撑。",
+        "chain": "AI 投资推高电力和芯片价格 → 通胀回落速度变慢 → 美联储官员更担心通胀 → 纪要暗示还要加息 → 市场下调降息预期 → 两年期美债收益率上行 → 美元资产吸引力上升 → 美元走强，新兴市场资金外流",
+        "notes": [
+          "会议纪要是央行政策会议结束后公布的讨论记录，市场靠它判断官员对利率的真实态度。",
+          "为什么加息还没结束？只要通胀高于百分之二的目标，官员就倾向继续收紧，宁愿牺牲一点增长。",
+          "短端国债为什么先反应？两年期国债对政策利率最敏感，市场改的是未来两年的利率路径预期。",
+          "加息预期怎么传到股市？无风险利率上升，未来盈利折算成今天的价值缩水，估值高的成长股最受伤。",
+          "人工智能为什么会推高通胀？数据中心要大量电力和先进芯片，需求集中爆发会推高这些投入品的价格。",
+          "美元为什么受益？美国利率更高，全球资金买入美元资产，美元需求增加，汇率随之走强。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Putin vows 'far more painful' response to Ukraine's strikes on Crimean Bridge",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cm879dqn3e1jo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-19 21:07",
+      "raw_summary": "The Russian president said the Crimean Bridge was civilian infrastructure, which Kyiv disputes.",
+      "insight": {
+        "what": "普京称乌克兰袭击克里米亚大桥后，俄方将作出痛苦得多的回应，并坚持该桥属民用设施。",
+        "why": "市场原本在定价冲突降温，这番表态把升级风险重新推回，能源价格和避险资产都要重新定价。",
+        "chain": "大桥遇袭后俄方放狠话 → 冲突升级风险上升 → 市场担心能源设施被打击 → 原油供应预期收紧 → 油价获得上行动力 → 通胀预期跟着抬升 → 央行更难放松利率 → 避险资金买入美元和黄金",
+        "notes": [
+          "克里米亚大桥连接俄罗斯本土和克里米亚半岛，既是补给通道也是象征，此前多次成为袭击目标。",
+          "为什么油价对这类新闻敏感？俄罗斯是主要产油国，冲突升级可能打击油田、港口和运输，供应预期收紧。",
+          "避险资产是什么？局势紧张时资金会买美元、黄金和美债，因为这些资产在动荡中更能保值。",
+          "油价怎么影响利率？能源是几乎所有生产的成本，油价上涨会推高整体物价，让央行不敢轻易降息。",
+          "为什么价格会先动？地缘消息来得快、真假难辨，交易员先减仓避险，等细节确认后再修正方向。"
+        ]
+      }
+    },
+    {
+      "title": "Anthropic raises $81bn in record-breaking stock market debut",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c6742m39xgzxo?at_medium=RSS&at_campaign=rss",
+      "published": "2026-11-19 18:48",
+      "raw_summary": "The company behind the Claude chatbot will become one of the most valuable firms in the world.",
+      "insight": {
+        "what": "人工智能公司 Anthropic 上市募资逾一千亿美元，超过 SpaceX 成为史上最大新股发行。",
+        "why": "市场原本担心人工智能泡沫破裂会压垮新股发行，这次超额认购说明长期资金仍愿为算力投入买单。",
+        "chain": "上市募资逾一千亿美元 → 人工智能估值有了公开标价 → 一级市场资金愿意继续投入 → 数据中心和芯片订单增加 → 算力产业链收入预期上修 → 相关公司股价获得支撑 → 盈利兑现前估值偏高 → 利率上行时回调压力更大",
+        "notes": [
+          "首次公开募股就是公司把股份卖给公众投资者，募到的钱用来扩张业务，股票随后在交易所买卖。",
+          "为什么这是纪录？募资规模超过此前最大的 SpaceX，说明市场对人工智能龙头的需求远超一般新股。",
+          "什么是锁定期的股票？上市前股东手里的股份有一段不能卖，到期解禁时供给增加，股价容易承压。",
+          "算力是什么？训练大模型需要大量芯片和电，这部分支出叫资本开支，是人工智能公司最大的成本。",
+          "为什么市场担心泡沫？股价反映的是未来很多年的盈利，如果收入增长慢于预期，高估值就会向下修正。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "范式下场做基模了！国产算力全链路训练，双模型同步亮相",
+      "source": "量子位",
+      "url": "https://www.qbitai.com/2026/11/511071.html",
+      "published": "2026-11-19 11:01",
+      "raw_summary": "语言模型单张3090卡即可运行",
+      "insight": {
+        "what": "国产人工智能公司范式发布两个基础模型，全部用国产算力训练，其中一个单张消费级显卡就能运行。",
+        "why": "市场原以为大模型训练只能靠最贵的进口芯片，国产算力跑通全链路后，算力成本和供应约束都要重估。",
+        "chain": "国产芯片跑通全链路训练 → 训练不再依赖单一进口供应 → 算力采购成本下降 → 模型训练门槛降低 → 更多公司能自己做模型 → 推理需求分散到国产卡 → 进口高端芯片溢价收窄 → 相关硬件公司估值重新排序",
+        "notes": [
+          "基础模型就是只做预训练的大模型，别人可以拿它再加工成自己的应用，像盖楼前先打好地基。",
+          "为什么全链路重要？从训练到推理都用国产芯片，意味着不再被单一供应商卡住，扩产节奏自己掌握。",
+          "消费级显卡是什么？就是游戏和设计用的普通显卡，价格远低于数据中心专用卡，能跑模型说明成本大降。",
+          "算力成本怎么影响行业？训练成本越低，能参与的公司越多，模型价格战更激烈，卖芯片的利润空间被压缩。",
+          "为什么进口芯片会受影响？国产替代一旦跑通，买家议价能力上升，原本稀缺的高端卡溢价就会收窄。"
+        ]
+      }
+    },
+    {
+      "title": "Nvidia Moves Ousted CEO Jensen Huang Out of the Spotlight",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-11-19/nvidia-moves-ousted-ceo-jensen-huang-out-of-the-spotlight",
+      "published": "2026-11-19 20:02",
+      "raw_summary": "The voluble executive has been quieted as the chipmaker he built tries to move forward",
+      "insight": {
+        "what": "英伟达把已被免职的创始人黄仁勋移出对外发声位置，试图让公司在风波过后恢复正常经营。",
+        "why": "市场担心创始人离场会动摇客户和供应商信心，这一安排说明管理层想把注意力拉回订单和交付。",
+        "chain": "创始人离任引发治理担忧 → 客户担心供货和路线延续 → 公司降低其对外曝光 → 管理层强调经营连续性 → 大客户订单签约更顺畅 → 收入预期趋于稳定 → 估值中的治理折价收窄",
+        "notes": [
+          "为什么创始人重要？他对技术路线和客户关系影响很大，突然离场会让外界怀疑战略会不会变。",
+          "治理折价是什么？投资者因为担心管理层不稳定，愿意付的价格比同业低，这部分差额就是折价。",
+          "为什么大客户在意连续性？数据中心按年规划采购，技术路线一变，配套的机房和软件都要跟着重做。",
+          "公关动作能改变估值吗？不能直接改变盈利，但能降低不确定性，市场对不确定的事通常要求更高回报。",
+          "英伟达为什么这么受关注？它的图形处理器是训练人工智能的核心部件，价格和供货牵动整个行业成本。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 14,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 17,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
