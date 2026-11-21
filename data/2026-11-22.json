@@ -1,0 +1,232 @@
+{
+  "date": "2026-11-22",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "US tech stocks plunge into bear market in worst week since Covid-19 crisis",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/9f3c6ed6-c08f-4710-9683-ee2f5eb25841?syn-25a6b1a6=1",
+      "published": "2026-11-21 05:52",
+      "raw_summary": "Shares in Anthropic and Nvidia tumble as fears over the AI spending boom grip Wall Street",
+      "insight": {
+        "what": "美股科技股跌入熊市，创疫情以来最差一周，英伟达与 Anthropic 领跌，市场质疑 AI 资本开支的回报。",
+        "why": "市场原本假设 AI 投入能持续换来利润增长，现在开始怀疑回本周期太长；科技股权重高，估值需要下修，资金转向债券和现金。",
+        "chain": "AI 投资回报被质疑 → 科技股盈利预期下调 → 风险偏好下降 → 资金撤出成长股 → 指数跌破关键位 → 被动基金被迫减仓 → 抛压自我放大 → 纳指进入熊市",
+        "notes": [
+          "熊市 bear market 指指数从最近高点下跌两成以上。它是事后贴的标签，不代表跌到这里就一定继续跌，但会改变机构的风控和仓位规则。",
+          "为什么英伟达和 Anthropic 一起跌？一个卖 AI 芯片，一个烧钱做模型，市场担心的是同一条账：买芯片的钱能不能赚回来。",
+          "AI 资本开支指企业买服务器、建数据中心、付算力的钱。它先变成芯片公司的收入，要过几年才在买家自己的利润表上见效。",
+          "估值下修的意思是，同样的利润，市场愿意给的价格倍数变低了。因为大家觉得未来的钱没那么确定，愿意等的时间变短。",
+          "为什么跌起来会加速？指数基金和风险平价基金按规则调仓，跌得越多卖得越多，卖出又压低价格，形成自我强化的下跌。",
+          "资金撤出股票后去哪？短期先进国债和货币基金，这也是股市大跌时债券价格往往同时上涨的原因。"
+        ]
+      }
+    },
+    {
+      "title": "比特币跌至两年多低点 风险资产抛售加剧下行压力",
+      "source": "华尔街见闻",
+      "url": "https://wallstreetcn.com/livenews/3203644",
+      "published": "2026-11-21 13:20",
+      "raw_summary": "比特币自2025年10月升至超过126,000美元的峰值以来，已下跌超过一半，目前价格甚至低于支持加密货币的特朗普重返白宫时的水平。过去几周，比特币受到多重压力夹击。全球最大的加密货币交易所币安10月底遭到黑客攻击，令数字资产市场陷入震荡，而美国民主党在接下来一周的中期选举中大获全胜，引发外界担忧，加密货币行业争取更友好监管规则的努力已经失去动力。比特币ETF今年迄今净流出已超过30亿美元。美元走",
+      "insight": {
+        "what": "比特币跌至两年多低点，较 2025 年 10 月峰值跌去一半以上，比特币 ETF 今年净流出超 30 亿美元。",
+        "why": "市场原先把比特币当抗通胀和分散风险的工具，现在它跟着科技股一起跌，更像高波动的风险资产；美元走强和加息预期又抽走了它的资金。",
+        "chain": "加息预期升温 → 美元走强 → 美元资产回报上升 → 持币机会成本上升 → 杠杆多头被迫平仓 → ETF 遭赎回 → 基金抛售比特币 → 价格跌破支撑位",
+        "notes": [
+          "比特币 ETF 是能在股票账户里买卖的基金，背后持有真实比特币。买它等于间接买币，卖它则会迫使基金卖出币。",
+          "机会成本指为了拿住一样东西而放弃的其他收益。美元利率变高，拿着不生息的比特币就变得不划算。",
+          "杠杆多头指借钱买币的人。价格跌到一定程度，交易所会强制卖出他们的仓位，这叫强制平仓。",
+          "为什么 ETF 赎回会压低价格？基金要按赎回份额卖出对应数量的比特币，卖单直接砸向市场，价格自然往下走。",
+          "比特币常被叫作数字黄金，但它的波动远大于黄金，市场恐慌时资金并不把它当避风港，反而先卖掉它。",
+          "美元走强为什么压低加密资产？全球资金回流美元资产，愿意承担风险的闲钱变少，靠新增资金推动的市场跌得最快。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "China has real economic troubles, ‘Japanification’ not among them",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/opinion/china-opinion/article/3374957/china-has-real-economic-troubles-japanification-not-among-them",
+      "published": "2026-11-21 16:30",
+      "raw_summary": "If one manifestation of the economic difficulties Japan faced from the 1990s was falling inflation and bond yields, then China is falling into the same malaise. Starting with longer maturities, intere",
+      "insight": {
+        "what": "中国长期国债收益率跌到低于日本同期限的水平，市场重新讨论这算不算日本式通缩，结论是病因不同、利率压力相似。",
+        "why": "市场原本以为中国利率已经见底，这个现象说明资金仍在往最安全的资产躲；国债收益率被压低，银行与保险的利差被挤压，人民币资产吸引力也在变。",
+        "chain": "内需偏弱 → 资金涌向国债 → 长债买盘压过供给 → 长端收益率持续下行 → 跌破日本同期限水平 → 银行保险利差收窄 → 机构转向长久期债券 → 长债价格进一步走高",
+        "notes": [
+          "国债收益率可以理解成政府借钱的利率。买的人多、价格被抬高，收益率就往下走，两者方向相反。",
+          "日本化指经济长期低通胀、低增长、利率接近零。日本九十年代之后就是这个状态，所以拿它来形容中国。",
+          "为什么长端先跌？长期限债券对通胀和增长预期最敏感，投资者一旦看淡未来几年经济，就先买长债锁定收益。",
+          "久期 duration 是衡量债券对利率敏感度的指标。期限越长久期越大，利率下行时涨得越多，所以机构拉长久期来博收益。",
+          "利差 spread 指银行吸收存款付出的利息，与放贷、买债收到的利息之差。长端收益率太低，息差被压缩，盈利空间变窄。",
+          "资产荒指钱多但可投的好资产少。资金挤进国债把收益率买到很低，这是需求造成的低利率，并不代表经济在变好。"
+        ]
+      }
+    },
+    {
+      "title": "EU and Indonesia sign trade deal",
+      "source": "DW",
+      "url": "https://www.dw.com/en/eu-and-indonesia-sign-trade-deal/a-80010099?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-11-21 23:21",
+      "raw_summary": "A deal covering 730 million people promises lower tariffs and new investment opportunities as the European Union seeks to diversify trade ties amid growing global economic tensions.",
+      "insight": {
+        "what": "欧盟与印尼签署贸易协定，覆盖约 7.3 亿人口，双方降低关税并开放投资，欧盟借此分散供应链。",
+        "why": "市场原本预期全球关税只会越加越高，这份协定说明区域之间仍在互相开放；欧洲出口商、印尼的镍与棕榈油产业链，以及跨境资本流动都要重估。",
+        "chain": "欧盟寻求供应链分散 → 与印尼签贸易协定 → 双方关税下降 → 欧盟商品更易进入印尼 → 印尼资源更易进入欧洲 → 双边贸易量上升 → 外资流入与出口收汇增加 → 印尼盾获得支撑",
+        "notes": [
+          "关税 tariff 是进口商品过关时交的税。税率降低，商品在对方市场卖得更便宜，销量和贸易量就会上升。",
+          "为什么欧盟要签这个？它想减少对单一市场的依赖，把供应链摊到更多国家，降低被卡脖子的风险。",
+          "印尼的优势是镍、棕榈油、煤炭这些资源。镍是电动车电池的关键原料，所以欧洲车企也会关心这份协定。",
+          "资本流动指外资进来建厂、买资产。贸易协定降低了不确定性，外资更愿意做长期投资，而不只是买卖股票。",
+          "为什么本币会受益？出口收汇和外资流入增加，会带来对印尼盾的需求，汇率因此得到支撑。",
+          "贸易转移效应指原本从别国买的东西，改从关税更低的国家买。协定生效后，一部分订单会从别处转到印尼。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "California Nvidia Probe Covers Potential Criminal Law Violations",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-21/california-nvidia-probe-covers-potential-criminal-law-violations",
+      "published": "2026-11-22 01:11",
+      "raw_summary": "California’s probe into whether Nvidia Corp. illegally sold advanced chips to China and misled investors about the conduct is also looking at potential criminal violations of state law, raising the st",
+      "insight": {
+        "what": "加州对英伟达的调查升级：除是否违规向中国出售先进芯片、误导投资者外，还在查可能触犯刑法的部分。",
+        "why": "市场原本把对华芯片限制当成可管理的合规成本，刑事风险意味着罚款之外还有个人责任和业务中断；英伟达的中国收入与相关供应链要重新打折。",
+        "chain": "加州启动调查 → 发现或涉刑事违法 → 合规成本升级为法律责任 → 面临罚款与禁售 → 对华销售渠道可能被切断 → 中国区收入预期下调 → 分析师下调盈利预测 → 股价与芯片板块承压",
+        "notes": [
+          "出口管制 export control 指政府规定哪些技术、产品不能卖给哪些国家。先进芯片算战略物资，卖给中国需要许可。",
+          "刑事违法和行政违规不同：后者通常是罚款和整改，前者可能起诉到个人，量刑和信誉损失都更重。",
+          "为什么市场怕的是禁售而不是罚款？罚款是一次性的，禁售会永久拿走一块收入，估值里要直接减掉这部分现金流。",
+          "英伟达的中国收入占比不低，客户多是数据中心。渠道一旦被切断，这部分需求短期找不到替代市场。",
+          "芯片板块为什么一起跌？英伟达是整条链的定价锚，它的收入预期下调，上游设备与代工订单也会跟着下调。",
+          "合规成本指企业为遵守法规花的钱，包括律师、审计、内部审查。它不产生收入，直接吃掉利润。"
+        ]
+      }
+    },
+    {
+      "title": "China Plans to Strengthen AI Token Standards in Computing Push",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-21/china-plans-to-strengthen-ai-token-standards-in-computing-push",
+      "published": "2026-11-21 18:11",
+      "raw_summary": "China’s National Data Administration will improve standards on the measurement and billing of artificial intelligence tokens and quality assessment, as Beijing guides the development of the growing in",
+      "insight": {
+        "what": "国家数据局将完善人工智能 token 的计量、计费与质量评估标准，为快速扩张的 AI 服务建立统一的计价口径。",
+        "why": "市场原本按各家自己的口径给 AI 服务定价，标准统一后算力成本可以横向比较，云厂商的毛利和 token 单价会被重新审视。",
+        "chain": "各家计费口径不一 → 国家数据局统一标准 → token 计量可比较 → 企业算得出真实单位成本 → 价格战有了公开基准 → 高毛利厂商被迫降价 → 算力采购更看性价比 → 芯片与云服务估值重排",
+        "notes": [
+          "token 是模型处理文本的最小单位，粗略理解成一个词或半个词。调用 AI 服务按 token 数量收费。",
+          "为什么要统一计量？各家算法不同，同样一句提问算出的 token 数不一样，客户没法比价，也没法核算成本。",
+          "标准统一后价格变得透明。买家可以按单位成本挑供应商，靠信息不对称赚到的高毛利会被压下来。",
+          "这不只是技术标准，也是产业政策。谁定标准，谁就影响算力怎么买、账单怎么算，进而影响国产芯片的采购。",
+          "质量评估标准的作用：只比价格会诱导厂商压缩模型能力，加上质量分，竞争才会落在性价比而不是单纯低价。",
+          "云厂商的毛利率取决于算力采购价与售价之差。计价口径统一后这块差额变得可查，投资者能更准地给它估值。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 2,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 9,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 13,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 40,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 17,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 2,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 4,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
