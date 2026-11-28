@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-28",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "Fed’s preferred inflation gauge accelerated to 3.8% in October, raising the 2027 stakes for the central bank",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html",
+      "published": "2026-11-25 22:18",
+      "raw_summary": "The personal consumption expenditures price index was expected to show an annual inflation rate of 3.8% in October, according to the Dow Jones consensus.",
+      "insight": {
+        "what": "美国10月个人消费支出物价指数同比涨3.8%，高于预期，通胀重新加速，加大了美联储明年抗通胀的难度。",
+        "why": "市场原本押注通胀回落、美联储明年逐步降息，这份数据打破回落路径，提高了利率维持高位甚至再加息的预期，短端美债与美元最先重估。",
+        "chain": "通胀数据超预期 → 美联储降息预期降温 → 短端美债收益率上升 → 美元走强 → 全球资金流向美国 → 新兴市场资本外流压力",
+        "notes": [
+          "个人消费支出物价指数（PCE）是美联储最看重的通胀指标，它衡量美国人买东西和服务的价格变化，比另一个常见指标更能反映真实消费趋势。",
+          "为什么这个数重要？美联储的目标是让通胀回到2%左右，现在3.8%说明离目标还远，降息的空间就被压缩了。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动，新债利息更高，旧债就要降价才有人买。",
+          "短端国债对政策利率最敏感，因为它的到期时间短，市场对未来一两年利率的预期变化会最快反映在它的收益率上。",
+          "美元走强的原因：美国利率更高时，美元资产回报更有吸引力，全球资金买入美元，推高美元汇率。",
+          "新兴市场承压的原因：美元走强、美国利率上升时，借美元的成本变高，资金也倾向回流美国，新兴市场面临资本外流压力。"
+        ]
+      }
+    },
+    {
+      "title": "EU weighs tighter export controls to prevent battery waste going to China",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/a8ecccda-f986-4ae9-9f45-9470d2be8c65?syn-25a6b1a6=1",
+      "published": "2026-11-27 21:26",
+      "raw_summary": "‘Black mass’ containing key minerals is often processed abroad and the extracted metals re-exported to Europe",
+      "insight": {
+        "what": "欧盟考虑收紧出口管制，限制含关键金属的电池废料黑粉卖给中国，避免提炼出的金属再回流欧洲。",
+        "why": "市场原本以为关键金属废料可自由流动、欧洲电池厂成本可控，新规若落地会收紧中国获取原料的渠道，改变电池产业链的成本与供给预期。",
+        "chain": "欧盟拟收紧废料出口 → 中国回收原料变少 → 关键金属供给趋紧 → 电池生产成本上升 → 欧洲本土回收产业受益",
+        "notes": [
+          "电池废料黑粉是从废旧锂电池里拆出的黑色粉末，含有锂、镍、钴等贵重金属，是回收提取关键原料的重要来源。",
+          "出口管制就是一国限制某些商品卖到国外，通常出于安全和产业考虑，这里欧盟是想把关键金属留在自己手里。",
+          "关键金属为什么重要？锂、钴、镍是造电池的核心材料，供给一紧，电池厂采购成本就会上升，最后可能转嫁给车企和消费者。",
+          "产业链怎么传导？原料变贵会顺着回收、冶炼、电池制造、整车一路往上加价，越靠下游受成本冲击越明显。",
+          "为什么欧洲本土回收企业受益？限制废料外流后，更多原料留在欧洲加工，本土回收厂的原料来源和议价能力都会提升。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Airline Norse Atlantic files for bankruptcy, succumbing to aviation fuel costs",
+      "source": "DW",
+      "url": "https://www.dw.com/en/airline-norse-atlantic-files-for-bankruptcy-succumbing-to-aviation-fuel-costs/a-80076728?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-11-27 22:20",
+      "raw_summary": "The low-cost airline was only founded a few years ago and had been struggling to turn a profit. The spike in aviation fuel prices caused by the war in Iran has now driven Norway's Norse Atlantic into ",
+      "insight": {
+        "what": "挪威低成本航空公司大西洋航空申请破产，成立仅数年，伊朗战争推高的航空燃油成本成为压垮它的最后一根稻草。",
+        "why": "市场原本认为油价冲击主要影响通胀数据，这家航司破产说明高油价已经实质伤害企业盈利，改变了能源冲击向实体经济传导的预期。",
+        "chain": "伊朗战争推高油价 → 航空燃油成本飙升 → 低成本航司亏损扩大 → 现金流断裂 → 企业破产 → 航空业整合提速",
+        "notes": [
+          "航空燃油是航空公司最大的成本之一，油价一涨，机票收入如果跟不上，利润就会被迅速吃掉。",
+          "低成本航司为什么更脆弱？它们靠低价抢客、利润薄，没有太多缓冲，燃油成本一飙就很难消化。",
+          "现金流就是公司手头能随时动的钱，哪怕账面有资产，只要到期还不上债、付不起油钱，也会被迫破产。",
+          "能源冲击怎么传到实体？油价上涨先抬高运输和生产成本，再压企业利润，最后可能引发裁员、破产和行业洗牌。",
+          "行业整合是什么意思？经营不下去的公司退出，剩下的公司份额变大、竞争减少，有时反而能改善整个行业的盈利。"
+        ]
+      }
+    },
+    {
+      "title": "Japan to tighten anime and game support under fund to boost its soft power",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/asia/east-asia/article/3376108/japan-tighten-anime-and-game-support-under-fund-boost-its-soft-power",
+      "published": "2026-11-28 10:40",
+      "raw_summary": "The Japanese government plans to tighten scrutiny of financial support for anime, video games and other content as it compiles its 2027 financial budget, after the Cool Japan Fund incurred massive los",
+      "insight": {
+        "what": "日本政府在编制2027年预算时，计划收紧对动漫、游戏等文化内容的资金支持，此前酷日本基金海外推广出现巨亏。",
+        "why": "市场原本预期日本会持续加码文化产业软实力投入，收紧审查改变了财政资金向内容产业倾斜的预期，相关企业融资环境可能生变。",
+        "chain": "酷日本基金投资巨亏 → 政府反思补贴效率 → 收紧内容产业资金 → 文化企业融资变难 → 扩张计划放缓",
+        "notes": [
+          "酷日本基金是日本政府出资设立的机构，专门在海外推广动漫、游戏等文化产品，想靠文化输出提升国家影响力。",
+          "软实力指不靠武力、靠文化和吸引力去影响别国的能力，动漫游戏就是日本软实力的重要抓手。",
+          "财政补贴收紧意味着什么？政府给的扶持资金变少、审查变严，依赖这笔钱的内容公司就要自己找钱或缩减投入。",
+          "为什么巨亏会影响政策？当纳税人的钱被大量亏掉，政府会面对质疑，从而更谨慎地花钱，把资金投向更能见效的地方。",
+          "融资环境变化的影响：拿不到补贴的企业可能被银行收紧授信，扩张变慢，整个内容产业的增速也会随之放缓。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "Nvidia Blackwell Chips Turn Up at China Site Tied to Alice Huang",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-video",
+      "published": "2026-11-27 20:43",
+      "raw_summary": "A pair of Chinese firms installed Nvidia Corp.’s powerful Blackwell semiconductors in a Shanghai data center linked to Alice Huang, the woman at the heart of a controversy surrounding the US chipmaker",
+      "insight": {
+        "what": "彭博调查发现，两家中国公司在上海一处数据中心装了英伟达Blackwell高端芯片机架，引发对出口管制效果的质疑。",
+        "why": "市场原本认为高端AI芯片被严格挡在中国之外，这批芯片现身改变了管制有效性的预期，可能影响英伟达对华销售和中美算力竞争格局。",
+        "chain": "高端芯片现身中国 → 出口管制现漏洞 → 中国算力供给增加 → 英伟达对华销售变数 → 中美算力竞争加剧",
+        "notes": [
+          "Blackwell是英伟达最新的高端AI芯片，算力强、价格高，训练大模型离不开它，是美国严格管制的战略产品。",
+          "出口管制就是限制把敏感技术和产品卖到特定国家或地区，美国用它来延缓竞争对手获得先进算力。",
+          "算力是什么？简单说就是计算机处理任务的能力，AI模型越大、训练越复杂，需要的算力就越多，芯片是算力的核心。",
+          "为什么芯片流向会引发关注？高端芯片是训练先进AI的关键，谁能拿到更多芯片，谁在AI竞赛里就更有优势。",
+          "管制漏洞的影响：如果芯片能绕道进入中国，说明管制没完全奏效，可能促使美国进一步收紧规则，影响英伟达的海外收入。"
+        ]
+      }
+    },
+    {
+      "title": "AI Data-Center Developer LIAN Picks London for $500 Million IPO",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-27/ai-data-center-developer-lian-picks-london-for-500-million-ipo",
+      "published": "2026-11-27 19:49",
+      "raw_summary": "LIAN Group, a developer of infrastructure for artificial intelligence and computing, has chosen London as the venue for a potential initial public offering next year, in what would be a boost to the c",
+      "insight": {
+        "what": "AI算力基建开发商LIAN集团计划明年在伦敦进行约5亿美元首次公开募股，有望提振伦敦低迷的新股市场。",
+        "why": "市场原本认为伦敦对科技公司吸引力不足，这笔算力基建上市改变了资金对欧洲AI基建和伦敦上市地的预期，牵动同类公司估值。",
+        "chain": "AI数据中心融资热 → 算力基建扩张 → 伦敦新股市场回暖 → 同类公司估值抬升 → 更多科技企业赴英上市",
+        "notes": [
+          "首次公开募股（IPO）就是一家私人公司第一次把股份放到交易所卖给公众，借此募集发展所需的大笔资金。",
+          "算力基建指数据中心、服务器、供电和散热这些支撑AI运行的底层设施，训练大模型离不开它们，投入巨大。",
+          "为什么选伦敦上市重要？伦敦新股市场近年低迷，一笔大额上市能提升市场信心，证明这里仍能吸引优质科技公司。",
+          "估值抬升的逻辑：同类公司有了可参照的上市价格和融资纪录，投资者愿意给出更高定价，未上市公司的估值也跟着水涨船高。",
+          "资本开支为什么关键？AI公司大举建数据中心意味着对芯片、电力、土地的需求上升，会带动整条产业链的投资。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 0,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 16,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 6,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 11,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 19,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}

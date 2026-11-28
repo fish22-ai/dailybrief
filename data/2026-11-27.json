@@ -1,0 +1,207 @@
+{
+  "date": "2026-11-27",
+  "mode": "llm",
+  "markets": [
+    {
+      "title": "Hawkish Fed poised to raise rates despite stock market turmoil",
+      "source": "FT Markets",
+      "url": "https://www.ft.com/content/3890f725-66dd-4613-8a60-d9e3ea38d25a?syn-25a6b1a6=1",
+      "published": "2026-11-26 22:58",
+      "raw_summary": "Inflation is top concern for US central bank officials even as tech-led sell-off triggers fears for economy",
+      "insight": {
+        "what": "美联储官员释放鹰派信号，称通胀仍是首要担忧，即使科技股大跌引发经济忧虑，仍准备加息。",
+        "why": "市场原本押注股市动荡会逼美联储转向宽松，这番表态打消了预期，利率更高更久的概率上升，短端美债收益率、美元和高估值成长股都要重新定价。",
+        "chain": "通胀居高不下 → 美联储坚持鹰派立场 → 加息预期重新升温 → 短端美债收益率上行 → 资金买入美元资产 → 美元走强 → 高估值成长股折现率上升 → 股价承压",
+        "notes": [
+          "鹰派 hawkish 指优先压通胀、宁可维持高利率甚至加息的立场，鸽派 dove 则更看重增长和就业，不喜欢加息。美联储是美国的中央银行，它的利率决定影响全球资金价格。",
+          "为什么短端美债先动？短端美债指两年期这类期限短的美国国债，它对政策利率预期最敏感，官员一放鹰，市场马上上调加息押注，它的收益率往往第一个跳。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动，因为新债利息更高时，旧债必须降价才有人愿意买，持有旧债的人因此承受账面亏损。",
+          "高利率为什么吸引资金买美元：美国的利率越高，美元资产给的钱越多，全球资金愿意换成美元来吃这个利息，美元需求上升推动汇率走强。",
+          "为什么成长股更受伤：成长股盈利大多在遥远未来，利率上行时，远期收益折算到今天的价值缩水更明显，所以高估值科技股对利率最敏感。"
+        ]
+      }
+    },
+    {
+      "title": "Spain’s Pablo Hernández de Cos set to lead European Central Bank",
+      "source": "CNBC Economy",
+      "url": "https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html",
+      "published": "2026-11-27 14:50",
+      "raw_summary": "De Cos will lead the ECB into a period of political uncertainty and choppy growth, after winning the backing needed to succeed Christine Lagarde next year.",
+      "insight": {
+        "what": "西班牙经济学家德科斯获得提名支持，明年接替拉加德出任欧洲央行行长，将带领央行面对政治不确定与增长乏力。",
+        "why": "市场原本担心欧洲央行换帅会带来政策断层，新行长若偏鹰，欧元区利率路径与欧元估值都要重定；欧洲债市和欧元汇率是主要受影响资产。",
+        "chain": "德科斯将掌欧洲央行 → 市场认定其立场偏鹰 → 欧元区加息预期升温 → 欧元区国债收益率上行 → 欧元资产利息回报提高 → 国际资金买入欧元 → 欧元汇率走强",
+        "notes": [
+          "欧洲央行是负责欧元区货币政策的核心机构，行长决定利率方向，直接影响欧元区国债收益率和欧元汇率，是全球市场紧盯的职位。",
+          "鹰派 hawkish 和鸽派 dove：鹰派优先压通胀，倾向加息或维持高利率；鸽派更看重增长就业，对通胀容忍度高。判断新行长属于哪一派，是市场定价的第一步。",
+          "为什么换帅会动市场：央行行长更替意味着政策思路可能转向，市场要重新押注未来几轮会议是加息、降息还是按兵不动，预期一变资产价格就跟着变。",
+          "收益率上升债券价格下跌：债券价格和收益率呈反向变动，新债利息更高时旧债得降价才有人买。欧元区收益率上行意味着持有欧元债券的回报提高。",
+          "利差怎么影响汇率：当欧元资产的利息回报相对其他货币更高，国际资金会换成欧元来赚这个利差，欧元需求上升推动汇率走强，反过来压制出口。"
+        ]
+      }
+    }
+  ],
+  "policy": [
+    {
+      "title": "Singapore reaches out to local firms amid reports of Nvidia chip shipment halt",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3375994/singapore-reaches-out-local-firms-amid-reports-nvidia-chip-shipment-halt",
+      "published": "2026-11-27 13:13",
+      "raw_summary": "Singapore said on Friday it was “engaging” with local businesses over tightened US export controls on advanced AI chips designed by tech titan Nvidia. But Deputy Prime Minister Gan Kim Yong said he wa",
+      "insight": {
+        "what": "美国收紧对新加坡的先进人工智能芯片出口管制，有报道称英伟达暂停向东南亚出货，新加坡政府表示正与本地企业沟通应对。",
+        "why": "市场原本以为东南亚能稳定拿到算力，管制升级打破了预期，AI芯片供应链和依赖算力的科技资产要重新估值，新加坡相关数据中心产业首当其冲。",
+        "chain": "美国升级芯片出口管制 → 英伟达暂停东南亚出货 → 新加坡算力供应收紧 → 数据中心扩建计划受阻 → 科技企业资本开支下调 → 算力产业链估值承压 → 相关股市板块走弱",
+        "notes": [
+          "出口管制是一国限制本国技术或产品卖到国外的手段，美国对先进人工智能芯片设限，目的是拖慢对手的算力发展，但也会波及盟友和转口贸易枢纽。",
+          "新加坡是东南亚的芯片转口和数据中心枢纽，很多算力通过它流转，一旦出货收紧，不只是本地企业，整个区域的算力供给节奏都会被打乱。",
+          "算力指训练和运行人工智能模型需要的计算能力，主要靠英伟达这类公司的图形芯片提供，芯片拿不到，数据中心再有钱也建不起来。",
+          "资本开支 capital expenditure 是企业花在厂房设备上的钱，科技公司建数据中心就是大额资本开支，芯片供应不确定时，这些计划会被推迟或缩减，相关设备订单随之减少。",
+          "传导到股市的逻辑：市场买算力相关股票，赌的是数据中心持续扩建，一旦扩建受阻，未来盈利预期下修，股价和整个板块估值都会承压。"
+        ]
+      }
+    },
+    {
+      "title": "Protests in Iraqi Kurdistan at plans for government in Baghdad to take over oil, border crossings",
+      "source": "DW",
+      "url": "https://www.dw.com/en/protests-in-iraqi-kurdistan-at-plans-for-government-in-baghdad-to-take-over-oil-border-crossings/a-80065994?maca=en-rss-en-world-4025-rdf",
+      "published": "2026-11-27 00:13",
+      "raw_summary": "Thousands have gathered in the capital of northern Iraq's semiautonomous Kurdish region, waving flags and voicing opposition to plans for the federal government to take control of oil operations and b",
+      "insight": {
+        "what": "伊拉克北部库尔德地区爆发大规模抗议，反对巴格达联邦政府接管当地石油业务和边境口岸，数千人聚集表达不满。",
+        "why": "市场原本预期伊拉克石油供给稳定，权力之争升级带来供应中断风险，原油的地缘风险溢价上升，油价和能源股要重新定价。",
+        "chain": "库尔德地区爆发抗议 → 中央与地方争夺石油 → 石油供应中断风险升 → 原油地缘风险溢价上升 → 国际油价随之上行 → 能源股估值受益 → 进口国成本上升",
+        "notes": [
+          "库尔德地区是伊拉克北部的石油重镇，有自己的武装和行政体系，长期和中央政府争夺石油收入和管辖权，这种内部博弈是油价潜在的扰动源。",
+          "地缘风险溢价指油价里包含的一部分额外价格，用来补偿战争、冲突、罢工等可能打断供给的不确定性，风险越大这部分加价越高。",
+          "为什么石油供给一有风吹草动油价就动：石油是全球定价的大宗商品，短期需求变化不大，供给端哪怕只是中断预期，也会立刻推高价格。",
+          "油价上行利好能源股：石油公司的利润大致等于油价减去开采成本，油价涨而成本不变，利润空间扩大，市场因此上调能源公司的估值。",
+          "对进口国的含义：石油是工业和生活的基础能源，油价上涨会抬高运输、化工等行业的成本，最终推高整体物价，让央行更难降息。"
+        ]
+      }
+    }
+  ],
+  "tech": [
+    {
+      "title": "SAP Prepares Plan to Cut at Least 10,000 Positions",
+      "source": "Bloomberg Technology",
+      "url": "https://www.bloomberg.com/news/videos/2026-11-27/sap-prepares-plan-to-cut-at-least-10-000-positions-video",
+      "published": "2026-11-27 15:01",
+      "raw_summary": "SAP is weighing a plan to eliminate at least 10,000 positions to transform its software business for the artificial intelligence era, according to people familiar with the matter. Bloomberg’s Ruhell A",
+      "insight": {
+        "what": "德国软件巨头思爱普正筹划裁减至少一万个岗位，以推动业务转型、适应人工智能时代的需求变化。",
+        "why": "市场原本认为传统软件公司能平稳过渡，大规模裁员说明人工智能正在重塑软件业成本结构，投资者要重估整个行业的盈利模式和人力密集业务的估值。",
+        "chain": "人工智能重塑软件业 → 传统编码岗位需求降 → 思爱普拟裁员万人 → 人力成本大幅压缩 → 利润率预期改善 → 市场重估软件公司 → 行业估值分化加剧",
+        "notes": [
+          "思爱普是全球最大的企业管理软件公司之一，靠卖软件许可证和服务收费，它的转型动作常被当成整个传统软件行业的风向标。",
+          "为什么人工智能会冲击软件业：过去写代码、做维护都要靠大量工程师，人工智能能自动完成不少重复工作，公司对这类岗位的需求就会减少。",
+          "裁员和利润率的关系：软件公司最大的开销往往是员工薪酬，裁掉一万人能省下可观的工资支出，如果收入不明显下滑，利润率就会提高。",
+          "估值分化 valuation 的含义：市场会重新区分哪些公司能借人工智能降本增效、哪些会被人工智能颠覆，前者获得更高估值，后者被抛售，差距越拉越大。",
+          "也要看到另一面：大规模裁员可能意味着公司增长乏力、只能靠省钱维持利润，市场会分辨这是主动转型还是被动收缩，两者对股价影响相反。"
+        ]
+      }
+    }
+  ],
+  "source_stats": {
+    "fed": {
+      "count": 8,
+      "tier": "stable"
+    },
+    "ecb": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "treasury_fr": {
+      "count": 3,
+      "tier": "optional"
+    },
+    "wsj_markets": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "cnbc_econ": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "cnbc_fin": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "economist_fin": {
+      "count": 15,
+      "tier": "stable"
+    },
+    "wallstreetcn": {
+      "count": 0,
+      "tier": "stable"
+    },
+    "eastmoney": {
+      "count": 18,
+      "tier": "optional"
+    },
+    "ft_markets": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "csrc_news": {
+      "count": 6,
+      "tier": "optional"
+    },
+    "safe": {
+      "count": 0,
+      "tier": "optional"
+    },
+    "federal_register": {
+      "count": 3,
+      "tier": "stable"
+    },
+    "whitehouse": {
+      "count": 5,
+      "tier": "stable"
+    },
+    "ustr": {
+      "count": 7,
+      "tier": "stable"
+    },
+    "bbc_world": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "dw_world": {
+      "count": 12,
+      "tier": "stable"
+    },
+    "defensenews": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "un_news": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "npr_world": {
+      "count": 10,
+      "tier": "optional"
+    },
+    "scmp_china": {
+      "count": 20,
+      "tier": "optional"
+    },
+    "ars_technica": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "the_verge": {
+      "count": 10,
+      "tier": "stable"
+    },
+    "bloomberg_tech": {
+      "count": 20,
+      "tier": "stable"
+    },
+    "qbitai": {
+      "count": 10,
+      "tier": "optional"
+    }
+  }
+}
